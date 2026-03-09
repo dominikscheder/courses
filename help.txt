@@ -1,0 +1,10 @@
+gleam run
+# normal stuff
+
+gleam run -- --local
+# with the dev links I can click that open the vs code 
+
+gleam run -- --fmt 
+# formats the src to have xxxx numbers of characters per line 
+
+

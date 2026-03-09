@@ -8,6 +8,7 @@
         |> img
             style=height:10em
             src=img/circuits/majority.svg
+            original=img/circuits/circuits.ipe
 
     Diese nimmt $n$ Bits als Input und gibt 1 aus, wenn
     mehr als $n/2$ davon 1 sind. Für $n=3$ heißt dass,
@@ -22,7 +23,7 @@
 
     |> figure
         |> img
-            style=height:8em
+            style=height:11em
             src=img/circuits/maj3.svg
 
     Wie können wir das sinnvoll verallgemeinern für
@@ -226,6 +227,7 @@
         |> img
             style=height:18em
             src=img/circuits/majority-theta-dp.svg
+            original=img/circuits/circuits.ipe
 
     Um eine Analogie mit der Programmierpraxis zu
     bemühen: der Unterschied zwischen den beiden
@@ -278,6 +280,7 @@
         |> img
             style=height:12em
             src=img/circuits/majority-by-adding.svg
+            original=img/circuits/circuits.ipe
 
     |> Exercise
         Bestimmen Sie asymptotisch die Größe und die Tiefe
@@ -311,13 +314,14 @@
         gilt.
 
     |> Proof
-        Ich demonstriere das Beweisprinzip erst einmal mit
+        Ich demonstriere das Prinzip erst einmal mit
         drei Zahlen in Basis 10:
 
         |> figure
             |> img
                 style=height:10em
                 src=img/circuits/2-for-3-adder-example.svg
+                original=img/circuits/circuits.ipe
 
         Wir addieren also pro Stelle drei (einstellige)
         Zahlen, führen den Übertrag (das Carry) aber nicht der
@@ -330,6 +334,7 @@
             |> img
                 style=height:15em
                 src=img/circuits/2-for-3-adder-binary.svg
+                original=img/circuits/circuits.ipe
 
         Dieser Schaltkreis hat insgesamt $O(n)$ Gates und
         Tiefe 2 (wobei wir die NOT-Gates im $\oplus$-Gate
@@ -713,6 +718,7 @@
             |> img
                 style=height:18em
                 src=img/circuits/majority-probability-labeled.svg
+                original=img/circuits/circuits.ipe
             |> figcaption
                 Graph der Funktion $p \mapsto p^3 + 3 p^2 (1-p)$
         |> hr
@@ -721,6 +727,7 @@
             |> img
                 style=height:18em
                 src=img/circuits/majority-probability-close-to-half-labeled.svg
+                original=img/circuits/circuits.ipe
             |> figcaption
                 Signalstärke $\delta$ wächst für $p \in [1/2, 3/4]$
                 exponentiell.
@@ -731,6 +738,7 @@
             |> img
                 style=height:18em;
                 src=img/circuits/majority-probability-close-to-one-labeled.svg
+                original=img/circuits/circuits.ipe
             |> figcaption
                 Fehlerwahrscheinlichkeit $\epsilon$ fällt für
                 $p \in [3/4, 1/2]$ doppelt exponentiell.

@@ -1,0 +1,22 @@
+Clicking on .wly-link in dev mode does not open. Javascript error message 
+
+
+sendCmdTo3003 @ app.js:1520
+(anonymous) @ app.js:1508Understand this error
+app.js:1520  Uncaught (in promise) TypeError: Failed to fetch
+
+
+[both local as file:/// and when hosted by a server]
+
+
+
+For an image, the src is 'bla.svg'. How do I tell her the "mother file", the .ipe file in this case?
+
+
+
+* "Only" option that compiles only one file???
+
+
+
+* On reload it jumps back up, which is annoying. Happened without your framework as well sometimes. I never figured out why and when. Any help?
+

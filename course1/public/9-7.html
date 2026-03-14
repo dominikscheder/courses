@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 9.7 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>TI2—Kapitel 9.7</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./9-6.html"
+        >&lt;&lt; Kapitel 9.6<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Ganz NP reduziert auf SAT: das Cook-Levin-Theorem</span></a><a
+          id="next-page"
+          href="./9-8.html"
+          class="menu-row-right"
+        >Kapitel 9.8 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Savitch's Theorem:
+            $\textrm{Reachability} \in \textrm{Space}(\log(n))$</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        9.7&ensp;Beschränkter Speicherplatz
+      </p>
+    </div>
+    <p class="main-column">
+      In den vergangen Kapiteln haben wir die Laufzeit
+      einer Turingmaschine beschränkt und die
+      Komplexitätsklassen studiert, die sich daraus ergeben,
+      allen voran P und NP. Die neben Zeit wohl wichtigste
+      Resource beim Rechnen ist der Platz. Turingmaschinen
+      erlauben uns auch, präzise über den benötigten
+      Speicherplatz zu sprechen. Der
+      <i>Platz</i>
+      einer
+      Konfiguration
+      $C = uqv \in \Gamma^* \times Q \times \Gamma^*$ ist
+      die Anzahl der belegten Speicherzellen, also
+      beispielsweise
+      <span class="nowrap">$|uv|$.</span>
+      Bei $k$ -Band-Maschinen müssen
+      wir das über alle Bänder aufsummieren. Wir können eine
+      Konfiguration also als Tupel in
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      \mathcal{C} : Q \times (\Gamma^* \times \Gamma^*)^k
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      darstellen. Eine Konfiguration
+      $C = (q, (u_1, v_1), \dots, (u_k, v_k))$ besagt dann
+      beispielsweise, dass auf Band $i$ das Wort $u_iv_i$
+      steht, wobei der Kopf auf dem ersten Zeichen von $v_i$
+      steht. Die Größe von $C$ ist dann
+      <span class="nowrap">$|C| := |u_1| + |v_1| + \cdots + |u_k| + |v_k|$.</span>
+      Eine
+      Turingmaschine läuft in Platz
+      <span class="nowrap">$s(n)$,</span>
+      wenn für alle
+      $x \in \Sigma^*$ alle erreichten Konfigurationen
+      höchstens die Größe $s(|x|)$ haben. Diese Definition
+      hat den Nachteil, dass der Platzbedarf immer
+      mindestens $n$ ist: bereits die Startkonfiguration
+      $\qstart x_1 x_2 \dots x_n$ besteht ja aus $n$
+      Zeichen. Das ist aber irgendwie unfair. Wir wollen nur
+      den Platz zählen, der über das Eingabewort hinausgeht.
+      Wenn wir über Platzbedarf sprechen, dann gehen wir von
+      einer Turingmaschine aus, die
+    </p>
+    <div class="main-column">
+      <ol>
+        <li>
+          <p>
+            ein Eingabeband hat, auf dem sie nur lesen darf;
+          </p>
+        </li>
+        <li>
+          <p>
+            beliebig viele
+            <span class="nowrap"><i>Arbeitsbänder</i>,</span>
+            auf denen sie lesen
+            und schreiben darf;
+          </p>
+        </li>
+        <li>
+          <p>
+            ein Ausgabeband, auf dem sie schreiben darf, aber nur
+            nach rechts laufen darf.
+          </p>
+        </li>
+      </ol>
+    </div>
+    <p class="main-column">
+      Wenn wir eine Sprache $L \subseteq \Sigma^*$
+      entscheiden wollen, dann brauchen das Ausgabeband
+      nicht wirklich. Wenn wir eine Funktion
+      $f: \Sigma_1^* \rightarrow \Sigma_2^*$ berechnen
+      wollen, dann sehr wohl.
+    </p>
+    <div class="well highlight out">
+      <p>
+        <b>Eingabe und Ausgabe:</b>
+        wenn Sie ein C-Programm
+        schreiben und auf
+        <code>stdout</code>
+        schreiben, dann entspricht
+        diese Operation in gewisser Weise der Turingmaschine,
+        die auf das Ausgabeband schreibt; sie können ja sich
+        den Output auch nicht irgendwie zurückholen. Das lesen
+        von
+        <code>stdin</code>
+        entspricht allerdings nicht ganz dem
+        Eingabeband der Turingmaschine. Ein bedeutender
+        Unterschied ist, dass die Turingmaschine auf dem
+        Eingabeband zwar nicht schreiben darf, aber dennoch
+        beliebig nach rechts und links gehen darf. Das können
+        Sie auf
+        <code>stdin</code>
+        in der Regel nicht.
+      </p>
+      <p>
+        <b>Streaming-Modell:</b>
+        wenn wir der Turingmaschine
+        verbieten, auf dem Eingabe-Band nach links zu laufen,
+        wenn sie also jedes Eingabezeichen nur einmal lesen
+        darf, dann erhalten wir das sogenannte
+        Streaming-Modell, das in den letzten Jahren an
+        Popularität gewonnen hat, weil wir es heutzutage in
+        vielen Anwendungen mit Datenmengen zu tun haben, die
+        nicht in den Speicher des Rechners passen und auch nur
+        einmal gelesen werden können (z.B. Sensordaten). Im
+        Kurs
+        <i>Effiziente Algorithmen</i>
+        gibt es ein
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/EffizienteAlgorithmen/lecture-notes/04-00-big-data.html">Kapitel zu
+          Streaming-Algorithmen</a>.
+      </p>
+    </div>
+    <div
+      id="_55_hgi_"
+      class="well statement out"
+    >
+      <p>
+        <b>Definition 9.7.1
+          <span class="nowrap">($\SPACE(s)$).</span></b>
+        Sei $M$ eine Turingmaschine mit
+        dezidiertem Eingabeband 1 und Ausgabeband
+        <span class="nowrap">$k$.</span>
+        Die
+        <i>Größe einer Konfiguration</i>
+        ist die Größe der
+        Bandinhalte der Arbeitsbänder. Die Konfiguration
+        $C = (q, (u_1, v_1), \dots, (u_k, v_k))$ hat Größe
+        <span class="nowrap">$|u_2| + |v_2| + \cdots + |u_{k-1}| + |v_{k-1}|$.</span>
+        Sei
+        <span class="nowrap">$s : \N \rightarrow \N$.</span>
+        Die Turingmaschine $M$ läuft
+        in Platz
+        <span class="nowrap">$s$,</span>
+        falls
+      </p>
+      <ol>
+        <li>
+          <p>
+            sie für jedes $x \in \Sigma^*$ terminiert und
+          </p>
+        </li>
+        <li>
+          <p>
+            jede erreichte Konfiguration höchstens Größe
+            $O(s(|x|))$ hat.
+          </p>
+        </li>
+      </ol>
+      <p>
+        Eine Sprache ist in
+        <span class="nowrap">$\SPACE(s)$,</span>
+        wenn es eine
+        Turingmaschine gibt, die in Platz $s$ läuft und sie
+        entscheidet.
+      </p>
+    </div>
+    <div class="well statement out">
+      <p>
+        <b>Beobachtung 9.7.2</b>
+        Wenn $M$ in Platz $s(n)$ läuft, dann hat $M$ Laufzeit
+        <span class="nowrap">$2^{O(s(n))}$.</span>
+      </p>
+    </div>
+    <div class="well highlight out">
+      <p>
+        <b>Beweis.</b>
+        Für gegebenes $n$ sei $S \in O(s(n))$ der maximale
+        Platzbedarf der Turingmaschine. Es gibt maximal
+        $T := |Q| \cdot \left(|\Gamma|+1\right)^{kS}$
+        Konfigurationen (warum?). Da $M$ terminiert, kann die
+        Berechnung nicht mehr $T$ Schritte dauern.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 9.7.1</b>
+        Zeigen Sie, dass wir die Bedingung 1 aus
+        <a
+          href="./9-7.html#_55_hgi_"
+          class=""
+        >Definition 9.7.1</a>
+        weglassen können, zumindest
+        wenn $s(n)$ zeitkonstruierbar ist.
+      </p>
+    </div>
+    <h3 class="main-column subtopic-announcement">
+      Die wichtigsten Platzklassen: L und PSPACE
+    </h3>
+    <p class="main-column">
+      Wir definieren
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      \textnormal{PSPACE} := \bigcup_{k \geq 1} \SPACE(n^k)
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      also die Menge aller Probleme, die man mit
+      polynomiellem Speicherplatz entscheiden kann, und
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      \textnormal{L} := \SPACE(\log n) \ .
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      die Menge aller Probleme, die man mit
+      <i>logarithmischem Speicherplatz</i>
+      entscheiden kann. Man
+      nennt $L$ auch LogSpace.
+    </p>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 9.7.2</b>
+        Zeigen Sie, dass ${\rm NP} \subseteq {\rm PSPACE}$
+        gilt. Fangen Sie zum Beispiel an,<span class="sc">3-Colorability $\in$
+          PSPACE</span>
+        zu zeigen.
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 9.7.3</b>
+        Sei
+        <span class="sc">Palindrome</span>
+        die Sprache aller
+        Palindromwörter mit Trennungszeichen in der Mitte,
+        also
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \{ucu^{R} \ | \ u \in \{a,b\}^* \} \ .
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Zeigen Sie, dass
+        <span class="sc">Palindrome $\in$ L</span>
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 9.7.4</b>
+        Zeigen Sie, dass die Sprache aller wohlgeformten
+        Klammerausdrücke in L ist, also die Sprache über
+        $\{a,b\}$ mit
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        S&amp;\rightarrow \epsilon \ | \ aSbS \ .
+        \end{align*}
+        $$
+      </div>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 9.7.5</b>
+        Seien $f: \Sigma_1 \rightarrow \Sigma_2$ und
+        $g: \Sigma_2 \rightarrow \Sigma_3$ zwei Funktionen.
+        Zeigen Sie, dass, falls $f$ und $g$ in
+        logarithmischem Platz berechnet werden können, dann
+        auch
+        <span class="nowrap">$g \circ f: \Sigma_1 \rightarrow \Sigma_3$.</span>
+        <b>Hinweis:</b>
+        der "offensichtliche" Ansatz funktioniert
+        nicht. Warum nicht?
+      </p>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./9-6.html">&lt;&lt; Kapitel 9.6<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Ganz NP reduziert auf SAT: das Cook-Levin-Theorem</span></a><a
+          href="./9-8.html"
+          class="menu-row-right"
+        >Kapitel 9.8 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Savitch's Theorem:
+            $\textrm{Reachability} \in \textrm{Space}(\log(n))$</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

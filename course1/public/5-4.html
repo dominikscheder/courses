@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 5.4 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>TI2—Kapitel 5.4</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./5-3.html"
+        >&lt;&lt; Kapitel 5.3<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Nichtdeterministische Endliche Automaten</span></a><a
+          id="next-page"
+          href="./5-5.html"
+          class="menu-row-right"
+        >Kapitel 5.5 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Reguläre Ausdrücke</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        5.4&ensp;Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel
+      </p>
+    </div>
+    <div class="well statement out">
+      <p>
+        <b>Theorem 5.4.1</b>
+        Zu jeder kontextfreien Grammatik
+        $G = (\Sigma, N, S, P)$ gibt es einen Kellerautomaten
+        <span class="nowrap">$M = (\Sigma, Q, \Gamma, \qstart, \delta)$,</span>
+        der die
+        gleiche Sprache akzeptiert, also
+        <span class="nowrap">$L(G) = L(M)$.</span>
+      </p>
+    </div>
+    <p class="main-column">
+      In diesem Unterkapitel wollen wir das Gelernte an
+      einem konkreten Beispiel anwenden. Wir beginnen (1)
+      mit einer Beschreibung eines Formats in natürlicher
+      Sprache; (2) basteln uns daraus mit Hilfe des
+      "Baukastenprinzips" eine reguläre Sprache; (3) säubern
+      diese, indem wir Regeln der Form $X \rightarrow Y$
+      und $X \rightarrow a$ eliminieren; (4) bauen einen
+      nichtdeterministischen endlichen Automaten; (5)
+      transformieren diesen in einen deterministischen
+      endlichen Automaten.
+    </p>
+    <h2 class="main-column topic-announcement">
+      1. Beschreibung des Formats in natürlicher Sprache
+    </h2>
+    <p class="main-column">
+      Unsere Sprache $L$ soll so ähnlich sein wie die der
+      erlaubten Domainnamen, allerdings mit ein paar
+      Abänderungen, um die obigen Transformationen
+      spannender zu machen. Ein Wort in unserer Sprache
+      besteht aus einer nichtleeren Folge von
+      <i>Labels</i>
+      die
+      jeweils durch einen
+      <code>.</code>
+      separiert sind. Jedes Label
+      ist eine nichtleere Folge von Blöcken (ein nichtleerer
+      String aus Buchstaben und Zahlen), separiert durch
+      <code>:</code>
+      oder
+      <code>-</code>
+      aber niemals durch beides innerhalb eines
+      Blockes. Also:
+    </p>
+    <div class="pseudowell">
+      <figure class="textfigure">
+        <code>bla:bla:blue.xyz-12-zx.b:x:yyy:xxx:aaa</code>
+      </figure>
+    </div>
+    <p class="main-column">
+      ist ein Wort in
+      <span class="nowrap">$L$,</span>
+      aber
+    </p>
+    <div class="pseudowell">
+      <figure class="textfigure">
+        <code>a:b-c.hello</code>
+      </figure>
+    </div>
+    <p class="main-column">
+      ist kein Wort in
+      <span class="nowrap">$L$,</span>
+      da das erste Label die
+      Separatoren
+      <code>:</code>
+      und
+      <code>-</code>
+      mischt. Habe ich $L$ genau
+      genug beschrieben? Stellen wir eine Meta-Frage: Was
+      zählt überhaupt als
+      <i>genaue Beschreibung</i>
+      einer
+      Sprache? Wir können uns dem Mund fusselig reden und
+      Beispiele und Nicht-Beispiele angeben, am Ende aber
+      werden wir irgendwann beginnen, formale Regeln
+      aufzustellen, die unsere Sprache beschreiben - wir
+      werden also im Prinzip eine
+      <i>Grammatik</i>
+      schreiben. Tun
+      wir dies also.
+    </p>
+    <h2 class="main-column topic-announcement">
+      2. Eine reguläre Grammatik
+    </h2>
+    <p class="main-column">
+      Beginnen wir mit dem Alphabet. Da es 62
+      alphanumerische Zeichen gibt:
+      <code>a..zA..Z0..9</code>
+      und wir
+      uns keine unnötige Arbeit machen wollen, beschränken
+      wir uns auf ein Zeichen:
+      <span class="nowrap"><code>a</code>.</span>
+      Dazu kommen die
+      Separatoren
+      <span class="nowrap"><code>:-.</code>.</span>
+      Also:
+      <span class="nowrap">$\Sigma = \{a,.,:,-\}$.</span>
+      Stellen Sie sich einfach vor, $a$ stehe für beliebige
+      alphanumerische Zeichen. Sowohl Grammatik als auch
+      Automaten lassen sich einfach anpassen. Wir beginnen
+      ganz unten und schreiben eine Grammatik für Blöcke,
+      also nichtleere Strings aus alphanumerischen Zeichen.
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      B &amp;\rightarrow a \ | \ aB
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Als nächstes führen wir ein nichtterminales Symbole
+      $C$ für Labels mit
+      <code>:</code>
+      ein und ein Nichtterminal $D$
+      für Labels mit
+      <span class="nowrap"><code>-</code>.</span>
+      Wir wählen die Buchstaben
+      <span class="nowrap">$C,D$,</span>
+      weil
+      <code>:</code>
+      auf Englisch
+      <i>colon</i>
+      und
+      <code>-</code>
+      <i>dash</i>
+      heißt.
+      <span class="nowrap">$C$-Labels</span>
+      können wir uns nach dem Baukastenprizip
+      bauen, in dem wir
+      <a
+        href="./5-1.html#_20_hgi_"
+        class=""
+      >Theorem 5.1.14</a>
+      anwenden. Wir
+      fügen zur "End-Produktion" $B \rightarrow a$ eine
+      weiter Produktion $B \rightarrow a:B$ hinzu und tun
+      das gleiche für
+      <span class="nowrap">$B \rightarrow b$.</span>
+      Allerdings
+      benennen wir $B$ in $C$ um, damit keine
+      Verwechslungsgefahr mit dem ursprünglichen $B$
+      aufkommt. Das gleiche machen wir für
+      <span class="nowrap">$D$.</span>
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      C&amp;\rightarrow a \ | \ aC \ | \ a{:}C \\
+      D&amp;\rightarrow a \ | \ aD \ | \ a{-}D \\
+      T&amp;\rightarrow C \ | D
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Von $L$ lassen sich nun also alle Labels ableiten.
+      Wir brauchen nun zum Schluss wieder eine Folge von
+      <span class="nowrap">$L$,</span>
+      mit
+      <code>.</code>
+      separiert, müssen also wieder
+      <a
+        href="./5-1.html#_20_hgi_"
+        class=""
+      >Theorem 5.1.14</a>
+      anwenden, dieses mal auf die von $T$
+      erzeugte Sprache. Im Ergebnis benennen wir das
+      Startsymbol in $S$ um.
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      S&amp;\rightarrow C \ | \ D \\
+      C&amp;\rightarrow a \ | \ aC \ | \ a{:}C \ | a{.}S \ \\
+      D&amp;\rightarrow a \ | \ aD \ | \ a\text{-}D \ | \ a{.}S \\
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Um eine "richtig" reguläre Sprache zu erhalten,
+      entzerren wir die erweitert regulären Produktionen wie
+      <span class="nowrap">$C \rightarrow a{:}C$.</span>
+      Dafür brauchen wir neue
+      Symbole
+      <span class="nowrap">$C', D', S'$:</span>
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      S &amp;\rightarrow C \ | \ D \\
+      C &amp;\rightarrow a \ | \ aC \ | \ aC'\ | \ aS' \\
+      C'&amp;\rightarrow {:}C \\
+      D &amp;\rightarrow a \ | \ aD \ | \ a D' \ | \ aS' \\
+      D'&amp;\rightarrow \text{-}D \\
+      S'&amp;\rightarrow {.}S
+      \end{align*}
+      $$
+    </div>
+    <h2 class="main-column topic-announcement">
+      3. Die reguläre Grammatik säubern
+    </h2>
+    <p class="main-column">
+      Wir wollen nun alle Produktionen der Form
+      $Y \rightarrow x$ eliminieren. Hierfür nehmen wir uns
+      <i>ein</i>
+      neues Nichtterminal $E$ und ersetzen
+      $Y \rightarrow x$ durch $Y \rightarrow xE$ und fügen
+      die Produktion $E \rightarrow \epsilon$ hinzu.
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      S&amp;\rightarrow C \ | \ D \\
+      C&amp;\rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \\
+      C'&amp;\rightarrow {:}C \\
+      D&amp;\rightarrow aE \ | \ aD \ | \ a D' \ | \ aS' \\
+      D'&amp;\rightarrow \text{-}D \\
+      S'&amp;\rightarrow {.}S \\
+      E&amp;\rightarrow \epsilon
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      In einem zweiten Schritt wollen wir die Produktionen
+      $S \rightarrow C$ und $S \rightarrow D$ eliminieren,
+      sodass wir nur noch Produktionen der From
+      $X \rightarrow aY$ und $E \rightarrow \epsilon$
+      haben. Wir gehen vor wie in
+      <a
+        href="./5-1.html#_17_hgi_"
+        class=""
+      >Theorem 5.1.7</a>
+      beschrieben. Wir ersetzen
+      $S \rightarrow C$ also durch alle Produktionen der
+      Form
+      <span class="nowrap">$S \rightarrow \alpha$,</span>
+      wobei $\alpha$ eine
+      Wortform ist, die sich aus $C$ ableiten lässt und
+      nicht nur aus einem einzelnen Nichtterminal besteht;
+      dies trifft glücklicherweise auf
+      <i>alle</i>
+      rechten Seiten
+      der
+      <span class="nowrap">$C$-Produktionen</span>
+      zu; gleiches gilt für
+      <span class="nowrap">$D$.</span>
+      Wir
+      erhalten:
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      S&amp;\rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \ | \ aD \ | \ a D' \\
+      C&amp;\rightarrow aE \ | \ aC \ | \ aC'\ | \ aS' \ \\
+      C'&amp;\rightarrow {:}C \\
+      D&amp;\rightarrow aE \ | \ aD \ | \ a D' \ | \ aS' \ \\
+      D'&amp;\rightarrow \text{-}D \\
+      S'&amp;\rightarrow {.}S \\
+      E&amp;\rightarrow \epsilon
+      \end{align*}
+      $$
+    </div>
+    <h2 class="main-column topic-announcement">
+      4. Einen nichtdeterministischen endlichen Automaten
+      bauen
+    </h2>
+    <p class="main-column">
+      Dies sollte nun einfach sein. Wir erschaffen Zustände
+      $S, C, C', D, D', S', E$ und übersetzen jeden
+      Grammatik-Pfeil in einen Automaten-Pfeil.
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="height:17em"
+          src="img/finite-state-automata/nfsm-example-03-big.svg"
+        >
+      </figure>
+    </div>
+    <p class="main-column">
+      Ich habe die Zeichen
+      <code>.:-</code>
+      rot unterlegt, weil man
+      sie sonst kaum erkennen würde in dem Automaten.
+    </p>
+    <h2 class="main-column topic-announcement">
+      5. Den nichtdeterministischen Automaten in einen
+      deterministischen umwandeln
+    </h2>
+    <p class="main-column">
+      Unser nichtdeterministischer endlicher Automat hat
+      Zustandsmenge
+      <span class="nowrap">$Q = \{S, S', C, C', D, D', E\}$,</span>
+      also
+      insgesamt sieben Zustände. Wenn wir genau nach Buch
+      vorgingen, müssten wir den endlichen Automaten auf der
+      Zustandsmenge $2^Q$ definieren, er hätte also
+      $2^7 = 128$ viele Zustände. Das wäre jetzt für einen
+      Rechner kein Problem, aber in diesem vorlesungsskript
+      doch etwas ungünstig. Wir gehen
+      <i>lazy</i>
+      vor, erschaffen
+      Zustände in $2^Q$ also nur dann, wenn wir sie
+      brauchen. Wir beginnen mit dem Zustand $\{S\}$ und
+      legen dann an jeden Zustand Kanten an, jeweils mit
+      $a, :, -, .$ beschriftet, und erschaffen, falls
+      nötig, dabei neue Zustände. In der folgenden Animation
+      sehen Sie manchmal den mit einem Kreuz markierten
+      Fehlerzustand (trap state). Die akzeptierenden
+      Zustände sind mit fettem Rand markiert.
+    </p>
+    <div class="pseudowell">
+      <div class="top-align group">
+        <div class="group_placeholder">
+        </div>
+        <div class="group_scaler">
+          <div class="figure__container">
+            <figure>
+              <img
+                style="height:12em"
+                src="img/finite-state-automata/nfsm-example-03-big.svg"
+              >
+              <figcaption class="topcaption">
+                Der nichtdeterministische<br>Automat
+              </figcaption>
+            </figure>
+          </div>
+          <div class="carousel__container">
+            <figcaption class="topcaption">
+              Der deterministische Automat,<br>Schritt für Schritt gebaut:
+            </figcaption>
+            <div class="carousel">
+              <div class="carousel__items">
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/01.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/02.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/03.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/04.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/05.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/06.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/07.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/08.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/09.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/10.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/11.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/12.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/13.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/14.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/15.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/16.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/17.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/18.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/19.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/20.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/21.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/22.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/23.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/24.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/25.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/26.svg"
+                  >
+                </div>
+                <div class="carousel__item">
+                  <img
+                    style="height:12em"
+                    src="img/finite-state-automata/transformation/27.svg"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="main-column">
+      Dieser Automat hat deutlich weniger also 128
+      Zustände, nämlich mit nur sieben genau so viele wie
+      der nichtdeterministische (es ist Zufall, dass beide
+      gleich viele Zustände haben; messen Sie dieser
+      Tatsache keine Bedeutung bei). Wir könnten nun von
+      diesem Automaten ausgehend wiederum eine reguläre
+      Grammtik bauen, die in diesem Falle sogar einfacher
+      und klarer wäre als die ursprüngliche. Wenn wir
+      erweitert reguläre Grammatiken erlauben, so können wir
+      den deterministischen Automaten besonders konzise in
+      eine Grammatik fassen:
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      S&amp;\rightarrow aT \\
+      T&amp;\rightarrow {.}S \ | \ aT \ | \ {:}aC \ | \ \text{-}a D \\
+      C&amp;\rightarrow aC \ | \ {:}aC \ | \ {.}S \\
+      D&amp;\rightarrow aD \ | \ \text{-}aD \ | \ {.}S
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Die Zustände des deterministischen Automaten
+      beschreiben im Prinzip das, was wir uns merken müssen,
+      wenn wir so einen String "parsen": Zustand
+      <span class="nowrap">$\{C',C,E,D,D',S'\}$,</span>
+      der in der Grammatik dann zum
+      Nichtterminal $T$ wird, bedeutet beispielsweise
+      <span class="nowrap"><i>das
+          Label hat schon begonnen, wir wissen aber noch nicht,
+          ob es eines mit
+          <code>:</code>
+          oder eines mit
+          <code>-</code>
+          ist. Der
+          Zustand $\{C',C,E,S'\}$ bzw. das Nichtterminal $C$
+          heißt dann
+          <code>:</code>
+          </i>wir</span>
+      sind innerhalb eines Labels mit_
+      <span class="nowrap"><code>:</code>.</span>
+    </p>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 5.4.1</b>
+        Erinnern Sie sich an
+        <a
+          href="./5-3.html#_23_hgi_"
+          class=""
+        >Aufgabe 5.3.1</a>.
+        Hier sehen Sie einen nichtdeterministischen endlichen
+        Automaten für die Sprache
+        <span class="nowrap">$L_4 \cup L_6$,</span>
+        also die
+        Sprache aller Wörter $1^n$ für ein
+        <span class="nowrap">$n$,</span>
+        das durch 4
+        oder 6 teilbar ist. Da unser Alphabet $\Sigma = \{1\}$
+        eh nur aus einem Zeichen besteht, habe ich auf die
+        Beschriftung der Kanten verzichtet.
+      </p>
+      <div class="figure__container">
+        <figure>
+          <img
+            style="height:14em"
+            src="img/finite-state-automata/divisibility-automaton/divisibility.svg"
+          >
+        </figure>
+      </div>
+      <p>
+        Dieser Automat hat 11 Zustände. Sein
+        Potenzmengenautomat hätte also $2^{11} = 2048$
+        Zustände. Führen Sie die Konstruktion
+        <i>lazy</i>
+        durch,
+        indem Sie vom Startzustand $\{S\}$ ausgehend die
+        Folgezustände konstruieren. Wieviele Zustände bekommen
+        Sie?
+      </p>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./5-3.html">&lt;&lt; Kapitel 5.3<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Nichtdeterministische Endliche Automaten</span></a><a
+          href="./5-5.html"
+          class="menu-row-right"
+        >Kapitel 5.5 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Reguläre Ausdrücke</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

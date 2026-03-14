@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 3.1 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>TI2—Kapitel 3.1</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./3-0.html"
+        >&lt;&lt; Kapitel 3<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Unendliche Mengen</span></a><a
+          id="next-page"
+          href="./3-2.html"
+          class="menu-row-right"
+        >Kapitel 3.2 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Beispiele abzählbar unendlicher Mengen</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        3.1&ensp;Wer ist größer?
+      </p>
+    </div>
+    <p class="main-column">
+      Für endliche Mengen haben den Begriff der
+      <i>Größe</i>
+      $\{0,1,2,3,4,5,6,7,8,9\}$ hat zehn Elemente und ist
+      somit größer als
+      <span class="nowrap">$\{a,e,i,o,u\}$,</span>
+      die nur fünf
+      Elemente hat. Können wir auch für unendliche Mengen
+      einen Größenbegriff einführen, oder sie zumindest
+      hinsichtlich ihrer Größe vergleichen? Bei den
+      "üblichen" unendlichen Mengen $\N, \Z, \Q, \R$
+      scheint das zu gehen. Es gilt nämlich
+      <span class="nowrap">$\N \subsetneq \Z \subsetneq \Q \subsetneq \R$,</span>
+      und
+      damit können wir doch mit Fug und Recht behaupten:
+      <span class="nowrap"><i>Die Menge der ganzen Zahlen ist kleiner als die der
+          rationalen Zahlen</i>.</span>
+      Unser erster Versuch, unendliche
+      Mengen ihrer Größe nach zu vergleichen, verwendet
+      Mengeninklusion: wenn $A \subseteq B$ gilt, dann
+      sagen wir, dass $A$ kleiner gleich $B$ gilt.
+      Allerdings hat dieser Größenbegriff einen großen
+      Nachteil: welche der beiden Mengen ist Ihrer Meinung
+      denn größer:
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      \{\dots, -4, -2, 0, 2, 4, 6, \dots\} \quad
+      \textnormal{oder}\quad \{0,1,2,3, \dots\} ?
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Also die geraden ganzen Zahlen oder die natürlichen?
+      Oder noch schlimmer: ist $\Q$ oder $\{a,b\}^*$
+      größer? Die zweite Menge hat ja gar nichts mit Zahlen
+      zu tun, sondern besteht aus Strings mit den Symbolen
+      $a$ und
+      <span class="nowrap">$b$.</span>
+      Und generell: auch zwischen den Mengen
+      $\{0,1,2,3,4,5,6,7,8,9\}$ und $\{a,e,i,o,u\}$ gibt es
+      keine Inklusionsrelation, und dennoch ist erstere ganz
+      klar größer als letztere. Eine rigorose und belastbare
+      Weise, unendliche Mengen hinsichtlich ihrer Größe zu
+      vergleichen, hat
+      <a href="https://en.wikipedia.org/wiki/Georg_Cantor">Georg
+        Cantor</a>
+      Ende des 19. Jahrhunderts gefunden. Sie war anfangs
+      nicht unumstritten.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Beispiel 3.1.1</b>
+        Beginnen wir mit einem  einfachen Beispiel und
+        betrachten die zwei Mengen $\N = \{0,1,2,3,4,\dots\}$
+        und
+        <span class="nowrap">$\N^+ = \{1,2,3,4,\dots\}$.</span>
+        Beide sind unendlich,
+        und
+        <span class="nowrap">$\N^+ \subsetneq \N$.</span>
+        Dennoch sind sie in
+        gewisser Weise gleich groß. Ihre Elemente lassen sich
+        nämlich einander paarweise zuordnen:
+      </p>
+      <div class="figure__container">
+        <figure>
+          <img src="img/infinite-sets/N-N-plus.svg">
+        </figure>
+      </div>
+      <p>
+        Wir können diese Zuordnung auch mit einer einfachen
+        Formel beschreiben. Die Funktion
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        f : \N&amp;\rightarrow \N^+ \\ n&amp;\mapsto n+1
+        \end{align*}
+        $$
+      </div>
+      <p>
+        ist eine Bijektion.
+      </p>
+    </div>
+    <p class="main-column">
+      Diese anfangs etwas überraschende Tatsache, dass $\N$
+      und $\N^+$ "gleich groß" sind, ist als
+      <i>Hilberts
+        Hotel</i>
+      bekannt. Das Hotel hat unendlich viele Zimmer,
+      für jede Zahl $n \in \N^+$ eins. Dann kommt ein neuer
+      Gast (die
+      <span class="nowrap">$0$)</span>
+      und braucht ein Zimmer. Er kriegt das
+      Zimmer
+      <span class="nowrap">$1$.</span>
+      Da dies aber schon belegt ist, wird die
+      Person, die bisher in Zimmer 1 logiert hat, auf Zimmer
+      2 verlegt; die dortige auf Zimmer 3, und so weiter.
+      Das Hotel ist also voll belegt, kann aber dennoch
+      weitere Gäste aufnehmen.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Beispiel 3.1.2</b>
+        Ermutigt von unserem Erfolg gerade eben betrachten
+        wir zwei unendliche Mengen, die sich stärker
+        unterscheiden: $\N$ und
+        <span class="nowrap">$\Z = \{\dots, -2, -1, 0, 1, 2, \dots\}$.</span>
+        Wir können
+        diese beiden nicht so schön nebeneinander legen wie
+        $\N$ und $\N^+$ in der obigen Abbildung. Um die
+        Elemente paarweise zuzuordnen, müssen wir hin- und
+        herspringen:
+      </p>
+      <div class="figure__container">
+        <figure>
+          <img
+            style="width: 70%"
+            src="img/infinite-sets/N-to-Z.svg"
+          >
+        </figure>
+      </div>
+      <p>
+        Dies ist etwas unübersichtlich. Besser geht es, wenn
+        wir $\Z$ umstellen:
+      </p>
+      <div class="figure__container">
+        <figure>
+          <img
+            style="width: 70%"
+            src="img/infinite-sets/N-to-Z-nicer.svg"
+          >
+        </figure>
+      </div>
+      <p>
+        Wir können also unsere Bijektion
+        $f : \N \rightarrow \Z$ wie folgt definieren:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        f : \N&amp;\rightarrow \Z \\ n&amp;\mapsto \begin{cases} \frac{n}{2} &amp; \textnormal{ wenn $n$ gerade ist,} \\
+        - \frac{n+1}{2} &amp; \textnormal{ wenn $n$ ungerade ist.} \end{cases}
+        \end{align*}
+        $$
+      </div>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 3.1.1</b>
+        Finden Sie eine "geschlossene" Form für die Bijektion
+        <span class="nowrap">$f : \N \rightarrow \Z$.</span>
+        Mit "geschlossen" meine ich,
+        dass Sie sie mit den üblichen Operatoren (mal, plus,
+        hoch, minus, geteilt durch) ohne Fallunterscheidung
+        schreiben können.
+        <b>Anmerkung:</b>
+        es ist überhaupt nicht
+        schlimm, eine Funktion mit einer Fallunterscheidung zu
+        definieren. Sie ist dadurch nicht etwa eine "Funktion
+        zweiter Klasse".
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 3.1.2</b>
+        Finden Sie die Umkehrfunktion
+        <span class="nowrap">$f^{-1} : \Z \rightarrow \N$.</span>
+        Gerne anfangs mit
+        Fallunterscheidung, dann bitte als geschlossene Formel
+        ohne Fallunterscheidung.
+      </p>
+    </div>
+    <p class="main-column">
+      Wir sind nun reif für eine formale Definition:
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Definition 3.1.3</b>
+        Zwei Mengen $A$ und $B$ heißen
+        <span class="nowrap"><i>gleichmächtig</i>,</span>
+        wenn
+        es eine Bijektion $f : A \rightarrow B$ gibt. Wir
+        schreiben in diesem Falle
+        <span class="nowrap">$A \approx B$.</span>
+        Es gilt
+        trivialerweise immer
+        <span class="nowrap">$A \approx A$,</span>
+        da wir ja die
+        Identitätsfunktion $x \mapsto x$ als Bijektion nehmen
+        können. Wenn es eine Bijektion $f : A \rightarrow B$
+        gibt, dann natürlich auch eine Umkehrfunktion
+        <span class="nowrap">$f^{-1} : B \rightarrow A$.</span>
+        Wenn $f : A \rightarrow B$
+        und $g : B \rightarrow C$ Bijektionen sind, dann ist
+        $g \circ f : A \rightarrow C$ auch eine. Wir sehen:
+        Die Relation $\approx$ ist reflexiv, symmetrisch und
+        transitiv und ist somit eine
+        <span class="nowrap"><i>Äquivalenzrelation</i>.</span>
+      </p>
+    </div>
+    <div class="well statement out">
+      <p>
+        <b>Definition 3.1.4</b>
+        Eine Menge $A$ mit
+        <span class="nowrap">$A \approx \N$,</span>
+        die also
+        gleichmächtig zu den natürlichen Zahlen ist, nennt man
+        <span class="nowrap"><i>abzählbar unendlich</i>,</span>
+        auf Englisch
+        <i>countably
+          infinite</i>
+        oder einfach
+        <span class="nowrap"><i>countable</i>.</span>
+      </p>
+    </div>
+    <p class="main-column">
+      Wie wir sehen werden, gibt es tatsächlich unendliche
+      Mengen, die
+      <i>nicht</i>
+      gleichmächtig mit $\N$ sind, weil
+      sie "viel viel größer" sind. Wir nennen sie
+      <i>überabzählbare</i>
+      Mengen, auf Englisch
+      <span class="nowrap"><i>uncountably
+          infinite</i>.</span>
+    </p>
+    <h2 class="main-column topic-announcement">
+      Was ist unendlich?
+    </h2>
+    <p class="main-column">
+      Der Begriff der Gleichmächtigkeit liefert uns nun
+      eine wunderbar einfache und rigorose Definition von
+      Unendlichkeit.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Definition 3.1.5</b>
+        Eine Menge $A$ heißt
+        <span class="nowrap"><i>unendlich</i>,</span>
+        wenn es eine echte
+        Teilmenge $A' \subsetneq A$ gibt, zu der sie
+        gleichmächtig ist, also
+        <span class="nowrap">$A' \approx A$.</span>
+      </p>
+    </div>
+    <p class="main-column">
+      Als Beispiel haben wir $\N^+ \subsetneq \N$ mit
+      $\N^+ \approx \N$ gesehen. Also ist $\N$ im obigen
+      Sinne unendlich.
+    </p>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 3.1.3</b>
+        Zeigen Sie: wenn eine Menge $A$ unendlich ist (im
+        Sinne der obigen Definition), dann gibt es eine
+        Teilmenge $X \subseteq A$ mit
+        <span class="nowrap">$X \approx \N$.</span>
+        <b>Hinweis:</b>
+        Tappen Sie nicht in die "Das ist doch
+        offensichtlich"-Falle: die Menge $A$ könnte ja viel
+        größer sein als $\N$ und keine für Sie "greifbare"
+        Struktur haben. Ihre Aufgabe ist es, dennoch eine
+        abzählbar unendliche Teilmenge $X \subseteq A$ zu
+        finden.
+      </p>
+    </div>
+    <p class="main-column">
+      Angesichts der letzten Übungsaufgabe können wir also
+      sagen, dass abzählbare Unendlichkeit die kleinste
+      Stufe der Unendlichkeit ist. Unterhalb von abzählbar
+      kommen nur noch die endlichen Mengen.
+    </p>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./3-0.html">&lt;&lt; Kapitel 3<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Unendliche Mengen</span></a><a
+          href="./3-2.html"
+          class="menu-row-right"
+        >Kapitel 3.2 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Beispiele abzählbar unendlicher Mengen</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

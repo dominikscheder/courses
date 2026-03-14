@@ -1,10 +1,10 @@
+import blame as bl
+import desugarer_library as dl
 import gleam/list
 import gleam/string
-import desugarer_library as dl
+import group_replacement_splitting as grs
 import infrastructure.{type Pipe} as infra
 import prefabricated_pipelines as pp
-import group_replacement_splitting as grs
-import blame as bl
 import vxml
 
 const our_blame = bl.Des([], "main_pipeline", 9)
@@ -79,11 +79,12 @@ const p_cannot_be_contained_in = [
 
 const post_counter_space = " "
 
-pub fn main_pipeline(author_mode: Bool)  -> List(Pipe) {
-  let escaped_dollar_to_span_rr_splitter = grs.rr_splitter_for_groups([
-    #("\\\\", grs.Trash),
-    #("\\$", grs.TagWithTextChild("span"))
-  ])
+pub fn main_pipeline(input_dir: String, author_mode: Bool) -> List(Pipe) {
+  let escaped_dollar_to_span_rr_splitter =
+    grs.rr_splitter_for_groups([
+      #("\\\\", grs.Trash),
+      #("\\$", grs.TagWithTextChild("span")),
+    ])
 
   let pre_transformation_document_tags = [
     "Algorithm",
@@ -105,12 +106,12 @@ pub fn main_pipeline(author_mode: Bool)  -> List(Pipe) {
     "Observation",
     "Problem",
     "Proof",
-    "QED", 
+    "QED",
     "Remark",
-    "Statement", 
+    "Statement",
     "Sub",
-    "SubTitle", 
-    "SubtopicAnnouncement", 
+    "SubTitle",
+    "SubtopicAnnouncement",
     "Theorem",
     "TopicAnnouncement",
     "WriterlyBlankLine",
@@ -118,12 +119,42 @@ pub fn main_pipeline(author_mode: Bool)  -> List(Pipe) {
     "WriterlyComment",
   ]
 
-  let pre_transformation_html_tags = ["div", "a", "pre", "span", "br", "hr", "img", "figure", "figcaption", "ol", "ul", "li"]
-  let pre_transformation_approved_tags = [pre_transformation_document_tags, pre_transformation_html_tags] |> list.flatten
-  
+  let pre_transformation_html_tags = [
+    "div",
+    "a",
+    "pre",
+    "span",
+    "br",
+    "hr",
+    "img",
+    "figure",
+    "figcaption",
+    "ol",
+    "ul",
+    "li",
+  ]
+  let pre_transformation_approved_tags =
+    [pre_transformation_document_tags, pre_transformation_html_tags]
+    |> list.flatten
+
   let post_transformation_document_tags = ["Document"]
-  let post_transformation_html_tags = pre_transformation_html_tags |> list.append(["header", "nav", "section", "h1", "h2", "h3", "p", "b", "i", "code"])
-  let post_transformation_approved_tags = [post_transformation_document_tags, post_transformation_html_tags] |> list.flatten
+  let post_transformation_html_tags =
+    pre_transformation_html_tags
+    |> list.append([
+      "header",
+      "nav",
+      "section",
+      "h1",
+      "h2",
+      "h3",
+      "p",
+      "b",
+      "i",
+      "code",
+    ])
+  let post_transformation_approved_tags =
+    [post_transformation_document_tags, post_transformation_html_tags]
+    |> list.flatten
 
   let main_column_elements = [
     "p",
@@ -140,21 +171,24 @@ pub fn main_pipeline(author_mode: Bool)  -> List(Pipe) {
       [vxml.Attr(our_blame, "style", "color:#0000;visibility:none;")],
       [vxml.T(our_blame, [vxml.Line(our_blame, "A")])],
     ),
-    vxml.V(
-      our_blame,
-      "span",
-      [vxml.Attr(our_blame, "class", "qed")],
-      [vxml.T(our_blame, [vxml.Line(our_blame, "\\(\\square\\)")])],
-    ),
+    vxml.V(our_blame, "span", [vxml.Attr(our_blame, "class", "qed")], [
+      vxml.T(our_blame, [vxml.Line(our_blame, "\\(\\square\\)")]),
+    ]),
   ]
 
   let assert Ok(pseudowell) = infra.expand_selector_shorthand("div.pseudowell")
-  let assert Ok(figure__container) = infra.expand_selector_shorthand("div.figure__container")
-  let assert Ok(group__container) = infra.expand_selector_shorthand("div.group__container")
-  let assert Ok(end_of_page_element) = infra.expand_selector_shorthand("EndOfPageElt#end-of-page-elt")
-  let assert Ok(body_wrapper) = infra.expand_selector_shorthand("BodyWrapper#body-wrapper")
-  let assert Ok(group_scaler) = infra.expand_selector_shorthand("div.group_scaler")
-  let assert Ok(group_placeholder) = infra.expand_selector_shorthand("div.group_placeholder")
+  let assert Ok(figure__container) =
+    infra.expand_selector_shorthand("div.figure__container")
+  let assert Ok(group__container) =
+    infra.expand_selector_shorthand("div.group__container")
+  let assert Ok(end_of_page_element) =
+    infra.expand_selector_shorthand("EndOfPageElt#end-of-page-elt")
+  let assert Ok(body_wrapper) =
+    infra.expand_selector_shorthand("BodyWrapper#body-wrapper")
+  let assert Ok(group_scaler) =
+    infra.expand_selector_shorthand("div.group_scaler")
+  let assert Ok(group_placeholder) =
+    infra.expand_selector_shorthand("div.group_placeholder")
 
   // ****************************************************
   // * use 'dl.table_marker()' desugarer to mark a line *
@@ -165,19 +199,37 @@ pub fn main_pipeline(author_mode: Bool)  -> List(Pipe) {
     [
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
       dl.delete("WriterlyComment"),
-      dl.delete_attribute_if(fn(key, _) { string.starts_with(key, "!!")}),
+      dl.delete_attribute_if(fn(key, _) { string.starts_with(key, "!!") }),
       dl.rename(#("WriterlyCodeBlock", "pre")),
       dl.append(#("Proof", "QED", infra.Continue)),
-      dl.rename_with_attributes(#("Theorem", "Statement", [#("title", "*Theorem*")])),
-      dl.rename_with_attributes(#("Definition", "Statement", [#("title", "*Definition*")])),
-      dl.rename_with_attributes(#("Observation", "Statement", [#("title", "*Beobachtung*")])),
-      dl.rename_with_attributes(#("Example", "Statement", [#("title", "*Beispiel*")])),
-      dl.rename_with_attributes(#("Lemma", "Statement", [#("title", "*Lemma*")])),
-      dl.rename_with_attributes(#("Claim", "Statement", [#("title", "*Behauptung*")])),
-      dl.rename_with_attributes(#("Problem", "Statement", [#("title", "*Problem*")])),
-      dl.rename_with_attributes(#("Algorithm", "Statement", [#("title", "*Algorithmus*")])),
+      dl.rename_with_attributes(
+        #("Theorem", "Statement", [#("title", "*Theorem*")]),
+      ),
+      dl.rename_with_attributes(
+        #("Definition", "Statement", [#("title", "*Definition*")]),
+      ),
+      dl.rename_with_attributes(
+        #("Observation", "Statement", [#("title", "*Beobachtung*")]),
+      ),
+      dl.rename_with_attributes(
+        #("Example", "Statement", [#("title", "*Beispiel*")]),
+      ),
+      dl.rename_with_attributes(
+        #("Lemma", "Statement", [#("title", "*Lemma*")]),
+      ),
+      dl.rename_with_attributes(
+        #("Claim", "Statement", [#("title", "*Behauptung*")]),
+      ),
+      dl.rename_with_attributes(
+        #("Problem", "Statement", [#("title", "*Problem*")]),
+      ),
+      dl.rename_with_attributes(
+        #("Algorithm", "Statement", [#("title", "*Algorithmus*")]),
+      ),
       dl.rename_with_attributes(#("Demo", "Statement", [#("title", "*Demo*")])),
-      dl.rename_with_attributes(#("Proof", "Highlight", [#("title", "*Beweis.*")])),
+      dl.rename_with_attributes(
+        #("Proof", "Highlight", [#("title", "*Beweis.*")]),
+      ),
       dl.ti2_add_should_be_numbers(),
       dl.ti2_backfill(),
       dl.append_attribute__batch([
@@ -186,34 +238,100 @@ pub fn main_pipeline(author_mode: Bool)  -> List(Pipe) {
         #("Chapter", "counter", "ExerciseCounter"),
         #("Chapter", "counter", "StatementCounter"),
         #("Sub", "counter", "ExerciseCounter"),
-        #("Sub", "counter", "StatementCounter")
+        #("Sub", "counter", "StatementCounter"),
       ]),
-      dl.prepend_attribute(#("Chapter", "path", "./::øøChapterCounter-0.html", infra.GoBack)),
-      dl.prepend_attribute(#("Sub", "path", "./::øøChapterCounter-::øøSubCounter.html", infra.GoBack)),
-      dl.prepend_counter_incrementing_attribute(#("Chapter", "ChapterCounter", infra.GoBack)),
-      dl.prepend_counter_incrementing_attribute(#("Sub", "SubCounter", infra.GoBack)),
-      dl.prepend_counter_incrementing_attribute(#("Exercise", "ExerciseCounter", infra.Continue)),
-      dl.prepend_counter_incrementing_attribute(#("Statement", "StatementCounter", infra.Continue)),
+      dl.prepend_attribute(#(
+        "Chapter",
+        "path",
+        "./::øøChapterCounter-0.html",
+        infra.GoBack,
+      )),
+      dl.prepend_attribute(#(
+        "Sub",
+        "path",
+        "./::øøChapterCounter-::øøSubCounter.html",
+        infra.GoBack,
+      )),
+      dl.prepend_counter_incrementing_attribute(#(
+        "Chapter",
+        "ChapterCounter",
+        infra.GoBack,
+      )),
+      dl.prepend_counter_incrementing_attribute(#(
+        "Sub",
+        "SubCounter",
+        infra.GoBack,
+      )),
+      dl.prepend_counter_incrementing_attribute(#(
+        "Exercise",
+        "ExerciseCounter",
+        infra.Continue,
+      )),
+      dl.prepend_counter_incrementing_attribute(#(
+        "Statement",
+        "StatementCounter",
+        infra.Continue,
+      )),
       dl.set_handle_value(#("Chapter", "::øøChapterCounter", infra.GoBack)),
-      dl.set_handle_value(#("Sub", "::øøChapterCounter.::øøSubCounter", infra.GoBack)),
-      dl.set_handle_value_if_has_ancestor_else(#("Statement", "Sub", "::øøChapterCounter.::øøSubCounter.::øøStatementCounter", "::øøChapterCounter.::øøStatementCounter")),
-      dl.set_handle_value_if_has_ancestor_else(#("Exercise", "Sub", "::øøChapterCounter.::øøSubCounter.::øøExerciseCounter", "::øøChapterCounter.::øøExerciseCounter")),
-      dl.set_handle_value_if_has_ancestor_else(#("Topic", "Sub", "::øøChapterCounter.::øøSubCounter", "::øøChapterCounter")),
-      dl.auto_generate_child_if_missing_from_attribute(#("Chapter", "ChapterTitle", "title")),
-      dl.auto_generate_child_if_missing_from_attribute(#("Sub", "SubTitle", "title")),
-      dl.prepend_attribute(#("ChapterTitle", "number-chiron", "::øøChapterCounter.", infra.GoBack)),
-      dl.prepend_attribute(#("SubTitle", "number-chiron", "::øøChapterCounter.::øøSubCounter", infra.GoBack)),
+      dl.set_handle_value(#(
+        "Sub",
+        "::øøChapterCounter.::øøSubCounter",
+        infra.GoBack,
+      )),
+      dl.set_handle_value_if_has_ancestor_else(#(
+        "Statement",
+        "Sub",
+        "::øøChapterCounter.::øøSubCounter.::øøStatementCounter",
+        "::øøChapterCounter.::øøStatementCounter",
+      )),
+      dl.set_handle_value_if_has_ancestor_else(#(
+        "Exercise",
+        "Sub",
+        "::øøChapterCounter.::øøSubCounter.::øøExerciseCounter",
+        "::øøChapterCounter.::øøExerciseCounter",
+      )),
+      dl.set_handle_value_if_has_ancestor_else(#(
+        "Topic",
+        "Sub",
+        "::øøChapterCounter.::øøSubCounter",
+        "::øøChapterCounter",
+      )),
+      dl.auto_generate_child_if_missing_from_attribute(#(
+        "Chapter",
+        "ChapterTitle",
+        "title",
+      )),
+      dl.auto_generate_child_if_missing_from_attribute(#(
+        "Sub",
+        "SubTitle",
+        "title",
+      )),
+      dl.prepend_attribute(#(
+        "ChapterTitle",
+        "number-chiron",
+        "::øøChapterCounter.",
+        infra.GoBack,
+      )),
+      dl.prepend_attribute(#(
+        "SubTitle",
+        "number-chiron",
+        "::øøChapterCounter.::øøSubCounter",
+        infra.GoBack,
+      )),
       dl.prepend_text_node_if_has_ancestor_else__batch([
         #(
           "Exercise",
           "Sub",
-          "*Übungsaufgabe ::øøChapterCounter.::øøSubCounter.::øøExerciseCounter*" <> post_counter_space,
-          "*Übungsaufgabe ::øøChapterCounter.::øøExerciseCounter*" <> post_counter_space,
+          "*Übungsaufgabe ::øøChapterCounter.::øøSubCounter.::øøExerciseCounter*"
+            <> post_counter_space,
+          "*Übungsaufgabe ::øøChapterCounter.::øøExerciseCounter*"
+            <> post_counter_space,
         ),
         #(
           "Statement",
           "Sub",
-          " *::øøChapterCounter.::øøSubCounter.::øøStatementCounter*" <> post_counter_space,
+          " *::øøChapterCounter.::øøSubCounter.::øøStatementCounter*"
+            <> post_counter_space,
           " *::øøChapterCounter.::øøStatementCounter*" <> post_counter_space,
         ),
       ]),
@@ -222,11 +340,24 @@ pub fn main_pipeline(author_mode: Bool)  -> List(Pipe) {
       dl.prepend_attribute_as_text(#("Remark", "title")),
       dl.substitute_counters(),
     ],
-    pp.create_mathblock_elements([infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
-    pp.create_math_elements([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar, infra.BackslashParenthesis),
+    pp.create_mathblock_elements(
+      [infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar],
+      infra.DoubleDollar,
+    ),
+    pp.create_math_elements(
+      [infra.BackslashParenthesis, infra.SingleDollar],
+      infra.SingleDollar,
+      infra.BackslashParenthesis,
+    ),
     [
-      dl.regex_split_and_replace__outside(escaped_dollar_to_span_rr_splitter, ["Math", "MathBlock"]),
-      dl.group_consecutive_children__outside(#("p", p_cannot_contain), p_cannot_be_contained_in),
+      dl.regex_split_and_replace__outside(escaped_dollar_to_span_rr_splitter, [
+        "Math",
+        "MathBlock",
+      ]),
+      dl.group_consecutive_children__outside(
+        #("p", p_cannot_contain),
+        p_cannot_be_contained_in,
+      ),
       dl.unwrap("WriterlyBlankLine"),
       dl.trim("p"),
       dl.delete_if_empty("p"),
@@ -240,33 +371,74 @@ pub fn main_pipeline(author_mode: Bool)  -> List(Pipe) {
       dl.ti2_add_listing_bol_spans(),
       dl.ti2_create_index(),
       dl.ti2_add_prev_next_chapter_title_elements(),
-      dl.insert_custom_before_first(#("Chapter", end_of_page_element, "Sub", infra.GoBack)),
+      dl.insert_custom_before_first(#(
+        "Chapter",
+        end_of_page_element,
+        "Sub",
+        infra.GoBack,
+      )),
       dl.append_custom(#("Sub", end_of_page_element, infra.GoBack)),
       dl.append_custom(#("Index", end_of_page_element, infra.GoBack)),
       dl.table_marker(),
       dl.ti2_create_menu(),
       dl.delete__batch(["PrevChapterOrSubTitle", "NextChapterOrSubTitle"]),
-      dl.wrap_and_custom_steal(#("Carousel", "CarouselContainer", infra.is_v_and_has_class(_, "topcaption"), infra.is_v_and_tag_equals(_, "figcaption"))),
+      dl.wrap_and_custom_steal(
+        #(
+          "Carousel",
+          "CarouselContainer",
+          infra.is_v_and_has_class(_, "topcaption"),
+          infra.is_v_and_tag_equals(_, "figcaption"),
+        ),
+      ),
       dl.ti2_expand_carousels(),
       dl.ti2_cut_paste_width_height_to_descendant_img(["Group", "figure"]),
-      dl.insert_attribute_value_at_first_child_start(#("ChapterTitle", "number-chiron", "&ensp;", infra.GoBack)),
-      dl.insert_attribute_value_at_first_child_start(#("SubTitle", "number-chiron", "&ensp;", infra.GoBack)),
+      dl.insert_attribute_value_at_first_child_start(#(
+        "ChapterTitle",
+        "number-chiron",
+        "&ensp;",
+        infra.GoBack,
+      )),
+      dl.insert_attribute_value_at_first_child_start(#(
+        "SubTitle",
+        "number-chiron",
+        "&ensp;",
+        infra.GoBack,
+      )),
     ],
     pp.annotated_backtick_splitting("span", "class", ["MathBlock", "Math"]),
     pp.markdown_link_splitting(["MathBlock", "Math"]),
-    pp.barbaric_symmetric_delim_splitting("`", "`", "code", ["MathBlock", "Math", "pre"]),
-    pp.barbaric_symmetric_delim_splitting("_", "_", "i", ["MathBlock", "Math", "pre", "code"]),
-    pp.barbaric_symmetric_delim_splitting("\\*", "*", "b", ["MathBlock", "Math", "pre", "code"]),
+    pp.barbaric_symmetric_delim_splitting("`", "`", "code", [
+      "MathBlock",
+      "Math",
+      "pre",
+    ]),
+    pp.barbaric_symmetric_delim_splitting("_", "_", "i", [
+      "MathBlock",
+      "Math",
+      "pre",
+      "code",
+    ]),
+    pp.barbaric_symmetric_delim_splitting("\\*", "*", "b", [
+      "MathBlock",
+      "Math",
+      "pre",
+      "code",
+    ]),
     [
       dl.bridge_whitespace("b"),
-      dl.wrap_adjacent_non_whitespace_text_with(#(["Math", "i", "b", "code"], "NoWrap")),
+      dl.wrap_adjacent_non_whitespace_text_with(#(
+        ["Math", "i", "b", "code"],
+        "NoWrap",
+      )),
       dl.table_marker(),
     ],
     pp.splitting_empty_lines_cleanup(),
     [
       dl.handles_add_ids(),
       dl.handles_generate_dictionary_and_id_list("path"),
-      dl.handles_substitute_and_fix_nonlocal_id_links(#("path", "a", "a", [], [])),
+      dl.handles_substitute_and_fix_nonlocal_id_links(
+        #("path", "a", "a", [], []),
+      ),
       dl.tokenize_href_surroundings(),
       dl.rearrange_links_4_pre_tokenized_src__batch([
         #("Theorem <a href=1>_1_</a>", "<a href=1>Theorem _1_</a>"),
@@ -309,30 +481,62 @@ pub fn main_pipeline(author_mode: Bool)  -> List(Pipe) {
       dl.wrap_if_child_of(#("ul", "div", ["Sub", "Chapter"])),
       dl.append_class_to_child_if_has_class(#("Chapter", "out", "well")),
       dl.append_class_to_child_if_has_class(#("Sub", "out", "well")),
-      dl.append_class_to_child_if_is_one_of(#("Chapter", "main-column", main_column_elements)),
-      dl.append_class_to_child_if_is_one_of(#("Sub", "main-column", main_column_elements)),
-      dl.wrap_with_custom_if_not_child_of(#("figure", figure__container, ["Sub", "Chapter"])),
-      dl.wrap_with_custom_if_child_of(#("figure", pseudowell, ["Sub", "Chapter"])),
-      dl.wrap_with_custom_if_child_of(#("CarouselContainer", pseudowell, ["Sub", "Chapter"])),
-      dl.wrap_with_custom_if_not_child_of(#("Group", group__container, ["Sub", "Chapter"])),
-      dl.wrap_with_custom_if_child_of(#("Group", pseudowell, ["Sub", "Chapter"])),
+      dl.append_class_to_child_if_is_one_of(#(
+        "Chapter",
+        "main-column",
+        main_column_elements,
+      )),
+      dl.append_class_to_child_if_is_one_of(#(
+        "Sub",
+        "main-column",
+        main_column_elements,
+      )),
+      dl.wrap_with_custom_if_not_child_of(
+        #("figure", figure__container, ["Sub", "Chapter"]),
+      ),
+      dl.wrap_with_custom_if_child_of(
+        #("figure", pseudowell, ["Sub", "Chapter"]),
+      ),
+      dl.wrap_with_custom_if_child_of(
+        #("CarouselContainer", pseudowell, ["Sub", "Chapter"]),
+      ),
+      dl.wrap_with_custom_if_not_child_of(
+        #("Group", group__container, ["Sub", "Chapter"]),
+      ),
+      dl.wrap_with_custom_if_child_of(
+        #("Group", pseudowell, ["Sub", "Chapter"]),
+      ),
       dl.replace_with_arbitrary(#("QED", qed)),
-      dl.rename_with_class_and_attributes(#("CircleX", "img", "circle-X-img", [#("src", "img/context-free/LR/circle-X.svg")])),
+      dl.rename_with_class_and_attributes(
+        #("CircleX", "img", "circle-X-img", [
+          #("src", "img/context-free/LR/circle-X.svg"),
+        ]),
+      ),
       dl.append_class__batch([
         #("TopicAnnouncement", "topic-announcement"),
         #("SubtopicAnnouncement", "subtopic-announcement"),
       ]),
-      dl.wrap_children_up_to_custom(#("Chapter", "Sub", body_wrapper, infra.GoBack)),
+      dl.wrap_children_up_to_custom(#(
+        "Chapter",
+        "Sub",
+        body_wrapper,
+        infra.GoBack,
+      )),
       dl.wrap_children_custom(#("Sub", body_wrapper, infra.GoBack)),
       dl.wrap_children_custom(#("Index", body_wrapper, infra.GoBack)),
     ],
     case author_mode {
       False -> []
       True -> [
-        dl.ti2_turn_lines_into_3003_spans("./wly/", ["Math", "MathBlock", "TopMenu", "BottomMenu"]),
-        dl.ti2_adorn_img_with_3003_spans("./public/", []),
-        dl.ti2_adorn_with_3003_spans(#("./wly/", "", ["MathBlock"])),
-        dl.ti2_wrap_with_3003_spans(#("./wly/", "", ["Math"])),
+        dl.ti2_turn_lines_into_3003_spans("./" <> input_dir <> "/wly/", [
+          "Math",
+          "MathBlock",
+          "TopMenu",
+          "BottomMenu",
+        ]),
+        dl.ti2_adorn_img_with_3003_spans("./" <> input_dir <> "/public/", []),
+        dl.ti2_adorn_with_3003_spans(#("./" <> input_dir <> "/wly/", "", ["MathBlock"])),
+        dl.ti2_wrap_with_3003_spans(#("./" <> input_dir <> "/wly/", "", ["Math"])),
       ]
     },
     [
@@ -364,9 +568,15 @@ pub fn main_pipeline(author_mode: Bool)  -> List(Pipe) {
         #("BodyWrapper", "div"),
         #("EndOfPageElt", "div"),
       ]),
-      dl.delete_attribute__batch(["_", "counter", "title", "number-chiron", "original"]),
-      dl.check_tags(#(post_transformation_approved_tags,"post-transformation")),
-    ]
+      dl.delete_attribute__batch([
+        "_",
+        "counter",
+        "title",
+        "number-chiron",
+        "original",
+      ]),
+      dl.check_tags(#(post_transformation_approved_tags, "post-transformation")),
+    ],
   ]
   |> list.flatten
   |> infra.desugarers_2_pipeline

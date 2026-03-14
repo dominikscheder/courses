@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 2.1 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>TI2—Kapitel 2.1</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./2-0.html"
+        >&lt;&lt; Kapitel 2<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Boolesche Schaltkreise (nicht im Sommersemester 2025)</span></a><a
+          id="next-page"
+          href="./2-2.html"
+          class="menu-row-right"
+        >Kapitel 2.2 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Wahrheitstabellen, CNF, DNF</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        2.1&ensp;Fanin, Tiefe, Größe
+      </p>
+    </div>
+    <p class="main-column">
+      Für Boolesche Schaltkreise gibt es drei
+      Komplexitätsparameter, die uns interessieren.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Definition 2.1.1</b>
+        Die
+        <i>Größe</i>
+        eines Schaltkreises ist die Anzahl seiner
+        Gates, also die Anzahl der Knoten im zugrundeliegenden
+        DAG. Die Teife ist die Länge des längsten gerichteten
+        Pfades von einem Input- zu einem Output-Gate. Der
+        Maximum-Fan-in ist der maximale Rein-Grad aller
+        Knoten, also der maximale Fan-in aller Gates.
+      </p>
+    </div>
+    <p class="main-column">
+      <b>Vorsicht.</b>
+      Manchmal werden zur Bestimmung der Tiefe
+      die NOT-Gates nicht mitgezählt. Entlang eines Pfades
+      wird also gelegentlich nur die Anzahl der AND- und
+      OR-Gates bestimmt. Für alle Parameter Größe, Tiefe,
+      Maximum-Fan-in gilt: klein ist gut. Dies ist klar,
+      wenn Sie sich vorstellen, dass Schaltkreis industriell
+      zum Einsatz kommt. Die Größe bestimmt die Anzahl der
+      Transistoren, die Sie brauchen; die Tiefe bestimmt die
+      Dauer, die das Signal braucht, um durch den ganzen
+      Schaltkreis zu laufen und bestimmt somit die
+      Geschwindigkeit, mit der Ihr Schaltkreis seinen Job
+      erledigt. Der Fan-in ist eher von theoretischem
+      Interesse. Wie bereits oben gesehen, können wir immer
+      einen Fan-in von 2 garantieren, indem wir AND- und
+      OR-Gates mit mehr als zwei Inputs als verschachteltes
+      AND oder OR darstellen:
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="height:10em"
+          src="img/circuits/and-n-fold-linear-depth.svg"
+        >
+      </figure>
+    </div>
+    <p class="main-column">
+      oder alternativ:
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="height:10em"
+          src="img/circuits/and-n-fold-log-depth.svg"
+        >
+      </figure>
+    </div>
+    <p class="main-column">
+      In beiden Fällen ersetzen wir ein AND-Gate von Fan-in
+      $n$ durch $n - 1$ AND-Gates von je Fan-in 2. Wenn wir
+      allerdings die Tiefe betrachten, so sehen wir, dass
+      der linke Schaltkreis Tiefe $n - 1$ hat, der rechte
+      jedoch nur
+      <span class="nowrap">$\ceil{\log_2(n)}$.</span>
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Theorem 2.1.2</b>
+        Sei $C$ ein Schaltkreis Maximum-Fan-in $k$ Größe $s$
+        und Tiefe
+        <span class="nowrap">$d$.</span>
+        Dann gibt es einen äquivalenten
+        Schaltkreis $C^{\prime}$ mit Maximum-Fan-in
+        <span class="nowrap">$2$,</span>
+        Größe höchstens $s(k - 1)$ und Tiefe höchstens
+        <span class="nowrap">$d \ceil{\log_{2}k}$.</span>
+      </p>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./2-0.html">&lt;&lt; Kapitel 2<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Boolesche Schaltkreise (nicht im Sommersemester 2025)</span></a><a
+          href="./2-2.html"
+          class="menu-row-right"
+        >Kapitel 2.2 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Wahrheitstabellen, CNF, DNF</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

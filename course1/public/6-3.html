@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 6.3 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>TI2—Kapitel 6.3</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./6-2.html"
+        >&lt;&lt; Kapitel 6.2<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Kontextfreie Grammatiken und Kellerautomaten</span></a><a
+          id="next-page"
+          href="./6-4.html"
+          class="menu-row-right"
+        >Kapitel 6.4 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          ><span class="nowrap">LL($k$)-Grammatiken</span>
+            (nicht im Sommersemester 2025)</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        6.3&ensp;Rechnerübung: Gute kontextfreie Grammatiken entwerfen
+      </p>
+    </div>
+    <p class="main-column">
+      Benutzen Sie die App
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html">drawManualGrammar.html</a>,
+      um mit kontextfreien Grammatik zu experimentieren:
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html"><img
+            style="height:20em"
+            src="img/cfg-manual-screenshot-2.png"
+          ></a>
+      </figure>
+    </div>
+    <p class="main-column">
+      Diese besteht aus folgenden Teilen:
+    </p>
+    <div class="main-column">
+      <ol>
+        <li>
+          <p>
+            Dem Eingabefenster für die Grammatik links oben. Hier
+            können Sie Ihre eigene Grammatik eingeben.
+          </p>
+        </li>
+        <li>
+          <p>
+            Dem Eingabefenster für das Eingabewort.
+          </p>
+        </li>
+        <li>
+          <p>
+            Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist
+            der Versuch, das Eingabewort aus den Grammatikregeln
+            per Linksableitung abzuleiten. Die Pfade, die in
+            Sackgassen enden, sind rot markiert.
+          </p>
+        </li>
+        <li>
+          <p>
+            Der Ableitungsbaum. Für jeden Knoten $w$ im
+            Backtrack-Baum stellt der Pfad von Wurzel nach $w$
+            eine Linksableitung dar. Wenn Sie auf $w$ klicken,
+            sehen Sie den entsprechenden Ableitungsbaum. Per
+            Default wird die erste erfolgreiche Linksableitung in
+            einen Ableitungsbaum umgewandelt und angezeigt (wenn
+            es denn überhaupt eine erfolgreiche Ableitung gibt).
+          </p>
+        </li>
+      </ol>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 6.3.1</b>
+        Geben Sie folgende Grammatik in die App ein:
+      </p>
+<pre>
+S -&gt;; ;
+S -&gt;; "("S")"S ;
+S -&gt;; "(" S "]" S;
+</pre>
+      <p>
+        Was ist die erzeugte Sprache? Können Sie sie in
+        Worten beschreiben? Erzeugen Sie Wörter in dieser
+        Sprache, für die der Backtrack-Baum viele rote
+        Sackgassen enthält. Schreiben Sie eine äquivalente
+        Grammatik (d.h., die die gleiche Sprache erzeugt), für
+        die es keine oder nur sehr kurze Sackgassen gibt.
+        Testen Sie die beiden Grammatiken mit "großen"
+        Eingabewörtern und schauen Sie, ob Sie
+        Laufzeitunterschiede bemerken. (Hier erweist sich mein
+        ineffizienter Code als Vorteil: eine schlechte
+        Grammatik wird sofort bestraft).
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 6.3.2</b>
+        Schreiben Sie eine kontextfreie Grammatik für die
+        Sprache aller "korrekten" URLs; also Folgen von
+        mindestens zwei
+        <span class="nowrap"><i>Labels</i>,</span>
+        die durch
+        <code>.</code>
+        separiert
+        sind. Sie können den "Regelvorschlag" ganz links unten
+        in der App reinkopieren, um automatisch Regeln für
+        alphanumerische Zeichen zu bekommen (allerdings
+        verschlechtert das die Laufzeit; ich habe erstmal gar
+        nicht auf Effizienz geachtet). Geben Sie das
+        Eingabewort
+        <code>a.aaaaa.aaaa.aaaa.aaaa.aaaa</code>
+        ein. Wie
+        sieht Ihr Backtrack-Baum aus? Hat er viele Sackgassen?
+        Können Sie Ihre Grammatik so abändern, dass sie zwar
+        noch die gleiche Sprache erzeugt, aber keine / nur
+        wenige Sackgassen hat?
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 6.3.3</b>
+        Entwerfen Sie eine Grammatik für arithmetische
+        Ausdrücke im Racket-Stil, also
+      </p>
+<pre>
+(* (+ 2 3) (- 4 (* 2 4) 5)
+(+ 1 2 (* 2))
+</pre>
+      <p>
+        Leidet Ihre Grammatik an langen Sackgassen? Wenn ja,
+        können Sie die Grammatik abändern? Haben Sie
+        mittlerweile ein Schema erkannt, welche Konstrukte
+        lange Sackgassen begünstigen?
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 6.3.4</b>
+        Wiederholen Sie die vorherige Übung für arithmetische
+        Ausdrücke in der uns geläufigen Infix-Notation.
+        Hierbei sollten die Konventionen Punkt-vor-Strich
+        beachtet werden. Im Ableitungsbaum von
+      </p>
+<pre>
+2+3*(5+4)
+</pre>
+      <p>
+        sollte sich das wiederspiegeln.
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 6.3.5 (Challenge)</b>
+        Geben Sie die Grammatik hier ein:
+      </p>
+<pre>
+S -&gt;; "("S")"S;
+S -&gt;; "["S"("S;
+S -&gt;; ;
+</pre>
+      <p>
+        Überlegen Sie, was diese "bedeutet". Sie sehen, die
+        Grammatik ist nicht eindeutig. Das Wort
+        <code>[([()(</code>
+        hat
+        zwei verschiedene Ableitungsbäume. Können Sie eine
+        äquivalente
+        <i>eindeutige</i>
+        Grammatik schreiben?
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 6.3.6 (Challenge)</b>
+        Die folgende Grammatik hat User
+        <i>babou</i>
+        auf
+        <a href="https://cstheory.stackexchange.com/questions/22520/example-of-context-free-grammar-that-triggers-exponential-behaviour-without-memo">StackExchange</a>
+        vorgeschlagen als Beispiel für eine eindeutige
+        Grammatik, bei der Sie exponentiell große
+        Backtrack-Bäume bekommen können:
+      </p>
+<pre>
+S -&gt;;  "a" X "b" | "a" X "c";
+X -&gt;; "a" | "a" X | "a" X X;
+</pre>
+      <p>
+        Das ist aber keine Kunst, da die Grammatik
+        uneindeutig ist. Können Sie eine
+        <i>eindeutige</i>
+        Grammatik angebene, die ähnlich exponentielles
+        Verhalten zeigt? Exponentiell heißt: mit jedem
+        zusätlichen Zeichen des Eingabewortes kann die Größe
+        des Backtrack-Baumes um einen Faktor $R \gt 1$
+        wachsen.
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <span class="nowrap"><b>Übungsaufgabe 6.3.7 (Super-Challenge; ich hab selbst keine Lösung)</b>.</span>
+        Finden Sie eine kontextfreie Sprache
+        <span class="nowrap">$L$,</span>
+        für die
+        <i>jede</i>
+        Grammatik, die $L$ erzeugt, unter exponentiell
+        großen Backtrack-Bäumen leidet.
+      </p>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./6-2.html">&lt;&lt; Kapitel 6.2<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Kontextfreie Grammatiken und Kellerautomaten</span></a><a
+          href="./6-4.html"
+          class="menu-row-right"
+        >Kapitel 6.4 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          ><span class="nowrap">LL($k$)-Grammatiken</span>
+            (nicht im Sommersemester 2025)</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

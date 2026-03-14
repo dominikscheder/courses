@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 5.6 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>TI2—Kapitel 5.6</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./5-5.html"
+        >&lt;&lt; Kapitel 5.5<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Reguläre Ausdrücke</span></a><a
+          id="next-page"
+          href="./5-7.html"
+          class="menu-row-right"
+        >Kapitel 5.7 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Übungsaufgaben</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        5.6&ensp;Die Grenzen regulärer Sprachen
+      </p>
+    </div>
+    <p class="main-column">
+      Noch spannender, als zu erkunden, was möglich ist,
+      ist aus Sicht eines theoretischen Informatikers, zu
+      erkunden, was
+      <i>nicht möglich</i>
+      ist. Also Grenzen
+      aufzuzeigen. Wir haben in den letzten vier
+      Teilkapiteln gezeigt, was man mit regulären Sprachen
+      und endlichen Automaten alles beschreiben kann. Nun
+      wollen wir die Grenzen regulärer Sprachen verstehen,
+      also das, was sie nicht mehr beschreiben können.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Beispiel 5.6.1</b>
+        SEI $L$ die Sprache aller Wörter über dem Alphabet
+        <span class="nowrap">$\Sigma = \{a,b\}$,</span>
+        die die Form $a^n b^n$ haben;
+        also eine beliebig lange Folge von
+        <span class="nowrap">$a$s,</span>
+        gefolgt von
+        genau so vielen $b$ s. Hier ist eine kontextfreie
+        Grammatik für
+        <span class="nowrap">$L$:</span>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        S&amp;\rightarrow \epsilon \\
+        S&amp;\rightarrow aSb
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Können wir eine reguläre Grammatik für $L$ schreiben?
+        Irgendwie klingt das nicht plausibel. Reguläre
+        Grammatiken können ja immer nur ein Wort von links
+        nach rechts erzeugen; für $L$ scheint das irgendwie
+        nicht zu reichen.
+      </p>
+      <div class="well exercise">
+        <p>
+          <b>Übungsaufgabe 5.6.1</b>
+          Versuchen Sie ein paar Minuten, eine reguläre
+          Grammatik für $L$ zu schreiben oder versuchen Sie, zu
+          argumentieren, dass das nicht möglich ist.
+        </p>
+      </div>
+      <p>
+        Wir sind nun also recht überzeugt, dass $L$ nicht
+        regulär ist. Nur, wie können wir das formal beweisen?
+        Vielleicht könnten wir annehmen, dass es eine reguläre
+        Grammatik $G = (\{a,b\}, N, P, S)$ gibt und dann
+        argumentieren, dass $G$ nicht richtig ist; zum
+        Beispiel Produktionen danach einteilen, ob sie
+        $X \rightarrow aY$ oder $X \rightarrow bY$ machen,
+        und dann die darin involvieren Nichtterminale $X$ und
+        $Y$ weiter betrachten. Zu Hilfe kommt uns die
+        Tatsache, dass wir für reguläre Sprachen nun viele
+        äquivalente Modelle gefunden haben:
+      </p>
+      <ol>
+        <li>
+          <p>
+            Reguläre Grammatiken.
+          </p>
+        </li>
+        <li>
+          <p>
+            Erweitert reguläre Grammatiken, die also Produktionen
+            wie $X \rightarrow abY$ erlauben.
+          </p>
+        </li>
+        <li>
+          <p>
+            Vereinfachte reguläre Grammatiken, in denen
+            Produktionen wie $X \rightarrow a$ und
+            $X \rightarrow Y$ nicht vorkommen; wo also die rechte
+            Seite nie aus einem einzelnen Zeichen besteht.
+          </p>
+        </li>
+        <li>
+          <p>
+            Endliche Automaten.
+          </p>
+        </li>
+        <li>
+          <p>
+            Nichtdeterministische endliche Automaten.
+          </p>
+        </li>
+      </ol>
+      <p>
+        Formal sind all diese Modelle gleich mächtig: wir
+        können ein Modell in ein anderes umwandeln, ohne das
+        die erzeugte bzw. akzeptierte Sprache sich ändern.
+        Wenn wir nun zeigen wollen:
+        <span class="nowrap"><i>
+            $L$ ist nicht regulär</i>,</span>
+        dann können wir das
+        <i>einfachste</i>
+        Modell nehmen und
+        dagegen argumentieren. Nach meinem Darfürhalten sind
+        endliche Automaten das einfachste der fünf
+        aufgeführten Modelle. Also: Angenommen, $L$ wäre
+        regulär. Dann gäbe es auch einen endlichen Automaten
+        <span class="nowrap">$M = (\{a,b\}, Q, q_0, F, \delta)$,</span>
+        der $L$
+        akzeptiert. Wir müssen zeigen, dass das nicht sein
+        kann. Also dem Automaten $M$ einen Fehler nachweisen.
+        Ein endlicher Automat kann sich ja nur beschränkt
+        viele Dinge "merken": er weiß nur, in welchem Zustand
+        er gerade ist. Um Wörter der Form $a^nb^n$ zu
+        erkennen, müsste er sich allerdings merken, wieviele
+        $a$ 's er bereits gelesen hat. Vergisst er es, kann
+        er bei den folgenden
+        <span class="nowrap">$b$'s</span>
+        nicht mehr richtig
+        mitzählen. Unser Plan ist also, das Gedächtnis des
+        Automaten zu überfordern. Setzen wir diesen Plan in
+        die Tat um. Wir füttern dem Automaten eine Folge von
+        $aaaaaaa...$ und beobachten die Zustandsfolge
+        <span class="nowrap">$q_0, q_1, q_2, \dots$,</span>
+        die sich daraus ergibt.
+        Formal:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        q_i := \hat{\delta}(q_0, a^i) \ ,
+        \end{align*}
+        $$
+      </div>
+      <p>
+        wobei $a^i$ das Wort ist, dass aus $i$ vielen $a$ 's
+        hintereinander besteht. Da der Automat nur $|Q|$
+        viele Zustände hat, muss sich nach mindestens $|Q|$
+        vielen
+        <span class="nowrap">$a$'s</span>
+        eine Wiederholung einstellen, also
+        $q_i = q_j$ für
+        <span class="nowrap">$0 \leq i \lt j \leq |Q|$.</span>
+        Die Wörter
+        $a^i$ und $a^j$ bringen also den Automaten beide in
+        den Zustand
+        <span class="nowrap">$q_i$;</span>
+        der Automat kann also nicht
+        unterscheiden, ob er gerade $i$ viele oder $j$ viele
+        <span class="nowrap">$a$'s</span>
+        gelesen hat. Nun schlagen wir zu: Wir füttern
+        den Automaten mit dem Wort
+        <span class="nowrap">$a^i b^i$.</span>
+        Der Automat
+        landet in einem Zustand
+        <span class="nowrap">$q^*$:</span>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        q_0 \step{a^i} q_i \step{b^i} q^*
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Das Wort $a^i b^i$ ist in der Sprache
+        <span class="nowrap">$L$.</span>
+        Dere
+        Zustand $q^*$ muss also ein akzeptierender Zustand
+        sein. Nun füttern wir ihn mit dem Wort
+        <span class="nowrap">$a^j b^i$.</span>
+        Der
+        Automat landet wo?
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        q_0 \step{a^j} q_i
+        \end{align*}
+        $$
+      </div>
+      <p>
+        da ja $a^i$ und $a^j$ ihn in den selben Zustand
+        bringen. Daraufhin geschieht abermals
+        <span class="nowrap">$q_i \step{b^i} q^*$,</span>
+        also insgesamt
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        q_0 \step{a^j} q_i \step{b^i} q^*
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Wir haben aber bereits gesehen, dass $q^*$ ein
+        akzeptierender Zustand sein muss; also akzeptiert der
+        Automat auch $a^j b^i$ ; das ist aber ein Fehler,
+        denn
+        <span class="nowrap">$a^j b^i \not \in L$.</span>
+        Der Automat ist also
+        fehlerhaft. Da wir dieses Argument ganz allgemein für
+        einen endlichen Automaten $M$ geführt haben,
+        schließen wir:
+      </p>
+      <div class="display">
+        <p>
+          Wenn $M$ ein endlicher Automat ist, dann gilt
+          $L(M) \ne L$ . Daher ist $L$ keine reguläre Sprache.
+        </p>
+      </div>
+      <p>
+        Zusammenfassend lautet unser Argument: wenn der
+        Automat die Präfixe $\alpha$ und $\alpha'$ nicht
+        unterscheiden kann, dann kann er die Wörter
+        $\alpha \beta$ und $\alpha' \beta$ auch nicht
+        unterscheiden; er muss also entweder beide akzeptieren
+        oder beide ablehnen.
+      </p>
+    </div>
+    <p class="main-column">
+      Das Argument, dass die Sprache
+      $\{a^nb^n \ | \ n \geq 0\}$ nicht regulär ist, war
+      nicht allzu schwer, fühlt sich aber etwas
+      <i>ad hoc</i>
+      an,
+      also für diesen Fall maßgeschneidert. Es stellt sich
+      aber heraus, dass man bei
+      <i>allen</i>
+      nicht-regulären
+      Sprachen ein solches Argument anführen kann. Die
+      Hauptarbeit besteht nun darin, Konzepte wie
+      <i>der
+        Automat kann $\alpha$ nicht von $\alpha'$
+        unterscheiden</i>
+      und
+      <i>der Automat muss aber $\gamma$
+        von $\gamma'$ unterscheiden können</i>
+      zu formalisieren.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Definition 5.6.2
+          <span class="nowrap">$M$-Äquivalenz</span></b>
+        Sei
+        $M= (\Sigma, Q, \qstart, F, \delta$ ein
+        (deterministischer) endlicher Automat. Zwei Wörter
+        $\alpha, \beta \in \Sigma^*$ sind
+        <span class="nowrap"><i>$M$ -äquivalent</i>,</span>
+        geschrieben
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \alpha \equiv_M \beta \ ,
+        \end{align*}
+        $$
+      </div>
+      <p>
+        wenn
+        $\hat{\delta}(\qstart, \alpha) =
+        \hat{\delta}(\qstart, \beta)$
+        gilt; wenn sie also den Automaten in den gleichen
+        Zustand bringen.
+      </p>
+    </div>
+    <p class="main-column">
+      Wir können bereits ein bisschen über $\equiv_M$
+      aussagen. Wenn beispielsweise $M$ ein endlicher
+      Automat für die Sprache $L$ ist und
+      $\alpha \equiv_M \beta$ gilt, dann sind entweder
+      beide Wörter in $L$ (nämlich wenn
+      $\hat{\delta}(\qstart, \alpha)$ ein akzeptierender
+      Zustand ist) oder beide Wörter nicht in $L$ (falls es
+      kein akzeptierender Zustand ist). Auch sehen wir: wenn
+      <span class="nowrap">$\alpha \equiv_M \beta$,</span>
+      dann gilt
+      <span class="nowrap">$\alpha\gamma \equiv_M \beta\gamma$:</span>
+      $\alpha$ und
+      $\beta$ brigen den Automaten in den gleichen Zustand,
+      und danach liest er in beiden Fällen das Wort
+      <span class="nowrap">$\gamma$,</span>
+      endet also in beiden Fällen im gleichen
+      Zustand.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Definition 5.6.3
+          <span class="nowrap">$L$-Äquivalenz</span></b>
+        Sei $L \subseteq \Sigma^*$ eine
+        Sprache. Zwei Wörter $\alpha, \beta \in \Sigma^*$
+        sind
+        <span class="nowrap"><i>$L$ -äquivalent</i>,</span>
+        geschrieben
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \alpha \equiv_L \beta \ ,
+        \end{align*}
+        $$
+      </div>
+      <p>
+        wenn für alle $\gamma \in \Sigma^*$ die Wörter
+        $\alpha \gamma$ und $\beta \gamma$ entweder beide in
+        $L$ oder beide nicht in $L$ sind.
+      </p>
+    </div>
+    <div class="well statement out">
+      <p>
+        <b>Beobachtung 5.6.4</b>
+        Sei $L$ die vom endlichen Automaten $M$ akzeptierte
+        Sprache. Wenn $\alpha \equiv_M \beta$ gilt, dann auch
+        <span class="nowrap">$\alpha \equiv_L \beta$.</span>
+      </p>
+    </div>
+    <div class="well highlight out">
+      <p>
+        <b>Beweis.</b>
+        Nehmen wir an
+        <span class="nowrap">$\alpha \equiv_M \beta$;</span>
+        es gibt also
+        einen Zustand $q$ mit
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \qstart \Step{\alpha} q \textnormal{ und } \qstart \Step{\beta} q
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Des weiteren sei
+        <span class="nowrap">$q' := \hat{\delta}(q, \gamma)$,</span>
+        also
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \qstart \Step{\alpha} q \Step{\gamma} q' \textnormal{ und } \qstart \Step{\beta} q \Step{\gamma}
+        q'
+        \end{align*}
+        $$
+      </div>
+      <p>
+        also
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \qstart \Step{\alpha\gamma} q' \textnormal{ und } \qstart \Step{\beta\gamma} q'
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Abhängig davon, ob $q' \in F$ oder nicht, sind
+        $\alpha\gamma$ und $\alpha\beta$ entweder
+        <i>beide in
+          $L$</i>
+        oder
+        <span class="nowrap"><i>beide nicht in $L$</i>.</span>
+        In anderen Worten:
+        <span class="nowrap">$\alpha \equiv_L \beta$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+      </p>
+    </div>
+    <p class="main-column">
+      Hier ist nun ein allgemeiner Angriffsplan, wie man
+      zeigt, dass eine Sprache $L$ nicht regulär ist: wir
+      finden eine unendliche Folge von Wörtern
+      <span class="nowrap">$\alpha_1, \alpha_2, \alpha_3, \dots,$,</span>
+      die alle
+      nicht
+      <span class="nowrap">$L$-äquivalent</span>
+      sind. Wenn nun $M$ ein endlicher
+      Automat mit Zustandsmenge $Q$ ist, dann müssen sich
+      unter $|Q|+1$ Eingabewörter mindestens zwei
+      äquivalente finden, da sie ja nicht alle den Automaten
+      in einen anderen Zustand bringen. Der Automat $M$
+      kann also die Sprache $L$ nicht erkennen. Formaler:
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Definition 5.6.5</b>
+        Sei
+        <span class="nowrap">$L \subseteq \Sigma^*$.</span>
+        Der
+        <i>Index von $L$</i>
+        ist
+        die Anzahl von Äquivalenzklassen der Relation
+        <span class="nowrap">$\equiv_L$,</span>
+        also die größtmögliche Anzahl gegenseitig
+        nichtäquivalenter Wörter
+        <span class="nowrap">$\alpha_1, \alpha_2, \dots \in \Sigma^*$;</span>
+        dies ist
+        möglicherweise unendlich.
+      </p>
+    </div>
+    <div class="well statement out">
+      <p>
+        <b>Beobachtung 5.6.6</b>
+        Sei $M$ ein endlicher Automat von $L$ die von ihm
+        akzeptierte Sprache. Dann ist der Index von $L$
+        höchstens die Anzahl $|Q|$ von Zuständen. Im
+        Umkehrschluss heißt das: wenn $L$ unendlichen Index
+        hat, dann gibt es keinen endlichen Automaten, der $L$
+        akzeptiert; $L$ ist demnach nicht regulär.
+      </p>
+    </div>
+    <div class="well highlight out">
+      <p>
+        <b>Beweis.</b>
+        Wenn der Index von $L$ größer wäre als
+        <span class="nowrap">$|Q|$,</span>
+        dann
+        hieße das, dass wir $k := |Q|+1$ nicht $L$
+        -äquivalente $\alpha_1, \dots, \alpha_{|Q|+1}$ finden
+        können. Sei $q_i := \hat{\delta}(\qstart, \alpha_i)$
+        der Zustand, in dem der Automat landet, wenn er das
+        Eingabewort $\alpha_i$ abarbeitet. Die Zustände
+        $q_1, \dots, q_{|Q|+1}$ können nicht alle verschieden
+        sein; es gibt unter diesen Wörtern also
+        $\alpha_i, \alpha_j$ mit
+        <span class="nowrap">$\alpha_i \not \equiv_L \alpha_j$.</span>
+        Das heißt aber,
+        dass es ein $\gamma \in \Sigma^*$ gibt mit
+        $\alpha_i \gamma \in L$ und
+        $\alpha_j \gamma\not \in L$ (oder umgekehrt). Da $M$
+        die Sprache $L$ akzeptiert, muss auch folgendes
+        gelten:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \qstart \Step{\alpha_i \gamma} q \in F \\
+        \qstart \Step{\alpha_j \gamma} q' \not \in F \ ,
+        \end{align*}
+        $$
+      </div>
+      <p>
+        was aber nicht sein kann, da
+        $\alpha_i \equiv_M \alpha_j$ und daher auch
+        <span class="nowrap">$\alpha_i \gamma \equiv_M \alpha_j \gamma$,</span>
+        also
+        $q = q'$ gelten würde.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+      </p>
+    </div>
+    <div class="well statement out">
+      <p>
+        <b>Beispiel 5.6.7</b>
+        Die Sprache $L = \{a^n b^n \ | \ n \geq 0\}$ ist
+        nicht regulär. In der Tat hat diese Sprache
+        unendlichen Index. Die Wörter $a, aa, aaa, aaaa, ...$
+        sind alle nicht $L$ -äquivalent. Für $a^i$ und $a^j$
+        könnten wir zum Beispiel $\gamma := b^i$ wählen, um
+        zu zeigen, dass $a^i \gamma \in L$ und
+        $a^j \gamma \not \in L$ ist.
+      </p>
+    </div>
+    <div class="well statement out">
+      <p>
+        <b>Beispiel 5.6.8</b>
+        Sei $L \subseteq \{a,b\}^*$ die Sprache aller
+        Palindrome. Also der Wörter $\alpha$ mit
+        <span class="nowrap">$\alpha = \alpha^R$,</span>
+        wobei $\alpha^R$ das Wort
+        $\alpha$ in umgekehrter Reihnfolge gelesen ist. Die
+        Sprache $L$ ist ein klassisches Beispiel einer
+        kontextfreien Sprache:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        S \rightarrow \epsilon \ | \ aSa \ | \ bSb
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Sie ist nicht regulär: die Wörter
+        $a, aa, aaa, aaaa, ...$ sind alle nicht $L$
+        -äquivalent, da $a^i b a^i \in L$ aber
+        $a^j b a^i \not \in L$ ist.
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 5.6.2</b>
+        Betrachten Sie die Sprache aller
+        <span class="nowrap">$\alpha\in \{a,b\}^*$,</span>
+        die gleich viele
+        <span class="nowrap">$a$'s</span>
+        wie
+        <span class="nowrap">$b$'s</span>
+        haben:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        S \rightarrow \epsilon \ | \ aSbS \ | \ bSaS
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Zeigen Sie, dass diese Sprache nicht regulär ist.
+      </p>
+    </div>
+    <p class="main-column">
+      Wie mächtig ist diese "Index-Methode"? Es stellt sich
+      heraus, dass sie
+      <i>vollständig</i>
+      ist: wenn eine Sprache
+      $L$ endlichen Index hat, dann ist sie auch regulär.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Theorem 5.6.9</b>
+        Eine Sprache $L \subseteq \Sigma^*$ ist genau dann
+        regulär, wenn sie endlichen Index hat.
+      </p>
+    </div>
+    <div class="well highlight out">
+      <p>
+        <b>Beweis.</b>
+        Eine Richtung haben wir bereits weiter oben gezeigt:
+        wenn es zu $L$ einen endlichen Automaten mit
+        Zustandsmenge $Q$ gibt, dann ist der Index von $L$
+        höchstens
+        <span class="nowrap">$|Q|$.</span>
+        Für die andere Richtung nehmen wir
+        an, dass der Index von $L$ endlich ist, sagen wir
+        <span class="nowrap">$n \in \N$.</span>
+        Es gibt also
+        <span class="nowrap">$\alpha_1,\dots,\alpha_n$,</span>
+        die alle paarweise nicht
+        <span class="nowrap">$L$-äquivalent</span>
+        sind.
+        Allerdings ist $n$ ist auch die größte solche Zahl;
+        dies heißt, jedes weitere $\beta \in \Sigma^*$ ist
+        äquivalent zu einem dieser
+        <span class="nowrap">$\alpha_i$.</span>
+        In anderen
+        Worten: wir können  $\Sigma^*$ in Teilmengen
+        partitionieren:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \Sigma = A_1 \cup A_2 \cup \dots \cup A_n \ ,
+        \end{align*}
+        $$
+      </div>
+      <p>
+        so dass innerhalb eines $A_i$ alle Wörter äquivalent
+        sind, und zwischen zwei verschiedenen $A_i, A_j$ alle
+        nicht äquivalent sind:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \forall 1 \leq i \leq n&amp;\forall \alpha, \beta \in A_i:&amp;\quad \alpha \equiv_L \beta \\
+        \forall 1 \leq i \lt j \leq n&amp;\forall \alpha\in A_i, \beta\in A_j :&amp;\quad \alpha \not
+        \equiv_L \beta
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Die Menge von Mengen $\{A_1, A_2, \dots, A_n\}$ nennt
+        man eine Partition oder Partitionierung von
+        <span class="nowrap">$\Sigma^*$.</span>
+        Beachten Sie: wenn $\alpha \equiv_L \beta$
+        und
+        <span class="nowrap">$x \in \Sigma$,</span>
+        dann gilt auch
+        <span class="nowrap">$\alpha x \equiv \beta x$.</span>
+        (Überlegen Sie sich,
+        warum!) Auch gilt für jedes
+        <span class="nowrap">$1 \leq i \leq n$:</span>
+        entweder sind alle Wörter in $A_i$ in der Sprache,
+        also  $A_i \subseteq L$ oder keines, also \(A_i \cap
+        L = \emptyset). Des weiteren gibt es genau ein
+        <span class="nowrap">$A_i$,</span>
+        welches das leere Wort $\epsilon$ enthält. Wir bauen
+        nun einen endlichen Automaten mit der Zustandsmenge
+        <span class="nowrap">$Q = \{1,2,\dots,n\}$.</span>
+        Für $i, j$ führen wir die
+        Produktion
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        i \step{x} j
+        \end{align*}
+        $$
+      </div>
+      <p>
+        ein, wenn es ein $\alpha \in A_i$ mit
+        $\alpha x \in A_j$ gibt. Sehen Sie nun: wenn wir ein
+        anderes $\alpha' \in A_i$ nehmen, dann gilt
+        <span class="nowrap">$\alpha' x \equiv_L \alpha x$,</span>
+        also ist auch
+        <span class="nowrap">$\alpha' x \in A_j$.</span>
+        In anderen Worten: es gibt nur
+        <i>eine</i>
+        Produktion der Form
+        <span class="nowrap">$i \step{x} ...$,</span>
+        d.h. die
+        Produktionen sind in der Tat ein
+        <i>Funktion</i>
+        und der
+        Automat ist
+        <span class="nowrap"><i>determinisitsch</i>.</span>
+        Als Anfangszustand
+        wählen wir dasjenige
+        <span class="nowrap">$i$,</span>
+        für das $\epsilon \in A_i$
+        gilt. Akzeptierende Zustände sind diejenigen
+        <span class="nowrap">$j$,</span>
+        für
+        die $A_j \subseteq L$ gilt. Also:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        Q&amp;:= \{1,2,\dots,n\} \\
+        \qstart&amp;:= \textnormal{ das $i$, für das $\epsilon \in A_i$} \\
+        F&amp;:= \{j \in Q \ | \ A_j \subseteq L\} \\
+        \delta&amp;:= (i,x) \mapsto \textnormal{(das eindeutige $j$, für das es ein $\alpha \in A_i$
+        gibt mit $\alpha x \in A_j$).}
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Der Automat $(\Sigma, Q, \qstart, F, \delta)$ erkennt
+        die Sprache
+        <span class="nowrap">$L$;</span>
+        die Anzahl seiner Zustände ist
+        gleich dem Index der Sprache
+        <span class="nowrap">$L$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+      </p>
+    </div>
+    <p class="main-column">
+      Wir können den Index nicht nur verwenden, um zu
+      argumentieren, dass eine Sprache nicht regulär ist,
+      sondern auch, um zu zeigen, dass eine bestimmte Menge
+      an Zuständen optimal ist.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Beispiel 5.6.10</b>
+        Der nichtdeterministische endliche Automat
+      </p>
+      <div class="figure__container">
+        <figure>
+          <img
+            style="height:10em"
+            src="img/finite-state-automata/nfsm-example-01.svg"
+          >
+        </figure>
+      </div>
+      <p>
+        akzeptiert die Sprache $L$ aller
+        <span class="nowrap">$\alpha \in \{0,1\}^n$,</span>
+        deren viertletzter Buchstabe
+        eine 1 ist. Unsere Konstruktion, ihn deterministisch
+        zu machen, würde 16 Zustände erzeugen. Ist dies
+        optimal? Ja, ist es:
+      </p>
+      <div class="well statement">
+        <p>
+          <b>Behauptung 5.6.11</b>
+          Die Sprache $L$ hat Index 16. Alle Wörter in
+          $\{0,1\}^4$ sind nicht
+          <span class="nowrap">$L$-äquivalent.</span>
+        </p>
+      </div>
+      <div class="well highlight">
+        <p>
+          <b>Beweis.</b>
+          Seien
+          $\alpha:= a_1 a_2 a_3 a_4, \beta := b_1 b_2 b_3 b_4
+          \in \{0,1\}^4$
+          zwei verschiedene Wörter. Dann gibt es ein
+          $1 \leq i \leq 4$ mit $a_i = 0$ und $b_i = 1$ (oder
+          umgekehrt). Sei
+          <span class="nowrap">$\gamma = 0^{5-i}$,</span>
+          also ein String
+          bestehend aus $5-i$ Nullen. Das viertletzte Zeichen
+          von $\alpha\gamma$ ist 0, das viertletzte Zeichen von
+          $\beta\gamma$ ist 1; also gilt
+          <span class="nowrap">$\alpha\gamma \in L, \beta\gamma\not \in L$,</span>
+          und
+          somit
+          <span class="nowrap">$\alpha \not \equiv \beta$.</span>
+          Der Index ist also
+          <i>mindestens</i>
+          16. Das er höchstens 16 ist, sehen wir,
+          indem wir einen determinisitschen Automaten mit 16
+          Zuständen bauen.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        </p>
+      </div>
+      <p>
+        Allgemeiner: sei $L$ die Sprache aller
+        <span class="nowrap">$\alpha \in \{0,1\}^n$,</span>
+        deren
+        <span class="nowrap">$n$-letztes</span>
+        Zeichen
+        eine 1 ist. Dann gibt es für $L$ einen
+        nichtdeterministischen endlichen Automaten mit $n+1$
+        Zuständen und einen determinisitschen mit $2^n$
+        Zuständen. Es gibt keinen determinisitschen Automaten
+        mit weniger als $2^n$ Zuständen.
+      </p>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./5-5.html">&lt;&lt; Kapitel 5.5<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Reguläre Ausdrücke</span></a><a
+          href="./5-7.html"
+          class="menu-row-right"
+        >Kapitel 5.7 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Übungsaufgaben</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

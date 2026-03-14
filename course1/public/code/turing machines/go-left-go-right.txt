@@ -1,0 +1,21 @@
+name: copy to lower 
+init: go_right
+accept: accept
+
+go_right, x, _
+go_right, _, x, >, > 
+
+go_right, _, _ 
+go_left', _, _, <, < 
+
+go_left', _, x 
+go_left , x, _, -, -   
+
+go_left', _, _ 
+go_left, _, _, -, - 
+
+go_left,  x, _ 
+go_left', x, _, <, < 
+
+go_left, _, _ 
+go_right, _, _, >, > 

@@ -1,0 +1,44 @@
+
+name: a^n b^n c^n
+init: findA 
+accept: accept
+
+findA, a 
+findB, X, - 
+
+findA, b 
+findA, b, < 
+
+findA, c
+findA, c, < 
+
+findA, X 
+findA, X, < 
+
+findA, _ 
+noA  , _, > 
+
+findB, a 
+findB, a, > 
+
+findB, b 
+findC, X, - 
+
+findB, X 
+findB, X, > 
+
+findC, b 
+findC, b, > 
+
+findC, c 
+findA, X, - 
+
+findC, X 
+findC, X, > 
+
+noA, X 
+noA, X, > 
+
+noA, _ 
+accept, _, -
+

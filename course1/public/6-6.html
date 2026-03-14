@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 6.6 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>TI2—Kapitel 6.6</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./6-5.html"
+        >&lt;&lt; Kapitel 6.5<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >LR-Parser per Hand entwerfen</span></a><a
+          id="next-page"
+          href="./6-7.html"
+          class="menu-row-right"
+        >Kapitel 6.7 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >LR-Grammatiken</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        6.6&ensp;Einen Parser in Java implementieren
+      </p>
+    </div>
+    <div class="well alert-info out main-column">
+      <p>
+        Den vollständigen Quelltext, den wir in der Vorlesung
+        geschrieben haben, finden Sie in der Datei
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/code/parsing/arithmetic-in-class/ArithmeticGrammar.java">ArithmeticGrammar.java</a>.
+      </p>
+    </div>
+    <p class="main-column">
+      Ich möchte nun eine kontextfreie Grammatik für
+      arithmetische Ausdrücke der Form
+      <code>((31+402)*83)</code>
+      entwerfen. Der Einfachheit halber bestehe ich auf
+      strenger Klammerung, so wäre
+      <code>(2*(1+2+3))</code>
+      zum
+      Beispiel nicht erlaubt. Unsere Grammatik soll
+      allgemeine Dezimalzahlen darstellen können. Das
+      Alphabet ist somit
+      <span class="nowrap">$\Sigma =
+        \{\texttt{0},\texttt{1},\texttt{2},\texttt{3},\texttt{4},
+        \texttt{5},\texttt{6},\texttt{7},\texttt{8},\texttt{9},
+        \texttt{+},\texttt{*},\texttt{(},\texttt{)}\}$.</span>
+      Die Produktionsregeln sind:
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      E&amp;\rightarrow N \tag{JustNumber} \\
+      E&amp;\rightarrow \texttt{(}E \texttt{+} E\texttt{)} \tag{Sum} \\
+      E&amp;\rightarrow \texttt{(}E \texttt{*} E\texttt{)} \tag{Product}\\
+      N&amp;\rightarrow D \tag{SingleDigit} \\
+      N&amp;\rightarrow ND \tag{NumberDigit} \\
+      D&amp;\rightarrow \texttt{0}\ | \ \texttt{1}\ | \ \texttt{2}\ | \ \texttt{3}\ | \ \texttt{4}\ | \
+      \texttt{5}\ | \ \texttt{6}\ | \ \texttt{7}\ | \ \texttt{8}\ | \ \texttt{9}
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Die Nichtterminale sind also $E$ (Expression), $N$
+      (Number) und $D$ (Digit). Wir haben auch den
+      einzelnen Produktionen Namen gegeben, bis auf die der
+      Form
+      <span class="nowrap">$D \rightarrow i$.</span>
+      Was soll nun unser Parser
+      tun? Er soll, gegeben ein Eingabewort
+      <span class="nowrap">$w \in L$,</span>
+      den
+      <i>Ableitungsbaum</i>
+      konstruieren, für
+      <code>((31+402)*83)</code>
+      also
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="height:20em"
+          src="img/context-free/arithmetic-syntax-tree.svg"
+        >
+      </figure>
+    </div>
+    <p class="main-column">
+      Wie wir diesen Baum in Java repräsentieren, darüber
+      sprechen wir in einer Minute. Zuerst aber: wir wollen
+      mit diesem Baum etwas Sinnvolles tun. Zum Beispiel
+      <span class="nowrap"><i>auswerten</i>,</span>
+      so dass am Ende eine Zahl rauskommt, im
+      obigen Beispiel also
+      <span class="nowrap">$(31 + 402) \cdot 83 = 35939$.</span>
+      Oder den Ausdruck umformen von Infix-Notation zu
+      Präfixnotation,
+      <span class="nowrap">also<code>(* (+ 31 402) 83)</code>.</span>
+      All dies wird
+      sehr einfach sein, sobald wir den Ableitungsbaum als
+      Datenstruktur vorliegen haben.
+    </p>
+    <h2 class="main-column topic-announcement">
+      Eine Datenstruktur für Ableitungsbäume
+    </h2>
+    <p class="main-column">
+      Für meine Implementierung in Java erschaffe ich für
+      jedes Nichtterminal $X$ ein Interface und für jede
+      Produktionsregel $X \rightarrow \alpha$ eine Klasse,
+      die das Interface $X$ implementiert und $\alpha$ als
+      Klassenvariable enthält.
+    </p>
+    <div class="main-column">
+      <ul>
+        <li>
+          <p>
+            <code>interface Expression</code>
+            wird implementiert von
+          </p>
+          <ul>
+            <li>
+              <p>
+                <span class="nowrap"><code>class Sum</code>,</span>
+                die als Klassenvariable
+                <code>Exrepssion e1,
+                  e2</code>
+                enthält,
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="nowrap"><code>class Product</code>,</span>
+                die als Klassenvariable
+                <code>Exrepssion
+                  e1, e2</code>
+                enthält,
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="nowrap"><code>class JustNumber</code>,</span>
+                die als Klassenvariable nur eine
+                <span class="nowrap"><code>Number number</code>enthält;</span>
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <code>interface Number</code>
+            wird implementiert von
+          </p>
+          <ul>
+            <li>
+              <p>
+                <span class="nowrap"><code>class MultiDigitNumber</code>,</span>
+                die als Klassenvariable
+                <span class="nowrap">eine<code>Number</code></span>
+                und eine
+                <code>Digit</code>
+                erhält und
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="nowrap"><code>class SingleDigitNumber</code>,</span>
+                die als Klassenvariable
+                ein
+                <span class="nowrap"><code>Digit</code>enthält;</span>
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            <code>interface Digit</code>
+            wird implementiert
+            <span class="nowrap">von<code>class
+                DigitOne</code>,</span><span class="nowrap"><code>class DigitTwo</code>,</span><span class="nowrap"><code>class DigitThree</code>,</span><span class="nowrap"><code>class
+                DigitFour</code>,</span><span class="nowrap"><code>class DigitFive</code>,</span><span class="nowrap"><code>class DigitSix</code>,</span><span class="nowrap"><code>class
+                DigitSeven</code>,</span><code>class DigitEight</code>
+            <span class="nowrap">und<code>class DigitNine</code>.</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <p class="main-column">
+      In unserem Anwendungsfall hat jedes Interface eine
+      <span class="nowrap">Methode<code>public int toInt()</code>.</span>
+      Interface
+      <code>Expression</code>
+      hat zusätzlich noch die Methode
+      <span class="nowrap"><code>String
+          toPrefixNotation()</code>.</span>
+      Ich schreibe auch ein
+      Über-Interface
+      <span class="nowrap"><code>ParseObject</code>,</span>
+      das alle Interfaces
+      zusammenfasst. Um uns das Debugging zu erleichtern,
+      überschreibe ich in jeder Klasse die
+      <span class="nowrap">Methode<code>public
+          String toString()</code>.</span>
+    </p>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./6-5.html">&lt;&lt; Kapitel 6.5<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >LR-Parser per Hand entwerfen</span></a><a
+          href="./6-7.html"
+          class="menu-row-right"
+        >Kapitel 6.7 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >LR-Grammatiken</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

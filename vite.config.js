@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import { exec } from "child_process";
 
 export default defineConfig({
-  root: "public",
+  root: "course1/public",
   plugins: [
     {
       name: "log-event-handler",

@@ -1,0 +1,32 @@
+name: palindromes over a,b, two-tape machine
+init: copy
+accept: accept
+
+
+copy, a, _
+copy, a, a, >, > 
+
+copy, b, _
+copy, b, b, >, > 
+
+copy,   _, _
+rewind, _, _, <, - 
+
+
+rewind, a, _ 
+rewind, a, _, <, -
+
+rewind, b, _ 
+rewind, b, _, <, -
+
+rewind,  _, _ 
+compare, _, _, >, < 
+
+compare, a, a 
+compare, a, a, >, < 
+
+compare, b, b 
+compare, b, b, >, < 
+
+compare, _, _ 
+accept, _, _, >, < 

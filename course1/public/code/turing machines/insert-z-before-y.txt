@@ -1,0 +1,21 @@
+name: copy to lower 
+init: q
+accept: accept
+
+q, x, _
+q, _, x, >, > 
+
+q, y, _
+q'', _, z, >, > 
+
+q'', x, _
+q  , x, y, -, > 
+
+q'', y, _
+q  , y, y, -, > 
+
+q'', _, _
+accept, _, _, -, - 
+
+q, _, _
+accept, _, _, -, - 

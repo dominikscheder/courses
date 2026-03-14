@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 4.3 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>TI2—Kapitel 4.3</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./4-2.html"
+        >&lt;&lt; Kapitel 4.2<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Primitive Rekursion: Konstruktionen und Tricks</span></a><a
+          id="next-page"
+          href="./4-4.html"
+          class="menu-row-right"
+        >Kapitel 4.4 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Ein Schritt weiter:  while-Schleifen und
+            <span class="nowrap">$\mu$-Rekursion</span></span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        4.3&ensp;Primitive Rekursion kann nicht alles: die Péter-Ackermann-Funktion
+      </p>
+    </div>
+    <p class="main-column">
+      In den vorhergehenden Teilkapiteln haben wir gesehen,
+      dass Sie allerhand mit primitiv rekursiven Funktionen
+      implementieren können. Darunter Dinge, die komplexere
+      Rekursion oder Schleifen mit mehreren lokalen
+      Variablen zu brauchen scheinen (wie die
+      Fibonacci-Zahlen), ja sogar Dinge, die über den
+      Bereich der natürlichen Zahlen hinausgehen, wie zum
+      Beispiel das Sortieren eines beliebig langen Arrays.
+      Kernpunkt war die Erkenntnis, dass wir komplexere
+      "Datenstrukturen" wie
+      <i>Paare von natürlichen Zahlen</i>
+      als
+      <i>eine</i>
+      natürliche Zahl codieren können und somit
+      der primitiven Rekursion zugänglich machen können. Es
+      liegt also Nahe, zu vermuten, dass primitive Rekursion
+      bereits den Berechenbarkeitsbegriff zufriedenstellend
+      formalisiert: das also alles "Berechenbare" auch
+      primitiv rekursiv sei. Der
+      <a href="https://de.wikipedia.org/wiki/Ackermannfunktion">Wikipedia-Artikel über die
+        Ackermann-Funktion</a>
+      schreibt, dass der deutsche Mathematiker David Hilbert
+      dies auch vermutete. Im Jahre 1926 jedoch definierte
+      <a href="https://de.wikipedia.org/wiki/Wilhelm_Ackermann_(Mathematiker)">Wilhelm
+        Ackermann</a>
+      eine Funktion, die "offensichtlich berechenbar",
+      jedoch nicht primitiv rekursiv ist. Die Funktion, die
+      wir heute die Ackermann-Funktion nennen, ist
+      allerdings eine vereinfachte Version, die 1935 von der
+      ungarischen Mathematikerin
+      <a href="https://de.wikipedia.org/wiki/Rózsa_Péter">Rózsa
+        Péter</a>
+      gefunden wurde (obwohl der letztere Artikel das Jahr
+      1955 nennt).
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Definition 4.3.1 (Péter-Ackermann-Funktion).</b>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        A(m,n)&amp;:= \begin{cases}
+        n+1&amp;\textnormal{ if $m=0$,} \\
+        A(m-1,1)&amp;\textnormal{ if $m \geq 1, n=0$} \\
+        A(m-1, A(m,n-1))&amp;\textnormal{ if $m,n \geq 1$} \ .
+        \end{cases}
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Manchmal sehen Sie in der Literatur auch die
+        äquivalente, vielleicht lesbarere Definition:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        A(0,n)&amp;:= n+1 \\
+        A(m+1, 0)&amp;:= A(m,1) \\
+        A(m+1, n+1)&amp;:= A(m, A(m+1,n))
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Für festes $m\in \N$ schreiben wir auch $A_m$ für die
+        ein-parametrige Funktion
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        A_m :&amp;\N \rightarrow \N \\
+        n&amp;\mapsto A(m,n) \ .
+        \end{align*}
+        $$
+      </div>
+    </div>
+    <p class="main-column">
+      Es lohnt sich, diese Funktion für kleine Werte von $m$
+      zu untersuchen. Aus der Definition geht unmittelbar
+      hervor, dass $A_0(n) = n+1$ ist. Für $A_1 (n)$
+      rechnen wir
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      A_1 (n)&amp;= A_0 ( A_1 (n-1)) =
+      A_0 (A_0(A_1(n-2))) = \dots =
+      \underbrace{A_0 (A_0 (...(A_0}_{i \textnormal{ mal}}(A_1(n-i)))...)) \\
+      &amp;=
+      \underbrace{A_0 (A_0 (...(A_0}_{n \textnormal{ mal}}(A_1(0)))...)) \\
+      &amp;= \underbrace{A_0 (A_0 (...(A_0}_{n+1 \textnormal{ mal}}(1))...)) \\
+      &amp;= n+2 \ .
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Soweit schaut die Funktion nicht besonders
+      beindruckend aus. $A_2$ bekommen iwr nach dem
+      gleichen Schema:
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      A_2 (n)&amp;= \underbrace{A_1 (A_1 (...(A_1}_{n+1 \textnormal{ mal}}(1))...)) \ , \\
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      wir fangen also mit $1$ an und zählen $n+1$ mal eine
+      2 drauf. Wir erhalten
+      <span class="nowrap">$2n + 3$,</span>
+      also
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      A_2 (n)&amp;= 2n + 3 \ .
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      $A_3$ wird etwas unangenehmer, weil wir keine gute
+      Intuition haben, was
+      <span class="nowrap">"$n+1$</span>
+      mal verdoppeln und jedes
+      Mal 3 draufzählen" ergibt. Mit 1 beginnend erhalten
+      wir also
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      1 \stackrel{A_2}{\rightarrow} 5
+      \stackrel{A_2}{\rightarrow} 13
+      \stackrel{A_2}{\rightarrow} 29
+      \stackrel{A_2}{\rightarrow} 61
+      \stackrel{A_2}{\rightarrow} 125
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Das ist schon genug, um eine Vermutung zu
+      formulieren: $A_3(n) = 2^{n+3} - 3$ und diese dann
+      per Indution zu beweisen.
+    </p>
+    <h2 class="main-column topic-announcement">
+      Die Péter-Ackermann-Funktion ist berechenbar
+    </h2>
+    <div class="well statement out">
+      <p>
+        <b>Theorem 4.3.2</b>
+        Sei $m \in \N$ gegeben. Die Funktion $A_m$ ist
+        primitiv rekursiv.
+      </p>
+    </div>
+    <div class="well highlight out">
+      <p>
+        <b>Beweis.</b>
+        Wir verwenden Induktion über
+        <span class="nowrap">$m$.</span>
+        Für $m=0$ gilt
+        $A_0(n)= n+1$ und somit
+        <span class="nowrap">$A_0 = \succ$.</span>
+        Sei nun also
+        <span class="nowrap">$m \geq 1$.</span>
+        Wir sehen, dass
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        A_m(t) = A_{m-1} (A(m,t-1)) \ .
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Ich schreibe nun $t$ anstatt $n$ als Parameter, um
+        mich der Notation der primitiven Rekursion anzunähern.
+        Wir wissen bereits, dass $A_{m-1}$ primitiv rekursiv
+        ist. Wir können $A_m(t)$ also schreiben als
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        A_m(t)&amp;= \begin{cases}
+        A_{m-1} (1)&amp;\textnormal{ if $t=0$} \\
+        A_{m-1} (A_m(t-1))&amp;\textnormal{ if $t \geq 1$.}
+        \end{cases}
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Wir können also $h = \comp (A_{m-1}, \pi^3_1)$
+        wählen. Was ist
+        <span class="nowrap">$g$?</span>
+        Der Startwert soll $g(\vec{x})$
+        sein, wir haben aber kein
+        <span class="nowrap">$\vec{x}$,</span>
+        bzw. dies ist
+        der "leere Vektor". Wir brauchen eine Funktion
+        <span class="nowrap">$C$,</span>
+        die null Argumente nimmt und $A_{m-1}(1)$ zurückgibt.
+        Also: $g = \comp(A_{m-1}, {\rm one})$ . Wir könnten
+        sogar noch frecher sein und
+        $g = \comp(\succ, \comp(\succ, \comp(... \comp(\succ,
+        \zero))))$
+        schreiben, einfach $A_{m-1}(1)$ mal hintereinander;
+        diesen Wert also
+        <span class="nowrap"><i>hard-coden</i>.</span>
+        Allerdings ist die
+        erste Variante einfacher, und somit
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        A_m&amp;= \primrec(\comp (A_{m-1}, {\rm one}), \comp (A_{m-1}, \pi^3_1)) \ .
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Wir sehen also: jedes
+        <span class="nowrap">$A_m$,</span>
+        betrachtet als Funktion
+        mit einem Eingabeparameter, ist primitiv rekursiv.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+      </p>
+    </div>
+    <p class="main-column">
+      Wir haben also gezeigt, dass jedes $A_m$ primitiv
+      rekursiv ist. Heißt das auch, dass die
+      zwei-parametrige Funktion $A(m,n)$
+      <i>berechenbar</i>
+      ist?
+      In der primitiven Rekursion haben wir keine
+      Möglichkeit, den Index $m$ als Eingabewert zu lesen
+      und dann aus dem unendlichen Array primitiv rekursiver
+      Funktionen $[A_0, A_1, A_2, \dots]$ den Eintrag $A_m$
+      auszulesen. Aber
+      <i>berechenbar</i>
+      in einem ganz
+      allgemeinen Sinn? Diese Frage können wir zu diesem
+      Zeitpunkt nicht formal beantworten, weil wir den
+      Begriff allgemeiner Berechenbarkeit noch gar nicht
+      definiert haben. Es ist allerdings an der Definition
+      von $A(m,n)$ nichts magisches, und intuitiv würden
+      wir sagen, dass es klar berechenbar ist; so wie wir ja
+      auch leicht eine Funktion implementieren könnten, die
+      $A(m,n)$ berechnet.
+    </p>
+    <h2 class="main-column topic-announcement">
+      Die Ackermann-Péter-Funktion ist nicht primitiv
+      rekursiv
+    </h2>
+    <div class="well statement out">
+      <p>
+        <b>Theorem 4.3.3</b>
+        Die Ackermann-Péter-Funktion ist nicht primitiv
+        rekursiv.
+      </p>
+    </div>
+    <p class="main-column">
+      Mein Beweis paraphrasiert im Wesentlichen den auf
+      <a href="https://planetmath.org/ackermannfunctionisnotprimitiverecursive">planetmath.org</a>.
+    </p>
+    <p class="main-column">
+      <span class="nowrap"><b>Die Aussage verstehen</b>.</span>
+      Beachten Sie, dass Theorem
+      3.3.3 nicht mit Theorem 3.3.2 im Widerspruch steht.
+      Theorem 3.3.3 besagt, dass $A_m$ primitiv rekursiv
+      ist, für jedes
+      <span class="nowrap">$m$.</span>
+      Die Zahl $m$ ist hier also
+      <span class="nowrap"><i>Teil
+          der Aussage</i>,</span>
+      nicht Eingabeparameter der Funktion; die
+      Funktion $A_m$ hat nur
+      <i>einen</i>
+      Eingabeparameter.
+      Theorem 3.3.3 hingegen macht eine Aussage über
+      <i>eine</i>
+      Funktion $A(m,n)$ mit
+      <i>zwei</i>
+      Eingabeparametern, und
+      $m$ ist nun einer dieser beiden. Anders ausgedrückt:
+      sie können zwar jedes einzelne $A_m$ in der
+      "Programmiersprache" der primitiven Rekursion
+      implementieren, allerdings brauchen Sie für jedes $m$
+      neuen Code. Sie können keinen Code schreiben, der,
+      gegeben
+      <span class="nowrap">$m$,</span>
+      den Code für $A_m$ irgendwie implizit
+      produziert und dann mit $n$ aufruft. Jedenfalls nicht
+      in der Programmiersprache der primitiven Rekursion.
+    </p>
+    <p class="main-column">
+      <b>Beweisidee.</b>
+      Für jedes feste $m$ ist die
+      ein-parametrige Funktion $A_m := n \mapsto A(m,n)$
+      primitiv rekursiv und kann als Funktion mit $m$
+      verschachtelten
+      <span class="nowrap"><code>for</code>-Schleifen</span>
+      betrachtet werden. Es
+      wird sich herausstellen, dass $A_m$ in gewisser Weise
+      die am schnellsten wachsende aller solcher Funktionen
+      ist. Wäre also $A(m,n)$ primitiv-rekursiv, dann
+      könnten wir es mit $d$ verschachtelten
+      <span class="nowrap"><code>for</code>-Schleifen</span>
+      berechnen; was ein Widerspruch ist,
+      weil bereits $A_{d+1}$ schneller wächst als jede
+      primitiv-rekursive Funktion mit $d$ verschachtelten
+      Schleifen.
+    </p>
+    <div class="well highlight out">
+      <p>
+        <b>Beweis.</b>
+        Wir brauchen eine robuste Definition, was es heißt,
+        dass eine Funktion $f: \N \rightarrow \N$ schneller
+        wächst als
+        <span class="nowrap">$g: \N^k \rightarrow \N$.</span>
+      </p>
+      <div class="well statement">
+        <p>
+          <b>Definition 4.3.4</b>
+          Sei $f: \N \rightarrow \N$ und
+          <span class="nowrap">$g: \N^k \rightarrow \N$.</span>
+          Die Funktion $f$
+          <i>majorisiert</i>
+          <span class="nowrap">$g$,</span>
+          wenn
+        </p>
+        <div class="math-block">
+          $$
+          \begin{align*}
+          f (\max(x_1,\dots,x_k) \gt g(x_1, \dots, x_k) \ .
+          \end{align*}
+          $$
+        </div>
+        <p>
+          für alle $x_1,\dots,x_k \in \N$ gilt. Wir schreiben
+          auch kurzerhand
+          <span class="nowrap">$f \gt g$.</span>
+        </p>
+      </div>
+      <p>
+        Sei zum Beispiel $g(x,y) = x \cdot y$ und
+        <span class="nowrap">$f(x) = 2^x$.</span>
+        Dann majorisiert $2^x$ die Funktion
+        $x \cdot y$ nicht; sei beispielsweise
+        <span class="nowrap">$(x,y) = (3,2)$,</span>
+        dann ist $g(x,y)=6$ aber
+        <span class="nowrap">$f(\max(3,2)) = 2^3 = 8$.</span>
+        Allerdings majorisiert $2^x + 2$ die Funktion
+        <span class="nowrap">$x+y$,</span>
+        ganz allgemein weil $2^x + 2 \gt x^2$ für alle
+        $x \in \N$ gilt. Wir werden nun zeigen, dass jede
+        primitiv rekursive Funktion $g: \N^k \rightarrow \N$
+        von einem $A_r$ majorisiert wird; hierbei ist
+        wichtig, dass der Index $r$ als Konstante betrachtet
+        wird, also von der "Bauweise" von $g$ abhängen darf,
+        nicht aber von den Eingabewerten, die $g$ bekommt.
+      </p>
+      <div class="well statement">
+        <p>
+          <b>Lemma 4.3.5</b>
+          Für jede primitiv rekursive Funktion
+          $f: \N^k \rightarrow \N$ gibt es ein
+          <span class="nowrap">$r \in \N$,</span>
+          so
+          dass $f$ von $A_r$ majorisiert wird.
+        </p>
+      </div>
+      <p>
+        Aus diesem Lemma folgt dann, dass $A(m,n)$ selbst
+        nicht primitiv rekursiv sein kann. Wäre es dies, dann
+        gäbe es ja ein
+        <span class="nowrap">$r$,</span>
+        so dass das ein-parametrige $A_r$
+        die zwei-parametrige Funktion $A(m,n)$ majorisieren
+        würde:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        A_r (\max(m,n)) \gt A(m,n)
+        \end{align*}
+        $$
+      </div>
+      <p>
+        für alle Werte $m,n \in \N$ und somit insbesondere
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        A_r (r) \gt A(r,r) \ ,
+        \end{align*}
+        $$
+      </div>
+      <p>
+        was offensichtlich ein Widerspruch ist, da beide
+        Seiten gleich sind. Wir werden nun das Lemma beweisen.
+        Wir verwenden Induktion über die Weise, in der die
+        Funktion $f$ konstruiert worden ist, also über die
+        Anzahl der Comp- und PrimRec-Kombinatoren, die wir zum
+        Bau von $f$ gebraucht haben. Im folgenden schreiben
+        wir, wenn wir einen Vektor $\vec{x} = (x_1,\dots,x_n)$
+        aus natürlichen Zahlen haben, oft
+        <span class="nowrap">$x := \max(x_1,\dots,x_n)$.</span>
+        <b>Induktionsbasis.</b>
+        Wir
+        betrachten wir die Basisfunktionen
+        <span class="nowrap">$\zero, \succ, \pi^n_k$.</span>
+        Wir wissen bereits, dass
+        $A_0(n) = n+1$ ist, also
+        <span class="nowrap">$A_0 = \succ$.</span>
+        Leider
+        majorisiert $A_0$ also $\succ$ nicht. Wie steht es
+        mit
+        <span class="nowrap">$A_1$?</span>
+        Es gilt
+        <span class="nowrap">$A_1(n) = n+2$,</span>
+        und somit ist
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \zero(\vec{x})&amp;= 0 \lt 1 \lt A_1(x) \\
+        \succ(x)&amp;= x+1 \lt x+2 = A_1(x) \\
+        \pi^n_k (\vec{x})&amp;= x_k \leq x \lt x + 2 = A_1(x) \ ,
+        \end{align*}
+        $$
+      </div>
+      <p>
+        wobei wir die Schreibweise
+        $x = \max(\vec{x}) = \max(x_1,\dots,x_n)$ verwenden.
+        Wir schlussfolgern: $A_2$ majorisiert jede
+        Basisfunktion.
+        <b>Induktionsschritt.</b>
+        Wenn $f$ keine
+        Basisfunktion ist, dann wurde $f$ mittels Komposition
+        oder primitiver Rekursion konstruiert. Für jeden Fall
+        führen wir eine getrennte Rechnung durch.
+        <b>Komposition:</b>
+        <span class="nowrap">$f(\vec{x}) = g(h_1(\vec{x}), \dots, h_k(\vec{x}))$,</span>
+        für primitiv rekursive Funktionen
+        <span class="nowrap">$g, h_1, \dots, h_k$.</span>
+        Jede dieser Funktionen wurde
+        mit
+        <i>weniger</i>
+        Kombinatoren konstruiert; somit wird
+        jede dieser Funktionen von einem $A_r$ majorisiert:
+        <span class="nowrap">$A_r \gt g, A_{s_1} \gt h_1, \dots, A_{s_k} \gt h_k$.</span>
+        Für einen Eingabevektor $\vec{x}$ schreiben wir
+        $x := \max(x_1,\dots,x_n)$ und rechnen:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        f(\vec{x})&amp;= g(h_1(\vec{x}), \dots, h_k(\vec{x})) \\
+        &amp;\lt A_r (\max (h_1(\vec{x}), \dots, h_k(\vec{x}))) \tag{weil \(A_q \gt g\)} \\
+        &amp;\leq A_r ( \max (A_{s_1}(x), A_{s_2}(x), \dots, A_{s_k}(x))) \tag{weil \(A_r\) monoton und
+        \(A_{s_i} \gt h_i\)}
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Wir setzen nun
+        <span class="nowrap">$q := \max(r, s_1, \dots, s_k)$.</span>
+        Dann
+        ist der obige Wert höchstens:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \dots&amp;\leq A_q (A_q(x)) \\
+        &amp;\leq A_{q} (A_{q+1} (x)) = A_{q+1} (x+1) \ .
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Schlussendlich behaupte ich, dass
+        $A_{q+1}(x+1) \leq A_{q+2}(x)$ gilt:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        A_{q+2}(x)&amp;= A_{q+1} (A_{q+2}(x-1)) \geq A_{q+1} (A_2 (x-1)) = A_{q+1} (x+1) \ .
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Also: $A_{q+2}$ majorisiert
+        <span class="nowrap">$f$.</span>
+        <b>Primitive
+          Rekursion:</b>
+        <span class="nowrap">$f = \primrec (g,h)$,</span>
+        also
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        f(t, \vec{x})&amp;=
+        \begin{cases}
+        g(\vec{x})&amp;\textnormal{ if $t=0$} \\
+        h(f(t-1,\vec{x}), t-1, \vec{x})&amp;\textnormal{ if $t \geq 1$}
+        \end{cases} \ ,
+        \end{align*}
+        $$
+      </div>
+      <p>
+        wobei $g, h$ bereits mit weniger Kombinatoren
+        konstruierte primitiv rekursive Funktionen sind. Daher
+        gibt es ein $q \in \N$ mit $A_q \gt g$ und
+        <span class="nowrap">$A_q \gt h$.</span>
+      </p>
+      <div class="well statement">
+        <p>
+          <b>Behauptung 4.3.6</b>
+          <span class="nowrap">$f(t, \vec{x}) \leq A_{q+1} (t+x)$,</span>
+          wobei
+          <span class="nowrap">$x = \max(\vec{x}) = \max(x_1,\dots,x_n)$.</span>
+        </p>
+      </div>
+      <div class="well highlight">
+        <p>
+          <b>Beweis.</b>
+          Wir verwenden Induktion über
+          <span class="nowrap">$t$.</span>
+          Wenn $t=0$ ist,
+          dann gilt
+        </p>
+        <div class="math-block">
+          $$
+          \begin{align*}
+          f(0,\vec{x})&amp;= g(\vec{x}) \lt A_q (x) \leq A_{q+1} (x) \ .
+          \end{align*}
+          $$
+        </div>
+        <p>
+          Wenn $t \geq 1$ ist, dann gilt
+        </p>
+        <div class="math-block">
+          $$
+          \begin{align*}
+          \hspace{-3cm}
+          f(t, \vec{x})&amp;= h(f(t-1,\vec{x}), t-1, \vec{x}) \\
+          &amp;\lt A_{q} (\max(f(t-1, \vec{x}), t-1, x_1, \dots, x_n)) \tag {weil \(A_q \gt h\)}
+          \\
+          &amp;\lt A_{q} (\max(f(t-1, \vec{x}), t-1, x)) \tag {für \(x := \max(x_1,\dots,x_n)\)}
+          \\
+          &amp;\leq A_q (\max(A_{q+1} (t-1+x), t-1, x)) \tag{ per Induktionshypothese für $t-1$} \\
+          &amp;= A_q (A_{q+1}(t-1+x)) % \tag{weil \(\max(t-1,x) \leq t-1+x \leq A_{q+1}(t-1+x)\)}
+          \\
+          &amp;= A_{q+1}(t+x) \ .
+          \end{align*}
+          $$
+        </div>
+        <p>
+          Somit ist die Behauptung bewiesen.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        </p>
+      </div>
+      <p>
+        Die Behauptung reicht aber noch nicht, da die rechte
+        Seite der Ungleichung $f(t,\vec{x}) \lt A_{q+1}(t+x)$
+        eine Funktion in zwei Parametern ist: $t$ und
+        <span class="nowrap">$x$,</span>
+        wir aber für das zu beweisende Lemma aber eine
+        Funktion in einem Parameter brauchen, nämlich
+        <span class="nowrap">$\max(t, \vec{x})$.</span>
+        Sei also
+        <span class="nowrap">$z := \max(t,x) = \max(t, x_1,\dots,x_n)$.</span>
+        Dann gilt
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        A_{q+1} (x+t)&amp;\leq A_{q+1} (2z) \leq A_{q+1} (2(z-1) + 3) \\
+        &amp;= A_{q+1} (A_2(z-1)) \tag{da $A_2(n) = 2n+3$}\\
+        &amp;\leq A_{q+1} (A_{q+2}(z-1)) \\
+        &amp;= A_{q+2}(z) \ .
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Es gilt also $A_{q+2} \gt f$ und das Lemma ist
+        bewiesen.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+      </p>
+    </div>
+    <p class="main-column">
+      In der Vorlesung am 7. Mai 2024 hatte ich den
+      <i>Grad</i>
+      einer primitiv-rekursiven Funktion definiert. Das ist
+      in etwa die "Verschachtelungstiefe" von
+      <span class="nowrap">$f$.</span>
+      Betrachten wir beispielsweise die Funktion
+      $\pair(x,y) = {x + y + 1 \choose 2} + x$ und dröseln
+      auf, wie wir diese als primitiv-rekursive Funktion
+      konstruiert haben:
+    </p>
+    <div class="main-column">
+<pre>
+pair = Comp(add, p0, Comp(choose2,Comp(add,p0,Comp(succ,p1))))
+choose2 = PrimRec(zero, Comp(add,p0,p1))
+add = PrimRec (p0, Comp(succ, p0))
+</pre>
+    </div>
+    <p class="main-column">
+      dann können wir das auf Baum darstellen:
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="height:25em"
+          src="img/primitive-rekursion/primitive-recursive-tree.svg"
+        >
+      </figure>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./4-2.html">&lt;&lt; Kapitel 4.2<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Primitive Rekursion: Konstruktionen und Tricks</span></a><a
+          href="./4-4.html"
+          class="menu-row-right"
+        >Kapitel 4.4 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Ein Schritt weiter:  while-Schleifen und
+            <span class="nowrap">$\mu$-Rekursion</span></span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

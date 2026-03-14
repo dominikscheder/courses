@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Chapter 1 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>TI2—Kapitel 1</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./index.html"
+        ><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://example.com"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a class="menu-row-placeholder"></a><a
+          id="next-page"
+          href="./1-1.html"
+          class="menu-row-right"
+        >Kapitel 1.1 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Some Subchapter</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        <span class="t-3003-c">1.&ensp;Einleitung<span class="t-3003">./course2/wly/01/__parent.wly:2:11</span></span>
+      </p>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Im Kurs
+        <span class="t-3003">./course2/wly/01/__parent.wly:3:5</span></span><a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-1"><span class="t-3003-c">Theoretische Informatik<span class="t-3003">./course2/wly/01/__parent.wly:3:14</span></span>
+        <span class="t-3003-c">I<span class="t-3003">./course2/wly/01/__parent.wly:4:5</span></span></a><span class="t-3003-c">
+        <span class="t-3003">./course2/wly/01/__parent.wly:4:75</span></span>
+      <span class="t-3003-c">haben allerhand Problemstellungen und Algorithmen<span class="t-3003">./course2/wly/01/__parent.wly:5:5</span></span>
+      <span class="t-3003-c">kennengelernt und können nun (hoffentlich) auch für<span class="t-3003">./course2/wly/01/__parent.wly:6:5</span></span>
+      <span class="t-3003-c">manche Ihnen noch unbekannten Probleme neue<span class="t-3003">./course2/wly/01/__parent.wly:7:5</span></span>
+      <span class="t-3003-c">Algorithmen entwickeln. In diesem Kurs stellen wir uns<span class="t-3003">./course2/wly/01/__parent.wly:8:5</span></span>
+      <span class="t-3003-c">abstrakter die Frage, was denn ein Algorithmus ist;<span class="t-3003">./course2/wly/01/__parent.wly:9:5</span></span>
+      <span class="t-3003-c">was es denn heißt, etwas zu berechnen. Ein<span class="t-3003">./course2/wly/01/__parent.wly:10:5</span></span>
+      <span class="t-3003-c">Algorithmus, beispielsweise ein Sortieralgorithmus,<span class="t-3003">./course2/wly/01/__parent.wly:11:5</span></span>
+      <span class="t-3003-c">kann ja prinzipiell Arrays beliebiger Länge sorteren.<span class="t-3003">./course2/wly/01/__parent.wly:12:5</span></span>
+      <span class="t-3003-c">Es gibt also unendlich viele potentielle Eingaben.<span class="t-3003">./course2/wly/01/__parent.wly:13:5</span></span>
+      <span class="t-3003-c">Dennoch ist der Algorithmus selbst ein endliches<span class="t-3003">./course2/wly/01/__parent.wly:14:5</span></span>
+      <span class="t-3003-c">Objekt - der Programmcode beispielsweise besteht aus<span class="t-3003">./course2/wly/01/__parent.wly:15:5</span></span>
+      <span class="t-3003-c">endlich vielen Zeichen. Noch dazu kann ein Algorithmus<span class="t-3003">./course2/wly/01/__parent.wly:16:5</span></span>
+      <span class="t-3003-c">nur beschränkt die ihm gegebenen Daten manipulieren;<span class="t-3003">./course2/wly/01/__parent.wly:17:5</span></span>
+      <span class="t-3003-c">in jedem Schritt immer nur an einer bestimmten Stelle<span class="t-3003">./course2/wly/01/__parent.wly:18:5</span></span>
+      <span class="t-3003-c">und nach festen Regeln.<span class="t-3003">./course2/wly/01/__parent.wly:19:5</span></span>
+    </p>
+    <h2 class="main-column topic-announcement">
+      <span class="t-3003-c">Emailadressen und Arithmetische Ausdrücke<span class="t-3003">./course2/wly/01/__parent.wly:22:9</span></span>
+    </h2>
+    <p class="main-column">
+      <span class="t-3003-c">Die Menge aller denkbaren Emailadressen ist unendlich<span class="t-3003">./course2/wly/01/__parent.wly:24:5</span></span>
+      <span class="t-3003-c">- zumindest, solange wir für Nutzernamen und<span class="t-3003">./course2/wly/01/__parent.wly:25:5</span></span>
+      <span class="t-3003-c">Domainnamen keine Längenbeschränkung haben. Nach<span class="t-3003">./course2/wly/01/__parent.wly:26:5</span></span>
+      <span class="t-3003-c">welchen Regeln sind sie gebildet?<span class="t-3003">./course2/wly/01/__parent.wly:27:5</span></span>
+    </p>
+    <div class="well exercise out">
+      <p>
+        <b><span class="t-3003-c">Übungsaufgabe 1.1<span class="t-3003">./course2/wly/01/__parent.wly:29:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/__parent.wly:29:5</span></span>
+        <span class="t-3003-c">Überlegen Sie sich, wie eine gültige Emailadresse<span class="t-3003">./course2/wly/01/__parent.wly:30:9</span></span>
+        <span class="t-3003-c">auszusehen hat. Als konkrete Beispiele nehmen Sie<span class="t-3003">./course2/wly/01/__parent.wly:31:9</span></span>
+        <span class="t-3003-c">bitte<span class="t-3003">./course2/wly/01/__parent.wly:32:9</span></span>
+      </p>
+<pre>
+<span class="t-3003-c">thomas.schmitz@hszg.de<span class="t-3003">./course2/wly/01/__parent.wly:35:9</span></span>
+<span class="t-3003-c">dominik@cs.sjtu.edu.cn<span class="t-3003">./course2/wly/01/__parent.wly:36:9</span></span>
+<span class="t-3003-c">raffaela@mayer@gmail.com<span class="t-3003">./course2/wly/01/__parent.wly:37:9</span></span>
+<span class="t-3003-c">lorenz.klein@greatest/company/in/the/world.com<span class="t-3003">./course2/wly/01/__parent.wly:38:9</span></span>
+<span class="t-3003-c">.schlaumeier@gmail.com<span class="t-3003">./course2/wly/01/__parent.wly:39:9</span></span>
+</pre>
+      <p>
+        <span class="t-3003-c">Welches davon sind gültige Emailadressen? Können Sie<span class="t-3003">./course2/wly/01/__parent.wly:42:9</span></span>
+        <span class="t-3003-c">genaue Regeln angeben, nach denen eine solche gebildet<span class="t-3003">./course2/wly/01/__parent.wly:43:9</span></span>
+        <span class="t-3003-c">sein muss? Können Sie die Regeln formal aufschreiben?<span class="t-3003">./course2/wly/01/__parent.wly:44:9</span></span>
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b><span class="t-3003-c">Übungsaufgabe 1.2<span class="t-3003">./course2/wly/01/__parent.wly:46:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/__parent.wly:46:5</span></span>
+        <span class="t-3003-c">Sie alle kennen arithmetische Ausdrücke, wie wir sie<span class="t-3003">./course2/wly/01/__parent.wly:47:9</span></span>
+        <span class="t-3003-c">zum Beispiel in Python eingeben und auswerten lassen<span class="t-3003">./course2/wly/01/__parent.wly:48:9</span></span>
+        <span class="t-3003-c">können:<span class="t-3003">./course2/wly/01/__parent.wly:49:9</span></span>
+      </p>
+<pre class="python-prompt">
+<span class="python-prompt-carets"><span class="t-3003-c">&gt;&gt;&gt;<span class="t-3003">./course2/wly/01/__parent.wly:52:9</span></span></span><span class="python-prompt-content"><span class="t-3003-c"> (6 + 8) * 3<span class="t-3003">./course2/wly/01/__parent.wly:52:12</span></span></span>
+<span class="python-prompt-ok-response"><span class="t-3003-c">42<span class="t-3003">./course2/wly/01/__parent.wly:53:9</span></span></span>
+<span class="python-prompt-carets"><span class="t-3003-c">&gt;&gt;&gt;<span class="t-3003">./course2/wly/01/__parent.wly:54:9</span></span></span><span class="python-prompt-content"><span class="t-3003-c"> (24 / 4 / 2) * (24 / ( 4 / 2)) + 1<span class="t-3003">./course2/wly/01/__parent.wly:54:12</span></span></span>
+<span class="python-prompt-ok-response"><span class="t-3003-c">37<span class="t-3003">./course2/wly/01/__parent.wly:55:9</span></span></span>
+<span class="python-prompt-carets"><span class="t-3003-c">&gt;&gt;&gt;<span class="t-3003">./course2/wly/01/__parent.wly:56:9</span></span></span><span class="python-prompt-content"><span class="t-3003-c"> 3 + 7 * 8<span class="t-3003">./course2/wly/01/__parent.wly:56:12</span></span></span>
+<span class="python-prompt-ok-response"><span class="t-3003-c">59<span class="t-3003">./course2/wly/01/__parent.wly:57:9</span></span></span>
+<span class="python-prompt-carets"><span class="t-3003-c">&gt;&gt;&gt;<span class="t-3003">./course2/wly/01/__parent.wly:58:9</span></span></span><span class="python-prompt-content"><span class="t-3003-c"> (2 * 3))<span class="t-3003">./course2/wly/01/__parent.wly:58:12</span></span></span>
+<span class="python-prompt-error-response"><span class="t-3003-c">File "&lt;stdin&gt;", line 1<span class="t-3003">./course2/wly/01/__parent.wly:59:9</span></span>
+<span class="t-3003-c">    (2 * 3))<span class="t-3003">./course2/wly/01/__parent.wly:60:9</span></span>
+<span class="t-3003-c">           ^<span class="t-3003">./course2/wly/01/__parent.wly:61:9</span></span>
+<span class="t-3003-c">SyntaxError: unmatched ')'<span class="t-3003">./course2/wly/01/__parent.wly:62:9</span></span></span>
+<span class="python-prompt-carets"><span class="t-3003-c">&gt;&gt;&gt;<span class="t-3003">./course2/wly/01/__parent.wly:63:9</span></span></span><span class="python-prompt-content"><span class="t-3003-c"> (* 3)<span class="t-3003">./course2/wly/01/__parent.wly:63:12</span></span></span>
+<span class="python-prompt-error-response"><span class="t-3003-c">File "&lt;stdin&gt;", line 1<span class="t-3003">./course2/wly/01/__parent.wly:64:9</span></span>
+<span class="t-3003-c">    (* 3)<span class="t-3003">./course2/wly/01/__parent.wly:65:9</span></span>
+<span class="t-3003-c">     ^^^<span class="t-3003">./course2/wly/01/__parent.wly:66:9</span></span>
+<span class="t-3003-c">SyntaxError: cannot use starred expression here<span class="t-3003">./course2/wly/01/__parent.wly:67:9</span></span></span>
+</pre>
+      <p>
+        <span class="t-3003-c">Die letzten beiden waren in Pythons Augen<span class="t-3003">./course2/wly/01/__parent.wly:70:9</span></span>
+        <span class="t-3003-c">offensichtlich nicht korrekt. Wie sind korrekte<span class="t-3003">./course2/wly/01/__parent.wly:71:9</span></span>
+        <span class="t-3003-c">arithmetische Ausdrücke aufgebaut? Beschränken Sie<span class="t-3003">./course2/wly/01/__parent.wly:72:9</span></span>
+        <span class="t-3003-c">sich gerne auf * und + und / und - und Zahlen und<span class="t-3003">./course2/wly/01/__parent.wly:73:9</span></span>
+        <span class="t-3003-c">ignorieren Sie erst mal Variablen, Funktionsaufrufe<span class="t-3003">./course2/wly/01/__parent.wly:74:9</span></span>
+        <span class="t-3003-c">und weitere Operatoren. Versuchen Sie, eine Art<span class="t-3003">./course2/wly/01/__parent.wly:75:9</span></span>
+        <span class="t-3003-c">formale Sprache zu entwickeln, die die korrekten<span class="t-3003">./course2/wly/01/__parent.wly:76:9</span></span>
+        <span class="t-3003-c">arithmetischen Ausdrücke beschreibt.<span class="t-3003">./course2/wly/01/__parent.wly:77:9</span></span>
+      </p>
+    </div>
+    <h2 class="main-column topic-announcement">
+      <span class="t-3003-c">Endliche Regeln und unendliches Verhalten<span class="t-3003">./course2/wly/01/__parent.wly:80:9</span></span>
+    </h2>
+    <p class="main-column">
+      <span class="t-3003-c">Das klassische Beispiel, wie sehr einfache Regeln ein<span class="t-3003">./course2/wly/01/__parent.wly:82:5</span></span>
+      <span class="t-3003-c">extrem komplexes Verhalten erzeugen können, ist<span class="t-3003">./course2/wly/01/__parent.wly:83:5</span></span>
+      <span class="t-3003-c">Conways Game of Life. Hier ist der
+        <span class="t-3003">./course2/wly/01/__parent.wly:84:5</span></span><a href="href=https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens"><span class="t-3003-c">Wikipedia-Artikel<span class="t-3003">./course2/wly/01/__parent.wly:84:41</span></span>
+        <span class="t-3003-c">dazu<span class="t-3003">./course2/wly/01/__parent.wly:85:5</span></span></a><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/__parent.wly:85:71</span></span>
+      <span class="t-3003-c">Die Welt von Conways Game of Life ist ein unendliches<span class="t-3003">./course2/wly/01/__parent.wly:86:5</span></span>
+      <span class="t-3003-c">Schachbrett, in jedem jedes Feld entweder leer ist<span class="t-3003">./course2/wly/01/__parent.wly:87:5</span></span>
+      <span class="t-3003-c">oder von einem Einzeller bevölkert ist.<span class="t-3003">./course2/wly/01/__parent.wly:88:5</span></span>
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="width:400px;height:20px;"
+          src="img/game-of-life/game-of-life-01-01.svg"
+        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course2/public/img/game-of-life/game-of-life-01-01.svg</span></span>
+        <figcaption>
+          <span class="t-3003-c">Eine Population in Conways Game of Life. Bildquelle:<span class="t-3003">./course2/wly/01/__parent.wly:95:13</span></span>
+          <span class="t-3003-c">Icongeek26 on<span class="t-3003">./course2/wly/01/__parent.wly:96:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course2/wly/01/__parent.wly:97:13</span></span><a href="https://www.flaticon.com/"><span class="t-3003-c">flaticon.com<span class="t-3003">./course2/wly/01/__parent.wly:97:14</span></span></a><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/__parent.wly:97:54</span></span>
+        </figcaption>
+      </figure>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">In jedem Zeitschritt weicht die derzeitige Generation<span class="t-3003">./course2/wly/01/__parent.wly:99:5</span></span>
+      <span class="t-3003-c">einer neuen. Wo neue Einzeller entstehen, das hängt<span class="t-3003">./course2/wly/01/__parent.wly:100:5</span></span>
+      <span class="t-3003-c">davon ab, wie viele der benachbarten 8 Felder von<span class="t-3003">./course2/wly/01/__parent.wly:101:5</span></span>
+      <span class="t-3003-c">Einzellern besetzt sind.<span class="t-3003">./course2/wly/01/__parent.wly:102:5</span></span>
+    </p>
+    <div class="main-column">
+      <ol>
+        <li>
+          <p>
+            <b><span class="t-3003-c">Einzeller bleibt:<span class="t-3003">./course2/wly/01/__parent.wly:106:14</span></span></b><span class="t-3003-c">
+              wenn auf einem Feld ein Einzeller<span class="t-3003">./course2/wly/01/__parent.wly:106:32</span></span>
+            <span class="t-3003-c">lebt und in seiner 8-Nachbarschaft zwei oder drei<span class="t-3003">./course2/wly/01/__parent.wly:107:13</span></span>
+            <span class="t-3003-c">Einzeller leben, dann überlebt er; in der nächsten<span class="t-3003">./course2/wly/01/__parent.wly:108:13</span></span>
+            <span class="t-3003-c">Generation wird dort wieder ein Einzeller leben.<span class="t-3003">./course2/wly/01/__parent.wly:109:13</span></span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b><span class="t-3003-c">Einzeller entsteht: wenn auf einem Feld im Moment<span class="t-3003">./course2/wly/01/__parent.wly:112:14</span></span>
+              <span class="t-3003-c">kein Einzeller lebt, in der 8-Nachbarschaft aber genau<span class="t-3003">./course2/wly/01/__parent.wly:113:13</span></span>
+              <span class="t-3003-c">drei Einzeller leben, dann entseht hier in der<span class="t-3003">./course2/wly/01/__parent.wly:114:13</span></span>
+              <span class="t-3003-c">nächsten Generation ein neuer Einzeller.<span class="t-3003">./course2/wly/01/__parent.wly:115:13</span></span></b>
+          </p>
+        </li>
+      </ol>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Im Umkehrschluss: wenn ein Einzeller in seiner<span class="t-3003">./course2/wly/01/__parent.wly:117:5</span></span>
+      <span class="t-3003-c">8-Nachbarschaft vier oder mehr weitere Einzeller hat,<span class="t-3003">./course2/wly/01/__parent.wly:118:5</span></span>
+      <span class="t-3003-c">dann stirbt er an Überbevölkerung; gibt es in der<span class="t-3003">./course2/wly/01/__parent.wly:119:5</span></span>
+      <span class="t-3003-c">8-Nachbarschaft keinen oder nur einen Einzeller, dann<span class="t-3003">./course2/wly/01/__parent.wly:120:5</span></span>
+      <span class="t-3003-c">stirbt er an Vereinsamung. Wir müssen also für jedes<span class="t-3003">./course2/wly/01/__parent.wly:121:5</span></span>
+      <span class="t-3003-c">Feld zählen, wieviele der benachbarten Felder<span class="t-3003">./course2/wly/01/__parent.wly:122:5</span></span>
+      <span class="t-3003-c">bevölkert sind:<span class="t-3003">./course2/wly/01/__parent.wly:123:5</span></span>
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="width:20em"
+          src="img/game-of-life/game-of-life-01-02.svg"
+        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course2/public/img/game-of-life/game-of-life-01-02.svg</span></span>
+        <figcaption>
+          <span class="t-3003-c">Zu jedem Feld schreiben wir die Anzahl seiner<span class="t-3003">./course2/wly/01/__parent.wly:130:13</span></span>
+          <span class="t-3003-c">Nachbarfelder, die bevölkert sind.<span class="t-3003">./course2/wly/01/__parent.wly:131:13</span></span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="width:20em"
+          src="img/game-of-life/game-of-life-01-03.svg"
+        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course2/public/img/game-of-life/game-of-life-01-03.svg</span></span>
+        <figcaption>
+          <span class="t-3003-c">Die nächste Generation.<span class="t-3003">./course2/wly/01/__parent.wly:138:13</span></span>
+        </figcaption>
+      </figure>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Was geschieht nun, wenn wir weitere Generationen<span class="t-3003">./course2/wly/01/__parent.wly:140:5</span></span>
+      <span class="t-3003-c">betrachten? Stirbt die Population aus? Explodiert sie?<span class="t-3003">./course2/wly/01/__parent.wly:141:5</span></span>
+      <span class="t-3003-c">Stabilisiert sie sich irgendwann?<span class="t-3003">./course2/wly/01/__parent.wly:142:5</span></span>
+    </p>
+    <div class="well exercise out">
+      <p>
+        <b><span class="t-3003-c">Übungsaufgabe 1.3<span class="t-3003">./course2/wly/01/__parent.wly:144:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/__parent.wly:144:5</span></span>
+        <span class="t-3003-c">Spiele Sie mit Conways Game of Life! Hier finden Sie<span class="t-3003">./course2/wly/01/__parent.wly:145:9</span></span>
+        <span class="t-3003-c">einen Simulator:<span class="t-3003">./course2/wly/01/__parent.wly:146:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/__parent.wly:147:9</span></span><a href="https://playgameoflife.com/"><span class="t-3003-c">playgameoflife.com<span class="t-3003">./course2/wly/01/__parent.wly:147:10</span></span></a><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/__parent.wly:147:58</span></span>
+      </p>
+      <ol>
+        <li>
+          <p>
+            <span class="t-3003-c">Probieren Sie aus, was geschieht, wenn die<span class="t-3003">./course2/wly/01/__parent.wly:151:17</span></span>
+            <span class="t-3003-c">Anfangspopulation ein "Pfad" ist, z.B.<span class="t-3003">./course2/wly/01/__parent.wly:152:17</span></span>
+          </p>
+          <div class="figure__container">
+            <figure>
+              <img
+                style="width:16em"
+                src="img/game-of-life/game-of-life-02-01.svg"
+              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course2/public/img/game-of-life/game-of-life-02-01.svg</span></span>
+            </figure>
+          </div>
+          <p>
+            <span class="t-3003-c">Probieren Sie Pfade verschiedener Länge aus. Welche<span class="t-3003">./course2/wly/01/__parent.wly:159:17</span></span>
+            <span class="t-3003-c">sterben aus? Welche überleben, und was geschieht mit<span class="t-3003">./course2/wly/01/__parent.wly:160:17</span></span>
+            <span class="t-3003-c">ihnen?<span class="t-3003">./course2/wly/01/__parent.wly:161:17</span></span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="t-3003-c">Probieren Sie das "f-Pentomino" als<span class="t-3003">./course2/wly/01/__parent.wly:164:17</span></span>
+            <span class="t-3003-c">Startkonfiguration aus:<span class="t-3003">./course2/wly/01/__parent.wly:165:17</span></span>
+          </p>
+          <div class="figure__container">
+            <figure>
+              <img
+                style="width:12em"
+                src="img/game-of-life/game-of-life-03-01.svg"
+              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course2/public/img/game-of-life/game-of-life-03-01.svg</span></span>
+            </figure>
+          </div>
+        </li>
+        <li>
+          <p>
+            <span class="t-3003-c">Probieren Sie meine obige Startkonfiguration aus.<span class="t-3003">./course2/wly/01/__parent.wly:173:17</span></span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="t-3003-c">Finden Sie weitere interessante Startkonfigurationen.<span class="t-3003">./course2/wly/01/__parent.wly:176:17</span></span>
+          </p>
+        </li>
+      </ol>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Was hat das Game of Life mit TI-2 zu tun? Nun, es<span class="t-3003">./course2/wly/01/__parent.wly:178:5</span></span>
+      <span class="t-3003-c">illustriert, wie eine endliche, sogar sehr kleine<span class="t-3003">./course2/wly/01/__parent.wly:179:5</span></span>
+      <span class="t-3003-c">Regelmenge sehr komplexe Phänomene erzeugen kann. In<span class="t-3003">./course2/wly/01/__parent.wly:180:5</span></span>
+      <span class="t-3003-c">der Tat, das Game of Life ist Turing-vollständig; das<span class="t-3003">./course2/wly/01/__parent.wly:181:5</span></span>
+      <span class="t-3003-c">heißt in etwa, sie können eine Anfangskonfiguration<span class="t-3003">./course2/wly/01/__parent.wly:182:5</span></span>
+      <span class="t-3003-c">bauen, die dann einen ganzen Rechner simuliert. Klingt<span class="t-3003">./course2/wly/01/__parent.wly:183:5</span></span>
+      <span class="t-3003-c">kaum vorstellbar. Wenn wir am Ende dieses Kurses<span class="t-3003">./course2/wly/01/__parent.wly:184:5</span></span>
+      <span class="t-3003-c">angelangt sind, werden Sie aber verstehen, warum das<span class="t-3003">./course2/wly/01/__parent.wly:185:5</span></span>
+      <span class="t-3003-c">sogar recht plausibel ist.<span class="t-3003">./course2/wly/01/__parent.wly:186:5</span></span>
+    </p>
+    <h2 class="main-column topic-announcement">
+      <span class="t-3003-c">Zusammenfassung<span class="t-3003">./course2/wly/01/__parent.wly:189:9</span></span>
+    </h2>
+    <p class="main-column">
+      <span class="t-3003-c">Es geht also in diesem Kurs vor Allem um folgende<span class="t-3003">./course2/wly/01/__parent.wly:191:5</span></span>
+      <span class="t-3003-c">Fragen:<span class="t-3003">./course2/wly/01/__parent.wly:192:5</span></span>
+    </p>
+    <div class="main-column">
+      <ul>
+        <li>
+          <p>
+            <span class="t-3003-c">Wie können wir endliche Beschreibungen von<span class="t-3003">./course2/wly/01/__parent.wly:196:13</span></span>
+            <span class="t-3003-c">unendlichen Objekten angeben?<span class="t-3003">./course2/wly/01/__parent.wly:197:13</span></span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="t-3003-c">Was heißt es, etwas zu berechnen? Welche Modelle fürs<span class="t-3003">./course2/wly/01/__parent.wly:200:13</span></span>
+            <span class="t-3003-c">Rechnen gibt es, die einerseits
+              <span class="t-3003">./course2/wly/01/__parent.wly:201:13</span></span><i><span class="t-3003-c">umfassend<span class="t-3003">./course2/wly/01/__parent.wly:201:46</span></span></i><span class="t-3003-c">
+              sind, also<span class="t-3003">./course2/wly/01/__parent.wly:201:56</span></span>
+            <span class="t-3003-c">die möglichst viel können, andererseits auch<span class="t-3003">./course2/wly/01/__parent.wly:202:13</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course2/wly/01/__parent.wly:203:13</span></span><i><span class="t-3003-c">physikalisch realisierbar<span class="t-3003">./course2/wly/01/__parent.wly:203:14</span></span></i><span class="t-3003-c">
+              sind?<span class="t-3003">./course2/wly/01/__parent.wly:203:40</span></span>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a class="menu-row-placeholder"></a><a
+          href="./1-1.html"
+          class="menu-row-right"
+        >Kapitel 1.1 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Some Subchapter</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

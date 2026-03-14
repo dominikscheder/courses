@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Chapter 9 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>TI2—Kapitel 9</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./8-8.html"
+        >&lt;&lt; Kapitel 8.8<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Anwendungen des Postschen Korrespondenzproblems</span></a><a
+          id="next-page"
+          href="./9-1.html"
+          class="menu-row-right"
+        >Kapitel 9.1 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Das Zeithierarchietheorem</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        9.&ensp;Complexity Theory
+      </p>
+    </div>
+    <p class="main-column">
+      Turingmaschinen erlauben uns, den Resourcenverbrauch
+      einer Berechnung zu quantifizieren: zum einen die
+      <span class="nowrap"><i>Zeit</i>,</span>
+      also die Anzahl der Schritte, die die
+      Turingmaschine durchführt, bis sie anhält; zum anderen
+      der
+      <span class="nowrap"><i>Speicherplatz</i>,</span>
+      also die Anzahl der Zellen auf
+      dem Band (oder den Bändern), die im Verlauf der
+      Berechnung beschrieben werden. Beides sind Maße, die
+      tatsächlich im echten Leben relevant sind.
+      Turingmaschinen erlauben uns, diese genau zu
+      quantifizieren und die Zeitkomplexität und
+      Speicherkomplexität eines Problems zu untersuchen. In
+      diesem Kapitel werden wir uns zum Großteil auf
+      Zeitkomplexität beschränken. Es gibt weitere
+      Resourcen, die man mit Turingmaschinen nicht wirklich
+      quantifizieren kann:
+    </p>
+    <div class="main-column">
+      <ul>
+        <li>
+          <p>
+            <b>I/O-Komplexität.</b>
+            In echten Rechnern haben wir eine
+            Hierarchie von Speichermedien. Den extrem schnellen
+            Prozessorcache; schnellen Cache; den vergleichsweise
+            langsamen Hauptstpeicher (RAM); eventuell sogar einen
+            externen Festplattenspeichern, der um Größenordnungen
+            langsamer ist.
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Kommunikationskomplexität.</b>
+            Bei verteilten
+            Anwendungen (Cloud Computing) ist die limitierende
+            Resource eventuell gar nicht die Rechenkapazität
+            sondern das
+            <span class="nowrap"><i>Netzwerk</i>,</span>
+            über das die Daten
+            ausgetauscht werden.
+          </p>
+        </li>
+      </ul>
+    </div>
+    <p class="main-column">
+      Also: Turingmaschinen sind zwar universell in dem
+      Sinne, dass sie wohl alle physikalisch realisierbaren
+      Rechnermodelle simulieren können (ich sage
+      <span class="nowrap"><i>wohl</i>,</span>
+      weil wir nicht wissen, was alles physikalisch
+      realisierbar ist). Allerdings ist es möglich, dass
+      Sie, abhängig von Ihrem Anwendungsfeld, ein
+      abgewandeltes oder völlig anderes Modell benötigen, um
+      den Resourcenverbrauch modellieren zu können. Dennoch:
+      in diesem Kapitel beschränken wir uns auf die Resource
+      <span class="nowrap"><i>Zeit</i>,</span>
+      und daher sind Turingmaschinen das Modell der
+      Wahl.
+    </p>
+    <h2 class="main-column topic-announcement">
+      Zeitkomplexitätsklassen
+    </h2>
+    <p class="main-column">
+      Wir beschränken uns der Einfachheit halber auf das
+      Eingabealphabet $\Sigma = \{0,1\}$ und auf
+      Entscheidungsprobleme, wo uns also nur eine
+      Ja/Nein-Antwort interessiert.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Definition 9.1</b>
+        Sei
+        <span class="nowrap">$t: \N \rightarrow \N$.</span>
+        Eine Turingmaschinen $M$
+        <i>entscheidet</i>
+        eine Sprache $L \subseteq \Sigma^*$ in
+        Zeit $t$ wenn
+      </p>
+      <ul>
+        <li>
+          <p>
+            sie die Sprache entscheidet, also
+            $x \in L \Longleftrightarrow f_M(x) =
+            \texttt{accept}$
+            und
+          </p>
+        </li>
+        <li>
+          <p>
+            für jede Eingabe $x$ in maximal $O(t(|x|))$ Schritten
+            terminiert.
+          </p>
+        </li>
+      </ul>
+      <p>
+        Wir definieren nun
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \TIME_k(t) := \{L \subseteq \Sigma^* \ | \
+        \textnormal{es gibt eine $k$-Band-TM $M$, die $L$ in Zeit $t$ entscheidet}\}
+        \end{align*}
+        $$
+      </div>
+      <p>
+        und schließlich
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \TIME(t) := \bigcup_{k \geq 1} \TIME_k(t) \ .
+        \end{align*}
+        $$
+      </div>
+    </div>
+    <p class="main-column">
+      Falls Sie sich nicht mehr genau an die
+      <span class="nowrap">$O$-Notation</span>
+      erinnern können: in diesem Zusammenhang heißt das,
+      dass es Konstanten $c$ und $d$ gibt, so dass $M$ in
+      maximal $c t(|x|) + d$ Schritten terminiert. Die
+      Konstanten $c$ und $d$ dürfen von $M$ abhängen, aber
+      nicht von der Eingabe $x$ oder der Länge
+      <span class="nowrap">$|x|$.</span>
+      Wir
+      haben in
+      <a
+        href="./8-3.html#_35_hgi_"
+        class=""
+      >Kapitel 8.3</a>
+      gezeigt, wie man
+      eine $k$ -Band-Turingmaschine $M$ durch eine
+      Ein-Band-Turingmaschine
+      <span class="nowrap">$M'$.</span>
+      Der Aufwand war
+      quadratisch: wenn $M$ innerhalb von $t$ Schritten
+      terminiert, so terminiert $M'$ innerhalb von $c t^2$
+      Schritten, wobei $c$ eine Konstante ist, die von $M$
+      abhängt. Mit unser neuen Notation können wir das sehr
+      konzis schreiben:
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Theorem 9.2
+          <span class="nowrap">($k$-Band</span>
+          zu
+          <span class="nowrap">$1$-Band).</span></b>
+        Sei
+        <span class="nowrap">$t: \N \rightarrow \N$.</span>
+        Dann gilt
+        <span class="nowrap">$\TIME_k(t) \subseteq \TIME_1(t^2)$.</span>
+      </p>
+    </div>
+    <p class="main-column">
+      Der quadratische Overhead wird tatsächlich störend,
+      wenn man Zeit als Resource untersucht. Daher gibt es
+      eine bessere Simulation; die benötigt allerdings zwei
+      Bänder (Oder drei? Weiß ich gerade nicht exakt) und
+      die Konstruktion ist deutlich komplizierter. Daher
+      vorerst ohne Beweis:
+    </p>
+    <div
+      id="_41_hgi_"
+      class="well statement out"
+    >
+      <p>
+        <b>Theorem 9.3
+          <span class="nowrap">($k$-Band</span>
+          zu
+          <span class="nowrap">$2$-Band;</span>
+          ohne Beweis).</b>
+        Sei
+        <span class="nowrap">$t: \N \rightarrow \N$.</span>
+        Dann gilt
+        <span class="nowrap">$\TIME_k(t) \subseteq \TIME_2(t \log t)$.</span>
+      </p>
+    </div>
+    <h3 class="main-column subtopic-announcement">
+      Die Klasse P und der Begriff der Effizienz
+    </h3>
+    <div class="well statement out">
+      <p>
+        <b>Definition 9.4 (Die Komplexitätsklasse P).</b>
+        Wir definieren
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \textnormal{P} := \bigcup_{k=1}^{\infty} \TIME(n^k) \ ,
+        \end{align*}
+        $$
+      </div>
+      <p>
+        also die Klasse aller Probleme (formal: Sprachen),
+        die man in
+        <i>polynomieller Zeit</i>
+        entscheiden kann.
+      </p>
+    </div>
+    <p class="main-column">
+      Wenn wir in der Komplexitätstheorie davon sprechen,
+      dass ein Algorithmus effizient ist, dann meinen wir:
+      seine Laufzeit ist polynomiell, also $O(|x|^k)$ für
+      ein beliebiges aber fixes
+      <span class="nowrap">$k$.</span>
+      Wenn wir zeigen
+      wollen, dass ein Problem (bzw. eine Sprache) in P ist,
+      dann bauen wir üblicherweise keine Turingmaschine,
+      sondern beschreiben (oder implementieren) einen
+      <span class="nowrap"><i>Algorithmus</i>,</span>
+      denn wir wissen ja mittlerweile (bzw.
+      vertrauen darauf), dass man diesen Algorithmus dann
+      effizient auf einer Mehrband-Turingmaschine
+      implementieren kann. Wir sind also bildlich gesprochen
+      wieder in
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-1">TI-1</a>
+      und können sagen: ein Problem ist in
+      <span class="nowrap">$P$,</span>
+      wenn es
+      dafür einen effizienten Algorithmus gibt. Hier ist
+      eine kleine Liste von Problemen in P:
+    </p>
+    <div class="main-column">
+      <ol>
+        <li>
+          <p>
+            <span class="sc">Undirected Graph Reachability</span>: Gegeben ein
+            Graph $(V,E)$ und zwei Knoten $s$ und
+            <span class="nowrap">$t$.</span>
+            Gibt es
+            einen Pfad von $s$ nach
+            <span class="nowrap">$t$?</span>
+            Algorithmus: Tiefensuche
+            oder Breitensuche. Beachten Sie: um das als "Sprache"
+            zu betrachten, müssen wir eine Codierung für Graphen
+            festlegen. Das ist wohl kein Problem: wir brauchen
+            Klammern, Kommas und ein Alphabet, um unsere Knoten
+            bezeichnen zu können.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc">Acyclicity</span>: Gegeben ein gerichteter Graph
+            <span class="nowrap">$(V,E)$,</span>
+            ist er azyklisch?
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc">Perfect Square</span>: Gegeben ein Binärzahl
+            <span class="nowrap">$x \in \{0,1\}^*$;</span>
+            ist sie eine Quadratzahl?
+            Algorithmus: sei $X$ die von $x$ beschriebene
+            natürliche Zahl. Es gilt
+            <span class="nowrap">$0 \leq X \leq 2^{|x|} - 1$.</span>
+            Mit binärer Suche finden wir das größte $k$ mit
+            <span class="nowrap">$k^2 \leq X$.</span>
+            Die Berechnung von $k^2$ hat
+            quadratische Laufzeit in der Anzahl der Bits von
+            <span class="nowrap">$k$;</span>
+            diese ist höchstens
+            <span class="nowrap">$|x|$;</span>
+            die binäre Suche tätigt
+            $\log N \leq |x|$ Durchläufe. Die Gesamtlaufzeit ist
+            also $O(|x|^3)$ .
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc">Unary Primes</span>: Gegeben eine natürliche Zahl in
+            unärer Codierung, also $1^{n}$ mit Eingabealphabet
+            <span class="nowrap">$\Sigma = \{1\}$;</span>
+            ist $n$ eine Primzahl? Algorithmus:
+            wir prüfen für jedes
+            <span class="nowrap">$2 \leq k \leq n-1$,</span>
+            ob es $n$
+            teilt. (Wie programmiert man Teilbarkeit auf einer
+            Turingmaschine? Sie könnten zum Beispiel $1^k$ auf
+            das zweite Band schreiben und dann beide Bänder
+            durchgehen, das zweite mehrmals, und schauen, ob es
+            "aufgeht"; das geht in Zeit
+            <span class="nowrap">$n$).</span>
+            Die Gesamtlaufzeit
+            ist also
+            <span class="nowrap">$n^2$.</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc">Primes</span>: Gegeben eine binär codierte Zahl
+            <span class="nowrap">$x \in \{0,1\}^n$,</span>
+            ist sie eine Primzahl?
+            Algorithmus: der obige Algorithmus, alle potenziellen
+            Teiler auszuprobieren, benötigt $X^2$ Schritte, wobei
+            $X \in \N$ die von $x$ codierte Zahl ist. Da
+            $X \leq 2^n - 1$ ist dies nicht mehr polynomiell in
+            der Eingabelänge
+            <span class="nowrap">$n$.</span>
+            Wir brauchen also einen
+            Algorithmus, der polynomiell in der Bitgröße von $X$
+            ist, also in
+            <span class="nowrap">$n = |x|$.</span>
+            <i>Randomisierte</i>
+            Algorithmen
+            dieser Art kennt man schon seit den 1970er Jahren,
+            z.B. den
+            <a href="https://de.wikipedia.org/wiki/Miller-Rabin-Test">Miller-Rabin-Test</a>.
+            Ein deterministischer polynomieller Algorithmus ist
+            zum Beispiel der 2002 veröffentlichte
+            <a href="https://en.wikipedia.org/wiki/AKS_primality_test">Agrawal–Kayal–Saxena primality
+              test</a>;
+            die Laufzeit dieses Algorithmus ist polynomiell,
+            allerdings ist $O(n^6)$ die beste derzeit bekannte
+            Schranke.
+          </p>
+        </li>
+      </ol>
+    </div>
+    <p class="main-column">
+      In vielen Kontexten wollen wir keine Ja/Nein-Antwort,
+      sondern ein konkretes Objekt als Antwort. Wir nennen
+      diese Probleme
+      <i>Funktionsprobleme</i>
+      im Gegensatz zu den
+      <span class="nowrap"><i>Entscheidungsproblemen</i>.</span>
+      Hier müssen wir auf die
+      Definition zurückgreifen, was es heißt, dass eine
+      Turingmaschine eine Funktion
+      $f: \Sigma_1^* \rightarrow \Sigma_2^*$ berechnet. Die
+      entsprechende Komplexitätsklasse aller Funktionen, die
+      man in polynomieller Zeit berechnen kann, nennt man
+      FP. Folgende Probleme sind in FP:
+    </p>
+    <div class="main-column">
+      <ol>
+        <li>
+          <p>
+            <span class="sc">Multiplication</span>: gegeben zwei Zahlen
+            $x, y \in \{0,1\}^n$ in binärer Codierung, berechne
+            ihr Produkt. Algorithmus: sowohl die Schulmethode als
+            auch Karatsubas Algorithmus haben polynomielle
+            Laufzeit.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc">Maximum Flow</span>: gegeben ein Flussnetzwerk (vgl.
+            <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-1/lecture-notes/08-00-max-flow.html">Kapitel 8 aus
+              TI-1</a>),
+            berechne einen MaxFluss.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc">Linear Equations</span>: gegeben ein lineares
+            Gleichungssystem, also eine Matrix
+            $A \in \Q^{m \times n}$ und einen Vektor
+            <span class="nowrap">$b \in \Q^{m}$,</span>
+            finde ein $x \in \Q^n$ mit
+            <span class="nowrap">$Ax = b$.</span>
+            Algorithmus: Gaußsche Eliminierung; obwohl Sie hier
+            aufpassen müssen, dass die Bit-Darstellung Ihrer
+            Zwischenergebnisse nicht zu groß wird.
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc">Linear Programming</span>: gegeben ein lineares
+            Ungleichungssystem, also eine Matrix
+            $A \in \Q^{m \times n}$ und einen Vektor
+            <span class="nowrap">$b \in \Q^{m}$,</span>
+            finde ein $x \in \Q^n$ mit $Ax \leq b$
+            (für $y,b \in \Q^m$ bedeutet die Schreibweise
+            <span class="nowrap">$y \leq b$,</span>
+            dass $y_i \leq b_i$ für alle $i \in [m]$
+            gilt). Algorithmus: der bekannteste Algorithmus für
+            <span class="sc">Linear Programming</span>
+            ist der
+            <a href="https://de.wikipedia.org/wiki/Simplex-Verfahren">Simplex-Algorithmus</a>.
+            Allerdings ist seine Worst-Case-Laufzeit nicht
+            polynomiell. Erst 1979 wurde mit Leonid Khachiyans
+            <a href="https://de.wikipedia.org/wiki/Ellipsoidmethode">Ellipsoid-Algorithmus</a>
+            ein Algorithmus mit polynomieller Worst-Case-Laufzeit
+            gefunden.
+          </p>
+        </li>
+      </ol>
+    </div>
+    <p class="main-column">
+      Und zum Schluss eine Liste von Problemen (Funktions-
+      und Entscheidungsprobleme), von denen nicht bekannt
+      ist (Stand Juni 2025), ob sie in P sind oder nicht.
+    </p>
+    <div class="main-column">
+      <ol>
+        <li>
+          <p>
+            <span class="sc">Graph 3-Colorability</span>: Gegeben ein Graph
+            <span class="nowrap">$G = (V,E)$.</span>
+            Gibt es eine "Färbung"
+            $c: V \rightarrow \{1,2,3\}$ mit $c(u) \ne c(v)$ für
+            alle
+            <span class="nowrap">$\{u,v\} \in E$?</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc">CNF-Satisfiability</span>: Gegeben eine Boolesche
+            Formel in konjunktiver Normalform, also beispielsweise
+            <span class="nowrap">$(x \vee \bar{y}) \wedge (\bar{x} \vee y \vee z)
+              \wedge (x \vee \bar{z})$,</span>
+            gibt es eine Belegung ihrer Variablen, so dass die
+            Formel zu
+            <code>True</code>
+            auswertet?
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc">Hamilton Cycle</span>: Gegeben ein Graph
+            <span class="nowrap">$G=(V,E)$,</span>
+            gibt es einen Kreis der Länge
+            <span class="nowrap">$n$?</span>
+            Gibt es also einen
+            geschlossenen Kantenzug, der jeden Knoten genau einmal
+            besucht (wobei der Endknoten gleich der Startknoten
+            ist)?
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc">Graph Isomorphism</span>: Gegeben zwei Graphen
+            $G_1 = (V_1, E_1)$ und
+            <span class="nowrap">$G_2 = (V_2, E_2)$,</span>
+            sind sie
+            isomorph? Das heißt, gibt es eine bijektive Funktion
+            $f: V_1 \rightarrow V_2$ mit
+          </p>
+          <div class="math-block">
+            $$
+            \begin{align*}
+            \{u,v\} \in E_1 \Longleftrightarrow \{f(u), f(v)\} \in E_2 \ ?
+            \end{align*}
+            $$
+          </div>
+          <p>
+            In Worten: kann ich von $G_1$ zu $G_2$ gelangen,
+            indem ich die Knoten einfach umbenenne?
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc">Factoring</span>: Gegeben eine natürliche Zahl in
+            Binärcodierung
+            <span class="nowrap">$x \in \{0,1\}^n$,</span>
+            finde ihre
+            Primfaktorzerlegung. Beachten Sie, dass die oben
+            erwähnten Algorithmen für<span class="sc">Primes</span>, also
+            Miller-Rabin-Test und Agrawal–Kayal–Saxena-Test, im
+            Falle einer Antwort
+            <i>Nein, ist keine Primzahl</i>
+            uns
+            nicht eine Faktorisierung der Zahl ausgeben, sondern
+            eben nur ein
+            <span class="nowrap"><i>Nein</i>.</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc">Go</span>: gegeben eine Spielposition auf einem
+            <span class="nowrap">$n \times n$-Gobrett</span>
+            (siehe
+            <a href="https://de.wikipedia.org/wiki/Go_(Spiel)">Go</a>), kann
+            Weiß einen Sieg erzwingen?
+          </p>
+        </li>
+      </ol>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./8-8.html">&lt;&lt; Kapitel 8.8<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Anwendungen des Postschen Korrespondenzproblems</span></a><a
+          href="./9-1.html"
+          class="menu-row-right"
+        >Kapitel 9.1 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Das Zeithierarchietheorem</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

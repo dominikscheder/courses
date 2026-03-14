@@ -3,7 +3,7 @@ import desugaring as ds
 import gleam/dict
 import gleam/io
 import gleam/list
-import gleam/option.{Some}
+import gleam/option.{None, Some}
 import gleam/regexp.{type Regexp}
 import gleam/result
 import gleam/string.{inspect as ins}
@@ -428,12 +428,13 @@ fn expand_filename_shorthands_to_path_fragments(
 
 pub fn main_renderer(amendments: ds.CommandLineAmendments) -> Nil {
   let amendments = expand_filename_shorthands_to_path_fragments(amendments)
-
+  let assert Some(input_dir) = amendments.input_dir
+  let author_mode = dict.has_key(amendments.user_args, "--local")
   let renderer =
     ds.Renderer(
       assembler: ds.default_writerly_assembler(amendments.only_paths),
       parser: ds.default_writerly_parser(amendments.only_key_values),
-      pipeline: main_pipeline(dict.has_key(amendments.user_args, "--local")),
+      pipeline: main_pipeline(input_dir, author_mode),
       splitter: our_splitter,
       emitter: our_emitter,
       writer: ds.default_writer,
@@ -441,12 +442,13 @@ pub fn main_renderer(amendments: ds.CommandLineAmendments) -> Nil {
     )
     |> ds.amend_renderer_by_command_line_amendments(amendments)
 
-  let assert option.Some(input_dir) = amendments.input_dir
+  let assert Some(input_dir) = amendments.input_dir
+  let amendments = ds.CommandLineAmendments(..amendments, input_dir: None)
 
   let parameters =
     ds.RendererParameters(
-      input_dir: input_dir <> "/wly",
-      output_dir: input_dir <> "/public",
+      input_dir: "./" <> input_dir <> "/wly",
+      output_dir: "./" <> input_dir <> "/public",
       prettifier_behavior: ds.PrettifierOff,
     )
     |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)

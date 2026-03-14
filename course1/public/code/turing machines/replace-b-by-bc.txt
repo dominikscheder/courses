@@ -1,0 +1,72 @@
+name: replace_b_by_bc
+init: init 
+accept: accept 
+
+init, a
+init, a, > 
+
+init, B
+init, B, > 
+
+init, c
+init, c, > 
+
+init, b
+insert_c, B, > 
+
+init, _
+clean, _, <
+
+insert_c, a
+move_a, c, > 
+
+insert_c, b 
+move_b, c, > 
+
+insert_c, _
+return, c, < 
+
+move_a, a 
+move_a, a, > 
+
+move_a, b
+move_b, a, > 
+
+move_a, _ 
+return, a, < 
+
+move_b, a 
+move_a, b, > 
+
+move_b, b 
+move_b, b, > 
+
+move_b, _ 
+return, b, < 
+
+return, a
+return, a, < 
+
+return, b 
+return, b, < 
+
+return, c 
+return, c, < 
+
+return, B 
+return, B, < 
+
+return, _
+init,   _, > 
+
+clean, a
+clean, a, < 
+
+clean, B 
+clean, b, < 
+
+clean, c 
+clean, c, < 
+
+clean, _ 
+accept, _, -

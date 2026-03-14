@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <body>
+    <center>
+      <h2>Text the Collatz Conjecture</h2>
+      Input your number <em>n</em>:
+      <input type="text" id="inputTextBox" value="" onchange="doCollatz()" />
+      <button id="add_a_button" onclick="doCollatz()">Go</button>
+      <br /><br />
+      <p id="resultText"></p>
+      <br /><br />
+      <p id="numItText"></p>
+    </center>
+  </body>
+  <script>
+    let n;
+
+    function doCollatz() {
+      let inputAsString = document.getElementById("inputTextBox").value;
+      n = parseInt(inputAsString);
+      if (Number.isNaN(n)) {
+        window.alert(
+          'You entered "' + inputAsString + '", which is not a number',
+        );
+        return;
+      }
+      document.getElementById("resultText").innerHTML = n;
+      numberOfIterations = 0;
+      while (n > 1) {
+        numberOfIterations++;
+        if (n % 2 == 0) {
+          n = n / 2;
+        } else {
+          n = 3 * n + 1;
+        }
+
+        document.getElementById("resultText").innerHTML += ", " + n;
+      }
+      document.getElementById("numItText").innerHTML =
+        "It took " + numberOfIterations + " iterations";
+    }
+  </script>
+</html>

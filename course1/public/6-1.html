@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 6.1 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>TI2—Kapitel 6.1</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./6-0.html"
+        >&lt;&lt; Kapitel 6<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Kontextfreie Sprachen</span></a><a
+          id="next-page"
+          href="./6-2.html"
+          class="menu-row-right"
+        >Kapitel 6.2 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Kontextfreie Grammatiken und Kellerautomaten</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        6.1&ensp;Ableitungen und Ableitungsbäume
+      </p>
+    </div>
+    <div class="well statement out">
+      <p>
+        <b>Definition 6.1.1 (Ableitung)</b>
+        Sei $G$ eine Grammatik mit Startsymbol
+        <span class="nowrap">$S$.</span>
+        Die Ableitung eines Wortes $\alpha$ ist eine
+        Sequenz von Wortformen $w_0, w_1, \dots, w_n$ mit
+        $w_0 = S, w_n = \alpha$ und
+        <span class="nowrap">$w_{i-1} \Longrightarrow w_i$.</span>
+      </p>
+    </div>
+    <p class="main-column">
+      Das folgende Beispiel ist Beispiel 3.22 aus dem Buch
+      von Aho und Ullman. Wir betrachten die klassische
+      kontextfreie Grammatik für arithmetische Ausdrücke mit
+      Klammerung:
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      (1)\ E \rightarrow&amp;E + T \\
+      (2)\ E \rightarrow&amp;T \\ (3)\ T \rightarrow&amp;T * F \\ (4)\ T
+      \rightarrow&amp;F \\ (5)\ F \rightarrow&amp;(E) \\ (6)\ F \rightarrow&amp;a \\
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      wobei $E$ das Startsymbol ist. Hier ist ein Beispiel
+      einer Ableitung von $a * (a+a)$ von der obigen
+      Grammatik.
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      E&amp;\stackrel{2}{\Longrightarrow} T
+      \stackrel{3}{\Longrightarrow} T * F \stackrel{4}{\Longrightarrow} F * F
+      \stackrel{6}{\Longrightarrow} a * F&amp;\\&amp;\stackrel{5}{\Longrightarrow}
+      a * (E) \stackrel{1}{\Longrightarrow} a * (E + T)
+      \stackrel{2}{\Longrightarrow} a * (T + T)&amp;\\&amp;
+      \stackrel{4}{\Longrightarrow} a * (F + T) \stackrel{6}{\Longrightarrow}
+      a * (a + T) \stackrel{4}{\Longrightarrow} a * (a + F)
+      \stackrel{6}{\Longrightarrow} a * (a + a)&amp;
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Insbesondere ist es eine
+      <span class="nowrap"><i>Linksableitung</i>,</span>
+      das heißt,
+      in jedem Schritt wird das am weitesten links stehende
+      Nichtterminal expandiert. In der Tat reicht es, nur
+      die Nummer der angewandten Regel anzugeben (da ja klar
+      ist, welches Nichtterminal expandiert werden muss).
+      Die obige Ableitung kann also kompakt durch die
+      Zahlenfolge 23465124646 repräsentiert werden.
+      Betrachten wir im Folgenden ein weiteres Beispiel
+      einer Ableitung, in diesem Falle eine
+      <span class="nowrap"><i>Rechtsableitung</i>,</span>
+      in der in jedem Schritt das am
+      weitesten rechts stehende Nichtterminal expandiert
+      wird:
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      E&amp;\stackrel{2}{\Longrightarrow} T
+      \stackrel{3}{\Longrightarrow} T * F \stackrel{5}{\Longrightarrow} T *
+      (E) \stackrel{1}{\Longrightarrow} T * (E+T)
+      \stackrel{4}{\Longrightarrow} T * (E+F)&amp;\\&amp;
+      \stackrel{6}{\Longrightarrow} T * (E+a) \stackrel{2}{\Longrightarrow} T
+      * (T + a) \stackrel{4}{\Longrightarrow} T * (F + a)&amp;\\&amp;
+      \stackrel{6}{\Longrightarrow} T * (a + a) \stackrel{4}{\Longrightarrow}
+      F * (a + a) \stackrel{6}{\Longrightarrow} a * (a + a)&amp;
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Rechtsableitungen können auch kompakt als Zahlenfolge
+      repräsentiert werden. Allerdings geben wir
+      Rechtsableitungen immer in umgekehrter Reihenfolge an,
+      also von hinten nach vorne, in diesem Falle also nicht
+      2351... sondern 64642641532. Beachten Sie, dass wir es
+      hier mit einer eindeutigen Grammatik zu tun haben, es
+      also nur einen Syntaxbaum gibt:
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="height: 15em"
+          src="img/cfg/syntax-tree-a*(a+a).svg"
+        >
+      </figure>
+    </div>
+    <p class="main-column">
+      Rechtsableitung und Linksableitung sowie deren
+      Codierung als Zahlenfolge spiegeln also nur zwei
+      verschiedene Weisen wieder, den Baum auszugeben.
+    </p>
+    <div class="main-column">
+<pre class="listing">
+<span class="listing-bol"></span>def treeToLeftDerivation (tree):
+<span class="listing-bol"></span>    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
+<span class="listing-bol"></span>    for child in tree.children (from left ro right):
+<span class="listing-bol"></span>        treeToLeftDerivation(child)
+<span class="listing-bol"></span>def treeToRightDerivation (tree):
+<span class="listing-bol"></span>    for child in tree.children (from left ro right):
+<span class="listing-bol"></span>        treeToLeftDerivation(child)
+<span class="listing-bol"></span>    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)
+</pre>
+    </div>
+    <p class="main-column">
+      Beachten Sie, dass wir in beiden Fällen die Liste
+      Kinder von links nach rechts durchgehen.
+    </p>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./6-0.html">&lt;&lt; Kapitel 6<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Kontextfreie Sprachen</span></a><a
+          href="./6-2.html"
+          class="menu-row-right"
+        >Kapitel 6.2 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Kontextfreie Grammatiken und Kellerautomaten</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

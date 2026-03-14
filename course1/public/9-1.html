@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 9.1 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>TI2—Kapitel 9.1</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./9-0.html"
+        >&lt;&lt; Kapitel 9<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Complexity Theory</span></a><a
+          id="next-page"
+          href="./9-2.html"
+          class="menu-row-right"
+        >Kapitel 9.2 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Turing-Maschinen zu Schaltkreisen!</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        9.1&ensp;Das Zeithierarchietheorem
+      </p>
+    </div>
+    <p class="main-column">
+      Das Zeithierarchietheorem besagt, dass es zu jeder
+      "vernünftigen" Komplexitätsfunktion
+      $t: \N \rightarrow \N$ ein Entscheidungsproblem
+      $L \subseteq \Sigma^*$ gibt, dass man in Zeit $t$
+      entscheiden kann, aber nicht deutlich schneller. Was
+      "vernünftig" bedeutet, wird weiter unten klar werden.
+      Wir betrachten noch einmal genauer die universelle
+      Turingmaschine aus
+      <a
+        href="./8-5.html"
+        class=""
+      >Kapitel 8.5</a>
+      Unsere
+      Implementierung hatte insgesamt fünf Bänder verwendet:
+      (1) ein Band, um die Regeln von $M$ zu speichern
+      (also die Funktion
+      <span class="nowrap">$\delta$);</span>
+      (2) ein Band, um den
+      Zustand von $M$ zu speichern; (3) um den
+      akzeptierenden Zustand $\qaccept$ von $M$ zu
+      speichern; (4) und (5) um das Band von $M$ zu
+      simulieren. Für letzteres hatten wir
+      <i>zwei</i>
+      Bänder
+      verwendet, weil das uns erlaubte, effizient Zeichen
+      <i>einzufügen</i>
+      statt einfach zu überschreiben. Wie wir
+      aber gesehen hatten, können wir (4) und (5) mit einem
+      Band bewältigen, indem wir zu allererst die Codierung
+      $\enc(M)$ durchgehen und die Länge $l$ des längsten
+      Bandzeichen bestimmen. Wir verwenden dann auf Band (4)
+      immer Blöcke der Länge $l$ für ein
+      <span class="nowrap">$M$-Zeichen</span>
+      und
+      separieren diese durch eine Markierung
+      <span class="nowrap">$\texttt{#}$.</span>
+      Auch das Band (3) können wir uns sparen: den
+      akzeptierenden Zustand von $M$ können wir gleich am
+      Anfang von (1) schreiben, ohne das die Simulation
+      dadurch nennenswert teurer würde. Wir kommen also mit
+      <i>drei</i>
+      Bändern aus. Allerdings hatten wir uns nur
+      überlegt, wie man Einband-Turingmaschinen $M$
+      simuliert. Es ist aber ziemlich einfach zu sehen, dass
+      man Codierung und Simulation ganz analog für $k$
+      -Band-Turingmaschinen durchführen kann. Die
+      entsprechende Turingmaschine hat dann allerdings $k+2$
+      Bänder: $k$ Arbeitsbänder, eins für den Zustand von
+      $M$ und eins für $\enc(M)$ . Darüberhinaus hatten wir
+      in
+      <a
+        href="./8-6.html"
+        class=""
+      >Kapitel 8.6</a>
+      gesehen, dass wir als
+      Codierungsalphabet $\Sigma$ selbst nehmen können,
+      also
+      <span class="nowrap">$\enc(M) \in \Sigma^*$,</span>
+      solange $\Sigma$
+      mindestens zwei Zeichen enthält.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Theorem 9.1.1</b>
+        Für jedes Alphabet $\Sigma$ mit mindestens zwei
+        Zeichen und jedes $k \geq 1$ gibt es eine
+        Turingmaschine $U$ mit $k+2$ Bändern, die folgendes
+        kann: sei $M$ eine beliebige $k$ -Band-Turingmaschine
+        mit Eingabealphabet $\Sigma$ und sei
+        <span class="nowrap">$x \in \Sigma^*$.</span>
+        Dann gilt
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        f_{U} (\enc(M)x) = f_M(x) \ .
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Weiterhin gilt: wenn $M$ auf $x$ innerhalb von $s$
+        Schritten terminiert, dann terminiert $U$ auf
+        $\enc(M)x$ innerhalb von
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        C \cdot |\enc(M)| \cdot (|x| + s)
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Schritten. Das $C$ ist hier eine
+        <span class="nowrap"><i>absolute
+            Konstante</i>,</span>
+        hängt also weder von $M$ noch von $\Sigma$
+        ab.
+      </p>
+    </div>
+    <p class="main-column">
+      Dass es so ein $U$ gibt, hatten wir ja schon gesehen.
+      Gehen wir aber noch einmal die Zeitschranke durch. In
+      einer vorbereitenden Phase bestimmt $U$ die Länge $l$
+      des längsten Bandzeichen von
+      <span class="nowrap">$M$.</span>
+      Dann schreibt es
+      das Eingabewort $x_1 x_2 \dots x_n$ als Folge von
+      Blöcken der Länge $l$ auf das Arbeitsband. Zellen in
+      einem Block, die nicht verwendet werden, werden mit
+      einem $\texttt{-}$ gefüllt. Hier ein Beispiel für den
+      Fall
+      <span class="nowrap">$l=4$:</span>
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      \texttt{#}x_1 \texttt{-} \texttt{-} \texttt{-} \texttt{#} x_2 \texttt{-} \texttt{-}
+      \texttt{-} \texttt{#} x_3 \texttt{-} \texttt{-} \texttt{-} \texttt{#} \cdots \texttt{#} x_n
+      \texttt{-} \texttt{-} \texttt{-}
+      \texttt{#}
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Diese Vorbereitungsphase benötigt maximal
+      $C \cdot |\enc(M)| \cdot |x|$ Schritte. Um nun einen
+      Schritt von $M$ zu simulieren, müssen wir das gerade
+      gelesene
+      <span class="nowrap">$M$-Zeichen</span>
+      $z$ auf Band 2 schreiben, so
+      dass dann dort $\enc(q)\texttt{,}\enc(z)$ steht. Das
+      braucht $l+1$ Schritte. Als nächstes müssen wir
+      $\delta_M(q,z)$ bestimmen, müssen wir $\enc(M)$
+      durchgehen und den Eintrag für
+      $\enc(q)\texttt{,}\enc(z)$ suchen, was maximal
+      $2 \cdot |\enc(M)|$ Schritte benötigt. Dann müssen
+      wir den Schritt ausführen, also den neuen Zustand auf
+      Band 2 schreiben, das neue Zeichen in den Block auf
+      dem Arbeitsband eintragen und den Kopf bewegen. All
+      das benötigt maximal $C \cdot |\enc(M)|$ Schritte.
+    </p>
+    <h2 class="main-column topic-announcement">
+      Untere Schranken für Zeitkomplexität
+    </h2>
+    <p class="main-column">
+      Wir wollen nun eine Sprache definieren, die wir in
+      $t(n)$ Schritten entscheiden können aber nicht
+      deutlich schneller. Wir erinnern uns an
+      <span class="nowrap">$\halt$,</span>
+      die
+      von der universellen Turingmaschine $U$ akzeptierte
+      Sprache:
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      \halt := L(U) =\{ \enc(M) w \ | \ M \textnormal{ akzeptiert } w\} \ .
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      und davon abgeleitete "Diagonalisierungssprache"
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      \negdiag := \{ \enc(M) \in \Sigma^* \ | \ \enc(M) \enc(M) \not \in \halt\}
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Wir haben gesehen, dass $\negdiag$ nicht entscheidbar
+      ist. Nun wollen wir eine Version von
+      <span class="nowrap">$\negdiag$,</span>
+      die
+      in $t$ Schritten entscheidbar ist, aber nicht in sehr
+      viel weniger. Dafür definieren wir uns ein
+      <i>Halteproblem mit Zeitbudget.</i>
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Definition 9.1.2 (Zeitbudgetiertes Halteproblem).</b>
+        Sei $\Sigma$ ein
+        endliches Alphabet. Wir definieren die Sprache
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \bhalt := \{ \enc(M) 1^b 0 x \ | \
+        U \textnormal{ akzeptiert $\enc(M)x$ innerhalb von $b$ Schritten}
+        \}
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Mit $1^b$ bezeichnen wir die Folge von $n$ vielen
+        <span class="nowrap">$1$en.</span>
+        Des Weiteren ist $M$ eine $k$
+        -Band-Turingmaschine mit Eingabealphabet $\Sigma$ und
+        $x \in \Sigma^*$ und $U$ die universelle
+        Turingmaschine, die selbst $k+2$ Bänder hat. Wir
+        sollten strenggenommen also $\bhalt_{\Sigma,k}$
+        definieren, unterlassen dies aber der Lesbarkeit
+        halber.
+      </p>
+    </div>
+    <p class="main-column">
+      Bitte erinnern Sie sich daran, dass unsere Codierung
+      $\enc(M)$ immer mit dem Sonderzeichen $\texttt{;}$
+      endet, oder besser gesagt: mit der Codierung von
+      $\texttt{;} \in \Lambda$ über dem Alphabet $\Sigma$
+      selbst. Eine Turingmaschine kann also, gegeben ein
+      Eingabewort
+      <span class="nowrap">$\enc(M)1^b 0 x$,</span>
+      dieses in die
+      Bestandteile
+      <span class="nowrap">$\enc(M)$,</span>
+      <span class="nowrap">$1^b$,</span>
+      $0$ und $x$ zerlegen.
+      Die $0$ dient dazu, das "Budget" $1^b$ vom "inneren
+      Eingabewort" $x$ abzugrenzen.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Beobachtung 9.1.3</b>
+        <span class="nowrap">$\bhalt \in \TIME_{k+3}(n)$.</span>
+      </p>
+    </div>
+    <div class="well highlight out">
+      <p>
+        <b>Beweis.</b>
+        Wir nehmen die universelle Turingmaschine
+        <span class="nowrap">$U$,</span>
+        die
+        <span class="nowrap">$k$-Band-Turingmaschinen</span>
+        simulieren kann, und statten
+        sie mit einem Stoppuhrband aus. Sie hat nun also $k+3$
+        Bänder. Sei $n = |\enc(M)| + b + 1 + |x|$ die Länge
+        des Eingabewortes. In $O(n)$ Schritten sorgt sie
+        dafür, dass auf dem Eingabeband das Wort $\enc(M)x$
+        steht und auf dem Stoppuhrband das Budget
+        <span class="nowrap">$1^b$.</span>
+        Nun
+        lassen wir die universelle Turingmaschine $U$ laufen,
+        nur dass wir in jedem Schritt den Kopf auf dem
+        Stoppuhrband nach rechts verschieben. Wenn $U$ hält,
+        dann hält unsere Turingmaschine auch und gibt das
+        gleiche Ergebnis aus. Wenn wir das Ende des
+        Stoppuhrbandes erreicht haben, haben wir unsere $b$
+        Schritte verbraucht und lehnen ab. Wir brauchen
+        insgesamt $O(n+b) = O(n)$ Schritte.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+      </p>
+    </div>
+    <p class="main-column">
+      Sei nun $t: \N \rightarrow \N$ eine monoton steigende
+      Funktion mit
+      <span class="nowrap">$t(n) \geq n$.</span>
+      Wir definieren eine
+      Zeitbudgetierte Version der Diagonalisierungssprache:
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      \bnegdiag := \{ \enc(M)1^m \ | \ \enc(M)1^{b} 0 \enc(M) 1^m \not \in \bhalt, \ b = t(|\enc(M)|+m) \}
+      \end{align*}
+      $$
+    </div>
+    <div class="well statement out">
+      <p>
+        <b>Behauptung 9.1.4 (nicht ganz korrekt).</b>
+        <span class="nowrap">$\bnegdiag \in \TIME_{k+3}(t)$.</span>
+      </p>
+    </div>
+    <p class="main-column">
+      Sei $n := |\enc(M) + m|$ die Länge des Inputwortes.
+      Wir können $\bnegdiag$ entscheiden, indem wir aus
+      $\enc(M)1^m$ den String $\enc(M)1^b 0 \enc(M) 1^m$
+      berechnen und dann die Turingmaschine für $\bhalt$
+      laufen lassen, welche $k+3$ Bänder hat und selbst
+      $O(2|\enc(M)| + b + 1 + m) = O(|\enc(M)| + b) = O(b)$
+      Schritte braucht. Die Vorbereitungsphase braucht
+      ungefähr so lange, wie wir brauchen, um
+      $b = t(|\enc(M)+m|) = t(n)$ zu berechnen. Übliche
+      Zeitschranken
+      <span class="nowrap">$t$,</span>
+      die uns interessieren, wären zum
+      Beispiel
+      <span class="nowrap">$n \log n$,</span>
+      <span class="nowrap">$n^2$,</span>
+      <span class="nowrap">$2^n$,</span>
+      $n!$ oder
+      <span class="nowrap">$n^n$.</span>
+      All diese stellen kein Problem dar. Insgesamt sind wir
+      auf der sicheren Seite, wenn wir die Funktion $t$
+      selbst in $O(t)$ Schritten berechnen können.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Definition 9.1.5</b>
+        Eine Funktion $t: \N \rightarrow \N$ heißt
+        <span class="nowrap"><i>zeitkonstruierbar</i>,</span>
+        wenn es eine Turingmaschine gibt,
+        die aus dem Eingabewort $1^n$ das Ausgabewort
+        $1^{t(n)}$ berechnet und selbst maximal $O(t(n))$
+        Schritte läuft.
+      </p>
+    </div>
+    <div class="well statement out">
+      <p>
+        <b>Behauptung 9.1.6 (jetzt korrekt).</b>
+        Sei $t: \N \rightarrow \N$
+        zeitkonstruierbar, monoton steigend und
+        <span class="nowrap">$t(n) \geq n$.</span>
+        Dann gilt
+        <span class="nowrap">$\bnegdiag \in \TIME_{k+3}(t)$.</span>
+      </p>
+    </div>
+    <p class="main-column">
+      So weit, so gut. Wonach wir allerdings aus sind, ist
+      ein Beweis, dass $\bnegdiag$ nicht signifikant
+      schneller zu berechnen ist.
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Lemma 9.1.7</b>
+        Sei $s: \N \rightarrow \N$ eine Funktion mit
+        $s(n) \geq n$ und
+        <span class="nowrap">$s = o(t)$,</span>
+        also
+        <span class="nowrap">$\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$.</span>
+        Dann gilt
+        <span class="nowrap">$\bnegdiag \not \in \TIME_k(s)$.</span>
+      </p>
+    </div>
+    <div class="well highlight out">
+      <p>
+        <b>Beweis.</b>
+        Wir nehmen an, es gäbe eine Turingmaschine
+        <span class="nowrap">$M$,</span>
+        die
+        $\bnegdiag$ in Zeit $s$ entscheidet und leiten einen
+        Widerspruch her. Sei
+        <span class="nowrap">$x := \enc(M)$.</span>
+        Wir wählen eine
+        natürliche Zahl
+        <span class="nowrap">$m$,</span>
+        deren genauen Wert wir weiter
+        unten diskutieren und setzen
+        <span class="nowrap">$b := t(|x| + m)$.</span>
+        Wir
+        fragen uns nun: ist
+        <span class="nowrap">$x1^m \in \bnegdiag$?</span>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        x1^m \in \bnegdiag&amp;\Longleftrightarrow \enc(M) 1^b 0 x1^m \not \in \bhalt \\
+        &amp;\Longleftrightarrow U \textnormal{ akzeptiert $\enc(M)x1^m$ nicht innerhalb von $b$ Schritten}
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Langsam nun. Sei $n := |\enc(M)|+m$ die Länge des
+        Wortes
+        <span class="nowrap">$x1^m$.</span>
+        Nach Annahme terminiert $M$ auf dem
+        Eingabewort $x1^m$ innerhalb von $s(n)$ Schritten.
+        Wenn $U$ die Maschine $M$ simuliert, braucht sie nach
+        <a
+          href="./8-5.html#_36_hgi_"
+          class=""
+        >Theorem 8.5.1</a>
+        höchstens
+        $C \cdot |\enc(M)| \cdot (n + s(n))$ Schritte. Da
+        $s(n) \geq n$ gilt, sind dies höchstens
+        $2C \cdot |\enc(M)| \cdot s(n) = 2C \cdot |\enc(M)|
+        \cdot s(|x|+m)$
+        Schritte. Da
+        $\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$
+        ist, ist auch
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \lim_{m \rightarrow \infty }\frac{2C \cdot |\enc(M)| \cdot s(|x|+m)}{t(|x|+m)} = 0 \ .
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Wenn wir also $m$ hinreichend groß wählen, dann ist
+        dieser Bruch kleiner als
+        <span class="nowrap">$1$,</span>
+        und die Simulation
+        terminiert also innerhalb von
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        2C \cdot |\enc(M)| \cdot s(|x|+m) \leq t(|x|+m) = b
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Schritten. Das heißt, dass die universelle
+        Turingmaschine $U$ das Wort $\enc(M)x1^m$ innerhalb
+        von $b$ Schritten ablehnt, wenn sie es überhaupt
+        irgendwann ablehnt. Also schließen wir weiter:
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        x1^m \in \bnegdiag&amp;\Longleftrightarrow \enc(M) 1^b 0 x1^m \not \in \bhalt \\
+        &amp;\Longleftrightarrow U \textnormal{ akzeptiert $\enc(M)x1^m$ nicht innerhalb von $b$ Schritten}
+        \\
+        &amp;\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ innerhalb von $b$ Schritten ab}
+        \tag{weil $b$ groß genug}\\
+        &amp;\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ ab} \\
+        &amp;\Longleftrightarrow M \textnormal{ lehnt $x1^m$ ab} \\
+        \end{align*}
+        $$
+      </div>
+      <p>
+        und da ist er, der Widerspruch:
+        <span class="nowrap">$x1^m \in \bnegdiag \Longleftrightarrow f_M(x1^m) =
+          \texttt{reject}$,</span>
+        entgegen unserer Annahme, dass $M$ die Sprache
+        $\bnegdiag$ entscheidet.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+      </p>
+    </div>
+    <p class="main-column">
+      Zusammenfassend erhalten wir die "Rohversion" des
+      Zeithierarchiesatzes:
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Theorem 9.1.8 (Zeithierarchiesatz, Rohversion).</b>
+        Seien
+        $s, t: \N \rightarrow \N$ zeitkonstruierbare
+        Funktionen mit $s(n) \geq n$ und $s \in o(t)$ (also
+        $\lim_{n \rightarrow \infty} s(n)/t(n) = 0$ ). Dann
+        gilt
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \TIME_k(s) \subsetneq \TIME_{k+3}(t)
+        \end{align*}
+        $$
+      </div>
+      <p>
+        für alle
+        <span class="nowrap">$k \geq 1$.</span>
+      </p>
+    </div>
+    <p class="main-column">
+      Zusammen mit der Simulation von
+      <span class="nowrap">$k$-Band-TMs</span>
+      durch $2$
+      -Band-TMs, also
+      <a
+        href="./9-0.html#_41_hgi_"
+        class=""
+      >Theorem 9.3</a>
+      folgt nun
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      \TIME(s) \subsetneq \TIME_2(s \log s) \subsetneq \TIME_5(t \log t)
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      oder, alternativ ausgedrückt:
+    </p>
+    <div class="well statement out">
+      <p>
+        <b>Theorem 9.1.9 (Zeithierarchiesatz).</b>
+        Seien
+        $s, t: \N \rightarrow \N$ mit $s(n) \geq n$ und
+        <span class="nowrap">$s \log s \in o(t)$.</span>
+        Dann gilt
+        <span class="nowrap">$\TIME(s) \subsetneq \TIME(t)$.</span>
+      </p>
+    </div>
+    <p class="main-column">
+      Bitte beachten Sie, dass wir diese Version nicht
+      vollständig bewiesen habe, da ich die effizientere
+      Simulation einer $k$ -Band-Turingmaschine durch eine
+      <span class="nowrap">$2$-Band-Turingmaschine,</span>
+      also
+      $\TIME_k(t) \subseteq \TIME_2(t \log t)$ nicht
+      erklärt habe. Mit der ineffiziten, also
+      <span class="nowrap">$\TIME_k(t) \subseteq \TIME_1(t^2)$,</span>
+      erhalten wir
+      einen Zeithierarchiesatz solange $s^2 \in o(t)$ ist.
+    </p>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 9.1.1</b>
+        Zeigen Sie, dass $n \mapsto n^2$ und $n \mapsto 2^n$
+        zeitkonstruierbar sind.
+      </p>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./9-0.html">&lt;&lt; Kapitel 9<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Complexity Theory</span></a><a
+          href="./9-2.html"
+          class="menu-row-right"
+        >Kapitel 9.2 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Turing-Maschinen zu Schaltkreisen!</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

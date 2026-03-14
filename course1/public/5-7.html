@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 5.7 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>TI2—Kapitel 5.7</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./5-6.html"
+        >&lt;&lt; Kapitel 5.6<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Die Grenzen regulärer Sprachen</span></a><a
+          id="next-page"
+          href="./6-0.html"
+          class="menu-row-right"
+        >Kapitel 6 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Kontextfreie Sprachen</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        5.7&ensp;Übungsaufgaben
+      </p>
+    </div>
+    <h2 class="main-column topic-announcement">
+      Reguläre Sprachen und primitive Rekursion
+    </h2>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 5.7.1</b>
+        Sei $\Sigma = \{\sigma_1, \sigma_2, \dots, \sigma_k\}$
+        ein endliches Alphabet. Wir können jedes Zeichen
+        $\sigma_i \in \Sigma$ als natürliche Zahl $i$
+        codieren. Ein Wort $\alpha \in \Sigma^*$ wird somit
+        zu einer Folge
+        <span class="nowrap">$(a_1, a_2, \dots, a_n) \in \N^*$,</span>
+        was
+        wir wiederum mit den Methoden aus
+        <a
+          href="./2-2.html"
+          class=""
+        >Kapitel 2.2</a>
+        als
+        <i>eine</i>
+        natürliche Zahl
+        $\bar{\alpha}$ codieren können. Mittels dieser
+        Codierung wird eine Sprache $L \subseteq \Sigma^*$ zu
+        einer Funktion
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        f_L : \N&amp;\rightarrow \{0,1\} \\
+        a&amp;\mapsto
+        \begin{cases}
+        1&amp;\textnormal{ if $\exists \alpha \in L$ with $\bar{\alpha} = a$} \\
+        0&amp;\textnormal{ else.}
+        \end{cases}
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Sei $L$ eine reguläre Sprache. Zeigen Sie, dass $f_L$
+        primitiv rekursiv ist!
+      </p>
+    </div>
+    <h2 class="main-column topic-announcement">
+      Reguläre Sprachen und Schaltkreise
+    </h2>
+    <p class="main-column">
+      Wir können jedes Zeichen $\sigma \in \Sigma$ als
+      Bitstring $x_{\sigma} \in \cube^k$ codieren, mit
+      <span class="nowrap">$k = \ceil{\log_2|\Sigma|}$,</span>
+      und damit jedes
+      $\alpha = (a_1, \dots, a_n) \in \Sigma^*$ als
+      $x_a \in \cube^*$ mit $nk$ Bits. Smit wird jede
+      Sprache $L \subseteq \Sigma^*$ zu einer Funktion
+      $f_L : \cube^* \rightarrow \cube$ mittels
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      f_L : \cube^*&amp;\rightarrow \cube \\
+      y&amp;\mapsto
+      \begin{cases}
+      1&amp;\textnormal{if $\exists \alpha \in L: x_\alpha = y$} \\
+      0&amp;\textnormal{else.}
+      \end{cases}
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Für festes $n$ definieren wir
+      $f_L^n : \cube^n \rightarrow \cube$ als die
+      Restriktion von $f_L$ auf
+      <span class="nowrap">$\cube$,</span>
+      also die Funktion,
+      die nur
+      <span class="nowrap">$n$-Bit-Strings</span>
+      als Input akzeptiert. Zeigen
+      Sie: wenn $L \subseteq \Sigma^*$ regulär ist, dann
+      gibt es für jedes $n$ einen Schaltkreis $C$ mit $O(n)$
+      Gates, der $f_L$ berechnet.
+    </p>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 5.7.2</b>
+        Verbessern Sie die obige Konstruktion: Ihr
+        Schaltkreis $C$ sollte nun Tiefe $O(\log(n))$ haben
+        und vorzugsweise immer noch $O(n)$ Gates.
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 5.7.3 (Challenge).</b>
+        Betrachten wir eine Variante des
+        endlichen Automaten, bei der der Automat
+        <i>zurückspulen</i>
+        kann. Der Automat hat also einen
+        "Lesekopf", mit dem er auf einem Zeichen des
+        Eingabewortes steht (anfangs auf dem ersten). In jedem
+        Schritt kann er nach rechts oder links wechseln. Es
+        gibt zwei spezielle Zeichen, die markieren, wo das
+        Wort aufhört: $\lt$ und
+        <span class="nowrap">$\gt$.</span>
+        Die
+        Zustandsübergangsfunktion ist also
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \delta: Q \times (\Sigma \cup \{\lt, \gt\}) \rightarrow Q \times \{L, R\} \ .
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Wenn z.B. $\delta(q, x) = (r, L)$ ist, dann heißt
+        das:
+        <i>wenn Du im Zustand $q$ bist und der Lesekopf
+          ein $x$ liest, dann wechsle in den Zustand $r$ und
+          gehe nach links.
+        </i>
+        Der Automat hat genau einen
+        akzeptierenden und einen ablehnenden Zustand. Wenn ein
+        solcher Zustand erreicht wird, hält der Automat an und
+        gibt 1 bzw. 0 aus. Die von so einem Automaten $M$
+        akzeptierte Sprache $L(M)$ ist dann definiert als die
+        Menge aller Wörter
+        <span class="nowrap">$\alpha$,</span>
+        die $M$ in einen
+        akzeptierenden Zustand bringen. Beachten Sie, dass $M$
+        möglicherweise in eine Endlosschleife geraten kann. In
+        diesem Falle ist $\alpha$
+        <i>kein</i>
+        Wort in
+        <span class="nowrap">$L(M)$.</span>
+        Zeigen Sie, dass $L(M)$ eine reguläre Sprache ist.
+        Dass man also aus $M$ einen neuen Automaten $M'$
+        bauen kann, der nur nach rechts laufen kann.
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 5.7.4</b>
+        Sei $\Sigma = \{1,2, \dots, k\}$ und $L$ die Sprache
+        aller Wörter, in denen mindestens ein Zeichen fehlt,
+        also
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        L = \bigcup_{i=1}^k (\Sigma \setminus \{i\})^*
+        \end{align*}
+        $$
+      </div>
+      <p>
+        Zeigen Sie, dass ein endlicher Automat für $L$
+        mindestens $2^k$ Zustände braucht.
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 5.7.5</b>
+        Schreiben Sie eine reguläre Grammatik für $L$ mit
+        höchstens $k+1$ Nichtterminalen.
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 5.7.6 (Challange.)</b>
+        Sei $L$ die Sprache aus der vorherigen
+        Aufgabe und $\bar{L} = \Sigma^* \setminus L$ ihr
+        Komplement. $\bar{L}$ ist also die Sprache aller
+        Wörter, in denen jedes Zeichen aus $\Sigma$
+        mindestens einmal vorkommt. Zeigen Sie, dass jede
+        reguläre Grammatik für $\bar{L}$ mindestens $2^k$
+        Nichtterminale benötigt.
+      </p>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./5-6.html">&lt;&lt; Kapitel 5.6<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Die Grenzen regulärer Sprachen</span></a><a
+          href="./6-0.html"
+          class="menu-row-right"
+        >Kapitel 6 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Kontextfreie Sprachen</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

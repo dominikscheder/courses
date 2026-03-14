@@ -36,128 +36,157 @@
             style="visibility:hidden"
             id="top-next-page-tooltip"
           >Savitch's Theorem:
-            $\textrm{Reachability} \in \textrm{Space}(\log(n))$</span></a>
+            <span class="t-3003-c">$\textrm{Reachability} \in \textrm{Space}(\log(n))$<span class="t-3003">./course1/wly/09/08-Savitch.wly:5:9</span></span></span></a>
       </div>
     </div>
     <div class="main-column page-title">
       <p>
-        9.7&ensp;Beschränkter Speicherplatz
+        <span class="t-3003-c">9.7&ensp;Beschränkter Speicherplatz<span class="t-3003">./course1/wly/09/07-Space.wly:2:11</span></span>
       </p>
     </div>
     <p class="main-column">
-      In den vergangen Kapiteln haben wir die Laufzeit
-      einer Turingmaschine beschränkt und die
-      Komplexitätsklassen studiert, die sich daraus ergeben,
-      allen voran P und NP. Die neben Zeit wohl wichtigste
-      Resource beim Rechnen ist der Platz. Turingmaschinen
-      erlauben uns auch, präzise über den benötigten
-      Speicherplatz zu sprechen. Der
-      <i>Platz</i>
-      einer
-      Konfiguration
-      $C = uqv \in \Gamma^* \times Q \times \Gamma^*$ ist
-      die Anzahl der belegten Speicherzellen, also
-      beispielsweise
-      <span class="nowrap">$|uv|$.</span>
-      Bei $k$ -Band-Maschinen müssen
-      wir das über alle Bänder aufsummieren. Wir können eine
-      Konfiguration also als Tupel in
+      <span class="t-3003-c">In den vergangen Kapiteln haben wir die Laufzeit<span class="t-3003">./course1/wly/09/07-Space.wly:4:5</span></span>
+      <span class="t-3003-c">einer Turingmaschine beschränkt und die<span class="t-3003">./course1/wly/09/07-Space.wly:5:5</span></span>
+      <span class="t-3003-c">Komplexitätsklassen studiert, die sich daraus ergeben,<span class="t-3003">./course1/wly/09/07-Space.wly:6:5</span></span>
+      <span class="t-3003-c">allen voran P und NP. Die neben Zeit wohl wichtigste<span class="t-3003">./course1/wly/09/07-Space.wly:7:5</span></span>
+      <span class="t-3003-c">Resource beim Rechnen ist der Platz. Turingmaschinen<span class="t-3003">./course1/wly/09/07-Space.wly:8:5</span></span>
+      <span class="t-3003-c">erlauben uns auch, präzise über den benötigten<span class="t-3003">./course1/wly/09/07-Space.wly:9:5</span></span>
+      <span class="t-3003-c">Speicherplatz zu sprechen. Der
+        <span class="t-3003">./course1/wly/09/07-Space.wly:10:5</span></span><i><span class="t-3003-c">Platz<span class="t-3003">./course1/wly/09/07-Space.wly:10:37</span></span></i><span class="t-3003-c">
+        einer<span class="t-3003">./course1/wly/09/07-Space.wly:10:43</span></span>
+      <span class="t-3003-c">Konfiguration<span class="t-3003">./course1/wly/09/07-Space.wly:11:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/07-Space.wly:12:5</span></span><span class="t-3003-c">$C = uqv \in \Gamma^* \times Q \times \Gamma^*$<span class="t-3003">./course1/wly/09/07-Space.wly:12:5</span></span><span class="t-3003-c">
+        ist<span class="t-3003">./course1/wly/09/07-Space.wly:12:52</span></span>
+      <span class="t-3003-c">die Anzahl der belegten Speicherzellen, also<span class="t-3003">./course1/wly/09/07-Space.wly:13:5</span></span>
+      <span class="t-3003-c">beispielsweise
+        <span class="t-3003">./course1/wly/09/07-Space.wly:14:5</span></span><span class="nowrap"><span class="t-3003-c">$|uv|$<span class="t-3003">./course1/wly/09/07-Space.wly:14:20</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/07-Space.wly:14:26</span></span></span><span class="t-3003-c">
+        Bei
+        <span class="t-3003">./course1/wly/09/07-Space.wly:14:26</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/07-Space.wly:14:32</span></span><span class="t-3003-c">
+        -Band-Maschinen müssen<span class="t-3003">./course1/wly/09/07-Space.wly:14:35</span></span>
+      <span class="t-3003-c">wir das über alle Bänder aufsummieren. Wir können eine<span class="t-3003">./course1/wly/09/07-Space.wly:15:5</span></span>
+      <span class="t-3003-c">Konfiguration also als Tupel in<span class="t-3003">./course1/wly/09/07-Space.wly:16:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \mathcal{C} : Q \times (\Gamma^* \times \Gamma^*)^k
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/09/07-Space.wly:18:5</span>
     </div>
     <p class="main-column">
-      darstellen. Eine Konfiguration
-      $C = (q, (u_1, v_1), \dots, (u_k, v_k))$ besagt dann
-      beispielsweise, dass auf Band $i$ das Wort $u_iv_i$
-      steht, wobei der Kopf auf dem ersten Zeichen von $v_i$
-      steht. Die Größe von $C$ ist dann
-      <span class="nowrap">$|C| := |u_1| + |v_1| + \cdots + |u_k| + |v_k|$.</span>
-      Eine
-      Turingmaschine läuft in Platz
-      <span class="nowrap">$s(n)$,</span>
-      wenn für alle
-      $x \in \Sigma^*$ alle erreichten Konfigurationen
-      höchstens die Größe $s(|x|)$ haben. Diese Definition
-      hat den Nachteil, dass der Platzbedarf immer
-      mindestens $n$ ist: bereits die Startkonfiguration
-      $\qstart x_1 x_2 \dots x_n$ besteht ja aus $n$
-      Zeichen. Das ist aber irgendwie unfair. Wir wollen nur
-      den Platz zählen, der über das Eingabewort hinausgeht.
-      Wenn wir über Platzbedarf sprechen, dann gehen wir von
-      einer Turingmaschine aus, die
+      <span class="t-3003-c">darstellen. Eine Konfiguration<span class="t-3003">./course1/wly/09/07-Space.wly:22:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/07-Space.wly:23:5</span></span><span class="t-3003-c">$C = (q, (u_1, v_1), \dots, (u_k, v_k))$<span class="t-3003">./course1/wly/09/07-Space.wly:23:5</span></span><span class="t-3003-c">
+        besagt dann<span class="t-3003">./course1/wly/09/07-Space.wly:23:45</span></span>
+      <span class="t-3003-c">beispielsweise, dass auf Band
+        <span class="t-3003">./course1/wly/09/07-Space.wly:24:5</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/09/07-Space.wly:24:35</span></span><span class="t-3003-c">
+        das Wort
+        <span class="t-3003">./course1/wly/09/07-Space.wly:24:38</span></span><span class="t-3003-c">$u_iv_i$<span class="t-3003">./course1/wly/09/07-Space.wly:24:48</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/07-Space.wly:24:56</span></span>
+      <span class="t-3003-c">steht, wobei der Kopf auf dem ersten Zeichen von
+        <span class="t-3003">./course1/wly/09/07-Space.wly:25:5</span></span><span class="t-3003-c">$v_i$<span class="t-3003">./course1/wly/09/07-Space.wly:25:54</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/07-Space.wly:25:59</span></span>
+      <span class="t-3003-c">steht. Die Größe von
+        <span class="t-3003">./course1/wly/09/07-Space.wly:26:5</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/09/07-Space.wly:26:26</span></span><span class="t-3003-c">
+        ist dann<span class="t-3003">./course1/wly/09/07-Space.wly:26:29</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/07-Space.wly:27:5</span></span><span class="nowrap"><span class="t-3003-c">$|C| := |u_1| + |v_1| + \cdots + |u_k| + |v_k|$<span class="t-3003">./course1/wly/09/07-Space.wly:27:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/07-Space.wly:27:52</span></span></span><span class="t-3003-c">
+        Eine<span class="t-3003">./course1/wly/09/07-Space.wly:27:52</span></span>
+      <span class="t-3003-c">Turingmaschine läuft in Platz
+        <span class="t-3003">./course1/wly/09/07-Space.wly:28:5</span></span><span class="nowrap"><span class="t-3003-c">$s(n)$<span class="t-3003">./course1/wly/09/07-Space.wly:28:35</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/07-Space.wly:28:41</span></span></span><span class="t-3003-c">
+        wenn für alle<span class="t-3003">./course1/wly/09/07-Space.wly:28:41</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/07-Space.wly:29:5</span></span><span class="t-3003-c">$x \in \Sigma^*$<span class="t-3003">./course1/wly/09/07-Space.wly:29:5</span></span><span class="t-3003-c">
+        alle erreichten Konfigurationen<span class="t-3003">./course1/wly/09/07-Space.wly:29:21</span></span>
+      <span class="t-3003-c">höchstens die Größe
+        <span class="t-3003">./course1/wly/09/07-Space.wly:30:5</span></span><span class="t-3003-c">$s(|x|)$<span class="t-3003">./course1/wly/09/07-Space.wly:30:25</span></span><span class="t-3003-c">
+        haben. Diese Definition<span class="t-3003">./course1/wly/09/07-Space.wly:30:33</span></span>
+      <span class="t-3003-c">hat den Nachteil, dass der Platzbedarf immer<span class="t-3003">./course1/wly/09/07-Space.wly:31:5</span></span>
+      <span class="t-3003-c">mindestens
+        <span class="t-3003">./course1/wly/09/07-Space.wly:32:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/09/07-Space.wly:32:16</span></span><span class="t-3003-c">
+        ist: bereits die Startkonfiguration<span class="t-3003">./course1/wly/09/07-Space.wly:32:19</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/07-Space.wly:33:5</span></span><span class="t-3003-c">$\qstart x_1 x_2 \dots x_n$<span class="t-3003">./course1/wly/09/07-Space.wly:33:5</span></span><span class="t-3003-c">
+        besteht ja aus
+        <span class="t-3003">./course1/wly/09/07-Space.wly:33:32</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/09/07-Space.wly:33:48</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/07-Space.wly:33:51</span></span>
+      <span class="t-3003-c">Zeichen. Das ist aber irgendwie unfair. Wir wollen nur<span class="t-3003">./course1/wly/09/07-Space.wly:34:5</span></span>
+      <span class="t-3003-c">den Platz zählen, der über das Eingabewort hinausgeht.<span class="t-3003">./course1/wly/09/07-Space.wly:35:5</span></span>
+      <span class="t-3003-c">Wenn wir über Platzbedarf sprechen, dann gehen wir von<span class="t-3003">./course1/wly/09/07-Space.wly:36:5</span></span>
+      <span class="t-3003-c">einer Turingmaschine aus, die<span class="t-3003">./course1/wly/09/07-Space.wly:37:5</span></span>
     </p>
     <div class="main-column">
       <ol>
         <li>
           <p>
-            ein Eingabeband hat, auf dem sie nur lesen darf;
+            <span class="t-3003-c">ein Eingabeband hat, auf dem sie nur lesen darf;<span class="t-3003">./course1/wly/09/07-Space.wly:41:13</span></span>
           </p>
         </li>
         <li>
           <p>
-            beliebig viele
-            <span class="nowrap"><i>Arbeitsbänder</i>,</span>
-            auf denen sie lesen
-            und schreiben darf;
+            <span class="t-3003-c">beliebig viele
+              <span class="t-3003">./course1/wly/09/07-Space.wly:44:13</span></span><span class="nowrap"><i><span class="t-3003-c">Arbeitsbänder<span class="t-3003">./course1/wly/09/07-Space.wly:44:29</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/07-Space.wly:44:43</span></span></span><span class="t-3003-c">
+              auf denen sie lesen<span class="t-3003">./course1/wly/09/07-Space.wly:44:43</span></span>
+            <span class="t-3003-c">und schreiben darf;<span class="t-3003">./course1/wly/09/07-Space.wly:45:13</span></span>
           </p>
         </li>
         <li>
           <p>
-            ein Ausgabeband, auf dem sie schreiben darf, aber nur
-            nach rechts laufen darf.
+            <span class="t-3003-c">ein Ausgabeband, auf dem sie schreiben darf, aber nur<span class="t-3003">./course1/wly/09/07-Space.wly:48:13</span></span>
+            <span class="t-3003-c">nach rechts laufen darf.<span class="t-3003">./course1/wly/09/07-Space.wly:49:13</span></span>
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
-      Wenn wir eine Sprache $L \subseteq \Sigma^*$
-      entscheiden wollen, dann brauchen das Ausgabeband
-      nicht wirklich. Wenn wir eine Funktion
-      $f: \Sigma_1^* \rightarrow \Sigma_2^*$ berechnen
-      wollen, dann sehr wohl.
+      <span class="t-3003-c">Wenn wir eine Sprache
+        <span class="t-3003">./course1/wly/09/07-Space.wly:51:5</span></span><span class="t-3003-c">$L \subseteq \Sigma^*$<span class="t-3003">./course1/wly/09/07-Space.wly:51:27</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/07-Space.wly:51:49</span></span>
+      <span class="t-3003-c">entscheiden wollen, dann brauchen das Ausgabeband<span class="t-3003">./course1/wly/09/07-Space.wly:52:5</span></span>
+      <span class="t-3003-c">nicht wirklich. Wenn wir eine Funktion<span class="t-3003">./course1/wly/09/07-Space.wly:53:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/07-Space.wly:54:5</span></span><span class="t-3003-c">$f: \Sigma_1^* \rightarrow \Sigma_2^*$<span class="t-3003">./course1/wly/09/07-Space.wly:54:5</span></span><span class="t-3003-c">
+        berechnen<span class="t-3003">./course1/wly/09/07-Space.wly:54:43</span></span>
+      <span class="t-3003-c">wollen, dann sehr wohl.<span class="t-3003">./course1/wly/09/07-Space.wly:55:5</span></span>
     </p>
     <div class="well highlight out">
       <p>
-        <b>Eingabe und Ausgabe:</b>
-        wenn Sie ein C-Programm
-        schreiben und auf
-        <code>stdout</code>
-        schreiben, dann entspricht
-        diese Operation in gewisser Weise der Turingmaschine,
-        die auf das Ausgabeband schreibt; sie können ja sich
-        den Output auch nicht irgendwie zurückholen. Das lesen
-        von
-        <code>stdin</code>
-        entspricht allerdings nicht ganz dem
-        Eingabeband der Turingmaschine. Ein bedeutender
-        Unterschied ist, dass die Turingmaschine auf dem
-        Eingabeband zwar nicht schreiben darf, aber dennoch
-        beliebig nach rechts und links gehen darf. Das können
-        Sie auf
-        <code>stdin</code>
-        in der Regel nicht.
+        <b><span class="t-3003-c">Eingabe und Ausgabe:<span class="t-3003">./course1/wly/09/07-Space.wly:58:10</span></span></b><span class="t-3003-c">
+          wenn Sie ein C-Programm<span class="t-3003">./course1/wly/09/07-Space.wly:58:31</span></span>
+        <span class="t-3003-c">schreiben und auf
+          <span class="t-3003">./course1/wly/09/07-Space.wly:59:9</span></span><code><span class="t-3003-c">stdout<span class="t-3003">./course1/wly/09/07-Space.wly:59:28</span></span></code><span class="t-3003-c">
+          schreiben, dann entspricht<span class="t-3003">./course1/wly/09/07-Space.wly:59:35</span></span>
+        <span class="t-3003-c">diese Operation in gewisser Weise der Turingmaschine,<span class="t-3003">./course1/wly/09/07-Space.wly:60:9</span></span>
+        <span class="t-3003-c">die auf das Ausgabeband schreibt; sie können ja sich<span class="t-3003">./course1/wly/09/07-Space.wly:61:9</span></span>
+        <span class="t-3003-c">den Output auch nicht irgendwie zurückholen. Das lesen<span class="t-3003">./course1/wly/09/07-Space.wly:62:9</span></span>
+        <span class="t-3003-c">von
+          <span class="t-3003">./course1/wly/09/07-Space.wly:63:9</span></span><code><span class="t-3003-c">stdin<span class="t-3003">./course1/wly/09/07-Space.wly:63:14</span></span></code><span class="t-3003-c">
+          entspricht allerdings nicht ganz dem<span class="t-3003">./course1/wly/09/07-Space.wly:63:20</span></span>
+        <span class="t-3003-c">Eingabeband der Turingmaschine. Ein bedeutender<span class="t-3003">./course1/wly/09/07-Space.wly:64:9</span></span>
+        <span class="t-3003-c">Unterschied ist, dass die Turingmaschine auf dem<span class="t-3003">./course1/wly/09/07-Space.wly:65:9</span></span>
+        <span class="t-3003-c">Eingabeband zwar nicht schreiben darf, aber dennoch<span class="t-3003">./course1/wly/09/07-Space.wly:66:9</span></span>
+        <span class="t-3003-c">beliebig nach rechts und links gehen darf. Das können<span class="t-3003">./course1/wly/09/07-Space.wly:67:9</span></span>
+        <span class="t-3003-c">Sie auf
+          <span class="t-3003">./course1/wly/09/07-Space.wly:68:9</span></span><code><span class="t-3003-c">stdin<span class="t-3003">./course1/wly/09/07-Space.wly:68:18</span></span></code><span class="t-3003-c">
+          in der Regel nicht.<span class="t-3003">./course1/wly/09/07-Space.wly:68:24</span></span>
       </p>
       <p>
-        <b>Streaming-Modell:</b>
-        wenn wir der Turingmaschine
-        verbieten, auf dem Eingabe-Band nach links zu laufen,
-        wenn sie also jedes Eingabezeichen nur einmal lesen
-        darf, dann erhalten wir das sogenannte
-        Streaming-Modell, das in den letzten Jahren an
-        Popularität gewonnen hat, weil wir es heutzutage in
-        vielen Anwendungen mit Datenmengen zu tun haben, die
-        nicht in den Speicher des Rechners passen und auch nur
-        einmal gelesen werden können (z.B. Sensordaten). Im
-        Kurs
-        <i>Effiziente Algorithmen</i>
-        gibt es ein
-        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/EffizienteAlgorithmen/lecture-notes/04-00-big-data.html">Kapitel zu
-          Streaming-Algorithmen</a>.
+        <b><span class="t-3003-c">Streaming-Modell:<span class="t-3003">./course1/wly/09/07-Space.wly:70:10</span></span></b><span class="t-3003-c">
+          wenn wir der Turingmaschine<span class="t-3003">./course1/wly/09/07-Space.wly:70:28</span></span>
+        <span class="t-3003-c">verbieten, auf dem Eingabe-Band nach links zu laufen,<span class="t-3003">./course1/wly/09/07-Space.wly:71:9</span></span>
+        <span class="t-3003-c">wenn sie also jedes Eingabezeichen nur einmal lesen<span class="t-3003">./course1/wly/09/07-Space.wly:72:9</span></span>
+        <span class="t-3003-c">darf, dann erhalten wir das sogenannte<span class="t-3003">./course1/wly/09/07-Space.wly:73:9</span></span>
+        <span class="t-3003-c">Streaming-Modell, das in den letzten Jahren an<span class="t-3003">./course1/wly/09/07-Space.wly:74:9</span></span>
+        <span class="t-3003-c">Popularität gewonnen hat, weil wir es heutzutage in<span class="t-3003">./course1/wly/09/07-Space.wly:75:9</span></span>
+        <span class="t-3003-c">vielen Anwendungen mit Datenmengen zu tun haben, die<span class="t-3003">./course1/wly/09/07-Space.wly:76:9</span></span>
+        <span class="t-3003-c">nicht in den Speicher des Rechners passen und auch nur<span class="t-3003">./course1/wly/09/07-Space.wly:77:9</span></span>
+        <span class="t-3003-c">einmal gelesen werden können (z.B. Sensordaten). Im<span class="t-3003">./course1/wly/09/07-Space.wly:78:9</span></span>
+        <span class="t-3003-c">Kurs
+          <span class="t-3003">./course1/wly/09/07-Space.wly:79:9</span></span><i><span class="t-3003-c">Effiziente Algorithmen<span class="t-3003">./course1/wly/09/07-Space.wly:79:15</span></span></i><span class="t-3003-c">
+          gibt es ein
+          <span class="t-3003">./course1/wly/09/07-Space.wly:79:38</span></span><a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/EffizienteAlgorithmen/lecture-notes/04-00-big-data.html"><span class="t-3003-c">Kapitel zu<span class="t-3003">./course1/wly/09/07-Space.wly:79:52</span></span>
+          <span class="t-3003-c">Streaming-Algorithmen<span class="t-3003">./course1/wly/09/07-Space.wly:80:9</span></span></a><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/07-Space.wly:80:150</span></span>
       </p>
     </div>
     <div
@@ -165,161 +194,223 @@
       class="well statement out"
     >
       <p>
-        <b>Definition 9.7.1
-          <span class="nowrap">($\SPACE(s)$).</span></b>
-        Sei $M$ eine Turingmaschine mit
-        dezidiertem Eingabeband 1 und Ausgabeband
-        <span class="nowrap">$k$.</span>
-        Die
-        <i>Größe einer Konfiguration</i>
-        ist die Größe der
-        Bandinhalte der Arbeitsbänder. Die Konfiguration
-        $C = (q, (u_1, v_1), \dots, (u_k, v_k))$ hat Größe
-        <span class="nowrap">$|u_2| + |v_2| + \cdots + |u_{k-1}| + |v_{k-1}|$.</span>
-        Sei
-        <span class="nowrap">$s : \N \rightarrow \N$.</span>
-        Die Turingmaschine $M$ läuft
-        in Platz
-        <span class="nowrap">$s$,</span>
-        falls
+        <b><span class="t-3003-c">Definition 9.7.1
+            <span class="t-3003">./course1/wly/09/07-Space.wly:82:5</span></span><span class="nowrap"><span class="t-3003-c">(<span class="t-3003">./course1/wly/09/07-Space.wly:82:5</span></span><span class="t-3003-c">$\SPACE(s)$<span class="t-3003">./course1/wly/09/07-Space.wly:84:11</span></span><span class="t-3003-c">).<span class="t-3003">./course1/wly/09/07-Space.wly:84:22</span></span></span></b><span class="t-3003-c">
+          Sei
+          <span class="t-3003">./course1/wly/09/07-Space.wly:84:25</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/07-Space.wly:84:30</span></span><span class="t-3003-c">
+          eine Turingmaschine mit<span class="t-3003">./course1/wly/09/07-Space.wly:84:33</span></span>
+        <span class="t-3003-c">dezidiertem Eingabeband 1 und Ausgabeband
+          <span class="t-3003">./course1/wly/09/07-Space.wly:85:9</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/07-Space.wly:85:51</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/07-Space.wly:85:54</span></span></span><span class="t-3003-c">
+          Die<span class="t-3003">./course1/wly/09/07-Space.wly:85:54</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:86:9</span></span><i><span class="t-3003-c">Größe einer Konfiguration<span class="t-3003">./course1/wly/09/07-Space.wly:86:10</span></span></i><span class="t-3003-c">
+          ist die Größe der<span class="t-3003">./course1/wly/09/07-Space.wly:86:36</span></span>
+        <span class="t-3003-c">Bandinhalte der Arbeitsbänder. Die Konfiguration<span class="t-3003">./course1/wly/09/07-Space.wly:87:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:88:9</span></span><span class="t-3003-c">$C = (q, (u_1, v_1), \dots, (u_k, v_k))$<span class="t-3003">./course1/wly/09/07-Space.wly:88:9</span></span><span class="t-3003-c">
+          hat Größe<span class="t-3003">./course1/wly/09/07-Space.wly:88:49</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:89:9</span></span><span class="nowrap"><span class="t-3003-c">$|u_2| + |v_2| + \cdots + |u_{k-1}| + |v_{k-1}|$<span class="t-3003">./course1/wly/09/07-Space.wly:89:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/07-Space.wly:89:57</span></span></span><span class="t-3003-c">
+          Sei<span class="t-3003">./course1/wly/09/07-Space.wly:89:57</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:90:9</span></span><span class="nowrap"><span class="t-3003-c">$s : \N \rightarrow \N$<span class="t-3003">./course1/wly/09/07-Space.wly:90:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/07-Space.wly:90:32</span></span></span><span class="t-3003-c">
+          Die Turingmaschine
+          <span class="t-3003">./course1/wly/09/07-Space.wly:90:32</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/07-Space.wly:90:53</span></span><span class="t-3003-c">
+          läuft<span class="t-3003">./course1/wly/09/07-Space.wly:90:56</span></span>
+        <span class="t-3003-c">in Platz
+          <span class="t-3003">./course1/wly/09/07-Space.wly:91:9</span></span><span class="nowrap"><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/09/07-Space.wly:91:18</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/07-Space.wly:91:21</span></span></span><span class="t-3003-c">
+          falls<span class="t-3003">./course1/wly/09/07-Space.wly:91:21</span></span>
       </p>
       <ol>
         <li>
           <p>
-            sie für jedes $x \in \Sigma^*$ terminiert und
+            <span class="t-3003-c">sie für jedes
+              <span class="t-3003">./course1/wly/09/07-Space.wly:95:17</span></span><span class="t-3003-c">$x \in \Sigma^*$<span class="t-3003">./course1/wly/09/07-Space.wly:95:31</span></span><span class="t-3003-c">
+              terminiert und<span class="t-3003">./course1/wly/09/07-Space.wly:95:47</span></span>
           </p>
         </li>
         <li>
           <p>
-            jede erreichte Konfiguration höchstens Größe
-            $O(s(|x|))$ hat.
+            <span class="t-3003-c">jede erreichte Konfiguration höchstens Größe<span class="t-3003">./course1/wly/09/07-Space.wly:98:17</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/09/07-Space.wly:99:17</span></span><span class="t-3003-c">$O(s(|x|))$<span class="t-3003">./course1/wly/09/07-Space.wly:99:17</span></span><span class="t-3003-c">
+              hat.<span class="t-3003">./course1/wly/09/07-Space.wly:99:28</span></span>
           </p>
         </li>
       </ol>
       <p>
-        Eine Sprache ist in
-        <span class="nowrap">$\SPACE(s)$,</span>
-        wenn es eine
-        Turingmaschine gibt, die in Platz $s$ läuft und sie
-        entscheidet.
+        <span class="t-3003-c">Eine Sprache ist in
+          <span class="t-3003">./course1/wly/09/07-Space.wly:101:9</span></span><span class="nowrap"><span class="t-3003-c">$\SPACE(s)$<span class="t-3003">./course1/wly/09/07-Space.wly:101:29</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/07-Space.wly:101:40</span></span></span><span class="t-3003-c">
+          wenn es eine<span class="t-3003">./course1/wly/09/07-Space.wly:101:40</span></span>
+        <span class="t-3003-c">Turingmaschine gibt, die in Platz
+          <span class="t-3003">./course1/wly/09/07-Space.wly:102:9</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/09/07-Space.wly:102:43</span></span><span class="t-3003-c">
+          läuft und sie<span class="t-3003">./course1/wly/09/07-Space.wly:102:46</span></span>
+        <span class="t-3003-c">entscheidet.<span class="t-3003">./course1/wly/09/07-Space.wly:103:9</span></span>
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b>Beobachtung 9.7.2</b>
-        Wenn $M$ in Platz $s(n)$ läuft, dann hat $M$ Laufzeit
-        <span class="nowrap">$2^{O(s(n))}$.</span>
+        <b><span class="t-3003-c">Beobachtung 9.7.2<span class="t-3003">./course1/wly/09/07-Space.wly:105:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:105:5</span></span>
+        <span class="t-3003-c">Wenn
+          <span class="t-3003">./course1/wly/09/07-Space.wly:106:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/07-Space.wly:106:14</span></span><span class="t-3003-c">
+          in Platz
+          <span class="t-3003">./course1/wly/09/07-Space.wly:106:17</span></span><span class="t-3003-c">$s(n)$<span class="t-3003">./course1/wly/09/07-Space.wly:106:27</span></span><span class="t-3003-c">
+          läuft, dann hat
+          <span class="t-3003">./course1/wly/09/07-Space.wly:106:33</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/07-Space.wly:106:50</span></span><span class="t-3003-c">
+          Laufzeit<span class="t-3003">./course1/wly/09/07-Space.wly:106:53</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:107:9</span></span><span class="nowrap"><span class="t-3003-c">$2^{O(s(n))}$<span class="t-3003">./course1/wly/09/07-Space.wly:107:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/07-Space.wly:107:22</span></span></span>
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Für gegebenes $n$ sei $S \in O(s(n))$ der maximale
-        Platzbedarf der Turingmaschine. Es gibt maximal
-        $T := |Q| \cdot \left(|\Gamma|+1\right)^{kS}$
-        Konfigurationen (warum?). Da $M$ terminiert, kann die
-        Berechnung nicht mehr $T$ Schritte dauern.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        
+        <span class="t-3003-c">Für gegebenes
+          <span class="t-3003">./course1/wly/09/07-Space.wly:110:9</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/09/07-Space.wly:110:23</span></span><span class="t-3003-c">
+          sei
+          <span class="t-3003">./course1/wly/09/07-Space.wly:110:26</span></span><span class="t-3003-c">$S \in O(s(n))$<span class="t-3003">./course1/wly/09/07-Space.wly:110:31</span></span><span class="t-3003-c">
+          der maximale<span class="t-3003">./course1/wly/09/07-Space.wly:110:46</span></span>
+        <span class="t-3003-c">Platzbedarf der Turingmaschine. Es gibt maximal<span class="t-3003">./course1/wly/09/07-Space.wly:111:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:112:9</span></span><span class="t-3003-c">$T := |Q| \cdot \left(|\Gamma|+1\right)^{kS}$<span class="t-3003">./course1/wly/09/07-Space.wly:112:9</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:112:54</span></span>
+        <span class="t-3003-c">Konfigurationen (warum?). Da
+          <span class="t-3003">./course1/wly/09/07-Space.wly:113:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/07-Space.wly:113:38</span></span><span class="t-3003-c">
+          terminiert, kann die<span class="t-3003">./course1/wly/09/07-Space.wly:113:41</span></span>
+        <span class="t-3003-c">Berechnung nicht mehr
+          <span class="t-3003">./course1/wly/09/07-Space.wly:114:9</span></span><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/09/07-Space.wly:114:31</span></span><span class="t-3003-c">
+          Schritte dauern.<span class="t-3003">./course1/wly/09/07-Space.wly:114:34</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 9.7.1</b>
-        Zeigen Sie, dass wir die Bedingung 1 aus
-        <a
+        <b><span class="t-3003-c">Übungsaufgabe 9.7.1<span class="t-3003">./course1/wly/09/07-Space.wly:116:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:116:5</span></span>
+        <span class="t-3003-c">Zeigen Sie, dass wir die Bedingung 1 aus
+          <span class="t-3003">./course1/wly/09/07-Space.wly:117:9</span></span><a
           href="./9-7.html#_55_hgi_"
           class=""
-        >Definition 9.7.1</a>
-        weglassen können, zumindest
-        wenn $s(n)$ zeitkonstruierbar ist.
+        >Definition 9.7.1</a><span class="t-3003-c">
+          weglassen können, zumindest<span class="t-3003">./course1/wly/09/07-Space.wly:118:9</span></span>
+        <span class="t-3003-c">wenn
+          <span class="t-3003">./course1/wly/09/07-Space.wly:119:9</span></span><span class="t-3003-c">$s(n)$<span class="t-3003">./course1/wly/09/07-Space.wly:119:14</span></span><span class="t-3003-c">
+          zeitkonstruierbar ist.<span class="t-3003">./course1/wly/09/07-Space.wly:119:20</span></span>
       </p>
     </div>
     <h3 class="main-column subtopic-announcement">
-      Die wichtigsten Platzklassen: L und PSPACE
+      <span class="t-3003-c">Die wichtigsten Platzklassen: L und PSPACE<span class="t-3003">./course1/wly/09/07-Space.wly:122:9</span></span>
     </h3>
     <p class="main-column">
-      Wir definieren
+      <span class="t-3003-c">Wir definieren<span class="t-3003">./course1/wly/09/07-Space.wly:124:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \textnormal{PSPACE} := \bigcup_{k \geq 1} \SPACE(n^k)
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/09/07-Space.wly:126:5</span>
     </div>
     <p class="main-column">
-      also die Menge aller Probleme, die man mit
-      polynomiellem Speicherplatz entscheiden kann, und
+      <span class="t-3003-c">also die Menge aller Probleme, die man mit<span class="t-3003">./course1/wly/09/07-Space.wly:130:5</span></span>
+      <span class="t-3003-c">polynomiellem Speicherplatz entscheiden kann, und<span class="t-3003">./course1/wly/09/07-Space.wly:131:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \textnormal{L} := \SPACE(\log n) \ .
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/09/07-Space.wly:133:5</span>
     </div>
     <p class="main-column">
-      die Menge aller Probleme, die man mit
-      <i>logarithmischem Speicherplatz</i>
-      entscheiden kann. Man
-      nennt $L$ auch LogSpace.
+      <span class="t-3003-c">die Menge aller Probleme, die man mit<span class="t-3003">./course1/wly/09/07-Space.wly:137:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/07-Space.wly:138:5</span></span><i><span class="t-3003-c">logarithmischem Speicherplatz<span class="t-3003">./course1/wly/09/07-Space.wly:138:6</span></span></i><span class="t-3003-c">
+        entscheiden kann. Man<span class="t-3003">./course1/wly/09/07-Space.wly:138:36</span></span>
+      <span class="t-3003-c">nennt
+        <span class="t-3003">./course1/wly/09/07-Space.wly:139:5</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/07-Space.wly:139:11</span></span><span class="t-3003-c">
+        auch LogSpace.<span class="t-3003">./course1/wly/09/07-Space.wly:139:14</span></span>
     </p>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 9.7.2</b>
-        Zeigen Sie, dass ${\rm NP} \subseteq {\rm PSPACE}$
-        gilt. Fangen Sie zum Beispiel an,<span class="sc">3-Colorability $\in$
-          PSPACE</span>
-        zu zeigen.
+        <b><span class="t-3003-c">Übungsaufgabe 9.7.2<span class="t-3003">./course1/wly/09/07-Space.wly:141:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:141:5</span></span>
+        <span class="t-3003-c">Zeigen Sie, dass
+          <span class="t-3003">./course1/wly/09/07-Space.wly:142:9</span></span><span class="t-3003-c">${\rm NP} \subseteq {\rm PSPACE}$<span class="t-3003">./course1/wly/09/07-Space.wly:142:26</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:142:59</span></span>
+        <span class="t-3003-c">gilt. Fangen Sie zum Beispiel an,<span class="t-3003">./course1/wly/09/07-Space.wly:143:9</span></span><span class="sc"><span class="t-3003-c">3-Colorability
+            <span class="t-3003">./course1/wly/09/07-Space.wly:143:43</span></span><span class="t-3003-c">$\in$<span class="t-3003">./course1/wly/09/07-Space.wly:143:58</span></span><span class="t-3003-c">
+            <span class="t-3003">./course1/wly/09/07-Space.wly:143:63</span></span>
+          <span class="t-3003-c">PSPACE<span class="t-3003">./course1/wly/09/07-Space.wly:144:9</span></span></span><span class="t-3003-c">
+          zu zeigen.<span class="t-3003">./course1/wly/09/07-Space.wly:144:20</span></span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 9.7.3</b>
-        Sei
-        <span class="sc">Palindrome</span>
-        die Sprache aller
-        Palindromwörter mit Trennungszeichen in der Mitte,
-        also
+        <b><span class="t-3003-c">Übungsaufgabe 9.7.3<span class="t-3003">./course1/wly/09/07-Space.wly:146:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:146:5</span></span>
+        <span class="t-3003-c">Sei
+          <span class="t-3003">./course1/wly/09/07-Space.wly:147:9</span></span><span class="sc"><span class="t-3003-c">Palindrome<span class="t-3003">./course1/wly/09/07-Space.wly:147:14</span></span></span><span class="t-3003-c">
+          die Sprache aller<span class="t-3003">./course1/wly/09/07-Space.wly:147:29</span></span>
+        <span class="t-3003-c">Palindromwörter mit Trennungszeichen in der Mitte,<span class="t-3003">./course1/wly/09/07-Space.wly:148:9</span></span>
+        <span class="t-3003-c">also<span class="t-3003">./course1/wly/09/07-Space.wly:149:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \{ucu^{R} \ | \ u \in \{a,b\}^* \} \ .
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/09/07-Space.wly:151:9</span>
       </div>
       <p>
-        Zeigen Sie, dass
-        <span class="sc">Palindrome $\in$ L</span>
+        <span class="t-3003-c">Zeigen Sie, dass
+          <span class="t-3003">./course1/wly/09/07-Space.wly:155:9</span></span><span class="sc"><span class="t-3003-c">Palindrome
+            <span class="t-3003">./course1/wly/09/07-Space.wly:155:27</span></span><span class="t-3003-c">$\in$<span class="t-3003">./course1/wly/09/07-Space.wly:155:38</span></span><span class="t-3003-c">
+            L<span class="t-3003">./course1/wly/09/07-Space.wly:155:43</span></span></span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 9.7.4</b>
-        Zeigen Sie, dass die Sprache aller wohlgeformten
-        Klammerausdrücke in L ist, also die Sprache über
-        $\{a,b\}$ mit
+        <b><span class="t-3003-c">Übungsaufgabe 9.7.4<span class="t-3003">./course1/wly/09/07-Space.wly:157:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:157:5</span></span>
+        <span class="t-3003-c">Zeigen Sie, dass die Sprache aller wohlgeformten<span class="t-3003">./course1/wly/09/07-Space.wly:158:9</span></span>
+        <span class="t-3003-c">Klammerausdrücke in L ist, also die Sprache über<span class="t-3003">./course1/wly/09/07-Space.wly:159:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:160:9</span></span><span class="t-3003-c">$\{a,b\}$<span class="t-3003">./course1/wly/09/07-Space.wly:160:9</span></span><span class="t-3003-c">
+          mit<span class="t-3003">./course1/wly/09/07-Space.wly:160:18</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         S&amp;\rightarrow \epsilon \ | \ aSbS \ .
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/09/07-Space.wly:162:9</span>
       </div>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 9.7.5</b>
-        Seien $f: \Sigma_1 \rightarrow \Sigma_2$ und
-        $g: \Sigma_2 \rightarrow \Sigma_3$ zwei Funktionen.
-        Zeigen Sie, dass, falls $f$ und $g$ in
-        logarithmischem Platz berechnet werden können, dann
-        auch
-        <span class="nowrap">$g \circ f: \Sigma_1 \rightarrow \Sigma_3$.</span>
-        <b>Hinweis:</b>
-        der "offensichtliche" Ansatz funktioniert
-        nicht. Warum nicht?
+        <b><span class="t-3003-c">Übungsaufgabe 9.7.5<span class="t-3003">./course1/wly/09/07-Space.wly:166:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:166:5</span></span>
+        <span class="t-3003-c">Seien
+          <span class="t-3003">./course1/wly/09/07-Space.wly:167:9</span></span><span class="t-3003-c">$f: \Sigma_1 \rightarrow \Sigma_2$<span class="t-3003">./course1/wly/09/07-Space.wly:167:15</span></span><span class="t-3003-c">
+          und<span class="t-3003">./course1/wly/09/07-Space.wly:167:49</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:168:9</span></span><span class="t-3003-c">$g: \Sigma_2 \rightarrow \Sigma_3$<span class="t-3003">./course1/wly/09/07-Space.wly:168:9</span></span><span class="t-3003-c">
+          zwei Funktionen.<span class="t-3003">./course1/wly/09/07-Space.wly:168:43</span></span>
+        <span class="t-3003-c">Zeigen Sie, dass, falls
+          <span class="t-3003">./course1/wly/09/07-Space.wly:169:9</span></span><span class="t-3003-c">$f$<span class="t-3003">./course1/wly/09/07-Space.wly:169:33</span></span><span class="t-3003-c">
+          und
+          <span class="t-3003">./course1/wly/09/07-Space.wly:169:36</span></span><span class="t-3003-c">$g$<span class="t-3003">./course1/wly/09/07-Space.wly:169:41</span></span><span class="t-3003-c">
+          in<span class="t-3003">./course1/wly/09/07-Space.wly:169:44</span></span>
+        <span class="t-3003-c">logarithmischem Platz berechnet werden können, dann<span class="t-3003">./course1/wly/09/07-Space.wly:170:9</span></span>
+        <span class="t-3003-c">auch
+          <span class="t-3003">./course1/wly/09/07-Space.wly:171:9</span></span><span class="nowrap"><span class="t-3003-c">$g \circ f: \Sigma_1 \rightarrow \Sigma_3$<span class="t-3003">./course1/wly/09/07-Space.wly:171:14</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/07-Space.wly:171:56</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:171:56</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/07-Space.wly:172:9</span></span><b><span class="t-3003-c">Hinweis:<span class="t-3003">./course1/wly/09/07-Space.wly:172:10</span></span></b><span class="t-3003-c">
+          der "offensichtliche" Ansatz funktioniert<span class="t-3003">./course1/wly/09/07-Space.wly:172:19</span></span>
+        <span class="t-3003-c">nicht. Warum nicht?<span class="t-3003">./course1/wly/09/07-Space.wly:173:9</span></span>
       </p>
     </div>
     <div id="end-of-page-elt">
@@ -337,7 +428,7 @@
             style="visibility:hidden"
             id="bottom-next-page-tooltip"
           >Savitch's Theorem:
-            $\textrm{Reachability} \in \textrm{Space}(\log(n))$</span></a>
+            <span class="t-3003-c">$\textrm{Reachability} \in \textrm{Space}(\log(n))$<span class="t-3003">./course1/wly/09/08-Savitch.wly:5:9</span></span></span></a>
       </div>
     </div>
   </div>

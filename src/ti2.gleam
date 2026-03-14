@@ -5,7 +5,6 @@ import gleam/dict
 import gleam/io
 import gleam/list
 import gleam/option
-import gleam/io
 import gleam/string
 import main_renderer
 import on
@@ -73,7 +72,7 @@ pub fn main() {
           io.println("missing --input-dir argument")
           panic
         }
-      )
+      }
 
       case amendments.input_dir {
         option.Some("course1") -> Nil

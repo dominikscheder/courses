@@ -40,67 +40,85 @@
     </div>
     <div class="main-column page-title">
       <p>
-        8.2&ensp;Beispiele
+        <span class="t-3003-c">8.2&ensp;Beispiele<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:2:11</span></span>
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b>Beispiel 8.2.1</b>
-        Betrachten wir die Sprache
+        <b><span class="t-3003-c">Beispiel 8.2.1<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:4:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:4:5</span></span>
+        <span class="t-3003-c">Betrachten wir die Sprache<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:5:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \{a^n b^n c^n \ | \ n \geq 0 \}
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:7:9</span>
       </div>
       <p>
-        über dem Alphabet
-        <span class="nowrap">$\{a,b,c\}$.</span>
-        Wir wollen eine
-        Turingmaschine entwerfen, die diese Sprache
-        entscheidet.
+        <span class="t-3003-c">über dem Alphabet
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:11:9</span></span><span class="nowrap"><span class="t-3003-c">$\{a,b,c\}$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:11:27</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:11:38</span></span></span><span class="t-3003-c">
+          Wir wollen eine<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:11:38</span></span>
+        <span class="t-3003-c">Turingmaschine entwerfen, die diese Sprache<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:12:9</span></span>
+        <span class="t-3003-c">entscheidet.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:13:9</span></span>
       </p>
       <p>
-        <b>Informelle Beschreibung.</b>
-        Unsere Turingmaschine
-        arbeitet in Phasen. In jeder Phase sucht die Maschine
-        ein $a$ und löscht es (ersetzt es durch ein
-        <span class="nowrap">$X$).</span>
-        Dann geht sie nach rechts und sucht und markiert ein
-        <span class="nowrap">$b$;</span>
-        dann ein
-        <span class="nowrap">$c$.</span>
-        Sobald sie das $c$ markiert hat,
-        geht sie wieder nach links. Dies beendet die Phase.
-        Wenn die Maschine kein $a$ mehr findet und auch kein
-        $b$ oder $c$ mehr da ist, akzeptiert die Maschine.
-        Wenn unterwegs ein "Fehler" geschieht, beispielsweise
-        die Maschine ein $b$ sucht aber keines findet,
-        wechselt sie in den
-        <span class="nowrap"><code>reject</code>-Zustand.</span>
+        <b><span class="t-3003-c">Informelle Beschreibung.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:15:10</span></span></b><span class="t-3003-c">
+          Unsere Turingmaschine<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:15:35</span></span>
+        <span class="t-3003-c">arbeitet in Phasen. In jeder Phase sucht die Maschine<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:16:9</span></span>
+        <span class="t-3003-c">ein
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:17:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:17:13</span></span><span class="t-3003-c">
+          und löscht es (ersetzt es durch ein
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:17:16</span></span><span class="nowrap"><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:17:53</span></span><span class="t-3003-c">).<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:17:56</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:17:56</span></span>
+        <span class="t-3003-c">Dann geht sie nach rechts und sucht und markiert ein<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:18:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:19:9</span></span><span class="nowrap"><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:19:9</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:19:12</span></span></span><span class="t-3003-c">
+          dann ein
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:19:12</span></span><span class="nowrap"><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:19:23</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:19:26</span></span></span><span class="t-3003-c">
+          Sobald sie das
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:19:26</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:19:43</span></span><span class="t-3003-c">
+          markiert hat,<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:19:46</span></span>
+        <span class="t-3003-c">geht sie wieder nach links. Dies beendet die Phase.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:20:9</span></span>
+        <span class="t-3003-c">Wenn die Maschine kein
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:21:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:21:32</span></span><span class="t-3003-c">
+          mehr findet und auch kein<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:21:35</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:22:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:22:9</span></span><span class="t-3003-c">
+          oder
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:22:12</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:22:18</span></span><span class="t-3003-c">
+          mehr da ist, akzeptiert die Maschine.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:22:21</span></span>
+        <span class="t-3003-c">Wenn unterwegs ein "Fehler" geschieht, beispielsweise<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:23:9</span></span>
+        <span class="t-3003-c">die Maschine ein
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:24:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:24:26</span></span><span class="t-3003-c">
+          sucht aber keines findet,<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:24:29</span></span>
+        <span class="t-3003-c">wechselt sie in den
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:25:9</span></span><span class="nowrap"><code><span class="t-3003-c">reject<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:25:30</span></span></code><span class="t-3003-c">-Zustand.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:25:37</span></span></span>
       </p>
       <p>
-        <b>Formellere Beschreibung.</b>
-        Als Bandalphabet verwenden
-        wir
+        <b><span class="t-3003-c">Formellere Beschreibung.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:27:10</span></span></b><span class="t-3003-c">
+          Als Bandalphabet verwenden<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:27:35</span></span>
+        <span class="t-3003-c">wir<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:28:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \Gamma := \{a,b,c, X, \square\} \ .
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:30:9</span>
       </div>
       <p>
-        Das Symbol $X$ heißt dann "hier stand mal
-        <span class="nowrap">$a$,</span>
-        $b$
-        oder
-        <span class="nowrap">$c$,</span>
-        wir haben es aber bereits gelesen". Als
-        Zustandsmenge verwenden wir
+        <span class="t-3003-c">Das Symbol
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:34:9</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:34:20</span></span><span class="t-3003-c">
+          heißt dann "hier stand mal
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:34:23</span></span><span class="nowrap"><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:34:51</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:34:54</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:34:54</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:34:56</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:34:59</span></span>
+        <span class="t-3003-c">oder
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:35:9</span></span><span class="nowrap"><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:35:14</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:35:17</span></span></span><span class="t-3003-c">
+          wir haben es aber bereits gelesen". Als<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:35:17</span></span>
+        <span class="t-3003-c">Zustandsmenge verwenden wir<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:36:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -108,117 +126,171 @@
         Q := \{\texttt{findA}, \texttt{findB}, \texttt{findC}, \texttt{noA},
         \texttt{accept}, \texttt{reject}\} \ .
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:38:9</span>
       </div>
       <p>
-        Die "Bedeutung" dieser Zustände ist:
+        <span class="t-3003-c">Die "Bedeutung" dieser Zustände ist:<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:43:9</span></span>
       </p>
       <ul>
         <li>
           <p>
-            <span class="nowrap"><code>findA</code>:</span>
-            gehe nach links, bis Du ein $a$ findest,
-            ersetze es durch $X$ und wechsle dann in
-            <span class="nowrap"><code>findB</code>.</span>
-            Wenn Du allerdings in ein $\square$ läufst, bist Du
-            am linken Rand und es gibt keine $a$ mehr; wechsle
-            <span class="nowrap">nach<code>noA</code></span>
-            und gehe ein Feld nach rechts.
+            <span class="nowrap"><code><span class="t-3003-c">findA<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:47:18</span></span></code><span class="t-3003-c">:<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:47:24</span></span></span><span class="t-3003-c">
+              gehe nach links, bis Du ein
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:47:24</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:47:54</span></span><span class="t-3003-c">
+              findest,<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:47:57</span></span>
+            <span class="t-3003-c">ersetze es durch
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:48:17</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:48:34</span></span><span class="t-3003-c">
+              und wechsle dann in
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:48:37</span></span><span class="nowrap"><code><span class="t-3003-c">findB<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:48:59</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:48:65</span></span></span><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:48:65</span></span>
+            <span class="t-3003-c">Wenn Du allerdings in ein
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:49:17</span></span><span class="t-3003-c">$\square$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:49:43</span></span><span class="t-3003-c">
+              läufst, bist Du<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:49:52</span></span>
+            <span class="t-3003-c">am linken Rand und es gibt keine
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:50:17</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:50:50</span></span><span class="t-3003-c">
+              mehr; wechsle<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:50:53</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:51:17</span></span><span class="nowrap"><span class="t-3003-c">nach<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:51:17</span></span><code><span class="t-3003-c">noA<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:51:22</span></span></code></span><span class="t-3003-c">
+              und gehe ein Feld nach rechts.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:51:26</span></span>
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><code>findB</code>:</span>
-            gehe nach rechts, bis Du ein $b$ gefunden
-            hast; ignoriere auf dem Weg alle $a$ und alle
-            <span class="nowrap">$X$;</span>
-            wenn Du $b$ liest, ersetze es durch $X$ und gehe
-            <span class="nowrap">nach<code>findC</code>;jedes</span>
-            andere Zeichen erzeugt einen Fehler.
+            <span class="nowrap"><code><span class="t-3003-c">findB<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:54:18</span></span></code><span class="t-3003-c">:<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:54:24</span></span></span><span class="t-3003-c">
+              gehe nach rechts, bis Du ein
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:54:24</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:54:55</span></span><span class="t-3003-c">
+              gefunden<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:54:58</span></span>
+            <span class="t-3003-c">hast; ignoriere auf dem Weg alle
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:55:17</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:55:50</span></span><span class="t-3003-c">
+              und alle
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:55:53</span></span><span class="nowrap"><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:55:63</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:55:66</span></span></span><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:55:66</span></span>
+            <span class="t-3003-c">wenn Du
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:56:17</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:56:25</span></span><span class="t-3003-c">
+              liest, ersetze es durch
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:56:28</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:56:53</span></span><span class="t-3003-c">
+              und gehe<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:56:56</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:57:17</span></span><span class="nowrap"><span class="t-3003-c">nach<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:57:17</span></span><code><span class="t-3003-c">findC<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:57:22</span></span></code><span class="t-3003-c">;jedes<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:57:28</span></span></span><span class="t-3003-c">
+              andere Zeichen erzeugt einen Fehler.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:57:28</span></span>
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><code>findC</code>:</span>
-            gehe nach rechts, bis Du ein $c$ gefunden
-            hast; ignoriere derweil alle $b$ und
-            <span class="nowrap">$X$;</span>
-            wenn Du ein
-            $c$ liest, ersetze es durch $X$ und gehe in Zustand
-            <span class="nowrap"><code>findA</code>.</span>
+            <span class="nowrap"><code><span class="t-3003-c">findC<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:60:18</span></span></code><span class="t-3003-c">:<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:60:24</span></span></span><span class="t-3003-c">
+              gehe nach rechts, bis Du ein
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:60:24</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:60:55</span></span><span class="t-3003-c">
+              gefunden<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:60:58</span></span>
+            <span class="t-3003-c">hast; ignoriere derweil alle
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:61:17</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:61:46</span></span><span class="t-3003-c">
+              und
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:61:49</span></span><span class="nowrap"><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:61:54</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:61:57</span></span></span><span class="t-3003-c">
+              wenn Du ein<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:61:57</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:62:17</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:62:17</span></span><span class="t-3003-c">
+              liest, ersetze es durch
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:62:20</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:62:45</span></span><span class="t-3003-c">
+              und gehe in Zustand<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:62:48</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:63:17</span></span><span class="nowrap"><code><span class="t-3003-c">findA<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:63:18</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:63:24</span></span></span>
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><code>noA</code>:</span>
-            wir stehen nun am Anfang des Bandinhalts und
-            wissen, dass es kein $a$ mehr gibt. Wir müssen jetzt
-            überprüfen, dass es auch keine $b,c$ mehr gibt. Also:
-            gehe nach rechts, ignoriere alle
-            <span class="nowrap">$X$.</span>
-            Wenn Du ein $b$
-            oder $c$ triffst, gehe nach
-            <span class="nowrap"><code>reject</code>.</span>
-            Wenn Du ein
-            $\square$ triffst, dann besteht das Wort nur noch aus
-            <span class="nowrap">$X$.</span>
-            Wechsel
-            <span class="nowrap">nach<code>accept</code>.</span>
+            <span class="nowrap"><code><span class="t-3003-c">noA<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:66:18</span></span></code><span class="t-3003-c">:<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:66:22</span></span></span><span class="t-3003-c">
+              wir stehen nun am Anfang des Bandinhalts und<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:66:22</span></span>
+            <span class="t-3003-c">wissen, dass es kein
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:67:17</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:67:38</span></span><span class="t-3003-c">
+              mehr gibt. Wir müssen jetzt<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:67:41</span></span>
+            <span class="t-3003-c">überprüfen, dass es auch keine
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:68:17</span></span><span class="t-3003-c">$b,c$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:68:48</span></span><span class="t-3003-c">
+              mehr gibt. Also:<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:68:53</span></span>
+            <span class="t-3003-c">gehe nach rechts, ignoriere alle
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:69:17</span></span><span class="nowrap"><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:69:50</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:69:53</span></span></span><span class="t-3003-c">
+              Wenn Du ein
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:69:53</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:69:67</span></span><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:69:70</span></span>
+            <span class="t-3003-c">oder
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:70:17</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:70:22</span></span><span class="t-3003-c">
+              triffst, gehe nach
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:70:25</span></span><span class="nowrap"><code><span class="t-3003-c">reject<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:70:46</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:70:53</span></span></span><span class="t-3003-c">
+              Wenn Du ein<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:70:53</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:71:17</span></span><span class="t-3003-c">$\square$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:71:17</span></span><span class="t-3003-c">
+              triffst, dann besteht das Wort nur noch aus<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:71:26</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:72:17</span></span><span class="nowrap"><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:72:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:72:20</span></span></span><span class="t-3003-c">
+              Wechsel
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:72:20</span></span><span class="nowrap"><span class="t-3003-c">nach<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:72:20</span></span><code><span class="t-3003-c">accept<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:72:35</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:72:42</span></span></span>
           </p>
         </li>
       </ul>
       <p>
-        Wir können die Beschreibung jetzt formal als Funktion
-        $\delta: Q \times \Gamma \rightarrow Q \times \Gamma
-        \times \rls$
-        niederschreiben.
+        <span class="t-3003-c">Wir können die Beschreibung jetzt formal als Funktion<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:74:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:75:9</span></span><span class="t-3003-c">$\delta: Q \times \Gamma \rightarrow Q \times \Gamma
+          \times \rls$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:75:9</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:76:21</span></span>
+        <span class="t-3003-c">niederschreiben.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:77:9</span></span>
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:12em"
             src="img/turing-machines/exampe-2-aabbcc/delta-table.svg"
-          >
+          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/exampe-2-aabbcc/delta-table.svg</span></span>
         </figure>
       </div>
       <p>
-        Beachten Sie: manche Zellen sind leer. Damit meine
-        ich, dass die Turingmaschine dort in den Zustand
-        <code>reject</code>
-        wechselt. Andere Zellen bestehen nur aus
-        einem Buchstaben; so steht in der Zelle von
-        $\delta(\texttt{findA}, b)$ nur ein $\texttt{R}$ .
-        Dies bedeutet, dass die Turingmaschine ihren Zustand
-        nicht wechselt und einfach das gelesene Zeichen in die
-        Zelle wieder reinschreibt. Dies ist reiner
-        Syntaxzucker. Auf der Webseite
-        <a href="https://turingmachinesimulator.com">turingmachinesimulator.com</a>
-        können Sie Ihre Turingmaschine eingeben und
-        simulieren. Den Text für die gerade beschriebene
-        finden in
-        <a href="./code/turing%20machines/aabbcc.txt">aabbcc.txt</a>.
-        Generell können Sie Regeln der Form
+        <span class="t-3003-c">Beachten Sie: manche Zellen sind leer. Damit meine<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:84:9</span></span>
+        <span class="t-3003-c">ich, dass die Turingmaschine dort in den Zustand<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:85:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:86:9</span></span><code><span class="t-3003-c">reject<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:86:10</span></span></code><span class="t-3003-c">
+          wechselt. Andere Zellen bestehen nur aus<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:86:17</span></span>
+        <span class="t-3003-c">einem Buchstaben; so steht in der Zelle von<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:87:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:88:9</span></span><span class="t-3003-c">$\delta(\texttt{findA}, b)$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:88:9</span></span><span class="t-3003-c">
+          nur ein
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:88:36</span></span><span class="t-3003-c">$\texttt{R}$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:88:45</span></span><span class="t-3003-c">
+          .<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:88:57</span></span>
+        <span class="t-3003-c">Dies bedeutet, dass die Turingmaschine ihren Zustand<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:89:9</span></span>
+        <span class="t-3003-c">nicht wechselt und einfach das gelesene Zeichen in die<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:90:9</span></span>
+        <span class="t-3003-c">Zelle wieder reinschreibt. Dies ist reiner<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:91:9</span></span>
+        <span class="t-3003-c">Syntaxzucker. Auf der Webseite<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:92:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:93:9</span></span><a href="https://turingmachinesimulator.com"><span class="t-3003-c">turingmachinesimulator.com<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:93:10</span></span></a><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:93:73</span></span>
+        <span class="t-3003-c">können Sie Ihre Turingmaschine eingeben und<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:94:9</span></span>
+        <span class="t-3003-c">simulieren. Den Text für die gerade beschriebene<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:95:9</span></span>
+        <span class="t-3003-c">finden in<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:96:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:97:9</span></span><a href="./code/turing%20machines/aabbcc.txt"><span class="t-3003-c">aabbcc.txt<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:97:10</span></span></a><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:97:58</span></span>
+        <span class="t-3003-c">Generell können Sie Regeln der Form<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:98:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \delta(q,a) = (r, b, D)
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:100:9</span>
       </div>
       <p>
-        auf turingmachinesimulator.com als
+        <span class="t-3003-c">auf turingmachinesimulator.com als<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:104:9</span></span>
       </p>
 <pre>
-q, a
-r, b, D
+<span class="t-3003-c">q, a<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:107:9</span></span>
+<span class="t-3003-c">r, b, D<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:108:9</span></span>
 </pre>
       <p>
-        angeben, wobei die Richtung $D$ mit den Symbolen
-        <span class="nowrap"><code>&lt;</code>,</span>
-        <span class="nowrap"><code>-</code>,</span>
-        <code>&gt;</code>
-        codiert wird.
+        <span class="t-3003-c">angeben, wobei die Richtung
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:111:9</span></span><span class="t-3003-c">$D$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:111:37</span></span><span class="t-3003-c">
+          mit den Symbolen
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:111:40</span></span><span class="nowrap"><code><span class="t-3003-c">&lt;<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:111:59</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:111:61</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:111:61</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:112:9</span></span><span class="nowrap"><code><span class="t-3003-c">-<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:112:10</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:112:12</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:112:12</span></span><code><span class="t-3003-c">&gt;<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:112:15</span></span></code><span class="t-3003-c">
+          codiert wird.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:112:17</span></span>
       </p>
     </div>
     <div
@@ -226,38 +298,45 @@ r, b, D
       class="well statement out"
     >
       <p>
-        <b>Beispiel 8.2.2</b>
-        Als zweites Beispiel nehmen wir die Palindromsprache
+        <b><span class="t-3003-c">Beispiel 8.2.2<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:114:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:114:5</span></span>
+        <span class="t-3003-c">Als zweites Beispiel nehmen wir die Palindromsprache<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:116:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         L := \{ w \in \{a,b\}^* \ | \ w = w^R \} \ ,
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:118:9</span>
       </div>
       <p>
-        wobei $w^R$ das Kehrwort bedeutet, also
-        <span class="nowrap">$aabba^R = abbaa$.</span>
-        Unsere Maschine sucht das erste
-        Zeichen, löscht es (ersetzt es durch $\square$ und
-        "merkt" es sich in ihrem Zustand. Dann geht sie zum
-        rechten Rand und vergleicht es mit dem dortigen. Falls
-        es passt, löscht sie es und geht wieder nach links
-        zurück. Falls es nicht passt, wechselt sie in
-        <span class="nowrap"><code>reject</code>.</span>
-        Wenn unsere Maschine das erste Zeichen sucht
-        aber keines findet, dann hat sie alle Zeichen
-        erfolgreich gelöscht und es hat sich also um ein
-        Palindrom von gerader Länge gehandelt. Wenn die
-        Maschine allerdings nach dem Löschen des linkesten
-        Zeichens sofort am rechten Rand steht, dann stand dort
-        nur noch ein einziges Zeichen und es hat sich um ein
-        Palindrom ungerader Länge gehandelt. Als Bandalphabet
-        brauchen wir hier nur
-        <span class="nowrap">$\Gamma = \{a,b,\square\}$.</span>
-        Als
-        Zustandsmenge nehmen wir
+        <span class="t-3003-c">wobei
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:122:9</span></span><span class="t-3003-c">$w^R$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:122:15</span></span><span class="t-3003-c">
+          das Kehrwort bedeutet, also<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:122:20</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:123:9</span></span><span class="nowrap"><span class="t-3003-c">$aabba^R = abbaa$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:123:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:123:26</span></span></span><span class="t-3003-c">
+          Unsere Maschine sucht das erste<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:123:26</span></span>
+        <span class="t-3003-c">Zeichen, löscht es (ersetzt es durch
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:124:9</span></span><span class="t-3003-c">$\square$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:124:46</span></span><span class="t-3003-c">
+          und<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:124:55</span></span>
+        <span class="t-3003-c">"merkt" es sich in ihrem Zustand. Dann geht sie zum<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:125:9</span></span>
+        <span class="t-3003-c">rechten Rand und vergleicht es mit dem dortigen. Falls<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:126:9</span></span>
+        <span class="t-3003-c">es passt, löscht sie es und geht wieder nach links<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:127:9</span></span>
+        <span class="t-3003-c">zurück. Falls es nicht passt, wechselt sie in<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:128:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:129:9</span></span><span class="nowrap"><code><span class="t-3003-c">reject<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:129:10</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:129:17</span></span></span><span class="t-3003-c">
+          Wenn unsere Maschine das erste Zeichen sucht<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:129:17</span></span>
+        <span class="t-3003-c">aber keines findet, dann hat sie alle Zeichen<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:130:9</span></span>
+        <span class="t-3003-c">erfolgreich gelöscht und es hat sich also um ein<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:131:9</span></span>
+        <span class="t-3003-c">Palindrom von gerader Länge gehandelt. Wenn die<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:132:9</span></span>
+        <span class="t-3003-c">Maschine allerdings nach dem Löschen des linkesten<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:133:9</span></span>
+        <span class="t-3003-c">Zeichens sofort am rechten Rand steht, dann stand dort<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:134:9</span></span>
+        <span class="t-3003-c">nur noch ein einziges Zeichen und es hat sich um ein<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:135:9</span></span>
+        <span class="t-3003-c">Palindrom ungerader Länge gehandelt. Als Bandalphabet<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:136:9</span></span>
+        <span class="t-3003-c">brauchen wir hier nur
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:137:9</span></span><span class="nowrap"><span class="t-3003-c">$\Gamma = \{a,b,\square\}$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:137:31</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:137:57</span></span></span><span class="t-3003-c">
+          Als<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:137:57</span></span>
+        <span class="t-3003-c">Zustandsmenge nehmen wir<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:138:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -265,64 +344,73 @@ r, b, D
         Q = \{\texttt{next}, \texttt{readA}, \texttt{readB}, \texttt{killA}, \texttt{killB},
         \texttt{return}, \texttt{reject}, \texttt{accept}\}.
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:140:9</span>
       </div>
       <ul>
         <li>
           <p>
-            <span class="nowrap"><code>next</code>:</span>
-            ist der Anfangszustand. Die Maschine steht am
-            linkesten Zeichen. Ist dieses
-            <span class="nowrap">$\square$,</span>
-            so haben wir
-            das "leere" Palindrom und wir wechseln nach
-            <span class="nowrap"><code>accept</code>.</span>
-            Ist es
-            <span class="nowrap">$a$,</span>
-            wechseln wir nach
-            <code>readA</code>
-            und gehen einen
-            Schritt nach rechts; ist es
-            <span class="nowrap">$b$,</span>
-            wechseln wir nach
-            <code>readB</code>
-            und gehen nach rechts.
+            <span class="nowrap"><code><span class="t-3003-c">next<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:147:18</span></span></code><span class="t-3003-c">:<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:147:23</span></span></span><span class="t-3003-c">
+              ist der Anfangszustand. Die Maschine steht am<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:147:23</span></span>
+            <span class="t-3003-c">linkesten Zeichen. Ist dieses
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:148:17</span></span><span class="nowrap"><span class="t-3003-c">$\square$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:148:47</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:148:56</span></span></span><span class="t-3003-c">
+              so haben wir<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:148:56</span></span>
+            <span class="t-3003-c">das "leere" Palindrom und wir wechseln nach
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:149:17</span></span><span class="nowrap"><code><span class="t-3003-c">accept<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:149:62</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:149:69</span></span></span><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:149:69</span></span>
+            <span class="t-3003-c">Ist es
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:150:17</span></span><span class="nowrap"><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:150:24</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:150:27</span></span></span><span class="t-3003-c">
+              wechseln wir nach
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:150:27</span></span><code><span class="t-3003-c">readA<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:150:48</span></span></code><span class="t-3003-c">
+              und gehen einen<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:150:54</span></span>
+            <span class="t-3003-c">Schritt nach rechts; ist es
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:151:17</span></span><span class="nowrap"><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:151:45</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:151:48</span></span></span><span class="t-3003-c">
+              wechseln wir nach<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:151:48</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:152:17</span></span><code><span class="t-3003-c">readB<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:152:18</span></span></code><span class="t-3003-c">
+              und gehen nach rechts.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:152:24</span></span>
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><code>readA, readB</code>:</span>
-            wir gehen nach rechts, bis wir ein
-            $\square$ lesen, also den rechten Rand erreicht
-            haben, und wechseln dann nach
-            <code>killA</code>
-            <span class="nowrap">bzw.<code>killB</code></span>
-            und
-            gehen einen Schritt nach links.
+            <span class="nowrap"><code><span class="t-3003-c">readA, readB<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:155:18</span></span></code><span class="t-3003-c">:<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:155:31</span></span></span><span class="t-3003-c">
+              wir gehen nach rechts, bis wir ein<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:155:31</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:156:17</span></span><span class="t-3003-c">$\square$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:156:17</span></span><span class="t-3003-c">
+              lesen, also den rechten Rand erreicht<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:156:26</span></span>
+            <span class="t-3003-c">haben, und wechseln dann nach
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:157:17</span></span><code><span class="t-3003-c">killA<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:157:48</span></span></code><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:157:54</span></span><span class="nowrap"><span class="t-3003-c">bzw.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:157:54</span></span><code><span class="t-3003-c">killB<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:157:60</span></span></code></span><span class="t-3003-c">
+              und<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:157:66</span></span>
+            <span class="t-3003-c">gehen einen Schritt nach links.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:158:17</span></span>
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><code>killA, killB</code>:</span>
-            hier weiß die Turingmaschine, was das
-            linkeste Zeichen war, und dass dieses bereits gelöscht
-            worden ist. Sie muss nun überprüfen, was das rechteste
-            Zeichen ist. Wenn es "passt", löschen wir es und
-            wechseln nach
-            <span class="nowrap"><code>return</code>;</span>
-            wenn es "nicht passt", nach
-            <span class="nowrap"><code>reject</code>;</span>
-            wenn es $\square$ ist, dann haben wir das
-            ganze Wort abgearbeitet und gehen
-            <span class="nowrap">nach<code>accept</code>.</span>
+            <span class="nowrap"><code><span class="t-3003-c">killA, killB<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:161:18</span></span></code><span class="t-3003-c">:<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:161:31</span></span></span><span class="t-3003-c">
+              hier weiß die Turingmaschine, was das<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:161:31</span></span>
+            <span class="t-3003-c">linkeste Zeichen war, und dass dieses bereits gelöscht<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:162:17</span></span>
+            <span class="t-3003-c">worden ist. Sie muss nun überprüfen, was das rechteste<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:163:17</span></span>
+            <span class="t-3003-c">Zeichen ist. Wenn es "passt", löschen wir es und<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:164:17</span></span>
+            <span class="t-3003-c">wechseln nach
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:165:17</span></span><span class="nowrap"><code><span class="t-3003-c">return<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:165:32</span></span></code><span class="t-3003-c">;<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:165:39</span></span></span><span class="t-3003-c">
+              wenn es "nicht passt", nach<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:165:39</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:166:17</span></span><span class="nowrap"><code><span class="t-3003-c">reject<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:166:18</span></span></code><span class="t-3003-c">;<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:166:25</span></span></span><span class="t-3003-c">
+              wenn es
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:166:25</span></span><span class="t-3003-c">$\square$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:166:35</span></span><span class="t-3003-c">
+              ist, dann haben wir das<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:166:44</span></span>
+            <span class="t-3003-c">ganze Wort abgearbeitet und gehen
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:167:17</span></span><span class="nowrap"><span class="t-3003-c">nach<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:167:17</span></span><code><span class="t-3003-c">accept<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:167:56</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:167:63</span></span></span>
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><code>return</code>:</span>
-            gehe nach links, bis Du ein $\square$
-            findest. Wechsle dann nach
-            <span class="nowrap"><code>next</code>.</span>
+            <span class="nowrap"><code><span class="t-3003-c">return<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:170:18</span></span></code><span class="t-3003-c">:<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:170:25</span></span></span><span class="t-3003-c">
+              gehe nach links, bis Du ein
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:170:25</span></span><span class="t-3003-c">$\square$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:170:55</span></span><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:170:64</span></span>
+            <span class="t-3003-c">findest. Wechsle dann nach
+              <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:171:17</span></span><span class="nowrap"><code><span class="t-3003-c">next<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:171:45</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:171:50</span></span></span>
           </p>
         </li>
       </ul>
@@ -331,65 +419,74 @@ r, b, D
           <img
             style="height:15em"
             src="img/turing-machines/exampe-2-aabbcc/delta-table-palindromes.svg"
-          >
+          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/exampe-2-aabbcc/delta-table-palindromes.svg</span></span>
         </figure>
       </div>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 8.2.1</b>
-        Implementieren Sie die Turingmaschine für die
-        Palindromsprache auf
-        <a href="https://turingmachinesimulator.com">turingmachinesimulator.com</a>.
+        <b><span class="t-3003-c">Übungsaufgabe 8.2.1<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:178:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:178:5</span></span>
+        <span class="t-3003-c">Implementieren Sie die Turingmaschine für die<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:179:9</span></span>
+        <span class="t-3003-c">Palindromsprache auf<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:180:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:181:9</span></span><a href="https://turingmachinesimulator.com"><span class="t-3003-c">turingmachinesimulator.com<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:181:10</span></span></a><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:181:73</span></span>
       </p>
     </div>
     <p class="main-column">
-      Jetzt sind Sie dran.
+      <span class="t-3003-c">Jetzt sind Sie dran.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:183:5</span></span>
     </p>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 8.2.2</b>
-        Schreiben Sie eine Turingmaschine (auf
-        <a href="https://turingmachinesimulator.com">turingmachinesimulator.com</a>),
-        die die folgende Sprache $L \subseteq \{a,b,c\}$
-        entscheidet:
+        <b><span class="t-3003-c">Übungsaufgabe 8.2.2<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:185:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:185:5</span></span>
+        <span class="t-3003-c">Schreiben Sie eine Turingmaschine (auf<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:186:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:187:9</span></span><a href="https://turingmachinesimulator.com"><span class="t-3003-c">turingmachinesimulator.com<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:187:10</span></span></a><span class="t-3003-c">),<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:187:73</span></span>
+        <span class="t-3003-c">die die folgende Sprache
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:188:9</span></span><span class="t-3003-c">$L \subseteq \{a,b,c\}$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:188:34</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:188:57</span></span>
+        <span class="t-3003-c">entscheidet:<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:189:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         L := \{ w c w \ | \ w \in \{a,b\}^* \}
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:191:9</span>
       </div>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 8.2.3</b>
-        Schreiben Sie auf
-        <a href="https://turingmachinesimulator.com">turingmachinesimulator.com</a>
-        eine Turingmaschine für die Sprache
+        <b><span class="t-3003-c">Übungsaufgabe 8.2.3<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:195:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:195:5</span></span>
+        <span class="t-3003-c">Schreiben Sie auf<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:196:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:197:9</span></span><a href="https://turingmachinesimulator.com"><span class="t-3003-c">turingmachinesimulator.com<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:197:10</span></span></a><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:197:73</span></span>
+        <span class="t-3003-c">eine Turingmaschine für die Sprache<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:198:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         L := \{1^n \ | \ n = 2^d, d \geq 0\} \ .
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:200:9</span>
       </div>
       <p>
-        <b>Tip:</b>
-        gehen Sie durch das Band und ersetzen jede
-        zweite
-        <span class="nowrap">$1$,</span>
-        die Sie sehen, durch ein
-        <span class="nowrap">$X$.</span>
-        Wenn Sie
-        rechts ankommen und eine ungerade Anzahl von Einsen
-        gelesen haben, lehnen Sie ab. Wenn die Anzahl gerade
-        ist, gehen Sie wieder nach ganz links; sie haben nun
-        die Anzahl der Einsen halbiert. Sie akzeptieren, wenn
-        Sie von links nach rechts durchgehend genau eine 1
-        gelesen haben.
+        <b><span class="t-3003-c">Tip:<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:204:10</span></span></b><span class="t-3003-c">
+          gehen Sie durch das Band und ersetzen jede<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:204:15</span></span>
+        <span class="t-3003-c">zweite
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:205:9</span></span><span class="nowrap"><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:205:16</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:205:19</span></span></span><span class="t-3003-c">
+          die Sie sehen, durch ein
+          <span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:205:19</span></span><span class="nowrap"><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:205:46</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:205:49</span></span></span><span class="t-3003-c">
+          Wenn Sie<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:205:49</span></span>
+        <span class="t-3003-c">rechts ankommen und eine ungerade Anzahl von Einsen<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:206:9</span></span>
+        <span class="t-3003-c">gelesen haben, lehnen Sie ab. Wenn die Anzahl gerade<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:207:9</span></span>
+        <span class="t-3003-c">ist, gehen Sie wieder nach ganz links; sie haben nun<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:208:9</span></span>
+        <span class="t-3003-c">die Anzahl der Einsen halbiert. Sie akzeptieren, wenn<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:209:9</span></span>
+        <span class="t-3003-c">Sie von links nach rechts durchgehend genau eine 1<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:210:9</span></span>
+        <span class="t-3003-c">gelesen haben.<span class="t-3003">./course1/wly/08/02-Turing-machines-examples.wly:211:9</span></span>
       </p>
     </div>
     <div id="end-of-page-elt">

@@ -40,50 +40,65 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="nowrap">6.4&ensp;LL($k$)-Grammatiken</span>
-        (nicht im Sommersemester 2025)
+        <span class="nowrap"><span class="t-3003-c">6.4&ensp;LL(<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:2:11</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:2:14</span></span><span class="t-3003-c">)-Grammatiken<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:2:19</span></span></span><span class="t-3003-c">
+          (nicht im Sommersemester 2025)<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:2:19</span></span>
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b>Definition 6.4.1 Grenzform</b>
-        Sei $G = (\Sigma, N, S, P)$ eine
-        kontextfreie Grammatik. Eine Wortform $A \alpha$ -
-        also eine Wortform, die mit einem Nichtterminal
-        beginnt - heißt
-        <span class="nowrap"><i>Grenzform</i>,</span>
-        wenn es ein
-        $w \in \Sigma^*$ gibt, so dass es eine Linksableitung
+        <b><span class="t-3003-c">Definition 6.4.1 Grenzform<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:4:5</span></span></b><span class="t-3003-c">
+          Sei
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:5:20</span></span><span class="t-3003-c">$G = (\Sigma, N, S, P)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:5:25</span></span><span class="t-3003-c">
+          eine<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:5:48</span></span>
+        <span class="t-3003-c">kontextfreie Grammatik. Eine Wortform
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:6:9</span></span><span class="t-3003-c">$A \alpha$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:6:47</span></span><span class="t-3003-c">
+          -<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:6:57</span></span>
+        <span class="t-3003-c">also eine Wortform, die mit einem Nichtterminal<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:7:9</span></span>
+        <span class="t-3003-c">beginnt - heißt
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:8:9</span></span><span class="nowrap"><i><span class="t-3003-c">Grenzform<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:8:26</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:8:36</span></span></span><span class="t-3003-c">
+          wenn es ein<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:8:36</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:9:9</span></span><span class="t-3003-c">$w \in \Sigma^*$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:9:9</span></span><span class="t-3003-c">
+          gibt, so dass es eine Linksableitung<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:9:25</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         S \Step{}^* w A \alpha
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:11:9</span>
       </div>
       <p>
-        gibt. In anderen Worten: eine Grenzform ist das, was
-        bei einem Kellerautomaten auf dem Stack liegt, wenn
-        ein Nichtterminal ganz oben liegt.
+        <span class="t-3003-c">gibt. In anderen Worten: eine Grenzform ist das, was<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:15:9</span></span>
+        <span class="t-3003-c">bei einem Kellerautomaten auf dem Stack liegt, wenn<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:16:9</span></span>
+        <span class="t-3003-c">ein Nichtterminal ganz oben liegt.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:17:9</span></span>
       </p>
     </div>
     <p class="main-column">
-      Grenzformen sind also diejenigen Wortformen, bei
-      denen der Kellerautomat eine Entscheidung treffen
-      muss, weil er eventuell mehrere Produktionen
-      $A \rightarrow \beta$ zur Auswahl hat. In diesem
-      Teilkapitel wollen wir herausarbeiten, unter welchen
-      Umständen wir die richtige Auswahl treffen können,
-      auch wenn wir nur wenige weitere Zeichen unseres
-      Inputwortes lesen dürfen.
+      <span class="t-3003-c">Grenzformen sind also diejenigen Wortformen, bei<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:19:5</span></span>
+      <span class="t-3003-c">denen der Kellerautomat eine Entscheidung treffen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:20:5</span></span>
+      <span class="t-3003-c">muss, weil er eventuell mehrere Produktionen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:21:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:22:5</span></span><span class="t-3003-c">$A \rightarrow \beta$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:22:5</span></span><span class="t-3003-c">
+        zur Auswahl hat. In diesem<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:22:26</span></span>
+      <span class="t-3003-c">Teilkapitel wollen wir herausarbeiten, unter welchen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:23:5</span></span>
+      <span class="t-3003-c">Umständen wir die richtige Auswahl treffen können,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:24:5</span></span>
+      <span class="t-3003-c">auch wenn wir nur wenige weitere Zeichen unseres<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:25:5</span></span>
+      <span class="t-3003-c">Inputwortes lesen dürfen.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:26:5</span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition 6.4.2</b>
-        Für ein Wort $w \in \Sigma^*$ und eine natürliche
-        Zahl $k \in \N$ sei $\first_k(w)$ wie folgt
-        definiert:
+        <b><span class="t-3003-c">Definition 6.4.2<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:28:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:28:5</span></span>
+        <span class="t-3003-c">Für ein Wort
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:29:9</span></span><span class="t-3003-c">$w \in \Sigma^*$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:29:22</span></span><span class="t-3003-c">
+          und eine natürliche<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:29:38</span></span>
+        <span class="t-3003-c">Zahl
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:30:9</span></span><span class="t-3003-c">$k \in \N$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:30:14</span></span><span class="t-3003-c">
+          sei
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:30:24</span></span><span class="t-3003-c">$\first_k(w)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:30:29</span></span><span class="t-3003-c">
+          wie folgt<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:30:42</span></span>
+        <span class="t-3003-c">definiert:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:31:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -93,25 +108,37 @@
         u&amp;\textnormal{ wenn $w = uv$ und $|u| = k$}
         \end{cases}
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:33:9</span>
       </div>
       <p>
-        In Worten: $\first_{k}(w)$ besteht aus den ersten $k$
-        Zeichen von $w$ (oder aus ganz
-        <span class="nowrap">$w$,</span>
-        falls es weniger
-        als $k$ lang ist).
+        <span class="t-3003-c">In Worten:
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:40:9</span></span><span class="t-3003-c">$\first_{k}(w)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:40:20</span></span><span class="t-3003-c">
+          besteht aus den ersten
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:40:35</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:40:59</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:40:62</span></span>
+        <span class="t-3003-c">Zeichen von
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:41:9</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:41:21</span></span><span class="t-3003-c">
+          (oder aus ganz
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:41:24</span></span><span class="nowrap"><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:41:40</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:41:43</span></span></span><span class="t-3003-c">
+          falls es weniger<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:41:43</span></span>
+        <span class="t-3003-c">als
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:42:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:42:13</span></span><span class="t-3003-c">
+          lang ist).<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:42:16</span></span>
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b>Definition 6.4.3
-          <span class="nowrap">LL($k$)-Grammatiken</span></b>
-        Eine kontextfreie Grammatik
-        $G = (\Sigma, N, S, P)$ ist eine
-        <span class="nowrap">LL($k$</span>
-        )-Grammatik,
-        wenn für jede Grenzform $A \alpha$ und für jedes Paar
+        <b><span class="t-3003-c">Definition 6.4.3
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:44:5</span></span><span class="nowrap"><span class="t-3003-c">LL(<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:44:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:45:13</span></span><span class="t-3003-c">)-Grammatiken<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:45:16</span></span></span></b><span class="t-3003-c">
+          Eine kontextfreie Grammatik<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:45:30</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:46:9</span></span><span class="t-3003-c">$G = (\Sigma, N, S, P)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:46:9</span></span><span class="t-3003-c">
+          ist eine
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:46:32</span></span><span class="nowrap"><span class="t-3003-c">LL(<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:46:32</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:46:45</span></span></span><span class="t-3003-c">
+          )-Grammatik,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:46:48</span></span>
+        <span class="t-3003-c">wenn für jede Grenzform
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:47:9</span></span><span class="t-3003-c">$A \alpha$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:47:33</span></span><span class="t-3003-c">
+          und für jedes Paar<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:47:43</span></span>
       </p>
       <div class="math-block">
         $$
@@ -119,12 +146,13 @@
         A&amp;\step{1} \beta \\
         A&amp;\step{2} \gamma
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:49:9</span>
       </div>
       <p>
-        verschiedener Produktionen (also
-        <span class="nowrap">$\beta \ne \gamma$)</span>
-        folgendes gilt: wenn
+        <span class="t-3003-c">verschiedener Produktionen (also
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:54:9</span></span><span class="nowrap"><span class="t-3003-c">$\beta \ne \gamma$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:54:42</span></span><span class="t-3003-c">)<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:54:60</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:54:60</span></span>
+        <span class="t-3003-c">folgendes gilt: wenn<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:55:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -132,42 +160,56 @@
         A\alpha&amp;\Step{1} \beta \alpha \Step{}^* x \\
         A\alpha&amp;\Step{2} \gamma \alpha \Step{}^* y \\
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:57:9</span>
       </div>
       <p>
-        dann müssen sich $x$ und $y$ in den ersten $k$
-        Zeichen unterscheiden, also
+        <span class="t-3003-c">dann müssen sich
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:62:9</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:62:26</span></span><span class="t-3003-c">
+          und
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:62:29</span></span><span class="t-3003-c">$y$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:62:34</span></span><span class="t-3003-c">
+          in den ersten
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:62:37</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:62:52</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:62:55</span></span>
+        <span class="t-3003-c">Zeichen unterscheiden, also<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:63:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \first_k(x) \ne \first_k(y) \ .
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:65:9</span>
       </div>
     </div>
     <p class="main-column">
-      Intuitiv gesprochen: wenn wir bereits eine ersten
-      Teil $w$ unseres Zielwortes abgeleitet haben, dann
-      können wir die nächste anzuwendende Produktion
-      eindeutig bestimmen, indem wir die nächsten $k$
-      Zeichen des Zielwortes lesen.
+      <span class="t-3003-c">Intuitiv gesprochen: wenn wir bereits eine ersten<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:69:5</span></span>
+      <span class="t-3003-c">Teil
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:70:5</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:70:10</span></span><span class="t-3003-c">
+        unseres Zielwortes abgeleitet haben, dann<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:70:13</span></span>
+      <span class="t-3003-c">können wir die nächste anzuwendende Produktion<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:71:5</span></span>
+      <span class="t-3003-c">eindeutig bestimmen, indem wir die nächsten
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:72:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:72:49</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:72:52</span></span>
+      <span class="t-3003-c">Zeichen des Zielwortes lesen.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:73:5</span></span>
     </p>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 6.4.1</b>
-        Negieren Sie die Definition, d.h., schreiben Sie eine
-        Aussage der Form
-        <i>Wenn $G$ nicht
-          <span class="nowrap">LL($k$)</span>
-          ist, dann
-          gibt es...</i>
+        <b><span class="t-3003-c">Übungsaufgabe 6.4.1<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:75:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:75:5</span></span>
+        <span class="t-3003-c">Negieren Sie die Definition, d.h., schreiben Sie eine<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:76:9</span></span>
+        <span class="t-3003-c">Aussage der Form
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:77:9</span></span><i><span class="t-3003-c">Wenn
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:77:27</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:77:32</span></span><span class="t-3003-c">
+            nicht
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:77:35</span></span><span class="nowrap"><span class="t-3003-c">LL(<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:77:35</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:77:45</span></span><span class="t-3003-c">)<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:77:48</span></span></span><span class="t-3003-c">
+            ist, dann<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:77:48</span></span>
+          <span class="t-3003-c">gibt es...<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:78:9</span></span></i>
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b>Beispiel 6.4.4</b>
-        Die Klammern-Grammatik
+        <b><span class="t-3003-c">Beispiel 6.4.4<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:80:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:80:5</span></span>
+        <span class="t-3003-c">Die Klammern-Grammatik<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:81:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -175,18 +217,19 @@
         S&amp;\step{1} \epsilon \\
         S&amp;\step{2} (S)S
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:83:9</span>
       </div>
       <p>
-        ist LL(1).
+        <span class="t-3003-c">ist LL(1).<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:88:9</span></span>
       </p>
       <div class="well highlight">
         <p>
           <b>Beweis.</b>
-          Folgen wir der Definition von LL(1): für jedes Paar
-          verschiedener Regeln muss etwas gelten. Wir haben hier
-          keine Auswahl, denn es gibt ja nur ein Paar. Also
-          müssen wir zeigen, dass, falls
+          
+          <span class="t-3003-c">Folgen wir der Definition von LL(1): für jedes Paar<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:91:13</span></span>
+          <span class="t-3003-c">verschiedener Regeln muss etwas gelten. Wir haben hier<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:92:13</span></span>
+          <span class="t-3003-c">keine Auswahl, denn es gibt ja nur ein Paar. Also<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:93:13</span></span>
+          <span class="t-3003-c">müssen wir zeigen, dass, falls<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:94:13</span></span>
         </p>
         <div class="math-block">
           $$
@@ -194,38 +237,72 @@
           S \Step{}^* wS\alpha&amp;\Step{1} w \alpha \Step{}^* w x \\
           S \Step{}^* wS\alpha&amp;\Step{2} w \texttt{(}S\texttt{)}S \alpha \Step{}^* w y \\
           \end{align*}
-          $$
+          $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:96:13</span>
         </div>
         <p>
-          gilt, dann auch $\first_1(x) \ne \first_2(y)$ gilt.
-          Offensichtlich ist $\first_2(y) =$ "
-          <span class="nowrap">$\texttt{(}$".</span>
-          Was kann $\first_k(x)$ sein?
+          <span class="t-3003-c">gilt, dann auch
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:101:13</span></span><span class="t-3003-c">$\first_1(x) \ne \first_2(y)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:101:29</span></span><span class="t-3003-c">
+            gilt.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:101:58</span></span>
+          <span class="t-3003-c">Offensichtlich ist
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:102:13</span></span><span class="t-3003-c">$\first_2(y) =$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:102:32</span></span><span class="t-3003-c">
+            "
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:102:47</span></span><span class="nowrap"><span class="t-3003-c">$\texttt{(}$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:102:50</span></span><span class="t-3003-c">".<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:102:62</span></span></span><span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:102:62</span></span>
+          <span class="t-3003-c">Was kann
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:103:13</span></span><span class="t-3003-c">$\first_k(x)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:103:22</span></span><span class="t-3003-c">
+            sein?<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:103:35</span></span>
         </p>
         <p>
-          <b>Behauptung.</b>
-          Wenn
-          <span class="nowrap">$S \rightarrow \delta \in (\Sigma \cup N)^*$,</span>
-          dann
-          steht jedes $S$ in $\delta$ entweder am Ende von
-          $\delta$ oder unmittelbar vor einem "
-          <span class="nowrap">$\texttt{)}$".</span>
-          Das folgt per Induktion über die Länge der Ableitung.
-          Wenn es also für $\delta$ gilt und wir die Produktion
-          $S \rightarrow (S)S$ auf $\delta$ anwenden, dann gilt
-          es für jedes "alte" $S$ und auch für die beiden neu
-          erzeugten; wenn wir $S \rightarrow \epsilon$
-          anwenden, dann verschwindet ein
-          <span class="nowrap">$S$,</span>
-          die Behauptung
-          gilt aber nach wie vor für alle anderen $S$ in
-          <span class="nowrap">$\delta$.</span>
-          Wir folgern also, dass für das $\alpha$ den
-          beiden obigne Herleitungen
-          $\first_k(\alpha) \in \{\epsilon, \texttt{)}\}$ gilt.
-          Keines davon ist ein Nichtterminal, und so muss auch
-          $\first_k(\alpha) = \first_k(x)$ gelten.
-          Zusammenfassend gesagt:
+          <b><span class="t-3003-c">Behauptung.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:105:14</span></span></b><span class="t-3003-c">
+            Wenn<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:105:26</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:106:13</span></span><span class="nowrap"><span class="t-3003-c">$S \rightarrow \delta \in (\Sigma \cup N)^*$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:106:13</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:106:57</span></span></span><span class="t-3003-c">
+            dann<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:106:57</span></span>
+          <span class="t-3003-c">steht jedes
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:107:13</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:107:25</span></span><span class="t-3003-c">
+            in
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:107:28</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:107:32</span></span><span class="t-3003-c">
+            entweder am Ende von<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:107:40</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:108:13</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:108:13</span></span><span class="t-3003-c">
+            oder unmittelbar vor einem "
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:108:21</span></span><span class="nowrap"><span class="t-3003-c">$\texttt{)}$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:108:51</span></span><span class="t-3003-c">".<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:108:63</span></span></span><span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:108:63</span></span>
+          <span class="t-3003-c">Das folgt per Induktion über die Länge der Ableitung.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:109:13</span></span>
+          <span class="t-3003-c">Wenn es also für
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:110:13</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:110:30</span></span><span class="t-3003-c">
+            gilt und wir die Produktion<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:110:38</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:111:13</span></span><span class="t-3003-c">$S \rightarrow (S)S$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:111:13</span></span><span class="t-3003-c">
+            auf
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:111:33</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:111:38</span></span><span class="t-3003-c">
+            anwenden, dann gilt<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:111:46</span></span>
+          <span class="t-3003-c">es für jedes "alte"
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:112:13</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:112:33</span></span><span class="t-3003-c">
+            und auch für die beiden neu<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:112:36</span></span>
+          <span class="t-3003-c">erzeugten; wenn wir
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:113:13</span></span><span class="t-3003-c">$S \rightarrow \epsilon$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:113:33</span></span><span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:113:57</span></span>
+          <span class="t-3003-c">anwenden, dann verschwindet ein
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:114:13</span></span><span class="nowrap"><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:114:45</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:114:48</span></span></span><span class="t-3003-c">
+            die Behauptung<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:114:48</span></span>
+          <span class="t-3003-c">gilt aber nach wie vor für alle anderen
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:115:13</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:115:53</span></span><span class="t-3003-c">
+            in<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:115:56</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:116:13</span></span><span class="nowrap"><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:116:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:116:21</span></span></span><span class="t-3003-c">
+            Wir folgern also, dass für das
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:116:21</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:116:54</span></span><span class="t-3003-c">
+            den<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:116:62</span></span>
+          <span class="t-3003-c">beiden obigne Herleitungen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:117:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:118:13</span></span><span class="t-3003-c">$\first_k(\alpha) \in \{\epsilon, \texttt{)}\}$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:118:13</span></span><span class="t-3003-c">
+            gilt.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:118:60</span></span>
+          <span class="t-3003-c">Keines davon ist ein Nichtterminal, und so muss auch<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:119:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:120:13</span></span><span class="t-3003-c">$\first_k(\alpha) = \first_k(x)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:120:13</span></span><span class="t-3003-c">
+            gelten.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:120:45</span></span>
+          <span class="t-3003-c">Zusammenfassend gesagt:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:121:13</span></span>
         </p>
         <div class="math-block">
           $$
@@ -233,39 +310,48 @@
           \first_k(x)&amp;\in \{\epsilon, \texttt{)}\} \\
           \first_y(y)&amp;= \texttt{(} \ ,
           \end{align*}
-          $$
+          $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:123:13</span>
         </div>
         <p>
-          und somit sind sie verschieden. Wir folgern, dass $G$
-          eine LL(1)-Grammatik ist.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+          <span class="t-3003-c">und somit sind sie verschieden. Wir folgern, dass
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:128:13</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:128:63</span></span><span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:128:66</span></span>
+          <span class="t-3003-c">eine LL(1)-Grammatik ist.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:129:13</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
     </div>
     <p class="main-column">
-      Sehen Sie, dass die
-      <span class="nowrap">LL($k$)-Bedingung</span>
-      der Aussage
-      "der Backtrack-Baum hat keine langen Sackgassen"
-      ähnelt (aber nicht völlig äquivalent dazu ist). Wenn
-      $G$ eine LL(
-      <span class="nowrap">$k$)-Grammatik</span>
-      ist und wir den
-      Backtrack-Baum für ein Wort bauen, dann gilt: sobald
-      wir in einer Sackgasse $k$ neue Terminalsymbole am
-      "Terminalpräfix" der Wortform hergeleitet haben,
-      merken wir, dass wir in einer Sackgasse sind. Mit
-      Terminalpräfix meine ich den längsten Präfix einer
-      Wortform, der ausschließlich aus Terminalen besteht.
-      Allerdings muss nicht jeder Ableitungsschritt den
-      Terminalpräfix wachsen lassen (Regeln wie
-      $X \rightarrow YbZ$ zum Beispiel ersetzen einfach das
-      erste Nichtterminal), aber "moralisch" geschieht etwas
-      ähnliches). Wenn umgekehrt eine Grammatik
-      <i>nicht</i>
-      LL(
-      <span class="nowrap">$k$)</span>
-      ist, dann muss der Backtrack-Baum beiden
-      Ableitungen
+      <span class="t-3003-c">Sehen Sie, dass die
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:131:5</span></span><span class="nowrap"><span class="t-3003-c">LL(<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:131:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:131:28</span></span><span class="t-3003-c">)-Bedingung<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:131:31</span></span></span><span class="t-3003-c">
+        der Aussage<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:131:31</span></span>
+      <span class="t-3003-c">"der Backtrack-Baum hat keine langen Sackgassen"<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:132:5</span></span>
+      <span class="t-3003-c">ähnelt (aber nicht völlig äquivalent dazu ist). Wenn<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:133:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:134:5</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:134:5</span></span><span class="t-3003-c">
+        eine LL(
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:134:8</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:134:18</span></span><span class="t-3003-c">)-Grammatik<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:134:21</span></span></span><span class="t-3003-c">
+        ist und wir den<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:134:21</span></span>
+      <span class="t-3003-c">Backtrack-Baum für ein Wort bauen, dann gilt: sobald<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:135:5</span></span>
+      <span class="t-3003-c">wir in einer Sackgasse
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:136:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:136:28</span></span><span class="t-3003-c">
+        neue Terminalsymbole am<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:136:31</span></span>
+      <span class="t-3003-c">"Terminalpräfix" der Wortform hergeleitet haben,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:137:5</span></span>
+      <span class="t-3003-c">merken wir, dass wir in einer Sackgasse sind. Mit<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:138:5</span></span>
+      <span class="t-3003-c">Terminalpräfix meine ich den längsten Präfix einer<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:139:5</span></span>
+      <span class="t-3003-c">Wortform, der ausschließlich aus Terminalen besteht.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:140:5</span></span>
+      <span class="t-3003-c">Allerdings muss nicht jeder Ableitungsschritt den<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:141:5</span></span>
+      <span class="t-3003-c">Terminalpräfix wachsen lassen (Regeln wie<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:142:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:143:5</span></span><span class="t-3003-c">$X \rightarrow YbZ$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:143:5</span></span><span class="t-3003-c">
+        zum Beispiel ersetzen einfach das<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:143:24</span></span>
+      <span class="t-3003-c">erste Nichtterminal), aber "moralisch" geschieht etwas<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:144:5</span></span>
+      <span class="t-3003-c">ähnliches). Wenn umgekehrt eine Grammatik
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:145:5</span></span><i><span class="t-3003-c">nicht<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:145:48</span></span></i><span class="t-3003-c">
+        LL(<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:145:54</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:146:5</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:146:5</span></span><span class="t-3003-c">)<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:146:8</span></span></span><span class="t-3003-c">
+        ist, dann muss der Backtrack-Baum beiden<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:146:8</span></span>
+      <span class="t-3003-c">Ableitungen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:147:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
@@ -273,22 +359,25 @@
       w A \alpha&amp;\Rightarrow w \beta \alpha \\
       w A \alpha&amp;\Rightarrow w \gamma \alpha \\
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:149:5</span>
     </div>
     <p class="main-column">
-      mindestens so lange weiterverfolgen, bis der
-      Terminalpräfix $k$ weitere Zeichen dazugewonnen hat.
-      Der Baum bekommt also dementsprechend lange
-      Sackgassen.
+      <span class="t-3003-c">mindestens so lange weiterverfolgen, bis der<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:154:5</span></span>
+      <span class="t-3003-c">Terminalpräfix
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:155:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:155:20</span></span><span class="t-3003-c">
+        weitere Zeichen dazugewonnen hat.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:155:23</span></span>
+      <span class="t-3003-c">Der Baum bekommt also dementsprechend lange<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:156:5</span></span>
+      <span class="t-3003-c">Sackgassen.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:157:5</span></span>
     </p>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 6.4.2</b>
-        (Beispiel 5.3 aus
-        <i>The Theory of Parsing,
-          Translation, and Compiling</i>
-        von Alfred V. Aho und
-        Jeffrey D. Ullman). Betrachten wir die Grammatik
+        <b><span class="t-3003-c">Übungsaufgabe 6.4.2<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:159:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:159:5</span></span>
+        <span class="t-3003-c">(Beispiel 5.3 aus
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:160:9</span></span><i><span class="t-3003-c">The Theory of Parsing,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:160:28</span></span>
+          <span class="t-3003-c">Translation, and Compiling<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:161:9</span></span></i><span class="t-3003-c">
+          von Alfred V. Aho und<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:161:36</span></span>
+        <span class="t-3003-c">Jeffrey D. Ullman). Betrachten wir die Grammatik<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:162:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -298,26 +387,29 @@
         A&amp;\step{3} Saa \\
         A&amp;\step{4} b
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:164:9</span>
       </div>
       <p>
-        Zeigen Sie, dass diese Grammatik LL(2) ist, aber
-        nicht LL(1).
-        <b>Tip.</b>
-        Leiten Sie erst einmal ein Dutzend
-        verschiedene Wörter ab und finden dann eine
-        "normalsprachliche" Beschreibung dieser Sprache.
-        Beschreiben Sie dann alle möglichen Wortformen
-        $\alpha$ mit
-        <span class="nowrap">$S \Step{}^* \alpha$.</span>
+        <span class="t-3003-c">Zeigen Sie, dass diese Grammatik LL(2) ist, aber<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:171:9</span></span>
+        <span class="t-3003-c">nicht LL(1).
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:172:9</span></span><b><span class="t-3003-c">Tip.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:172:23</span></span></b><span class="t-3003-c">
+          Leiten Sie erst einmal ein Dutzend<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:172:28</span></span>
+        <span class="t-3003-c">verschiedene Wörter ab und finden dann eine<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:173:9</span></span>
+        <span class="t-3003-c">"normalsprachliche" Beschreibung dieser Sprache.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:174:9</span></span>
+        <span class="t-3003-c">Beschreiben Sie dann alle möglichen Wortformen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:175:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:176:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:176:9</span></span><span class="t-3003-c">
+          mit
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:176:17</span></span><span class="nowrap"><span class="t-3003-c">$S \Step{}^* \alpha$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:176:22</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:176:42</span></span></span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 6.4.3</b>
-        Schreiben Sie eine äquivalente Grammatik zu der
-        vorherigen Sprache, die LL(1) ist. (Warnung: Ich weiß
-        nicht, ob das überhaupt geht).
+        <b><span class="t-3003-c">Übungsaufgabe 6.4.3<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:178:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:178:5</span></span>
+        <span class="t-3003-c">Schreiben Sie eine äquivalente Grammatik zu der<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:179:9</span></span>
+        <span class="t-3003-c">vorherigen Sprache, die LL(1) ist. (Warnung: Ich weiß<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:180:9</span></span>
+        <span class="t-3003-c">nicht, ob das überhaupt geht).<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:181:9</span></span>
       </p>
     </div>
     <div
@@ -325,9 +417,10 @@
       class="well exercise out"
     >
       <p>
-        <b>Übungsaufgabe 6.4.4</b>
-        Betrachten wir die Grammatik
-        <span class="nowrap">$G$:</span>
+        <b><span class="t-3003-c">Übungsaufgabe 6.4.4<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:183:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:183:5</span></span>
+        <span class="t-3003-c">Betrachten wir die Grammatik
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:185:9</span></span><span class="nowrap"><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:185:38</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:185:41</span></span></span>
       </p>
       <div class="math-block">
         $$
@@ -336,111 +429,149 @@
         S&amp;\step{2} a S \\
         S&amp;\step{3} \epsilon
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:187:9</span>
       </div>
       <p>
-        Sie erzeugt die Sprache
+        <span class="t-3003-c">Sie erzeugt die Sprache<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:193:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         L(G) := \{ a^{m+k} b^m \ | \ m, k \in \N \} \ ,
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:195:9</span>
       </div>
       <p>
-        also Wörter, wo auf beliebig viele
-        <span class="nowrap">$a$'s</span>
-        eine Folge
-        von
-        <i>höchstens</i>
-        so vielen
-        <span class="nowrap">$b$'s</span>
-        folgt. Geben Sie
-        diese Grammatik in den
-        <a href="href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html">Parser-Simulator</a>
-        ein und finden Wörter mit langen Sackgassen. Zeigen
-        Sie, dass diese Grammatik nicht
-        <span class="nowrap">LL$(k)$</span>
-        ist, für kein
-        <span class="nowrap">$k \in \N$.</span>
+        <span class="t-3003-c">also Wörter, wo auf beliebig viele
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:199:9</span></span><span class="nowrap"><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:199:44</span></span><span class="t-3003-c">'s<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:199:47</span></span></span><span class="t-3003-c">
+          eine Folge<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:199:47</span></span>
+        <span class="t-3003-c">von
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:200:9</span></span><i><span class="t-3003-c">höchstens<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:200:14</span></span></i><span class="t-3003-c">
+          so vielen
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:200:24</span></span><span class="nowrap"><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:200:35</span></span><span class="t-3003-c">'s<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:200:38</span></span></span><span class="t-3003-c">
+          folgt. Geben Sie<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:200:38</span></span>
+        <span class="t-3003-c">diese Grammatik in den<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:201:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:202:9</span></span><a href="href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html"><span class="t-3003-c">Parser-Simulator<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:202:10</span></span></a><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:202:124</span></span>
+        <span class="t-3003-c">ein und finden Wörter mit langen Sackgassen. Zeigen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:203:9</span></span>
+        <span class="t-3003-c">Sie, dass diese Grammatik nicht
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:204:9</span></span><span class="nowrap"><span class="t-3003-c">LL<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:204:9</span></span><span class="t-3003-c">$(k)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:204:43</span></span></span><span class="t-3003-c">
+          ist, für kein<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:204:48</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:205:9</span></span><span class="nowrap"><span class="t-3003-c">$k \in \N$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:205:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:205:19</span></span></span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 6.4.5</b>
-        Sei $t \in \N$ eine feste, im Voraus bekannte Zahl.
-        Betrachten wir die Sprache
+        <b><span class="t-3003-c">Übungsaufgabe 6.4.5<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:207:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:207:5</span></span>
+        <span class="t-3003-c">Sei
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:208:9</span></span><span class="t-3003-c">$t \in \N$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:208:13</span></span><span class="t-3003-c">
+          eine feste, im Voraus bekannte Zahl.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:208:23</span></span>
+        <span class="t-3003-c">Betrachten wir die Sprache<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:209:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         L_t := \{a^{m + l} b^m \ | \ m \geq 0, l \leq t\} \ ,
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:211:9</span>
       </div>
       <p>
-        also die Wörter der Form $a^m b^n$ mit
-        <span class="nowrap">$n \leq m \leq n+t$.</span>
-        Schreiben Sie für $L_3$ eine
-        Grammatik, geben Sie diese im
-        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html">Parser-Simulator</a>
-        ein und schauen, wie lang die Sackgassen werden
-        können. Zeigen Sie, dass $L_3$ eine
-        <span class="nowrap">LL$(k)$</span>
-        -Grammatik ist. Für welchen Wert von
-        <span class="nowrap">$k$?</span>
-        Ist $L_t$
-        (für im Voraus bekanntes $t$ ) eine
-        <span class="nowrap">LL$(k)$</span>
-        -Grammatik? Für welchen Wert von
-        <span class="nowrap">$k$?</span>
+        <span class="t-3003-c">also die Wörter der Form
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:215:9</span></span><span class="t-3003-c">$a^m b^n$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:215:34</span></span><span class="t-3003-c">
+          mit<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:215:43</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:216:9</span></span><span class="nowrap"><span class="t-3003-c">$n \leq m \leq n+t$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:216:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:216:28</span></span></span><span class="t-3003-c">
+          Schreiben Sie für
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:216:28</span></span><span class="t-3003-c">$L_3$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:216:48</span></span><span class="t-3003-c">
+          eine<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:216:53</span></span>
+        <span class="t-3003-c">Grammatik, geben Sie diese im<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:217:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:218:9</span></span><a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html"><span class="t-3003-c">Parser-Simulator<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:218:10</span></span></a><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:218:119</span></span>
+        <span class="t-3003-c">ein und schauen, wie lang die Sackgassen werden<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:219:9</span></span>
+        <span class="t-3003-c">können. Zeigen Sie, dass
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:220:9</span></span><span class="t-3003-c">$L_3$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:220:34</span></span><span class="t-3003-c">
+          eine
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:220:39</span></span><span class="nowrap"><span class="t-3003-c">LL<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:220:39</span></span><span class="t-3003-c">$(k)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:220:47</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:220:52</span></span>
+        <span class="t-3003-c">-Grammatik ist. Für welchen Wert von
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:221:9</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:221:46</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:221:49</span></span></span><span class="t-3003-c">
+          Ist
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:221:49</span></span><span class="t-3003-c">$L_t$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:221:55</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:221:60</span></span>
+        <span class="t-3003-c">(für im Voraus bekanntes
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:222:9</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:222:34</span></span><span class="t-3003-c">
+          ) eine
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:222:37</span></span><span class="nowrap"><span class="t-3003-c">LL<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:222:37</span></span><span class="t-3003-c">$(k)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:222:47</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:222:52</span></span>
+        <span class="t-3003-c">-Grammatik? Für welchen Wert von
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:223:9</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:223:42</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:223:45</span></span></span>
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="nowrap">LL$(k)$-Grammatiken</span>
-      parsen
+      <span class="nowrap"><span class="t-3003-c">LL<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:226:9</span></span><span class="t-3003-c">$(k)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:226:11</span></span><span class="t-3003-c">-Grammatiken<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:226:16</span></span></span><span class="t-3003-c">
+        parsen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:226:16</span></span>
     </h2>
     <p class="main-column">
-      Wir wollen nun erarbeiten, wie wir für eine LL $(k)$
-      -Grammatik einen Parser, also im Prinzip einen
-      deterministischen Pushdown-Automaten schreiben können.
-      Wir tasten uns langsam voran. Wir beginnen mit einer
-      Verallgemeinerung von $\first_k$ von Wörtern auf
-      <i>Wortformen</i>
-      (die also Nichtterminale beinhalten
-      können).
+      <span class="t-3003-c">Wir wollen nun erarbeiten, wie wir für eine LL
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:228:5</span></span><span class="t-3003-c">$(k)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:228:52</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:228:57</span></span>
+      <span class="t-3003-c">-Grammatik einen Parser, also im Prinzip einen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:229:5</span></span>
+      <span class="t-3003-c">deterministischen Pushdown-Automaten schreiben können.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:230:5</span></span>
+      <span class="t-3003-c">Wir tasten uns langsam voran. Wir beginnen mit einer<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:231:5</span></span>
+      <span class="t-3003-c">Verallgemeinerung von
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:232:5</span></span><span class="t-3003-c">$\first_k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:232:27</span></span><span class="t-3003-c">
+        von Wörtern auf<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:232:37</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:233:5</span></span><i><span class="t-3003-c">Wortformen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:233:6</span></span></i><span class="t-3003-c">
+        (die also Nichtterminale beinhalten<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:233:17</span></span>
+      <span class="t-3003-c">können).<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:234:5</span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition 6.4.5</b>
-        Sei eine kontextfreie Grammatik
-        $G = (\Sigma, N, S, P)$ und eine Wortform
-        $\alpha \in (\Sigma \cup N)^*$ gegeben. Wir
-        definieren
+        <b><span class="t-3003-c">Definition 6.4.5<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:236:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:236:5</span></span>
+        <span class="t-3003-c">Sei eine kontextfreie Grammatik<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:237:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:238:9</span></span><span class="t-3003-c">$G = (\Sigma, N, S, P)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:238:9</span></span><span class="t-3003-c">
+          und eine Wortform<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:238:32</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:239:9</span></span><span class="t-3003-c">$\alpha \in (\Sigma \cup N)^*$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:239:9</span></span><span class="t-3003-c">
+          gegeben. Wir<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:239:39</span></span>
+        <span class="t-3003-c">definieren<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:240:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \First_k(\alpha) := \{ \first_k(w) \ | \ w \in \Sigma^*, \alpha \Step{}^* w\}
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:242:9</span>
       </div>
     </div>
     <p class="main-column">
-      Wir können nun die
-      <span class="nowrap">LL$(k)$-Bedingung</span>
-      äquivalent
-      formulieren:
+      <span class="t-3003-c">Wir können nun die
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:246:5</span></span><span class="nowrap"><span class="t-3003-c">LL<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:246:5</span></span><span class="t-3003-c">$(k)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:246:26</span></span><span class="t-3003-c">-Bedingung<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:246:31</span></span></span><span class="t-3003-c">
+        äquivalent<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:246:31</span></span>
+      <span class="t-3003-c">formulieren:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:247:5</span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition / Beobachtung 6.4.6</b>
-        Eine Grammatik $G$ ist
-        <span class="nowrap">LL$(k)$</span>
-        genau dann, wenn für
-        alle Grenzformen $A \alpha$ und alle Produktionen mit
-        $A$ auf der linken Seite, also
+        <b><span class="t-3003-c">Definition / Beobachtung 6.4.6<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:249:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:249:5</span></span>
+        <span class="t-3003-c">Eine Grammatik
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:251:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:251:24</span></span><span class="t-3003-c">
+          ist
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:251:27</span></span><span class="nowrap"><span class="t-3003-c">LL<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:251:27</span></span><span class="t-3003-c">$(k)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:251:34</span></span></span><span class="t-3003-c">
+          genau dann, wenn für<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:251:39</span></span>
+        <span class="t-3003-c">alle Grenzformen
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:252:9</span></span><span class="t-3003-c">$A \alpha$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:252:26</span></span><span class="t-3003-c">
+          und alle Produktionen mit<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:252:36</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:253:9</span></span><span class="t-3003-c">$A$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:253:9</span></span><span class="t-3003-c">
+          auf der linken Seite, also<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:253:12</span></span>
       </p>
       <div class="math-block">
         $$
@@ -450,55 +581,79 @@
         &amp;\vdots\\
         A&amp;\rightarrow \beta_l
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:255:9</span>
       </div>
       <p>
-        die Mengen $\First(\beta_i \alpha)$ paarweise
-        disjunkt sind (wenn also keine zwei dieser Mengen ein
-        gemeinsames Element enthalten).
+        <span class="t-3003-c">die Mengen
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:262:9</span></span><span class="t-3003-c">$\First(\beta_i \alpha)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:262:20</span></span><span class="t-3003-c">
+          paarweise<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:262:44</span></span>
+        <span class="t-3003-c">disjunkt sind (wenn also keine zwei dieser Mengen ein<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:263:9</span></span>
+        <span class="t-3003-c">gemeinsames Element enthalten).<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:264:9</span></span>
       </p>
     </div>
     <p class="main-column">
-      Nehmen wir eine Momentaufnahme unseres
-      Kellerautomaten. Er hat den Präfix $x$ des
-      Eingabewortes $xy$ gelesen und eine Linksableitung
+      <span class="t-3003-c">Nehmen wir eine Momentaufnahme unseres<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:266:5</span></span>
+      <span class="t-3003-c">Kellerautomaten. Er hat den Präfix
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:267:5</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:267:40</span></span><span class="t-3003-c">
+        des<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:267:43</span></span>
+      <span class="t-3003-c">Eingabewortes
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:268:5</span></span><span class="t-3003-c">$xy$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:268:19</span></span><span class="t-3003-c">
+        gelesen und eine Linksableitung<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:268:23</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       S \Rightarrow^*{} x \alpha
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:270:5</span>
     </div>
     <p class="main-column">
-      durchgeführt. Die Wortform $\alpha$ ist genau das,
-      was im Moment auf dem Stack des Automaten liegt (um
-      ganz genau zu sein: \(\alpha\texttt{\$}\) liegt auf
-      dem Stack). Wenn $\alpha$ mit einem Terminalsymbol $c$
-      beginnt, so ist klar, was wir machen müssen: wir
-      schauen, ob $y$ mit $c$ beginnt. Wenn ja, lesen wir
-      $c$ und poppen es vom Stack. Der schwierige Fall ist,
-      wenn $\alpha$ mit einem Nichtterminal beginnt.
-      Nochmal von vorn: im schwierigen Fall liegt auf dem
-      Stack (oberhalb vom
-      <span class="nowrap">\(\$\))</span>
-      eine Wortform, die mit
-      einem Nichtterminal beginnt, also
-      <span class="nowrap">$A \alpha$.</span>
-      Das
-      bedeutet, dass der Automat per Linksableitung bis
-      jetzt
+      <span class="t-3003-c">durchgeführt. Die Wortform
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:274:5</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:274:32</span></span><span class="t-3003-c">
+        ist genau das,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:274:40</span></span>
+      <span class="t-3003-c">was im Moment auf dem Stack des Automaten liegt (um<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:275:5</span></span>
+      <span class="t-3003-c">ganz genau zu sein:
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:276:5</span></span><span class="t-3003-c">\(\alpha\texttt{\$}\)<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:276:25</span></span><span class="t-3003-c">
+        liegt auf<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:276:46</span></span>
+      <span class="t-3003-c">dem Stack). Wenn
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:277:5</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:277:22</span></span><span class="t-3003-c">
+        mit einem Terminalsymbol
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:277:30</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:277:56</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:277:59</span></span>
+      <span class="t-3003-c">beginnt, so ist klar, was wir machen müssen: wir<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:278:5</span></span>
+      <span class="t-3003-c">schauen, ob
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:279:5</span></span><span class="t-3003-c">$y$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:279:17</span></span><span class="t-3003-c">
+        mit
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:279:20</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:279:25</span></span><span class="t-3003-c">
+        beginnt. Wenn ja, lesen wir<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:279:28</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:280:5</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:280:5</span></span><span class="t-3003-c">
+        und poppen es vom Stack. Der schwierige Fall ist,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:280:8</span></span>
+      <span class="t-3003-c">wenn
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:281:5</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:281:10</span></span><span class="t-3003-c">
+        mit einem Nichtterminal beginnt.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:281:18</span></span>
+      <span class="t-3003-c">Nochmal von vorn: im schwierigen Fall liegt auf dem<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:282:5</span></span>
+      <span class="t-3003-c">Stack (oberhalb vom
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:283:5</span></span><span class="nowrap"><span class="t-3003-c">\(\$\)<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:283:25</span></span><span class="t-3003-c">)<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:283:31</span></span></span><span class="t-3003-c">
+        eine Wortform, die mit<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:283:31</span></span>
+      <span class="t-3003-c">einem Nichtterminal beginnt, also
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:284:5</span></span><span class="nowrap"><span class="t-3003-c">$A \alpha$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:284:39</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:284:49</span></span></span><span class="t-3003-c">
+        Das<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:284:49</span></span>
+      <span class="t-3003-c">bedeutet, dass der Automat per Linksableitung bis<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:285:5</span></span>
+      <span class="t-3003-c">jetzt<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:286:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       S \Step{}^* x A \alpha
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:288:5</span>
     </div>
     <p class="main-column">
-      hergeleitet hat. Der Automat muss sich nun zwischen
-      allen Regeln für $A$ entscheiden:
+      <span class="t-3003-c">hergeleitet hat. Der Automat muss sich nun zwischen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:292:5</span></span>
+      <span class="t-3003-c">allen Regeln für
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:293:5</span></span><span class="t-3003-c">$A$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:293:22</span></span><span class="t-3003-c">
+        entscheiden:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:293:25</span></span>
     </p>
     <div class="math-block main-column">
       $$
@@ -508,53 +663,75 @@
       &amp;\vdots\\
       A&amp;\rightarrow \beta_l \ .
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:295:5</span>
     </div>
     <p class="main-column">
-      Der Automat betrachtet nun die nächsten $k$
-      Eingabesymbole, also $\first_k(y)$ (wir gehen mal
-      davon aus, dass er das kann; programmieren könnten wir
-      das auf jeden Fall; ob man es im strengen Framework
-      des Kellerautomaten hinkriegt, werden wir später
-      sehen). Wenn $G$ eine
-      <span class="nowrap">LL$(k)$-Grammatik</span>
-      ist, dann
-      gibt es höchstens eine Regel $A \rightarrow \beta_i$
-      mit
+      <span class="t-3003-c">Der Automat betrachtet nun die nächsten
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:302:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:302:45</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:302:48</span></span>
+      <span class="t-3003-c">Eingabesymbole, also
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:303:5</span></span><span class="t-3003-c">$\first_k(y)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:303:26</span></span><span class="t-3003-c">
+        (wir gehen mal<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:303:39</span></span>
+      <span class="t-3003-c">davon aus, dass er das kann; programmieren könnten wir<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:304:5</span></span>
+      <span class="t-3003-c">das auf jeden Fall; ob man es im strengen Framework<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:305:5</span></span>
+      <span class="t-3003-c">des Kellerautomaten hinkriegt, werden wir später<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:306:5</span></span>
+      <span class="t-3003-c">sehen). Wenn
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:307:5</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:307:18</span></span><span class="t-3003-c">
+        eine
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:307:21</span></span><span class="nowrap"><span class="t-3003-c">LL<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:307:21</span></span><span class="t-3003-c">$(k)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:307:29</span></span><span class="t-3003-c">-Grammatik<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:307:34</span></span></span><span class="t-3003-c">
+        ist, dann<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:307:34</span></span>
+      <span class="t-3003-c">gibt es höchstens eine Regel
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:308:5</span></span><span class="t-3003-c">$A \rightarrow \beta_i$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:308:34</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:308:57</span></span>
+      <span class="t-3003-c">mit<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:309:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \first_k(y) \in \first_k(\beta_i \alpha)
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:311:5</span>
     </div>
     <p class="main-column">
-      da ja nach obiger Beobachtung diese Mengen disjunkt
-      sind. Wenn $\first_k(y)$ in
-      <i>keiner</i>
-      dieser Mengen
-      enthalten ist, so kann die Ableitung offensichtlich
-      nicht vervollständigt werden, und wir schließen, dass
-      $xy \not \in L(G)$ ist. Wenn es
-      <i>genau ein</i>
-      $\beta_i$
-      gibt mit
-      <span class="nowrap">$\first_k(y) \in \first_k(\beta_i \alpha)$,</span>
-      dann ist $A \rightarrow \beta_i$ die "richtige"
-      Produktion. Wir wenden sie an, ersetzen also $A$ auf
-      dem Stack durch
-      <span class="nowrap">$\beta_i$.</span>
-      Falls es zwei oder mehr
-      Produktionen $A \rightarrow \beta_i$ gibt mit
-      <span class="nowrap">$\first_k(y) \in \first_k(\beta_i \alpha)$,</span>
-      dann ist
-      die Grammatik nicht
-      <span class="nowrap">LL$(k)$;</span>
-      wir beenden den
-      Parsing-Prozess mit einer Laufzeitfehlermeldung. Hier
-      ist ein Entwurf eines allgemeinen Algorithmus für LL
-      <span class="nowrap">$(k)$-Grammatiken:</span>
+      <span class="t-3003-c">da ja nach obiger Beobachtung diese Mengen disjunkt<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:315:5</span></span>
+      <span class="t-3003-c">sind. Wenn
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:316:5</span></span><span class="t-3003-c">$\first_k(y)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:316:16</span></span><span class="t-3003-c">
+        in
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:316:29</span></span><i><span class="t-3003-c">keiner<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:316:34</span></span></i><span class="t-3003-c">
+        dieser Mengen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:316:41</span></span>
+      <span class="t-3003-c">enthalten ist, so kann die Ableitung offensichtlich<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:317:5</span></span>
+      <span class="t-3003-c">nicht vervollständigt werden, und wir schließen, dass<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:318:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:319:5</span></span><span class="t-3003-c">$xy \not \in L(G)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:319:5</span></span><span class="t-3003-c">
+        ist. Wenn es
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:319:23</span></span><i><span class="t-3003-c">genau ein<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:319:38</span></span></i><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:319:48</span></span><span class="t-3003-c">$\beta_i$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:319:49</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:319:58</span></span>
+      <span class="t-3003-c">gibt mit
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:320:5</span></span><span class="nowrap"><span class="t-3003-c">$\first_k(y) \in \first_k(\beta_i \alpha)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:320:14</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:320:56</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:320:56</span></span>
+      <span class="t-3003-c">dann ist
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:321:5</span></span><span class="t-3003-c">$A \rightarrow \beta_i$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:321:14</span></span><span class="t-3003-c">
+        die "richtige"<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:321:37</span></span>
+      <span class="t-3003-c">Produktion. Wir wenden sie an, ersetzen also
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:322:5</span></span><span class="t-3003-c">$A$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:322:50</span></span><span class="t-3003-c">
+        auf<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:322:53</span></span>
+      <span class="t-3003-c">dem Stack durch
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:323:5</span></span><span class="nowrap"><span class="t-3003-c">$\beta_i$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:323:21</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:323:30</span></span></span><span class="t-3003-c">
+        Falls es zwei oder mehr<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:323:30</span></span>
+      <span class="t-3003-c">Produktionen
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:324:5</span></span><span class="t-3003-c">$A \rightarrow \beta_i$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:324:18</span></span><span class="t-3003-c">
+        gibt mit<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:324:41</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:325:5</span></span><span class="nowrap"><span class="t-3003-c">$\first_k(y) \in \first_k(\beta_i \alpha)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:325:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:325:47</span></span></span><span class="t-3003-c">
+        dann ist<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:325:47</span></span>
+      <span class="t-3003-c">die Grammatik nicht
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:326:5</span></span><span class="nowrap"><span class="t-3003-c">LL<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:326:5</span></span><span class="t-3003-c">$(k)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:326:27</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:326:32</span></span></span><span class="t-3003-c">
+        wir beenden den<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:326:32</span></span>
+      <span class="t-3003-c">Parsing-Prozess mit einer Laufzeitfehlermeldung. Hier<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:327:5</span></span>
+      <span class="t-3003-c">ist ein Entwurf eines allgemeinen Algorithmus für LL<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:328:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:329:5</span></span><span class="nowrap"><span class="t-3003-c">$(k)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:329:5</span></span><span class="t-3003-c">-Grammatiken:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:329:10</span></span></span>
     </p>
     <div class="well highlight out">
       <p>
@@ -564,91 +741,114 @@
       <ol>
         <li>
           <p>
-            Lege \(S\texttt{\$}\) auf den Stack.
+            <span class="t-3003-c">Lege
+              <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:335:17</span></span><span class="t-3003-c">\(S\texttt{\$}\)<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:335:22</span></span><span class="t-3003-c">
+              auf den Stack.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:335:38</span></span>
           </p>
         </li>
         <li>
           <p>
-            <code>while</code>
-            Stack nicht leer:
+            <code><span class="t-3003-c">while<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:338:18</span></span></code><span class="t-3003-c">
+              Stack nicht leer:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:338:24</span></span>
           </p>
           <ol>
             <li>
               <p>
-                Sei $y$ das Resteingabewort.
+                <span class="t-3003-c">Sei
+                  <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:342:25</span></span><span class="t-3003-c">$y$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:342:29</span></span><span class="t-3003-c">
+                  das Resteingabewort.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:342:32</span></span>
               </p>
             </li>
             <li>
               <p>
-                Wenn das oberste Symbol auf dem Stack ein
-                Terminalsymbol $c$ ist:
+                <span class="t-3003-c">Wenn das oberste Symbol auf dem Stack ein<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:345:25</span></span>
+                <span class="t-3003-c">Terminalsymbol
+                  <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:346:25</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:346:40</span></span><span class="t-3003-c">
+                  ist:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:346:43</span></span>
               </p>
               <ul>
                 <li>
                   <p>
-                    Lies das nächste Eingabesymbol
-                    <span class="nowrap">$c'$.</span>
+                    <span class="t-3003-c">Lies das nächste Eingabesymbol
+                      <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:350:33</span></span><span class="nowrap"><span class="t-3003-c">$c'$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:350:64</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:350:68</span></span></span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Wenn
-                    <span class="nowrap">$c = c'$,</span>
-                    poppe $c$ vom Stack;
+                    <span class="t-3003-c">Wenn
+                      <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:353:33</span></span><span class="nowrap"><span class="t-3003-c">$c = c'$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:353:38</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:353:46</span></span></span><span class="t-3003-c">
+                      poppe
+                      <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:353:46</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:353:54</span></span><span class="t-3003-c">
+                      vom Stack;<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:353:57</span></span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    ansonsten
-                    <span class="nowrap"><code>Reject</code>.</span>
+                    <span class="t-3003-c">ansonsten
+                      <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:356:33</span></span><span class="nowrap"><code><span class="t-3003-c">Reject<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:356:44</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:356:51</span></span></span>
                   </p>
                 </li>
               </ul>
             </li>
             <li>
               <p>
-                Wenn das oberste Symbol auf dem Stack ein
-                Nichtterminalsymbol $A$ ist:
+                <span class="t-3003-c">Wenn das oberste Symbol auf dem Stack ein<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:359:25</span></span>
+                <span class="t-3003-c">Nichtterminalsymbol
+                  <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:360:25</span></span><span class="t-3003-c">$A$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:360:45</span></span><span class="t-3003-c">
+                  ist:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:360:48</span></span>
               </p>
               <ol>
                 <li>
                   <p>
-                    Schreibe den Stack als $A \alpha$
+                    <span class="t-3003-c">Schreibe den Stack als
+                      <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:364:33</span></span><span class="t-3003-c">$A \alpha$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:364:56</span></span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Seien
-                    $A \rightarrow \beta_1, \dots, A \rightarrow \beta_l$
-                    alle Produktionen mit $A$ auf der linken Seite.
+                    <span class="t-3003-c">Seien<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:367:33</span></span>
+                    <span class="t-3003-c">
+                      <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:368:33</span></span><span class="t-3003-c">$A \rightarrow \beta_1, \dots, A \rightarrow \beta_l$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:368:33</span></span><span class="t-3003-c">
+                      <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:368:86</span></span>
+                    <span class="t-3003-c">alle Produktionen mit
+                      <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:369:33</span></span><span class="t-3003-c">$A$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:369:55</span></span><span class="t-3003-c">
+                      auf der linken Seite.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:369:58</span></span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    <span style="color:red; font-weight: bold;">Berechne $\First_k(\beta_i\alpha)$ für alle $\beta_i$
-                      und schaue, welches $\first_k(y)$ enthält</span>
+                    <span style="color:red; font-weight: bold;"><span class="t-3003-c">Berechne
+                        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:374:37</span></span><span class="t-3003-c">$\First_k(\beta_i\alpha)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:374:46</span></span><span class="t-3003-c">
+                        für alle
+                        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:374:71</span></span><span class="t-3003-c">$\beta_i$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:374:81</span></span><span class="t-3003-c">
+                        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:374:90</span></span>
+                      <span class="t-3003-c">und schaue, welches
+                        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:375:37</span></span><span class="t-3003-c">$\first_k(y)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:375:57</span></span><span class="t-3003-c">
+                        enthält<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:375:70</span></span></span>
                   </p>
                   <ul>
                     <li>
                       <p>
-                        Wenn es genau eine solche Produktion
-                        $A \rightarrow \beta_i$ gibt: wende Sie an; es ist
-                        die richtige Produktion.
+                        <span class="t-3003-c">Wenn es genau eine solche Produktion<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:379:41</span></span>
+                        <span class="t-3003-c">
+                          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:380:41</span></span><span class="t-3003-c">$A \rightarrow \beta_i$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:380:41</span></span><span class="t-3003-c">
+                          gibt: wende Sie an; es ist<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:380:64</span></span>
+                        <span class="t-3003-c">die richtige Produktion.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:381:41</span></span>
                       </p>
                     </li>
                     <li>
                       <p>
-                        Wenn es keine gibt:
-                        <span class="nowrap"><code>Reject</code>.</span>
-                        Das Wort kann nicht
-                        abgeleitet werden.
+                        <span class="t-3003-c">Wenn es keine gibt:
+                          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:384:41</span></span><span class="nowrap"><code><span class="t-3003-c">Reject<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:384:62</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:384:69</span></span></span><span class="t-3003-c">
+                          Das Wort kann nicht<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:384:69</span></span>
+                        <span class="t-3003-c">abgeleitet werden.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:385:41</span></span>
                       </p>
                     </li>
                     <li>
                       <p>
-                        Wenn es mehrere gibt: ende mit einem Laufzeitfehler;
-                        die Grammatik ist nicht
-                        <span class="nowrap">LL$(k)$.</span>
+                        <span class="t-3003-c">Wenn es mehrere gibt: ende mit einem Laufzeitfehler;<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:388:41</span></span>
+                        <span class="t-3003-c">die Grammatik ist nicht
+                          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:389:41</span></span><span class="nowrap"><span class="t-3003-c">LL<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:389:41</span></span><span class="t-3003-c">$(k)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:389:67</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:389:72</span></span></span>
                       </p>
                     </li>
                   </ul>
@@ -657,11 +857,13 @@
             </li>
             <li>
               <p>
-                Wenn das oberste Symbol \(\texttt{\$}\) ist: wenn
-                Eingabewort zu Ende
-                <code>Accept</code>
-                ansonsten
-                <code>Reject</code>
+                <span class="t-3003-c">Wenn das oberste Symbol
+                  <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:392:25</span></span><span class="t-3003-c">\(\texttt{\$}\)<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:392:49</span></span><span class="t-3003-c">
+                  ist: wenn<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:392:64</span></span>
+                <span class="t-3003-c">Eingabewort zu Ende
+                  <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:393:25</span></span><code><span class="t-3003-c">Accept<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:393:46</span></span></code><span class="t-3003-c">
+                  ansonsten
+                  <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:393:53</span></span><code><span class="t-3003-c">Reject<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:393:65</span></span></code>
               </p>
             </li>
           </ol>
@@ -669,41 +871,55 @@
       </ol>
     </div>
     <p class="main-column">
-      Die rot und fett gedruckte Zeile ist das "Herz"
-      dieses Algorithmus. Um den Algorithmus implementieren
-      zu können, müssen wir es schaffen, die Menge
-      $\First_k(\beta_i\alpha)$ zu berechnen.
+      <span class="t-3003-c">Die rot und fett gedruckte Zeile ist das "Herz"<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:395:5</span></span>
+      <span class="t-3003-c">dieses Algorithmus. Um den Algorithmus implementieren<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:396:5</span></span>
+      <span class="t-3003-c">zu können, müssen wir es schaffen, die Menge<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:397:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:398:5</span></span><span class="t-3003-c">$\First_k(\beta_i\alpha)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:398:5</span></span><span class="t-3003-c">
+        zu berechnen.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:398:30</span></span>
     </p>
     <h2 class="main-column topic-announcement">
-      $\First_k(A)$ und $\First_k(\alpha)$ berechnen.
+      <span class="t-3003-c">$\First_k(A)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:401:9</span></span><span class="t-3003-c">
+        und
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:401:22</span></span><span class="t-3003-c">$\First_k(\alpha)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:401:27</span></span><span class="t-3003-c">
+        berechnen.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:401:45</span></span>
     </h2>
     <div class="well statement out">
       <p>
-        <b>Definition 6.4.7</b>
-        Seien $K, L \subseteq \Sigma^*$ zwei Mengen. Mit
-        $K \circ L$ bezeichnen wir die Menge
+        <b><span class="t-3003-c">Definition 6.4.7<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:403:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:403:5</span></span>
+        <span class="t-3003-c">Seien
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:404:9</span></span><span class="t-3003-c">$K, L \subseteq \Sigma^*$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:404:15</span></span><span class="t-3003-c">
+          zwei Mengen. Mit<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:404:40</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:405:9</span></span><span class="t-3003-c">$K \circ L$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:405:9</span></span><span class="t-3003-c">
+          bezeichnen wir die Menge<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:405:20</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         K \circ L := \{xy \ | \ x \in K, y \in L\} \ .
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:407:9</span>
       </div>
       <p>
-        (Diese Definition haben Sie schon im Kapitel über
-        reguläre Sprachen kennengelernt). Für eine natürliche
-        Zahl $k$ definieren wir
+        <span class="t-3003-c">(Diese Definition haben Sie schon im Kapitel über<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:411:9</span></span>
+        <span class="t-3003-c">reguläre Sprachen kennengelernt). Für eine natürliche<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:412:9</span></span>
+        <span class="t-3003-c">Zahl
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:413:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:413:14</span></span><span class="t-3003-c">
+          definieren wir<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:413:17</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \First_k(L) := \{\first_k(x) \ | \ x \in L\} \ .
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:415:9</span>
       </div>
       <p>
-        Weiterhin bezeichnen wir mit $K \circ_k L$ die Menge
+        <span class="t-3003-c">Weiterhin bezeichnen wir mit
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:419:9</span></span><span class="t-3003-c">$K \circ_k L$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:419:38</span></span><span class="t-3003-c">
+          die Menge<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:419:51</span></span>
       </p>
       <div class="math-block">
         $$
@@ -711,23 +927,28 @@
         K \circ_k L&amp;:= \First(K \circ L) \\
         &amp;= \{\first_k(xy) \ | \ x \in K, y \in L\} \ .
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:421:9</span>
       </div>
     </div>
     <p class="main-column">
-      Im Allgemeinen gilt
-      <span class="nowrap">$\First_k(S_1 \circ \dots \circ S_l) = S_1 \circ_k
-        S_2 \circ_k \dots \circ_k S_l$.</span>
-      In Worten: der
-      <span class="nowrap">$\circ_k$-Operator</span>
-      bildet alle
-      möglichen Kombinationen von Wörtern und nimmt von
-      jedem die ersten $k$ Zeichen.
+      <span class="t-3003-c">Im Allgemeinen gilt<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:426:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:427:5</span></span><span class="nowrap"><span class="t-3003-c">$\First_k(S_1 \circ \dots \circ S_l) = S_1 \circ_k
+          S_2 \circ_k \dots \circ_k S_l$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:427:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:428:35</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:428:35</span></span>
+      <span class="t-3003-c">In Worten: der
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:429:5</span></span><span class="nowrap"><span class="t-3003-c">$\circ_k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:429:20</span></span><span class="t-3003-c">-Operator<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:429:29</span></span></span><span class="t-3003-c">
+        bildet alle<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:429:29</span></span>
+      <span class="t-3003-c">möglichen Kombinationen von Wörtern und nimmt von<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:430:5</span></span>
+      <span class="t-3003-c">jedem die ersten
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:431:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:431:22</span></span><span class="t-3003-c">
+        Zeichen.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:431:25</span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Beispiel 6.4.8</b>
-        Sei
+        <b><span class="t-3003-c">Beispiel 6.4.8<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:433:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:433:5</span></span>
+        <span class="t-3003-c">Sei<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:434:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -735,20 +956,20 @@
         K&amp;:= \{\epsilon, a, ab, aba\} \\
         L&amp;:= \{c, bb, b\}
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:436:9</span>
       </div>
       <p>
-        Dann ist
+        <span class="t-3003-c">Dann ist<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:441:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         K \circ L = \{c, bb, b, ac, abb, ab, abc, abbb, abb, abac, ababb, abab\}
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:443:9</span>
       </div>
       <p>
-        und somit
+        <span class="t-3003-c">und somit<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:447:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -756,31 +977,43 @@
         K \circ_2 L&amp;= \{c, bb, b, ac, ab, ab, ab, ab, ab, ab, ab, ab\} \\
         &amp;=\{c, bb, b, ac, ab\}
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:449:9</span>
       </div>
     </div>
     <div class="well statement out">
       <p>
-        <b>Beobachtung 6.4.9 - wie man $\First_k(\alpha)$ berechnet.</b>
-        Sei eine
-        Wortform $\alpha$ gegeben, also
-        <span class="nowrap">$\alpha \in (\Sigma \cup N)^*$.</span>
-        Wir berechnen
-        <span class="nowrap">$\First_k(\alpha)$,</span>
-        indem wir als erstes $\alpha$
-        aussschreiben als
+        <b><span class="t-3003-c">Beobachtung 6.4.9 - wie man
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:454:5</span></span><span class="t-3003-c">$\First_k(\alpha)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:455:20</span></span><span class="t-3003-c">
+            berechnet.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:455:38</span></span></b><span class="t-3003-c">
+          Sei eine<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:455:50</span></span>
+        <span class="t-3003-c">Wortform
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:456:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:456:18</span></span><span class="t-3003-c">
+          gegeben, also<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:456:26</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:457:9</span></span><span class="nowrap"><span class="t-3003-c">$\alpha \in (\Sigma \cup N)^*$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:457:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:457:39</span></span></span><span class="t-3003-c">
+          Wir berechnen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:457:39</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:458:9</span></span><span class="nowrap"><span class="t-3003-c">$\First_k(\alpha)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:458:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:458:27</span></span></span><span class="t-3003-c">
+          indem wir als erstes
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:458:27</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:458:50</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:458:58</span></span>
+        <span class="t-3003-c">aussschreiben als<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:459:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \alpha = (\sigma_1 \sigma_2 \sigma_3 \dots \sigma_n)
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:461:9</span>
       </div>
       <p>
-        wobei jedes $\sigma_i$ ein Terminalsymbol oder ein
-        Nichtterminalsymbol ist, und berechnen dann
-        $\First_k(\alpha)$ wie folgt:
+        <span class="t-3003-c">wobei jedes
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:465:9</span></span><span class="t-3003-c">$\sigma_i$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:465:21</span></span><span class="t-3003-c">
+          ein Terminalsymbol oder ein<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:465:31</span></span>
+        <span class="t-3003-c">Nichtterminalsymbol ist, und berechnen dann<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:466:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:467:9</span></span><span class="t-3003-c">$\First_k(\alpha)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:467:9</span></span><span class="t-3003-c">
+          wie folgt:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:467:27</span></span>
       </p>
       <div class="math-block">
         $$
@@ -789,63 +1022,86 @@
         (\sigma_n) \ .
         \label{first-k-wortform}
         \end{align}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:469:9</span>
       </div>
       <p>
-        Wir können dies schön der Reihe nach tun:
+        <span class="t-3003-c">Wir können dies schön der Reihe nach tun:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:475:9</span></span>
       </p>
       <ol>
         <li>
           <p>
-            Initialisiere $K := \{\epsilon\}$
+            <span class="t-3003-c">Initialisiere
+              <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:479:17</span></span><span class="t-3003-c">$K := \{\epsilon\}$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:479:31</span></span>
           </p>
         </li>
         <li>
           <p>
-            <code>for</code>
-            $i=n$
-            <code>down to</code>
-            1
-            <code>do:</code>
+            <code><span class="t-3003-c">for<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:482:18</span></span></code><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:482:22</span></span><span class="t-3003-c">$i=n$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:482:23</span></span><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:482:28</span></span><code><span class="t-3003-c">down to<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:482:30</span></span></code><span class="t-3003-c">
+              1
+              <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:482:38</span></span><code><span class="t-3003-c">do:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:482:42</span></span></code>
           </p>
           <ul>
             <li>
               <p>
-                $K := \First_k(\sigma_i) \circ_k K$<span class="comment">// $K$ ist jetzt
-                  $\First_k(\sigma_i) \circ_k \dots \circ_k
-                  \First_k(\sigma_n)$</span>
+                <span class="t-3003-c">$K := \First_k(\sigma_i) \circ_k K$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:486:25</span></span><span class="comment"><span class="t-3003-c">//
+                    <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:489:29</span></span><span class="t-3003-c">$K$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:489:32</span></span><span class="t-3003-c">
+                    ist jetzt<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:489:35</span></span>
+                  <span class="t-3003-c">
+                    <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:490:29</span></span><span class="t-3003-c">$\First_k(\sigma_i) \circ_k \dots \circ_k
+                    \First_k(\sigma_n)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:490:29</span></span></span>
               </p>
             </li>
           </ul>
         </li>
         <li>
           <p>
-            <code>return</code>
-            $K$
+            <code><span class="t-3003-c">return<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:494:18</span></span></code><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:494:25</span></span><span class="t-3003-c">$K$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:494:26</span></span>
           </p>
         </li>
       </ol>
       <p>
-        Wir müssen nur noch herausfinden, wie wir
-        $\First_k(\sigma)$ für einzelne Zeichen $\sigma$
-        berechnen.
+        <span class="t-3003-c">Wir müssen nur noch herausfinden, wie wir<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:496:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:497:9</span></span><span class="t-3003-c">$\First_k(\sigma)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:497:9</span></span><span class="t-3003-c">
+          für einzelne Zeichen
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:497:27</span></span><span class="t-3003-c">$\sigma$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:497:49</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:497:57</span></span>
+        <span class="t-3003-c">berechnen.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:498:9</span></span>
       </p>
     </div>
     <p class="main-column">
-      Für ein Terminalsymbol $c$ ist es trivial,
-      $\First_k(c)$ zu berechnen: es ist
-      <span class="nowrap">$\{c\}$,</span>
-      da sich
-      aus $c$ natürlich nur das Wort $c$ ableiten lässt.
-      Für Nichtterminale müssen wir uns anstrengen. Die
-      erste Idee ist, dass wir für $\First_k(X)$ eine
-      Gleichung schreiben können, die
-      $(\ref{first-k-wortform})$ verwendet.
+      <span class="t-3003-c">Für ein Terminalsymbol
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:500:5</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:500:28</span></span><span class="t-3003-c">
+        ist es trivial,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:500:31</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:501:5</span></span><span class="t-3003-c">$\First_k(c)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:501:5</span></span><span class="t-3003-c">
+        zu berechnen: es ist
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:501:18</span></span><span class="nowrap"><span class="t-3003-c">$\{c\}$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:501:40</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:501:47</span></span></span><span class="t-3003-c">
+        da sich<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:501:47</span></span>
+      <span class="t-3003-c">aus
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:502:5</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:502:9</span></span><span class="t-3003-c">
+        natürlich nur das Wort
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:502:12</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:502:36</span></span><span class="t-3003-c">
+        ableiten lässt.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:502:39</span></span>
+      <span class="t-3003-c">Für Nichtterminale müssen wir uns anstrengen. Die<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:503:5</span></span>
+      <span class="t-3003-c">erste Idee ist, dass wir für
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:504:5</span></span><span class="t-3003-c">$\First_k(X)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:504:34</span></span><span class="t-3003-c">
+        eine<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:504:47</span></span>
+      <span class="t-3003-c">Gleichung schreiben können, die<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:505:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:506:5</span></span><span class="t-3003-c">$(\ref{first-k-wortform})$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:506:5</span></span><span class="t-3003-c">
+        verwendet.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:506:31</span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Beobachtung 6.4.10</b>
-        Sei $X$ ein Nichtterminal und
+        <b><span class="t-3003-c">Beobachtung 6.4.10<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:508:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:508:5</span></span>
+        <span class="t-3003-c">Sei
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:509:9</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:509:13</span></span><span class="t-3003-c">
+          ein Nichtterminal und<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:509:16</span></span>
       </p>
       <div class="math-block">
         $$
@@ -855,11 +1111,13 @@
         &amp;\vdots \\
         X&amp;\rightarrow \alpha_k
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:511:9</span>
       </div>
       <p>
-        die Produktionen der Grammatik mit $X$ auf der linken
-        Seite. Dann gilt
+        <span class="t-3003-c">die Produktionen der Grammatik mit
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:518:9</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:518:44</span></span><span class="t-3003-c">
+          auf der linken<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:518:47</span></span>
+        <span class="t-3003-c">Seite. Dann gilt<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:519:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -867,50 +1125,76 @@
         \First_k(X) = \bigcup_{i=1}^k \First_k(\alpha_i)
         \label{first-k-nonterminal}
         \end{align}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:521:9</span>
       </div>
       <p>
-        Was ja eigentlich offensichtlich ist: wenn sich ein
-        Wort $X \Step{}^* w$ aus $X$ ableiten lässt, dann
-        muss dies mittels einer der obigen Produktionen
-        geschehen:
-        <span class="nowrap">$X \Step{} \alpha_i \Step{}^* w$,</span>
-        und
-        somit gilt
-        <span class="nowrap">$\first_k(w)\in \First_k(\alpha_i)$.</span>
+        <span class="t-3003-c">Was ja eigentlich offensichtlich ist: wenn sich ein<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:526:9</span></span>
+        <span class="t-3003-c">Wort
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:527:9</span></span><span class="t-3003-c">$X \Step{}^* w$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:527:14</span></span><span class="t-3003-c">
+          aus
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:527:29</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:527:34</span></span><span class="t-3003-c">
+          ableiten lässt, dann<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:527:37</span></span>
+        <span class="t-3003-c">muss dies mittels einer der obigen Produktionen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:528:9</span></span>
+        <span class="t-3003-c">geschehen:
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:529:9</span></span><span class="nowrap"><span class="t-3003-c">$X \Step{} \alpha_i \Step{}^* w$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:529:20</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:529:52</span></span></span><span class="t-3003-c">
+          und<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:529:52</span></span>
+        <span class="t-3003-c">somit gilt
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:530:9</span></span><span class="nowrap"><span class="t-3003-c">$\first_k(w)\in \First_k(\alpha_i)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:530:20</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:530:55</span></span></span>
       </p>
     </div>
     <p class="main-column">
-      Die Gleichungen $(\ref{first-k-wortform})$ und
-      $(\ref{first-k-nonterminal})$ leuchten zwar ein,
-      scheinen aber erstmal nicht hilfreich, diese Mengen
-      auch tatsächlich zu berechnen. Denn eventuell taucht
-      $X$ selbst wieder auf einer rechten Seite auf, sagen
-      wir
-      <span class="nowrap">$\alpha_1$.</span>
-      Um $\First_k(X)$ zu berechnen, müssen
-      wir also laut $(\ref{first-k-nonterminal})$ die Menge
-      $\First_k(\alpha_1)$ kennen; um diese zu berechnen,
-      brauchen wir laut $(\ref{first-k-wortform})$
-      allerdings zuerst unter Anderem die Menge
-      <span class="nowrap">$\First_k(X)$.</span>
-      Wo sollen wir also anfangen? In
-      solchen Situationen, wo sich "die Katze in den Schwanz
-      beißt", hilft es oft, die Definition vorerst
-      <i>komplexere</i>
-      un
-      <i>genauer</i>
-      zu machen. Wir führen nun,
-      zusätzlich zu $\First_k(X)$ und
-      <span class="nowrap">$\First_k(\alpha)$,</span>
-      noch eine feinere Unterteilung an:
+      <span class="t-3003-c">Die Gleichungen
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:532:5</span></span><span class="t-3003-c">$(\ref{first-k-wortform})$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:532:21</span></span><span class="t-3003-c">
+        und<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:532:47</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:533:5</span></span><span class="t-3003-c">$(\ref{first-k-nonterminal})$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:533:5</span></span><span class="t-3003-c">
+        leuchten zwar ein,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:533:34</span></span>
+      <span class="t-3003-c">scheinen aber erstmal nicht hilfreich, diese Mengen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:534:5</span></span>
+      <span class="t-3003-c">auch tatsächlich zu berechnen. Denn eventuell taucht<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:535:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:536:5</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:536:5</span></span><span class="t-3003-c">
+        selbst wieder auf einer rechten Seite auf, sagen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:536:8</span></span>
+      <span class="t-3003-c">wir
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:537:5</span></span><span class="nowrap"><span class="t-3003-c">$\alpha_1$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:537:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:537:19</span></span></span><span class="t-3003-c">
+        Um
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:537:19</span></span><span class="t-3003-c">$\First_k(X)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:537:24</span></span><span class="t-3003-c">
+        zu berechnen, müssen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:537:37</span></span>
+      <span class="t-3003-c">wir also laut
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:538:5</span></span><span class="t-3003-c">$(\ref{first-k-nonterminal})$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:538:19</span></span><span class="t-3003-c">
+        die Menge<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:538:48</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:539:5</span></span><span class="t-3003-c">$\First_k(\alpha_1)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:539:5</span></span><span class="t-3003-c">
+        kennen; um diese zu berechnen,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:539:25</span></span>
+      <span class="t-3003-c">brauchen wir laut
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:540:5</span></span><span class="t-3003-c">$(\ref{first-k-wortform})$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:540:23</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:540:49</span></span>
+      <span class="t-3003-c">allerdings zuerst unter Anderem die Menge<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:541:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:542:5</span></span><span class="nowrap"><span class="t-3003-c">$\First_k(X)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:542:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:542:18</span></span></span><span class="t-3003-c">
+        Wo sollen wir also anfangen? In<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:542:18</span></span>
+      <span class="t-3003-c">solchen Situationen, wo sich "die Katze in den Schwanz<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:543:5</span></span>
+      <span class="t-3003-c">beißt", hilft es oft, die Definition vorerst<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:544:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:545:5</span></span><i><span class="t-3003-c">komplexere<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:545:6</span></span></i><span class="t-3003-c">
+        un
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:545:17</span></span><i><span class="t-3003-c">genauer<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:545:22</span></span></i><span class="t-3003-c">
+        zu machen. Wir führen nun,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:545:30</span></span>
+      <span class="t-3003-c">zusätzlich zu
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:546:5</span></span><span class="t-3003-c">$\First_k(X)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:546:19</span></span><span class="t-3003-c">
+        und
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:546:32</span></span><span class="nowrap"><span class="t-3003-c">$\First_k(\alpha)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:546:37</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:546:55</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:546:55</span></span>
+      <span class="t-3003-c">noch eine feinere Unterteilung an:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:547:5</span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition 6.4.11</b>
-        Sei $\sigma$ ein Symbol und
-        <span class="nowrap">$d \in \N$.</span>
-        Dann ist
+        <b><span class="t-3003-c">Definition 6.4.11<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:549:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:549:5</span></span>
+        <span class="t-3003-c">Sei
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:550:9</span></span><span class="t-3003-c">$\sigma$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:550:13</span></span><span class="t-3003-c">
+          ein Symbol und
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:550:21</span></span><span class="nowrap"><span class="t-3003-c">$d \in \N$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:550:37</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:550:47</span></span></span><span class="t-3003-c">
+          Dann ist<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:550:47</span></span>
       </p>
       <div class="math-block">
         $$
@@ -918,13 +1202,14 @@
         \First_k^{(d)}(\sigma) := \{\first_k(w) \ | \ \textnormal{ es gibt einen Ableitungsbaum für
         $\sigma \Step{}^* w$ der Höhe höchstens $d$}\}
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:552:9</span>
       </div>
     </div>
     <div class="well statement out">
       <p>
-        <b>Beispiel 6.4.12</b>
-        Sei unsere Grammatik
+        <b><span class="t-3003-c">Beispiel 6.4.12<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:557:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:557:5</span></span>
+        <span class="t-3003-c">Sei unsere Grammatik<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:558:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -932,47 +1217,55 @@
         S&amp;\rightarrow Xa \\
         X&amp;\rightarrow Sb \ | c
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:560:9</span>
       </div>
       <p>
-        Dann ist beispielsweise
+        <span class="t-3003-c">Dann ist beispielsweise<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:565:9</span></span>
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:8em"
             src="img/context-free/LL/tree-depth-2.svg"
-          >
+          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/tree-depth-2.svg</span></span>
         </figure>
       </div>
       <p>
-        ein Ableitungsbaum der Höhe 2 von $S \Step{}^* ca$ ,
-        und somit gilt
+        <span class="t-3003-c">ein Ableitungsbaum der Höhe 2 von
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:572:9</span></span><span class="t-3003-c">$S \Step{}^* ca$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:572:43</span></span><span class="t-3003-c">
+          ,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:572:59</span></span>
+        <span class="t-3003-c">und somit gilt<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:573:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         c \in \First_1^{(d)} (S) \ .
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:575:9</span>
       </div>
       <p>
-        Ein Baum der Höhe 1, der mit $S$ beginnt, könnte ja
-        nur $Xa$ ableiten und somit gar kein Wort. Es gilt
-        also
+        <span class="t-3003-c">Ein Baum der Höhe 1, der mit
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:579:9</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:579:38</span></span><span class="t-3003-c">
+          beginnt, könnte ja<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:579:41</span></span>
+        <span class="t-3003-c">nur
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:580:9</span></span><span class="t-3003-c">$Xa$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:580:13</span></span><span class="t-3003-c">
+          ableiten und somit gar kein Wort. Es gilt<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:580:17</span></span>
+        <span class="t-3003-c">also<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:581:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \First_1^{(1)} (S) = \emptyset \ .
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:583:9</span>
       </div>
       <p>
-        Für eine Wortform
-        $\alpha = \sigma_1 \sigma_2 \dots \sigma_n \in
-        (\Sigma \cup N)^*$
-        definieren wir
+        <span class="t-3003-c">Für eine Wortform<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:587:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:588:9</span></span><span class="t-3003-c">$\alpha = \sigma_1 \sigma_2 \dots \sigma_n \in
+          (\Sigma \cup N)^*$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:588:9</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:589:27</span></span>
+        <span class="t-3003-c">definieren wir<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:590:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -980,28 +1273,47 @@
         \First_k^{(d)}(\alpha) = \First_k^{(d)}(\sigma_1) \circ_k \First_k^{(d)}(\sigma_2) \circ_k \dots
         \circ_k \First_k^{(d)}
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:592:9</span>
       </div>
       <p>
-        Eine Ableitung $\alpha \Step{}^* w$ der Höhe maximal
-        $d$ entspricht also einer Folge von $n$
-        Ableitungsbäumen, von denen jeder Höhe maximal $d$
-        hat.
+        <span class="t-3003-c">Eine Ableitung
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:597:9</span></span><span class="t-3003-c">$\alpha \Step{}^* w$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:597:24</span></span><span class="t-3003-c">
+          der Höhe maximal<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:597:44</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:598:9</span></span><span class="t-3003-c">$d$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:598:9</span></span><span class="t-3003-c">
+          entspricht also einer Folge von
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:598:12</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:598:45</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:598:48</span></span>
+        <span class="t-3003-c">Ableitungsbäumen, von denen jeder Höhe maximal
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:599:9</span></span><span class="t-3003-c">$d$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:599:56</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:599:59</span></span>
+        <span class="t-3003-c">hat.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:600:9</span></span>
       </p>
     </div>
     <p class="main-column">
-      Mit dieser Definition können wir nun Gleichungen für
-      $\First_k^{(d)}(X)$ und $\First_k^{(d)}(\alpha)$
-      angeben. Seien
-      $X \rightarrow \alpha_1 \ | \ \dots \ | \ \alpha_k$
-      die Produktionen mit $X$ auf der linken Seite. Dann
-      gilt für
-      <span class="nowrap">$k \geq 1$:</span>
+      <span class="t-3003-c">Mit dieser Definition können wir nun Gleichungen für<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:602:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:603:5</span></span><span class="t-3003-c">$\First_k^{(d)}(X)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:603:5</span></span><span class="t-3003-c">
+        und
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:603:24</span></span><span class="t-3003-c">$\First_k^{(d)}(\alpha)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:603:29</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:603:53</span></span>
+      <span class="t-3003-c">angeben. Seien<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:604:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:605:5</span></span><span class="t-3003-c">$X \rightarrow \alpha_1 \ | \ \dots \ | \ \alpha_k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:605:5</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:605:56</span></span>
+      <span class="t-3003-c">die Produktionen mit
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:606:5</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:606:26</span></span><span class="t-3003-c">
+        auf der linken Seite. Dann<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:606:29</span></span>
+      <span class="t-3003-c">gilt für
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:607:5</span></span><span class="nowrap"><span class="t-3003-c">$k \geq 1$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:607:14</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:607:24</span></span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Lemma 6.4.13</b>
-        Für $d \geq 1$ gilt
+        <b><span class="t-3003-c">Lemma 6.4.13<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:609:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:609:5</span></span>
+        <span class="t-3003-c">Für
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:610:9</span></span><span class="t-3003-c">$d \geq 1$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:610:13</span></span><span class="t-3003-c">
+          gilt<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:610:23</span></span>
       </p>
       <div class="math-block">
         $$
@@ -1010,69 +1322,90 @@
         \First_k^{(d)}(\alpha)&amp;= \First_k^{(d)}(\sigma_1) \circ_k \First_k^{(d)}(\sigma_2) \circ_k
         \dots \circ_k \First_k^{(d)}
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:612:9</span>
       </div>
       <p>
-        Für $d = 0$ gilt
+        <span class="t-3003-c">Für
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:618:9</span></span><span class="t-3003-c">$d = 0$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:618:13</span></span><span class="t-3003-c">
+          gilt<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:618:20</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \First_k^{(0)}(X)&amp;:= \emptyset \tag{für jedes Nichtterminal}
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:620:9</span>
       </div>
       <p>
-        und schließlich
+        <span class="t-3003-c">und schließlich<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:624:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \First_k^{(d)}(a)&amp;:= \{a\} \tag{für jedes Terminalsymbol und jedes \(d \in \N\)}
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:626:9</span>
       </div>
     </div>
     <p class="main-column">
-      Die Gleichungen sagen, dass wir, falls wir
-      $\First_{k}^{(d-1)}(X)$ für alle Nichtterminale
-      kennen, dann auch $\First_{k}^{(d)}(X)$ berechnen
-      können. Daraus folgt auch: wenn
-      $\First_{k}^{(d-1)}(X)=\First_{k}^{(d)}(X)$ für alle
-      <span class="nowrap">$X \in N$,</span>
-      dann auch
-      $\First_{k}^{(d)}(X)=\First_{k}^{(d+1)}(X)$ für alle
-      <span class="nowrap">$X \in N$,</span>
-      und somit werden die Mengen
-      $\First_{k}^{(d)}(X)$ für alle $d$ von nun an gleich
-      bleiben.
+      <span class="t-3003-c">Die Gleichungen sagen, dass wir, falls wir<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:630:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:631:5</span></span><span class="t-3003-c">$\First_{k}^{(d-1)}(X)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:631:5</span></span><span class="t-3003-c">
+        für alle Nichtterminale<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:631:28</span></span>
+      <span class="t-3003-c">kennen, dann auch
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:632:5</span></span><span class="t-3003-c">$\First_{k}^{(d)}(X)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:632:23</span></span><span class="t-3003-c">
+        berechnen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:632:44</span></span>
+      <span class="t-3003-c">können. Daraus folgt auch: wenn<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:633:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:634:5</span></span><span class="t-3003-c">$\First_{k}^{(d-1)}(X)=\First_{k}^{(d)}(X)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:634:5</span></span><span class="t-3003-c">
+        für alle<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:634:48</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:635:5</span></span><span class="nowrap"><span class="t-3003-c">$X \in N$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:635:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:635:14</span></span></span><span class="t-3003-c">
+        dann auch<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:635:14</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:636:5</span></span><span class="t-3003-c">$\First_{k}^{(d)}(X)=\First_{k}^{(d+1)}(X)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:636:5</span></span><span class="t-3003-c">
+        für alle<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:636:48</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:637:5</span></span><span class="nowrap"><span class="t-3003-c">$X \in N$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:637:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:637:14</span></span></span><span class="t-3003-c">
+        und somit werden die Mengen<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:637:14</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:638:5</span></span><span class="t-3003-c">$\First_{k}^{(d)}(X)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:638:5</span></span><span class="t-3003-c">
+        für alle
+        <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:638:26</span></span><span class="t-3003-c">$d$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:638:36</span></span><span class="t-3003-c">
+        von nun an gleich<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:638:39</span></span>
+      <span class="t-3003-c">bleiben.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:639:5</span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Beobachtung 6.4.14</b>
-        Falls $\First_{k}^{(d-1)}(X)=\First_{k}^{(d)}(X)$ für
-        alle
-        <span class="nowrap">$X \in N$,</span>
-        dann gilt
+        <b><span class="t-3003-c">Beobachtung 6.4.14<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:641:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:641:5</span></span>
+        <span class="t-3003-c">Falls
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:642:9</span></span><span class="t-3003-c">$\First_{k}^{(d-1)}(X)=\First_{k}^{(d)}(X)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:642:15</span></span><span class="t-3003-c">
+          für<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:642:58</span></span>
+        <span class="t-3003-c">alle
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:643:9</span></span><span class="nowrap"><span class="t-3003-c">$X \in N$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:643:14</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:643:23</span></span></span><span class="t-3003-c">
+          dann gilt<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:643:23</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \First_k (X) = \First_k^{(d)}(X)
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:645:9</span>
       </div>
       <p>
-        für alle
-        <span class="nowrap">$X \in N$.</span>
+        <span class="t-3003-c">für alle
+          <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:649:9</span></span><span class="nowrap"><span class="t-3003-c">$X \in N$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:649:18</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:649:27</span></span></span>
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b>Demo 6.4.15 - Berechnung der Menge $\First_k(A)$ für die
-          Nichtterminale einer Sprache.</b>
-        Wir betrachten die
-        Grammatik
+        <b><span class="t-3003-c">Demo 6.4.15 - Berechnung der Menge
+            <span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:651:5</span></span><span class="t-3003-c">$\First_k(A)$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:652:33</span></span><span class="t-3003-c">
+            für die<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:652:46</span></span>
+          <span class="t-3003-c">Nichtterminale einer Sprache.<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:653:9</span></span></b><span class="t-3003-c">
+          Wir betrachten die<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:653:39</span></span>
+        <span class="t-3003-c">Grammatik<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:654:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -1080,7 +1413,7 @@
         S&amp;\rightarrow Xa \ | \ \epsilon \\
         X&amp;\rightarrow b \ | \ Sc \ | \ SX
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:656:9</span>
       </div>
     </div>
     <div class="pseudowell">
@@ -1088,154 +1421,154 @@
         <div class="carousel">
           <div class="carousel__items">
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/01.svg">
+              <img src="img/context-free/LL/compute-first-2/01.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/01.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/02.svg">
+              <img src="img/context-free/LL/compute-first-2/02.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/02.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/03.svg">
+              <img src="img/context-free/LL/compute-first-2/03.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/03.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/04.svg">
+              <img src="img/context-free/LL/compute-first-2/04.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/04.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/05.svg">
+              <img src="img/context-free/LL/compute-first-2/05.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/05.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/06.svg">
+              <img src="img/context-free/LL/compute-first-2/06.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/06.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/07.svg">
+              <img src="img/context-free/LL/compute-first-2/07.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/07.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/08.svg">
+              <img src="img/context-free/LL/compute-first-2/08.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/08.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/09.svg">
+              <img src="img/context-free/LL/compute-first-2/09.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/09.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/10.svg">
+              <img src="img/context-free/LL/compute-first-2/10.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/10.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/11.svg">
+              <img src="img/context-free/LL/compute-first-2/11.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/11.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/12.svg">
+              <img src="img/context-free/LL/compute-first-2/12.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/12.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/13.svg">
+              <img src="img/context-free/LL/compute-first-2/13.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/13.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/14.svg">
+              <img src="img/context-free/LL/compute-first-2/14.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/14.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/15.svg">
+              <img src="img/context-free/LL/compute-first-2/15.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/15.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/16.svg">
+              <img src="img/context-free/LL/compute-first-2/16.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/16.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/17.svg">
+              <img src="img/context-free/LL/compute-first-2/17.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/17.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/18.svg">
+              <img src="img/context-free/LL/compute-first-2/18.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/18.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/19.svg">
+              <img src="img/context-free/LL/compute-first-2/19.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/19.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/20.svg">
+              <img src="img/context-free/LL/compute-first-2/20.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/20.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/21.svg">
+              <img src="img/context-free/LL/compute-first-2/21.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/21.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/22.svg">
+              <img src="img/context-free/LL/compute-first-2/22.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/22.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/23.svg">
+              <img src="img/context-free/LL/compute-first-2/23.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/23.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/24.svg">
+              <img src="img/context-free/LL/compute-first-2/24.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/24.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/25.svg">
+              <img src="img/context-free/LL/compute-first-2/25.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/25.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/26.svg">
+              <img src="img/context-free/LL/compute-first-2/26.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/26.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/27.svg">
+              <img src="img/context-free/LL/compute-first-2/27.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/27.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/28.svg">
+              <img src="img/context-free/LL/compute-first-2/28.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/28.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/29.svg">
+              <img src="img/context-free/LL/compute-first-2/29.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/29.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/30.svg">
+              <img src="img/context-free/LL/compute-first-2/30.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/30.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/30.svg">
+              <img src="img/context-free/LL/compute-first-2/30.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/30.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/31.svg">
+              <img src="img/context-free/LL/compute-first-2/31.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/31.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/32.svg">
+              <img src="img/context-free/LL/compute-first-2/32.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/32.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/33.svg">
+              <img src="img/context-free/LL/compute-first-2/33.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/33.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/34.svg">
+              <img src="img/context-free/LL/compute-first-2/34.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/34.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/35.svg">
+              <img src="img/context-free/LL/compute-first-2/35.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/35.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/36.svg">
+              <img src="img/context-free/LL/compute-first-2/36.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/36.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/37.svg">
+              <img src="img/context-free/LL/compute-first-2/37.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/37.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/38.svg">
+              <img src="img/context-free/LL/compute-first-2/38.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/38.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/39.svg">
+              <img src="img/context-free/LL/compute-first-2/39.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/39.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/40.svg">
+              <img src="img/context-free/LL/compute-first-2/40.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/40.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/41.svg">
+              <img src="img/context-free/LL/compute-first-2/41.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/41.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/42.svg">
+              <img src="img/context-free/LL/compute-first-2/42.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/42.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/43.svg">
+              <img src="img/context-free/LL/compute-first-2/43.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/43.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/44.svg">
+              <img src="img/context-free/LL/compute-first-2/44.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/44.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/45.svg">
+              <img src="img/context-free/LL/compute-first-2/45.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/45.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/46.svg">
+              <img src="img/context-free/LL/compute-first-2/46.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/46.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/47.svg">
+              <img src="img/context-free/LL/compute-first-2/47.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/47.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/48.svg">
+              <img src="img/context-free/LL/compute-first-2/48.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/48.svg</span></span>
             </div>
             <div class="carousel__item">
-              <img src="img/context-free/LL/compute-first-2/49.svg">
+              <img src="img/context-free/LL/compute-first-2/49.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LL/compute-first-2/49.svg</span></span>
             </div>
           </div>
         </div>

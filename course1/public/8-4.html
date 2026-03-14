@@ -40,78 +40,86 @@
     </div>
     <div class="main-column page-title">
       <p>
-        8.4&ensp;Turing-Maschinen codieren
+        <span class="t-3003-c">8.4&ensp;Turing-Maschinen codieren<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:2:11</span></span>
       </p>
     </div>
     <p class="main-column">
-      Wir haben mit der Turingmaschine ein einfaches aber
-      doch sehr mächtiges Modell einer Rechenmaschine
-      kennengelernt. Sie haben vielleicht mittlerweile -
-      auch durch Ihre Programmiererfahrung - das Gefühl, das
-      man im Prinzip alles, was man überhaupt programmieren
-      kann, auch auf einer Turingmaschine hinkriegt.
-      Versetzen Sie sich nun in die Lage der Menschen vor
-      ungefähr 100 Jahren. Damals gab es durchaus
-      Rechenmaschinen. Maschinen zum Addieren und sogar zum
-      Multiplizieren gibt es schon seit dem 17. Jahrhunder
-      (<a href="https://en.wikipedia.org/wiki/Mechanical_calculator">Wikipedia: Mechanical
-        calculator</a>).
-      Leider musste man für jede Aufgabe eine neue Maschine
-      erfinden und auch bauen. Zahlen addieren? Maschine
-      bauen. Multiplizieren? Neue Maschine bauen.
-      Verschlüsselung brechen? Neue Maschine bauen. Und so
-      weiter. Die Idee einer
-      <a href="https://en.wikipedia.org/wiki/Mechanical_calculator#Programmable_mechanical_calculators">programmierbaren
-        Maschine</a>,
-      die erstmals circa 1834 mit Charles Babbage aufkam,
-      ist, dass man neben den Eingabedaten (z.B. die zu
-      multiplizierenden Zahlen) auch die Rechenvorschrift
-      (das Programm) als Eingabe übergibt. Hätte man so eine
-      Maschine, dann müsste man nicht für jede neue Aufgabe
-      eine neue Maschine entwerfen; man könnte
-      <i>eine</i>
-      Maschine bauen und sie für die jeweilige Aufgabe
-      <span class="nowrap"><i>programmieren</i>,</span>
-      indem ihr auf einem separaten
-      Eingabeband die Rechenvorschrift überreicht. Von heute
-      aus gesehen ist diese Idee nicht mehr allzu
-      überraschend, weil diese Maschinen überall anzutreffen
-      sind. Damals aber war es revolutionär. Um dies,
-      zumindest auf dem Papier, in die Realität zu
-      übersetzen, müssen wir zwei Fragen beantworten.
+      <span class="t-3003-c">Wir haben mit der Turingmaschine ein einfaches aber<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:4:5</span></span>
+      <span class="t-3003-c">doch sehr mächtiges Modell einer Rechenmaschine<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:5:5</span></span>
+      <span class="t-3003-c">kennengelernt. Sie haben vielleicht mittlerweile -<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:6:5</span></span>
+      <span class="t-3003-c">auch durch Ihre Programmiererfahrung - das Gefühl, das<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:7:5</span></span>
+      <span class="t-3003-c">man im Prinzip alles, was man überhaupt programmieren<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:8:5</span></span>
+      <span class="t-3003-c">kann, auch auf einer Turingmaschine hinkriegt.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:9:5</span></span>
+      <span class="t-3003-c">Versetzen Sie sich nun in die Lage der Menschen vor<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:10:5</span></span>
+      <span class="t-3003-c">ungefähr 100 Jahren. Damals gab es durchaus<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:11:5</span></span>
+      <span class="t-3003-c">Rechenmaschinen. Maschinen zum Addieren und sogar zum<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:12:5</span></span>
+      <span class="t-3003-c">Multiplizieren gibt es schon seit dem 17. Jahrhunder<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:13:5</span></span>
+      <span class="t-3003-c">(<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:14:5</span></span><a href="https://en.wikipedia.org/wiki/Mechanical_calculator"><span class="t-3003-c">Wikipedia: Mechanical<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:14:7</span></span>
+        <span class="t-3003-c">calculator<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:15:5</span></span></a><span class="t-3003-c">).<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:15:69</span></span>
+      <span class="t-3003-c">Leider musste man für jede Aufgabe eine neue Maschine<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:16:5</span></span>
+      <span class="t-3003-c">erfinden und auch bauen. Zahlen addieren? Maschine<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:17:5</span></span>
+      <span class="t-3003-c">bauen. Multiplizieren? Neue Maschine bauen.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:18:5</span></span>
+      <span class="t-3003-c">Verschlüsselung brechen? Neue Maschine bauen. Und so<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:19:5</span></span>
+      <span class="t-3003-c">weiter. Die Idee einer
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:20:5</span></span><a href="https://en.wikipedia.org/wiki/Mechanical_calculator#Programmable_mechanical_calculators"><span class="t-3003-c">programmierbaren<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:20:29</span></span>
+        <span class="t-3003-c">Maschine<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:21:5</span></span></a><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:21:103</span></span>
+      <span class="t-3003-c">die erstmals circa 1834 mit Charles Babbage aufkam,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:22:5</span></span>
+      <span class="t-3003-c">ist, dass man neben den Eingabedaten (z.B. die zu<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:23:5</span></span>
+      <span class="t-3003-c">multiplizierenden Zahlen) auch die Rechenvorschrift<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:24:5</span></span>
+      <span class="t-3003-c">(das Programm) als Eingabe übergibt. Hätte man so eine<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:25:5</span></span>
+      <span class="t-3003-c">Maschine, dann müsste man nicht für jede neue Aufgabe<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:26:5</span></span>
+      <span class="t-3003-c">eine neue Maschine entwerfen; man könnte
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:27:5</span></span><i><span class="t-3003-c">eine<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:27:47</span></span></i><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:27:52</span></span>
+      <span class="t-3003-c">Maschine bauen und sie für die jeweilige Aufgabe<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:28:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:29:5</span></span><span class="nowrap"><i><span class="t-3003-c">programmieren<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:29:6</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:29:20</span></span></span><span class="t-3003-c">
+        indem ihr auf einem separaten<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:29:20</span></span>
+      <span class="t-3003-c">Eingabeband die Rechenvorschrift überreicht. Von heute<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:30:5</span></span>
+      <span class="t-3003-c">aus gesehen ist diese Idee nicht mehr allzu<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:31:5</span></span>
+      <span class="t-3003-c">überraschend, weil diese Maschinen überall anzutreffen<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:32:5</span></span>
+      <span class="t-3003-c">sind. Damals aber war es revolutionär. Um dies,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:33:5</span></span>
+      <span class="t-3003-c">zumindest auf dem Papier, in die Realität zu<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:34:5</span></span>
+      <span class="t-3003-c">übersetzen, müssen wir zwei Fragen beantworten.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:35:5</span></span>
     </p>
     <div class="main-column">
       <ol>
         <li>
           <p>
-            Wie können wir eine Rechenvorschrift (d.h. ein
-            Programm) so codifizieren, dass wir es im Prinzip als
-            eine Zeichenkette aufschreiben und einer Maschine
-            übergeben können?
+            <span class="t-3003-c">Wie können wir eine Rechenvorschrift (d.h. ein<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:39:13</span></span>
+            <span class="t-3003-c">Programm) so codifizieren, dass wir es im Prinzip als<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:40:13</span></span>
+            <span class="t-3003-c">eine Zeichenkette aufschreiben und einer Maschine<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:41:13</span></span>
+            <span class="t-3003-c">übergeben können?<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:42:13</span></span>
           </p>
         </li>
         <li>
           <p>
-            Welche Maschine könnte so eine Rechenvorschrift lesen
-            und sie an gegebenen Eingabedaten dann auch ausführen?
+            <span class="t-3003-c">Welche Maschine könnte so eine Rechenvorschrift lesen<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:45:13</span></span>
+            <span class="t-3003-c">und sie an gegebenen Eingabedaten dann auch ausführen?<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:46:13</span></span>
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
-      Es stellt sich heraus, dass wir beide Antworten
-      (beinahe) schon kennen. Eine beliebige
-      Rechenvorschrift können wir, da sind wir uns
-      mittlerweile recht sicher, als Turingmaschine $M$
-      implementieren. Diese können wir über einem Alphabet
-      codieren und erhalten ein Wort
-      <span class="nowrap">$\enc(M)$.</span>
-      Wie tun wir
-      das? Nun ja, auf
-      <a href="ttps://turingmachinesimulator.com">turingmachinesimulator.com</a>
-      haben wir das bereits getan: eine Turingmaschine mit
-      Alphabet $\Sigma$ können wir dort als String über dem
-      Alphabet
+      <span class="t-3003-c">Es stellt sich heraus, dass wir beide Antworten<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:48:5</span></span>
+      <span class="t-3003-c">(beinahe) schon kennen. Eine beliebige<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:49:5</span></span>
+      <span class="t-3003-c">Rechenvorschrift können wir, da sind wir uns<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:50:5</span></span>
+      <span class="t-3003-c">mittlerweile recht sicher, als Turingmaschine
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:51:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:51:51</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:51:54</span></span>
+      <span class="t-3003-c">implementieren. Diese können wir über einem Alphabet<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:52:5</span></span>
+      <span class="t-3003-c">codieren und erhalten ein Wort
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:53:5</span></span><span class="nowrap"><span class="t-3003-c">$\enc(M)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:53:36</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:53:45</span></span></span><span class="t-3003-c">
+        Wie tun wir<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:53:45</span></span>
+      <span class="t-3003-c">das? Nun ja, auf<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:54:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:55:5</span></span><a href="ttps://turingmachinesimulator.com"><span class="t-3003-c">turingmachinesimulator.com<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:55:6</span></span></a><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:55:68</span></span>
+      <span class="t-3003-c">haben wir das bereits getan: eine Turingmaschine mit<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:56:5</span></span>
+      <span class="t-3003-c">Alphabet
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:57:5</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:57:14</span></span><span class="t-3003-c">
+        können wir dort als String über dem<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:57:22</span></span>
+      <span class="t-3003-c">Alphabet<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:58:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
@@ -119,75 +127,100 @@
       \Sigma \cup \{a,\dots,z,A\dots,Z,0,\dots,9\} \cup \{\texttt{&lt;}, \texttt{-}, \texttt{&gt;},
       \texttt{,}, \texttt{_}, \texttt{\n}, \dots\}
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:60:5</span>
     </div>
     <p class="main-column">
-      codieren. Codierung ist im Prinzip kein Problem, wir
-      werden aber ein paar Subtilitäten ansprechen. Punkt 2
-      ist schwieriger. Können wir eine Maschine bauen, die
-      als eingabe (1) die Codierung $\enc(M)$ einer
-      Turingmaschine und (2) ein Eingabewort
-      $w \in \Sigma^*$ entgegennimmt und dann die
-      Berechnung $M(x)$ simuliert bzw. zu dem Ergebnis
-      gelangt, zu dem auch $M(x)$ gelangen würde? Die
-      Programmierer von
-      <a href="https://turingmachinesimulator.com">turingmachinesimulator.com</a>
-      haben dies offensichtlich geschafft: sie haben eine
-      Maschine "gebaut" (also wohl einen Server gemietet und
-      eine Webseite mit viel Javascript programmiert), der
-      eine Turingmaschine in einer spezifischen Codierung
-      und ein Eingabewort einliest und dann diese simuliert.
-      In diesem Teilkapitel werden wir sehen, wie wir eine
-      Turingmaschine $M$ über einem fixen, nicht von $M$
-      abhängigen Alphabet codieren können. Im nächsten
-      Teilkapitel werden wir uns überlegen, wie man einen
-      Turingmaschinen-Simulator selbst als Turingmaschine
-      implementieren kann. Also eine Turingmaschine
-      <span class="nowrap">$U$,</span>
-      die als Input Wörter der Form
+      <span class="t-3003-c">codieren. Codierung ist im Prinzip kein Problem, wir<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:65:5</span></span>
+      <span class="t-3003-c">werden aber ein paar Subtilitäten ansprechen. Punkt 2<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:66:5</span></span>
+      <span class="t-3003-c">ist schwieriger. Können wir eine Maschine bauen, die<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:67:5</span></span>
+      <span class="t-3003-c">als eingabe (1) die Codierung
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:68:5</span></span><span class="t-3003-c">$\enc(M)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:68:35</span></span><span class="t-3003-c">
+        einer<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:68:44</span></span>
+      <span class="t-3003-c">Turingmaschine und (2) ein Eingabewort<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:69:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:70:5</span></span><span class="t-3003-c">$w \in \Sigma^*$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:70:5</span></span><span class="t-3003-c">
+        entgegennimmt und dann die<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:70:21</span></span>
+      <span class="t-3003-c">Berechnung
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:71:5</span></span><span class="t-3003-c">$M(x)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:71:16</span></span><span class="t-3003-c">
+        simuliert bzw. zu dem Ergebnis<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:71:22</span></span>
+      <span class="t-3003-c">gelangt, zu dem auch
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:72:5</span></span><span class="t-3003-c">$M(x)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:72:26</span></span><span class="t-3003-c">
+        gelangen würde? Die<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:72:32</span></span>
+      <span class="t-3003-c">Programmierer von<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:73:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:74:5</span></span><a href="https://turingmachinesimulator.com"><span class="t-3003-c">turingmachinesimulator.com<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:74:6</span></span></a><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:74:69</span></span>
+      <span class="t-3003-c">haben dies offensichtlich geschafft: sie haben eine<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:75:5</span></span>
+      <span class="t-3003-c">Maschine "gebaut" (also wohl einen Server gemietet und<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:76:5</span></span>
+      <span class="t-3003-c">eine Webseite mit viel Javascript programmiert), der<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:77:5</span></span>
+      <span class="t-3003-c">eine Turingmaschine in einer spezifischen Codierung<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:78:5</span></span>
+      <span class="t-3003-c">und ein Eingabewort einliest und dann diese simuliert.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:79:5</span></span>
+      <span class="t-3003-c">In diesem Teilkapitel werden wir sehen, wie wir eine<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:80:5</span></span>
+      <span class="t-3003-c">Turingmaschine
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:81:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:81:20</span></span><span class="t-3003-c">
+        über einem fixen, nicht von
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:81:23</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:81:52</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:81:55</span></span>
+      <span class="t-3003-c">abhängigen Alphabet codieren können. Im nächsten<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:82:5</span></span>
+      <span class="t-3003-c">Teilkapitel werden wir uns überlegen, wie man einen<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:83:5</span></span>
+      <span class="t-3003-c">Turingmaschinen-Simulator selbst als Turingmaschine<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:84:5</span></span>
+      <span class="t-3003-c">implementieren kann. Also eine Turingmaschine
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:85:5</span></span><span class="nowrap"><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:85:51</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:85:54</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:85:54</span></span>
+      <span class="t-3003-c">die als Input Wörter der Form<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:86:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       c\#x
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:88:5</span>
     </div>
     <p class="main-column">
-      entgegennimmt und dann
+      <span class="t-3003-c">entgegennimmt und dann<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:92:5</span></span>
     </p>
     <div class="main-column">
       <ol>
         <li>
           <p>
-            <span class="nowrap"><b>ablehnt</b>,</span>
-            falls $c$ keine gültige Codierung einer
-            Turingmaschine $M$ ist,
+            <span class="nowrap"><b><span class="t-3003-c">ablehnt<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:96:14</span></span></b><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:96:22</span></span></span><span class="t-3003-c">
+              falls
+              <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:96:22</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:96:30</span></span><span class="t-3003-c">
+              keine gültige Codierung einer<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:96:33</span></span>
+            <span class="t-3003-c">Turingmaschine
+              <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:97:13</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:97:28</span></span><span class="t-3003-c">
+              ist,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:97:31</span></span>
           </p>
         </li>
         <li>
           <p>
-            ansonsten, falls also
-            <span class="nowrap">$c = \enc(M)$,</span>
-            dann
+            <span class="t-3003-c">ansonsten, falls also
+              <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:100:13</span></span><span class="nowrap"><span class="t-3003-c">$c = \enc(M)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:100:35</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:100:48</span></span></span><span class="t-3003-c">
+              dann<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:100:48</span></span>
           </p>
           <ol>
             <li>
               <p>
-                <b>akzeptiert</b>
-                falls $M(x)$ akzeptiert;
+                <b><span class="t-3003-c">akzeptiert<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:104:22</span></span></b><span class="t-3003-c">
+                  falls
+                  <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:104:33</span></span><span class="t-3003-c">$M(x)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:104:40</span></span><span class="t-3003-c">
+                  akzeptiert;<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:104:46</span></span>
               </p>
             </li>
             <li>
               <p>
-                <span class="nowrap"><b>ablehnt</b>,</span>
-                falls $M(x)$ ablehnt
+                <span class="nowrap"><b><span class="t-3003-c">ablehnt<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:107:22</span></span></b><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:107:30</span></span></span><span class="t-3003-c">
+                  falls
+                  <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:107:30</span></span><span class="t-3003-c">$M(x)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:107:38</span></span><span class="t-3003-c">
+                  ablehnt<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:107:44</span></span>
               </p>
             </li>
             <li>
               <p>
-                <span class="nowrap"><b>nicht terminiert</b>,</span>
-                falls $M(x)$ nicht terminiert.
+                <span class="nowrap"><b><span class="t-3003-c">nicht terminiert<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:110:22</span></span></b><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:110:39</span></span></span><span class="t-3003-c">
+                  falls
+                  <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:110:39</span></span><span class="t-3003-c">$M(x)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:110:47</span></span><span class="t-3003-c">
+                  nicht terminiert.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:110:53</span></span>
               </p>
             </li>
           </ol>
@@ -195,54 +228,79 @@
       </ol>
     </div>
     <p class="main-column">
-      Falls wir bei $M$ nicht nur an Akzeptieren / Ablehnen
-      interessiert sind, sondern am Ergebnis der Berechnung,
-      dann hätten wir gerne, dass $U (\enc(M)\#x)$ am Ende
-      den gleichen Bandinhalt hat wie $M(x)$ am Ende;
-      hierbei gibt es allerdings eine Schwierigkeit mit den
-      Details der Codierung, die wir gleich ansprechen
-      werden.
+      <span class="t-3003-c">Falls wir bei
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:112:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:112:19</span></span><span class="t-3003-c">
+        nicht nur an Akzeptieren / Ablehnen<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:112:22</span></span>
+      <span class="t-3003-c">interessiert sind, sondern am Ergebnis der Berechnung,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:113:5</span></span>
+      <span class="t-3003-c">dann hätten wir gerne, dass
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:114:5</span></span><span class="t-3003-c">$U (\enc(M)\#x)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:114:33</span></span><span class="t-3003-c">
+        am Ende<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:114:49</span></span>
+      <span class="t-3003-c">den gleichen Bandinhalt hat wie
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:115:5</span></span><span class="t-3003-c">$M(x)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:115:37</span></span><span class="t-3003-c">
+        am Ende;<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:115:43</span></span>
+      <span class="t-3003-c">hierbei gibt es allerdings eine Schwierigkeit mit den<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:116:5</span></span>
+      <span class="t-3003-c">Details der Codierung, die wir gleich ansprechen<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:117:5</span></span>
+      <span class="t-3003-c">werden.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:118:5</span></span>
     </p>
     <h3 class="main-column subtopic-announcement">
-      Die Codierung
+      <span class="t-3003-c">Die Codierung<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:121:9</span></span>
     </h3>
     <p class="main-column">
-      Zuerst müssen wir uns auf ein Eingabealphabet $\Sigma$
-      einigen. Im Ernstfall genügt immer
-      <span class="nowrap">$\Sigma = \{0,1\}$,</span>
-      allerdings gibt es keinen Grund, für die Definitionen
-      nicht allgemeine endliche Alphabete $\Sigma$
-      zuzulassen. Wir wollen nun ein Codierungsalphabet
-      $\Lambda$ und eine Codierungsfunktion
-      <span class="nowrap">$\enc$,</span>
-      so dass
+      <span class="t-3003-c">Zuerst müssen wir uns auf ein Eingabealphabet
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:123:5</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:123:51</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:123:59</span></span>
+      <span class="t-3003-c">einigen. Im Ernstfall genügt immer
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:124:5</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma = \{0,1\}$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:124:40</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:124:58</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:124:58</span></span>
+      <span class="t-3003-c">allerdings gibt es keinen Grund, für die Definitionen<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:125:5</span></span>
+      <span class="t-3003-c">nicht allgemeine endliche Alphabete
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:126:5</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:126:41</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:126:49</span></span>
+      <span class="t-3003-c">zuzulassen. Wir wollen nun ein Codierungsalphabet<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:127:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:128:5</span></span><span class="t-3003-c">$\Lambda$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:128:5</span></span><span class="t-3003-c">
+        und eine Codierungsfunktion
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:128:14</span></span><span class="nowrap"><span class="t-3003-c">$\enc$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:128:43</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:128:49</span></span></span><span class="t-3003-c">
+        so dass<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:128:49</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \enc(M) \in \Lambda^*
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:130:5</span>
     </div>
     <p class="main-column">
-      für jede Turingmaschine $M$ mit Eingabealphabet
-      $\Sigma$ gilt.
-      <b>Erster, zum scheitern verurteilter
-        Versuch.</b>
-      Sei $M$ eine Turingmaschine mit
-      Eingabealphabet
-      <span class="nowrap">$\Sigma$,</span>
-      Arbeitsalphabet
-      <span class="nowrap">$\Gamma$,</span>
-      Zustandsmenge
-      <span class="nowrap">$Q$,</span>
-      Startzustand
-      <span class="nowrap">$\qstart$,</span>
-      akzeptierendem Zustand $\qaccept$ und
-      Übergangsfunktion
-      <span class="nowrap">$\delta$.</span>
-      Wir codieren $M$ wie
-      folgt: wenn
+      <span class="t-3003-c">für jede Turingmaschine
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:134:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:134:29</span></span><span class="t-3003-c">
+        mit Eingabealphabet<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:134:32</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:135:5</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:135:5</span></span><span class="t-3003-c">
+        gilt.
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:135:13</span></span><b><span class="t-3003-c">Erster, zum scheitern verurteilter<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:135:21</span></span>
+        <span class="t-3003-c">Versuch.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:136:5</span></span></b><span class="t-3003-c">
+        Sei
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:136:14</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:136:19</span></span><span class="t-3003-c">
+        eine Turingmaschine mit<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:136:22</span></span>
+      <span class="t-3003-c">Eingabealphabet
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:137:5</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:137:21</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:137:29</span></span></span><span class="t-3003-c">
+        Arbeitsalphabet
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:137:29</span></span><span class="nowrap"><span class="t-3003-c">$\Gamma$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:137:47</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:137:55</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:137:55</span></span>
+      <span class="t-3003-c">Zustandsmenge
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:138:5</span></span><span class="nowrap"><span class="t-3003-c">$Q$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:138:19</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:138:22</span></span></span><span class="t-3003-c">
+        Startzustand
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:138:22</span></span><span class="nowrap"><span class="t-3003-c">$\qstart$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:138:37</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:138:46</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:138:46</span></span>
+      <span class="t-3003-c">akzeptierendem Zustand
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:139:5</span></span><span class="t-3003-c">$\qaccept$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:139:28</span></span><span class="t-3003-c">
+        und<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:139:38</span></span>
+      <span class="t-3003-c">Übergangsfunktion
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:140:5</span></span><span class="nowrap"><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:140:23</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:140:31</span></span></span><span class="t-3003-c">
+        Wir codieren
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:140:31</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:140:46</span></span><span class="t-3003-c">
+        wie<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:140:49</span></span>
+      <span class="t-3003-c">folgt: wenn<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:141:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
@@ -251,161 +309,218 @@
       \delta(q,y) = (s,z,\texttt{L}) \\
       \dots
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:143:5</span>
     </div>
     <p class="main-column">
-      dann schreiben wir in der Codierung
+      <span class="t-3003-c">dann schreiben wir in der Codierung<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:149:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \qstart \# \qaccept \# qxryR \# qyszL \# \dots
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:151:5</span>
     </div>
     <p class="main-column">
-      Unser Codierungsalphabet ist also
+      <span class="t-3003-c">Unser Codierungsalphabet ist also<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:155:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \Lambda := Q \cup \Gamma \cup \{\#, \texttt{L}, \texttt{S}, \texttt{R}\} \ .
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:157:5</span>
     </div>
     <p class="main-column">
-      Sehen Sie das Problem? Das Codierungsalphabet ist
-      nicht uniform: wir brauchen, abhängig von der
-      Zustandsmenge $Q$ und dem Bandalphabet $\Gamma$
-      jeweils neue Alphabete. Wir wollen aber ein
-      <span class="nowrap">$\Lambda$,</span>
-      da für
-      <i>alle</i>
-      Turingmaschinen mit Eingabealphabet
-      $\Sigma$ funktioniert.
-      <b>Zweiter, erfolgreicher
-        Versuch.</b>
-      Wir müssen also die Zustandsmenge $Q$ und
-      die Zeichen $\Gamma \setminus \Sigma$ erst einmal
-      selbst codieren, beispielsweise über dem Alphabet
-      <span class="nowrap">$\{0,1\}$.</span>
-      Die
-      <span class="nowrap">$\delta$-Tabelle</span>
-      der Turingmaschine
-      für $\{a^nb^nc^n\}$
+      <span class="t-3003-c">Sehen Sie das Problem? Das Codierungsalphabet ist<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:161:5</span></span>
+      <span class="t-3003-c">nicht uniform: wir brauchen, abhängig von der<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:162:5</span></span>
+      <span class="t-3003-c">Zustandsmenge
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:163:5</span></span><span class="t-3003-c">$Q$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:163:19</span></span><span class="t-3003-c">
+        und dem Bandalphabet
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:163:22</span></span><span class="t-3003-c">$\Gamma$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:163:44</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:163:52</span></span>
+      <span class="t-3003-c">jeweils neue Alphabete. Wir wollen aber ein
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:164:5</span></span><span class="nowrap"><span class="t-3003-c">$\Lambda$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:164:49</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:164:58</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:164:58</span></span>
+      <span class="t-3003-c">da für
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:165:5</span></span><i><span class="t-3003-c">alle<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:165:13</span></span></i><span class="t-3003-c">
+        Turingmaschinen mit Eingabealphabet<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:165:18</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:166:5</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:166:5</span></span><span class="t-3003-c">
+        funktioniert.
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:166:13</span></span><b><span class="t-3003-c">Zweiter, erfolgreicher<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:166:29</span></span>
+        <span class="t-3003-c">Versuch.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:167:5</span></span></b><span class="t-3003-c">
+        Wir müssen also die Zustandsmenge
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:167:14</span></span><span class="t-3003-c">$Q$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:167:49</span></span><span class="t-3003-c">
+        und<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:167:52</span></span>
+      <span class="t-3003-c">die Zeichen
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:168:5</span></span><span class="t-3003-c">$\Gamma \setminus \Sigma$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:168:17</span></span><span class="t-3003-c">
+        erst einmal<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:168:42</span></span>
+      <span class="t-3003-c">selbst codieren, beispielsweise über dem Alphabet<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:169:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:170:5</span></span><span class="nowrap"><span class="t-3003-c">$\{0,1\}$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:170:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:170:14</span></span></span><span class="t-3003-c">
+        Die
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:170:14</span></span><span class="nowrap"><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:170:20</span></span><span class="t-3003-c">-Tabelle<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:170:28</span></span></span><span class="t-3003-c">
+        der Turingmaschine<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:170:28</span></span>
+      <span class="t-3003-c">für
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:171:5</span></span><span class="t-3003-c">$\{a^nb^nc^n\}$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:171:9</span></span>
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:10em"
           src="img/turing-machines/exampe-2-aabbcc/delta-table.svg"
-        >
+        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/exampe-2-aabbcc/delta-table.svg</span></span>
       </figure>
     </div>
     <p class="main-column">
-      würde dann zu folgender Tabelle:
+      <span class="t-3003-c">würde dann zu folgender Tabelle:<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:178:5</span></span>
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:10em"
           src="img/turing-machines/exampe-2-aabbcc/delta-table-encoded.svg"
-        >
+        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/exampe-2-aabbcc/delta-table-encoded.svg</span></span>
       </figure>
     </div>
     <p class="main-column">
-      Wenn wir dies nun als
-      <i>ein</i>
-      Wort in obigen Schema
-      schreiben, können wir für eine Tabellenzelle
-      $\delta(q,x) = (r,y,R)$ nicht einfach $qxryR$
-      schreiben, auch nicht einfach die Codierungen
-      zusammenschreiben: in diesem Falle würde nämlich
-      $\delta(00,0) = (11,0,\texttt{R})$ zu
-      $000110\texttt{R}$ und wir würden nicht mehr
-      erkennen, wo welches Zeichen beginnt und aufhört. Wir
-      brauchen ein Separatorzeichen, beispielsweise ein
-      Komma. Aus Gründen, die später klar werden werden,
-      schließen wir die Codierung der Turingmaschine mit
-      einem $\texttt{;}$ ab. Die Codierung der obigen
-      Maschine ist dann also
+      <span class="t-3003-c">Wenn wir dies nun als
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:185:5</span></span><i><span class="t-3003-c">ein<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:185:28</span></span></i><span class="t-3003-c">
+        Wort in obigen Schema<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:185:32</span></span>
+      <span class="t-3003-c">schreiben, können wir für eine Tabellenzelle<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:186:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:187:5</span></span><span class="t-3003-c">$\delta(q,x) = (r,y,R)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:187:5</span></span><span class="t-3003-c">
+        nicht einfach
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:187:28</span></span><span class="t-3003-c">$qxryR$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:187:43</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:187:50</span></span>
+      <span class="t-3003-c">schreiben, auch nicht einfach die Codierungen<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:188:5</span></span>
+      <span class="t-3003-c">zusammenschreiben: in diesem Falle würde nämlich<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:189:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:190:5</span></span><span class="t-3003-c">$\delta(00,0) = (11,0,\texttt{R})$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:190:5</span></span><span class="t-3003-c">
+        zu<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:190:39</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:191:5</span></span><span class="t-3003-c">$000110\texttt{R}$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:191:5</span></span><span class="t-3003-c">
+        und wir würden nicht mehr<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:191:23</span></span>
+      <span class="t-3003-c">erkennen, wo welches Zeichen beginnt und aufhört. Wir<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:192:5</span></span>
+      <span class="t-3003-c">brauchen ein Separatorzeichen, beispielsweise ein<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:193:5</span></span>
+      <span class="t-3003-c">Komma. Aus Gründen, die später klar werden werden,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:194:5</span></span>
+      <span class="t-3003-c">schließen wir die Codierung der Turingmaschine mit<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:195:5</span></span>
+      <span class="t-3003-c">einem
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:196:5</span></span><span class="t-3003-c">$\texttt{;}$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:196:11</span></span><span class="t-3003-c">
+        ab. Die Codierung der obigen<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:196:23</span></span>
+      <span class="t-3003-c">Maschine ist dann also<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:197:5</span></span>
     </p>
     <div class="main-column">
 <pre>
-00#100#00,a,01,1,S#00,b,L#00,c,L#00,1,L#00,0,11,0,R#01,a,R#01,b,10,1,S#01,1,R#10,b,R#10,c,00,1,S#10,1,R#11,1,R#11,0,100#;
+<span class="t-3003-c">00#100#00,a,01,1,S#00,b,L#00,c,L#00,1,L#00,0,11,0,R#01,a,R#01,b,10,1,S#01,1,R#10,b,R#10,c,00,1,S#10,1,R#11,1,R#11,0,100#;<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:200:5</span></span>
 </pre>
     </div>
     <p class="main-column">
-      In dieser Codierung behalten wir zwei Konventionen
-      bei: wenn eine Regel "fehlt", also beispielsweise für
-      $\delta(10,a)$ die Zelle leer ist, dann soll das in
-      den Zustand $\qreject$ führen; wenn in der Zelle nur
-      ein Richtungszeichen, also beispielsweise
-      <code>01,1,R</code>
-      steht, dann ist das eine Abkürzung für
+      <span class="t-3003-c">In dieser Codierung behalten wir zwei Konventionen<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:203:5</span></span>
+      <span class="t-3003-c">bei: wenn eine Regel "fehlt", also beispielsweise für<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:204:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:205:5</span></span><span class="t-3003-c">$\delta(10,a)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:205:5</span></span><span class="t-3003-c">
+        die Zelle leer ist, dann soll das in<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:205:19</span></span>
+      <span class="t-3003-c">den Zustand
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:206:5</span></span><span class="t-3003-c">$\qreject$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:206:17</span></span><span class="t-3003-c">
+        führen; wenn in der Zelle nur<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:206:27</span></span>
+      <span class="t-3003-c">ein Richtungszeichen, also beispielsweise
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:207:5</span></span><code><span class="t-3003-c">01,1,R<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:207:48</span></span></code><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:207:55</span></span>
+      <span class="t-3003-c">steht, dann ist das eine Abkürzung für<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:208:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \delta(01,1) = (01,1,\texttt{R}),
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:210:5</span>
     </div>
     <p class="main-column">
-      also
-      <code>#01,1,01,1,R#</code>
-      Wir können nun
-      <i>jede</i>
-      Turingmaschine über dem Alphabet $\Sigma$ codieren
-      als Wort über dem Alphabet
+      <span class="t-3003-c">also
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:214:5</span></span><code><span class="t-3003-c">#01,1,01,1,R#<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:214:11</span></span></code><span class="t-3003-c">
+        Wir können nun
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:214:25</span></span><i><span class="t-3003-c">jede<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:214:42</span></span></i><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:214:47</span></span>
+      <span class="t-3003-c">Turingmaschine über dem Alphabet
+        <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:215:5</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:215:38</span></span><span class="t-3003-c">
+        codieren<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:215:46</span></span>
+      <span class="t-3003-c">als Wort über dem Alphabet<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:216:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \Lambda := \writelambda
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:218:5</span>
     </div>
     <div class="well statement out">
       <p>
-        <b>Definition 8.4.1</b>
-        Zu einem Eingabealphabet $\Sigma$ definieren wir das
-        <i>Codierungsalphabet</i>
-        <span class="nowrap">$\Lambda := \writelambda$,</span>
-        wobei
-        wir annehmen, dass
-        <span class="nowrap">$\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S},
-          \texttt{R}, \texttt{;} \not \in \Sigma$.</span>
-        Wir können nun jede Turingmaschine $M$ mit
-        Eingabealphabet $\Sigma$ als String
-        $\enc(M) \in \Lambda^*$ codieren. Per Konvention
-        kommt
-        <code>;</code>
-        in $\enc(M)$ genau einmal vor, nämlich am
-        Schluss.
+        <b><span class="t-3003-c">Definition 8.4.1<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:222:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:222:5</span></span>
+        <span class="t-3003-c">Zu einem Eingabealphabet
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:223:9</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:223:34</span></span><span class="t-3003-c">
+          definieren wir das<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:223:42</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:224:9</span></span><i><span class="t-3003-c">Codierungsalphabet<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:224:10</span></span></i><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:224:29</span></span><span class="nowrap"><span class="t-3003-c">$\Lambda := \writelambda$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:224:30</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:224:55</span></span></span><span class="t-3003-c">
+          wobei<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:224:55</span></span>
+        <span class="t-3003-c">wir annehmen, dass<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:225:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:226:9</span></span><span class="nowrap"><span class="t-3003-c">$\texttt{#}, \texttt{,}, \texttt{L}, \texttt{S},
+            \texttt{R}, \texttt{;} \not \in \Sigma$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:226:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:227:48</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:227:48</span></span>
+        <span class="t-3003-c">Wir können nun jede Turingmaschine
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:228:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:228:44</span></span><span class="t-3003-c">
+          mit<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:228:47</span></span>
+        <span class="t-3003-c">Eingabealphabet
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:229:9</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:229:25</span></span><span class="t-3003-c">
+          als String<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:229:33</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:230:9</span></span><span class="t-3003-c">$\enc(M) \in \Lambda^*$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:230:9</span></span><span class="t-3003-c">
+          codieren. Per Konvention<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:230:32</span></span>
+        <span class="t-3003-c">kommt
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:231:9</span></span><code><span class="t-3003-c">;<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:231:16</span></span></code><span class="t-3003-c">
+          in
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:231:18</span></span><span class="t-3003-c">$\enc(M)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:231:22</span></span><span class="t-3003-c">
+          genau einmal vor, nämlich am<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:231:31</span></span>
+        <span class="t-3003-c">Schluss.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:232:9</span></span>
       </p>
     </div>
     <div class="well alert-info out main-column">
       <p>
-        <b>Anmerkungen:</b>
-        das Wort
-        <i>Codierung</i>
-        suggeriert, dass
-        wir, gegeben den String $c = \enc(M)$ die
-        ursprüngliche Turingmaschine $M$ rekonstruieren
-        können. Das gilt natürlich nur beschränkt: eventuell
-        decodieren wir $c$ zu einer Maschine
-        <span class="nowrap">$M'$,</span>
-        die sich
-        von $M$ in denen Namen der Zustände und der
-        Bandalphabetsymbole unterscheidet. Allerdings stimmen
-        die Funktionen
-        $f_M: \Sigma^* \rightarrow \{\texttt{accept},
-        \texttt{reject}, \texttt{undefined}\}$
-        und
-        $f_{M'}: \Sigma^* \rightarrow \{\texttt{accept},
-        \texttt{reject}, \texttt{undefined}\}$
-        überein.
+        <b><span class="t-3003-c">Anmerkungen:<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:236:10</span></span></b><span class="t-3003-c">
+          das Wort
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:236:23</span></span><i><span class="t-3003-c">Codierung<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:236:34</span></span></i><span class="t-3003-c">
+          suggeriert, dass<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:236:44</span></span>
+        <span class="t-3003-c">wir, gegeben den String
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:237:9</span></span><span class="t-3003-c">$c = \enc(M)$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:237:33</span></span><span class="t-3003-c">
+          die<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:237:46</span></span>
+        <span class="t-3003-c">ursprüngliche Turingmaschine
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:238:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:238:38</span></span><span class="t-3003-c">
+          rekonstruieren<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:238:41</span></span>
+        <span class="t-3003-c">können. Das gilt natürlich nur beschränkt: eventuell<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:239:9</span></span>
+        <span class="t-3003-c">decodieren wir
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:240:9</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:240:24</span></span><span class="t-3003-c">
+          zu einer Maschine
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:240:27</span></span><span class="nowrap"><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:240:46</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:240:50</span></span></span><span class="t-3003-c">
+          die sich<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:240:50</span></span>
+        <span class="t-3003-c">von
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:241:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:241:13</span></span><span class="t-3003-c">
+          in denen Namen der Zustände und der<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:241:16</span></span>
+        <span class="t-3003-c">Bandalphabetsymbole unterscheidet. Allerdings stimmen<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:242:9</span></span>
+        <span class="t-3003-c">die Funktionen<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:243:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:244:9</span></span><span class="t-3003-c">$f_M: \Sigma^* \rightarrow \{\texttt{accept},
+          \texttt{reject}, \texttt{undefined}\}$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:244:9</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:245:47</span></span>
+        <span class="t-3003-c">und<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:246:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:247:9</span></span><span class="t-3003-c">$f_{M'}: \Sigma^* \rightarrow \{\texttt{accept},
+          \texttt{reject}, \texttt{undefined}\}$<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:247:9</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:248:47</span></span>
+        <span class="t-3003-c">überein.<span class="t-3003">./course1/wly/08/04-Turing-encoding.wly:249:9</span></span>
       </p>
     </div>
     <div id="end-of-page-elt">

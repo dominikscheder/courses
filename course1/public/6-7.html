@@ -40,31 +40,37 @@
     </div>
     <div class="main-column page-title">
       <p>
-        6.7&ensp;LR-Grammatiken
+        <span class="t-3003-c">6.7&ensp;LR-Grammatiken<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:2:11</span></span>
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      Motivation und Intuition
+      <span class="t-3003-c">Motivation und Intuition<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:5:9</span></span>
     </h2>
     <p class="main-column">
-      Die LL-Parser, die wir in Kapitel 5.4 gesehen haben,
-      versuchen, eine Linksableitung $S \Step{}^* w$
-      Schritt für Schritt zu konstruieren. Eine
-      Hauptschwäche ist, dass Sie von einer Wortform
+      <span class="t-3003-c">Die LL-Parser, die wir in Kapitel 5.4 gesehen haben,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:7:5</span></span>
+      <span class="t-3003-c">versuchen, eine Linksableitung
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:8:5</span></span><span class="t-3003-c">$S \Step{}^* w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:8:36</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:8:51</span></span>
+      <span class="t-3003-c">Schritt für Schritt zu konstruieren. Eine<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:9:5</span></span>
+      <span class="t-3003-c">Hauptschwäche ist, dass Sie von einer Wortform<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:10:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       w A \alpha
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:12:5</span>
     </div>
     <p class="main-column">
-      die nächste Ableitungsregel $A \rightarrow \beta$
-      bestimmen müssen, ohne das "Endergebnis" von $\beta$
-      überhaupt vollständig gelesen zu haben. Sie müssen
-      also erkennen, dass der rote / mit "?" markierte Pfeil
-      in der Ableitung
+      <span class="t-3003-c">die nächste Ableitungsregel
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:16:5</span></span><span class="t-3003-c">$A \rightarrow \beta$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:16:33</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:16:54</span></span>
+      <span class="t-3003-c">bestimmen müssen, ohne das "Endergebnis" von
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:17:5</span></span><span class="t-3003-c">$\beta$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:17:50</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:17:57</span></span>
+      <span class="t-3003-c">überhaupt vollständig gelesen zu haben. Sie müssen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:18:5</span></span>
+      <span class="t-3003-c">also erkennen, dass der rote / mit "?" markierte Pfeil<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:19:5</span></span>
+      <span class="t-3003-c">in der Ableitung<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:20:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
@@ -72,110 +78,136 @@
       S \Step{}^* w A \alpha \textcolor{red}{\Step{?}} w \beta \alpha
       \Step{}^* w x \alpha \Step{}^* w x y
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:22:5</span>
     </div>
     <p class="main-column">
-      die richtige Entscheidung ist, obwohl sie von dem aus
-      $\beta$ abgeleiteten Wort $x$ nur die ersten $k$
-      Buchstaben sehen. Dem entgegen haben wir in den
-      letzten zwei Teilkapiteln LR-Parser gesehen. Diese
-      versuchen, von $w$ ausgehend eine Rechtsableitung
-      $S \Step{}^* w$ zu finden, allerdings in zeitlich
-      umgekehrter Reihenfolge, also
+      <span class="t-3003-c">die richtige Entscheidung ist, obwohl sie von dem aus<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:27:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:28:5</span></span><span class="t-3003-c">$\beta$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:28:5</span></span><span class="t-3003-c">
+        abgeleiteten Wort
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:28:12</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:28:31</span></span><span class="t-3003-c">
+        nur die ersten
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:28:34</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:28:50</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:28:53</span></span>
+      <span class="t-3003-c">Buchstaben sehen. Dem entgegen haben wir in den<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:29:5</span></span>
+      <span class="t-3003-c">letzten zwei Teilkapiteln LR-Parser gesehen. Diese<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:30:5</span></span>
+      <span class="t-3003-c">versuchen, von
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:31:5</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:31:20</span></span><span class="t-3003-c">
+        ausgehend eine Rechtsableitung<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:31:23</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:32:5</span></span><span class="t-3003-c">$S \Step{}^* w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:32:5</span></span><span class="t-3003-c">
+        zu finden, allerdings in zeitlich<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:32:20</span></span>
+      <span class="t-3003-c">umgekehrter Reihenfolge, also<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:33:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       w \Pets{} \alpha_1 \Pets{} \alpha_2 \Pets{} \dots \Pets{} \alpha_{t-1} \Pets{} S
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:35:5</span>
     </div>
     <h2 class="main-column topic-announcement">
-      Notation
+      <span class="t-3003-c">Notation<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:40:9</span></span>
     </h2>
     <p class="main-column">
-      Da aus der Sicht unseres neuen Parsers die
-      Rückwärtsanwendung einer Produktion
-      <span class="nowrap">$X \rightarrow \beta$,</span>
-      also der Schritt
-      $\alpha X \gamma \Leftarrow \alpha \beta \gamma$
-      einen
-      <i>Fortschritt</i>
-      darstellt und zeitlich auch nach
-      vorne geht, verwende ich ab jetzt ein neues
-      Pfeilsymbol, das von links nach rechts geht und daher
-      dem in Europa üblichen Gefühlt, dass die Zeit von
-      links nach rechts verläuft, mehr entgegen kommt:
-      <span class="nowrap">$\alpha \beta \gamma \rstep{} \alpha X \gamma$.</span>
+      <span class="t-3003-c">Da aus der Sicht unseres neuen Parsers die<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:42:5</span></span>
+      <span class="t-3003-c">Rückwärtsanwendung einer Produktion<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:43:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:44:5</span></span><span class="nowrap"><span class="t-3003-c">$X \rightarrow \beta$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:44:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:44:26</span></span></span><span class="t-3003-c">
+        also der Schritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:44:26</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:45:5</span></span><span class="t-3003-c">$\alpha X \gamma \Leftarrow \alpha \beta \gamma$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:45:5</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:45:53</span></span>
+      <span class="t-3003-c">einen
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:46:5</span></span><i><span class="t-3003-c">Fortschritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:46:12</span></span></i><span class="t-3003-c">
+        darstellt und zeitlich auch nach<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:46:24</span></span>
+      <span class="t-3003-c">vorne geht, verwende ich ab jetzt ein neues<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:47:5</span></span>
+      <span class="t-3003-c">Pfeilsymbol, das von links nach rechts geht und daher<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:48:5</span></span>
+      <span class="t-3003-c">dem in Europa üblichen Gefühlt, dass die Zeit von<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:49:5</span></span>
+      <span class="t-3003-c">links nach rechts verläuft, mehr entgegen kommt:<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:50:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:51:5</span></span><span class="nowrap"><span class="t-3003-c">$\alpha \beta \gamma \rstep{} \alpha X \gamma$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:51:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:51:51</span></span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition 6.7.1 (Reduktion und Linksreduktion)</b>
-        Seien
-        $\alpha, \beta, \gamma \in (\Sigma \cup N)^*$
-        Wortformen und $X \rightarrow \beta$ eine Produktion.
-        Dann schreiben wir
+        <b><span class="t-3003-c">Definition 6.7.1 (Reduktion und Linksreduktion)<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:53:5</span></span></b><span class="t-3003-c">
+          Seien<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:54:41</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:55:9</span></span><span class="t-3003-c">$\alpha, \beta, \gamma \in (\Sigma \cup N)^*$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:55:9</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:55:54</span></span>
+        <span class="t-3003-c">Wortformen und
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:56:9</span></span><span class="t-3003-c">$X \rightarrow \beta$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:56:24</span></span><span class="t-3003-c">
+          eine Produktion.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:56:45</span></span>
+        <span class="t-3003-c">Dann schreiben wir<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:57:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \alpha \beta \gamma \rstep{} \alpha X \gamma \ ,
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:59:9</span>
       </div>
       <p>
-        und sagen
-        <span class="nowrap"><i>$\alpha \beta \gamma$ reduziert zu
-            $\alpha X \gamma$</i>.</span>
-        Man nennt einen solchen Schritt
-        auch einen
-        <span class="nowrap"><i>Reduktionsschritt</i>.</span>
-        Wir nennen den Schritt
-        einen
-        <span class="nowrap"><i>Linksreduktionsschritt</i>,</span>
-        wenn rechts von
-        $\beta$ nur Terminale stehen. Wenn also
-        $\gamma = w \in \Sigma^*$ und somit
+        <span class="t-3003-c">und sagen
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:63:9</span></span><span class="nowrap"><i><span class="t-3003-c">$\alpha \beta \gamma$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:63:20</span></span><span class="t-3003-c">
+              reduziert zu<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:63:41</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:64:9</span></span><span class="t-3003-c">$\alpha X \gamma$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:64:9</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:64:27</span></span></span><span class="t-3003-c">
+          Man nennt einen solchen Schritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:64:27</span></span>
+        <span class="t-3003-c">auch einen
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:65:9</span></span><span class="nowrap"><i><span class="t-3003-c">Reduktionsschritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:65:21</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:65:39</span></span></span><span class="t-3003-c">
+          Wir nennen den Schritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:65:39</span></span>
+        <span class="t-3003-c">einen
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:66:9</span></span><span class="nowrap"><i><span class="t-3003-c">Linksreduktionsschritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:66:16</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:66:39</span></span></span><span class="t-3003-c">
+          wenn rechts von<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:66:39</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:67:9</span></span><span class="t-3003-c">$\beta$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:67:9</span></span><span class="t-3003-c">
+          nur Terminale stehen. Wenn also<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:67:16</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:68:9</span></span><span class="t-3003-c">$\gamma = w \in \Sigma^*$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:68:9</span></span><span class="t-3003-c">
+          und somit<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:68:34</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \alpha \beta w \rstep{} \alpha X w \ .
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:70:9</span>
       </div>
       <p>
-        Eine Folge von Linksreduktionsschritten nennen wir
-        eine
-        <span class="nowrap"><i>Linksreduktion</i>.</span>
-        <span class="nowrap"><i>Links</i>,</span>
-        weil wir uns von links
-        nach rechts in den terminalen Teil hineinarbeiten. Wir
-        werden im folgenden nur Linksreduktionsschritte
-        betrachten und sagen daher manchmal auch einfach nur
-        Reduktionsschritt.
+        <span class="t-3003-c">Eine Folge von Linksreduktionsschritten nennen wir<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:74:9</span></span>
+        <span class="t-3003-c">eine
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:75:9</span></span><span class="nowrap"><i><span class="t-3003-c">Linksreduktion<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:75:15</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:75:30</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:75:30</span></span><span class="nowrap"><i><span class="t-3003-c">Links<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:75:33</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:75:39</span></span></span><span class="t-3003-c">
+          weil wir uns von links<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:75:39</span></span>
+        <span class="t-3003-c">nach rechts in den terminalen Teil hineinarbeiten. Wir<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:76:9</span></span>
+        <span class="t-3003-c">werden im folgenden nur Linksreduktionsschritte<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:77:9</span></span>
+        <span class="t-3003-c">betrachten und sagen daher manchmal auch einfach nur<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:78:9</span></span>
+        <span class="t-3003-c">Reduktionsschritt.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:79:9</span></span>
       </p>
     </div>
     <p class="main-column">
-      <b>Beobachtung:</b>
-      Wenn wir einen Linksreduktionsschritt
-      $\alpha \beta w \rstep{} \alpha X w$ betrachten, also
+      <b><span class="t-3003-c">Beobachtung:<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:81:6</span></span></b><span class="t-3003-c">
+        Wenn wir einen Linksreduktionsschritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:81:19</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:82:5</span></span><span class="t-3003-c">$\alpha \beta w \rstep{} \alpha X w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:82:5</span></span><span class="t-3003-c">
+        betrachten, also<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:82:41</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \alpha X w \Step{} \alpha \beta w \ ,
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:84:5</span>
     </div>
     <p class="main-column">
-      so sehen wir, dass das am weitesten rechts stehende
-      Nichtterminal ersetzt worden ist; Linksreduktionen
-      entsprechen also einer Rechtsableitung. In den
-      vorherigen Kapiteln, insbesondere beim Implementieren
-      eines Parsers, haben wir gesehen, dass nicht jeder
-      Linksreduktionsschritt automatisch auch korrekt ist.
-      Ein einfaches Beispiel war die "Zahlengrammatik"
+      <span class="t-3003-c">so sehen wir, dass das am weitesten rechts stehende<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:88:5</span></span>
+      <span class="t-3003-c">Nichtterminal ersetzt worden ist; Linksreduktionen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:89:5</span></span>
+      <span class="t-3003-c">entsprechen also einer Rechtsableitung. In den<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:90:5</span></span>
+      <span class="t-3003-c">vorherigen Kapiteln, insbesondere beim Implementieren<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:91:5</span></span>
+      <span class="t-3003-c">eines Parsers, haben wir gesehen, dass nicht jeder<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:92:5</span></span>
+      <span class="t-3003-c">Linksreduktionsschritt automatisch auch korrekt ist.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:93:5</span></span>
+      <span class="t-3003-c">Ein einfaches Beispiel war die "Zahlengrammatik"<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:94:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
@@ -184,139 +216,192 @@
       N&amp;\rightarrow ND \\
       D&amp;\rightarrow 0 \ | \ 1 \ | \ 2\ | \ 3\ | \ 4\ | \ 5\ | \ 6\ | \ 7\ | \ 8\ | \ 9
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:96:5</span>
     </div>
     <p class="main-column">
-      So ist folgende Linksreduktion korrekt:
+      <span class="t-3003-c">So ist folgende Linksreduktion korrekt:<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:102:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       14 \rstep{} D4\rstep{} N4 \rstep{} ND \rstep{} N
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:104:5</span>
     </div>
     <p class="main-column">
-      weil sie einer gültigen Rechtsableitung
-      $N \Step{R}^* 14$ entspricht ( $N$ ist das
-      Startsymbol). Folgende Reduktionen sind allerdings
-      inkorrekt:
+      <span class="t-3003-c">weil sie einer gültigen Rechtsableitung<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:108:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:109:5</span></span><span class="t-3003-c">$N \Step{R}^* 14$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:109:5</span></span><span class="t-3003-c">
+        entspricht (
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:109:22</span></span><span class="t-3003-c">$N$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:109:36</span></span><span class="t-3003-c">
+        ist das<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:109:39</span></span>
+      <span class="t-3003-c">Startsymbol). Folgende Reduktionen sind allerdings<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:110:5</span></span>
+      <span class="t-3003-c">inkorrekt:<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:111:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \textcolor{red}{14 \rstep{} D4 \rstep{} DD}
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:113:5</span>
     </div>
     <p class="main-column">
-      da zwar
-      <span class="nowrap">$DD \Step{R} D4$,</span>
-      allerdings es keine
-      Rechtsableitung $N \Step{R}^* DD$ gibt. Auch
+      <span class="t-3003-c">da zwar
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:117:5</span></span><span class="nowrap"><span class="t-3003-c">$DD \Step{R} D4$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:117:13</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:117:29</span></span></span><span class="t-3003-c">
+        allerdings es keine<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:117:29</span></span>
+      <span class="t-3003-c">Rechtsableitung
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:118:5</span></span><span class="t-3003-c">$N \Step{R}^* DD$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:118:21</span></span><span class="t-3003-c">
+        gibt. Auch<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:118:38</span></span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \textcolor{red}{14 \rstep{} D4 \rstep{} N4 \rstep{} ND \rstep{} NN}
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:120:5</span>
     </div>
     <p class="main-column">
-      ist inkorrekt. In unserer Java-Implementierung haben
-      wir dieses Problem händisch gelöst, indem wir der
-      Regel $ND \rstep{} N$ den Vorzug vor $D \rstep{} N$
-      gegebene haben. Im allgemeinen müssen wir definieren,
-      was ein
-      <i>korrekter</i>
-      Linksreduktionsschritt ist. Und
-      dann überlegen, wie wir herausfinden, ob ein
-      Linksreduktionsschritt korrekt ist. Diese Fragen
-      werden uns für den Rest dieses und des nächsten
-      Teilkapitels beschäftigen.
+      <span class="t-3003-c">ist inkorrekt. In unserer Java-Implementierung haben<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:124:5</span></span>
+      <span class="t-3003-c">wir dieses Problem händisch gelöst, indem wir der<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:125:5</span></span>
+      <span class="t-3003-c">Regel
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:126:5</span></span><span class="t-3003-c">$ND \rstep{} N$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:126:11</span></span><span class="t-3003-c">
+        den Vorzug vor
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:126:26</span></span><span class="t-3003-c">$D \rstep{} N$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:126:42</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:126:56</span></span>
+      <span class="t-3003-c">gegebene haben. Im allgemeinen müssen wir definieren,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:127:5</span></span>
+      <span class="t-3003-c">was ein
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:128:5</span></span><i><span class="t-3003-c">korrekter<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:128:14</span></span></i><span class="t-3003-c">
+        Linksreduktionsschritt ist. Und<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:128:24</span></span>
+      <span class="t-3003-c">dann überlegen, wie wir herausfinden, ob ein<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:129:5</span></span>
+      <span class="t-3003-c">Linksreduktionsschritt korrekt ist. Diese Fragen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:130:5</span></span>
+      <span class="t-3003-c">werden uns für den Rest dieses und des nächsten<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:131:5</span></span>
+      <span class="t-3003-c">Teilkapitels beschäftigen.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:132:5</span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition 6.7.2 (Gültige Wortform, korrekter Reduktionsschritt)</b>
-        Eine Wortform $\gamma \in (\Sigma \cup N)^*$ heißt
-        <span class="nowrap"><i>gültig</i>,</span>
-        wenn es eine Rechtsableitung
+        <b><span class="t-3003-c">Definition 6.7.2 (Gültige Wortform, korrekter Reduktionsschritt)<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:134:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:135:58</span></span>
+        <span class="t-3003-c">Eine Wortform
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:136:9</span></span><span class="t-3003-c">$\gamma \in (\Sigma \cup N)^*$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:136:23</span></span><span class="t-3003-c">
+          heißt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:136:53</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:137:9</span></span><span class="nowrap"><i><span class="t-3003-c">gültig<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:137:10</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:137:17</span></span></span><span class="t-3003-c">
+          wenn es eine Rechtsableitung<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:137:17</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         S \Step{R}^* \gamma
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:139:9</span>
       </div>
       <p>
-        gibt. Ein Linksreduktionsschritt
+        <span class="t-3003-c">gibt. Ein Linksreduktionsschritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:143:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \alpha \beta w \rstep{} \alpha X w
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:145:9</span>
       </div>
       <p>
-        heißt
-        <span class="nowrap"><i>korrekt</i>,</span>
-        wenn $\alpha X w$ gültig ist. In
-        diesem Fall ist natürlich $\alpha \beta w$ selbst
-        gültig. Den Präfix $\alpha$ nennen wir eine
-        <i>Front</i>
-        der gültigen Wortform
-        <span class="nowrap">$\alpha \beta w$.</span>
-        Wenn die
-        Grammatik eindeutig ist, dann hat jede gültige
-        Wortform $\gamma$ genau eine Front, die wir mit
-        $\front(\gamma)$ bezeichnen.
+        <span class="t-3003-c">heißt
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:149:9</span></span><span class="nowrap"><i><span class="t-3003-c">korrekt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:149:16</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:149:24</span></span></span><span class="t-3003-c">
+          wenn
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:149:24</span></span><span class="t-3003-c">$\alpha X w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:149:31</span></span><span class="t-3003-c">
+          gültig ist. In<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:149:43</span></span>
+        <span class="t-3003-c">diesem Fall ist natürlich
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:150:9</span></span><span class="t-3003-c">$\alpha \beta w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:150:35</span></span><span class="t-3003-c">
+          selbst<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:150:51</span></span>
+        <span class="t-3003-c">gültig. Den Präfix
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:151:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:151:28</span></span><span class="t-3003-c">
+          nennen wir eine
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:151:36</span></span><i><span class="t-3003-c">Front<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:151:54</span></span></i><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:151:60</span></span>
+        <span class="t-3003-c">der gültigen Wortform
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:152:9</span></span><span class="nowrap"><span class="t-3003-c">$\alpha \beta w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:152:31</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:152:47</span></span></span><span class="t-3003-c">
+          Wenn die<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:152:47</span></span>
+        <span class="t-3003-c">Grammatik eindeutig ist, dann hat jede gültige<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:153:9</span></span>
+        <span class="t-3003-c">Wortform
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:154:9</span></span><span class="t-3003-c">$\gamma$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:154:18</span></span><span class="t-3003-c">
+          genau eine Front, die wir mit<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:154:26</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:155:9</span></span><span class="t-3003-c">$\front(\gamma)$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:155:9</span></span><span class="t-3003-c">
+          bezeichnen.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:155:25</span></span>
       </p>
     </div>
     <p class="main-column">
-      Wenn wir uns erinnern, wie wir in den letzten zwei
-      Teilkapiteln informell LR-Parser entworfen und
-      implementiert haben, dann sehen wir, dass in einem
-      Linksreduktionsschritt
-      $\alpha \beta w \rstep{} \alpha X w$ die Front
-      $\alpha \beta$ der Stackinhalt ist und $w$ der bis
-      jetzt ungelesene Teil des Eingabewortes. Wir wünschen
-      wir uns folgendes:
+      <span class="t-3003-c">Wenn wir uns erinnern, wie wir in den letzten zwei<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:157:5</span></span>
+      <span class="t-3003-c">Teilkapiteln informell LR-Parser entworfen und<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:158:5</span></span>
+      <span class="t-3003-c">implementiert haben, dann sehen wir, dass in einem<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:159:5</span></span>
+      <span class="t-3003-c">Linksreduktionsschritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:160:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:161:5</span></span><span class="t-3003-c">$\alpha \beta w \rstep{} \alpha X w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:161:5</span></span><span class="t-3003-c">
+        die Front<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:161:41</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:162:5</span></span><span class="t-3003-c">$\alpha \beta$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:162:5</span></span><span class="t-3003-c">
+        der Stackinhalt ist und
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:162:19</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:162:44</span></span><span class="t-3003-c">
+        der bis<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:162:47</span></span>
+      <span class="t-3003-c">jetzt ungelesene Teil des Eingabewortes. Wir wünschen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:163:5</span></span>
+      <span class="t-3003-c">wir uns folgendes:<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:164:5</span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Wunsch 6.7.3</b>
-        Ob $\alpha \beta w \rstep{} \alpha X w$ gültig ist
-        oder nicht, wollen wir allein auf Grund der Front
-        $\alpha \beta$ entscheiden können, das heißt, ohne $w$
-        betrachten zu müssen.
+        <b><span class="t-3003-c">Wunsch 6.7.3<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:166:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:166:5</span></span>
+        <span class="t-3003-c">Ob
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:168:9</span></span><span class="t-3003-c">$\alpha \beta w \rstep{} \alpha X w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:168:12</span></span><span class="t-3003-c">
+          gültig ist<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:168:48</span></span>
+        <span class="t-3003-c">oder nicht, wollen wir allein auf Grund der Front<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:169:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:170:9</span></span><span class="t-3003-c">$\alpha \beta$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:170:9</span></span><span class="t-3003-c">
+          entscheiden können, das heißt, ohne
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:170:23</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:170:60</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:170:63</span></span>
+        <span class="t-3003-c">betrachten zu müssen.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:171:9</span></span>
       </p>
     </div>
     <p class="main-column">
-      Wir haben allerdings bereits gesehen, dass das nicht
-      immer möglich ist. Bei der Implementierung von
-      <a href="./code/parsing/arithmetic-in-class/ArithmeticGrammar.java">ArithmeticGrammar.java</a>
-      zum Beispiel haben wir manchmal das erste Zeichen von
-      $w$ betrachten müssen. Allerdings behalten wir erst
-      einmal obigen Wunsch als Idealziel. Um ihn zu
-      formalisieren, fragen wir uns, wann es denn
-      <i>nicht</i>
-      möglich ist, ohne Betrachten von $w$ zu eintscheiden,
-      ob $\alpha \beta w \rstep{} \alpha X w$ gültig ist.
+      <span class="t-3003-c">Wir haben allerdings bereits gesehen, dass das nicht<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:173:5</span></span>
+      <span class="t-3003-c">immer möglich ist. Bei der Implementierung von<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:174:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:175:5</span></span><a href="./code/parsing/arithmetic-in-class/ArithmeticGrammar.java"><span class="t-3003-c">ArithmeticGrammar.java<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:175:6</span></span></a><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:175:88</span></span>
+      <span class="t-3003-c">zum Beispiel haben wir manchmal das erste Zeichen von<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:176:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:177:5</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:177:5</span></span><span class="t-3003-c">
+        betrachten müssen. Allerdings behalten wir erst<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:177:8</span></span>
+      <span class="t-3003-c">einmal obigen Wunsch als Idealziel. Um ihn zu<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:178:5</span></span>
+      <span class="t-3003-c">formalisieren, fragen wir uns, wann es denn
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:179:5</span></span><i><span class="t-3003-c">nicht<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:179:50</span></span></i><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:179:56</span></span>
+      <span class="t-3003-c">möglich ist, ohne Betrachten von
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:180:5</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:180:38</span></span><span class="t-3003-c">
+        zu eintscheiden,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:180:41</span></span>
+      <span class="t-3003-c">ob
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:181:5</span></span><span class="t-3003-c">$\alpha \beta w \rstep{} \alpha X w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:181:8</span></span><span class="t-3003-c">
+        gültig ist.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:181:44</span></span>
     </p>
     <div class="main-column">
       <ol>
         <li>
           <p>
-            <b>Schlechter Fall 1:</b>
-            Es gibt für eine Wortform
-            $\gamma$ zwei korrekte Linksreduktionsschritte:
-            $\gamma \rstep{} \gamma'$ und
-            <span class="nowrap">$\gamma \rstep{} \gamma''$.</span>
-            In diesem Falle gäbe es
-            <i>zwei verschiedene</i>
-            Rechtsableitungen
+            <b><span class="t-3003-c">Schlechter Fall 1:<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:185:14</span></span></b><span class="t-3003-c">
+              Es gibt für eine Wortform<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:185:33</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:186:13</span></span><span class="t-3003-c">$\gamma$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:186:13</span></span><span class="t-3003-c">
+              zwei korrekte Linksreduktionsschritte:<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:186:21</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:187:13</span></span><span class="t-3003-c">$\gamma \rstep{} \gamma'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:187:13</span></span><span class="t-3003-c">
+              und<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:187:38</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:188:13</span></span><span class="nowrap"><span class="t-3003-c">$\gamma \rstep{} \gamma''$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:188:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:188:39</span></span></span><span class="t-3003-c">
+              In diesem Falle gäbe es<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:188:39</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:189:13</span></span><i><span class="t-3003-c">zwei verschiedene<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:189:14</span></span></i><span class="t-3003-c">
+              Rechtsableitungen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:189:32</span></span>
           </p>
           <div class="math-block">
             $$
@@ -324,67 +409,84 @@
             S \Steps{R} \gamma' \Step{R} \gamma \Steps{R} w \in \Sigma^* \\
             S \Steps{R} \gamma'' \Step{R} \gamma \Steps{R} w \in \Sigma^* \\
             \end{align*}
-            $$
+            $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:191:13</span>
           </div>
           <p>
-            (wir nehmen an, dass man aus jedem Nichtterminal
-            mindestens ein Wort $u \in \Sigma^*$ ableiten kann;
-            andernfalls kann man solche
-            <i>nutzlosen</i>
-            Nichtterminale
-            eliminieren). Das Wort $w$ hat also zwei verschiedene
-            Ableitungsbäume. Die Grammatik ist somit mehrdeutig.
-            Mit uneindeutigen Grammatiken beschäftigen wir uns
-            zunächst gar nicht; sie sind von einem praktischen
-            Standpunkt aus auch unattraktiv: wenn z.B. eine
-            Programmiersprache eine mehrdeutige Grammatik hätte,
-            dann wäre ja für gewisse Programme nicht eindeutig
-            festzustellen, was damit gemeint ist. Wir nehmen also
-            an, dass die Grammatik $G$ eindeutig ist und somit
-            dieser Fall nicht eintreten kann.
+            <span class="t-3003-c">(wir nehmen an, dass man aus jedem Nichtterminal<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:196:13</span></span>
+            <span class="t-3003-c">mindestens ein Wort
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:197:13</span></span><span class="t-3003-c">$u \in \Sigma^*$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:197:33</span></span><span class="t-3003-c">
+              ableiten kann;<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:197:49</span></span>
+            <span class="t-3003-c">andernfalls kann man solche
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:198:13</span></span><i><span class="t-3003-c">nutzlosen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:198:42</span></span></i><span class="t-3003-c">
+              Nichtterminale<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:198:52</span></span>
+            <span class="t-3003-c">eliminieren). Das Wort
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:199:13</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:199:36</span></span><span class="t-3003-c">
+              hat also zwei verschiedene<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:199:39</span></span>
+            <span class="t-3003-c">Ableitungsbäume. Die Grammatik ist somit mehrdeutig.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:200:13</span></span>
+            <span class="t-3003-c">Mit uneindeutigen Grammatiken beschäftigen wir uns<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:201:13</span></span>
+            <span class="t-3003-c">zunächst gar nicht; sie sind von einem praktischen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:202:13</span></span>
+            <span class="t-3003-c">Standpunkt aus auch unattraktiv: wenn z.B. eine<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:203:13</span></span>
+            <span class="t-3003-c">Programmiersprache eine mehrdeutige Grammatik hätte,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:204:13</span></span>
+            <span class="t-3003-c">dann wäre ja für gewisse Programme nicht eindeutig<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:205:13</span></span>
+            <span class="t-3003-c">festzustellen, was damit gemeint ist. Wir nehmen also<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:206:13</span></span>
+            <span class="t-3003-c">an, dass die Grammatik
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:207:13</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:207:36</span></span><span class="t-3003-c">
+              eindeutig ist und somit<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:207:39</span></span>
+            <span class="t-3003-c">dieser Fall nicht eintreten kann.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:208:13</span></span>
           </p>
         </li>
         <li>
           <p>
-            <b>Schlechter Fall 2:</b>
-            Der Linksreduktionsschritt
+            <b><span class="t-3003-c">Schlechter Fall 2:<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:211:14</span></span></b><span class="t-3003-c">
+              Der Linksreduktionsschritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:211:33</span></span>
           </p>
           <div class="math-block">
             $$
             \begin{align*}
             \alpha \beta w \rstep{} \alpha X w
             \end{align*}
-            $$
+            $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:213:13</span>
           </div>
           <p>
-            ist korrekt, aber für ein anderes $w' \in \Sigma^*$
-            ist
+            <span class="t-3003-c">ist korrekt, aber für ein anderes
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:217:13</span></span><span class="t-3003-c">$w' \in \Sigma^*$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:217:47</span></span><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:217:64</span></span>
+            <span class="t-3003-c">ist<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:218:13</span></span>
           </p>
           <div class="math-block">
             $$
             \begin{align*}
             \alpha \beta w' \rstep{} \alpha X w'
             \end{align*}
-            $$
+            $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:220:13</span>
           </div>
           <p>
-            <i>nicht</i>
-            korrekt, obwohl $\alpha\beta w'$ eine gültige
-            Wortform ist. Dieser Fall ist schlecht, weil der
-            Parser nur $\alpha \beta$ gelesen hat und somit nicht
-            weiß, ob es sich bei der gesamten Wortform um
-            $\alpha \beta w$ oder um $\alpha \beta w'$ handelt.
-            Da beide gültig sind, können ja auch beide in einer
-            Linksreduktion auftreten. Korrektheit hängt also davon
-            ab, was weiter rechtskommt.
+            <i><span class="t-3003-c">nicht<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:224:14</span></span></i><span class="t-3003-c">
+              korrekt, obwohl
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:224:20</span></span><span class="t-3003-c">$\alpha\beta w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:224:37</span></span><span class="t-3003-c">
+              eine gültige<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:224:53</span></span>
+            <span class="t-3003-c">Wortform ist. Dieser Fall ist schlecht, weil der<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:225:13</span></span>
+            <span class="t-3003-c">Parser nur
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:226:13</span></span><span class="t-3003-c">$\alpha \beta$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:226:24</span></span><span class="t-3003-c">
+              gelesen hat und somit nicht<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:226:38</span></span>
+            <span class="t-3003-c">weiß, ob es sich bei der gesamten Wortform um<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:227:13</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:228:13</span></span><span class="t-3003-c">$\alpha \beta w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:228:13</span></span><span class="t-3003-c">
+              oder um
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:228:29</span></span><span class="t-3003-c">$\alpha \beta w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:228:38</span></span><span class="t-3003-c">
+              handelt.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:228:55</span></span>
+            <span class="t-3003-c">Da beide gültig sind, können ja auch beide in einer<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:229:13</span></span>
+            <span class="t-3003-c">Linksreduktion auftreten. Korrektheit hängt also davon<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:230:13</span></span>
+            <span class="t-3003-c">ab, was weiter rechtskommt.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:231:13</span></span>
           </p>
         </li>
       </ol>
     </div>
     <div class="well statement out">
       <p>
-        <b>Beispiel 6.7.4</b>
-        Erinnern Sie sich: unsere obige Grammatik
+        <b><span class="t-3003-c">Beispiel 6.7.4<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:233:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:233:5</span></span>
+        <span class="t-3003-c">Erinnern Sie sich: unsere obige Grammatik<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:234:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -394,92 +496,106 @@
         X&amp;\step{3} a X b \\
         X&amp;\step{4} ab \ .
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:236:9</span>
       </div>
       <p>
-        ist eindeutig (das ist leicht zu sehen), allerdings
-        tritt Schlechte Fall 2 ein: der Reduktionsschritt
+        <span class="t-3003-c">ist eindeutig (das ist leicht zu sehen), allerdings<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:243:9</span></span>
+        <span class="t-3003-c">tritt Schlechte Fall 2 ein: der Reduktionsschritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:244:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         aaX \rstep{} aaS
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:246:9</span>
       </div>
       <p>
-        ist korrekt (hier also
-        <span class="nowrap">$w = \epsilon)$,</span>
-        aber leider
-        ist
+        <span class="t-3003-c">ist korrekt (hier also
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:250:9</span></span><span class="nowrap"><span class="t-3003-c">$w = \epsilon)$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:250:32</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:250:47</span></span></span><span class="t-3003-c">
+          aber leider<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:250:47</span></span>
+        <span class="t-3003-c">ist<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:251:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         aaXb \rstep{} aaSb
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:253:9</span>
       </div>
       <p>
-        nicht korrekt (hier
-        <span class="nowrap">$w' = b)$,</span>
-        da $aaXb$ gültig ist,
-        $aaSb$ aber nicht. Die Entscheidung für eine
-        Reduktionsregel kann also nicht ohne Wissen über das,
-        was dahinter kommt, getroffen werden.
+        <span class="t-3003-c">nicht korrekt (hier
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:257:9</span></span><span class="nowrap"><span class="t-3003-c">$w' = b)$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:257:29</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:257:38</span></span></span><span class="t-3003-c">
+          da
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:257:38</span></span><span class="t-3003-c">$aaXb$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:257:43</span></span><span class="t-3003-c">
+          gültig ist,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:257:49</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:258:9</span></span><span class="t-3003-c">$aaSb$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:258:9</span></span><span class="t-3003-c">
+          aber nicht. Die Entscheidung für eine<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:258:15</span></span>
+        <span class="t-3003-c">Reduktionsregel kann also nicht ohne Wissen über das,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:259:9</span></span>
+        <span class="t-3003-c">was dahinter kommt, getroffen werden.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:260:9</span></span>
       </p>
     </div>
     <p class="main-column">
-      Wir definieren nun eine Klasse von Grammatiken, bei
-      denen diese schlechten Fälle nicht auftreten.
+      <span class="t-3003-c">Wir definieren nun eine Klasse von Grammatiken, bei<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:262:5</span></span>
+      <span class="t-3003-c">denen diese schlechten Fälle nicht auftreten.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:263:5</span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition 6.7.5
-          <span class="nowrap">($LR(0)$-Grammatiken)</span></b>
-        Eine kontextfreie Grammatik
-        heißt
-        <span class="nowrap">$LR(0)$-Grammatik,</span>
-        wenn keiner der obigen
-        schlechten Fälle eintritt. Formal, wenn (1) die
-        Grammatik eindeutig ist und (2) wenn ein korrekter
-        Linksreduktionsschritt
+        <b><span class="t-3003-c">Definition 6.7.5
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:265:5</span></span><span class="nowrap"><span class="t-3003-c">(<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:265:5</span></span><span class="t-3003-c">$LR(0)$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:266:11</span></span><span class="t-3003-c">-Grammatiken)<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:266:18</span></span></span></b><span class="t-3003-c">
+          Eine kontextfreie Grammatik<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:266:32</span></span>
+        <span class="t-3003-c">heißt
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:267:9</span></span><span class="nowrap"><span class="t-3003-c">$LR(0)$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:267:15</span></span><span class="t-3003-c">-Grammatik,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:267:22</span></span></span><span class="t-3003-c">
+          wenn keiner der obigen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:267:22</span></span>
+        <span class="t-3003-c">schlechten Fälle eintritt. Formal, wenn (1) die<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:268:9</span></span>
+        <span class="t-3003-c">Grammatik eindeutig ist und (2) wenn ein korrekter<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:269:9</span></span>
+        <span class="t-3003-c">Linksreduktionsschritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:270:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \alpha \beta w \rstep{} \alpha X w
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:272:9</span>
       </div>
       <p>
-        bedeutet, dass auch alle anderen
-        Linksreduktionsschritte
+        <span class="t-3003-c">bedeutet, dass auch alle anderen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:276:9</span></span>
+        <span class="t-3003-c">Linksreduktionsschritte<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:277:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \alpha \beta w' \rstep{} \alpha X w'
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:279:9</span>
       </div>
       <p>
-        korrekt sind, sofern $w' \in \Sigma^*$ ist und
-        $\alpha \beta w'$ selbst eine gültige Wortform ist.
-        In Worten/Graustufen: wenn wir
+        <span class="t-3003-c">korrekt sind, sofern
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:283:9</span></span><span class="t-3003-c">$w' \in \Sigma^*$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:283:30</span></span><span class="t-3003-c">
+          ist und<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:283:47</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:284:9</span></span><span class="t-3003-c">$\alpha \beta w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:284:9</span></span><span class="t-3003-c">
+          selbst eine gültige Wortform ist.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:284:26</span></span>
+        <span class="t-3003-c">In Worten/Graustufen: wenn wir<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:285:9</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \alpha \beta \textcolor{gray}{w} \rstep{} \alpha X \textcolor{gray}{w}
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:287:9</span>
       </div>
       <p>
-        guten Gewissens anwenden dürfen, ohne auch nur ein
-        Zeichen von $w$ gelesen zu haben, sofern wir sicher
-        sind, dass es irgendein $w$ gibt, das $\alpha \beta w$
-        zu einer gültigen Wortform macht.
+        <span class="t-3003-c">guten Gewissens anwenden dürfen, ohne auch nur ein<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:291:9</span></span>
+        <span class="t-3003-c">Zeichen von
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:292:9</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:292:21</span></span><span class="t-3003-c">
+          gelesen zu haben, sofern wir sicher<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:292:24</span></span>
+        <span class="t-3003-c">sind, dass es irgendein
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:293:9</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:293:33</span></span><span class="t-3003-c">
+          gibt, das
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:293:36</span></span><span class="t-3003-c">$\alpha \beta w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:293:47</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:293:63</span></span>
+        <span class="t-3003-c">zu einer gültigen Wortform macht.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:294:9</span></span>
       </p>
     </div>
     <div
@@ -487,34 +603,54 @@
       class="well statement out"
     >
       <p>
-        <b>Lemma 6.7.6 (LR(0), äquivalente Formulierung).</b>
-        Eine GrAmmatik
-        $G$ ist LR(0) genau dann, wenn für alle korrekten
-        Linksreduktionsschritte
-        $\alpha \beta w \rstep{} \alpha Xw$ und
-        $\alpha' \beta' w' \rstep{} \alpha' X'w'$ gilt:
+        <b><span class="t-3003-c">Lemma 6.7.6 (LR(0), äquivalente Formulierung).<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:296:5</span></span></b><span class="t-3003-c">
+          Eine GrAmmatik<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:298:45</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:299:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:299:9</span></span><span class="t-3003-c">
+          ist LR(0) genau dann, wenn für alle korrekten<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:299:12</span></span>
+        <span class="t-3003-c">Linksreduktionsschritte<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:300:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:301:9</span></span><span class="t-3003-c">$\alpha \beta w \rstep{} \alpha Xw$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:301:9</span></span><span class="t-3003-c">
+          und<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:301:44</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:302:9</span></span><span class="t-3003-c">$\alpha' \beta' w' \rstep{} \alpha' X'w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:302:9</span></span><span class="t-3003-c">
+          gilt:<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:302:50</span></span>
       </p>
       <ol>
         <li>
           <p>
-            Falls $\alpha \beta = \alpha' \beta'$ dann auch
-            $\beta = \beta'$ und
-            <span class="nowrap">$X= X'$;</span>
-            in Worten: wenn die
-            Fronten identisch sind, dann auch die
-            Reduktionsschritte.
+            <span class="t-3003-c">Falls
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:306:17</span></span><span class="t-3003-c">$\alpha \beta = \alpha' \beta'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:306:23</span></span><span class="t-3003-c">
+              dann auch<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:306:54</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:307:17</span></span><span class="t-3003-c">$\beta = \beta'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:307:17</span></span><span class="t-3003-c">
+              und
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:307:33</span></span><span class="nowrap"><span class="t-3003-c">$X= X'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:307:38</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:307:45</span></span></span><span class="t-3003-c">
+              in Worten: wenn die<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:307:45</span></span>
+            <span class="t-3003-c">Fronten identisch sind, dann auch die<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:308:17</span></span>
+            <span class="t-3003-c">Reduktionsschritte.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:309:17</span></span>
           </p>
         </li>
         <li>
           <p>
-            Wenn $\alpha' \beta' = \alpha \beta \varphi$ und
-            <span class="nowrap">$|\varphi| \geq 1$,</span>
-            dann
-            <span class="nowrap">$\varphi \not \in \Sigma^*$;</span>
-            in Worten: wenn $\front(\gamma)$ ein echter Präfix
-            von $\front(\gamma')$ ist, dann muss in dem
-            überstehenden Teil von $\front(\gamma)$ mindestens
-            ein Nichtterminal vorkommen.
+            <span class="t-3003-c">Wenn
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:312:17</span></span><span class="t-3003-c">$\alpha' \beta' = \alpha \beta \varphi$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:312:22</span></span><span class="t-3003-c">
+              und<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:312:61</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:313:17</span></span><span class="nowrap"><span class="t-3003-c">$|\varphi| \geq 1$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:313:17</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:313:35</span></span></span><span class="t-3003-c">
+              dann
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:313:35</span></span><span class="nowrap"><span class="t-3003-c">$\varphi \not \in \Sigma^*$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:313:42</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:313:69</span></span></span><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:313:69</span></span>
+            <span class="t-3003-c">in Worten: wenn
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:314:17</span></span><span class="t-3003-c">$\front(\gamma)$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:314:33</span></span><span class="t-3003-c">
+              ein echter Präfix<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:314:49</span></span>
+            <span class="t-3003-c">von
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:315:17</span></span><span class="t-3003-c">$\front(\gamma')$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:315:21</span></span><span class="t-3003-c">
+              ist, dann muss in dem<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:315:38</span></span>
+            <span class="t-3003-c">überstehenden Teil von
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:316:17</span></span><span class="t-3003-c">$\front(\gamma)$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:316:40</span></span><span class="t-3003-c">
+              mindestens<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:316:56</span></span>
+            <span class="t-3003-c">ein Nichtterminal vorkommen.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:317:17</span></span>
           </p>
         </li>
       </ol>
@@ -522,50 +658,78 @@
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        Der Beweis ist leider etwas mechanisch und repetitiv.
-        Aber vielleicht ist es eine gute Übung, ihn genau
-        durchzugehen, um die Definitionenen Linksreduktion,
-        gültige Wortform etc. zu verinnerlichen. Ich bin auch
-        immer noch auf der Suche nach einem knapperen,
-        klareren Beweis, der nicht so viele
-        Fallunterscheidungen enthält.
+        
+        <span class="t-3003-c">Der Beweis ist leider etwas mechanisch und repetitiv.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:320:9</span></span>
+        <span class="t-3003-c">Aber vielleicht ist es eine gute Übung, ihn genau<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:321:9</span></span>
+        <span class="t-3003-c">durchzugehen, um die Definitionenen Linksreduktion,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:322:9</span></span>
+        <span class="t-3003-c">gültige Wortform etc. zu verinnerlichen. Ich bin auch<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:323:9</span></span>
+        <span class="t-3003-c">immer noch auf der Suche nach einem knapperen,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:324:9</span></span>
+        <span class="t-3003-c">klareren Beweis, der nicht so viele<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:325:9</span></span>
+        <span class="t-3003-c">Fallunterscheidungen enthält.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:326:9</span></span>
       </p>
       <div class="well remark">
         <p>
           <b>Wenn-Dann-Richtung.</b>
-          Wenn $G$ eine LR(0)-Grammatik ist, dann gelten die
-          Schlussfolgerungen des Lemmas.
+          
+          <span class="t-3003-c">Wenn
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:330:13</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:330:18</span></span><span class="t-3003-c">
+            eine LR(0)-Grammatik ist, dann gelten die<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:330:21</span></span>
+          <span class="t-3003-c">Schlussfolgerungen des Lemmas.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:331:13</span></span>
         </p>
       </div>
       <div class="well highlight">
         <p>
           <b>Beweis.</b>
-          Um Punkt 1 zu zeigen, nehmen wir an, dass
-          $\alpha \beta = \alpha' \beta'$ gilt. Da
-          $\alpha \beta w \rstep{} \alpha X w$ korrekt ist,
-          $\alpha' \beta' w'$ eine gültige Wortform ist und $G$
-          eine LR(0)-Grammatik ist, so ist auch
+          
+          <span class="t-3003-c">Um Punkt 1 zu zeigen, nehmen wir an, dass<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:334:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:335:13</span></span><span class="t-3003-c">$\alpha \beta = \alpha' \beta'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:335:13</span></span><span class="t-3003-c">
+            gilt. Da<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:335:44</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:336:13</span></span><span class="t-3003-c">$\alpha \beta w \rstep{} \alpha X w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:336:13</span></span><span class="t-3003-c">
+            korrekt ist,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:336:49</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:337:13</span></span><span class="t-3003-c">$\alpha' \beta' w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:337:13</span></span><span class="t-3003-c">
+            eine gültige Wortform ist und
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:337:32</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:337:63</span></span><span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:337:66</span></span>
+          <span class="t-3003-c">eine LR(0)-Grammatik ist, so ist auch<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:338:13</span></span>
         </p>
         <div class="math-block">
           $$
           \begin{align*}
           \alpha' \beta' w' = \alpha \beta w' \rstep{} \alpha X w'
           \end{align*}
-          $$
+          $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:340:13</span>
         </div>
         <p>
-          ein korrekter Linksreduktionsschritt. Also sind
-          $\alpha' \beta' w' \rstep{} \alpha X w'$ und
-          $\alpha' \beta' w' \rstep{} \alpha' X' w'$ beides
-          korrekte Linksreduktionsschritte. Da $G$ eindeutig
-          ist, kann es nur eine Rechtsableitung geben, d.h.
-          <span class="nowrap">$\alpha X w' = \alpha' X' w'$,</span>
-          was $X = X'$ und somit
-          $\beta = \beta'$ impliziert. Um Punkt 2 zu zeigen,
-          nehmen wir an, dass
-          $\alpha' \beta' = \alpha \beta \varphi$ gilt. Falls -
-          entgegen der Schlussfolgerung - nun
-          $\varphi \in \Sigma^*$ gälte, wäre
+          <span class="t-3003-c">ein korrekter Linksreduktionsschritt. Also sind<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:344:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:345:13</span></span><span class="t-3003-c">$\alpha' \beta' w' \rstep{} \alpha X w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:345:13</span></span><span class="t-3003-c">
+            und<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:345:53</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:346:13</span></span><span class="t-3003-c">$\alpha' \beta' w' \rstep{} \alpha' X' w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:346:13</span></span><span class="t-3003-c">
+            beides<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:346:55</span></span>
+          <span class="t-3003-c">korrekte Linksreduktionsschritte. Da
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:347:13</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:347:50</span></span><span class="t-3003-c">
+            eindeutig<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:347:53</span></span>
+          <span class="t-3003-c">ist, kann es nur eine Rechtsableitung geben, d.h.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:348:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:349:13</span></span><span class="nowrap"><span class="t-3003-c">$\alpha X w' = \alpha' X' w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:349:13</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:349:42</span></span></span><span class="t-3003-c">
+            was
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:349:42</span></span><span class="t-3003-c">$X = X'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:349:48</span></span><span class="t-3003-c">
+            und somit<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:349:56</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:350:13</span></span><span class="t-3003-c">$\beta = \beta'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:350:13</span></span><span class="t-3003-c">
+            impliziert. Um Punkt 2 zu zeigen,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:350:29</span></span>
+          <span class="t-3003-c">nehmen wir an, dass<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:351:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:352:13</span></span><span class="t-3003-c">$\alpha' \beta' = \alpha \beta \varphi$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:352:13</span></span><span class="t-3003-c">
+            gilt. Falls -<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:352:52</span></span>
+          <span class="t-3003-c">entgegen der Schlussfolgerung - nun<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:353:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:354:13</span></span><span class="t-3003-c">$\varphi \in \Sigma^*$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:354:13</span></span><span class="t-3003-c">
+            gälte, wäre<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:354:35</span></span>
         </p>
         <div class="math-block">
           $$
@@ -573,39 +737,56 @@
           \alpha' \beta' w' = \alpha \beta \varphi w' \rstep{}
           \alpha X \varphi w'
           \end{align*}
-          $$
+          $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:356:13</span>
         </div>
         <p>
-          ein korrekter Linksreduktionsschritt; nach
-          Voraussetzung ist auch
-          $\alpha' \beta' w' \rstep{} \alpha' X' w'$ korrekt.
-          Es gäbe also zwei korrekte Linksreduktionsschritte und
-          $G$ wäre nicht eindeutig. Wir folgern, dass
-          <span class="nowrap">$\varphi^* \not \in \Sigma^*$.</span>
-          Beachten Sie, dass es,
-          wenn $\varphi$ Nichtterminale enthält, keinen
-          Widerspruch gibt: dann ist nämlich
-          $\alpha \beta \varphi w' \rstep{} \alpha X \varphi
-          w'$
-          gar kein Linksreduktionsschritt, geschweige denn ein
-          korrekter.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+          <span class="t-3003-c">ein korrekter Linksreduktionsschritt; nach<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:361:13</span></span>
+          <span class="t-3003-c">Voraussetzung ist auch<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:362:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:363:13</span></span><span class="t-3003-c">$\alpha' \beta' w' \rstep{} \alpha' X' w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:363:13</span></span><span class="t-3003-c">
+            korrekt.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:363:55</span></span>
+          <span class="t-3003-c">Es gäbe also zwei korrekte Linksreduktionsschritte und<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:364:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:365:13</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:365:13</span></span><span class="t-3003-c">
+            wäre nicht eindeutig. Wir folgern, dass<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:365:16</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:366:13</span></span><span class="nowrap"><span class="t-3003-c">$\varphi^* \not \in \Sigma^*$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:366:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:366:42</span></span></span><span class="t-3003-c">
+            Beachten Sie, dass es,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:366:42</span></span>
+          <span class="t-3003-c">wenn
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:367:13</span></span><span class="t-3003-c">$\varphi$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:367:18</span></span><span class="t-3003-c">
+            Nichtterminale enthält, keinen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:367:27</span></span>
+          <span class="t-3003-c">Widerspruch gibt: dann ist nämlich<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:368:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:369:13</span></span><span class="t-3003-c">$\alpha \beta \varphi w' \rstep{} \alpha X \varphi
+            w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:369:13</span></span><span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:370:16</span></span>
+          <span class="t-3003-c">gar kein Linksreduktionsschritt, geschweige denn ein<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:371:13</span></span>
+          <span class="t-3003-c">korrekter.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:372:13</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <div class="well remark">
         <p>
           <b>Nur-dann-Richtung.</b>
-          Wenn die Grammatik $G$ die Schlussfolgerungen des
-          Lemmas erfüllt und müssen zeigen, dass sie auch LG(0).
+          
+          <span class="t-3003-c">Wenn die Grammatik
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:376:13</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:376:32</span></span><span class="t-3003-c">
+            die Schlussfolgerungen des<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:376:35</span></span>
+          <span class="t-3003-c">Lemmas erfüllt und müssen zeigen, dass sie auch LG(0).<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:377:13</span></span>
         </p>
       </div>
       <div class="well highlight">
         <p>
           <b>Beweis.</b>
-          Als erstes zeigen wir, dass $G$ eindeutig ist; dass
-          es also für jede gültige Wortform genau einen
-          korrekten Linksreduktionsschritt gibt. Dafür nehmen
-          wir dann, dass es von $\gamma$ aus die
-          Linksreduktionsschritte
+          
+          <span class="t-3003-c">Als erstes zeigen wir, dass
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:380:13</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:380:41</span></span><span class="t-3003-c">
+            eindeutig ist; dass<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:380:44</span></span>
+          <span class="t-3003-c">es also für jede gültige Wortform genau einen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:381:13</span></span>
+          <span class="t-3003-c">korrekten Linksreduktionsschritt gibt. Dafür nehmen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:382:13</span></span>
+          <span class="t-3003-c">wir dann, dass es von
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:383:13</span></span><span class="t-3003-c">$\gamma$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:383:35</span></span><span class="t-3003-c">
+            aus die<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:383:43</span></span>
+          <span class="t-3003-c">Linksreduktionsschritte<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:384:13</span></span>
         </p>
         <div class="math-block">
           $$
@@ -613,99 +794,158 @@
           \gamma = \alpha \beta w&amp;\rstep{} \alpha X w \textnormal{ und} \\
           \gamma = \alpha' \beta' w'&amp;\rstep{} \alpha' X' w' \textnormal{ und} \\
           \end{align*}
-          $$
+          $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:386:13</span>
         </div>
         <p>
-          gibt und müssen zeigen, dass es sich in der Tat um
-          denselben Schritt handelt. Ohne Beschränkung der
-          Allgemeinheit ist
-          $|\alpha\beta| \leq |\alpha' \beta'|$ und wir
-          schreiben
-          <span class="nowrap">$\alpha' \beta' = \alpha \beta \varphi$.</span>
-          Da
-          $\varphi$ ein Präfix von $w$ ist und
-          <span class="nowrap">$w \in \Sigma^*$,</span>
-          so gilt auch
-          <span class="nowrap">$\varphi \in \Sigma^*$.</span>
-          Nach Punkt 2 der
-          Schlussfolgerung muss also $\varphi = \epsilon$
-          gelten. Es ist also
-          <span class="nowrap">$\alpha' \beta' = \alpha \beta$.</span>
-          Nach Punkt 1 der Schlussfolgerung gelten nun also auch
-          <span class="nowrap">$\alpha = \alpha'$,</span>
+          <span class="t-3003-c">gibt und müssen zeigen, dass es sich in der Tat um<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:391:13</span></span>
+          <span class="t-3003-c">denselben Schritt handelt. Ohne Beschränkung der<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:392:13</span></span>
+          <span class="t-3003-c">Allgemeinheit ist<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:393:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:394:13</span></span><span class="t-3003-c">$|\alpha\beta| \leq |\alpha' \beta'|$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:394:13</span></span><span class="t-3003-c">
+            und wir<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:394:50</span></span>
+          <span class="t-3003-c">schreiben
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:395:13</span></span><span class="nowrap"><span class="t-3003-c">$\alpha' \beta' = \alpha \beta \varphi$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:395:23</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:395:62</span></span></span><span class="t-3003-c">
+            Da<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:395:62</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:396:13</span></span><span class="t-3003-c">$\varphi$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:396:13</span></span><span class="t-3003-c">
+            ein Präfix von
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:396:22</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:396:38</span></span><span class="t-3003-c">
+            ist und
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:396:41</span></span><span class="nowrap"><span class="t-3003-c">$w \in \Sigma^*$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:396:50</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:396:66</span></span></span><span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:396:66</span></span>
+          <span class="t-3003-c">so gilt auch
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:397:13</span></span><span class="nowrap"><span class="t-3003-c">$\varphi \in \Sigma^*$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:397:26</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:397:48</span></span></span><span class="t-3003-c">
+            Nach Punkt 2 der<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:397:48</span></span>
+          <span class="t-3003-c">Schlussfolgerung muss also
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:398:13</span></span><span class="t-3003-c">$\varphi = \epsilon$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:398:40</span></span><span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:398:60</span></span>
+          <span class="t-3003-c">gelten. Es ist also
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:399:13</span></span><span class="nowrap"><span class="t-3003-c">$\alpha' \beta' = \alpha \beta$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:399:33</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:399:64</span></span></span><span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:399:64</span></span>
+          <span class="t-3003-c">Nach Punkt 1 der Schlussfolgerung gelten nun also auch<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:400:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:401:13</span></span><span class="nowrap"><span class="t-3003-c">$\alpha = \alpha'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:401:13</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:401:31</span></span></span>
         </p>
         <p>
-          $\beta = \beta'$ und $X = X'$ und somit auch
-          <span class="nowrap">$w = w'$.</span>
-          Es handelt sich um ein und den selben
-          Linksreduktionsschritt. Die Gramatik ist eindeutig. Um
-          den zweiten Punkt der LR(0)-Eigenschaft zu zeigen,
-          nehmen wir an, dass
+          <span class="t-3003-c">$\beta = \beta'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:403:13</span></span><span class="t-3003-c">
+            und
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:403:29</span></span><span class="t-3003-c">$X = X'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:403:34</span></span><span class="t-3003-c">
+            und somit auch
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:403:42</span></span><span class="nowrap"><span class="t-3003-c">$w = w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:403:58</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:403:66</span></span></span><span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:403:66</span></span>
+          <span class="t-3003-c">Es handelt sich um ein und den selben<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:404:13</span></span>
+          <span class="t-3003-c">Linksreduktionsschritt. Die Gramatik ist eindeutig. Um<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:405:13</span></span>
+          <span class="t-3003-c">den zweiten Punkt der LR(0)-Eigenschaft zu zeigen,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:406:13</span></span>
+          <span class="t-3003-c">nehmen wir an, dass<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:407:13</span></span>
         </p>
         <div class="math-block">
           $$
           \begin{align*}
           \alpha \beta w \rstep{} \alpha X w
           \end{align*}
-          $$
+          $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:409:13</span>
         </div>
         <p>
-          ein korrekter Linksreduktionsschritt ist und
-          $\gamma' := \alpha \beta w''$ eine gültige Wortform
-          ist mit
-          <span class="nowrap">$w'' \in \Sigma^*$.</span>
-          Wir müssen zeigen, dass
-          $\alpha X w''$ auch gültig ist. Da $G$ eindeutig ist,
-          gibt es einen eindeutigen korrekten
-          Linksreduktionsschritt
+          <span class="t-3003-c">ein korrekter Linksreduktionsschritt ist und<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:413:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:414:13</span></span><span class="t-3003-c">$\gamma' := \alpha \beta w''$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:414:13</span></span><span class="t-3003-c">
+            eine gültige Wortform<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:414:42</span></span>
+          <span class="t-3003-c">ist mit
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:415:13</span></span><span class="nowrap"><span class="t-3003-c">$w'' \in \Sigma^*$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:415:21</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:415:39</span></span></span><span class="t-3003-c">
+            Wir müssen zeigen, dass<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:415:39</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:416:13</span></span><span class="t-3003-c">$\alpha X w''$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:416:13</span></span><span class="t-3003-c">
+            auch gültig ist. Da
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:416:27</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:416:48</span></span><span class="t-3003-c">
+            eindeutig ist,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:416:51</span></span>
+          <span class="t-3003-c">gibt es einen eindeutigen korrekten<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:417:13</span></span>
+          <span class="t-3003-c">Linksreduktionsschritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:418:13</span></span>
         </p>
         <div class="math-block">
           $$
           \begin{align*}
           \gamma' = \alpha' \beta' w' \rstep{} \alpha' X' w'
           \end{align*}
-          $$
+          $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:420:13</span>
         </div>
         <p>
-          Da $\alpha \beta$ und $\alpha' \beta'$ beides Präfixe
-          von $\gamma'$ sind, gibt es drei Fälle: (1)
-          <span class="nowrap">$\alpha\beta = \alpha' \beta'$;</span>
-          (2)
-          $\alpha' \beta' = \alpha \beta \varphi$ mit
-          <span class="nowrap">$\varphi \ne \epsilon$;</span>
-          (3)
-          $\alpha \beta = \alpha' \beta' \varphi$ mit
-          <span class="nowrap">$\varphi \ne \epsilon$.</span>
-          (1) Wenn nun
-          $\alpha \beta = \alpha' \beta'$ gilt, dann sind nach
-          Punkt 1 der Schlussfolgerung $\alpha' = \alpha$ und
-          $\beta' = \beta$ und
-          <span class="nowrap">$X = X'$;</span>
-          also ist
-          $\gamma = \alpha' \beta' w' = \alpha \beta w'$ und
-          auch $\gamma = \alpha \beta w''$ und somit
-          <span class="nowrap">$w'' = w'$.</span>
-          Somit ist $\alpha' X' w' = \alpha X w''$ und letztere
-          ist eine gültige Wortform. (2) Wir haben zwei korrekte
-          Linksreduktionsschritte
-          $\alpha \beta w \rstep{} \alpha X w$ und
-          <span class="nowrap">$\alpha' \beta' w' \rstep{} alpha' X' w'$.</span>
-          Nach Punkt
-          2 der Schlussfolgerung des Lemmas $\varphi$
-          mindestens ein Nichtterminal enthalten. Das kann aber
-          nicht sein, da $\varphi$ ein Präfix von $w'$ ist. (3)
-          kann aus dem gleichen Grund nicht gelten.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+          <span class="t-3003-c">Da
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:424:13</span></span><span class="t-3003-c">$\alpha \beta$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:424:16</span></span><span class="t-3003-c">
+            und
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:424:30</span></span><span class="t-3003-c">$\alpha' \beta'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:424:35</span></span><span class="t-3003-c">
+            beides Präfixe<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:424:51</span></span>
+          <span class="t-3003-c">von
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:425:13</span></span><span class="t-3003-c">$\gamma'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:425:17</span></span><span class="t-3003-c">
+            sind, gibt es drei Fälle: (1)<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:425:26</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:426:13</span></span><span class="nowrap"><span class="t-3003-c">$\alpha\beta = \alpha' \beta'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:426:13</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:426:43</span></span></span><span class="t-3003-c">
+            (2)<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:426:43</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:427:13</span></span><span class="t-3003-c">$\alpha' \beta' = \alpha \beta \varphi$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:427:13</span></span><span class="t-3003-c">
+            mit<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:427:52</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:428:13</span></span><span class="nowrap"><span class="t-3003-c">$\varphi \ne \epsilon$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:428:13</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:428:35</span></span></span><span class="t-3003-c">
+            (3)<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:428:35</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:429:13</span></span><span class="t-3003-c">$\alpha \beta = \alpha' \beta' \varphi$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:429:13</span></span><span class="t-3003-c">
+            mit<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:429:52</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:430:13</span></span><span class="nowrap"><span class="t-3003-c">$\varphi \ne \epsilon$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:430:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:430:35</span></span></span><span class="t-3003-c">
+            (1) Wenn nun<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:430:35</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:431:13</span></span><span class="t-3003-c">$\alpha \beta = \alpha' \beta'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:431:13</span></span><span class="t-3003-c">
+            gilt, dann sind nach<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:431:44</span></span>
+          <span class="t-3003-c">Punkt 1 der Schlussfolgerung
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:432:13</span></span><span class="t-3003-c">$\alpha' = \alpha$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:432:42</span></span><span class="t-3003-c">
+            und<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:432:60</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:433:13</span></span><span class="t-3003-c">$\beta' = \beta$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:433:13</span></span><span class="t-3003-c">
+            und
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:433:29</span></span><span class="nowrap"><span class="t-3003-c">$X = X'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:433:34</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:433:42</span></span></span><span class="t-3003-c">
+            also ist<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:433:42</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:434:13</span></span><span class="t-3003-c">$\gamma = \alpha' \beta' w' = \alpha \beta w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:434:13</span></span><span class="t-3003-c">
+            und<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:434:59</span></span>
+          <span class="t-3003-c">auch
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:435:13</span></span><span class="t-3003-c">$\gamma = \alpha \beta w''$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:435:18</span></span><span class="t-3003-c">
+            und somit
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:435:45</span></span><span class="nowrap"><span class="t-3003-c">$w'' = w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:435:56</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:435:66</span></span></span><span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:435:66</span></span>
+          <span class="t-3003-c">Somit ist
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:436:13</span></span><span class="t-3003-c">$\alpha' X' w' = \alpha X w''$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:436:23</span></span><span class="t-3003-c">
+            und letztere<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:436:53</span></span>
+          <span class="t-3003-c">ist eine gültige Wortform. (2) Wir haben zwei korrekte<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:437:13</span></span>
+          <span class="t-3003-c">Linksreduktionsschritte<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:438:13</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:439:13</span></span><span class="t-3003-c">$\alpha \beta w \rstep{} \alpha X w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:439:13</span></span><span class="t-3003-c">
+            und<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:439:49</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:440:13</span></span><span class="nowrap"><span class="t-3003-c">$\alpha' \beta' w' \rstep{} alpha' X' w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:440:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:440:54</span></span></span><span class="t-3003-c">
+            Nach Punkt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:440:54</span></span>
+          <span class="t-3003-c">2 der Schlussfolgerung des Lemmas
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:441:13</span></span><span class="t-3003-c">$\varphi$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:441:47</span></span><span class="t-3003-c">
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:441:56</span></span>
+          <span class="t-3003-c">mindestens ein Nichtterminal enthalten. Das kann aber<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:442:13</span></span>
+          <span class="t-3003-c">nicht sein, da
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:443:13</span></span><span class="t-3003-c">$\varphi$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:443:28</span></span><span class="t-3003-c">
+            ein Präfix von
+            <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:443:37</span></span><span class="t-3003-c">$w'$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:443:53</span></span><span class="t-3003-c">
+            ist. (3)<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:443:57</span></span>
+          <span class="t-3003-c">kann aus dem gleichen Grund nicht gelten.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:444:13</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
-        Wir haben nun beide Richtungen gezeigt und somit das
-        Lemma bewiesen.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        <span class="t-3003-c">Wir haben nun beide Richtungen gezeigt und somit das<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:446:9</span></span>
+        <span class="t-3003-c">Lemma bewiesen.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:447:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 6.7.1</b>
-        Zeigen Sie, dass die folgende Grammatik $LR(0)$ ist:
+        <b><span class="t-3003-c">Übungsaufgabe 6.7.1<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:449:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:449:5</span></span>
+        <span class="t-3003-c">Zeigen Sie, dass die folgende Grammatik
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:450:9</span></span><span class="t-3003-c">$LR(0)$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:450:49</span></span><span class="t-3003-c">
+          ist:<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:450:56</span></span>
       </p>
       <div class="math-block">
         $$
@@ -715,17 +955,18 @@
         B&amp;\rightarrow aBb \\
         B&amp;\rightarrow ab
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:452:9</span>
       </div>
       <p>
-        Als ersten Schritt sollten Sie sich überlegen, wie
-        gültige Wortformen überhaupt aussehen können.
+        <span class="t-3003-c">Als ersten Schritt sollten Sie sich überlegen, wie<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:459:9</span></span>
+        <span class="t-3003-c">gültige Wortformen überhaupt aussehen können.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:460:9</span></span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 6.7.2</b>
-        Wir ändern die Grammatik etwas ab:
+        <b><span class="t-3003-c">Übungsaufgabe 6.7.2<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:462:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:462:5</span></span>
+        <span class="t-3003-c">Wir ändern die Grammatik etwas ab:<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:463:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -735,19 +976,25 @@
         B&amp;\rightarrow aBb \\
         B&amp;\rightarrow ab
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:465:9</span>
       </div>
       <p>
-        Die erzeugte Sprache ist
-        <span class="nowrap">$\{ a^* a^m b^m \ | \ m \geq 1\}$.</span>
-        Zeigen Sie, dass
-        die Grammatik nicht $LR(0)$ ist.
+        <span class="t-3003-c">Die erzeugte Sprache ist<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:472:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:473:9</span></span><span class="nowrap"><span class="t-3003-c">$\{ a^* a^m b^m \ | \ m \geq 1\}$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:473:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:473:42</span></span></span><span class="t-3003-c">
+          Zeigen Sie, dass<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:473:42</span></span>
+        <span class="t-3003-c">die Grammatik nicht
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:474:9</span></span><span class="t-3003-c">$LR(0)$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:474:29</span></span><span class="t-3003-c">
+          ist.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:474:36</span></span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 6.7.3</b>
-        Zeigen Sie, dass die folgende Grammatik $LR(0)$ ist:
+        <b><span class="t-3003-c">Übungsaufgabe 6.7.3<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:476:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:476:5</span></span>
+        <span class="t-3003-c">Zeigen Sie, dass die folgende Grammatik
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:477:9</span></span><span class="t-3003-c">$LR(0)$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:477:49</span></span><span class="t-3003-c">
+          ist:<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:477:56</span></span>
       </p>
       <div class="math-block">
         $$
@@ -761,70 +1008,74 @@
         T&amp;\rightarrow abC \\
         T&amp;\rightarrow ab
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:479:9</span>
       </div>
       <p>
-        Als ersten Schritt sollten Sie sich überlegen, wie
-        gültige Wortformen überhaupt aussehen können.
+        <span class="t-3003-c">Als ersten Schritt sollten Sie sich überlegen, wie<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:490:9</span></span>
+        <span class="t-3003-c">gültige Wortformen überhaupt aussehen können.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:491:9</span></span>
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      Algorithmische Fragen
+      <span class="t-3003-c">Algorithmische Fragen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:494:9</span></span>
     </h2>
     <p class="main-column">
-      Es stellen sich unmittelbar zwei zentrale Fragen:
+      <span class="t-3003-c">Es stellen sich unmittelbar zwei zentrale Fragen:<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:496:5</span></span>
     </p>
     <div class="main-column">
       <ol>
         <li>
           <p>
-            Wie können wir verifizieren, ob eine gegebene
-            Grammatik die
-            <span class="nowrap">$LR(0)$-Bedingung</span>
-            erfüllt?
+            <span class="t-3003-c">Wie können wir verifizieren, ob eine gegebene<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:500:13</span></span>
+            <span class="t-3003-c">Grammatik die
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:501:13</span></span><span class="nowrap"><span class="t-3003-c">$LR(0)$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:501:27</span></span><span class="t-3003-c">-Bedingung<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:501:34</span></span></span><span class="t-3003-c">
+              erfüllt?<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:501:34</span></span>
           </p>
         </li>
         <li>
           <p>
-            Falls sie es tut, wie können wir für eine gegebene
-            gültige Wortform $\gamma$ den korrekten
-            Reduktionsschritt
+            <span class="t-3003-c">Falls sie es tut, wie können wir für eine gegebene<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:504:13</span></span>
+            <span class="t-3003-c">gültige Wortform
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:505:13</span></span><span class="t-3003-c">$\gamma$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:505:30</span></span><span class="t-3003-c">
+              den korrekten<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:505:38</span></span>
+            <span class="t-3003-c">Reduktionsschritt<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:506:13</span></span>
           </p>
           <div class="math-block">
             $$
             \begin{align*}
             \gamma = \alpha \beta w \rstep{} \alpha X w
             \end{align*}
-            $$
+            $$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:508:13</span>
           </div>
           <p>
-            finden? Insbesondere die Zerlegung in
-            <span class="nowrap">$\gamma = \alpha \beta w$?</span>
+            <span class="t-3003-c">finden? Insbesondere die Zerlegung in<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:512:13</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:513:13</span></span><span class="nowrap"><span class="t-3003-c">$\gamma = \alpha \beta w$<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:513:13</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:513:38</span></span></span>
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
-      Beide Aufgaben können mit Hilfe eines
-      <span class="nowrap"><i>endlichen
-          Automaten</i>,</span>
-      des DK-Automaten erledigt werden (DK steht
-      als Abkürzung für Donald Knuth, der als erstes diese
-      Idee hatte).
+      <span class="t-3003-c">Beide Aufgaben können mit Hilfe eines
+        <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:515:5</span></span><span class="nowrap"><i><span class="t-3003-c">endlichen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:515:44</span></span>
+          <span class="t-3003-c">Automaten<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:516:5</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:516:15</span></span></span><span class="t-3003-c">
+        des DK-Automaten erledigt werden (DK steht<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:516:15</span></span>
+      <span class="t-3003-c">als Abkürzung für Donald Knuth, der als erstes diese<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:517:5</span></span>
+      <span class="t-3003-c">Idee hatte).<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:518:5</span></span>
     </p>
     <div class="well alert-warning out main-column">
       <p>
-        <b>Hinweis.</b>
-        Was nun folgt, ist mathematisch recht
-        herausfordernd. Lesen Sie daher gerne auch das Kapitel
-        2.4 (Deterministic context free languages) im Lehrbuch
-        <i>Introduction to the Theory of Computing</i>
-        von Michael
-        Sipser. Meine Darstellung des doch recht schwierigen
-        Materials fußt auf diesem Kapitel, weicht aber doch
-        stark genug von Sipser ab, so dass es womöglich
-        hilfreich ist, beides zu lesen: dieses
-        Vorlesungsskript und das Kapitel in Sipers Buch.
+        <b><span class="t-3003-c">Hinweis.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:522:10</span></span></b><span class="t-3003-c">
+          Was nun folgt, ist mathematisch recht<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:522:19</span></span>
+        <span class="t-3003-c">herausfordernd. Lesen Sie daher gerne auch das Kapitel<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:523:9</span></span>
+        <span class="t-3003-c">2.4 (Deterministic context free languages) im Lehrbuch<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:524:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/07-LR-grammars.wly:525:9</span></span><i><span class="t-3003-c">Introduction to the Theory of Computing<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:525:10</span></span></i><span class="t-3003-c">
+          von Michael<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:525:50</span></span>
+        <span class="t-3003-c">Sipser. Meine Darstellung des doch recht schwierigen<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:526:9</span></span>
+        <span class="t-3003-c">Materials fußt auf diesem Kapitel, weicht aber doch<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:527:9</span></span>
+        <span class="t-3003-c">stark genug von Sipser ab, so dass es womöglich<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:528:9</span></span>
+        <span class="t-3003-c">hilfreich ist, beides zu lesen: dieses<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:529:9</span></span>
+        <span class="t-3003-c">Vorlesungsskript und das Kapitel in Sipers Buch.<span class="t-3003">./course1/wly/06/07-LR-grammars.wly:530:9</span></span>
       </p>
     </div>
     <div id="end-of-page-elt">

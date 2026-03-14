@@ -1,5 +1,0 @@
-|> Sub
-
-    |> SubTitle
-        Savitch's Theorem:
-        $\textrm{Reachability} \in \textrm{Space}(\log(n))$

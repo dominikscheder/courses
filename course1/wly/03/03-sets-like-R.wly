@@ -1,8 +1,7 @@
 |> Sub
     title=Mengen, die so groß wie $\R$ sind
 
-    Im letzten Kapitel haben wir viele Mengen
-    kennengelernt, die abzählbar unendlich sind, also
+    Im letzten Kapitel haben wir viele Mengen kennengelernt, die abzählbar unendlich sind, also
     gleichmächtig mit $\N$. Hier werden wir nun erkunden,
     welche Mengen gleichmächtig mit $\R$ sind. In der
     mathematischen Fachsprache sagt man: sie haben die
@@ -18,14 +17,6 @@
         Es gilt $\R \approx (0,1)$, wobei $(0,1)$ das offene
         Einheitsintervall ist.
 
-    asdjkl asdf asdjklasdjkl asdjklasdjklasdjkl
-    asdjklasdjklasdjkl asdjklasdjklasdjkl
-    asdjklasdjklasdjkl asdjklasdjklasdjkl
-    asdjklasdjklasdjkl asdjklasdjklasdjkl
-    asdjklasdjklasdjkl asdjklasdjklasdjkl
-    asdjklasdjklasdjkl asdjklasdjklasdjkl
-    asdjklasdjklasdjkl asdjklasdjklasdjkl
-    asdjklasdjklasdjkl asdjkl
 
     |> Proof
         Wir können eine Bijektion explizit hinschreiben:

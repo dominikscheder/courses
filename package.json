@@ -1,15 +1,11 @@
 {
   "devDependencies": {
     "nodemon": "^3.0.2",
-    "vite": "^7.0.6",
-    "concurrently": "^8.2.2"
+    "vite": "^7.0.6"
   },
   "scripts": {
-    "dev": "concurrently \"npm run dev:course1\" \"npm run dev:course2\"",
-    "dev:course1": "vite --config vite.course1.config.js",
-    "dev:course2": "vite --config vite.course2.config.js",
-    "watch-wly": "nodemon --watch course1/wly --ext wly --exec \"gleam run\"",
-    "watch-wly:course1": "nodemon --watch course1/wly --ext wly --exec \"gleam run\"",
-    "build:course1": "gleam run"
+    "dev": "vite",
+    "watch": "nodemon --watch ${COURSE}/wly --ext wly --exec \"gleam run\"",
+    "build": "gleam run -- --which ${COURSE}"
   }
 }

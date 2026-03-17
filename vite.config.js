@@ -1,11 +1,16 @@
 import { defineConfig } from "vite";
 import { exec } from "child_process";
 
+const courseFolder = process.env.COURSE || "";
+const rootPath = `${courseFolder}/public`;
+const serverPort = Number(process.env.PORT) || 3003;
+const name = `vite ${rootPath} ${serverPort}-local server`
+
 export default defineConfig({
-  root: "course1/public",
+  root: rootPath,
   plugins: [
     {
-      name: "log-event-handler",
+      name: name,
       configureServer(server) {
         return () => {
           server.middlewares.use((req, res, next) => {
@@ -18,14 +23,14 @@ export default defineConfig({
             req.on("end", () => {
               try {
                 const { cmd } = JSON.parse(body);
-                console.log(`received '${cmd}'`);
+                console.log(`${name} received '${cmd}'`);
                 exec(cmd, { cwd: process.cwd() }, (error) => {
-                  if (error) console.error(`Error: ${error.message}`);
+                  if (error) console.error(`${name} error: ${error.message}`);
                 });
                 res.writeHead(200, { "Content-Type": "application/json" });
                 res.end(JSON.stringify({ success: true }));
               } catch (e) {
-                console.error("Parse error:", e);
+                console.error(`${name} parse error:`, e);
                 res.writeHead(400);
                 res.end();
               }
@@ -36,7 +41,7 @@ export default defineConfig({
     },
   ],
   server: {
-    port: 3003,
+    port: serverPort,
     host: "0.0.0.0",
     cors: true,
   },

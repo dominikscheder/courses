@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 1.3 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>ProofCompl—Kapitel 1.3</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./1-2.html"
+        >&lt;&lt; Kapitel 1.2<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Resolution</span></a><a
+          id="next-page"
+          href="./1-4.html"
+          class="menu-row-right"
+        >Kapitel 1.4 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Playing the Atserias-Dalmau game on an expander</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        <span class="t-3003-c">1.3&ensp;Atserias-Dalmau Games<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:2:11</span></span>
+      </p>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">There is a different way of proving resolution width lower bounds, not<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:4:5</span></span>
+      <span class="t-3003-c">reasoning about implication and non-implication (as we did in the<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:5:5</span></span>
+      <span class="t-3003-c">previous chapter) but by modeling resolution as a game between<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:6:5</span></span>
+      <span class="t-3003-c">a prover and a delayer. Loosely speaking, the pover wants to<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:7:5</span></span>
+      <span class="t-3003-c">demonstrate that
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:8:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:8:22</span></span><span class="t-3003-c">
+        is unsatisfiable; the delayer wants to delay or<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:8:25</span></span>
+      <span class="t-3003-c">completely avoid this. The prover proceeds by building up a partial assignment<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:9:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:10:5</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:10:5</span></span><span class="t-3003-c">
+        on the variables: in each round she picks a variable
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:10:11</span></span><span class="t-3003-c">$x$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:10:65</span></span><span class="t-3003-c">
+        and<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:10:68</span></span>
+      <span class="t-3003-c">asks the delayer
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:11:5</span></span><i><span class="t-3003-c">What is the value of
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:11:23</span></span><span class="nowrap"><span class="t-3003-c">$x$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:11:44</span></span><span class="t-3003-c">?<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:11:47</span></span></span></i><span class="t-3003-c">
+        to which the<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:11:49</span></span>
+      <span class="t-3003-c">delayer answers with a Boolean value
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:12:5</span></span><span class="nowrap"><span class="t-3003-c">$b \in \{0,1\}$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:12:42</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:12:57</span></span></span><span class="t-3003-c">
+        and the<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:12:57</span></span>
+      <span class="t-3003-c">prover adds
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:13:5</span></span><span class="t-3003-c">$[x \mapsto b]$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:13:17</span></span><span class="t-3003-c">
+        to
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:13:32</span></span><span class="nowrap"><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:13:36</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:13:42</span></span></span><span class="t-3003-c">
+        The prover wins once
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:13:42</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:13:65</span></span><span class="t-3003-c">
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:13:71</span></span>
+      <span class="t-3003-c">violates a clause
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:14:5</span></span><span class="nowrap"><span class="t-3003-c">$C \in F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:14:23</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:14:32</span></span></span><span class="t-3003-c">
+        If
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:14:32</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:14:37</span></span><span class="t-3003-c">
+        is unsatisfiable, she can surely<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:14:40</span></span>
+      <span class="t-3003-c">win the game because once
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:15:5</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:15:31</span></span><span class="t-3003-c">
+        becomes a total assignment it must<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:15:37</span></span>
+      <span class="t-3003-c">violate some clause. The point is that she has
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:16:5</span></span><span class="nowrap"><i><span class="t-3003-c">limited memory<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:16:53</span></span></i><span class="t-3003-c">:<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:16:68</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:16:68</span></span>
+      <span class="t-3003-c">she must make sure that
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:17:5</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:17:29</span></span><span class="t-3003-c">
+        is defined on at most
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:17:35</span></span><span class="t-3003-c">$w$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:17:58</span></span><span class="t-3003-c">
+        variables<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:17:61</span></span>
+      <span class="t-3003-c">at any point. More formally:<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:18:5</span></span>
+    </p>
+    <div class="well statement out">
+      <p>
+        <b><span class="t-3003-c">Algorithm 1.3.1<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:19:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:19:5</span></span>
+        <span class="t-3003-c">Atserias-Dalmau game
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:20:9</span></span><span class="nowrap"><span class="t-3003-c">$\adg(F,w)$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:20:30</span></span><span class="t-3003-c">:<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:20:41</span></span></span>
+      </p>
+      <ol>
+        <li>
+          <p>
+            <span class="nowrap"><span class="t-3003-c">$\rho := [\ ]$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:23:17</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:23:31</span></span></span><span class="t-3003-c">
+              the empty assignment<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:23:31</span></span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <code><span class="t-3003-c">while<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:26:21</span></span></code><span class="t-3003-c">
+              no clause of
+              <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:27:18</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:27:32</span></span><span class="t-3003-c">
+              is violated by
+              <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:27:35</span></span><span class="nowrap"><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:27:51</span></span><span class="t-3003-c">:<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:27:57</span></span></span>
+          </p>
+          <ol>
+            <li>
+              <p>
+                <span class="t-3003-c">Prover picks a variable
+                  <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:30:25</span></span><span class="t-3003-c">$x$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:30:49</span></span><span class="t-3003-c">
+                  of
+                  <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:30:52</span></span><span class="nowrap"><span class="t-3003-c">$V$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:30:56</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:30:59</span></span></span>
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="t-3003-c">Delayer responds with a truth value
+                  <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:32:25</span></span><span class="nowrap"><span class="t-3003-c">$b \in \{0,1\}$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:32:61</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:32:76</span></span></span>
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="t-3003-c">Prover sets
+                  <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:34:25</span></span><span class="t-3003-c">$\rho := [x \mapsto b]$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:34:37</span></span>
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="t-3003-c">If
+                  <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:36:25</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:36:28</span></span><span class="t-3003-c">
+                  contains more than
+                  <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:36:34</span></span><span class="t-3003-c">$w+1$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:36:54</span></span><span class="t-3003-c">
+                  variabels, prover<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:36:59</span></span>
+                <span class="t-3003-c">must "forget" an assignment in
+                  <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:37:25</span></span><span class="nowrap"><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:37:56</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:37:62</span></span></span>
+              </p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <p>
+            <span class="t-3003-c">Prover can now exhibit a clause
+              <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:39:17</span></span><span class="t-3003-c">$C \in F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:39:49</span></span><span class="t-3003-c">
+              with
+              <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:39:58</span></span><span class="nowrap"><span class="t-3003-c">$C(\rho) = 0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:39:64</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:39:77</span></span></span><span class="t-3003-c">
+              <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:39:77</span></span>
+            <span class="t-3003-c">winning the game.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:40:17</span></span>
+          </p>
+        </li>
+      </ol>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Delayer wins if he can make sure that the
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:41:5</span></span><span class="nowrap"><code><span class="t-3003-c">while<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:43:9</span></span></code><span class="t-3003-c">-loop<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:44:5</span></span></span><span class="t-3003-c">
+        never<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:44:5</span></span>
+      <span class="t-3003-c">terminates. If every clause of
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:45:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:45:36</span></span><span class="t-3003-c">
+        has size exactly
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:45:39</span></span><span class="t-3003-c">$k$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:45:57</span></span><span class="t-3003-c">
+        and
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:45:60</span></span><span class="t-3003-c">$w \lt k$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:45:65</span></span><span class="t-3003-c">
+        then<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:45:74</span></span>
+      <span class="t-3003-c">of course Delayer wins the game. His challenge is to win it even for "large"<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:46:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:47:5</span></span><span class="nowrap"><span class="t-3003-c">$w$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:47:5</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:47:8</span></span></span><span class="t-3003-c">
+        e.g. for
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:47:8</span></span><span class="nowrap"><span class="t-3003-c">$w = n/3$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:47:19</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:47:28</span></span></span>
+    </p>
+    <div
+      id="_4_hgi_"
+      class="well statement out"
+    >
+      <p>
+        <b><span class="t-3003-c">Theorem 1.3.2<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:48:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:48:5</span></span>
+        <span class="t-3003-c">If
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:50:9</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:50:12</span></span><span class="t-3003-c">
+          has a resolution<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:50:15</span></span>
+        <span class="t-3003-c">refutation of width at most
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:51:9</span></span><span class="t-3003-c">$w$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:51:37</span></span><span class="t-3003-c">
+          then prover can win
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:51:40</span></span><span class="nowrap"><span class="t-3003-c">$\adg(F,w)$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:51:61</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:51:72</span></span></span>
+      </p>
+    </div>
+    <div class="well highlight out">
+      <p>
+        <b>Proof</b>
+        
+        <span class="t-3003-c">Let
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:53:9</span></span><span class="t-3003-c">$C_1, C_2, \dots, C_l = \Box$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:53:13</span></span><span class="t-3003-c">
+          be a resolution refutation of
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:53:42</span></span><span class="nowrap"><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:53:73</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:53:76</span></span></span><span class="t-3003-c">
+          The prover<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:53:76</span></span>
+        <span class="t-3003-c">makes her way from
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:54:9</span></span><span class="t-3003-c">$C_l$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:54:28</span></span><span class="t-3003-c">
+          at the end of the proof backwards to a clause<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:54:33</span></span>
+        <span class="t-3003-c">of
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:55:9</span></span><span class="nowrap"><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:55:12</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:55:15</span></span></span><span class="t-3003-c">
+          maintaining the invariant that her
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:55:15</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:55:52</span></span><span class="t-3003-c">
+          violates her current<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:55:58</span></span>
+        <span class="t-3003-c">clause. Here is her strategy:<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:56:9</span></span>
+      </p>
+      <div class="well statement">
+        <p>
+          <b><span class="t-3003-c">Algorithm 1.3.3<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:57:9</span></span></b><span class="t-3003-c">
+            <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:57:9</span></span>
+          <span class="t-3003-c">Strategy for Prover:<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:58:13</span></span>
+        </p>
+        <ol>
+          <li>
+            <p>
+              <span class="t-3003-c">$\rho = [\ ]$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:62:21</span></span><span class="t-3003-c">
+                in the beginning.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:62:34</span></span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span class="t-3003-c">Set
+                <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:64:21</span></span><span class="nowrap"><span class="t-3003-c">$C = C_l = \Box$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:64:25</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:64:41</span></span></span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <code><span class="t-3003-c">while<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:67:25</span></span></code><span class="t-3003-c">
+                <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:68:22</span></span><span class="nowrap"><span class="t-3003-c">$C \not \in F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:68:23</span></span><span class="t-3003-c">:<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:68:37</span></span></span><span class="comment"><span class="t-3003-c">
+                  #
+                  <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:71:26</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:71:29</span></span><span class="t-3003-c">
+                  violates
+                  <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:71:35</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:71:45</span></span><span class="t-3003-c">
+                  by invariant<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:71:48</span></span></span>
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:74:29</span></span><span class="t-3003-c">
+                    is a resolvent of two earlier clauses<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:74:32</span></span>
+                  <span class="t-3003-c">
+                    <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:75:29</span></span><span class="t-3003-c">$D_1, D_2$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:75:29</span></span><span class="t-3003-c">
+                    in the resolution refutation.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:75:39</span></span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="t-3003-c">Let
+                    <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:77:29</span></span><span class="t-3003-c">$x$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:77:33</span></span><span class="t-3003-c">
+                    be the resolved variable.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:77:36</span></span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="t-3003-c">Prover asks about
+                    <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:79:29</span></span><span class="t-3003-c">$x$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:79:47</span></span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="t-3003-c">Delayer answers with
+                    <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:81:29</span></span><span class="nowrap"><span class="t-3003-c">$b \in \{0,1\}$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:81:50</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:81:65</span></span></span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="t-3003-c">The new assignment
+                    <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:83:29</span></span><span class="t-3003-c">$\rho \cup [x \mapsto b]$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:83:48</span></span><span class="t-3003-c">
+                    violates<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:83:73</span></span>
+                  <span class="t-3003-c">exactly one clause of
+                    <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:84:29</span></span><span class="nowrap"><span class="t-3003-c">$D_1, D_2$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:84:51</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:84:61</span></span></span><span class="t-3003-c">
+                    say without loss of<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:84:61</span></span>
+                  <span class="t-3003-c">generality
+                    <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:85:29</span></span><span class="nowrap"><span class="t-3003-c">$D_1$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:85:40</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:85:45</span></span></span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="t-3003-c">Prover forgets all variables not in
+                    <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:87:29</span></span><span class="nowrap"><span class="t-3003-c">$D_1$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:87:65</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:87:70</span></span></span><span class="t-3003-c">
+                    so<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:87:70</span></span>
+                  <span class="t-3003-c">
+                    <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:88:29</span></span><span class="nowrap"><span class="t-3003-c">$|\rho| = |D_1| \leq w$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:88:29</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:88:52</span></span></span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="t-3003-c">Prover sets
+                    <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:90:29</span></span><span class="nowrap"><span class="t-3003-c">$C := D_1$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:90:41</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:90:51</span></span></span>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              <span class="t-3003-c">The
+                <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:92:21</span></span><span class="nowrap"><code><span class="t-3003-c">while<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:94:25</span></span></code><span class="t-3003-c">-loop<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:95:21</span></span></span><span class="t-3003-c">
+                ends because the position of clause
+                <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:95:21</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:95:63</span></span><span class="t-3003-c">
+                <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:95:66</span></span>
+              <span class="t-3003-c">in the resolution refutation
+                <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:96:21</span></span><span class="t-3003-c">$C_1, \dots, C_l$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:96:50</span></span><span class="t-3003-c">
+                moves to<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:96:67</span></span>
+              <span class="t-3003-c">the left in each iteration.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:97:21</span></span>
+            </p>
+          </li>
+        </ol>
+      </div>
+      <p>
+        <span class="t-3003-c">Once
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:99:9</span></span><span class="nowrap"><span class="t-3003-c">$C \in F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:99:14</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:99:23</span></span></span><span class="t-3003-c">
+          the invariant tells us that
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:99:23</span></span><span class="nowrap"><span class="t-3003-c">$C(\rho) = 0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:99:53</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:99:66</span></span></span><span class="t-3003-c">
+          and thus Prover<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:99:66</span></span>
+        <span class="t-3003-c">wins the game.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:100:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+      </p>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">This theorem is hugely useful: if<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:102:5</span></span>
+      <span class="t-3003-c">we can define a strategy for Delayer to win the game on
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:103:5</span></span><span class="nowrap"><span class="t-3003-c">$(F,w)$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:103:61</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:103:68</span></span></span><span class="t-3003-c">
+        then every<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:103:68</span></span>
+      <span class="t-3003-c">resolution refutation needs width more than
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:104:5</span></span><span class="nowrap"><span class="t-3003-c">$w$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:104:49</span></span><span class="t-3003-c">!<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:104:52</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:104:52</span></span>
+      <span class="t-3003-c">The theorem has a converse, which is not only less useful but also slightly<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:105:5</span></span>
+      <span class="t-3003-c">more difficult to prove:<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:106:5</span></span>
+    </p>
+    <div class="well statement out">
+      <p>
+        <b><span class="t-3003-c">Theorem 1.3.4<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:107:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:107:5</span></span>
+        <span class="t-3003-c">Suppose Prover can<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:108:9</span></span>
+        <span class="t-3003-c">win the game
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:109:9</span></span><span class="nowrap"><span class="t-3003-c">$\adg(F,w)$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:109:22</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:109:33</span></span></span><span class="t-3003-c">
+          then there is a resolution refutation of<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:109:33</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:110:9</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:110:9</span></span><span class="t-3003-c">
+          of width at most
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:110:12</span></span><span class="nowrap"><span class="t-3003-c">$w$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:110:30</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:110:33</span></span></span>
+      </p>
+    </div>
+    <div class="well highlight out">
+      <p>
+        <b>Proof</b>
+        
+        <span class="t-3003-c">First of all we add another derivation rule to our resolution<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:112:9</span></span>
+        <span class="t-3003-c">calculus: if we have derived a clause
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:113:9</span></span><span class="nowrap"><span class="t-3003-c">$D$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:113:47</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:113:50</span></span></span><span class="t-3003-c">
+          we can derive<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:113:50</span></span>
+        <span class="t-3003-c">a superclause
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:114:9</span></span><span class="nowrap"><span class="t-3003-c">$C \supseteq D$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:114:23</span></span><span class="t-3003-c">;<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:114:38</span></span></span><span class="t-3003-c">
+          this is called the
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:114:38</span></span><span class="nowrap"><i><span class="t-3003-c">weakening rule<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:114:60</span></span></i><span class="t-3003-c">;<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:114:75</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:114:75</span></span>
+        <span class="t-3003-c">it is clearly correct, and we can always get rid of weakening<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:115:9</span></span>
+        <span class="t-3003-c">steps without increasing length of width of the proof.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:116:9</span></span>
+        <span class="t-3003-c">We will need a slightly more general<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:117:9</span></span>
+        <span class="t-3003-c">statement. First we allow
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:118:9</span></span><span class="t-3003-c">$\adg(F,w)$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:118:35</span></span><span class="t-3003-c">
+          to start with<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:118:46</span></span>
+        <span class="t-3003-c">a partial assignment
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:119:9</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:119:30</span></span><span class="t-3003-c">
+          that is not empty (but surely<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:119:36</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:120:9</span></span><span class="nowrap"><span class="t-3003-c">$|\rho| \leq w$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:120:9</span></span><span class="t-3003-c">).<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:120:24</span></span></span><span class="t-3003-c">
+          We call this
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:120:24</span></span><span class="nowrap"><span class="t-3003-c">$\adg(F,w,\rho)$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:120:40</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:120:56</span></span></span><span class="t-3003-c">
+          The<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:120:56</span></span>
+        <span class="t-3003-c">stronger statement now is:<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:121:9</span></span>
+      </p>
+      <div class="well statement">
+        <p>
+          <b><span class="t-3003-c">Claim 1.3.5<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:122:9</span></span></b><span class="t-3003-c">
+            <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:122:9</span></span>
+          <span class="t-3003-c">If Prover<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:123:13</span></span>
+          <span class="t-3003-c">can win
+            <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:124:13</span></span><span class="t-3003-c">$\adg(F,w,\rho)$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:124:21</span></span><span class="t-3003-c">
+            then there is a resolution proof<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:124:37</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:125:13</span></span><span class="t-3003-c">$C_1, C_2, \dots, C_l$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:125:13</span></span><span class="t-3003-c">
+            from
+            <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:125:35</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:125:41</span></span><span class="t-3003-c">
+            of width at most
+            <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:125:44</span></span><span class="t-3003-c">$w$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:125:62</span></span><span class="t-3003-c">
+            such that<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:125:65</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:126:13</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:126:13</span></span><span class="t-3003-c">
+            violates the final clause
+            <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:126:19</span></span><span class="nowrap"><span class="t-3003-c">$C_l$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:126:46</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:126:51</span></span></span>
+        </p>
+      </div>
+      <p>
+        <span class="t-3003-c">If we can prove the claim, then the theorem follows by playing<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:128:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:129:9</span></span><span class="nowrap"><span class="t-3003-c">$\adg(F,w,[\ ])$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:129:9</span></span><span class="t-3003-c">:<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:129:25</span></span></span><span class="t-3003-c">
+          the assignment
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:129:25</span></span><span class="t-3003-c">$[\ ]$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:129:42</span></span><span class="t-3003-c">
+          will violate the final clause<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:129:48</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:130:9</span></span><span class="nowrap"><span class="t-3003-c">$C_l$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:130:9</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:130:14</span></span></span><span class="t-3003-c">
+          which can only mean
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:130:14</span></span><span class="nowrap"><span class="t-3003-c">$C_l = \Box$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:130:36</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:130:48</span></span></span><span class="t-3003-c">
+          So let's prove the claim.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:130:48</span></span>
+      </p>
+      <p>
+        <span class="t-3003-c">We prove the claim by induction on the length of the game, i.e.,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:132:9</span></span>
+        <span class="t-3003-c">the number of times the players iterate through the
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:133:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:134:9</span></span><span class="nowrap"><code><span class="t-3003-c">while<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:134:10</span></span></code><span class="t-3003-c">-loop.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:134:16</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:134:16</span></span>
+        <span class="t-3003-c">If Prover wins with 0 iterations of the loop, then the original<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:135:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:136:9</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:136:9</span></span><span class="t-3003-c">
+          violates some clause
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:136:15</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:136:37</span></span><span class="t-3003-c">
+          of
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:136:40</span></span><span class="nowrap"><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:136:44</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:136:47</span></span></span><span class="t-3003-c">
+          So
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:136:47</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:136:52</span></span><span class="t-3003-c">
+          is by itself<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:136:55</span></span>
+        <span class="t-3003-c">a resolution proof from
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:137:9</span></span><span class="nowrap"><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:137:33</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:137:36</span></span></span><span class="t-3003-c">
+          of width
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:137:36</span></span><span class="nowrap"><span class="t-3003-c">$|C| \leq |\rho| \leq w$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:137:47</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:137:71</span></span></span><span class="t-3003-c">
+          ending<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:137:71</span></span>
+        <span class="t-3003-c">in
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:138:9</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:138:12</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:138:15</span></span></span><span class="t-3003-c">
+          and
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:138:15</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:138:21</span></span><span class="t-3003-c">
+          violating its final clause.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:138:27</span></span>
+      </p>
+      <p>
+        <span class="t-3003-c">So suppose Prover can win within
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:140:9</span></span><span class="t-3003-c">$t$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:140:42</span></span><span class="t-3003-c">
+          steps, no matter the moves<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:140:45</span></span>
+        <span class="t-3003-c">Delayer makes. Prover queries a variable
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:141:9</span></span><span class="nowrap"><span class="t-3003-c">$x$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:141:50</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:141:53</span></span></span><span class="t-3003-c">
+          Let
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:141:53</span></span><span class="t-3003-c">$b \in \{0,1\}$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:141:59</span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:141:74</span></span>
+        <span class="t-3003-c">be the value Delayer answers.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:142:9</span></span>
+        <span class="t-3003-c">Prover builds
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:143:9</span></span><span class="t-3003-c">$\rho \cup [x \mapsto b]$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:143:23</span></span><span class="t-3003-c">
+          and possibly forgets some other<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:143:48</span></span>
+        <span class="t-3003-c">variable; call the resulting partial assignment
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:144:9</span></span><span class="nowrap"><span class="t-3003-c">$\rho_b$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:144:57</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:144:65</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:144:65</span></span>
+        <span class="t-3003-c">Since Prover can win within
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:145:9</span></span><span class="t-3003-c">$t$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:145:37</span></span><span class="t-3003-c">
+          steps no matter what Delayer<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:145:40</span></span>
+        <span class="t-3003-c">answers, he can win within
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:146:9</span></span><span class="t-3003-c">$t-1$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:146:36</span></span><span class="t-3003-c">
+          steps when starting<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:146:41</span></span>
+        <span class="t-3003-c">with
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:147:9</span></span><span class="t-3003-c">$\rho_0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:147:14</span></span><span class="t-3003-c">
+          and when starting with
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:147:22</span></span><span class="nowrap"><span class="t-3003-c">$\rho_1$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:147:46</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:147:54</span></span></span><span class="t-3003-c">
+          In other words:<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:147:54</span></span>
+        <span class="t-3003-c">she can win
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:148:9</span></span><span class="t-3003-c">$\adg(F,w,\rho_0)$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:148:21</span></span><span class="t-3003-c">
+          within
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:148:39</span></span><span class="t-3003-c">$t-1$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:148:47</span></span><span class="t-3003-c">
+          steps and
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:148:52</span></span><span class="t-3003-c">$\adg(F,w,\rho_1)$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:148:63</span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:148:81</span></span>
+        <span class="t-3003-c">within
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:149:9</span></span><span class="t-3003-c">$t-1$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:149:16</span></span><span class="t-3003-c">
+          steps.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:149:21</span></span>
+      </p>
+      <p>
+        <span class="t-3003-c">By the induction hypothesis, there is a resultion proof
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:151:9</span></span><span class="t-3003-c">$\pi_0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:151:65</span></span><span class="t-3003-c">
+          from
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:151:72</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:151:78</span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:151:81</span></span>
+        <span class="t-3003-c">of width
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:152:9</span></span><span class="t-3003-c">$w$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:152:18</span></span><span class="t-3003-c">
+          ending in
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:152:21</span></span><span class="t-3003-c">$C_0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:152:32</span></span><span class="t-3003-c">
+          such that
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:152:37</span></span><span class="t-3003-c">$\rho_0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:152:48</span></span><span class="t-3003-c">
+          violates
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:152:56</span></span><span class="nowrap"><span class="t-3003-c">$C_0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:152:66</span></span><span class="t-3003-c">;<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:152:71</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:152:71</span></span>
+        <span class="t-3003-c">similarly a proof
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:153:9</span></span><span class="t-3003-c">$\pi_1$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:153:27</span></span><span class="t-3003-c">
+          ending in
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:153:34</span></span><span class="t-3003-c">$C_1$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:153:45</span></span><span class="t-3003-c">
+          such that
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:153:50</span></span><span class="nowrap"><span class="t-3003-c">$C_1(\rho_1) = 0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:153:61</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:153:78</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:153:78</span></span>
+        <span class="t-3003-c">Suppose
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:154:9</span></span><span class="nowrap"><span class="t-3003-c">$x \not \in \var(C_1) \cap \var(C_0)$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:154:17</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:154:54</span></span></span><span class="t-3003-c">
+          say without loss of<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:154:54</span></span>
+        <span class="t-3003-c">generality
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:155:9</span></span><span class="nowrap"><span class="t-3003-c">$x \not \in \var(C_0)$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:155:20</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:155:42</span></span></span><span class="t-3003-c">
+          Then already
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:155:42</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:155:57</span></span><span class="t-3003-c">
+          violates<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:155:63</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:156:9</span></span><span class="t-3003-c">$C_0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:156:9</span></span><span class="t-3003-c">
+          and the claim is proved, just taking proof
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:156:14</span></span><span class="nowrap"><span class="t-3003-c">$\pi_0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:156:58</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:156:65</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:156:65</span></span>
+        <span class="t-3003-c">Otherwise,
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:157:9</span></span><span class="t-3003-c">$x$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:157:20</span></span><span class="t-3003-c">
+          appears in both clauses. Since
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:157:23</span></span><span class="t-3003-c">$C_0(\rho_0)=0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:157:55</span></span><span class="t-3003-c">
+          we<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:157:70</span></span>
+        <span class="t-3003-c">conclude that
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:158:9</span></span><span class="t-3003-c">$\rho_0(x)=0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:158:23</span></span><span class="t-3003-c">
+          (it must be defined and surely it isn't 1),<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:158:36</span></span>
+        <span class="t-3003-c">so
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:159:9</span></span><span class="nowrap"><span class="t-3003-c">$x \in C_0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:159:12</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:159:23</span></span></span><span class="t-3003-c">
+          Similarly
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:159:23</span></span><span class="nowrap"><span class="t-3003-c">$\bar{x} \in C_1$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:159:35</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:159:52</span></span></span><span class="t-3003-c">
+          They have a resolvent<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:159:52</span></span>
+        <span class="t-3003-c">which we call
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:160:9</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:160:23</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:160:26</span></span></span><span class="t-3003-c">
+          Every variable of
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:160:26</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:160:46</span></span><span class="t-3003-c">
+          is defined by
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:160:49</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:160:64</span></span><span class="t-3003-c">
+          and<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:160:70</span></span>
+        <span class="t-3003-c">indeed
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:161:9</span></span><span class="nowrap"><span class="t-3003-c">$\rho(C) = 0$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:161:16</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:161:29</span></span></span><span class="t-3003-c">
+          Since
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:161:29</span></span><span class="t-3003-c">$|\rho| \leq w$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:161:37</span></span><span class="t-3003-c">
+          this also implies
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:161:52</span></span><span class="nowrap"><span class="t-3003-c">$|C| \leq w$<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:161:71</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:161:83</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:161:83</span></span>
+        <span class="t-3003-c">finishing the proof.<span class="t-3003">./course2/wly/01/03-atserias-dalmau.wly:162:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+      </p>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./1-2.html">&lt;&lt; Kapitel 1.2<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Resolution</span></a><a
+          href="./1-4.html"
+          class="menu-row-right"
+        >Kapitel 1.4 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Playing the Atserias-Dalmau game on an expander</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

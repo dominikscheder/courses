@@ -1188,3 +1188,17 @@ figure:hover:has(>.t-3003) img,
   background-color: #bfb;
   overflow: visible;
 }
+
+
+
+.quotation {
+  text-align:center; 
+  font-style:italic;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.comment {
+  color:orange;
+  font-style: italic;
+}

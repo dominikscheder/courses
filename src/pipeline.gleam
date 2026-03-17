@@ -31,6 +31,7 @@ const p_cannot_contain = [
   "Menu",
   "Observation",
   "Proof",
+  "Quotation",
   "Remark",
   "Statement",
   "Sub",
@@ -80,7 +81,25 @@ const p_cannot_be_contained_in = [
 
 const post_counter_space = " "
 
-pub fn pipeline(parameters: ds.RendererParameters, author_mode: Bool) -> List(Pipe) {
+type Language {
+  English
+  German
+}
+
+pub fn pipeline(
+  parameters: ds.RendererParameters,
+  author_mode: Bool,
+  language: String,
+) -> List(Pipe) {
+  let language: Language = case language {
+    "de" -> German
+    "en" -> English
+    _ -> {
+      let msg = "unknown language: " <> language
+      panic as msg
+    }
+  }
+
   let escaped_dollar_to_span_rr_splitter =
     grs.rr_splitter_for_groups([
       #("\\\\", grs.Trash),
@@ -108,6 +127,7 @@ pub fn pipeline(parameters: ds.RendererParameters, author_mode: Bool) -> List(Pi
     "Problem",
     "Proof",
     "QED",
+    "Quotation",
     "Remark",
     "Statement",
     "Sub",
@@ -133,6 +153,7 @@ pub fn pipeline(parameters: ds.RendererParameters, author_mode: Bool) -> List(Pi
     "ol",
     "ul",
     "li",
+    "code",
   ]
   let pre_transformation_approved_tags =
     [pre_transformation_document_tags, pre_transformation_html_tags]
@@ -195,6 +216,26 @@ pub fn pipeline(parameters: ds.RendererParameters, author_mode: Bool) -> List(Pi
   // * use 'dl.table_marker()' desugarer to mark a line *
   // * in the table; (with '--table' printout)          *
   // ****************************************************
+  let observation: String = case language {
+    English -> "*Observation*"
+    German -> "*Beobachtung*"
+  }
+  let example: String = case language {
+    English -> "*Example*"
+    German -> "*Beispiel*"
+  }
+  let claim: String = case language {
+    English -> "*Claim*"
+    German -> "*Behauptung*"
+  }
+  let algorithm: String = case language {
+    English -> "*Algorithm*"
+    German -> "*Algorithmus*"
+  }
+  let proof: String = case language {
+    English -> "*Proof*"
+    German -> "*Beweis*"
+  }
 
   [
     [
@@ -204,16 +245,17 @@ pub fn pipeline(parameters: ds.RendererParameters, author_mode: Bool) -> List(Pi
       dl.rename(#("WriterlyCodeBlock", "pre")),
       dl.append(#("Proof", "QED", infra.Continue)),
       dl.rename_with_attributes__batch([
+        // only for stuff with numbering
         #("Theorem", "Statement", [#("title", "*Theorem*")]),
         #("Definition", "Statement", [#("title", "*Definition*")]),
-        #("Observation", "Statement", [#("title", "*Beobachtung*")]),
-        #("Example", "Statement", [#("title", "*Beispiel*")]),
+        #("Observation", "Statement", [#("title", observation)]),
+        #("Example", "Statement", [#("title", example)]),
         #("Lemma", "Statement", [#("title", "*Lemma*")]),
-        #("Claim", "Statement", [#("title", "*Behauptung*")]),
+        #("Claim", "Statement", [#("title", claim)]),
         #("Problem", "Statement", [#("title", "*Problem*")]),
-        #("Algorithm", "Statement", [#("title", "*Algorithmus*")]),
+        #("Algorithm", "Statement", [#("title", algorithm)]),
         #("Demo", "Statement", [#("title", "*Demo*")]),
-        #("Proof", "Highlight", [#("title", "*Beweis.*")]),
+        #("Proof", "Highlight", [#("title", proof)]),
       ]),
       dl.ti2_add_should_be_numbers(),
       dl.ti2_backfill(),
@@ -257,11 +299,7 @@ pub fn pipeline(parameters: ds.RendererParameters, author_mode: Bool) -> List(Pi
         "StatementCounter",
         infra.Continue,
       )),
-      dl.set_handle_value(#(
-        "Chapter",
-        "::øøChapterCounter",
-        infra.GoBack,
-      )),
+      dl.set_handle_value(#("Chapter", "::øøChapterCounter", infra.GoBack)),
       dl.set_handle_value(#(
         "Sub",
         "::øøChapterCounter.::øøSubCounter",
@@ -431,6 +469,7 @@ pub fn pipeline(parameters: ds.RendererParameters, author_mode: Bool) -> List(Pi
       dl.tokenize_href_surroundings(),
       dl.rearrange_links_4_pre_tokenized_src__batch([
         #("Theorem <a href=1>_1_</a>", "<a href=1>Theorem _1_</a>"),
+        #("Observation <a href=1>_1_</a>", "<a href=1>Observation _1_</a>"),
         #("(Theorem <a href=1>_1_</a>", "(<a href=1>Theorem _1_</a>"),
         #("Übungsaufgabe <a href=1>_1_</a>", "<a href=1>Übungsaufgabe _1_</a>"),
         #("Aufgabe <a href=1>_1_</a>", "<a href=1>Aufgabe _1_</a>"),
@@ -497,6 +536,7 @@ pub fn pipeline(parameters: ds.RendererParameters, author_mode: Bool) -> List(Pi
       ),
       dl.replace_with_arbitrary(#("QED", qed)),
       dl.rename_with_class(#("InTextWarning", "span", "source-error-span")),
+      dl.rename_with_class(#("Quotation", "div", "quotation")),
       dl.rename_with_class_and_attributes(
         #("CircleX", "img", "circle-X-img", [
           #("src", "img/context-free/LR/circle-X.svg"),

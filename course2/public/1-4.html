@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="Section 1.4 of TI-2 - Theoretische Informatik 2">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <script type="text/javascript" src="./mathjax_setup.js"></script>
+  <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+  <title>ProofCompl—Kapitel 1.4</title>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./1-3.html"
+        >&lt;&lt; Kapitel 1.3<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Atserias-Dalmau Games</span></a><a class="menu-row-placeholder"></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        <span class="t-3003-c">1.4&ensp;Playing the Atserias-Dalmau game on an expander<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:2:11</span></span>
+      </p>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Atserias-Dalmau games offer an alternative<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:3:5</span></span>
+      <span class="t-3003-c">route to proving that Tseitin formulas<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:4:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:5:5</span></span><span class="t-3003-c">$\tseitin(G,s)$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:5:5</span></span><span class="t-3003-c">
+        on an expander graph
+        <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:5:20</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:5:42</span></span><span class="t-3003-c">
+        have<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:5:45</span></span>
+      <span class="t-3003-c">large resolution width.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:6:5</span></span>
+    </p>
+    <div class="well statement out">
+      <p>
+        <b><span class="t-3003-c">Theorem 1.4.1<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:7:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:7:5</span></span>
+        <span class="t-3003-c">Let
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:8:9</span></span><span class="t-3003-c">$G=(V,E)$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:8:13</span></span><span class="t-3003-c">
+          be<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:8:22</span></span>
+        <span class="t-3003-c">a connected
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:9:9</span></span><span class="nowrap"><span class="t-3003-c">$(t,h)$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:9:21</span></span><span class="t-3003-c">-expander<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:9:28</span></span></span><span class="t-3003-c">
+          and let
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:9:28</span></span><span class="t-3003-c">$s: V \rightarrow \{0,1\}$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:9:46</span></span><span class="t-3003-c">
+          be a<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:9:72</span></span>
+        <span class="t-3003-c">parity requirement function with
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:10:9</span></span><span class="nowrap"><span class="t-3003-c">$\sum_{v \in V} s(v) \equiv 1 \mod 2$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:10:42</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:10:79</span></span></span><span class="t-3003-c">
+          Then<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:10:79</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:11:9</span></span><span class="t-3003-c">$F := \tseitin(G,s)$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:11:9</span></span><span class="t-3003-c">
+          is unsatisfiable and Prover can win the<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:11:29</span></span>
+        <span class="t-3003-c">game
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:12:9</span></span><span class="t-3003-c">$\adg(F,w)$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:12:14</span></span><span class="t-3003-c">
+          for
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:12:25</span></span><span class="t-3003-c">$w := ht/2-1$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:12:30</span></span>
+      </p>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Together with
+        <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:14:5</span></span><a
+        href="./1-3.html#_4_hgi_"
+        class=""
+      >Theorem 1.3.2</a><span class="t-3003-c">
+        <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:14:5</span></span>
+      <span class="t-3003-c">from the previous chapter, this implies that any resolution refutation<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:15:5</span></span>
+      <span class="t-3003-c">of
+        <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:16:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:16:8</span></span><span class="t-3003-c">
+        will need width at least
+        <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:16:11</span></span><span class="nowrap"><span class="t-3003-c">$ht/2$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:16:37</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:16:43</span></span></span><span class="t-3003-c">
+        This constitutes another, alternative proof<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:16:43</span></span>
+      <span class="t-3003-c">of
+        <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:17:5</span></span><a
+        href="./1-2.html#_3_hgi_"
+        class=""
+      >Theorem 1.2.5</a><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:17:5</span></span>
+    </p>
+    <div class="well highlight out">
+      <p>
+        <b>Proof</b>
+        
+        <span class="t-3003-c">Delayer maintains at all times a total assignment
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:19:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:19:59</span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:19:67</span></span>
+        <span class="t-3003-c">with the following invariants:<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:20:9</span></span>
+      </p>
+      <ol>
+        <li>
+          <p>
+            <span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:23:17</span></span><span class="t-3003-c">
+              is a superassignment of
+              <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:23:25</span></span><span class="nowrap"><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:23:50</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:23:56</span></span></span><span class="t-3003-c">
+              That is,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:23:56</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:24:17</span></span><span class="t-3003-c">$\rho(x_e) \in \{\alpha(x_e), \texttt{undefined}\}$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:24:17</span></span><span class="t-3003-c">
+              for all<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:24:68</span></span>
+            <span class="t-3003-c">edges
+              <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:25:17</span></span><span class="nowrap"><span class="t-3003-c">$e \in E$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:25:23</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:25:32</span></span></span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:27:17</span></span><span class="t-3003-c">
+              satisfies all constraints
+              <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:27:25</span></span><span class="t-3003-c">$c_v$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:27:52</span></span><span class="t-3003-c">
+              except for one<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:27:57</span></span>
+            <span class="t-3003-c">vertex
+              <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:28:17</span></span><span class="nowrap"><span class="t-3003-c">$c_u$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:28:24</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:28:29</span></span></span><span class="t-3003-c">
+              which it violates. We call
+              <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:28:29</span></span><span class="t-3003-c">$u$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:28:58</span></span><span class="t-3003-c">
+              the current<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:28:61</span></span>
+            <span class="t-3003-c">Achilles heel of
+              <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:29:17</span></span><span class="nowrap"><span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:29:34</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:29:42</span></span></span>
+          </p>
+        </li>
+      </ol>
+      <p>
+        <span class="t-3003-c">Under these invariants, it is clear that Prover wins exactly when<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:30:9</span></span>
+        <span class="t-3003-c">all edges incident to
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:31:9</span></span><span class="t-3003-c">$u$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:31:31</span></span><span class="t-3003-c">
+          are in
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:31:34</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:31:42</span></span><span class="t-3003-c">
+          because then
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:31:48</span></span><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:31:62</span></span><span class="t-3003-c">
+          violates<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:31:68</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:32:9</span></span><span class="t-3003-c">$c_u$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:32:9</span></span><span class="t-3003-c">
+          and thus violates exactly one of the
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:32:14</span></span><span class="t-3003-c">$2^{\deg(u)-1}$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:32:52</span></span><span class="t-3003-c">
+          clauses<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:32:67</span></span>
+        <span class="t-3003-c">of
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:33:9</span></span><span class="nowrap"><span class="t-3003-c">$F_u$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:33:12</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:33:17</span></span></span>
+      </p>
+      <p>
+        <span class="t-3003-c">For a partial assignment
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:35:9</span></span><span class="nowrap"><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:35:34</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:35:40</span></span></span><span class="t-3003-c">
+          i.e., a state of the Atserias-Dalmau<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:35:40</span></span>
+        <span class="t-3003-c">game, let
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:36:9</span></span><span class="t-3003-c">$E_\rho$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:36:19</span></span><span class="t-3003-c">
+          denote the set of edges
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:36:27</span></span><span class="t-3003-c">$e$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:36:52</span></span><span class="t-3003-c">
+          for which
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:36:55</span></span><span class="t-3003-c">$x_e$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:36:66</span></span><span class="t-3003-c">
+          is<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:36:71</span></span>
+        <span class="t-3003-c">defined by
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:37:9</span></span><span class="nowrap"><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:37:20</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:37:26</span></span></span><span class="t-3003-c">
+          and let
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:37:26</span></span><span class="nowrap"><span class="t-3003-c">$G_{-\rho} := (V, E \setminus E_{\rho})$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:37:36</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:37:76</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:37:76</span></span>
+        <span class="t-3003-c">That is,
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:38:9</span></span><span class="t-3003-c">$G_{-\rho}$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:38:18</span></span><span class="t-3003-c">
+          is the graph obtained by removing edges<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:38:29</span></span>
+        <span class="t-3003-c">defined under
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:39:9</span></span><span class="nowrap"><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:39:23</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:39:29</span></span></span>
+      </p>
+      <div class="well statement">
+        <p>
+          <b><span class="t-3003-c">Observation 1.4.2<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:41:9</span></span></b><span class="t-3003-c">
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:41:9</span></span>
+          <span class="t-3003-c">When we remove<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:42:13</span></span>
+          <span class="t-3003-c">up to
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:43:13</span></span><span class="t-3003-c">$w+1$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:43:19</span></span><span class="t-3003-c">
+            edges from
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:43:24</span></span><span class="nowrap"><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:43:36</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:43:39</span></span></span><span class="t-3003-c">
+            no connected component will have<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:43:39</span></span>
+          <span class="t-3003-c">at size in
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:44:13</span></span><span class="nowrap"><span class="t-3003-c">$[t/2,t]$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:44:24</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:44:33</span></span></span><span class="t-3003-c">
+            i.e., each will have either fewer than
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:44:33</span></span><span class="t-3003-c">$t/2$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:44:74</span></span><span class="t-3003-c">
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:44:79</span></span>
+          <span class="t-3003-c">vertices or more than
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:45:13</span></span><span class="nowrap"><span class="t-3003-c">$t$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:45:35</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:45:38</span></span></span>
+        </p>
+      </div>
+      <div class="well highlight">
+        <p>
+          <b>Proof</b>
+          
+          <span class="t-3003-c">Let
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:47:13</span></span><span class="t-3003-c">$S \subseteq V$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:47:17</span></span><span class="t-3003-c">
+            be a connected component of
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:47:32</span></span><span class="nowrap"><span class="t-3003-c">$G_{-\rho}$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:47:61</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:47:72</span></span></span><span class="t-3003-c">
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:47:72</span></span>
+          <span class="t-3003-c">None of the<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:48:13</span></span>
+          <span class="t-3003-c">edges in
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:49:13</span></span><span class="t-3003-c">$\delta_G(S)$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:49:22</span></span><span class="t-3003-c">
+            is in
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:49:35</span></span><span class="t-3003-c">$G_{-\rho}$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:49:42</span></span><span class="t-3003-c">
+            because
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:49:53</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:49:62</span></span><span class="t-3003-c">
+            is a connected<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:49:65</span></span>
+          <span class="t-3003-c">component thereof; thus they are all defined under
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:50:13</span></span><span class="nowrap"><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:50:64</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:50:70</span></span></span><span class="t-3003-c">
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:50:70</span></span>
+          <span class="t-3003-c">and
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:51:13</span></span><span class="nowrap"><span class="t-3003-c">$|\delta_G(S)| \leq w$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:51:17</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:51:39</span></span></span><span class="t-3003-c">
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:51:39</span></span>
+          <span class="t-3003-c">If
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:52:13</span></span><span class="t-3003-c">$t/2 \leq |S| \leq t$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:52:16</span></span><span class="t-3003-c">
+            then by expansion we have<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:52:37</span></span>
+          <span class="t-3003-c">
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:53:13</span></span><span class="nowrap"><span class="t-3003-c">$|\delta_G(S)| \geq h |S| \geq ht/2$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:53:13</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:53:49</span></span></span><span class="t-3003-c">
+            Thus
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:53:49</span></span><span class="nowrap"><span class="t-3003-c">$w \geq ht/2$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:53:56</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:53:69</span></span></span><span class="t-3003-c">
+            <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:53:69</span></span>
+          <span class="t-3003-c">a contradiction to our assumption.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:54:13</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        </p>
+      </div>
+      <p>
+        <span class="t-3003-c">Delayer now maintains a third invariant:<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:56:9</span></span>
+      </p>
+      <ol start="3">
+        <li>
+          <p>
+            <span class="t-3003-c">The connected component of
+              <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:60:17</span></span><span class="t-3003-c">$G_{-\rho}$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:60:44</span></span><span class="t-3003-c">
+              containing<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:60:55</span></span>
+            <span class="t-3003-c">the Achilles heel of
+              <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:61:17</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:61:38</span></span><span class="t-3003-c">
+              has more than
+              <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:61:46</span></span><span class="t-3003-c">$t$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:61:61</span></span><span class="t-3003-c">
+              vertices.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:61:64</span></span>
+          </p>
+        </li>
+      </ol>
+      <p>
+        <span class="t-3003-c">How can Delayer maintain the invariant? Let
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:62:9</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:62:53</span></span><span class="t-3003-c">
+          be the<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:62:56</span></span>
+        <span class="t-3003-c">connected component of
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:63:9</span></span><span class="t-3003-c">$G_{-\rho}$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:63:32</span></span><span class="t-3003-c">
+          containing the Achilles heel
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:63:43</span></span><span class="t-3003-c">$u$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:63:73</span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:63:76</span></span>
+        <span class="t-3003-c">of
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:64:9</span></span><span class="nowrap"><span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:64:12</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:64:20</span></span></span><span class="t-3003-c">
+          Suppose Prover<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:64:20</span></span>
+        <span class="t-3003-c">queries
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:65:9</span></span><span class="nowrap"><span class="t-3003-c">$x_e$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:65:17</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:65:22</span></span></span><span class="t-3003-c">
+          There are two cases:<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:65:22</span></span>
+      </p>
+      <p>
+        <b><span class="t-3003-c">Case 1:<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:67:10</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:67:18</span></span>
+        <span class="t-3003-c">
+          The set
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:68:10</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:68:19</span></span><span class="t-3003-c">
+          is connected in<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:68:22</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:69:9</span></span><span class="nowrap"><span class="t-3003-c">$(V, E \setminus E_\rho \setminus \{e\})$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:69:9</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:69:50</span></span></span><span class="t-3003-c">
+          too. Then there is nothing<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:69:50</span></span>
+        <span class="t-3003-c">to do. Delayer answers the query with
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:70:9</span></span><span class="t-3003-c">$\alpha(x_e)$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:70:47</span></span><span class="t-3003-c">
+          and does not<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:70:60</span></span>
+        <span class="t-3003-c">change
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:71:9</span></span><span class="nowrap"><span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:71:16</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:71:24</span></span></span><span class="t-3003-c">
+          The size of the connected component containing
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:71:24</span></span><span class="t-3003-c">$u$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:71:73</span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:71:76</span></span>
+        <span class="t-3003-c">does not shrink.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:72:9</span></span>
+      </p>
+      <p>
+        <b><span class="t-3003-c">Case 2:<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:74:10</span></span></b><span class="t-3003-c">
+          Removing
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:74:18</span></span><span class="t-3003-c">$e$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:74:28</span></span><span class="t-3003-c">
+          makes
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:74:31</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:74:38</span></span><span class="t-3003-c">
+          break into two<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:74:41</span></span>
+        <span class="t-3003-c">parts
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:75:9</span></span><span class="t-3003-c">$S_1$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:75:15</span></span><span class="t-3003-c">
+          and
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:75:20</span></span><span class="nowrap"><span class="t-3003-c">$S_2$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:75:25</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:75:30</span></span></span><span class="t-3003-c">
+          Since
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:75:30</span></span><span class="nowrap"><span class="t-3003-c">$t \lt |S| = |S|_1 + |S|_2$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:75:38</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:75:65</span></span></span><span class="t-3003-c">
+          at least<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:75:65</span></span>
+        <span class="t-3003-c">one of the parts is greater than
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:76:9</span></span><span class="nowrap"><span class="t-3003-c">$t/2$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:76:42</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:76:47</span></span></span><span class="t-3003-c">
+          say
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:76:47</span></span><span class="nowrap"><span class="t-3003-c">$S_1$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:76:53</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:76:58</span></span></span><span class="t-3003-c">
+          Since
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:76:58</span></span><span class="t-3003-c">$S_1$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:76:66</span></span><span class="t-3003-c">
+          is a<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:76:71</span></span>
+        <span class="t-3003-c">component of the graph obtained from
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:77:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:77:46</span></span><span class="t-3003-c">
+          by removing
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:77:49</span></span><span class="t-3003-c">$|\rho|+1 \leq w+1$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:77:62</span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:77:81</span></span>
+        <span class="t-3003-c">edges, we know from the claim that
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:78:9</span></span><span class="nowrap"><span class="t-3003-c">$|S_1| \gt t$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:78:44</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:78:57</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:78:57</span></span>
+        <span class="t-3003-c">If the Achilles heel
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:79:9</span></span><span class="t-3003-c">$u$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:79:30</span></span><span class="t-3003-c">
+          is in
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:79:33</span></span><span class="t-3003-c">$S_1$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:79:40</span></span><span class="t-3003-c">
+          we simply answer
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:79:45</span></span><span class="nowrap"><span class="t-3003-c">$\rho(x_e) = \alpha(x_e$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:79:63</span></span><span class="t-3003-c">);<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:79:87</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:79:87</span></span>
+        <span class="t-3003-c">the connected component containing
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:80:9</span></span><span class="t-3003-c">$u$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:80:44</span></span><span class="t-3003-c">
+          shrinks, but is still greater than
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:80:47</span></span><span class="nowrap"><span class="t-3003-c">$t$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:80:83</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:80:86</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:80:86</span></span>
+        <span class="t-3003-c">If
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:81:9</span></span><span class="t-3003-c">$u \in S_2$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:81:12</span></span><span class="t-3003-c">
+          we have a problem since
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:81:23</span></span><span class="t-3003-c">$S_2$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:81:48</span></span><span class="t-3003-c">
+          might become<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:81:53</span></span>
+        <span class="t-3003-c">very small and eventually contain all edges around
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:82:9</span></span><span class="nowrap"><span class="t-3003-c">$x_e$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:82:60</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:82:65</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:82:65</span></span>
+        <span class="t-3003-c">Delayer has to "escape": the chooses an arbitrary
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:83:9</span></span><span class="t-3003-c">$v \in S_1$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:83:59</span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:83:70</span></span>
+        <span class="t-3003-c">and a path
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:84:9</span></span><span class="t-3003-c">$p$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:84:20</span></span><span class="t-3003-c">
+          from
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:84:23</span></span><span class="t-3003-c">$u$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:84:29</span></span><span class="t-3003-c">
+          to
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:84:32</span></span><span class="t-3003-c">$v$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:84:36</span></span><span class="t-3003-c">
+          in
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:84:39</span></span><span class="nowrap"><span class="t-3003-c">$G_{-\rho}$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:84:43</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:84:54</span></span></span><span class="t-3003-c">
+          She constructs<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:84:54</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:85:9</span></span><span class="nowrap"><span class="t-3003-c">$\alpha' := \alpha \oplus p$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:85:9</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:85:37</span></span></span><span class="t-3003-c">
+          meaning taking
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:85:37</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:85:54</span></span><span class="t-3003-c">
+          but flipping all<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:85:62</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:86:9</span></span><span class="t-3003-c">$x_f$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:86:9</span></span><span class="t-3003-c">
+          for edges
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:86:14</span></span><span class="nowrap"><span class="t-3003-c">$f \in p$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:86:25</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:86:34</span></span></span><span class="t-3003-c">
+          She only changes variables undefined by
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:86:34</span></span><span class="nowrap"><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:86:76</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:86:82</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:86:82</span></span>
+        <span class="t-3003-c">so
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:87:9</span></span><span class="t-3003-c">$\alpha'$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:87:12</span></span><span class="t-3003-c">
+          is still a superassignment of
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:87:21</span></span><span class="nowrap"><span class="t-3003-c">$\rho$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:87:52</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:87:58</span></span></span><span class="t-3003-c">
+          It satisfies<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:87:58</span></span>
+        <span class="t-3003-c">all constraints except
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:88:9</span></span><span class="nowrap"><span class="t-3003-c">$v$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:88:32</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:88:35</span></span></span><span class="t-3003-c">
+          So Delayer changed
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:88:35</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:88:56</span></span><span class="t-3003-c">
+          to
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:88:64</span></span><span class="nowrap"><span class="t-3003-c">$\alpha'$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:88:68</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:88:77</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:88:77</span></span>
+        <span class="t-3003-c">which moved the Achilles heel into the large enough connected<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:89:9</span></span>
+        <span class="t-3003-c">component
+          <span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:90:9</span></span><span class="nowrap"><span class="t-3003-c">$S_1$<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:90:19</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:90:24</span></span></span><span class="t-3003-c">
+          Thus she maintains all invariants and can<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:90:24</span></span>
+        <span class="t-3003-c">play indefinitely.<span class="t-3003">./course2/wly/01/04-atserias-dalmau-expander.wly:91:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+      </p>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./1-3.html">&lt;&lt; Kapitel 1.3<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Atserias-Dalmau Games</span></a><a class="menu-row-placeholder"></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

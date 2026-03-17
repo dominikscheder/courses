@@ -9,7 +9,7 @@
   <script type="text/javascript" src="./mathjax_setup.js"></script>
   <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <script type="text/javascript" src="./app.js"></script>
-  <title>TI2—Kapitel 1</title>
+  <title>ProofCompl—Kapitel 1</title>
 </head>
 <body>
   <div id="body-wrapper">
@@ -20,7 +20,7 @@
           href="./index.html"
         ><span class="inhalts_arrows">&lt;&lt;
           </span>Inhaltsverzeichnis</a><a
-          href="https://example.com"
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/"
           class="menu-row-right"
         >zur Kursübersicht</a>
       </div>
@@ -32,280 +32,13 @@
         >Kapitel 1.1 &gt;&gt;<span
             style="visibility:hidden"
             id="top-next-page-tooltip"
-          >Some Subchapter</span></a>
+          >Definitions</span></a>
       </div>
     </div>
     <div class="main-column page-title">
       <p>
-        1.&ensp;Einleitung
+        <span class="t-3003-c">1.&ensp;Resolution bounds from Tseitin formulas<span class="t-3003">./course2/wly/01/__parent.wly:2:11</span></span>
       </p>
-    </div>
-    <p class="main-column">
-      Im Kurs
-      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-1">Theoretische Informatik
-        I</a>
-      haben allerhand Problemstellungen und Algorithmen
-      kennengelernt und können nun (hoffentlich) auch für
-      manche Ihnen noch unbekannten Probleme neue
-      Algorithmen entwickeln. In diesem Kurs stellen wir uns
-      abstrakter die Frage, was denn ein Algorithmus ist;
-      was es denn heißt, etwas zu berechnen. Ein
-      Algorithmus, beispielsweise ein Sortieralgorithmus,
-      kann ja prinzipiell Arrays beliebiger Länge sorteren.
-      Es gibt also unendlich viele potentielle Eingaben.
-      Dennoch ist der Algorithmus selbst ein endliches
-      Objekt - der Programmcode beispielsweise besteht aus
-      endlich vielen Zeichen. Noch dazu kann ein Algorithmus
-      nur beschränkt die ihm gegebenen Daten manipulieren;
-      in jedem Schritt immer nur an einer bestimmten Stelle
-      und nach festen Regeln.
-    </p>
-    <h2 class="main-column topic-announcement">
-      Emailadressen und Arithmetische Ausdrücke
-    </h2>
-    <p class="main-column">
-      Die Menge aller denkbaren Emailadressen ist unendlich
-      - zumindest, solange wir für Nutzernamen und
-      Domainnamen keine Längenbeschränkung haben. Nach
-      welchen Regeln sind sie gebildet?
-    </p>
-    <div class="well exercise out">
-      <p>
-        <b>Übungsaufgabe 1.1</b>
-        Überlegen Sie sich, wie eine gültige Emailadresse
-        auszusehen hat. Als konkrete Beispiele nehmen Sie
-        bitte
-      </p>
-<pre>
-thomas.schmitz@hszg.de
-dominik@cs.sjtu.edu.cn
-raffaela@mayer@gmail.com
-lorenz.klein@greatest/company/in/the/world.com
-.schlaumeier@gmail.com
-</pre>
-      <p>
-        Welches davon sind gültige Emailadressen? Können Sie
-        genaue Regeln angeben, nach denen eine solche gebildet
-        sein muss? Können Sie die Regeln formal aufschreiben?
-      </p>
-    </div>
-    <div class="well exercise out">
-      <p>
-        <b>Übungsaufgabe 1.2</b>
-        Sie alle kennen arithmetische Ausdrücke, wie wir sie
-        zum Beispiel in Python eingeben und auswerten lassen
-        können:
-      </p>
-<pre class="python-prompt">
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> (6 + 8) * 3</span>
-<span class="python-prompt-ok-response">42</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> (24 / 4 / 2) * (24 / ( 4 / 2)) + 1</span>
-<span class="python-prompt-ok-response">37</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> 3 + 7 * 8</span>
-<span class="python-prompt-ok-response">59</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> (2 * 3))</span>
-<span class="python-prompt-error-response">File "&lt;stdin&gt;", line 1
-    (2 * 3))
-           ^
-SyntaxError: unmatched ')'</span>
-<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> (* 3)</span>
-<span class="python-prompt-error-response">File "&lt;stdin&gt;", line 1
-    (* 3)
-     ^^^
-SyntaxError: cannot use starred expression here</span>
-</pre>
-      <p>
-        Die letzten beiden waren in Pythons Augen
-        offensichtlich nicht korrekt. Wie sind korrekte
-        arithmetische Ausdrücke aufgebaut? Beschränken Sie
-        sich gerne auf * und + und / und - und Zahlen und
-        ignorieren Sie erst mal Variablen, Funktionsaufrufe
-        und weitere Operatoren. Versuchen Sie, eine Art
-        formale Sprache zu entwickeln, die die korrekten
-        arithmetischen Ausdrücke beschreibt.
-      </p>
-    </div>
-    <h2 class="main-column topic-announcement">
-      Endliche Regeln und unendliches Verhalten
-    </h2>
-    <p class="main-column">
-      Das klassische Beispiel, wie sehr einfache Regeln ein
-      extrem komplexes Verhalten erzeugen können, ist
-      Conways Game of Life. Hier ist der
-      <a href="href=https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens">Wikipedia-Artikel
-        dazu</a>.
-      Die Welt von Conways Game of Life ist ein unendliches
-      Schachbrett, in jedem jedes Feld entweder leer ist
-      oder von einem Einzeller bevölkert ist.
-    </p>
-    <div class="pseudowell">
-      <figure>
-        <img
-          style="width:400px;height:20px;"
-          src="img/game-of-life/game-of-life-01-01.svg"
-        >
-        <figcaption>
-          Eine Population in Conways Game of Life. Bildquelle:
-          Icongeek26 on
-          <a href="https://www.flaticon.com/">flaticon.com</a>.
-        </figcaption>
-      </figure>
-    </div>
-    <p class="main-column">
-      In jedem Zeitschritt weicht die derzeitige Generation
-      einer neuen. Wo neue Einzeller entstehen, das hängt
-      davon ab, wie viele der benachbarten 8 Felder von
-      Einzellern besetzt sind.
-    </p>
-    <div class="main-column">
-      <ol>
-        <li>
-          <p>
-            <b>Einzeller bleibt:</b>
-            wenn auf einem Feld ein Einzeller
-            lebt und in seiner 8-Nachbarschaft zwei oder drei
-            Einzeller leben, dann überlebt er; in der nächsten
-            Generation wird dort wieder ein Einzeller leben.
-          </p>
-        </li>
-        <li>
-          <p>
-            <b>Einzeller entsteht: wenn auf einem Feld im Moment
-              kein Einzeller lebt, in der 8-Nachbarschaft aber genau
-              drei Einzeller leben, dann entseht hier in der
-              nächsten Generation ein neuer Einzeller.</b>
-          </p>
-        </li>
-      </ol>
-    </div>
-    <p class="main-column">
-      Im Umkehrschluss: wenn ein Einzeller in seiner
-      8-Nachbarschaft vier oder mehr weitere Einzeller hat,
-      dann stirbt er an Überbevölkerung; gibt es in der
-      8-Nachbarschaft keinen oder nur einen Einzeller, dann
-      stirbt er an Vereinsamung. Wir müssen also für jedes
-      Feld zählen, wieviele der benachbarten Felder
-      bevölkert sind:
-    </p>
-    <div class="pseudowell">
-      <figure>
-        <img
-          style="width:20em"
-          src="img/game-of-life/game-of-life-01-02.svg"
-        >
-        <figcaption>
-          Zu jedem Feld schreiben wir die Anzahl seiner
-          Nachbarfelder, die bevölkert sind.
-        </figcaption>
-      </figure>
-    </div>
-    <div class="pseudowell">
-      <figure>
-        <img
-          style="width:20em"
-          src="img/game-of-life/game-of-life-01-03.svg"
-        >
-        <figcaption>
-          Die nächste Generation.
-        </figcaption>
-      </figure>
-    </div>
-    <p class="main-column">
-      Was geschieht nun, wenn wir weitere Generationen
-      betrachten? Stirbt die Population aus? Explodiert sie?
-      Stabilisiert sie sich irgendwann?
-    </p>
-    <div class="well exercise out">
-      <p>
-        <b>Übungsaufgabe 1.3</b>
-        Spiele Sie mit Conways Game of Life! Hier finden Sie
-        einen Simulator:
-        <a href="https://playgameoflife.com/">playgameoflife.com</a>.
-      </p>
-      <ol>
-        <li>
-          <p>
-            Probieren Sie aus, was geschieht, wenn die
-            Anfangspopulation ein "Pfad" ist, z.B.
-          </p>
-          <div class="figure__container">
-            <figure>
-              <img
-                style="width:16em"
-                src="img/game-of-life/game-of-life-02-01.svg"
-              >
-            </figure>
-          </div>
-          <p>
-            Probieren Sie Pfade verschiedener Länge aus. Welche
-            sterben aus? Welche überleben, und was geschieht mit
-            ihnen?
-          </p>
-        </li>
-        <li>
-          <p>
-            Probieren Sie das "f-Pentomino" als
-            Startkonfiguration aus:
-          </p>
-          <div class="figure__container">
-            <figure>
-              <img
-                style="width:12em"
-                src="img/game-of-life/game-of-life-03-01.svg"
-              >
-            </figure>
-          </div>
-        </li>
-        <li>
-          <p>
-            Probieren Sie meine obige Startkonfiguration aus.
-          </p>
-        </li>
-        <li>
-          <p>
-            Finden Sie weitere interessante Startkonfigurationen.
-          </p>
-        </li>
-      </ol>
-    </div>
-    <p class="main-column">
-      Was hat das Game of Life mit TI-2 zu tun? Nun, es
-      illustriert, wie eine endliche, sogar sehr kleine
-      Regelmenge sehr komplexe Phänomene erzeugen kann. In
-      der Tat, das Game of Life ist Turing-vollständig; das
-      heißt in etwa, sie können eine Anfangskonfiguration
-      bauen, die dann einen ganzen Rechner simuliert. Klingt
-      kaum vorstellbar. Wenn wir am Ende dieses Kurses
-      angelangt sind, werden Sie aber verstehen, warum das
-      sogar recht plausibel ist.
-    </p>
-    <h2 class="main-column topic-announcement">
-      Zusammenfassung
-    </h2>
-    <p class="main-column">
-      Es geht also in diesem Kurs vor Allem um folgende
-      Fragen:
-    </p>
-    <div class="main-column">
-      <ul>
-        <li>
-          <p>
-            Wie können wir endliche Beschreibungen von
-            unendlichen Objekten angeben?
-          </p>
-        </li>
-        <li>
-          <p>
-            Was heißt es, etwas zu berechnen? Welche Modelle fürs
-            Rechnen gibt es, die einerseits
-            <i>umfassend</i>
-            sind, also
-            die möglichst viel können, andererseits auch
-            <i>physikalisch realisierbar</i>
-            sind?
-          </p>
-        </li>
-      </ul>
     </div>
     <div id="end-of-page-elt">
     </div>
@@ -318,7 +51,7 @@ SyntaxError: cannot use starred expression here</span>
         >Kapitel 1.1 &gt;&gt;<span
             style="visibility:hidden"
             id="bottom-next-page-tooltip"
-          >Some Subchapter</span></a>
+          >Definitions</span></a>
       </div>
     </div>
   </div>

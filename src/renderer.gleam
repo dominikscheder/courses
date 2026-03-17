@@ -12,8 +12,7 @@ import io_lines.{type OutputLine, OutputLine}
 import pipeline
 import simplifile
 import vxml.{type VXML}
-
-const title_banner = "TI2—"
+import writerly
 
 const favicon_loc = "./img/favicon.svg"
 
@@ -105,7 +104,10 @@ fn our_splitter(root: VXML) -> Result(List(Fragment(VXML)), TI2SplitterError) {
 }
 
 // index emitter - handles index fragments
-fn index_emitter(fragment: Fragment(VXML)) -> Result(Fragment(OL), String) {
+fn index_emitter(
+  fragment: Fragment(VXML),
+  title_banner: String,
+) -> Result(Fragment(OL), String) {
   let blame = Ext([], "index_emitter")
   let lines =
     list.flatten([
@@ -167,7 +169,10 @@ fn index_emitter(fragment: Fragment(VXML)) -> Result(Fragment(OL), String) {
 }
 
 // chapter emitter - handles chapter fragments
-fn chapter_emitter(fragment: Fragment(VXML)) -> Result(Fragment(OL), String) {
+fn chapter_emitter(
+  fragment: Fragment(VXML),
+  title_banner: String,
+) -> Result(Fragment(OL), String) {
   let assert Chapter(n) = fragment.classifier
   let blame = Ext([], "chapter_emitter")
   let lines =
@@ -245,7 +250,10 @@ fn chapter_emitter(fragment: Fragment(VXML)) -> Result(Fragment(OL), String) {
 }
 
 // subchapter emitter - handles sub fragments
-fn subchapter_emitter(fragment: Fragment(VXML)) -> Result(Fragment(OL), String) {
+fn subchapter_emitter(
+  fragment: Fragment(VXML),
+  title_banner: String,
+) -> Result(Fragment(OL), String) {
   let assert Sub(chapter_n, sub_n) = fragment.classifier
   let blame = Ext([], "subchapter_emitter")
   let lines =
@@ -327,11 +335,14 @@ fn subchapter_emitter(fragment: Fragment(VXML)) -> Result(Fragment(OL), String) 
 }
 
 // main emitter that dispatches to appropriate sub-emitters
-fn our_emitter(fragment: Fragment(VXML)) -> Result(Fragment(OL), String) {
+fn our_emitter(
+  fragment: Fragment(VXML),
+  title_banner: String,
+) -> Result(Fragment(OL), String) {
   case fragment.classifier {
-    Index -> index_emitter(fragment)
-    Chapter(_) -> chapter_emitter(fragment)
-    Sub(_, _) -> subchapter_emitter(fragment)
+    Index -> index_emitter(fragment, title_banner)
+    Chapter(_) -> chapter_emitter(fragment, title_banner)
+    Sub(_, _) -> subchapter_emitter(fragment, title_banner)
   }
 }
 
@@ -434,11 +445,27 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
 
   let assert None = amendments.input_dir
   let assert None = amendments.output_dir
+  let parent = course_dir <> "/wly/__parent.wly"
+  let assert Ok(contents) = simplifile.read(parent)
+  let assert Ok([parsed_contents, ..]) = writerly.parse_string(contents, "")
+  let parsed_contents = writerly.writerly_to_vxml(parsed_contents)
+  let language = case infra.v_first_attr_with_key(parsed_contents, "language") {
+    None -> panic as "__parent.wly did not specify the language attribute"
+    Some(x) -> x.val
+  }
+  let title_banner = case
+    infra.v_first_attr_with_key(parsed_contents, "banner")
+  {
+    None ->
+      panic as "__parent.wly did not specify the banner attribute (what should appear in the browser tab)"
+    Some(x) -> x.val
+  }
+  io.println("author set banner to be " <> title_banner)
 
   let parameters =
     ds.RendererParameters(
-      input_dir: "./" <> course_dir <> "/wly",
-      output_dir: "./" <> course_dir <> "/" <> output_dir_local_path,
+      input_dir: "./" <> course_dir <> "/wly/",
+      output_dir: "./" <> course_dir <> "/" <> output_dir_local_path <> "/",
       prettifier_behavior: ds.PrettifierOff,
     )
     |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)
@@ -449,14 +476,13 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
     ds.Renderer(
       assembler: ds.default_writerly_assembler(amendments.only_paths),
       parser: ds.default_writerly_parser(amendments.only_key_values),
-      pipeline: pipeline.pipeline(parameters, author_mode),
+      pipeline: pipeline.pipeline(parameters, author_mode, language),
       splitter: our_splitter,
-      emitter: our_emitter,
+      emitter: our_emitter(_, title_banner),
       writer: ds.default_writer,
       prettifier: ds.default_prettier_prettifier,
     )
     |> ds.amend_renderer_by_command_line_amendments(amendments)
-
 
   let debug_options =
     ds.vanilla_options()

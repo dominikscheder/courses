@@ -1,0 +1,163 @@
+|> Sub 
+    title=Atserias-Dalmau Games
+
+    There is a different way of proving resolution width lower bounds, not
+    reasoning about implication and non-implication (as we did in the
+    previous chapter) but by modeling resolution as a game between
+    a prover and a delayer. Loosely speaking, the pover wants to
+    demonstrate that $F$ is unsatisfiable; the delayer wants to delay or
+    completely avoid this. The prover proceeds by building up a partial assignment
+    $\rho$ on the variables: in each round she picks a variable $x$ and
+    asks the delayer _What is the value of $x$?_ to which the
+    delayer answers with a Boolean value $b \in \{0,1\}$, and the
+    prover adds $[x \mapsto b]$ to $\rho$. The prover wins once $\rho$
+    violates a clause $C \in F$. If $F$ is unsatisfiable, she can surely
+    win the game because once $\rho$ becomes a total assignment it must
+    violate some clause. The point is that she has _limited memory_:
+    she must make sure that $\rho$ is defined on at most $w$ variables
+    at any point. More formally:
+    |> Algorithm
+        Atserias-Dalmau game $\adg(F,w)$:
+        |> ol
+            |> li
+                $\rho := [\ ]$, the empty assignment
+            |> li
+                |> code
+                    while
+                \ no clause of $F$ is violated by $\rho$:
+                |> ol
+                    |> li
+                        Prover picks a variable $x$ of $V$.
+                    |> li
+                        Delayer responds with a truth value $b \in \{0,1\}$.
+                    |> li
+                        Prover sets $\rho := [x \mapsto b]$
+                    |> li
+                        If $\rho$ contains more than $w+1$ variabels, prover
+                        must "forget" an assignment in $\rho$.
+            |> li
+                Prover can now exhibit a clause $C \in F$ with $C(\rho) = 0$,
+                winning the game.
+    Delayer wins if he can make sure that the 
+    |> code
+        while
+    -loop never
+    terminates. If every clause of $F$ has size exactly $k$ and $w \lt k$ then
+    of course Delayer wins the game. His challenge is to win it even for "large"
+    $w$, e.g. for $w = n/3$.
+    |> Theorem
+        handle=theorem-atserias-dalmau-win-when-narrow
+        If $F$ has a resolution
+        refutation of width at most $w$ then prover can win $\adg(F,w)$.
+    |> Proof
+        Let $C_1, C_2, \dots, C_l = \Box$ be a resolution refutation of $F$. The prover
+        makes her way from $C_l$ at the end of the proof backwards to a clause
+        of $F$, maintaining the invariant that her $\rho$ violates her current
+        clause. Here is her strategy:
+        |> Algorithm 
+            Strategy for Prover:
+            |> ol
+                |> li
+
+                    $\rho = [\ ]$ in the beginning.
+                |> li
+                    Set $C = C_l = \Box$.
+                |> li
+                    |> code
+                        while
+                    \ $C \not \in F$:
+                    |> span
+                        class=comment
+                        \ # $\rho$ violates $C$ by invariant
+                    |> ol
+                        |> li
+                            $C$ is a resolvent of two earlier clauses
+                            $D_1, D_2$ in the resolution refutation.
+                        |> li
+                            Let $x$ be the resolved variable.
+                        |> li
+                            Prover asks about $x$
+                        |> li
+                            Delayer answers with $b \in \{0,1\}$.
+                        |> li
+                            The new assignment $\rho \cup [x \mapsto b]$ violates
+                            exactly one clause of $D_1, D_2$, say without loss of
+                            generality $D_1$.
+                        |> li
+                            Prover forgets all variables not in $D_1$, so
+                            $|\rho| = |D_1| \leq w$.
+                        |> li
+                            Prover sets $C := D_1$.
+                |> li
+                    The 
+                    |> code
+                        while
+                    -loop ends because the position of clause $C$
+                    in the resolution refutation $C_1, \dots, C_l$ moves to
+                    the left in each iteration.
+
+        Once $C \in F$, the invariant tells us that $C(\rho) = 0$, and thus Prover
+        wins the game.
+
+    This theorem is hugely useful: if
+    we can define a strategy for Delayer to win the game on $(F,w)$, then every
+    resolution refutation needs width more than $w$!
+    The theorem has a converse, which is not only less useful but also slightly
+    more difficult to prove:
+    |> Theorem
+        Suppose Prover can
+        win the game $\adg(F,w)$, then there is a resolution refutation of
+        $F$ of width at most $w$.
+    |> Proof
+        First of all we add another derivation rule to our resolution
+        calculus: if we have derived a clause $D$, we can derive
+        a superclause $C \supseteq D$; this is called the _weakening rule_;
+        it is clearly correct, and we can always get rid of weakening
+        steps without increasing length of width of the proof.
+        We will need a slightly more general
+        statement. First we allow $\adg(F,w)$ to start with
+        a partial assignment $\rho$ that is not empty (but surely
+        $|\rho| \leq w$). We call this $\adg(F,w,\rho)$. The
+        stronger statement now is:
+        |> Claim
+            If Prover
+            can win $\adg(F,w,\rho)$ then there is a resolution proof
+            $C_1, C_2, \dots, C_l$ from $F$ of width at most $w$ such that
+            $\rho$ violates the final clause $C_l$.
+
+        If we can prove the claim, then the theorem follows by playing
+        $\adg(F,w,[\ ])$: the assignment $[\ ]$ will violate the final clause
+        $C_l$, which can only mean $C_l = \Box$. So let's prove the claim.
+
+        We prove the claim by induction on the length of the game, i.e.,
+        the number of times the players iterate through the 
+        `while`-loop.
+        If Prover wins with 0 iterations of the loop, then the original
+        $\rho$ violates some clause $C$ of $F$. So $C$ is by itself
+        a resolution proof from $F$, of width $|C| \leq |\rho| \leq w$, ending
+        in $C$, and $\rho$ violating its final clause.
+
+        So suppose Prover can win within $t$ steps, no matter the moves
+        Delayer makes. Prover queries a variable $x$. Let $b \in \{0,1\}$
+        be the value Delayer answers.
+        Prover builds $\rho \cup [x \mapsto b]$ and possibly forgets some other
+        variable; call the resulting partial assignment $\rho_b$.
+        Since Prover can win within $t$ steps no matter what Delayer
+        answers, he can win within $t-1$ steps when starting
+        with $\rho_0$ and when starting with $\rho_1$. In other words:
+        she can win $\adg(F,w,\rho_0)$ within $t-1$ steps and $\adg(F,w,\rho_1)$
+        within $t-1$ steps.
+
+        By the induction hypothesis, there is a resultion proof $\pi_0$ from $F$
+        of width $w$ ending in $C_0$ such that $\rho_0$ violates $C_0$;
+        similarly a proof $\pi_1$ ending in $C_1$ such that $C_1(\rho_1) = 0$.
+        Suppose $x \not \in \var(C_1) \cap \var(C_0)$, say without loss of
+        generality $x \not \in \var(C_0)$. Then already $\rho$ violates
+        $C_0$ and the claim is proved, just taking proof $\pi_0$.
+        Otherwise, $x$ appears in both clauses. Since $C_0(\rho_0)=0$ we
+        conclude that $\rho_0(x)=0$ (it must be defined and surely it isn't 1),
+        so $x \in C_0$. Similarly $\bar{x} \in C_1$. They have a resolvent
+        which we call $C$. Every variable of $C$ is defined by $\rho$ and
+        indeed $\rho(C) = 0$. Since $|\rho| \leq w$ this also implies $|C| \leq w$,
+        finishing the proof.
+        

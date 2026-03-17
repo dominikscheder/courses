@@ -1,6 +1,9 @@
 |> Document
-    title=Course 2 - Class Notes
-    program=Example Course
-    institution=Example Institution
-    lecturer=Instructor Name
-    homepage=https://example.com
+    title=Proof Complexity
+    program=Personal lecture notes
+    institution=TU Chemnitz
+    language=en
+    banner=ProofCompl—
+    lecturer=Dominik Scheder
+    homepage=https://www.tu-chemnitz.de/informatik/theoretische-informatik/
+

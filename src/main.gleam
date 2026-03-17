@@ -1,15 +1,15 @@
 import argv
 import desugaring as ds
-import infrastructure as infra
 import formatter_renderer
 import gleam/dict
 import gleam/io
 import gleam/list
 import gleam/option
 import gleam/string
+import infrastructure as infra
+import on
 import renderer
 import simplifile
-import on
 
 const ins = string.inspect
 
@@ -53,25 +53,25 @@ pub fn main() {
       }
     })
 
-  use _ <- on.stay(
-    case args {
-      ["--help"] | ["-help"] | ["-h"] -> {
-        ds.basic_cli_usage("\n'gleam run' command line options (basic):")
-        local_usage_message()
-        on.Return(Nil)
-      }
-
-      ["--esoteric"] -> {
-        ds.advanced_cli_usage("\n'gleam run' command line options (esoteric):")
-        on.Return(Nil)
-      }
-
-      _ -> on.Stay(Nil)
+  use _ <- on.stay(case args {
+    ["--help"] | ["-help"] | ["-h"] -> {
+      ds.basic_cli_usage("\n'gleam run' command line options (basic):")
+      local_usage_message()
+      on.Return(Nil)
     }
-  )
+
+    ["--esoteric"] -> {
+      ds.advanced_cli_usage("\n'gleam run' command line options (esoteric):")
+      on.Return(Nil)
+    }
+
+    _ -> on.Stay(Nil)
+  })
 
   use amendments <- on.stay(
-    case ds.process_command_line_arguments(args, ["--fmt", "--local", "--which"]) {
+    case
+      ds.process_command_line_arguments(args, ["--fmt", "--local", "--which"])
+    {
       Error(error) -> {
         io.println("")
         io.println("command line error: " <> ins(error))
@@ -83,39 +83,43 @@ pub fn main() {
       Ok(amendments) -> {
         on.Stay(amendments)
       }
-    }
+    },
   )
 
-  use course_dir <- on.stay(
-    case dict.get(amendments.user_args, "--which") {
-      Ok([name]) -> {
-        let name = name |> infra.drop_ending_slash |> infra.drop_prefix("./")
-        case simplifile.is_directory(name <> "/wly") {
-          Ok(_) -> {
-            on.Stay(name)
-          }
-          _ -> {
-            io.println("\nexpecting '" <> name <> "' to be a local directory with subdirectory 'wly'; crashing out")
-            on.Return(Nil)
-          }
+  use course_dir <- on.stay(case dict.get(amendments.user_args, "--which") {
+    Ok([name]) -> {
+      let name = name |> infra.drop_ending_slash |> infra.drop_prefix("./")
+      case simplifile.is_directory(name <> "/wly") {
+        Ok(_) -> {
+          on.Stay(name)
+        }
+        _ -> {
+          io.println(
+            "\nexpecting '"
+            <> name
+            <> "' to be a local directory with subdirectory 'wly'; crashing out",
+          )
+          on.Return(Nil)
         }
       }
-      _ -> {
-        io.println("\nuse '--which' option to specify a project_dir name pls (without spaces); crashing out\n")
-        on.Return(Nil)
-      }
     }
-  )
+    _ -> {
+      io.println(
+        "\nuse '--which' option to specify a project_dir name pls (without spaces); crashing out\n",
+      )
+      on.Return(Nil)
+    }
+  })
 
-  use _ <- on.stay(
-    case amendments.input_dir {
-      option.Some(_) -> {
-        io.println("\nunexpected --input-dir argument; use '--which' to specify a local project directory; crashing out\n")
-        on.Return(Nil)
-      }
-      _ -> on.Stay(Nil)
+  use _ <- on.stay(case amendments.input_dir {
+    option.Some(_) -> {
+      io.println(
+        "\nunexpected --input-dir argument; use '--which' to specify a local project directory; crashing out\n",
+      )
+      on.Return(Nil)
     }
-  )
+    _ -> on.Stay(Nil)
+  })
 
   case dict.get(amendments.user_args, "--fmt") {
     Ok(_) -> {
@@ -128,6 +132,7 @@ pub fn main() {
       io.println("")
       io.println("wly -> html renderer")
       renderer.render(amendments, course_dir)
+      io.println("")
     }
   }
 }

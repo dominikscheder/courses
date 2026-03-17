@@ -1,5 +1,6 @@
 import blame as bl
 import desugarer_library as dl
+import desugaring as ds
 import gleam/list
 import gleam/string
 import group_replacement_splitting as grs
@@ -79,7 +80,7 @@ const p_cannot_be_contained_in = [
 
 const post_counter_space = " "
 
-pub fn main_pipeline(input_dir: String, author_mode: Bool) -> List(Pipe) {
+pub fn main_pipeline(parameters: ds.RendererParameters, author_mode: Bool) -> List(Pipe) {
   let escaped_dollar_to_span_rr_splitter =
     grs.rr_splitter_for_groups([
       #("\\\\", grs.Trash),
@@ -202,34 +203,18 @@ pub fn main_pipeline(input_dir: String, author_mode: Bool) -> List(Pipe) {
       dl.delete_attribute_if(fn(key, _) { string.starts_with(key, "!!") }),
       dl.rename(#("WriterlyCodeBlock", "pre")),
       dl.append(#("Proof", "QED", infra.Continue)),
-      dl.rename_with_attributes(
+      dl.rename_with_attributes__batch([
         #("Theorem", "Statement", [#("title", "*Theorem*")]),
-      ),
-      dl.rename_with_attributes(
         #("Definition", "Statement", [#("title", "*Definition*")]),
-      ),
-      dl.rename_with_attributes(
         #("Observation", "Statement", [#("title", "*Beobachtung*")]),
-      ),
-      dl.rename_with_attributes(
         #("Example", "Statement", [#("title", "*Beispiel*")]),
-      ),
-      dl.rename_with_attributes(
         #("Lemma", "Statement", [#("title", "*Lemma*")]),
-      ),
-      dl.rename_with_attributes(
         #("Claim", "Statement", [#("title", "*Behauptung*")]),
-      ),
-      dl.rename_with_attributes(
         #("Problem", "Statement", [#("title", "*Problem*")]),
-      ),
-      dl.rename_with_attributes(
         #("Algorithm", "Statement", [#("title", "*Algorithmus*")]),
-      ),
-      dl.rename_with_attributes(#("Demo", "Statement", [#("title", "*Demo*")])),
-      dl.rename_with_attributes(
+        #("Demo", "Statement", [#("title", "*Demo*")]),
         #("Proof", "Highlight", [#("title", "*Beweis.*")]),
-      ),
+      ]),
       dl.ti2_add_should_be_numbers(),
       dl.ti2_backfill(),
       dl.append_attribute__batch([
@@ -272,7 +257,11 @@ pub fn main_pipeline(input_dir: String, author_mode: Bool) -> List(Pipe) {
         "StatementCounter",
         infra.Continue,
       )),
-      dl.set_handle_value(#("Chapter", "::øøChapterCounter", infra.GoBack)),
+      dl.set_handle_value(#(
+        "Chapter",
+        "::øøChapterCounter",
+        infra.GoBack,
+      )),
       dl.set_handle_value(#(
         "Sub",
         "::øøChapterCounter.::øøSubCounter",
@@ -507,6 +496,7 @@ pub fn main_pipeline(input_dir: String, author_mode: Bool) -> List(Pipe) {
         #("Group", pseudowell, ["Sub", "Chapter"]),
       ),
       dl.replace_with_arbitrary(#("QED", qed)),
+      dl.rename_with_class(#("InTextWarning", "span", "source-error-span")),
       dl.rename_with_class_and_attributes(
         #("CircleX", "img", "circle-X-img", [
           #("src", "img/context-free/LR/circle-X.svg"),
@@ -528,15 +518,15 @@ pub fn main_pipeline(input_dir: String, author_mode: Bool) -> List(Pipe) {
     case author_mode {
       False -> []
       True -> [
-        dl.ti2_turn_lines_into_3003_spans("./" <> input_dir <> "/wly/", [
+        dl.ti2_turn_lines_into_3003_spans(parameters.input_dir, [
           "Math",
           "MathBlock",
           "TopMenu",
           "BottomMenu",
         ]),
-        dl.ti2_adorn_img_with_3003_spans("./" <> input_dir <> "/public/", []),
-        dl.ti2_adorn_with_3003_spans(#("./" <> input_dir <> "/wly/", "", ["MathBlock"])),
-        dl.ti2_wrap_with_3003_spans(#("./" <> input_dir <> "/wly/", "", ["Math"])),
+        dl.ti2_adorn_img_with_3003_spans(parameters.output_dir, []),
+        dl.ti2_adorn_with_3003_spans(#(parameters.input_dir, "", ["MathBlock"])),
+        dl.ti2_wrap_with_3003_spans(#(parameters.input_dir, "", ["Math"])),
       ]
     },
     [

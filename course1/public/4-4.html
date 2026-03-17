@@ -40,56 +40,49 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">4.4&ensp;Ein Schritt weiter:  while-Schleifen und
-          <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:2:11</span></span><span class="nowrap"><span class="t-3003-c">$\mu$<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:2:52</span></span><span class="t-3003-c">-Rekursion<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:2:59</span></span></span>
+        4.4&ensp;Ein Schritt weiter:  while-Schleifen und
+        <span class="nowrap">$\mu$-Rekursion</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Primitive Rekursion erlaubt uns Schleifen, allerdings<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:4:5</span></span>
-      <span class="t-3003-c">nur in einer sehr restriktiven Form:<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:5:5</span></span>
+      Primitive Rekursion erlaubt uns Schleifen, allerdings nur
+      in einer sehr restriktiven Form:
     </p>
     <div class="main-column">
       <ol>
         <li>
           <p>
-            <span class="t-3003-c">Wir müssen anfangs bereits angeben, wie oft wir die<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:9:13</span></span>
-            <span class="t-3003-c">Schleife durchlaufen wollen;<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:10:13</span></span>
+            Wir müssen anfangs bereits angeben, wie oft wir die
+            Schleife durchlaufen wollen;
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">wir dürfen nur eine lokale Variable mitführen (und<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:13:13</span></span>
-            <span class="t-3003-c">den Iterationsindex).<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:14:13</span></span>
+            wir dürfen nur eine lokale Variable mitführen (und den
+            Iterationsindex).
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Der zweite Punkt ist keine echte Beschränkung, wie<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:16:5</span></span>
-      <span class="t-3003-c">wir gesehen haben: wenn wir zwei lokale Variablen<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:17:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:18:5</span></span><span class="t-3003-c">$a,b$<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:18:5</span></span><span class="t-3003-c">
-        führen wollen, können wir die via der Bijektion<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:18:10</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:19:5</span></span><span class="t-3003-c">${\rm pair} : \N^2 \rightarrow \N$<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:19:5</span></span><span class="t-3003-c">
-        in
-        <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:19:39</span></span><i><span class="t-3003-c">eine<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:19:44</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:19:49</span></span>
-      <span class="t-3003-c">natürliche Zahl codieren. Der erste Punkt allerdings<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:20:5</span></span>
-      <span class="t-3003-c">scheint eine echte Beschränkung zu sein: wir wissen<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:21:5</span></span>
-      <span class="t-3003-c">schließlich nicht immer, wie oft wir eine Tätigkeit<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:22:5</span></span>
-      <span class="t-3003-c">wiederholen müssen, bis wir fertig sind, und ob wir<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:23:5</span></span>
-      <span class="t-3003-c">überhaupt jemals fertig werden. Sie kennen vielleicht<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:24:5</span></span>
-      <span class="t-3003-c">die Collatz-Vermutung.<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:25:5</span></span>
+      Der zweite Punkt ist keine echte Beschränkung, wie wir
+      gesehen haben: wenn wir zwei lokale Variablen $a,b$ führen
+      wollen, können wir die via der Bijektion
+      ${\rm pair} : \N^2 \rightarrow \N$ in
+      <i>eine</i>
+      natürliche
+      Zahl codieren. Der erste Punkt allerdings scheint eine
+      echte Beschränkung zu sein: wir wissen schließlich nicht
+      immer, wie oft wir eine Tätigkeit wiederholen müssen, bis
+      wir fertig sind, und ob wir überhaupt jemals fertig werden.
+      Sie kennen vielleicht die Collatz-Vermutung.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Die Collatz-Vermutung<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:28:9</span></span>
+      Die Collatz-Vermutung
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Wir definieren eine Funktion<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:30:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:31:5</span></span><span class="t-3003-c">$f: \N_+ \rightarrow \N_+$<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:31:5</span></span><span class="t-3003-c">
-        wie folgt:<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:31:31</span></span>
+      Wir definieren eine Funktion $f: \N_+ \rightarrow \N_+$
+      wie folgt:
     </p>
     <div class="math-block main-column">
       $$
@@ -101,17 +94,15 @@
       3n+1&amp;\textnormal{ if $n$ odd.}
       \end{cases}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:33:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Für eine natürliche Zahl
-        <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:42:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:42:30</span></span><span class="t-3003-c">
-        können wir dann die<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:42:33</span></span>
-      <span class="t-3003-c">Collatz-Folge definieren:
-        <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:43:5</span></span><span class="nowrap"><span class="t-3003-c">$n, f(n), f(f(n)), ...$<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:43:31</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:43:54</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:43:54</span></span>
-      <span class="t-3003-c">Man sieht leicht, dass diese Folge in einer Schleife<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:44:5</span></span>
-      <span class="t-3003-c">landen kann:<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:45:5</span></span>
+      Für eine natürliche Zahl $n$ können wir dann die
+      Collatz-Folge definieren:
+      <span class="nowrap">$n, f(n), f(f(n)), ...$.</span>
+      Man
+      sieht leicht, dass diese Folge in einer Schleife landen
+      kann:
     </p>
     <div class="math-block main-column">
       $$
@@ -119,99 +110,90 @@
       13 \mapsto 40 \mapsto 20 \mapsto 10 \mapsto 5 \mapsto 16 \mapsto 8 \mapsto 4 \mapsto 2 \mapsto 1
       \mapsto 4 \mapsto 2 \mapsto 1 \dots
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:47:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir beenden die Sequenz daher üblicherweise, wenn wir<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:52:5</span></span>
-      <span class="t-3003-c">bei 1 (und somit in dieser Dreierschleife) gelandet<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:53:5</span></span>
-      <span class="t-3003-c">sind. Es kann allerdings etwas länger dauern:<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:54:5</span></span>
+      Wir beenden die Sequenz daher üblicherweise, wenn wir bei
+      1 (und somit in dieser Dreierschleife) gelandet sind. Es
+      kann allerdings etwas länger dauern:
     </p>
     <div class="pseudowell">
       <figure class="textfigure">
-        <span class="t-3003-c">7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:58:9</span></span>
-        <span class="t-3003-c">4, 2, 1.<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:59:9</span></span>
+        7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2,
+        1.
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Oder noch länger. Wenn wir mit 27 beginnen, dann<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:61:5</span></span>
-      <span class="t-3003-c">erhalten wir die Folge<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:62:5</span></span>
+      Oder noch länger. Wenn wir mit 27 beginnen, dann erhalten
+      wir die Folge
     </p>
     <div class="pseudowell">
       <figure class="textfigure">
-        <span class="t-3003-c">27, 82, 41, 124, 62, 31, 94, 47, 142, 71, 214, 107,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:66:9</span></span>
-        <span class="t-3003-c">322, 161, 484, 242, 121, 364, 182, 91, 274, 137, 412,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:67:9</span></span>
-        <span class="t-3003-c">206, 103, 310, 155, 466, 233, 700, 350, 175, 526, 263,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:68:9</span></span>
-        <span class="t-3003-c">790, 395, 1186, 593, 1780, 890, 445, 1336, 668, 334,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:69:9</span></span>
-        <span class="t-3003-c">167, 502, 251, 754, 377, 1132, 566, 283, 850, 425,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:70:9</span></span>
-        <span class="t-3003-c">1276, 638, 319, 958, 479, 1438, 719, 2158, 1079, 3238,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:71:9</span></span>
-        <span class="t-3003-c">1619, 4858, 2429, 7288, 3644, 1822, 911, 2734, 1367,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:72:9</span></span>
-        <span class="t-3003-c">4102, 2051, 6154, 3077, 9232, 4616, 2308, 1154, 577,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:73:9</span></span>
-        <span class="t-3003-c">1732, 866, 433, 1300, 650, 325, 976, 488, 244, 122,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:74:9</span></span>
-        <span class="t-3003-c">61, 184, 92, 46, 23, 70, 35, 106, 53, 160, 80, 40, 20,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:75:9</span></span>
-        <span class="t-3003-c">10, 5, 16, 8, 4, 2, 1<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:76:9</span></span>
+        27, 82, 41, 124, 62, 31, 94, 47, 142, 71, 214, 107, 322,
+        161, 484, 242, 121, 364, 182, 91, 274, 137, 412, 206, 103,
+        310, 155, 466, 233, 700, 350, 175, 526, 263, 790, 395,
+        1186, 593, 1780, 890, 445, 1336, 668, 334, 167, 502, 251,
+        754, 377, 1132, 566, 283, 850, 425, 1276, 638, 319, 958,
+        479, 1438, 719, 2158, 1079, 3238, 1619, 4858, 2429, 7288,
+        3644, 1822, 911, 2734, 1367, 4102, 2051, 6154, 3077, 9232,
+        4616, 2308, 1154, 577, 1732, 866, 433, 1300, 650, 325, 976,
+        488, 244, 122, 61, 184, 92, 46, 23, 70, 35, 106, 53, 160,
+        80, 40, 20, 10, 5, 16, 8, 4, 2, 1
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Experimentieren Sie! Ich habe dafür die Html-Seite<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:78:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:79:5</span></span><a href="./code/primitive-recursion/collatz.html"><span class="t-3003-c">collatz.html<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:79:6</span></span></a><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:79:60</span></span>
-      <span class="t-3003-c">erstellt. Es scheint: egal, wo Sie anfangen, Sie enden<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:80:5</span></span>
-      <span class="t-3003-c">immer bei 1. Allerdings wissen wir nicht im Voraus,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:81:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:82:5</span></span><i><span class="t-3003-c">wie oft<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:82:6</span></span></i><span class="t-3003-c">
-        wir die Funktion
-        <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:82:14</span></span><span class="t-3003-c">$f$<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:82:32</span></span><span class="t-3003-c">
-        anwenden müssen. Und<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:82:35</span></span>
-      <span class="t-3003-c">wir wissen nicht einmal, ob man immer bei 1 ankommt,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:83:5</span></span>
-      <span class="t-3003-c">ob es andere Zyklen gibt oder ob es Startwerte gibt,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:84:5</span></span>
-      <span class="t-3003-c">für die die Folge einfach nach Unendlich divergiert.<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:85:5</span></span>
-      <span class="t-3003-c">Bis zum heutigen Tage (Stand 30. April 2024) hat sich<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:86:5</span></span>
-      <span class="t-3003-c">die Collatz-Vermutung zahlreichen Lösungsversuchung<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:87:5</span></span>
-      <span class="t-3003-c">widersetzt und demonstriert eindrucksvoll, dass auch<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:88:5</span></span>
-      <span class="t-3003-c">mathematische Probleme mit sehr einfacher Formulierung<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:89:5</span></span>
-      <span class="t-3003-c">extrem schwierig sein können.<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:90:5</span></span>
+      Experimentieren Sie! Ich habe dafür die Html-Seite
+      <a href="./code/primitive-recursion/collatz.html">collatz.html</a>
+      erstellt. Es scheint: egal, wo Sie anfangen, Sie enden
+      immer bei 1. Allerdings wissen wir nicht im Voraus,
+      <i>wie
+        oft</i>
+      wir die Funktion $f$ anwenden müssen. Und wir wissen
+      nicht einmal, ob man immer bei 1 ankommt, ob es andere
+      Zyklen gibt oder ob es Startwerte gibt, für die die Folge
+      einfach nach Unendlich divergiert. Bis zum heutigen Tage
+      (Stand 30. April 2024) hat sich die Collatz-Vermutung
+      zahlreichen Lösungsversuchung widersetzt und demonstriert
+      eindrucksvoll, dass auch mathematische Probleme mit sehr
+      einfacher Formulierung extrem schwierig sein können.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">While-Schleifen<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:93:9</span></span>
+      While-Schleifen
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Eine Einschränkung primitiv-rekursiver Funktionen ist<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:95:5</span></span>
-      <span class="t-3003-c">also, dass wir immer vor der Schleife angeben müssen,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:96:5</span></span>
-      <span class="t-3003-c">wie oft diese durchlaufen werden soll. Es gibt also<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:97:5</span></span>
-      <span class="t-3003-c">keine
-        <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:98:5</span></span><span class="nowrap"><code><span class="t-3003-c">while<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:98:12</span></span></code><span class="t-3003-c">-Schleifen.<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:98:18</span></span></span><span class="t-3003-c">
-        Führen wir diese nun ein.<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:98:18</span></span>
+      Eine Einschränkung primitiv-rekursiver Funktionen ist
+      also, dass wir immer vor der Schleife angeben müssen, wie
+      oft diese durchlaufen werden soll. Es gibt also keine
+      <span class="nowrap"><code>while</code>-Schleifen.</span>
+      Führen wir diese nun ein.
     </p>
     <div class="main-column">
 <pre class="listing">
-<span class="listing-bol"></span><span class="t-3003-c">def While (condition, step):<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:101:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    def f(x):<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:102:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        temp = x<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:103:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        while (condition(temp)):<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:104:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">            temp = step(temp)<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:105:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        return temp<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:106:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    return f<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:107:5</span></span>
+<span class="listing-bol"></span>def While (condition, step):
+<span class="listing-bol"></span>    def f(x):
+<span class="listing-bol"></span>        temp = x
+<span class="listing-bol"></span>        while (condition(temp)):
+<span class="listing-bol"></span>            temp = step(temp)
+<span class="listing-bol"></span>        return temp
+<span class="listing-bol"></span>    return f
 </pre>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 4.4.1<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:110:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:110:5</span></span>
-        <span class="t-3003-c">Schreiben Sie mit Hilfe von
-          <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:111:9</span></span><span class="nowrap"><code><span class="t-3003-c">While<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:111:38</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:111:44</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:111:44</span></span><code><span class="t-3003-c">PrimRec<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:111:47</span></span></code><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:111:55</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:112:9</span></span><code><span class="t-3003-c">Comp<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:112:10</span></span></code><span class="t-3003-c">
-          eine Funktion
-          <span class="t-3003">./course1/wly/04/04-mu-recursion.wly:112:15</span></span><span class="nowrap"><code><span class="t-3003-c">collatzList<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:112:31</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:112:43</span></span></span><span class="t-3003-c">
-          die aus einer Zahl<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:112:43</span></span>
-        <span class="t-3003-c">die Collatz-Folge baut, also<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:113:9</span></span>
+        <b>Übungsaufgabe 4.4.1</b>
+        Schreiben Sie mit Hilfe von
+        <span class="nowrap"><code>While</code>,</span>
+        <code>PrimRec</code>
+        und
+        <code>Comp</code>
+        eine Funktion
+        <span class="nowrap"><code>collatzList</code>,</span>
+        die aus einer Zahl die
+        Collatz-Folge baut, also
       </p>
 <pre class="python-prompt">
-<span class="python-prompt-carets"><span class="t-3003-c">&gt;&gt;&gt;<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:116:9</span></span></span><span class="python-prompt-content"><span class="t-3003-c"> collatzList(7)<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:116:12</span></span></span>
-<span class="python-prompt-ok-response"><span class="t-3003-c">[]<span class="t-3003">./course1/wly/04/04-mu-recursion.wly:117:9</span></span></span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> collatzList(7)</span>
+<span class="python-prompt-ok-response">[]</span>
 </pre>
     </div>
     <div id="end-of-page-elt">

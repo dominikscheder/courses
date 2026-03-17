@@ -1188,3 +1188,7 @@ figure:hover:has(>.t-3003) img,
   background-color: #bfb;
   overflow: visible;
 }
+
+.source-error-span {
+  background-color: #f78080;
+}

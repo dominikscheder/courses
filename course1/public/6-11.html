@@ -40,447 +40,260 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">6.11&ensp;Die Grenzen kontextfreier Sprachen<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:2:11</span></span>
+        6.11&ensp;Die Grenzen kontextfreier Sprachen
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Im letzten Teilkapitel haben wir den CYK-Algorithmus<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:5:5</span></span>
-      <span class="t-3003-c">kennengelernt. Dieser verwendet das Prinzip des<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:6:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:7:5</span></span><span class="nowrap"><i><span class="t-3003-c">Dynamic Programming<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:7:6</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:7:26</span></span></span><span class="t-3003-c">
-        um für eine allgemeine<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:7:26</span></span>
-      <span class="t-3003-c">kontextfreie Grammatik
-        <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:8:5</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:8:28</span></span><span class="t-3003-c">
-        und ein Eingabewort<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:8:31</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:9:5</span></span><span class="t-3003-c">$\gamma$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:9:5</span></span><span class="t-3003-c">
-        einen Ableitungsbaum zu finden (oder<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:9:13</span></span>
-      <span class="t-3003-c">festzustellen, dass es keinen gibt und somit<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:10:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:11:5</span></span><span class="nowrap"><span class="t-3003-c">$\gamma \not \in L(G)$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:11:5</span></span><span class="t-3003-c">).<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:11:27</span></span></span><span class="t-3003-c">
-        In diesem Teilkapitel werden<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:11:27</span></span>
-      <span class="t-3003-c">wir sehen, dass viele Sprachen gar nicht kontextfrei<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:12:5</span></span>
-      <span class="t-3003-c">sind, und werden hoffentlich ein Gefühl dafür<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:13:5</span></span>
-      <span class="t-3003-c">entwickeln, welche Konstruktionen Kontextfreiheit<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:14:5</span></span>
-      <span class="t-3003-c">verhindern, ähnlich wie "Verschachtelung" eine Sprache<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:15:5</span></span>
-      <span class="t-3003-c">nicht-regulär macht.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:16:5</span></span>
+      Im letzten Teilkapitel haben wir den CYK-Algorithmus
+      kennengelernt. Dieser verwendet das Prinzip des
+      <span class="nowrap"><i>Dynamic
+          Programming</i>,</span>
+      um für eine allgemeine kontextfreie Grammatik
+      $G$ und ein Eingabewort $\gamma$ einen Ableitungsbaum zu
+      finden (oder festzustellen, dass es keinen gibt und somit
+      <span class="nowrap">$\gamma \not \in L(G)$).</span>
+      In diesem Teilkapitel werden wir
+      sehen, dass viele Sprachen gar nicht kontextfrei sind, und
+      werden hoffentlich ein Gefühl dafür entwickeln, welche
+      Konstruktionen Kontextfreiheit verhindern, ähnlich wie
+      "Verschachtelung" eine Sprache nicht-regulär macht.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beispiel 6.11.1<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:18:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:18:5</span></span>
-        <span class="t-3003-c">Betrachten wir die Sprache<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:19:9</span></span>
+        <b>Beispiel 6.11.1</b>
+        Betrachten wir die Sprache
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         L := \{ a^n b^n c^n \ | \ \ n \geq 0\} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:21:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Ein Kellerautomat könnte nun alle
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:25:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:25:43</span></span><span class="t-3003-c">
-          auf den Stack<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:25:46</span></span>
-        <span class="t-3003-c">legen und dann, wenn die
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:26:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:26:34</span></span><span class="t-3003-c">
-          beginnen, den Stapel<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:26:37</span></span>
-        <span class="t-3003-c">abarbeiten. Allerdings hätte er dann, wenn die
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:27:9</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:27:56</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:27:59</span></span>
-        <span class="t-3003-c">kommen, vergessen, wieviele
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:28:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:28:37</span></span><span class="t-3003-c">
-          es denn waren.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:28:40</span></span>
-        <span class="t-3003-c">Irgendwie scheinen Kellerautomaten nicht für
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:29:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:29:54</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:29:57</span></span>
-        <span class="t-3003-c">geeignet. Dies ist natürlich nur eine Intuition.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:30:9</span></span>
-        <span class="t-3003-c">Vielleicht kennen wir einfach nicht alle Tricks, die<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:31:9</span></span>
-        <span class="t-3003-c">man mit Kellerautomaten (und somit mit kontextfreien<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:32:9</span></span>
-        <span class="t-3003-c">Grammatiken) anstellen kann. Wir werden nun beweisen,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:33:9</span></span>
-        <span class="t-3003-c">dass
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:34:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:34:14</span></span><span class="t-3003-c">
-          nicht kontextfrei ist; dass es also für
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:34:17</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:34:58</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:34:61</span></span>
-        <span class="t-3003-c">keine kontextfreie Grammatik gibt. Wir gehen wie folgt<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:35:9</span></span>
-        <span class="t-3003-c">vor: wir nehmen eine kontextfreie Grammatik
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:36:9</span></span><span class="nowrap"><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:36:53</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:36:56</span></span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:36:56</span></span>
-        <span class="t-3003-c">jedes Wort
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:37:9</span></span><span class="t-3003-c">$\gamma \in L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:37:20</span></span><span class="t-3003-c">
-          ableiten kann. Dann sehen<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:37:34</span></span>
-        <span class="t-3003-c">wir uns den Ableitungsbaum für ein "sehr langes"<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:38:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:39:9</span></span><span class="t-3003-c">$\gamma$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:39:9</span></span><span class="t-3003-c">
-          an und werden sehen, dass wir in
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:39:17</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:39:51</span></span><span class="t-3003-c">
-          andere<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:39:54</span></span>
-        <span class="t-3003-c">Wörter
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:40:9</span></span><span class="t-3003-c">$\gamma'$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:40:16</span></span><span class="t-3003-c">
-          ableiten können, die nicht in
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:40:25</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:40:56</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:40:59</span></span>
-        <span class="t-3003-c">sind. Somit haben wir gezeigt, dass
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:41:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:41:45</span></span><span class="t-3003-c">
-          keine<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:41:48</span></span>
-        <span class="t-3003-c">korrekte Grammatik für
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:42:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:42:32</span></span><span class="t-3003-c">
-          ist. Als erstes verlangen<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:42:35</span></span>
-        <span class="t-3003-c">wir, dass
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:43:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:43:19</span></span><span class="t-3003-c">
-          in Chomsky-Normalform vorliegt. Dann<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:43:22</span></span>
-        <span class="t-3003-c">schauen wir uns für ein
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:44:9</span></span><span class="t-3003-c">$\gamma = a^n b^n c^n$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:44:33</span></span><span class="t-3003-c">
-          den<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:44:55</span></span>
-        <span class="t-3003-c">Ableitungsbaum an:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:45:9</span></span>
+        Ein Kellerautomat könnte nun alle $a$ auf den Stack legen
+        und dann, wenn die $b$ beginnen, den Stapel abarbeiten.
+        Allerdings hätte er dann, wenn die $c$ kommen, vergessen,
+        wieviele $a$ es denn waren. Irgendwie scheinen
+        Kellerautomaten nicht für $L$ geeignet. Dies ist natürlich
+        nur eine Intuition. Vielleicht kennen wir einfach nicht
+        alle Tricks, die man mit Kellerautomaten (und somit mit
+        kontextfreien Grammatiken) anstellen kann. Wir werden nun
+        beweisen, dass $L$ nicht kontextfrei ist; dass es also für
+        $L$ keine kontextfreie Grammatik gibt. Wir gehen wie folgt
+        vor: wir nehmen eine kontextfreie Grammatik
+        <span class="nowrap">$G$,</span>
+        die jedes
+        Wort $\gamma \in L$ ableiten kann. Dann sehen wir uns den
+        Ableitungsbaum für ein "sehr langes" $\gamma$ an und
+        werden sehen, dass wir in $G$ andere Wörter $\gamma'$
+        ableiten können, die nicht in $L$ sind. Somit haben wir
+        gezeigt, dass $G$ keine korrekte Grammatik für $L$ ist.
+        Als erstes verlangen wir, dass $G$ in Chomsky-Normalform
+        vorliegt. Dann schauen wir uns für ein
+        $\gamma = a^n b^n c^n$ den Ableitungsbaum an:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:14em"
             src="img/context-free/pumping-lemma-01.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/pumping-lemma-01.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Nun betrachten wir in diesem Ableitungsbaum den<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:52:9</span></span>
-        <span class="t-3003-c">längsten Pfad von
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:53:9</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:53:27</span></span><span class="t-3003-c">
-          zu einem Nichtterminalknoten<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:53:30</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:54:9</span></span><span class="nowrap"><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:54:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:54:12</span></span></span><span class="t-3003-c">
-          der direkt über den Terminalen steht. Wenn<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:54:12</span></span>
-        <span class="t-3003-c">dieser Länge
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:55:9</span></span><span class="t-3003-c">$d$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:55:22</span></span><span class="t-3003-c">
-          hat (also
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:55:25</span></span><span class="t-3003-c">$d$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:55:36</span></span><span class="t-3003-c">
-          Kanten lang ist), dann<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:55:39</span></span>
-        <span class="t-3003-c">hat der Baum höchstens
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:56:9</span></span><span class="t-3003-c">$2^d$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:56:32</span></span><span class="t-3003-c">
-          Blätter, also<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:56:37</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:57:9</span></span><span class="nowrap"><span class="t-3003-c">$|\gamma| \leq 2^d$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:57:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:57:28</span></span></span><span class="t-3003-c">
-          Wenn nun<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:57:28</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:58:9</span></span><span class="t-3003-c">$|\gamma| \geq 2^{|N|} =: p$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:58:9</span></span><span class="t-3003-c">
-          ist, dann gibt es einen<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:58:37</span></span>
-        <span class="t-3003-c">Pfad der Länge
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:59:9</span></span><span class="t-3003-c">$|N|$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:59:24</span></span><span class="t-3003-c">
-          von diesem
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:59:29</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:59:41</span></span><span class="t-3003-c">
-          aufwärts richtung<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:59:44</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:60:9</span></span><span class="nowrap"><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:60:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:60:12</span></span></span><span class="t-3003-c">
-          Auf diesem liegen
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:60:12</span></span><span class="t-3003-c">$|N|+1$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:60:32</span></span><span class="t-3003-c">
-          Nichtterminalsymbole,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:60:39</span></span>
-        <span class="t-3003-c">mehr als es in
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:61:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:61:24</span></span><span class="t-3003-c">
-          gibt; also muss ein Terminalsymbol<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:61:27</span></span>
-        <span class="t-3003-c">zweimal vorkommen:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:62:9</span></span>
+        Nun betrachten wir in diesem Ableitungsbaum den längsten
+        Pfad von $S$ zu einem Nichtterminalknoten
+        <span class="nowrap">$X$,</span>
+        der direkt
+        über den Terminalen steht. Wenn dieser Länge $d$ hat (also
+        $d$ Kanten lang ist), dann hat der Baum höchstens $2^d$
+        Blätter, also
+        <span class="nowrap">$|\gamma| \leq 2^d$.</span>
+        Wenn nun
+        $|\gamma| \geq 2^{|N|} =: p$ ist, dann gibt es einen Pfad
+        der Länge $|N|$ von diesem $X$ aufwärts richtung
+        <span class="nowrap">$S$.</span>
+        Auf
+        diesem liegen $|N|+1$ Nichtterminalsymbole, mehr als es in
+        $G$ gibt; also muss ein Terminalsymbol zweimal vorkommen:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:14em"
             src="img/context-free/pumping-lemma-02.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/pumping-lemma-02.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Der Pfad vom oberen
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:69:9</span></span><span class="t-3003-c">$Z$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:69:29</span></span><span class="t-3003-c">
-          zu irgendeinem Nichtterminal<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:69:32</span></span>
-        <span class="t-3003-c">darunter hat höchstens Länge
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:70:9</span></span><span class="t-3003-c">$N$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:70:38</span></span><span class="t-3003-c">
-          (so haben wir diesen<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:70:41</span></span>
-        <span class="t-3003-c">Pfad gewählt), und somit hat das Unterwort
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:71:9</span></span><span class="t-3003-c">$vwx$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:71:52</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:71:57</span></span>
-        <span class="t-3003-c">höchstens
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:72:9</span></span><span class="t-3003-c">$p = 2^{|N|}$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:72:19</span></span><span class="t-3003-c">
-          Zeichen. Wenn wir nun das<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:72:32</span></span>
-        <span class="t-3003-c">Wort
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:73:9</span></span><span class="t-3003-c">$a^nb^nc^n$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:73:14</span></span><span class="t-3003-c">
-          für ein sehr großes
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:73:25</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:73:46</span></span><span class="t-3003-c">
-          betrachten,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:73:49</span></span>
-        <span class="t-3003-c">sagen wir
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:74:9</span></span><span class="t-3003-c">$n \geq p = 2^{|N|}$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:74:19</span></span><span class="t-3003-c">
-          , dann kann das Wort<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:74:39</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:75:9</span></span><span class="t-3003-c">$vwx$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:75:9</span></span><span class="t-3003-c">
-          nicht alle drei Symbole
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:75:14</span></span><span class="t-3003-c">$a,b,c$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:75:39</span></span><span class="t-3003-c">
-          enthalten;<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:75:46</span></span>
-        <span class="t-3003-c">sonst würde es ja alle
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:76:9</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:76:32</span></span><span class="t-3003-c">
-          Symbole
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:76:35</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:76:44</span></span><span class="t-3003-c">
-          und noch<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:76:47</span></span>
-        <span class="t-3003-c">weitere enthalten, wäre also länger als
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:77:9</span></span><span class="nowrap"><span class="t-3003-c">$n \geq p$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:77:49</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:77:59</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:77:59</span></span>
-        <span class="t-3003-c">allerdings haben wir ja gesehen, dass
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:78:9</span></span><span class="t-3003-c">$|vwx| \leq p$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:78:47</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:78:61</span></span>
-        <span class="t-3003-c">gilt. Nehmen wir nun also der Einfachheit halber an,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:79:9</span></span>
-        <span class="t-3003-c">dass
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:80:9</span></span><span class="t-3003-c">$vwx$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:80:14</span></span><span class="t-3003-c">
-          nicht das Symbol
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:80:19</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:80:37</span></span><span class="t-3003-c">
-          enthält:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:80:40</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:81:9</span></span><span class="t-3003-c">$vwx \in \{a,b\}^*$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:81:9</span></span><span class="t-3003-c">
-          (der andere Fall ist symmetrisch<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:81:28</span></span>
-        <span class="t-3003-c">und kann mit den gleichen Argumenten wie unten<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:82:9</span></span>
-        <span class="t-3003-c">behandelt werden). Nun holen wir zum entscheidenden<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:83:9</span></span>
-        <span class="t-3003-c">Schlag aus: wir "pumpen" das Wort
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:84:9</span></span><span class="t-3003-c">$\gamma$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:84:43</span></span><span class="t-3003-c">
-          auf, indem<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:84:51</span></span>
-        <span class="t-3003-c">wir die Teilbäume mit
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:85:9</span></span><span class="t-3003-c">$Z$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:85:31</span></span><span class="t-3003-c">
-          an der Wurzel wiederholen.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:85:34</span></span>
-        <span class="t-3003-c">Konkret besagt ja oberer Baum, dass
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:86:9</span></span><span class="t-3003-c">$\gamma$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:86:45</span></span><span class="t-3003-c">
-          wie<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:86:53</span></span>
-        <span class="t-3003-c">folgt hergeleitet wurde:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:87:9</span></span>
+        Der Pfad vom oberen $Z$ zu irgendeinem Nichtterminal
+        darunter hat höchstens Länge $N$ (so haben wir diesen Pfad
+        gewählt), und somit hat das Unterwort $vwx$ höchstens
+        $p = 2^{|N|}$ Zeichen. Wenn wir nun das Wort $a^nb^nc^n$
+        für ein sehr großes $n$ betrachten, sagen wir
+        $n \geq p = 2^{|N|}$ , dann kann das Wort $vwx$ nicht alle
+        drei Symbole $a,b,c$ enthalten; sonst würde es ja alle $n$
+        Symbole $b$ und noch weitere enthalten, wäre also länger
+        als
+        <span class="nowrap">$n \geq p$;</span>
+        allerdings haben wir ja gesehen, dass
+        $|vwx| \leq p$ gilt. Nehmen wir nun also der Einfachheit
+        halber an, dass $vwx$ nicht das Symbol $c$ enthält:
+        $vwx \in \{a,b\}^*$ (der andere Fall ist symmetrisch und
+        kann mit den gleichen Argumenten wie unten behandelt
+        werden). Nun holen wir zum entscheidenden Schlag aus: wir
+        "pumpen" das Wort $\gamma$ auf, indem wir die Teilbäume
+        mit $Z$ an der Wurzel wiederholen. Konkret besagt ja
+        oberer Baum, dass $\gamma$ wie folgt hergeleitet wurde:
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         S \Step{}^* u Z v \Step{}^* uvZxy \Step{}^* uvwxy
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:89:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Insbesondere heißt das, dass
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:93:9</span></span><span class="t-3003-c">$Z \Step{}^* vZx$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:93:38</span></span><span class="t-3003-c">
-          gilt.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:93:55</span></span>
-        <span class="t-3003-c">Wir können diesen Schritt also wiederholen:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:94:9</span></span>
+        Insbesondere heißt das, dass $Z \Step{}^* vZx$ gilt. Wir
+        können diesen Schritt also wiederholen:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:18em"
             src="img/context-free/pumping-lemma-03.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/pumping-lemma-03.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">und somit das Wort
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:101:9</span></span><span class="t-3003-c">$uvvwxxy$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:101:28</span></span><span class="t-3003-c">
-          und ganz allgemein jedes<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:101:37</span></span>
-        <span class="t-3003-c">Wort<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:102:9</span></span>
+        und somit das Wort $uvvwxxy$ und ganz allgemein jedes Wort
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         uv^i w x^i y
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:104:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">ableiten, für jedes
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:108:9</span></span><span class="nowrap"><span class="t-3003-c">$i \geq 0$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:108:29</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:108:39</span></span></span><span class="t-3003-c">
-          Selbst für
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:108:39</span></span><span class="t-3003-c">$i = 0$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:108:52</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:108:59</span></span>
-        <span class="t-3003-c">geht das:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:109:9</span></span>
+        ableiten, für jedes
+        <span class="nowrap">$i \geq 0$.</span>
+        Selbst für $i = 0$ geht
+        das:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:14em"
             src="img/context-free/pumping-lemma-04.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/pumping-lemma-04.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Betrachten wir nun das Wort
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:116:9</span></span><span class="nowrap"><span class="t-3003-c">$uwy$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:116:37</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:116:42</span></span></span><span class="t-3003-c">
-          Wir haben ja<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:116:42</span></span>
-        <span class="t-3003-c">gesehen, dass in
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:117:9</span></span><span class="t-3003-c">$uvwxy$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:117:26</span></span><span class="t-3003-c">
-          alle
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:117:33</span></span><span class="nowrap"><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:117:39</span></span><span class="t-3003-c">-Symbole<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:117:42</span></span></span><span class="t-3003-c">
-          rechts von<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:117:42</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:118:9</span></span><span class="t-3003-c">$vwx$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:118:9</span></span><span class="t-3003-c">
-          liegen, also in
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:118:14</span></span><span class="nowrap"><span class="t-3003-c">$y$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:118:31</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:118:34</span></span></span><span class="t-3003-c">
-          Das Wort
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:118:34</span></span><span class="t-3003-c">$uwy$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:118:45</span></span><span class="t-3003-c">
-          hat also<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:118:50</span></span>
-        <span class="t-3003-c">immer noch
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:119:9</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:119:20</span></span><span class="t-3003-c">
-          viele
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:119:23</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:119:30</span></span><span class="t-3003-c">
-          -Symbole. Allerdings hat es<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:119:33</span></span>
-        <span class="t-3003-c">die Symbole in
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:120:9</span></span><span class="t-3003-c">$v$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:120:24</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:120:27</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:120:32</span></span><span class="t-3003-c">
-          verloren! Wir wissen<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:120:35</span></span>
-        <span class="t-3003-c">nicht, wieviele davon
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:121:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:121:31</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:121:34</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:121:39</span></span><span class="t-3003-c">
-          waren, aber eines<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:121:42</span></span>
-        <span class="t-3003-c">ist ganz klar: in
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:122:9</span></span><span class="t-3003-c">$uwy$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:122:27</span></span><span class="t-3003-c">
-          kommen die Symbole
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:122:32</span></span><span class="t-3003-c">$a,b,c$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:122:52</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:122:59</span></span>
-        <span class="t-3003-c">nicht mehr gleich häufig vor, und somit<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:123:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:124:9</span></span><span class="nowrap"><span class="t-3003-c">$uwy\not \in L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:124:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:124:24</span></span></span><span class="t-3003-c">
-          Wir haben also gezeigt, dass die<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:124:24</span></span>
-        <span class="t-3003-c">kontextfreie Grammatik
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:125:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:125:32</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:125:35</span></span><i><span class="t-3003-c">nicht<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:125:37</span></span></i><span class="t-3003-c">
-          die Sprache
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:125:43</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:125:56</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:125:59</span></span>
-        <span class="t-3003-c">erzeugt: wenn wir alle
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:126:9</span></span><span class="t-3003-c">$\gamma \in L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:126:32</span></span><span class="t-3003-c">
-          erzeugen kann,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:126:46</span></span>
-        <span class="t-3003-c">dann kann sie auch Wörter wie
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:127:9</span></span><span class="t-3003-c">$uwy \not \in L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:127:39</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:127:55</span></span>
-        <span class="t-3003-c">erzeugen. Da unsere Argumentation keine Annahmen über<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:128:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:129:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:129:9</span></span><span class="t-3003-c">
-          getroffen hat, außer, dass sie kontextfrei ist,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:129:12</span></span>
-        <span class="t-3003-c">haben wir gezeigt:
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:130:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:130:28</span></span><span class="t-3003-c">
-          ist keine kontextfreie<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:130:31</span></span>
-        <span class="t-3003-c">Sprache.
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:131:9</span></span><b><span class="t-3003-c">Vorsicht!<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:131:19</span></span></b><span class="t-3003-c">
-          Wir haben angenommen, das
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:131:29</span></span><span class="t-3003-c">$uwy$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:131:56</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:131:61</span></span>
-        <span class="t-3003-c">weniger Zeichen hat als
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:132:9</span></span><span class="nowrap"><span class="t-3003-c">$uvwxy$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:132:33</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:132:40</span></span></span><span class="t-3003-c">
-          weil ja
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:132:40</span></span><span class="t-3003-c">$v$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:132:50</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:132:53</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:132:58</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:132:61</span></span>
-        <span class="t-3003-c">fehlen. Kann aber
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:133:9</span></span><span class="t-3003-c">$v = x = \epsilon$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:133:27</span></span><span class="t-3003-c">
-          eintreten? Dies<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:133:45</span></span>
-        <span class="t-3003-c">würde unsere Argumentation zerstören. Hier kommt<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:134:9</span></span>
-        <span class="t-3003-c">wieder die Chomsky-Normalform zur Hilfe: es gibt keine<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:135:9</span></span>
-        <span class="t-3003-c">Produktionen
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:136:9</span></span><span class="nowrap"><span class="t-3003-c">$X \rightarrow \epsilon$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:136:22</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:136:46</span></span></span><span class="t-3003-c">
-          (außer<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:136:46</span></span>
-        <span class="t-3003-c">vielleicht für das Startsymbol
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:137:9</span></span><span class="nowrap"><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:137:40</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:137:43</span></span></span><span class="t-3003-c">
-          welches dann aber<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:137:43</span></span>
-        <span class="t-3003-c">nicht auf einer rechten Seite auftreten dürfte). Ganz<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:138:9</span></span>
-        <span class="t-3003-c">allgemein: wenn eine Grammatik
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:139:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:139:40</span></span><span class="t-3003-c">
-          in<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:139:43</span></span>
-        <span class="t-3003-c">Chomsky-Normalform ein Wort
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:140:9</span></span><span class="t-3003-c">$\gamma$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:140:37</span></span><span class="t-3003-c">
-          herleitet und<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:140:45</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:141:9</span></span><span class="nowrap"><span class="t-3003-c">$\gamma \ne \epsilon$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:141:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:141:30</span></span></span><span class="t-3003-c">
-          dann kommt in der Ableitung<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:141:30</span></span>
-        <span class="t-3003-c">keine
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:142:9</span></span><span class="nowrap"><span class="t-3003-c">$\epsilon$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:142:15</span></span><span class="t-3003-c">-Produktion<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:142:25</span></span></span><span class="t-3003-c">
-          zur Anwendung.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:142:25</span></span>
+        Betrachten wir nun das Wort
+        <span class="nowrap">$uwy$.</span>
+        Wir haben ja gesehen,
+        dass in $uvwxy$ alle
+        <span class="nowrap">$c$-Symbole</span>
+        rechts von $vwx$ liegen,
+        also in
+        <span class="nowrap">$y$.</span>
+        Das Wort $uwy$ hat also immer noch $n$ viele
+        $c$ -Symbole. Allerdings hat es die Symbole in $v$ und $x$
+        verloren! Wir wissen nicht, wieviele davon $a$ und $b$
+        waren, aber eines ist ganz klar: in $uwy$ kommen die
+        Symbole $a,b,c$ nicht mehr gleich häufig vor, und somit
+        <span class="nowrap">$uwy\not \in L$.</span>
+        Wir haben also gezeigt, dass die
+        kontextfreie Grammatik $G$
+        <i>nicht</i>
+        die Sprache $L$
+        erzeugt: wenn wir alle $\gamma \in L$ erzeugen kann, dann
+        kann sie auch Wörter wie $uwy \not \in L$ erzeugen. Da
+        unsere Argumentation keine Annahmen über $G$ getroffen
+        hat, außer, dass sie kontextfrei ist, haben wir gezeigt:
+        $L$ ist keine kontextfreie Sprache.
+        <b>Vorsicht!</b>
+        Wir haben
+        angenommen, das $uwy$ weniger Zeichen hat als
+        <span class="nowrap">$uvwxy$,</span>
+        weil ja $v$ und $x$ fehlen. Kann aber $v = x = \epsilon$
+        eintreten? Dies würde unsere Argumentation zerstören. Hier
+        kommt wieder die Chomsky-Normalform zur Hilfe: es gibt
+        keine Produktionen
+        <span class="nowrap">$X \rightarrow \epsilon$,</span>
+        (außer
+        vielleicht für das Startsymbol
+        <span class="nowrap">$S$,</span>
+        welches dann aber
+        nicht auf einer rechten Seite auftreten dürfte). Ganz
+        allgemein: wenn eine Grammatik $G$ in Chomsky-Normalform
+        ein Wort $\gamma$ herleitet und
+        <span class="nowrap">$\gamma \ne \epsilon$,</span>
+        dann kommt in der Ableitung keine
+        <span class="nowrap">$\epsilon$-Produktion</span>
+        zur Anwendung.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Die obige Argumentationslinie ist als
-        <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:144:5</span></span><i><span class="t-3003-c">Pumping Lemma<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:144:44</span></span>
-        <span class="t-3003-c">für kontextfreie Sprachen<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:145:5</span></span></i><span class="t-3003-c">
-        bekannt:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:145:31</span></span>
+      Die obige Argumentationslinie ist als
+      <i>Pumping Lemma für
+        kontextfreie Sprachen</i>
+      bekannt:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 6.11.2 (Pumping Lemma für kontextfreie Sprachen)<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:147:5</span></span></b><span class="t-3003-c">
-          Für jede<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:148:52</span></span>
-        <span class="t-3003-c">kontextfreie Grammatik
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:149:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:149:32</span></span><span class="t-3003-c">
-          gibt es eine Zahl<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:149:35</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:150:9</span></span><span class="nowrap"><span class="t-3003-c">$p \in \N$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:150:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:150:19</span></span></span><span class="t-3003-c">
-          so dass jedes Wort
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:150:19</span></span><span class="t-3003-c">$\gamma \in L(G)$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:150:40</span></span><span class="t-3003-c">
-          der<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:150:57</span></span>
-        <span class="t-3003-c">Länge
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:151:9</span></span><span class="t-3003-c">$|\gamma| \geq p$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:151:15</span></span><span class="t-3003-c">
-          zerlegt werden kann in<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:151:32</span></span>
+        <b>Theorem 6.11.2 (Pumping Lemma für kontextfreie Sprachen)</b>
+        Für jede
+        kontextfreie Grammatik $G$ gibt es eine Zahl
+        <span class="nowrap">$p \in \N$,</span>
+        so dass jedes Wort $\gamma \in L(G)$ der Länge
+        $|\gamma| \geq p$ zerlegt werden kann in
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \gamma = uvwxy \ ,
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:153:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">wobei
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:157:9</span></span><span class="t-3003-c">$|vwx| \leq p$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:157:15</span></span><span class="t-3003-c">
-          gilt und
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:157:29</span></span><span class="t-3003-c">$v,x$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:157:39</span></span><span class="t-3003-c">
-          nicht beide<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:157:44</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:158:9</span></span><span class="t-3003-c">$\epsilon$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:158:9</span></span><span class="t-3003-c">
-          sind, so dass<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:158:19</span></span>
+        wobei $|vwx| \leq p$ gilt und $v,x$ nicht beide $\epsilon$
+        sind, so dass
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         u v^i w x^i y \in L(G)
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:160:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">gilt, für alle
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:164:9</span></span><span class="nowrap"><span class="t-3003-c">$i \geq 0$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:164:24</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:164:34</span></span></span><span class="t-3003-c">
-          Die Zahl
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:164:34</span></span><span class="t-3003-c">$p$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:164:45</span></span><span class="t-3003-c">
-          kann zum<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:164:48</span></span>
-        <span class="t-3003-c">Beispiel als
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:165:9</span></span><span class="t-3003-c">$2^{N_{\rm CNF}}$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:165:22</span></span><span class="t-3003-c">
-          gewählt werden, wobei<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:165:39</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:166:9</span></span><span class="t-3003-c">$N_{\rm CNF}$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:166:9</span></span><span class="t-3003-c">
-          die Anzahl der Nichtterminale in einer<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:166:22</span></span>
-        <span class="t-3003-c">zu
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:167:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:167:12</span></span><span class="t-3003-c">
-          äquivalenten Chomsky-Normalform ist.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:167:15</span></span>
+        gilt, für alle
+        <span class="nowrap">$i \geq 0$.</span>
+        Die Zahl $p$ kann zum Beispiel
+        als $2^{N_{\rm CNF}}$ gewählt werden, wobei $N_{\rm CNF}$
+        die Anzahl der Nichtterminale in einer zu $G$ äquivalenten
+        Chomsky-Normalform ist.
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 6.11.1<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:169:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:169:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:170:9</span></span><span class="t-3003-c">$L \subseteq \{a,b,c\}^n$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:170:13</span></span><span class="t-3003-c">
-          die Sprache aller<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:170:38</span></span>
-        <span class="t-3003-c">Wörter<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:171:9</span></span>
+        <b>Übungsaufgabe 6.11.1</b>
+        Sei $L \subseteq \{a,b,c\}^n$ die Sprache aller Wörter
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \{\alpha c \alpha \ | \ \alpha \in \{a,b\}^* \} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:173:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">In Worten: rechts und links vom
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:177:9</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:177:41</span></span><span class="t-3003-c">
-          in der Mitte muss<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:177:44</span></span>
-        <span class="t-3003-c">das gleiche Teilwort stehen. Zeigen Sie analog zu dem<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:178:9</span></span>
-        <span class="t-3003-c">vorherigen Beweis, dass
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:179:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:179:33</span></span><span class="t-3003-c">
-          nicht kontextfrei ist.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:179:36</span></span>
+        In Worten: rechts und links vom $c$ in der Mitte muss das
+        gleiche Teilwort stehen. Zeigen Sie analog zu dem
+        vorherigen Beweis, dass $L$ nicht kontextfrei ist.
       </p>
     </div>
     <div
@@ -488,238 +301,188 @@
       class="well exercise out"
     >
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 6.11.2<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:181:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:181:5</span></span>
-        <span class="t-3003-c">Sie
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:183:9</span></span><span class="t-3003-c">$L \subseteq \{1\}^*$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:183:13</span></span><span class="t-3003-c">
-          die Sprache aller Wörter,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:183:34</span></span>
-        <span class="t-3003-c">deren Länge eine Zweierpotenz ist:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:184:9</span></span>
+        <b>Übungsaufgabe 6.11.2</b>
+        Sie $L \subseteq \{1\}^*$ die Sprache aller Wörter, deren
+        Länge eine Zweierpotenz ist:
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         L := \{ 1^n \ | \ n = 2^d \textnormal{ für ein \(d \in \N\)} \}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:186:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Also<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:190:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:191:9</span></span><span class="nowrap"><span class="t-3003-c">$L = \{1, 11, 1111, 11111111, 1111111111111111,
-            \dots\}$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:191:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:192:17</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:192:17</span></span>
-        <span class="t-3003-c">Zeigen Sie, dass
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:193:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:193:26</span></span><span class="t-3003-c">
-          nicht kontextfrei ist.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:193:29</span></span>
+        Also
+        <span class="nowrap">$L = \{1, 11, 1111, 11111111, 1111111111111111, \dots\}$.</span>
+        Zeigen Sie, dass $L$ nicht kontextfrei ist.
       </p>
     </div>
     <h3 class="main-column subtopic-announcement">
-      <span class="t-3003-c">Mengenoperationen auf kontextfreien Sprachen<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:196:9</span></span>
+      Mengenoperationen auf kontextfreien Sprachen
     </h3>
     <p class="main-column">
-      <span class="t-3003-c">Im Kapitel über reguläre Sprachen hatten wir folgende<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:198:5</span></span>
-      <span class="t-3003-c">Abschlusseigenschaften:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:199:5</span></span>
+      Im Kapitel über reguläre Sprachen hatten wir folgende
+      Abschlusseigenschaften:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 6.11.3<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:201:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:201:5</span></span>
-        <span class="t-3003-c">Wenn
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:202:9</span></span><span class="t-3003-c">$L_1, L_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:202:14</span></span><span class="t-3003-c">
-          reguläre Sprachen sind, dann sind die<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:202:24</span></span>
-        <span class="t-3003-c">folgenden Sprachen auch regulär:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:203:9</span></span>
+        <b>Theorem 6.11.3</b>
+        Wenn $L_1, L_2$ reguläre Sprachen sind, dann sind die
+        folgenden Sprachen auch regulär:
       </p>
       <ol>
         <li>
           <p>
-            <span class="nowrap"><span class="t-3003-c">$L_1 \cup L_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:207:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:207:31</span></span></span><span class="t-3003-c">
-              Das war einfach: wir kombinieren die<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:207:31</span></span>
-            <span class="t-3003-c">Grammatiken und fügen die Startproduktionen<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:208:17</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:209:17</span></span><span class="t-3003-c">$S \rightarrow S_1 \ | \ S_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:209:17</span></span><span class="t-3003-c">
-              hinzu.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:209:46</span></span>
+            <span class="nowrap">$L_1 \cup L_2$.</span>
+            Das war einfach: wir kombinieren die
+            Grammatiken und fügen die Startproduktionen
+            $S \rightarrow S_1 \ | \ S_2$ hinzu.
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><span class="t-3003-c">$L_1 \circ L_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:212:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:212:32</span></span></span><span class="t-3003-c">
-              Das war schon schwieriger, ging aber<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:212:32</span></span>
-            <span class="t-3003-c">auch irgendwie.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:213:17</span></span>
+            <span class="nowrap">$L_1 \circ L_2$.</span>
+            Das war schon schwieriger, ging aber auch
+            irgendwie.
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><span class="t-3003-c">$L_1^*$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:216:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:216:24</span></span></span><span class="t-3003-c">
-              Das ging ähnlich zum vorherigen.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:216:24</span></span>
+            <span class="nowrap">$L_1^*$.</span>
+            Das ging ähnlich zum vorherigen.
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><span class="t-3003-c">$\bar{L}_1 := \Sigma^* \setminus L_1$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:219:17</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:219:54</span></span></span><span class="t-3003-c">
-              die<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:219:54</span></span>
-            <span class="t-3003-c">Komplementsprache. Das ist einfach, sobald man einen<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:220:17</span></span>
-            <span class="t-3003-c">endlichen Automaten für
-              <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:221:17</span></span><span class="t-3003-c">$L_1$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:221:41</span></span><span class="t-3003-c">
-              gebaut hat: man tauscht<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:221:46</span></span>
-            <span class="t-3003-c">akzeptierende und nicht-akzeptierende Zustände aus.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:222:17</span></span>
+            <span class="nowrap">$\bar{L}_1 := \Sigma^* \setminus L_1$,</span>
+            die
+            Komplementsprache. Das ist einfach, sobald man einen
+            endlichen Automaten für $L_1$ gebaut hat: man tauscht
+            akzeptierende und nicht-akzeptierende Zustände aus.
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><span class="t-3003-c">$L_1^R$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:225:17</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:225:24</span></span></span><span class="t-3003-c">
-              die Sprache, die entsteht, wenn man jedes<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:225:24</span></span>
-            <span class="t-3003-c">Wort in
-              <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:226:17</span></span><span class="t-3003-c">$L_1$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:226:25</span></span><span class="t-3003-c">
-              von rechts nach links liest. Dies ist<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:226:30</span></span>
-            <span class="t-3003-c">gar nicht so offensichtlich, wenn man reguläre<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:227:17</span></span>
-            <span class="t-3003-c">Grammatiken oder endliche Automaten ansieht. Wenn man<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:228:17</span></span>
-            <span class="t-3003-c">aber für
-              <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:229:17</span></span><span class="t-3003-c">$L_1$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:229:26</span></span><span class="t-3003-c">
-              einen
-              <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:229:31</span></span><i><span class="t-3003-c">regulären Ausdruck<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:229:39</span></span></i><span class="t-3003-c">
-              gebaut hat,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:229:58</span></span>
-            <span class="t-3003-c">wird es zur Trivialität: einfach den Ausdruck<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:230:17</span></span>
-            <span class="t-3003-c">umdrehen.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:231:17</span></span>
+            <span class="nowrap">$L_1^R$,</span>
+            die Sprache, die entsteht, wenn man jedes Wort in
+            $L_1$ von rechts nach links liest. Dies ist gar nicht so
+            offensichtlich, wenn man reguläre Grammatiken oder endliche
+            Automaten ansieht. Wenn man aber für $L_1$ einen
+            <i>regulären Ausdruck</i>
+            gebaut hat, wird es zur Trivialität:
+            einfach den Ausdruck umdrehen.
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><span class="t-3003-c">$L_1 \cap L_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:234:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:234:31</span></span></span><span class="t-3003-c">
-              Hierfür könnte man für
-              <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:234:31</span></span><span class="t-3003-c">$L_1, L_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:234:56</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:234:66</span></span>
-            <span class="t-3003-c">jeweils endliche Automaten
-              <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:235:17</span></span><span class="t-3003-c">$M_1, M_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:235:44</span></span><span class="t-3003-c">
-              bauen und die<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:235:54</span></span>
-            <span class="t-3003-c">dann "parallel" laufen lassen; man muss nun sehen,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:236:17</span></span>
-            <span class="t-3003-c">dass man dieses parallele Laufen mit
-              <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:237:17</span></span><i><span class="t-3003-c">einem<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:237:55</span></span></i><span class="t-3003-c">
-              Automaten<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:237:61</span></span>
-            <span class="t-3003-c">simulieren kann: dieser hat als Zustandsmenge<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:238:17</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:239:17</span></span><span class="nowrap"><span class="t-3003-c">$Q_1 \times Q_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:239:17</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:239:33</span></span></span><span class="t-3003-c">
-              merkt sich also in
-              <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:239:33</span></span><i><span class="t-3003-c">einem<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:239:55</span></span></i><span class="t-3003-c">
-              Zustand,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:239:61</span></span>
-            <span class="t-3003-c">in welchen Zuständen
-              <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:240:17</span></span><span class="t-3003-c">$M_1$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:240:38</span></span><span class="t-3003-c">
-              und
-              <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:240:43</span></span><span class="t-3003-c">$M_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:240:48</span></span><span class="t-3003-c">
-              sind. Oder man<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:240:53</span></span>
-            <span class="t-3003-c">macht es sich einfach:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:241:17</span></span>
+            <span class="nowrap">$L_1 \cap L_2$.</span>
+            Hierfür könnte man für $L_1, L_2$ jeweils
+            endliche Automaten $M_1, M_2$ bauen und die dann
+            "parallel" laufen lassen; man muss nun sehen, dass man
+            dieses parallele Laufen mit
+            <i>einem</i>
+            Automaten simulieren
+            kann: dieser hat als Zustandsmenge
+            <span class="nowrap">$Q_1 \times Q_2$,</span>
+            merkt
+            sich also in
+            <i>einem</i>
+            Zustand, in welchen Zuständen $M_1$
+            und $M_2$ sind. Oder man macht es sich einfach:
           </p>
           <ul>
             <li>
               <p>
-                <span class="t-3003-c">Nach Punkt 4 sind
-                  <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:245:25</span></span><span class="t-3003-c">$\bar{L}_1$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:245:43</span></span><span class="t-3003-c">
-                  und
-                  <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:245:54</span></span><span class="t-3003-c">$\bar{L}_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:245:59</span></span><span class="t-3003-c">
-                  <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:245:70</span></span>
-                <span class="t-3003-c">regulär.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:246:25</span></span>
+                Nach Punkt 4 sind $\bar{L}_1$ und $\bar{L}_2$ regulär.
               </p>
             </li>
             <li>
               <p>
-                <span class="t-3003-c">Nach Punkt 1 daher auch
-                  <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:249:25</span></span><span class="t-3003-c">$\bar{L}_1 \cup \bar{L}_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:249:49</span></span><span class="t-3003-c">
-                  <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:249:75</span></span>
-                <span class="t-3003-c">ist regulär.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:250:25</span></span>
+                Nach Punkt 1 daher auch $\bar{L}_1 \cup \bar{L}_2$ ist
+                regulär.
               </p>
             </li>
             <li>
               <p>
-                <span class="t-3003-c">Nach Punkt 4 ist daher wiederum<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:253:25</span></span>
-                <span class="t-3003-c">
-                  <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:254:25</span></span><span class="t-3003-c">$\overline{\bar{L}_1 \cup \bar{L}_2}$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:254:25</span></span><span class="t-3003-c">
-                  regulär, was<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:254:62</span></span>
-                <span class="t-3003-c">nach den De-Morganschen Gesetzen die gleiche Menge ist<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:255:25</span></span>
-                <span class="t-3003-c">wie
-                  <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:256:25</span></span><span class="nowrap"><span class="t-3003-c">$L_1 \cap L_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:256:29</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:256:43</span></span></span>
+                Nach Punkt 4 ist daher wiederum
+                $\overline{\bar{L}_1 \cup \bar{L}_2}$ regulär, was nach
+                den De-Morganschen Gesetzen die gleiche Menge ist wie
+                <span class="nowrap">$L_1 \cap L_2$.</span>
               </p>
             </li>
           </ul>
         </li>
       </ol>
       <p>
-        <span class="t-3003-c">Wie sieht es nun aus, wenn
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:258:9</span></span><span class="t-3003-c">$L_1, L_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:258:36</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:258:46</span></span><i><span class="t-3003-c">kontextfreie<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:258:48</span></span></i><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:258:61</span></span>
-        <span class="t-3003-c">Sprachen sind? Welche der obigen Kombinationen sind<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:259:9</span></span>
-        <span class="t-3003-c">dann ebenfalls kontextfrei?<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:260:9</span></span>
+        Wie sieht es nun aus, wenn $L_1, L_2$
+        <i>kontextfreie</i>
+        Sprachen sind? Welche der obigen Kombinationen sind dann
+        ebenfalls kontextfrei?
       </p>
       <div class="well exercise">
         <p>
-          <b><span class="t-3003-c">Übungsaufgabe 6.11.3<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:262:9</span></span></b><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:262:9</span></span>
-          <span class="t-3003-c">Seien
-            <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:263:13</span></span><span class="t-3003-c">$L_1, L_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:263:19</span></span><span class="t-3003-c">
-            kontextfrei. Zeigen Sie, dass die<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:263:29</span></span>
-          <span class="t-3003-c">folgenden Sprachen auch kontextfrei sind:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:264:13</span></span>
+          <b>Übungsaufgabe 6.11.3</b>
+          Seien $L_1, L_2$ kontextfrei. Zeigen Sie, dass die
+          folgenden Sprachen auch kontextfrei sind:
         </p>
         <ol>
           <li>
             <p>
-              <span class="t-3003-c">$L_1 \cup L_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:268:21</span></span>
+              $L_1 \cup L_2$
             </p>
           </li>
           <li>
             <p>
-              <span class="t-3003-c">$L_1 \circ L_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:271:21</span></span>
+              $L_1 \circ L_2$
             </p>
           </li>
           <li>
             <p>
-              <span class="t-3003-c">$L_1^*$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:274:21</span></span>
+              $L_1^*$
             </p>
           </li>
           <li>
             <p>
-              <span class="t-3003-c">Überspringen wir
-                <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:277:21</span></span><span class="nowrap"><span class="t-3003-c">$\bar{L}_1$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:277:38</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:277:49</span></span></span><span class="t-3003-c">
-                dieses ist nämlich im<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:277:49</span></span>
-              <span class="t-3003-c">Allgemeinen nicht kontextfrei.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:278:21</span></span>
+              Überspringen wir
+              <span class="nowrap">$\bar{L}_1$;</span>
+              dieses ist nämlich im
+              Allgemeinen nicht kontextfrei.
             </p>
           </li>
           <li>
             <p>
-              <span class="t-3003-c">$L_1^R$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:281:21</span></span>
+              $L_1^R$
             </p>
           </li>
           <li>
             <p>
-              <span class="t-3003-c">Überspringen wir
-                <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:284:21</span></span><span class="nowrap"><span class="t-3003-c">$L_1 \cap L_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:284:38</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:284:52</span></span></span><span class="t-3003-c">
-                dieses ist nämlich<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:284:52</span></span>
-              <span class="t-3003-c">im Allgemeinen nicht kontextfrei.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:285:21</span></span>
+              Überspringen wir
+              <span class="nowrap">$L_1 \cap L_2$;</span>
+              dieses ist nämlich im
+              Allgemeinen nicht kontextfrei.
             </p>
           </li>
         </ol>
         <p>
-          <b><span class="t-3003-c">Tip:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:287:14</span></span></b><span class="t-3003-c">
-            dies ist viel einacher als für reguläre<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:287:19</span></span>
-          <span class="t-3003-c">Grammatiken.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:288:13</span></span>
+          <b>Tip:</b>
+          dies ist viel einacher als für reguläre
+          Grammatiken.
         </p>
       </div>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wie schon angedeutet, geben uns Komplement und<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:290:5</span></span>
-      <span class="t-3003-c">Schnittmenge im Allgemeinen keine kontextfreie<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:291:5</span></span>
-      <span class="t-3003-c">Sprache. Das Gegenbeispiel haben wir schon fast<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:292:5</span></span>
-      <span class="t-3003-c">gesehen:<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:293:5</span></span>
+      Wie schon angedeutet, geben uns Komplement und
+      Schnittmenge im Allgemeinen keine kontextfreie Sprache. Das
+      Gegenbeispiel haben wir schon fast gesehen:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beobachtung 6.11.4<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:295:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:295:5</span></span>
-        <span class="t-3003-c">Der Schnitt
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:296:9</span></span><span class="t-3003-c">$L_1 \cap L_2$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:296:21</span></span><span class="t-3003-c">
-          zweier kontextfreier<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:296:35</span></span>
-        <span class="t-3003-c">Sprachen ist im Allgemeinen
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:297:9</span></span><i><span class="t-3003-c">nicht<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:297:38</span></span></i><span class="t-3003-c">
-          kontextfrei. Ein<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:297:44</span></span>
-        <span class="t-3003-c">Beispiel ist<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:298:9</span></span>
+        <b>Beobachtung 6.11.4</b>
+        Der Schnitt $L_1 \cap L_2$ zweier kontextfreier Sprachen
+        ist im Allgemeinen
+        <i>nicht</i>
+        kontextfrei. Ein Beispiel ist
       </p>
       <div class="math-block">
         $$
@@ -727,89 +490,65 @@
         L_1 &amp; := \{a^n b^n c^* \ | \ n \geq 0 \}\\
         L_2 &amp; := \{a^* b^n c^n \ | \ n \geq 0 \}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:300:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Diese sind beide kontextfrei (schreiben Sie jeweils<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:305:9</span></span>
-        <span class="t-3003-c">eine Grammatik, wenn Sie's nicht glauben). Der Schnitt<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:306:9</span></span>
-        <span class="t-3003-c">allerdings ist<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:307:9</span></span>
+        Diese sind beide kontextfrei (schreiben Sie jeweils eine
+        Grammatik, wenn Sie's nicht glauben). Der Schnitt
+        allerdings ist
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         L_1 \cap L_2 = \{a^n b^n c^n \ | \ n \geq 0\} \ ,
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:309:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">genau diejenige Sprache, für die wir oben gezeigt<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:313:9</span></span>
-        <span class="t-3003-c">haben, dass sie nicht kontextfrei ist.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:314:9</span></span>
+        genau diejenige Sprache, für die wir oben gezeigt haben,
+        dass sie nicht kontextfrei ist.
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beobachtung 6.11.5<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:316:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:316:5</span></span>
-        <span class="t-3003-c">Das Komplement
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:317:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:317:24</span></span><span class="t-3003-c">
-          einer kontextfreien Sprache ist im<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:317:27</span></span>
-        <span class="t-3003-c">Allgemeinen
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:318:9</span></span><i><span class="t-3003-c">nicht<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:318:22</span></span></i><span class="t-3003-c">
-          kontextfrei. \\ Warum? Wenn er es<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:318:28</span></span>
-        <span class="t-3003-c">wäre, dann wäre mit Hilfe von Punkt 1 auch<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:319:9</span></span>
+        <b>Beobachtung 6.11.5</b>
+        Das Komplement $L$ einer kontextfreien Sprache ist im
+        Allgemeinen
+        <i>nicht</i>
+        kontextfrei. \\ Warum? Wenn er es wäre,
+        dann wäre mit Hilfe von Punkt 1 auch
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         L_1 \cap L_2 = \overline{ \bar{L}_1 \cup \bar{L_2}}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:321:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">kontextfrei, was es aber im Allgemeinen nicht ist.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:325:9</span></span>
-        <span class="t-3003-c">Befriedigender wäre es allerdings, wenn wir ein<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:326:9</span></span>
-        <span class="t-3003-c">konkretes Beispiel hätten.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:327:9</span></span>
+        kontextfrei, was es aber im Allgemeinen nicht ist.
+        Befriedigender wäre es allerdings, wenn wir ein konkretes
+        Beispiel hätten.
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 6.11.4<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:329:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:329:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:330:9</span></span><span class="nowrap"><span class="t-3003-c">$L := \{a^n b^n c^n\}$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:330:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:330:35</span></span></span><span class="t-3003-c">
-          Wir wissen bereits, dass<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:330:35</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:331:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:331:9</span></span><span class="t-3003-c">
-          nicht kontextfrei ist. Zeigen Sie, dass
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:331:12</span></span><span class="t-3003-c">$\bar{L}$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:331:53</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:331:62</span></span>
-        <span class="t-3003-c">kontextfrei ist. Die Sprache
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:332:9</span></span><span class="t-3003-c">$\bar{L}$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:332:38</span></span><span class="t-3003-c">
-          ist somit ein<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:332:47</span></span>
-        <span class="t-3003-c">Beispiel für eine kontextfreie Sprache, deren<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:333:9</span></span>
-        <span class="t-3003-c">Komplement, also
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:334:9</span></span><span class="nowrap"><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:334:26</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:334:29</span></span></span><span class="t-3003-c">
-          nicht kontextfrei ist.
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:334:29</span></span><b><span class="t-3003-c">Tip.<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:334:55</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:334:60</span></span>
-        <span class="t-3003-c">Listen Sie alle Möglichkeiten auf, wie ein Wort
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:335:9</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:335:57</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:335:60</span></span>
-        <span class="t-3003-c">nicht in
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:336:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:336:18</span></span><span class="t-3003-c">
-          sein kann: (1) es hat nicht die Form<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:336:21</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:337:9</span></span><span class="t-3003-c">$a^* b^* c^*$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:337:9</span></span><span class="t-3003-c">
-          ; (2) es hat die Form, hat aber mehr
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:337:22</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:337:60</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:337:63</span></span>
-        <span class="t-3003-c">als es
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:338:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:338:16</span></span><span class="t-3003-c">
-          hat; (2) es hat mehr
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:338:19</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:338:41</span></span><span class="t-3003-c">
-          als es
-          <span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:338:44</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:338:52</span></span><span class="t-3003-c">
-          hat...<span class="t-3003">./course1/wly/06/11-limitations-of-context-free-grammars.wly:338:55</span></span>
+        <b>Übungsaufgabe 6.11.4</b>
+        Sei
+        <span class="nowrap">$L := \{a^n b^n c^n\}$.</span>
+        Wir wissen bereits, dass $L$
+        nicht kontextfrei ist. Zeigen Sie, dass $\bar{L}$
+        kontextfrei ist. Die Sprache $\bar{L}$ ist somit ein
+        Beispiel für eine kontextfreie Sprache, deren Komplement,
+        also
+        <span class="nowrap">$L$,</span>
+        nicht kontextfrei ist.
+        <b>Tip.</b>
+        Listen Sie alle
+        Möglichkeiten auf, wie ein Wort $w$ nicht in $L$ sein
+        kann: (1) es hat nicht die Form $a^* b^* c^*$ ; (2) es hat
+        die Form, hat aber mehr $a$ als es $b$ hat; (2) es hat
+        mehr $a$ als es $c$ hat...
       </p>
     </div>
     <div id="end-of-page-elt">

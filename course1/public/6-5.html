@@ -28,7 +28,7 @@
         >&lt;&lt; Kapitel 6.4<span
             style="visibility:hidden"
             id="top-prev-page-tooltip"
-          ><span class="nowrap">LL(<span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:2:14</span></span>)-Grammatiken</span>
+          ><span class="nowrap">LL($k$)-Grammatiken</span>
             (nicht im Sommersemester 2025)</span></a><a
           id="next-page"
           href="./6-6.html"
@@ -41,19 +41,14 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">6.5&ensp;LR-Parser per Hand entwerfen<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:2:11</span></span>
+        6.5&ensp;LR-Parser per Hand entwerfen
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Betrachten wir die kontextfreie Grammatik
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:4:5</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:4:47</span></span><span class="t-3003-c">
-        für<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:4:50</span></span>
-      <span class="t-3003-c">arithmetische Ausdrücke mit den Variablen
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:5:5</span></span><span class="t-3003-c">$x, y, z$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:5:47</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:5:56</span></span>
-      <span class="t-3003-c">und strenger Klammerung über dem Alphabet<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:6:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:7:5</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma = \{x, y, z, (, ), +, *\}$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:7:5</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:7:39</span></span></span>
+      Betrachten wir die kontextfreie Grammatik $G$ für
+      arithmetische Ausdrücke mit den Variablen $x, y, z$ und
+      strenger Klammerung über dem Alphabet
+      <span class="nowrap">$\Sigma = \{x, y, z, (, ), +, *\}$:</span>
     </p>
     <div class="math-block main-column">
       $$
@@ -62,53 +57,35 @@
       S&amp;\rightarrow (S+S) \\
       S&amp;\rightarrow (S*S)
       \end{align*}
-      $$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:9:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Sie kann also
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:15:5</span></span><span class="t-3003-c">$(x + (y*z))$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:15:19</span></span><span class="t-3003-c">
-        ableiten aber eben nicht<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:15:32</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:16:5</span></span><span class="nowrap"><span class="t-3003-c">$(x + y + z)$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:16:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:16:18</span></span></span><span class="t-3003-c">
-        Wie können wir nun einen Parser für
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:16:18</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:16:56</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:16:59</span></span>
-      <span class="t-3003-c">schreiben? Also einen Algorithmus, der ein Wort<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:17:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:18:5</span></span><span class="t-3003-c">$w \in \Sigma^*$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:18:5</span></span><span class="t-3003-c">
-        nimmt und einen Ableitungsbaum<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:18:21</span></span>
-      <span class="t-3003-c">konstruiert (falls
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:19:5</span></span><span class="nowrap"><span class="t-3003-c">$w \in L(G)$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:19:24</span></span><span class="t-3003-c">)?<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:19:36</span></span></span><span class="t-3003-c">
-        Wenn wir uns an das<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:19:36</span></span>
-      <span class="t-3003-c">LL-Paradigma halten und eine Linksableitung bauen<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:20:5</span></span>
-      <span class="t-3003-c">wollen, dann stoßen wir schon ganz am Anfang auf ein<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:21:5</span></span>
-      <span class="t-3003-c">Problem: wenn zum Beispiel<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:22:5</span></span>
+      Sie kann also $(x + (y*z))$ ableiten aber eben nicht
+      <span class="nowrap">$(x + y + z)$.</span>
+      Wie können wir nun einen Parser für $G$
+      schreiben? Also einen Algorithmus, der ein Wort
+      $w \in \Sigma^*$ nimmt und einen Ableitungsbaum
+      konstruiert (falls
+      <span class="nowrap">$w \in L(G)$)?</span>
+      Wenn wir uns an das
+      LL-Paradigma halten und eine Linksableitung bauen wollen,
+      dann stoßen wir schon ganz am Anfang auf ein Problem: wenn
+      zum Beispiel
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       w = ((((\dots
       \end{align*}
-      $$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:24:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">dann wissen wir nicht, ob wir als ersten Schritt<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:28:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:29:5</span></span><span class="t-3003-c">$S \rightarrow (S+S)$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:29:5</span></span><span class="t-3003-c">
-        oder
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:29:26</span></span><span class="t-3003-c">$S \rightarrow (S*S)$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:29:32</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:29:53</span></span>
-      <span class="t-3003-c">tätigen sollen. Das geht auch nicht, wenn wir
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:30:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:30:51</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:30:54</span></span>
-      <span class="t-3003-c">Zeichen vorauslesen dürfen, weil der
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:31:5</span></span><span class="t-3003-c">$(((\dots$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:31:42</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:31:52</span></span>
-      <span class="t-3003-c">-Präfix ja länger als
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:32:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:32:27</span></span><span class="t-3003-c">
-        sein kann. Nein, wir müssen<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:32:30</span></span>
-      <span class="t-3003-c">anders vorgehen. Wir könnten beispielsweise die<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:33:5</span></span>
-      <span class="t-3003-c">Grammatik ändern:<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:34:5</span></span>
+      dann wissen wir nicht, ob wir als ersten Schritt
+      $S \rightarrow (S+S)$ oder $S \rightarrow (S*S)$ tätigen
+      sollen. Das geht auch nicht, wenn wir $k$ Zeichen
+      vorauslesen dürfen, weil der $(((\dots$ -Präfix ja länger
+      als $k$ sein kann. Nein, wir müssen anders vorgehen. Wir
+      könnten beispielsweise die Grammatik ändern:
     </p>
     <div class="math-block main-column">
       $$
@@ -117,36 +94,33 @@
       S &amp;\rightarrow (SOS) \\
       O &amp;\rightarrow + \ | \ *
       \end{align*}
-      $$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:36:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Das geht aber nicht immer:<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:42:5</span></span>
+      Das geht aber nicht immer:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beispiel 6.5.1<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:44:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:44:5</span></span>
-        <span class="t-3003-c">Betrachten wir die recht einfache Sprache<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:45:9</span></span>
+        <b>Beispiel 6.5.1</b>
+        Betrachten wir die recht einfache Sprache
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         L_2 := \{a^{m+k} b^m c \ | \ m \geq 1, k \geq 0 \} \ ,
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:47:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">also
-          <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:51:9</span></span><span class="nowrap"><i><span class="t-3003-c">beliebig viele
-              <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:51:15</span></span><span class="nowrap"><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:51:30</span></span><span class="t-3003-c">'s,<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:51:33</span></span></span><span class="t-3003-c">
-              gefolgt von gleich vielen<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:51:33</span></span>
-            <span class="t-3003-c">oder weniger
-              <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:52:9</span></span><span class="nowrap"><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:52:22</span></span><span class="t-3003-c">'s<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:52:25</span></span></span><span class="t-3003-c">
-              (aber mindestens einem),<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:52:25</span></span>
-            <span class="t-3003-c">abgeschlossen mit einem
-              <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:53:9</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:53:33</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:53:37</span></span></span><span class="t-3003-c">
-          Eine Grammatik ist<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:53:37</span></span>
-        <span class="t-3003-c">schnell geschrieben:<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:54:9</span></span>
+        also
+        <span class="nowrap"><i>beliebig viele
+            <span class="nowrap">$a$'s,</span>
+            gefolgt von gleich vielen oder
+            weniger
+            <span class="nowrap">$b$'s</span>
+            (aber mindestens einem), abgeschlossen mit
+            einem $c$</i>.</span>
+        Eine Grammatik ist schnell geschrieben:
       </p>
       <div class="math-block">
         $$
@@ -156,90 +130,54 @@
         X&amp;\rightarrow aXb \\
         X&amp;\rightarrow ab
         \end{align}
-        $$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:56:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Wenn wir jetzt die ersten
-          <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:63:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:63:35</span></span><span class="t-3003-c">
-          Zeichen lesen:<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:63:38</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:64:9</span></span><span class="nowrap"><span class="t-3003-c">$aaaa \dots$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:64:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:64:21</span></span></span><span class="t-3003-c">
-          dann gibt es keinen Weg, zu<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:64:21</span></span>
-        <span class="t-3003-c">entscheiden, ob danach gleich viele oder weniger
-          <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:65:9</span></span><span class="nowrap"><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:65:58</span></span><span class="t-3003-c">'s<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:65:61</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:65:61</span></span>
-        <span class="t-3003-c">folgen werden, ob wir also
-          <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:66:9</span></span><span class="t-3003-c">$S \rightarrow sS$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:66:36</span></span><span class="t-3003-c">
-          oder<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:66:54</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:67:9</span></span><span class="t-3003-c">$S \rightarrow Xc$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:67:9</span></span><span class="t-3003-c">
-          anwenden sollen. Das lässt sich<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:67:27</span></span>
-        <span class="t-3003-c">auch nicht durch Umschreiben der Grammatik lösen. Wir<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:68:9</span></span>
-        <span class="t-3003-c">müssen lesen, bis wir ein
-          <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:69:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:69:35</span></span><span class="t-3003-c">
-          sehen.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:69:38</span></span>
+        Wenn wir jetzt die ersten $k$ Zeichen lesen:
+        <span class="nowrap">$aaaa \dots$,</span>
+        dann gibt es keinen Weg, zu entscheiden, ob danach gleich
+        viele oder weniger
+        <span class="nowrap">$b$'s</span>
+        folgen werden, ob wir also
+        $S \rightarrow sS$ oder $S \rightarrow Xc$ anwenden
+        sollen. Das lässt sich auch nicht durch Umschreiben der
+        Grammatik lösen. Wir müssen lesen, bis wir ein $b$ sehen.
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Das LR-Paradigma<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:72:9</span></span>
+      Das LR-Paradigma
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Wir brauchen einen Paradigmenwechsel. Das<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:74:5</span></span>
-      <span class="t-3003-c">LL-Paradigma war ja, mit
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:75:5</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:75:30</span></span><span class="t-3003-c">
-        zu starten und, geleitet<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:75:33</span></span>
-      <span class="t-3003-c">von den nächsten
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:76:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:76:22</span></span><span class="t-3003-c">
-        Zeichen, zu entscheiden, welche<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:76:25</span></span>
-      <span class="t-3003-c">Ableitungsregel als nächstes anzuwenden ist. Hierbei<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:77:5</span></span>
-      <span class="t-3003-c">haben wir immer versucht, für das am weitesten links<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:78:5</span></span>
-      <span class="t-3003-c">stehende Nichtterminal eine Regel zu finden. Wir<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:79:5</span></span>
-      <span class="t-3003-c">beschreiben nun ein ganz anderes Vorgehen: wir lesen<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:80:5</span></span>
-      <span class="t-3003-c">das Eingabewort
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:81:5</span></span><span class="t-3003-c">$v$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:81:21</span></span><span class="t-3003-c">
-        von links nach rechts,<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:81:24</span></span>
-      <span class="t-3003-c">unterhalten also einen
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:82:5</span></span><span class="nowrap"><i><span class="t-3003-c">Stack<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:82:29</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:82:35</span></span></span><span class="t-3003-c">
-        auf dem ein Präfix<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:82:35</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:83:5</span></span><span class="t-3003-c">$\gamma$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:83:5</span></span><span class="t-3003-c">
-        von
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:83:13</span></span><span class="t-3003-c">$v$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:83:18</span></span><span class="t-3003-c">
-        liegt, bis wir am rechten Ende die<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:83:21</span></span>
-      <span class="t-3003-c">rechte Seite einer Produktionsregel erkennen - bis<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:84:5</span></span>
-      <span class="t-3003-c">also
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:85:5</span></span><span class="t-3003-c">$\gamma = \alpha \beta$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:85:10</span></span><span class="t-3003-c">
-        und es eine Produktion<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:85:33</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:86:5</span></span><span class="t-3003-c">$X \rightarrow \beta$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:86:5</span></span><span class="t-3003-c">
-        gibt. Dann ersetzen wir<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:86:26</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:87:5</span></span><span class="t-3003-c">$\alpha \beta$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:87:5</span></span><span class="t-3003-c">
-        durch
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:87:19</span></span><span class="nowrap"><span class="t-3003-c">$\alpha X$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:87:26</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:87:36</span></span></span><span class="t-3003-c">
-        Unser Stack enthält<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:87:36</span></span>
-      <span class="t-3003-c">nun keine Präfix von
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:88:5</span></span><span class="t-3003-c">$v$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:88:26</span></span><span class="t-3003-c">
-        mehr, sondern eine Wortform<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:88:29</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:89:5</span></span><span class="nowrap"><span class="t-3003-c">$\gamma$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:89:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:89:13</span></span></span><span class="t-3003-c">
-        Zusammen mit dem ungelesenen Teil
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:89:13</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:89:49</span></span><span class="t-3003-c">
-        des<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:89:52</span></span>
-      <span class="t-3003-c">Eingabewortes ergibt das eine Wortform
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:90:5</span></span><span class="nowrap"><span class="t-3003-c">$\gamma w$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:90:44</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:90:54</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:90:54</span></span>
-      <span class="t-3003-c">Solange es eine Rechtsableitung<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:91:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:92:5</span></span><span class="t-3003-c">$S \Pets{} \gamma w \Pets{} v$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:92:5</span></span><span class="t-3003-c">
-        gibt, sind wir auf dem<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:92:35</span></span>
-      <span class="t-3003-c">richtigen Weg. Am Besten betrachten wir ein Beispiel<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:93:5</span></span>
-      <span class="t-3003-c">für<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:94:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:95:5</span></span><span class="nowrap"><span class="t-3003-c">$L_2 = \{a^{m+k} b^m c \ | \ m \geq 1, k \geq 0\}$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:95:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:95:55</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:95:55</span></span>
-      <span class="t-3003-c">Die Farbe grau bedeutet hier, dass wir das<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:96:5</span></span>
-      <span class="t-3003-c">Eingabezeichen noch nicht gelesen haben.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:97:5</span></span>
+      Wir brauchen einen Paradigmenwechsel. Das LL-Paradigma war
+      ja, mit $S$ zu starten und, geleitet von den nächsten $k$
+      Zeichen, zu entscheiden, welche Ableitungsregel als
+      nächstes anzuwenden ist. Hierbei haben wir immer versucht,
+      für das am weitesten links stehende Nichtterminal eine
+      Regel zu finden. Wir beschreiben nun ein ganz anderes
+      Vorgehen: wir lesen das Eingabewort $v$ von links nach
+      rechts, unterhalten also einen
+      <span class="nowrap"><i>Stack</i>,</span>
+      auf dem ein Präfix
+      $\gamma$ von $v$ liegt, bis wir am rechten Ende die rechte
+      Seite einer Produktionsregel erkennen - bis also
+      $\gamma = \alpha \beta$ und es eine Produktion
+      $X \rightarrow \beta$ gibt. Dann ersetzen wir
+      $\alpha \beta$ durch
+      <span class="nowrap">$\alpha X$.</span>
+      Unser Stack enthält nun
+      keine Präfix von $v$ mehr, sondern eine Wortform
+      <span class="nowrap">$\gamma$.</span>
+      Zusammen mit dem ungelesenen Teil $w$ des Eingabewortes
+      ergibt das eine Wortform
+      <span class="nowrap">$\gamma w$.</span>
+      Solange es eine
+      Rechtsableitung $S \Pets{} \gamma w \Pets{} v$ gibt, sind
+      wir auf dem richtigen Weg. Am Besten betrachten wir ein
+      Beispiel für
+      <span class="nowrap">$L_2 = \{a^{m+k} b^m c \ | \ m \geq 1, k \geq 0\}$.</span>
+      Die
+      Farbe grau bedeutet hier, dass wir das Eingabezeichen noch
+      nicht gelesen haben.
     </p>
     <div class="pseudowell">
       <div class="carousel__container">
@@ -249,148 +187,148 @@
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-01.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-01.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-02.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-02.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-03.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-03.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-04.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-04.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-05.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-05.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-06.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-06.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-07.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-07.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-08.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-08.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-09.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-09.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-10.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-10.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-11.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-11.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-12.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-12.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-13.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-13.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-14.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-14.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-15.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-15.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-16.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-16.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-17.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-17.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-18.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-18.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-19.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-19.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-20.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-20.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-21.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-21.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-22.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-22.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-first-example/aaaabbbc-example-01-23.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-first-example/aaaabbbc-example-01-23.svg</span></span>
+              >
             </div>
           </div>
         </div>
       </div>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Betrachten wir noch ein Beispiel, nun für die etwas<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:125:5</span></span>
-      <span class="t-3003-c">nützlichere Grammatik der streng geklammerten<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:126:5</span></span>
-      <span class="t-3003-c">arithmetischen Ausdrücke.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:127:5</span></span>
+      Betrachten wir noch ein Beispiel, nun für die etwas
+      nützlichere Grammatik der streng geklammerten
+      arithmetischen Ausdrücke.
     </p>
     <div class="pseudowell">
       <div class="carousel__container">
@@ -400,141 +338,141 @@
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-01.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-01.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-02.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-02.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-03.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-03.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-04.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-04.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-05.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-05.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-06.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-06.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-07.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-07.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-08.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-08.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-09.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-09.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-10.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-10.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-11.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-11.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-12.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-12.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-13.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-13.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-14.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-14.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-15.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-15.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-16.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-16.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-17.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-17.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-18.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-18.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-19.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-19.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-20.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-20.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-21.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-21.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:36em"
                 src="img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-22.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/LR/LR-arithmetic-example/arithmetic-example-01-22.svg</span></span>
+              >
             </div>
           </div>
         </div>
       </div>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wenn wir uns nun die Ableitung ansehen, die wir<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:154:5</span></span>
-      <span class="t-3003-c">gefunden haben:<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:155:5</span></span>
+      Wenn wir uns nun die Ableitung ansehen, die wir gefunden
+      haben:
     </p>
     <div class="math-block main-column">
       $$
@@ -546,34 +484,24 @@
       \texttt{(S+(y*z))} \Step{}
       \texttt{(x+(y*z))}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:157:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">dann sehen wir, dass es sich um eine Rechtsableitung<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:166:5</span></span>
-      <span class="t-3003-c">handelt. Daher der Name LR-Parsing: wir beginnen links<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:167:5</span></span>
-      <span class="t-3003-c">(daher das L) und suchen eine Rechtsableitung (daher<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:168:5</span></span>
-      <span class="t-3003-c">das R), allerdings in umgekehrter Reihenfolge. Statt<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:169:5</span></span>
-      <span class="t-3003-c">von
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:170:5</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:170:9</span></span><span class="t-3003-c">
-        ausgehend
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:170:12</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:170:23</span></span><span class="t-3003-c">
-        abzuleiten, also<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:170:26</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:171:5</span></span><span class="nowrap"><span class="t-3003-c">$S \Step{}^* w$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:171:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:171:20</span></span></span><span class="t-3003-c">
-        versuchen wir
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:171:20</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:171:36</span></span><span class="t-3003-c">
-        zu
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:171:39</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:171:43</span></span><span class="t-3003-c">
-        zu<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:171:46</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:172:5</span></span><span class="nowrap"><i><span class="t-3003-c">reduzieren<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:172:6</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:172:17</span></span></span><span class="t-3003-c">
-        also
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:172:17</span></span><span class="nowrap"><span class="t-3003-c">$w \Pets{}^* S$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:172:24</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:172:39</span></span></span><span class="t-3003-c">
-        Allerdings ist<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:172:39</span></span>
-      <span class="t-3003-c">das nicht immer so einfach: manchmal ist nicht auf den<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:173:5</span></span>
-      <span class="t-3003-c">ersten Blick erkennbar, welche Produktionsregel wir<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:174:5</span></span>
-      <span class="t-3003-c">(rückwärts) anwenden sollen. Hier ein etwas<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:175:5</span></span>
-      <span class="t-3003-c">konstruiertes Beispiel:<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:176:5</span></span>
+      dann sehen wir, dass es sich um eine Rechtsableitung
+      handelt. Daher der Name LR-Parsing: wir beginnen links
+      (daher das L) und suchen eine Rechtsableitung (daher das
+      R), allerdings in umgekehrter Reihenfolge. Statt von $S$
+      ausgehend $w$ abzuleiten, also
+      <span class="nowrap">$S \Step{}^* w$,</span>
+      versuchen
+      wir $w$ zu $S$ zu
+      <span class="nowrap"><i>reduzieren</i>,</span>
+      also
+      <span class="nowrap">$w \Pets{}^* S$.</span>
+      Allerdings ist das nicht immer so einfach: manchmal ist
+      nicht auf den ersten Blick erkennbar, welche
+      Produktionsregel wir (rückwärts) anwenden sollen. Hier ein
+      etwas konstruiertes Beispiel:
     </p>
     <div class="math-block main-column">
       $$
@@ -582,26 +510,26 @@
       X&amp;\rightarrow aXa \ | \ bXb \ | \ c \\
       Y&amp;\rightarrow Ya \ | \ Yb \ | \ a \ | \ b
       \end{align*}
-      $$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:178:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Die erzeugte Sprache ist<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:184:5</span></span>
+      Die erzeugte Sprache ist
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       L(G) = \{vcv^Rwz \ | \ v, w \in \{a,b\}^* \}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:186:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Betrachten wir das Eingabewort
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:190:5</span></span><span class="nowrap"><span class="t-3003-c">$acaba$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:190:36</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:190:43</span></span></span><span class="t-3003-c">
-        Wir schreiben<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:190:43</span></span>
-      <span class="t-3003-c">nun immer den bis jetzt gelesenen / geparsten Teil des<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:191:5</span></span>
-      <span class="t-3003-c">Wortes, gefolgt von dem ungelesen Teil in grau und<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:192:5</span></span>
-      <span class="t-3003-c">dahinter in Klammern , was wir als nächstes tun, also<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:193:5</span></span>
-      <span class="t-3003-c">das nächste Zeichen lesen oder eine Regel anwenden.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:194:5</span></span>
+      Betrachten wir das Eingabewort
+      <span class="nowrap">$acaba$.</span>
+      Wir schreiben nun
+      immer den bis jetzt gelesenen / geparsten Teil des Wortes,
+      gefolgt von dem ungelesen Teil in grau und dahinter in
+      Klammern , was wir als nächstes tun, also das nächste
+      Zeichen lesen oder eine Regel anwenden.
     </p>
     <div class="math-block main-column">
       $$
@@ -619,79 +547,57 @@
       &amp;XYz \tag{reduzieren per $S \rightarrow XYz$} \\
       &amp;S \tag{fertig}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:196:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Es stellen sich einige Fragen: woher wissen wir zum<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:211:5</span></span>
-      <span class="t-3003-c">Beispiel bei
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:212:5</span></span><span class="nowrap"><span class="t-3003-c">$XYa\textcolor{darkgray}{z}$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:212:18</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:212:46</span></span></span><span class="t-3003-c">
-        dass wir<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:212:46</span></span>
-      <span class="t-3003-c">per
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:213:5</span></span><span class="t-3003-c">$Y \rightarrow Ya$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:213:9</span></span><span class="t-3003-c">
-        reduzieren müssen und nicht<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:213:27</span></span>
-      <span class="t-3003-c">per
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:214:5</span></span><span class="nowrap"><span class="t-3003-c">$Y \rightarrow a$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:214:9</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:214:26</span></span></span><span class="t-3003-c">
-        Wir könnten ja auch auf<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:214:26</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:215:5</span></span><span class="t-3003-c">$XYa \Pets{} XYY$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:215:5</span></span><span class="t-3003-c">
-        reduzieren. Oder in Schritt 2, bei<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:215:22</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:216:5</span></span><span class="nowrap"><span class="t-3003-c">$a\textcolor{darkgray}{cabaz}$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:216:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:216:35</span></span></span><span class="t-3003-c">
-        Da könnten wir ja<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:216:35</span></span>
-      <span class="t-3003-c">gleich
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:217:5</span></span><span class="t-3003-c">$a \Pets{} Y$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:217:12</span></span><span class="t-3003-c">
-        reduzieren.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:217:25</span></span>
+      Es stellen sich einige Fragen: woher wissen wir zum
+      Beispiel bei
+      <span class="nowrap">$XYa\textcolor{darkgray}{z}$,</span>
+      dass wir per
+      $Y \rightarrow Ya$ reduzieren müssen und nicht per
+      <span class="nowrap">$Y \rightarrow a$?</span>
+      Wir könnten ja auch auf
+      $XYa \Pets{} XYY$ reduzieren. Oder in Schritt 2, bei
+      <span class="nowrap">$a\textcolor{darkgray}{cabaz}$.</span>
+      Da könnten wir ja gleich
+      $a \Pets{} Y$ reduzieren.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beobachtung 6.5.2<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:219:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:219:5</span></span>
-        <span class="t-3003-c">Die Reduktion
-          <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:220:9</span></span><span class="t-3003-c">$XYa \Pets{} XYY$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:220:23</span></span><span class="t-3003-c">
-          kann nicht richtig<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:220:40</span></span>
-        <span class="t-3003-c">sein, weil
-          <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:221:9</span></span><span class="t-3003-c">$XYY$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:221:20</span></span><span class="t-3003-c">
-          nie als Präfix in einer<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:221:25</span></span>
-        <span class="t-3003-c">Rechtsableitung vorkommen kann. Genauer gesagt: es<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:222:9</span></span>
-        <span class="t-3003-c">gibt kein
-          <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:223:9</span></span><span class="nowrap"><span class="t-3003-c">$w \in \Sigma^*$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:223:19</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:223:35</span></span></span><span class="t-3003-c">
-          so dass<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:223:35</span></span>
+        <b>Beobachtung 6.5.2</b>
+        Die Reduktion $XYa \Pets{} XYY$ kann nicht richtig sein,
+        weil $XYY$ nie als Präfix in einer Rechtsableitung
+        vorkommen kann. Genauer gesagt: es gibt kein
+        <span class="nowrap">$w \in \Sigma^*$,</span>
+        so dass
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         S \Step{}^* XYYw \Step{} XYaw
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:225:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">eine Rechtsableitung ist.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:229:9</span></span>
+        eine Rechtsableitung ist.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wenn wir Glück haben, gibt es immer höchstens eine<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:231:5</span></span>
-      <span class="t-3003-c">Reduktionsregel
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:232:5</span></span><span class="nowrap"><span class="t-3003-c">$\alpha \beta w \Pets{} \alpha X w$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:232:21</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:232:56</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:232:56</span></span>
-      <span class="t-3003-c">so dass<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:233:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:234:5</span></span><span class="t-3003-c">$S \Step{}^* \alpha X w \Step{} \alpha \beta w$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:234:5</span></span><span class="t-3003-c">
-        in<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:234:52</span></span>
-      <span class="t-3003-c">einer Rechtsableitung vorkommen kann. Das hängt von<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:235:5</span></span>
-      <span class="t-3003-c">der Grammatik ab. Aber selbst dann brauchen wir einen<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:236:5</span></span>
-      <span class="t-3003-c">Algorithmus, der uns sagen kann, ob
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:237:5</span></span><span class="t-3003-c">$XYa \Pets{} XYY$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:237:41</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:237:58</span></span>
-      <span class="t-3003-c">ein korrekter Reduktionsschritt ist. Dies scheint<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:238:5</span></span>
-      <span class="t-3003-c">komplexer, als
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:239:5</span></span><span class="t-3003-c">$w \stackrel{?}{\in} L$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:239:20</span></span><span class="t-3003-c">
-        zu<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:239:43</span></span>
-      <span class="t-3003-c">entscheiden, ist aber
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:240:5</span></span><span class="nowrap"><i><span class="t-3003-c">einfacher<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:240:28</span></span></i><span class="t-3003-c">!<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:240:38</span></span></span><span class="t-3003-c">
-        Ein zweites Problem<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:240:38</span></span>
-      <span class="t-3003-c">ist, dass wir eben manchmal kein Glück haben und es<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:241:5</span></span>
-      <span class="t-3003-c">mehrere plausible Reduktionsschritte geben kann. Ein<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:242:5</span></span>
-      <span class="t-3003-c">Beispiel wäre die obere Grammatik, leicht abgewandelt:<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:243:5</span></span>
+      Wenn wir Glück haben, gibt es immer höchstens eine
+      Reduktionsregel
+      <span class="nowrap">$\alpha \beta w \Pets{} \alpha X w$,</span>
+      so
+      dass $S \Step{}^* \alpha X w \Step{} \alpha \beta w$ in
+      einer Rechtsableitung vorkommen kann. Das hängt von der
+      Grammatik ab. Aber selbst dann brauchen wir einen
+      Algorithmus, der uns sagen kann, ob $XYa \Pets{} XYY$ ein
+      korrekter Reduktionsschritt ist. Dies scheint komplexer,
+      als $w \stackrel{?}{\in} L$ zu entscheiden, ist aber
+      <span class="nowrap"><i>einfacher</i>!</span>
+      Ein zweites Problem ist, dass wir eben
+      manchmal kein Glück haben und es mehrere plausible
+      Reduktionsschritte geben kann. Ein Beispiel wäre die obere
+      Grammatik, leicht abgewandelt:
     </p>
     <div class="math-block main-column">
       $$
@@ -700,13 +606,11 @@
       X&amp;\rightarrow aXa \ | \ bXb \ | \ c \\
       Y&amp;\rightarrow Ya \ | \ Yb \ | \ a \ | \ b
       \end{align*}
-      $$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:245:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wenn wir jetzt als einfaches Beispiel
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:251:5</span></span><span class="t-3003-c">$cab$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:251:43</span></span><span class="t-3003-c">
-        ableiten<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:251:48</span></span>
-      <span class="t-3003-c">wollen:<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:252:5</span></span>
+      Wenn wir jetzt als einfaches Beispiel $cab$ ableiten
+      wollen:
     </p>
     <div class="math-block main-column">
       $$
@@ -717,49 +621,37 @@
       Xa\textcolor{darkgray}{ab} \tag{reduzieren per $Y \rightarrow a$} \\
       XY\textcolor{darkgray}{b} \tag{reduzieren per $Y \rightarrow a$}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:254:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Jetzt liegt die Wortform
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:262:5</span></span><span class="t-3003-c">$XY$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:262:30</span></span><span class="t-3003-c">
-        auf unserem Stack und<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:262:34</span></span>
-      <span class="t-3003-c">wir haben zwei Möglichkeiten: wir könnten reduzieren,<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:263:5</span></span>
-      <span class="t-3003-c">also
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:264:5</span></span><span class="nowrap"><span class="t-3003-c">$XY \Pets{} S$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:264:10</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:264:24</span></span></span><span class="t-3003-c">
-        oder das nächste Zeichen lesen.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:264:24</span></span>
-      <span class="t-3003-c">Ersteres wäre inkorrekt:<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:265:5</span></span>
+      Jetzt liegt die Wortform $XY$ auf unserem Stack und wir
+      haben zwei Möglichkeiten: wir könnten reduzieren, also
+      <span class="nowrap">$XY \Pets{} S$,</span>
+      oder das nächste Zeichen lesen. Ersteres
+      wäre inkorrekt:
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       XY\textcolor{darkgray}{b} \Pets{} S \textcolor{darkgray}{b} \ ,
       \end{align*}
-      $$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:267:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">wobei
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:271:5</span></span><span class="t-3003-c">$Sb$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:271:11</span></span><span class="t-3003-c">
-        eben keine Wortform ist, die in einer<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:271:15</span></span>
-      <span class="t-3003-c">Rechtsableitung vorkommen könnte. Das wissen wir aber<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:272:5</span></span>
-      <span class="t-3003-c">erst, wenn wir
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:273:5</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:273:20</span></span><span class="t-3003-c">
-        gelesen haben. Wäre das<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:273:23</span></span>
-      <span class="t-3003-c">Eingabewort nämlich nur
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:274:5</span></span><span class="nowrap"><span class="t-3003-c">$ca$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:274:29</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:274:33</span></span></span><span class="t-3003-c">
-        dann wäre
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:274:33</span></span><span class="t-3003-c">$XY \Pets{} S$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:274:45</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:274:59</span></span>
-      <span class="t-3003-c">tatsächlich die korrekte Reduktion. In der ersten<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:275:5</span></span>
-      <span class="t-3003-c">Grammatik hatten wir als "Work-around" ein
-        <span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:276:5</span></span><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:276:48</span></span><span class="t-3003-c">
-        am<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:276:51</span></span>
-      <span class="t-3003-c">Ende angehängt, um das Wortende zu erkennen. Im<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:277:5</span></span>
-      <span class="t-3003-c">Allgemeinen ist es aber leichter, dem Parser zu<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:278:5</span></span>
-      <span class="t-3003-c">erlauben, das nächste Zeichen zu lesen. All diese<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:279:5</span></span>
-      <span class="t-3003-c">Gedanken theoretisch rigoros zu formulieren ist<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:280:5</span></span>
-      <span class="t-3003-c">einigermaßen herausvordernd. Daher werden wir erst<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:281:5</span></span>
-      <span class="t-3003-c">einmal für eine Grammatik arithmetischer Ausdrücke<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:282:5</span></span>
-      <span class="t-3003-c">einen Parser in Java implementieren.<span class="t-3003">./course1/wly/06/05-LR-parsing-by-hand.wly:283:5</span></span>
+      wobei $Sb$ eben keine Wortform ist, die in einer
+      Rechtsableitung vorkommen könnte. Das wissen wir aber erst,
+      wenn wir $b$ gelesen haben. Wäre das Eingabewort nämlich
+      nur
+      <span class="nowrap">$ca$,</span>
+      dann wäre $XY \Pets{} S$ tatsächlich die
+      korrekte Reduktion. In der ersten Grammatik hatten wir als
+      "Work-around" ein $z$ am Ende angehängt, um das Wortende
+      zu erkennen. Im Allgemeinen ist es aber leichter, dem
+      Parser zu erlauben, das nächste Zeichen zu lesen. All diese
+      Gedanken theoretisch rigoros zu formulieren ist
+      einigermaßen herausvordernd. Daher werden wir erst einmal
+      für eine Grammatik arithmetischer Ausdrücke einen Parser in
+      Java implementieren.
     </p>
     <div id="end-of-page-elt">
     </div>
@@ -769,7 +661,7 @@
         <a href="./6-4.html">&lt;&lt; Kapitel 6.4<span
             style="visibility:hidden"
             id="bottom-prev-page-tooltip"
-          ><span class="nowrap">LL(<span class="t-3003-c">$k$<span class="t-3003">./course1/wly/06/04-LL1-grammars.wly:2:14</span></span>)-Grammatiken</span>
+          ><span class="nowrap">LL($k$)-Grammatiken</span>
             (nicht im Sommersemester 2025)</span></a><a
           href="./6-6.html"
           class="menu-row-right"

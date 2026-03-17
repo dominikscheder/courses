@@ -40,261 +40,224 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">5.2&ensp;Endliche Automaten<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:2:11</span></span>
+        5.2&ensp;Endliche Automaten
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Grammatiken erlauben es uns, gewisse Formate zu<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:4:5</span></span>
-      <span class="t-3003-c">beschreiben. Das reicht uns aber nicht: wir wollen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:5:5</span></span>
-      <span class="t-3003-c">Daten
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:6:5</span></span><span class="nowrap"><i><span class="t-3003-c">parsen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:6:12</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:6:19</span></span></span><span class="t-3003-c">
-        im engen Sinne also eine grammatische<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:6:19</span></span>
-      <span class="t-3003-c">Ableitung rekonstruieren und allgemein die Struktur<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:7:5</span></span>
-      <span class="t-3003-c">eines gegebenen Wortes herausarbeiten. Ein<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:8:5</span></span>
-      <span class="t-3003-c">bescheideneres Ziel ist es, für ein gegebenes Wort zu<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:9:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:10:5</span></span><span class="nowrap"><i><span class="t-3003-c">entscheiden<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:10:6</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:10:18</span></span></span><span class="t-3003-c">
-        ob es sich überhaupt aus einer<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:10:18</span></span>
-      <span class="t-3003-c">Grammatik ableiten lässt. Für reguläre Grammatiken<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:11:5</span></span>
-      <span class="t-3003-c">gibt es hierfür die
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:12:5</span></span><span class="nowrap"><i><span class="t-3003-c">endlichen Automaten<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:12:26</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:12:46</span></span></span><span class="t-3003-c">
-        Sie können<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:12:46</span></span>
-      <span class="t-3003-c">endliche Automaten verstehen als ein eingeschränktes<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:13:5</span></span>
-      <span class="t-3003-c">Modell eines Rechners; oder als Blaupause für einen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:14:5</span></span>
-      <span class="t-3003-c">effizienten Algorithmus, um reguläre Grammatiken zu<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:15:5</span></span>
-      <span class="t-3003-c">parsen. Hier sehen Sie ein Beispiel für einen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:16:5</span></span>
-      <span class="t-3003-c">endlichen Automaten über dem Alphabet<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:17:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:18:5</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma = \{x,y,z\}$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:18:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:18:25</span></span></span><span class="t-3003-c">
-        Die Idee ist, dass der Automat<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:18:25</span></span>
-      <span class="t-3003-c">ein Wort
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:19:5</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:19:14</span></span><span class="t-3003-c">
-        Zeichen für Zeichen einliest. Die<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:19:22</span></span>
-      <span class="t-3003-c">Pfeile zwischen den Kreisen (den
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:20:5</span></span><i><span class="t-3003-c">Zuständen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:20:39</span></span></i><span class="t-3003-c">
-        des<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:20:49</span></span>
-      <span class="t-3003-c">Automaten) zeigen an, in welchen neuen Zustand beim<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:21:5</span></span>
-      <span class="t-3003-c">Lesen eines Zeichen gewechselt werden muss. Der Pfeil<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:22:5</span></span>
-      <span class="t-3003-c">"aus dem Nichts", hier der von links nach
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:23:5</span></span><span class="nowrap"><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:23:48</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:23:51</span></span></span><span class="t-3003-c">
-        zeigt<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:23:51</span></span>
-      <span class="t-3003-c">den
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:24:5</span></span><i><span class="t-3003-c">Startzustand<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:24:10</span></span></i><span class="t-3003-c">
-        an, in welchem der Automat beginnt.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:24:23</span></span>
+      Grammatiken erlauben es uns, gewisse Formate zu
+      beschreiben. Das reicht uns aber nicht: wir wollen Daten
+      <span class="nowrap"><i>parsen</i>,</span>
+      im engen Sinne also eine grammatische Ableitung
+      rekonstruieren und allgemein die Struktur eines gegebenen
+      Wortes herausarbeiten. Ein bescheideneres Ziel ist es, für
+      ein gegebenes Wort zu
+      <span class="nowrap"><i>entscheiden</i>,</span>
+      ob es sich überhaupt
+      aus einer Grammatik ableiten lässt. Für reguläre
+      Grammatiken gibt es hierfür die
+      <span class="nowrap"><i>endlichen Automaten</i>.</span>
+      Sie
+      können endliche Automaten verstehen als ein eingeschränktes
+      Modell eines Rechners; oder als Blaupause für einen
+      effizienten Algorithmus, um reguläre Grammatiken zu parsen.
+      Hier sehen Sie ein Beispiel für einen endlichen Automaten
+      über dem Alphabet
+      <span class="nowrap">$\Sigma = \{x,y,z\}$.</span>
+      Die Idee ist, dass
+      der Automat ein Wort $\alpha$ Zeichen für Zeichen
+      einliest. Die Pfeile zwischen den Kreisen (den
+      <i>Zuständen</i>
+      des Automaten) zeigen an, in welchen neuen Zustand beim
+      Lesen eines Zeichen gewechselt werden muss. Der Pfeil "aus
+      dem Nichts", hier der von links nach
+      <span class="nowrap">$S$,</span>
+      zeigt den
+      <i>Startzustand</i>
+      an, in welchem der Automat beginnt.
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:13em"
           src="img/finite-state-automata/finite-state-machine-example-01.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/finite-state-machine-example-01.svg</span></span>
+        >
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Um zu zeigen, wie der Automat ein Eingabewort<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:31:5</span></span>
-      <span class="t-3003-c">verarbeitet, nehmen wir das Beispiel<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:32:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:33:5</span></span><span class="nowrap"><span class="t-3003-c">$\alpha = yxzxxyy$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:33:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:33:23</span></span></span>
+      Um zu zeigen, wie der Automat ein Eingabewort verarbeitet,
+      nehmen wir das Beispiel
+      <span class="nowrap">$\alpha = yxzxxyy$.</span>
     </p>
     <div class="pseudowell">
       <div class="carousel__container">
         <div class="carousel">
           <div class="carousel__items">
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-01.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-01.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-01.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-02.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-02.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-02.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-03.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-03.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-03.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-04.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-04.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-04.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-05.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-05.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-05.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-06.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-06.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-06.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-07.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-07.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-07.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-08.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-08.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-08.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-09.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-09.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-09.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-10.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-10.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-10.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-11.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-11.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-11.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-12.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-12.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-12.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-13.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-13.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-13.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-14.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-14.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-14.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-15.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-15.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-15.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-16.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-16.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-16.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-17.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-17.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-17.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-18.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-18.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-18.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-19.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-19.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-19.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-20.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-20.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-20.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-21.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-21.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-21.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-22.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-22.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-22.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-23.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-23.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-23.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-24.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-24.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-24.svg">
             </div>
             <div class="carousel__item">
-              <img src="img/finite-state-automata/fsa-example-01-25.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/fsa-example-01-25.svg</span></span>
+              <img src="img/finite-state-automata/fsa-example-01-25.svg">
             </div>
           </div>
         </div>
       </div>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">In diesem Beispiel endet der Automat im Zustand
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:62:5</span></span><span class="nowrap"><span class="t-3003-c">$Y$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:62:53</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:62:56</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:62:56</span></span>
-      <span class="t-3003-c">Sie sehen, dass der Zustand
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:63:5</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:63:33</span></span><span class="t-3003-c">
-        mit einem doppelten<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:63:36</span></span>
-      <span class="t-3003-c">Rand markiert ist: dies symbolisiert, dass
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:64:5</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:64:48</span></span><span class="t-3003-c">
-        ein<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:64:51</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:65:5</span></span><i><span class="t-3003-c">akzeptierender<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:65:6</span></span></i><span class="t-3003-c">
-        Endzustand ist. Wenn der Automat ein<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:65:21</span></span>
-      <span class="t-3003-c">Wort
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:66:5</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:66:10</span></span><span class="t-3003-c">
-        abgearbeitet hat,
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:66:18</span></span><i><span class="t-3003-c">akzeptiert<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:66:38</span></span></i><span class="t-3003-c">
-        er es,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:66:49</span></span>
-      <span class="t-3003-c">wenn er in einem akzeptierenden Endzustand gelandet<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:67:5</span></span>
-      <span class="t-3003-c">ist; ansonsten
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:68:5</span></span><span class="nowrap"><i><span class="t-3003-c">lehnt er es ab<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:68:21</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:68:36</span></span></span><span class="t-3003-c">
-        In unserem Beispiel<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:68:36</span></span>
-      <span class="t-3003-c">sehen wir also, dass der Automat das Eingabewort<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:69:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:70:5</span></span><span class="t-3003-c">$yxzxxyy$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:70:5</span></span><span class="t-3003-c">
-        ablehnt.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:70:14</span></span>
+      In diesem Beispiel endet der Automat im Zustand
+      <span class="nowrap">$Y$.</span>
+      Sie
+      sehen, dass der Zustand $X$ mit einem doppelten Rand
+      markiert ist: dies symbolisiert, dass $X$ ein
+      <i>akzeptierender</i>
+      Endzustand ist. Wenn der Automat ein Wort
+      $\alpha$ abgearbeitet hat,
+      <i>akzeptiert</i>
+      er es, wenn er in
+      einem akzeptierenden Endzustand gelandet ist; ansonsten
+      <span class="nowrap"><i>lehnt er es ab</i>.</span>
+      In unserem Beispiel sehen wir also, dass
+      der Automat das Eingabewort $yxzxxyy$ ablehnt.
     </p>
     <div
       id="_21_hgi_"
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Definition 5.2.1 (Endlicher Automat, Finite State Machine).<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:72:5</span></span></b><span class="t-3003-c">
-          Ein<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:74:53</span></span>
-        <span class="t-3003-c">endlicher Automat besteht aus einem endlichen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:75:9</span></span>
-        <span class="t-3003-c">Eingabealphaet
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:76:9</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:76:24</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:76:32</span></span></span><span class="t-3003-c">
-          einer endlichen Menge
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:76:32</span></span><span class="t-3003-c">$Q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:76:56</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:76:59</span></span>
-        <span class="t-3003-c">von Zuständen, einem Startzustand
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:77:9</span></span><span class="nowrap"><span class="t-3003-c">$\qstart \in Q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:77:43</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:77:58</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:77:58</span></span>
-        <span class="t-3003-c">einer Menge
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:78:9</span></span><span class="t-3003-c">$F \subseteq Q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:78:21</span></span><span class="t-3003-c">
-          von akzeptierenden<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:78:36</span></span>
-        <span class="t-3003-c">Endzuständen und einer Zustandsübergangsfunktion<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:79:9</span></span>
+        <b>Definition 5.2.1 (Endlicher Automat, Finite State Machine).</b>
+        Ein endlicher
+        Automat besteht aus einem endlichen Eingabealphaet
+        <span class="nowrap">$\Sigma$,</span>
+        einer endlichen Menge $Q$ von Zuständen, einem
+        Startzustand
+        <span class="nowrap">$\qstart \in Q$,</span>
+        einer Menge $F \subseteq Q$
+        von akzeptierenden Endzuständen und einer
+        Zustandsübergangsfunktion
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \delta : Q \times \Sigma \rightarrow Q \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:81:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Formal gesehen ist also ein Automat ein Quintupel<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:85:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:86:9</span></span><span class="nowrap"><span class="t-3003-c">$M = (\Sigma, Q, \qstart, F, \delta)$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:86:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:86:46</span></span></span>
+        Formal gesehen ist also ein Automat ein Quintupel
+        <span class="nowrap">$M = (\Sigma, Q, \qstart, F, \delta)$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Die Idee ist, dass der Automat im Zustand
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:88:5</span></span><span class="t-3003-c">$\qstart$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:88:47</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:88:56</span></span>
-      <span class="t-3003-c">startet und nun in jedem Schritt ein weiteres Zeichen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:89:5</span></span>
-      <span class="t-3003-c">des Eingabewortes liest. Wenn er im Zustand
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:90:5</span></span><span class="t-3003-c">$q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:90:49</span></span><span class="t-3003-c">
-        ist<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:90:52</span></span>
-      <span class="t-3003-c">und das Zeichen
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:91:5</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:91:21</span></span><span class="t-3003-c">
-        liest, so wechselt er in den<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:91:24</span></span>
-      <span class="t-3003-c">Zustand
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:92:5</span></span><span class="nowrap"><span class="t-3003-c">$\delta(q,x)$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:92:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:92:26</span></span></span><span class="t-3003-c">
-        Statt
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:92:26</span></span><span class="t-3003-c">$\delta(q,x) = q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:92:34</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:92:52</span></span>
-      <span class="t-3003-c">verwenden wir die leichter zu lesende Schreibweise<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:93:5</span></span>
+      Die Idee ist, dass der Automat im Zustand $\qstart$
+      startet und nun in jedem Schritt ein weiteres Zeichen des
+      Eingabewortes liest. Wenn er im Zustand $q$ ist und das
+      Zeichen $x$ liest, so wechselt er in den Zustand
+      <span class="nowrap">$\delta(q,x)$.</span>
+      Statt $\delta(q,x) = q'$ verwenden wir die
+      leichter zu lesende Schreibweise
     </p>
     <div class="math-block main-column">
       $$
       q \stackrel{x}{\rightarrow} q' \ .
-      $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:95:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wenn das Wort zu Ende ist, dann
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:99:5</span></span><i><span class="t-3003-c">akzeptiert<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:99:38</span></span></i><span class="t-3003-c">
-        der<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:99:49</span></span>
-      <span class="t-3003-c">Automat, wenn er in einem akzeptierenden Zustand<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:100:5</span></span>
-      <span class="t-3003-c">angekommen ist, also in
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:101:5</span></span><span class="nowrap"><span class="t-3003-c">$F$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:101:29</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:101:32</span></span></span>
+      Wenn das Wort zu Ende ist, dann
+      <i>akzeptiert</i>
+      der Automat,
+      wenn er in einem akzeptierenden Zustand angekommen ist,
+      also in
+      <span class="nowrap">$F$.</span>
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beispiel 5.2.2<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:103:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:103:5</span></span>
-        <span class="t-3003-c">Betrachten wir den endlichen Automaten<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:104:9</span></span>
+        <b>Beispiel 5.2.2</b>
+        Betrachten wir den endlichen Automaten
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/finite-state-automata/finite-state-machine-example-01.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/finite-state-machine-example-01.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">und stellen ihn gemäß
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:111:9</span></span><a
+        und stellen ihn gemäß
+        <a
           href="./5-2.html#_21_hgi_"
           class=""
-        >Definition 5.2.1</a><span class="t-3003-c">
-          als Quintupel<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:112:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:113:9</span></span><span class="t-3003-c">$M = (\Sigma, Q, \qstart, F, \delta)$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:113:9</span></span><span class="t-3003-c">
-          dar mit<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:113:46</span></span>
+        >Definition 5.2.1</a>
+        als Quintupel
+        $M = (\Sigma, Q, \qstart, F, \delta)$ dar mit
       </p>
       <div class="math-block">
         $$
@@ -304,23 +267,16 @@
         \qstart&amp;= S \\
         F&amp;= \{X\} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:115:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Um noch die Zustandsübergangsfunktion
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:122:9</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:122:47</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:122:55</span></span>
-        <span class="t-3003-c">darzustellen, müssen wir uns überlegen, wie wir<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:123:9</span></span>
-        <span class="t-3003-c">Funktionen überhaupt darstellen. Da
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:124:9</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:124:45</span></span><span class="t-3003-c">
-          eine<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:124:53</span></span>
-        <span class="t-3003-c">endliche Funktion ist, können wir einfach alle<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:125:9</span></span>
-        <span class="t-3003-c">Eingabewert-Ausgabewert-Paare hinschreiben, am Besten<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:126:9</span></span>
-        <span class="t-3003-c">in einer Tabelle, so wie wir es bereits bei Booleschen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:127:9</span></span>
-        <span class="t-3003-c">Funktionen mit Wahrheitstabellen getan haben.
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:128:9</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:128:55</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:128:63</span></span>
-        <span class="t-3003-c">ist also<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:129:9</span></span>
+        Um noch die Zustandsübergangsfunktion $\delta$
+        darzustellen, müssen wir uns überlegen, wie wir Funktionen
+        überhaupt darstellen. Da $\delta$ eine endliche Funktion
+        ist, können wir einfach alle Eingabewert-Ausgabewert-Paare
+        hinschreiben, am Besten in einer Tabelle, so wie wir es
+        bereits bei Booleschen Funktionen mit Wahrheitstabellen
+        getan haben. $\delta$ ist also
       </p>
       <div class="math-block">
         $$
@@ -338,15 +294,12 @@
         Y&amp;z&amp;Y
         \end{array}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:131:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Da die Funktion
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:146:9</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:146:25</span></span><span class="t-3003-c">
-          bei jedem endlichen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:146:33</span></span>
-        <span class="t-3003-c">Automaten genau zwei Eingabeparameter hat, können wir<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:147:9</span></span>
-        <span class="t-3003-c">es eventuell übersichtlicher als zweidimensionale<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:148:9</span></span>
-        <span class="t-3003-c">Tabelle darstellen:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:149:9</span></span>
+        Da die Funktion $\delta$ bei jedem endlichen Automaten
+        genau zwei Eingabeparameter hat, können wir es eventuell
+        übersichtlicher als zweidimensionale Tabelle darstellen:
       </p>
       <div class="math-block">
         $$
@@ -358,56 +311,40 @@
         Y&amp;Y&amp;Y&amp;Y
         \end{array}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:151:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Diese zwei Tabellen dienen in diesem Beispiel aber<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:160:9</span></span>
-        <span class="t-3003-c">nur dazu, noch einmal zu illustrieren, was ich damit<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:161:9</span></span>
-        <span class="t-3003-c">meine, wenn ich sage, dass
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:162:9</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:162:36</span></span><span class="t-3003-c">
-          eine Funktion von<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:162:44</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:163:9</span></span><span class="t-3003-c">$Q \times \Sigma$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:163:9</span></span><span class="t-3003-c">
-          nach
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:163:26</span></span><span class="t-3003-c">$Q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:163:32</span></span><span class="t-3003-c">
-          ist. Wenn Sie selbst an<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:163:35</span></span>
-        <span class="t-3003-c">endlichen Automaten rumbasteln, empfehle ich Ihnen,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:164:9</span></span>
-        <span class="t-3003-c">die Funktion
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:165:9</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:165:22</span></span><span class="t-3003-c">
-          graphisch mit Kreisen und<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:165:30</span></span>
-        <span class="t-3003-c">Pfeilen darzustellen, so wie wir es oben getan haben:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:166:9</span></span>
+        Diese zwei Tabellen dienen in diesem Beispiel aber nur
+        dazu, noch einmal zu illustrieren, was ich damit meine,
+        wenn ich sage, dass $\delta$ eine Funktion von
+        $Q \times \Sigma$ nach $Q$ ist. Wenn Sie selbst an
+        endlichen Automaten rumbasteln, empfehle ich Ihnen, die
+        Funktion $\delta$ graphisch mit Kreisen und Pfeilen
+        darzustellen, so wie wir es oben getan haben:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/finite-state-automata/finite-state-machine-example-01.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/finite-state-machine-example-01.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Das ist eine völlig legitime Notation für eine<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:173:9</span></span>
-        <span class="t-3003-c">Funktion
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:174:9</span></span><span class="t-3003-c">$\delta: Q \times \Sigma \rightarrow Q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:174:18</span></span><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:174:57</span></span>
-        <span class="t-3003-c">genau so formal wie die Tabellenschreibweise.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:175:9</span></span>
+        Das ist eine völlig legitime Notation für eine Funktion
+        $\delta: Q \times \Sigma \rightarrow Q$ und genau so
+        formal wie die Tabellenschreibweise.
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <span class="nowrap"><b><span class="t-3003-c">Definition 5.2.3 (Erweiterte Zuständsübergangsfunktion)<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:177:5</span></span></b><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:178:49</span></span></span><span class="t-3003-c">
-          Für einen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:178:49</span></span>
-        <span class="t-3003-c">endlichen Automaten
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:179:9</span></span><span class="t-3003-c">$(\Sigma, Q, \qstart, F, \delta)$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:179:29</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:179:62</span></span>
-        <span class="t-3003-c">definieren wir die
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:180:9</span></span><i><span class="t-3003-c">erweiterte<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:180:29</span></span>
-          <span class="t-3003-c">Zustandsübergangsfunktion<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:181:9</span></span></i><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:181:35</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:182:9</span></span><span class="t-3003-c">$\hat{\delta}: Q \times \Sigma^* \rightarrow Q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:182:9</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:182:56</span></span>
-        <span class="t-3003-c">rekursiv wie folgt:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:183:9</span></span>
+        <span class="nowrap"><b>Definition 5.2.3 (Erweiterte Zuständsübergangsfunktion)</b>.</span>
+        Für einen
+        endlichen Automaten $(\Sigma, Q, \qstart, F, \delta)$
+        definieren wir die
+        <i>erweiterte Zustandsübergangsfunktion</i>
+        $\hat{\delta}: Q \times \Sigma^* \rightarrow Q$ rekursiv
+        wie folgt:
       </p>
       <div class="math-block">
         $$
@@ -415,135 +352,106 @@
         \hat{\delta} (q, \epsilon)&amp;= q \\
         \hat{\delta} (q, x\alpha)&amp;= \hat{\delta} (\delta(x), \alpha) \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:185:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">$\hat{\delta} (q, \alpha) = q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:190:9</span></span><span class="t-3003-c">
-          heißt also, dass der<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:190:40</span></span>
-        <span class="t-3003-c">Automat, wenn er sich im Zustand
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:191:9</span></span><span class="t-3003-c">$q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:191:42</span></span><span class="t-3003-c">
-          befindet und das<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:191:45</span></span>
-        <span class="t-3003-c">Wort
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:192:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:192:14</span></span><span class="t-3003-c">
-          abarbeitet, er danach im Zustand
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:192:22</span></span><span class="t-3003-c">$q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:192:56</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:192:60</span></span>
-        <span class="t-3003-c">landet. Wir schreiben auch kompakt<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:193:9</span></span>
+        $\hat{\delta} (q, \alpha) = q'$ heißt also, dass der
+        Automat, wenn er sich im Zustand $q$ befindet und das Wort
+        $\alpha$ abarbeitet, er danach im Zustand $q'$ landet. Wir
+        schreiben auch kompakt
       </p>
       <div class="math-block">
         $$
         q \stackrel{\alpha}{\rightarrow} q' \ .
-        $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:195:9</span>
+        $$
       </div>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 5.2.4 (Akzeptierte Sprache).<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:199:5</span></span></b><span class="t-3003-c">
-          Sei<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:200:33</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:201:9</span></span><span class="t-3003-c">$M = (\Sigma, Q, \qstart, F, \delta)$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:201:9</span></span><span class="t-3003-c">
-          ein endlicher<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:201:46</span></span>
-        <span class="t-3003-c">Automat. Die von
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:202:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:202:26</span></span><span class="t-3003-c">
-          akzeptierte Sprache ist<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:202:29</span></span>
+        <b>Definition 5.2.4 (Akzeptierte Sprache).</b>
+        Sei
+        $M = (\Sigma, Q, \qstart, F, \delta)$ ein endlicher
+        Automat. Die von $M$ akzeptierte Sprache ist
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         L(M) := \{ \alpha \in \Sigma \ | \ \hat{\delta}(\qstart, \alpha) \in F \} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:204:9</span>
+        $$
       </div>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beispiel 5.2.5<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:208:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:208:5</span></span>
-        <span class="t-3003-c">Der endliche Automat, den wir oben bereits eingeführt<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:209:9</span></span>
-        <span class="t-3003-c">haben:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:210:9</span></span>
+        <b>Beispiel 5.2.5</b>
+        Der endliche Automat, den wir oben bereits eingeführt
+        haben:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/finite-state-automata/finite-state-machine-example-01.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/finite-state-machine-example-01.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">akzeptiert die Sprache aller
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:217:9</span></span><span class="nowrap"><span class="t-3003-c">$\alpha \in \{x,y,z\}$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:217:38</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:217:60</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:217:60</span></span>
-        <span class="t-3003-c">die auf
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:218:9</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:218:17</span></span><span class="t-3003-c">
-          enden und nicht die Buchstabenfolge
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:218:20</span></span><span class="t-3003-c">$xy$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:218:57</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:218:61</span></span>
-        <span class="t-3003-c">enthalten.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:219:9</span></span>
+        akzeptiert die Sprache aller
+        <span class="nowrap">$\alpha \in \{x,y,z\}$,</span>
+        die
+        auf $x$ enden und nicht die Buchstabenfolge $xy$
+        enthalten.
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.2.1<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:221:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:221:5</span></span>
-        <span class="t-3003-c">Ändern Sie den Automaten aus dem letzten Beispiel so<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:222:9</span></span>
-        <span class="t-3003-c">ab, dass die Bedingung
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:223:9</span></span><i><span class="t-3003-c">"die auf
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:223:33</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:223:42</span></span><span class="t-3003-c">
-            enden"<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:223:45</span></span></i><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:223:53</span></span>
-        <span class="t-3003-c">entfällt, er also alle Wörter akzeptiert, die die<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:224:9</span></span>
-        <span class="t-3003-c">Folge
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:225:9</span></span><span class="t-3003-c">$xy$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:225:15</span></span><span class="t-3003-c">
-          nicht enthalten.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:225:19</span></span>
+        <b>Übungsaufgabe 5.2.1</b>
+        Ändern Sie den Automaten aus dem letzten Beispiel so ab,
+        dass die Bedingung
+        <i>"die auf $x$ enden"</i>
+        entfällt, er also
+        alle Wörter akzeptiert, die die Folge $xy$ nicht
+        enthalten.
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.2.2<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:227:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:227:5</span></span>
-        <span class="t-3003-c">Zeichnen Sie einen Automaten für die Sprache aller<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:228:9</span></span>
-        <span class="t-3003-c">Wörter über
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:229:9</span></span><span class="nowrap"><span class="t-3003-c">$\{a,b,c,d\}$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:229:21</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:229:34</span></span></span><span class="t-3003-c">
-          die die Folge
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:229:34</span></span><span class="t-3003-c">$a,b,c,d$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:229:50</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:229:59</span></span>
-        <span class="t-3003-c">enthalten.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:230:9</span></span>
+        <b>Übungsaufgabe 5.2.2</b>
+        Zeichnen Sie einen Automaten für die Sprache aller Wörter
+        über
+        <span class="nowrap">$\{a,b,c,d\}$,</span>
+        die die Folge $a,b,c,d$ enthalten.
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.2.3<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:232:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:232:5</span></span>
-        <span class="t-3003-c">Zeichnen Sie einen Automaten für die Sprache aller<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:233:9</span></span>
-        <span class="t-3003-c">Wörter über
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:234:9</span></span><span class="nowrap"><span class="t-3003-c">$\{a,b,c,d\}$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:234:21</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:234:34</span></span></span><span class="t-3003-c">
-          die genau vier
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:234:34</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:234:51</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:234:54</span></span>
-        <span class="t-3003-c">enthalten.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:235:9</span></span>
+        <b>Übungsaufgabe 5.2.3</b>
+        Zeichnen Sie einen Automaten für die Sprache aller Wörter
+        über
+        <span class="nowrap">$\{a,b,c,d\}$,</span>
+        die genau vier $a$ enthalten.
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Endliche Automaten zu regulären Grammatiken<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:238:9</span></span>
+      Endliche Automaten zu regulären Grammatiken
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Wenn wir einen endlichen Automaten gegeben haben,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:240:5</span></span>
-      <span class="t-3003-c">dann können wir leicht eine entsprechende reguläre<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:241:5</span></span>
-      <span class="t-3003-c">Grammatik dazu bauen, indem wir alle Pfeile einfach in<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:242:5</span></span>
-      <span class="t-3003-c">Produktionen übersetzen. Für den Automaten<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:243:5</span></span>
+      Wenn wir einen endlichen Automaten gegeben haben, dann
+      können wir leicht eine entsprechende reguläre Grammatik
+      dazu bauen, indem wir alle Pfeile einfach in Produktionen
+      übersetzen. Für den Automaten
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:10em"
           src="img/finite-state-automata/finite-state-machine-example-01.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/finite-state-machine-example-01.svg</span></span>
+        >
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">würde dies beispielsweise die folgenden Produktionen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:250:5</span></span>
-      <span class="t-3003-c">ergeben:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:251:5</span></span>
+      würde dies beispielsweise die folgenden Produktionen
+      ergeben:
     </p>
     <div class="math-block main-column">
       $$
@@ -552,57 +460,43 @@
       X&amp;\rightarrow x X \ | \ z S \ | \ y Y \\
       Y&amp;\rightarrow x Y \ | \ y Y \ | \ z Y \\
       \end{align*}
-      $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:253:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">und, weil
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:259:5</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:259:15</span></span><span class="t-3003-c">
-        ein akzeptierender Zustand ist,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:259:18</span></span>
+      und, weil $X$ ein akzeptierender Zustand ist,
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       X&amp;\rightarrow \epsilon
       \end{align*}
-      $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:261:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Dies geht ganz allgemein:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:265:5</span></span>
+      Dies geht ganz allgemein:
     </p>
     <div
       id="_22_hgi_"
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Theorem 5.2.6<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:267:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:267:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:269:9</span></span><span class="t-3003-c">$M = (\Sigma, Q, \qstart, F, \delta)$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:269:13</span></span><span class="t-3003-c">
-          ein<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:269:50</span></span>
-        <span class="t-3003-c">endlicher Automat. Dann gibt es eine reguläre<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:270:9</span></span>
-        <span class="t-3003-c">Grammatik
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:271:9</span></span><span class="t-3003-c">$G = (\Sigma, N, P, S)$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:271:19</span></span><span class="t-3003-c">
-          mit
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:271:42</span></span><span class="nowrap"><span class="t-3003-c">$L(G) = L(M)$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:271:47</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:271:60</span></span></span>
+        <b>Theorem 5.2.6</b>
+        Sei $M = (\Sigma, Q, \qstart, F, \delta)$ ein endlicher
+        Automat. Dann gibt es eine reguläre Grammatik
+        $G = (\Sigma, N, P, S)$ mit
+        <span class="nowrap">$L(G) = L(M)$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir nehmen dies als Anlass, um mal wieder einen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:273:5</span></span>
-      <span class="t-3003-c">Induktionsbeweis im Detail durchzuführen.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:274:5</span></span>
+      Wir nehmen dies als Anlass, um mal wieder einen
+      Induktionsbeweis im Detail durchzuführen.
     </p>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        
-        <span class="t-3003-c">Wir setzen
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:277:9</span></span><span class="t-3003-c">$N = Q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:277:20</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:277:27</span></span><span class="t-3003-c">$S = \qstart$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:277:32</span></span><span class="t-3003-c">
-          und führen für<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:277:45</span></span>
-        <span class="t-3003-c">jeden Zustandsübergang, der von
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:278:9</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:278:41</span></span><span class="t-3003-c">
-          beschrieben<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:278:49</span></span>
-        <span class="t-3003-c">wird, eine Ableitungsregel ein:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:279:9</span></span>
+        Wir setzen $N = Q$ und $S = \qstart$ und führen für jeden
+        Zustandsübergang, der von $\delta$ beschrieben wird, eine
+        Ableitungsregel ein:
       </p>
       <div class="math-block">
         $$
@@ -610,482 +504,310 @@
         q_1 \stackrel{x}{\rightarrow} q_2&amp;\quad \textnormal{ wird zur Produktion } \quad
         q_1 \rightarrow xq_2
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:281:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Hiermit erhalten wir eine "Zwischengrammatik"
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:286:9</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:286:55</span></span><span class="t-3003-c">
-          .<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:286:59</span></span>
-        <span class="t-3003-c">Die endgültige Grammatik
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:287:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:287:34</span></span><span class="t-3003-c">
-          erhalten wir, indem wir<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:287:37</span></span>
-        <span class="t-3003-c">für jeden akzeptierenden Zustand
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:288:9</span></span><span class="t-3003-c">$q \in N$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:288:42</span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:288:51</span></span>
-        <span class="t-3003-c">Produktion<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:289:9</span></span>
+        Hiermit erhalten wir eine "Zwischengrammatik" $G'$ . Die
+        endgültige Grammatik $G$ erhalten wir, indem wir für jeden
+        akzeptierenden Zustand $q \in N$ die Produktion
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         q \rightarrow \epsilon
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:291:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">einführen. Wir zeigen nun per Induktion:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:295:9</span></span>
+        einführen. Wir zeigen nun per Induktion:
       </p>
       <div class="well statement">
         <p>
-          <b><span class="t-3003-c">Behauptung 5.2.7<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:297:9</span></span></b><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:297:9</span></span>
-          <span class="t-3003-c">Sei
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:298:13</span></span><span class="t-3003-c">$\alpha \in \Sigma^*$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:298:17</span></span><span class="t-3003-c">
-            und
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:298:38</span></span><span class="nowrap"><span class="t-3003-c">$q, q' \in Q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:298:43</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:298:56</span></span></span><span class="t-3003-c">
-            Dann<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:298:56</span></span>
-          <span class="t-3003-c">gilt
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:299:13</span></span><span class="t-3003-c">$q \stackrel{\alpha}{\rightarrow} q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:299:18</span></span><span class="t-3003-c">
-            genau<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:299:55</span></span>
-          <span class="t-3003-c">dann, wenn
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:300:13</span></span><span class="t-3003-c">$q \Rightarrow^* \alpha q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:300:24</span></span><span class="t-3003-c">
-            in Grammatik<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:300:51</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:301:13</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:301:13</span></span><span class="t-3003-c">
-            gilt.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:301:17</span></span>
+          <b>Behauptung 5.2.7</b>
+          Sei $\alpha \in \Sigma^*$ und
+          <span class="nowrap">$q, q' \in Q$.</span>
+          Dann gilt
+          $q \stackrel{\alpha}{\rightarrow} q'$ genau dann, wenn
+          $q \Rightarrow^* \alpha q'$ in Grammatik $G'$ gilt.
         </p>
       </div>
       <p>
-        <span class="t-3003-c">Bevor wir diese Behauptung beweisen, achten Sie auf<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:303:9</span></span>
-        <span class="t-3003-c">die Bedeutung der Symbole. Der einfache Pfeil in<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:304:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:305:9</span></span><span class="t-3003-c">$q \stackrel{\alpha}{\rightarrow} q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:305:9</span></span><span class="t-3003-c">
-          beschreibt die<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:305:46</span></span>
-        <span class="t-3003-c">Arbeitsweise des endlichen Automaten, dass nämlich das<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:306:9</span></span>
-        <span class="t-3003-c">Verarbeiten von
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:307:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:307:25</span></span><span class="t-3003-c">
-          den Automaten vom Zustand
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:307:33</span></span><span class="t-3003-c">$q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:307:60</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:307:63</span></span>
-        <span class="t-3003-c">in den Zustand
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:308:9</span></span><span class="t-3003-c">$q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:308:24</span></span><span class="t-3003-c">
-          führt. Der doppelte Pfeil in<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:308:28</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:309:9</span></span><span class="t-3003-c">$q \Rightarrow^* \alpha q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:309:9</span></span><span class="t-3003-c">
-          sagt aus, dass aus dem<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:309:36</span></span>
-        <span class="t-3003-c">Nichtterminalsymbol
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:310:9</span></span><span class="t-3003-c">$q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:310:29</span></span><span class="t-3003-c">
-          in der Grammatik
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:310:32</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:310:50</span></span><span class="t-3003-c">
-          in<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:310:53</span></span>
-        <span class="t-3003-c">möglicherweise mehreren Schritten die Wortform<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:311:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:312:9</span></span><span class="t-3003-c">$\alpha q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:312:9</span></span><span class="t-3003-c">
-          abgeleitet werden kann. Der Pfeil<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:312:20</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:313:9</span></span><span class="t-3003-c">$\rightarrow$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:313:9</span></span><span class="t-3003-c">
-          "lebt" also im Automaten
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:313:22</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:313:48</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:313:51</span></span></span><span class="t-3003-c">
-          der Pfeil<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:313:51</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:314:9</span></span><span class="t-3003-c">$\Rightarrow^*$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:314:9</span></span><span class="t-3003-c">
-          lebt in der Grammatik
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:314:24</span></span><span class="nowrap"><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:314:47</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:314:51</span></span></span>
+        Bevor wir diese Behauptung beweisen, achten Sie auf die
+        Bedeutung der Symbole. Der einfache Pfeil in
+        $q \stackrel{\alpha}{\rightarrow} q'$ beschreibt die
+        Arbeitsweise des endlichen Automaten, dass nämlich das
+        Verarbeiten von $\alpha$ den Automaten vom Zustand $q$ in
+        den Zustand $q'$ führt. Der doppelte Pfeil in
+        $q \Rightarrow^* \alpha q'$ sagt aus, dass aus dem
+        Nichtterminalsymbol $q$ in der Grammatik $G$ in
+        möglicherweise mehreren Schritten die Wortform $\alpha q'$
+        abgeleitet werden kann. Der Pfeil $\rightarrow$ "lebt"
+        also im Automaten
+        <span class="nowrap">$M$,</span>
+        der Pfeil $\Rightarrow^*$ lebt in
+        der Grammatik
+        <span class="nowrap">$G'$.</span>
       </p>
       <div class="well highlight">
         <p>
           <b>Beweis.</b>
-          
-          <span class="t-3003-c">Wir verwenden Induktion über die Länge des Wortes<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:317:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:318:13</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:318:13</span></span><span class="t-3003-c">
-            .<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:318:21</span></span>
+          Wir verwenden Induktion über die Länge des Wortes $\alpha$
+          .
         </p>
         <p>
-          <b><span class="t-3003-c">Induktionsbasis.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:320:14</span></span></b><span class="t-3003-c">
-            Wenn
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:320:31</span></span><span class="t-3003-c">$\alpha = \epsilon$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:320:37</span></span><span class="t-3003-c">
-            gilt,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:320:56</span></span>
-          <span class="t-3003-c">also
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:321:13</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:321:18</span></span><span class="t-3003-c">
-            die Länge 0 hat, dann gilt<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:321:26</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:322:13</span></span><span class="t-3003-c">$q \stackrel{\epsilon}{\rightarrow} q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:322:13</span></span><span class="t-3003-c">
-            genau dann,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:322:52</span></span>
-          <span class="t-3003-c">wenn
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:323:13</span></span><span class="t-3003-c">$q = q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:323:18</span></span><span class="t-3003-c">
-            ist. Wie kann nun<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:323:26</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:324:13</span></span><span class="t-3003-c">$q \Rightarrow^* \epsilon q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:324:13</span></span><span class="t-3003-c">
-            in
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:324:42</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:324:46</span></span><span class="t-3003-c">
-            gelten?<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:324:50</span></span>
-          <span class="t-3003-c">Beachten Sie, dass jede Produktion in
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:325:13</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:325:51</span></span><span class="t-3003-c">
-            ein<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:325:55</span></span>
-          <span class="t-3003-c">Terminalsymbol erzeugt;
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:326:13</span></span><span class="t-3003-c">$q \Rightarrow^* \epsilon q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:326:37</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:326:66</span></span>
-          <span class="t-3003-c">kann also nur gelten, wenn
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:327:13</span></span><i><span class="t-3003-c">keine<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:327:41</span></span></i><span class="t-3003-c">
-            Produktion erfolgt<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:327:47</span></span>
-          <span class="t-3003-c">ist und somit
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:328:13</span></span><span class="t-3003-c">$q = q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:328:27</span></span><span class="t-3003-c">
-            gilt. Wir sehen: beide<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:328:35</span></span>
-          <span class="t-3003-c">Aussagen sind äquivalent zu
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:329:13</span></span><span class="t-3003-c">$q = q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:329:41</span></span><span class="t-3003-c">
-            und somit auch<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:329:49</span></span>
-          <span class="t-3003-c">äquivalent zueinander.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:330:13</span></span>
+          <b>Induktionsbasis.</b>
+          Wenn $\alpha = \epsilon$ gilt, also
+          $\alpha$ die Länge 0 hat, dann gilt
+          $q \stackrel{\epsilon}{\rightarrow} q'$ genau dann, wenn
+          $q = q'$ ist. Wie kann nun $q \Rightarrow^* \epsilon q'$
+          in $G'$ gelten? Beachten Sie, dass jede Produktion in $G'$
+          ein Terminalsymbol erzeugt; $q \Rightarrow^* \epsilon q'$
+          kann also nur gelten, wenn
+          <i>keine</i>
+          Produktion erfolgt ist
+          und somit $q = q'$ gilt. Wir sehen: beide Aussagen sind
+          äquivalent zu $q = q'$ und somit auch äquivalent
+          zueinander.
         </p>
         <p>
-          <span class="nowrap"><b><span class="t-3003-c">Induktionsschritt<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:332:14</span></span></b><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:332:32</span></span></span><span class="t-3003-c">
-            Wenn
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:332:32</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:332:39</span></span><span class="t-3003-c">
-            die Länge
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:332:47</span></span><span class="t-3003-c">$n+1$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:332:58</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:332:63</span></span>
-          <span class="t-3003-c">hat, so schreiben wir
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:333:13</span></span><span class="t-3003-c">$\alpha = x \beta$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:333:35</span></span><span class="t-3003-c">
-            für ein Wort<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:333:53</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:334:13</span></span><span class="t-3003-c">$\beta \in \Sigma^*$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:334:13</span></span><span class="t-3003-c">
-            der Länge
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:334:33</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:334:44</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:334:47</span></span></span><span class="t-3003-c">
-            Per<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:334:47</span></span>
-          <span class="t-3003-c">Induktionshypothese können wir nun davon ausgehen,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:335:13</span></span>
-          <span class="t-3003-c">dass für alle
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:336:13</span></span><span class="t-3003-c">$q_1, q_2 \in Q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:336:27</span></span><span class="t-3003-c">
-            die Aussage<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:336:43</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:337:13</span></span><span class="t-3003-c">$q_1 \stackrel{\beta}{\rightarrow} q_2$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:337:13</span></span><span class="t-3003-c">
-            genau dann<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:337:52</span></span>
-          <span class="t-3003-c">gilt, wenn
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:338:13</span></span><span class="t-3003-c">$q_1 \Rightarrow^* \beta q_2$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:338:24</span></span><span class="t-3003-c">
-            gilt. Unser<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:338:53</span></span>
-          <span class="t-3003-c">Ziel ist es, zu zeigen, dass die beiden folgenden<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:339:13</span></span>
-          <span class="t-3003-c">Aussagen äquivalent sind:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:340:13</span></span>
+          <span class="nowrap"><b>Induktionsschritt</b>.</span>
+          Wenn $\alpha$ die Länge $n+1$ hat, so
+          schreiben wir $\alpha = x \beta$ für ein Wort
+          $\beta \in \Sigma^*$ der Länge
+          <span class="nowrap">$n$.</span>
+          Per
+          Induktionshypothese können wir nun davon ausgehen, dass für
+          alle $q_1, q_2 \in Q$ die Aussage
+          $q_1 \stackrel{\beta}{\rightarrow} q_2$ genau dann gilt,
+          wenn $q_1 \Rightarrow^* \beta q_2$ gilt. Unser Ziel ist
+          es, zu zeigen, dass die beiden folgenden Aussagen
+          äquivalent sind:
         </p>
         <ol>
           <li>
             <p>
-              <span class="t-3003-c">$q \stackrel{x \beta}{\rightarrow} q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:344:21</span></span><span class="t-3003-c">
-                im endlichen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:344:59</span></span>
-              <span class="t-3003-c">Automaten
-                <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:345:21</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:345:31</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:345:34</span></span></span>
+              $q \stackrel{x \beta}{\rightarrow} q'$ im endlichen
+              Automaten
+              <span class="nowrap">$M$,</span>
             </p>
           </li>
           <li>
             <p>
-              <span class="t-3003-c">$q \Rightarrow^* x \beta q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:348:21</span></span><span class="t-3003-c">
-                in der Grammatik
-                <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:348:49</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:348:67</span></span><span class="t-3003-c">
-                .<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:348:71</span></span>
+              $q \Rightarrow^* x \beta q'$ in der Grammatik $G'$ .
             </p>
           </li>
         </ol>
         <p>
-          <span class="t-3003-c">Wir müssen beide Richtungen zeigen, also zeigen, dass<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:350:13</span></span>
-          <span class="t-3003-c">aus Aussage (1) die Aussage (2) folgt und umgekehrt.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:351:13</span></span>
+          Wir müssen beide Richtungen zeigen, also zeigen, dass aus
+          Aussage (1) die Aussage (2) folgt und umgekehrt.
         </p>
         <p>
-          <b><span class="t-3003-c">Aus (1) folgt (2).<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:353:14</span></span></b><span class="t-3003-c">
-            Nehmen wir also an, dass<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:353:33</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:354:13</span></span><span class="t-3003-c">$q \stackrel{x \beta}{\rightarrow} q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:354:13</span></span><span class="t-3003-c">
-            gilt und<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:354:51</span></span>
-          <span class="t-3003-c">bezeichnen
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:355:13</span></span><span class="nowrap"><span class="t-3003-c">$q_1 := \delta(q,x)$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:355:24</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:355:44</span></span></span><span class="t-3003-c">
-            Es gilt also<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:355:44</span></span>
+          <b>Aus (1) folgt (2).</b>
+          Nehmen wir also an, dass
+          $q \stackrel{x \beta}{\rightarrow} q'$ gilt und bezeichnen
+          <span class="nowrap">$q_1 := \delta(q,x)$.</span>
+          Es gilt also
         </p>
         <div class="math-block">
           $$
           q \stackrel{x}{\rightarrow} q_1 \stackrel{\beta}{\rightarrow} q'
-          $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:357:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">Der erste Teil, also<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:361:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:362:13</span></span><span class="nowrap"><span class="t-3003-c">$q \stackrel{x}{\rightarrow} q_1$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:362:13</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:362:46</span></span></span><span class="t-3003-c">
-            bedeutet, dass wir<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:362:46</span></span>
-          <span class="t-3003-c">in
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:363:13</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:363:16</span></span><span class="t-3003-c">
-            die Produktion
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:363:20</span></span><span class="t-3003-c">$q \rightarrow xq_1$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:363:36</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:363:56</span></span>
-          <span class="t-3003-c">eingeführt haben. Auf den zweiten Teil, also<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:364:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:365:13</span></span><span class="nowrap"><span class="t-3003-c">$q_1 \stackrel{\beta}{\rightarrow} q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:365:13</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:365:51</span></span></span><span class="t-3003-c">
-            können wir<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:365:51</span></span>
-          <span class="t-3003-c">die Induktionshypothese anwenden und schließen, dass<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:366:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:367:13</span></span><span class="t-3003-c">$q_1 \Rightarrow^* \beta q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:367:13</span></span><span class="t-3003-c">
-            gilt. Nun können wir mit<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:367:41</span></span>
-          <span class="t-3003-c">dem Nichtterminal
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:368:13</span></span><span class="t-3003-c">$q$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:368:31</span></span><span class="t-3003-c">
-            beginnen, die Produktion<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:368:34</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:369:13</span></span><span class="t-3003-c">$q \rightarrow x q_1$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:369:13</span></span><span class="t-3003-c">
-            anwenden und dann mit
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:369:34</span></span><span class="t-3003-c">$q_1$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:369:57</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:369:62</span></span>
-          <span class="t-3003-c">fortfahrend die Wortform
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:370:13</span></span><span class="t-3003-c">$\beta q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:370:38</span></span><span class="t-3003-c">
-            ableiten, also<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:370:48</span></span>
+          Der erste Teil, also
+          <span class="nowrap">$q \stackrel{x}{\rightarrow} q_1$,</span>
+          bedeutet, dass wir in $G'$ die Produktion
+          $q \rightarrow xq_1$ eingeführt haben. Auf den zweiten
+          Teil, also
+          <span class="nowrap">$q_1 \stackrel{\beta}{\rightarrow} q'$,</span>
+          können
+          wir die Induktionshypothese anwenden und schließen, dass
+          $q_1 \Rightarrow^* \beta q'$ gilt. Nun können wir mit dem
+          Nichtterminal $q$ beginnen, die Produktion
+          $q \rightarrow x q_1$ anwenden und dann mit $q_1$
+          fortfahrend die Wortform $\beta q'$ ableiten, also
         </p>
         <div class="math-block">
           $$
           q \Rightarrow x q_1 \Rightarrow^* x \beta q' \ .
-          $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:372:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">Dies zeigt die erste Richtung.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:376:13</span></span>
+          Dies zeigt die erste Richtung.
         </p>
         <p>
-          <b><span class="t-3003-c">Aus (2) folgt (1).<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:378:14</span></span></b><span class="t-3003-c">
-            Nun nehmen wir an, dass<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:378:33</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:379:13</span></span><span class="t-3003-c">$q \Rightarrow^* x \beta q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:379:13</span></span><span class="t-3003-c">
-            gilt. Untersuchen wir<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:379:41</span></span>
-          <span class="t-3003-c">die erste Produktion, die in dieser Ableitung<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:380:13</span></span>
-          <span class="t-3003-c">verwendet worden ist. Alle Produktionen in
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:381:13</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:381:56</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:381:60</span></span>
-          <span class="t-3003-c">erzeugen ein Terminalsymbol, also muss es eine<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:382:13</span></span>
-          <span class="t-3003-c">Produktion der Form<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:383:13</span></span>
+          <b>Aus (2) folgt (1).</b>
+          Nun nehmen wir an, dass
+          $q \Rightarrow^* x \beta q'$ gilt. Untersuchen wir die
+          erste Produktion, die in dieser Ableitung verwendet worden
+          ist. Alle Produktionen in $G'$ erzeugen ein
+          Terminalsymbol, also muss es eine Produktion der Form
         </p>
         <div class="math-block">
           $$
           q \rightarrow x q_1
-          $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:385:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">gewesen sein. Die Ableitung hat also die Form<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:389:13</span></span>
+          gewesen sein. Die Ableitung hat also die Form
         </p>
         <div class="math-block">
           $$
           \begin{align*}
           q \Rightarrow x q_1 \Rightarrow^* x \beta q' \ ,
           \end{align*}
-          $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:391:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">wir können also aus
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:395:13</span></span><span class="t-3003-c">$q_1$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:395:33</span></span><span class="t-3003-c">
-            die Wortform
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:395:38</span></span><span class="t-3003-c">$\beta q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:395:52</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:395:62</span></span>
-          <span class="t-3003-c">ableiten:
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:396:13</span></span><span class="nowrap"><span class="t-3003-c">$q_1 \Rightarrow^* \beta q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:396:23</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:396:51</span></span></span><span class="t-3003-c">
-            Auf diese<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:396:51</span></span>
-          <span class="t-3003-c">Erkenntnis wenden wir die Induktionshypothese an und<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:397:13</span></span>
-          <span class="t-3003-c">schließen, dass<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:398:13</span></span>
+          wir können also aus $q_1$ die Wortform $\beta q'$
+          ableiten:
+          <span class="nowrap">$q_1 \Rightarrow^* \beta q'$.</span>
+          Auf diese
+          Erkenntnis wenden wir die Induktionshypothese an und
+          schließen, dass
         </p>
         <div class="math-block">
           $$
           q_1 \stackrel{\beta}{\rightarrow} q'
-          $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:400:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">gilt. Die Produktionsregel
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:404:13</span></span><span class="t-3003-c">$q \rightarrow x q_1$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:404:40</span></span><span class="t-3003-c">
-            kann<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:404:61</span></span>
-          <span class="t-3003-c">nur in
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:405:13</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:405:20</span></span><span class="t-3003-c">
-            eingeführt worden sein, weil<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:405:24</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:406:13</span></span><span class="nowrap"><span class="t-3003-c">$\delta(q,x) = q_1$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:406:13</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:406:32</span></span></span><span class="t-3003-c">
-            also<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:406:32</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:407:13</span></span><span class="nowrap"><span class="t-3003-c">$q \stackrel{x}{\rightarrow} q_1$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:407:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:407:46</span></span></span><span class="t-3003-c">
-            Somit sehen wir,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:407:46</span></span>
-          <span class="t-3003-c">dass<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:408:13</span></span>
+          gilt. Die Produktionsregel $q \rightarrow x q_1$ kann nur
+          in $G'$ eingeführt worden sein, weil
+          <span class="nowrap">$\delta(q,x) = q_1$,</span>
+          also
+          <span class="nowrap">$q \stackrel{x}{\rightarrow} q_1$.</span>
+          Somit sehen wir,
+          dass
         </p>
         <div class="math-block">
           $$
           q \stackrel{x}{\rightarrow} q_1 \stackrel{\beta}{\rightarrow} q'
-          $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:410:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">gilt, also zusammengenommen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:414:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:415:13</span></span><span class="nowrap"><span class="t-3003-c">$q \stackrel{x\beta}{\rightarrow} q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:415:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:415:50</span></span></span><span class="t-3003-c">
-            Dies zeigt die<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:415:50</span></span>
-          <span class="t-3003-c">zweite Richtung. Hiermit endet der Induktionsbeweis.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:416:13</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+          gilt, also zusammengenommen
+          <span class="nowrap">$q \stackrel{x\beta}{\rightarrow} q'$.</span>
+          Dies zeigt die
+          zweite Richtung. Hiermit endet der Induktionsbeweis.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
-        <span class="t-3003-c">Wir haben nun die Behauptung bewiesen. Als nächstens<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:418:9</span></span>
-        <span class="t-3003-c">betrachten wir die Grammatik
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:419:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:419:38</span></span><span class="t-3003-c">
-          und behaupten, dass<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:419:41</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:420:9</span></span><span class="t-3003-c">$L(G) = L(M)$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:420:9</span></span><span class="t-3003-c">
-          gilt. Sei
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:420:22</span></span><span class="nowrap"><span class="t-3003-c">$\alpha \in \Sigma$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:420:33</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:420:52</span></span></span><span class="t-3003-c">
-          dann<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:420:52</span></span>
-        <span class="t-3003-c">behaupten wir also, dass wir folgenden zwei Aussagen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:421:9</span></span>
-        <span class="t-3003-c">äquivalent sind:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:422:9</span></span>
+        Wir haben nun die Behauptung bewiesen. Als nächstens
+        betrachten wir die Grammatik $G$ und behaupten, dass
+        $L(G) = L(M)$ gilt. Sei
+        <span class="nowrap">$\alpha \in \Sigma$,</span>
+        dann
+        behaupten wir also, dass wir folgenden zwei Aussagen
+        äquivalent sind:
       </p>
       <ol>
         <li>
           <p>
-            <span class="t-3003-c">$\qstart \stackrel{\alpha}{\rightarrow} q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:426:17</span></span><span class="t-3003-c">
-              für einen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:426:60</span></span>
-            <span class="t-3003-c">Zustand
-              <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:427:17</span></span><span class="nowrap"><span class="t-3003-c">$q' \in F$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:427:25</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:427:35</span></span></span>
+            $\qstart \stackrel{\alpha}{\rightarrow} q'$ für einen
+            Zustand
+            <span class="nowrap">$q' \in F$,</span>
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">$\qstart \Rightarrow^* \alpha$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:430:17</span></span><span class="t-3003-c">
-              in Grammatik
-              <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:430:47</span></span><span class="nowrap"><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:430:61</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:430:64</span></span></span>
+            $\qstart \Rightarrow^* \alpha$ in Grammatik
+            <span class="nowrap">$G$.</span>
           </p>
         </li>
       </ol>
       <p>
-        <span class="t-3003-c">Wenn nun also<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:432:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:433:9</span></span><span class="t-3003-c">$\qstart \stackrel{\alpha}{\rightarrow} q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:433:9</span></span><span class="t-3003-c">
-          gilt und<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:433:52</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:434:9</span></span><span class="nowrap"><span class="t-3003-c">$q' \in F$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:434:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:434:19</span></span></span><span class="t-3003-c">
-          dann wissen wir von der obigen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:434:19</span></span>
-        <span class="t-3003-c">Behauptung, dass es in
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:435:9</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:435:32</span></span><span class="t-3003-c">
-          die Ableitung<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:435:36</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:436:9</span></span><span class="t-3003-c">$\qstart \Rightarrow^* \alpha q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:436:9</span></span><span class="t-3003-c">
-          gibt. Da
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:436:42</span></span><span class="t-3003-c">$q' \in F$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:436:52</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:436:62</span></span>
-        <span class="t-3003-c">ist, enthält
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:437:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:437:22</span></span><span class="t-3003-c">
-          die Produktion<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:437:25</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:438:9</span></span><span class="nowrap"><span class="t-3003-c">$q' \rightarrow \epsilon$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:438:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:438:34</span></span></span><span class="t-3003-c">
-          und somit können wir in
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:438:34</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:438:60</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:438:63</span></span>
-        <span class="t-3003-c">die Ableitung<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:439:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:440:9</span></span><span class="t-3003-c">$\qstart \Rightarrow^* \alpha q' \Rightarrow \alpha$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:440:9</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:440:61</span></span>
-        <span class="t-3003-c">machen. In der anderen Richtung, wenn<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:441:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:442:9</span></span><span class="t-3003-c">$\qstart \Rightarrow^* \alpha$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:442:9</span></span><span class="t-3003-c">
-          in Grammatik
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:442:39</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:442:53</span></span><span class="t-3003-c">
-          gilt,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:442:56</span></span>
-        <span class="t-3003-c">dann betrachten wir den letzten Ableitungsschritt. Da<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:443:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:444:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:444:9</span></span><span class="t-3003-c">
-          keine Nichtterminalsymbole enthält, muss im<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:444:17</span></span>
-        <span class="t-3003-c">letzten Ableitungsschritt ein Nichtterminalsymbol<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:445:9</span></span>
-        <span class="t-3003-c">verschwunden sein. Die einzigen Produktionen in
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:446:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:446:57</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:446:60</span></span>
-        <span class="t-3003-c">bei denen das Nichtterminal verschwindet, sind von der<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:447:9</span></span>
-        <span class="t-3003-c">Form
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:448:9</span></span><span class="nowrap"><span class="t-3003-c">$q' \rightarrow \epsilon$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:448:14</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:448:39</span></span></span><span class="t-3003-c">
-          wenn
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:448:39</span></span><span class="t-3003-c">$q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:448:46</span></span><span class="t-3003-c">
-          im<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:448:50</span></span>
-        <span class="t-3003-c">Automaten
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:449:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:449:19</span></span><span class="t-3003-c">
-          ein akzeptierender Endzustand ist. Sei<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:449:22</span></span>
-        <span class="t-3003-c">nun also
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:450:9</span></span><span class="t-3003-c">$q' \rightarrow \epsilon$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:450:18</span></span><span class="t-3003-c">
-          die Produktion,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:450:43</span></span>
-        <span class="t-3003-c">die im letzten Ableitungsschritt angewendet worden<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:451:9</span></span>
-        <span class="t-3003-c">ist. Es gilt also<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:452:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:453:9</span></span><span class="nowrap"><span class="t-3003-c">$\qstart \Rightarrow^* \alpha q' \Rightarrow \alpha$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:453:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:453:61</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:453:61</span></span>
-        <span class="t-3003-c">Beachten Sie nun weiter, dass all jene Produktionen,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:454:9</span></span>
-        <span class="t-3003-c">die in
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:455:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:455:16</span></span><span class="t-3003-c">
-          aber nicht in
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:455:19</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:455:34</span></span><span class="t-3003-c">
-          sind, die Form<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:455:38</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:456:9</span></span><span class="t-3003-c">$q' \rightarrow \epsilon$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:456:9</span></span><span class="t-3003-c">
-          haben, also das<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:456:34</span></span>
-        <span class="t-3003-c">Nichtterminalsymbol verschwinden lassen; es kann in<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:457:9</span></span>
-        <span class="t-3003-c">einer Ableitung also nur eine solche Produktion<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:458:9</span></span>
-        <span class="t-3003-c">angewandt worden sein, und das ganz zum Schluss. Das<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:459:9</span></span>
-        <span class="t-3003-c">heißt: die Ableitung
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:460:9</span></span><span class="t-3003-c">$\qstart \Rightarrow^* \alpha q'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:460:30</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:460:63</span></span>
-        <span class="t-3003-c">verwendet ausschließlich
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:461:9</span></span><span class="nowrap"><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:461:34</span></span><span class="t-3003-c">-Produktionen.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:461:38</span></span></span><span class="t-3003-c">
-          Somit<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:461:38</span></span>
-        <span class="t-3003-c">können wir die oben gezeigte Behauptung anwenden und<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:462:9</span></span>
-        <span class="t-3003-c">folgern, dass<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:463:9</span></span>
+        Wenn nun also $\qstart \stackrel{\alpha}{\rightarrow} q'$
+        gilt und
+        <span class="nowrap">$q' \in F$,</span>
+        dann wissen wir von der obigen
+        Behauptung, dass es in $G'$ die Ableitung
+        $\qstart \Rightarrow^* \alpha q'$ gibt. Da $q' \in F$ ist,
+        enthält $G$ die Produktion
+        <span class="nowrap">$q' \rightarrow \epsilon$,</span>
+        und
+        somit können wir in $G$ die Ableitung
+        $\qstart \Rightarrow^* \alpha q' \Rightarrow \alpha$
+        machen. In der anderen Richtung, wenn
+        $\qstart \Rightarrow^* \alpha$ in Grammatik $G$ gilt, dann
+        betrachten wir den letzten Ableitungsschritt. Da $\alpha$
+        keine Nichtterminalsymbole enthält, muss im letzten
+        Ableitungsschritt ein Nichtterminalsymbol verschwunden
+        sein. Die einzigen Produktionen in $G$ bei denen das
+        Nichtterminal verschwindet, sind von der Form
+        <span class="nowrap">$q' \rightarrow \epsilon$,</span>
+        wenn $q'$ im Automaten $M$ ein
+        akzeptierender Endzustand ist. Sei nun also
+        $q' \rightarrow \epsilon$ die Produktion, die im letzten
+        Ableitungsschritt angewendet worden ist. Es gilt also
+        <span class="nowrap">$\qstart \Rightarrow^* \alpha q' \Rightarrow \alpha$.</span>
+        Beachten Sie nun weiter, dass all jene Produktionen, die in
+        $G$ aber nicht in $G'$ sind, die Form
+        $q' \rightarrow \epsilon$ haben, also das
+        Nichtterminalsymbol verschwinden lassen; es kann in einer
+        Ableitung also nur eine solche Produktion angewandt worden
+        sein, und das ganz zum Schluss. Das heißt: die Ableitung
+        $\qstart \Rightarrow^* \alpha q'$ verwendet ausschließlich
+        <span class="nowrap">$G'$-Produktionen.</span>
+        Somit können wir die oben gezeigte
+        Behauptung anwenden und folgern, dass
       </p>
       <div class="math-block">
         $$
         \qstart \stackrel{\alpha}{\rightarrow} q'
-        $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:465:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">gilt. Dies ist genau Punkt 1, den wir zeigen wollten.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:469:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        gilt. Dies ist genau Punkt 1, den wir zeigen wollten.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Beachten Sie, dass dieser Beweis eigentlich gar nicht<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:471:5</span></span>
-      <span class="t-3003-c">so schwierig ist, wie er hier aussieht. Ich habe ihn<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:472:5</span></span>
-      <span class="t-3003-c">absichtlich sehr formal und ausführlich geschrieben,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:473:5</span></span>
-      <span class="t-3003-c">um Ihnen das Prinzip des Induktionsbeweises ins<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:474:5</span></span>
-      <span class="t-3003-c">Gedächtnis zu rufen.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:475:5</span></span>
+      Beachten Sie, dass dieser Beweis eigentlich gar nicht so
+      schwierig ist, wie er hier aussieht. Ich habe ihn
+      absichtlich sehr formal und ausführlich geschrieben, um
+      Ihnen das Prinzip des Induktionsbeweises ins Gedächtnis zu
+      rufen.
     </p>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.2.4<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:477:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:477:5</span></span>
-        <span class="t-3003-c">Schreiben Sie zu folgendem Automaten über dem<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:478:9</span></span>
-        <span class="t-3003-c">Alphabet
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:479:9</span></span><span class="t-3003-c">$\Sigma = \{0,1,2,3,4,5,6,7,8,9\}$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:479:18</span></span><span class="t-3003-c">
-          eine<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:479:52</span></span>
-        <span class="t-3003-c">äquivalente reguläre Grammatik:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:480:9</span></span>
+        <b>Übungsaufgabe 5.2.4</b>
+        Schreiben Sie zu folgendem Automaten über dem Alphabet
+        $\Sigma = \{0,1,2,3,4,5,6,7,8,9\}$ eine äquivalente
+        reguläre Grammatik:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:13em"
             src="img/finite-state-automata/finite-state-machine-example-02.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/finite-state-machine-example-02.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">und beschreiben Sie die Sprache in eigenen Worten.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:487:9</span></span>
+        und beschreiben Sie die Sprache in eigenen Worten.
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Reguläre Grammatiken zu endlichen Automaten?<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:490:9</span></span>
+      Reguläre Grammatiken zu endlichen Automaten?
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Im letzten Abschnitt haben wir gesehen, wie wir zu<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:492:5</span></span>
-      <span class="t-3003-c">einem gegebenen endlichen Automaten recht einfach eine<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:493:5</span></span>
-      <span class="t-3003-c">äquivalente reguläre Grammatik schreibne können. Es<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:494:5</span></span>
-      <span class="t-3003-c">drängt sich die Frage auf: geht das auch umgekehrt?<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:495:5</span></span>
-      <span class="t-3003-c">Versuchen wir es. Zu jedem "Grammatik-Pfeil"<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:496:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:497:5</span></span><span class="t-3003-c">$X \rightarrow aY$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:497:5</span></span><span class="t-3003-c">
-        bauen wir uns einen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:497:23</span></span>
-      <span class="t-3003-c">"Automaten-Pfeil"
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:498:5</span></span><span class="nowrap"><span class="t-3003-c">$X \stackrel{a}{\rightarrow} Y$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:498:23</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:498:54</span></span></span>
+      Im letzten Abschnitt haben wir gesehen, wie wir zu einem
+      gegebenen endlichen Automaten recht einfach eine
+      äquivalente reguläre Grammatik schreibne können. Es drängt
+      sich die Frage auf: geht das auch umgekehrt? Versuchen wir
+      es. Zu jedem "Grammatik-Pfeil" $X \rightarrow aY$ bauen
+      wir uns einen "Automaten-Pfeil"
+      <span class="nowrap">$X \stackrel{a}{\rightarrow} Y$.</span>
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beispiel 5.2.8<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:500:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:500:5</span></span>
-        <span class="t-3003-c">Betrachten wir die reguläre Grammatik aus dem<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:501:9</span></span>
-        <span class="t-3003-c">vorherigen
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:502:9</span></span><a
+        <b>Beispiel 5.2.8</b>
+        Betrachten wir die reguläre Grammatik aus dem vorherigen
+        <a
           href="./5-1.html#_15_hgi_"
           class=""
-        >Kapitel 5.1.3</a><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:502:9</span></span>
+        >Kapitel 5.1.3</a>
+        
       </p>
       <div class="math-block">
         $$
@@ -1093,91 +815,68 @@
         S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\
         T&amp;\rightarrow \epsilon \ | \ b T \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:504:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Versuchen wir, daraus einen endlichen Automaten zu<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:509:9</span></span>
-        <span class="t-3003-c">bauen. Als Zustandsmenge nehmen wir die Menge<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:510:9</span></span>
-        <span class="t-3003-c">nichtterminaler Symbole
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:511:9</span></span><span class="nowrap"><span class="t-3003-c">$\{S,T\}$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:511:33</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:511:42</span></span></span><span class="t-3003-c">
-          als Startzustand<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:511:42</span></span>
-        <span class="t-3003-c">das Startsymbol
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:512:9</span></span><span class="nowrap"><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:512:25</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:512:28</span></span></span><span class="t-3003-c">
-          Zustandsübergänge ergeben sich<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:512:28</span></span>
-        <span class="t-3003-c">aus den Produktionsregeln, wobei wir für Produktionen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:513:9</span></span>
-        <span class="t-3003-c">der Form
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:514:9</span></span><span class="t-3003-c">$A \rightarrow \epsilon$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:514:18</span></span><span class="t-3003-c">
-          den Zustand
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:514:42</span></span><span class="t-3003-c">$A$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:514:55</span></span><span class="t-3003-c">
-          zu<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:514:58</span></span>
-        <span class="t-3003-c">einem Endzustand machen. Also:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:515:9</span></span>
+        Versuchen wir, daraus einen endlichen Automaten zu bauen.
+        Als Zustandsmenge nehmen wir die Menge nichtterminaler
+        Symbole
+        <span class="nowrap">$\{S,T\}$,</span>
+        als Startzustand das Startsymbol
+        <span class="nowrap">$S$.</span>
+        Zustandsübergänge ergeben sich aus den Produktionsregeln,
+        wobei wir für Produktionen der Form
+        $A \rightarrow \epsilon$ den Zustand $A$ zu einem
+        Endzustand machen. Also:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:11em"
             src="img/finite-state-automata/finite-state-machine-example-03.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/finite-state-machine-example-03.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Wie Sie sehen, ist das nicht ganz korrekt. Als erstes<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:522:9</span></span>
-        <span class="t-3003-c">fällt ins Auge, dass alle Zustände akzeptierende<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:523:9</span></span>
-        <span class="t-3003-c">Endzustände sind. Als zweites fällt uns auf, dass es<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:524:9</span></span>
-        <span class="t-3003-c">bei
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:525:9</span></span><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:525:13</span></span><span class="t-3003-c">
-          für das Eingabesymbol
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:525:16</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:525:39</span></span><span class="t-3003-c">
-          keinen ausgehenden<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:525:42</span></span>
-        <span class="t-3003-c">Pfeil gibt. Der Funktionswert
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:526:9</span></span><span class="t-3003-c">$\delta(T,a)$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:526:39</span></span><span class="t-3003-c">
-          ist also<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:526:52</span></span>
-        <span class="t-3003-c">undefiniert. Der Grund hierfür ist, dass, wenn erst<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:527:9</span></span>
-        <span class="t-3003-c">mal ein
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:528:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:528:17</span></span><span class="t-3003-c">
-          vorgekommen ist, eben kein
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:528:20</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:528:48</span></span><span class="t-3003-c">
-          mehr<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:528:51</span></span>
-        <span class="t-3003-c">vorkommen darf. Die Definition eines endlichen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:529:9</span></span>
-        <span class="t-3003-c">Automaten verlangt aber, dass
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:530:9</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:530:39</span></span><span class="t-3003-c">
-          eine Funktion<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:530:47</span></span>
-        <span class="t-3003-c">ist, also für alle Eingabewerte definiert ist. Wir<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:531:9</span></span>
-        <span class="t-3003-c">lösen das, indem wir einen sogenannten
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:532:9</span></span><i><span class="t-3003-c">Fehlerzustand<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:532:49</span></span>
-          <span class="t-3003-c">(Trap State)<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:533:9</span></span></i><span class="t-3003-c">
-          einführen, der im Prinzip den Zustand<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:533:22</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:534:9</span></span><i><span class="t-3003-c">lehne das Wort ab, egal, was noch kommt<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:534:10</span></span></i><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:534:50</span></span>
-        <span class="t-3003-c">versinnbildlicht:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:535:9</span></span>
+        Wie Sie sehen, ist das nicht ganz korrekt. Als erstes
+        fällt ins Auge, dass alle Zustände akzeptierende
+        Endzustände sind. Als zweites fällt uns auf, dass es bei
+        $T$ für das Eingabesymbol $a$ keinen ausgehenden Pfeil
+        gibt. Der Funktionswert $\delta(T,a)$ ist also
+        undefiniert. Der Grund hierfür ist, dass, wenn erst mal ein
+        $b$ vorgekommen ist, eben kein $a$ mehr vorkommen darf.
+        Die Definition eines endlichen Automaten verlangt aber,
+        dass $\delta$ eine Funktion ist, also für alle
+        Eingabewerte definiert ist. Wir lösen das, indem wir einen
+        sogenannten
+        <i>Fehlerzustand (Trap State)</i>
+        einführen, der im
+        Prinzip den Zustand
+        <i>lehne das Wort ab, egal, was noch
+          kommt</i>
+        versinnbildlicht:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:12em"
             src="img/finite-state-automata/finite-state-machine-example-04.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/finite-state-machine-example-04.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Dies ist nun unser endlicher Automat
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:542:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:542:46</span></span><span class="t-3003-c">
-          mit<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:542:49</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:543:9</span></span><span class="nowrap"><span class="t-3003-c">$L(M) = L(G)$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:543:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:543:22</span></span></span>
+        Dies ist nun unser endlicher Automat $M$ mit
+        <span class="nowrap">$L(M) = L(G)$.</span>
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beispiel 5.2.9<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:545:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:545:5</span></span>
-        <span class="t-3003-c">Betrachten wir die  reguläre Grammatik aus dem<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:546:9</span></span>
-        <span class="t-3003-c">vorherigen
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:547:9</span></span><a
+        <b>Beispiel 5.2.9</b>
+        Betrachten wir die  reguläre Grammatik aus dem vorherigen
+        <a
           href="./5-1.html#_16_hgi_"
           class=""
-        >Kapitel 5.1.2</a><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:547:9</span></span>
+        >Kapitel 5.1.2</a>:
       </p>
       <div class="math-block">
         $$
@@ -1188,57 +887,43 @@
         D&amp;\rightarrow 0 E \ | 1 E \\
         E&amp;\rightarrow \epsilon \
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:549:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Wobei wir aus dem vorherigen Beispiel lernen und<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:557:9</span></span>
-        <span class="t-3003-c">einen Fehlerzustand einführen:<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:558:9</span></span>
+        Wobei wir aus dem vorherigen Beispiel lernen und einen
+        Fehlerzustand einführen:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:7em"
             src="img/finite-state-automata/finite-state-machine-example-05.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/finite-state-machine-example-05.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Leider ist diese Lösung auch nicht korrekt: jetzt<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:565:9</span></span>
-        <span class="t-3003-c">gibt es zu viele Pfeile! Aus dem Zustand
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:566:9</span></span><span class="t-3003-c">$A$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:566:50</span></span><span class="t-3003-c">
-          gehen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:566:53</span></span>
-        <span class="t-3003-c">zwei Pfeile mit
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:567:9</span></span><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:567:25</span></span><span class="t-3003-c">
-          beschriftet hinaus. Wenn wir uns<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:567:28</span></span>
-        <span class="t-3003-c">vor Augen halten, was die von
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:568:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:568:39</span></span><span class="t-3003-c">
-          erzeugte Sprache<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:568:42</span></span>
-        <span class="t-3003-c">ist, so wird das Problem klarer:
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:569:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:569:42</span></span><span class="t-3003-c">
-          erzeugt die<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:569:45</span></span>
-        <span class="t-3003-c">Sprache aller Wörter über
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:570:9</span></span><span class="nowrap"><span class="t-3003-c">$\{0,1\}$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:570:35</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:570:44</span></span></span><span class="t-3003-c">
-          deren<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:570:44</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:571:9</span></span><i><span class="t-3003-c">viertletztes<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:571:10</span></span></i><span class="t-3003-c">
-          Zeichen eine 1 ist. Die Herausforderung<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:571:23</span></span>
-        <span class="t-3003-c">ist nun: wenn der Automat eine 1 liest, dann weiß er<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:572:9</span></span>
-        <span class="t-3003-c">nicht, ob das jetzt schon das viertletzte Zeichen ist<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:573:9</span></span>
-        <span class="t-3003-c">oder nicht; er weiß also nicht, ob er im Zustand
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:574:9</span></span><span class="t-3003-c">$A$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:574:58</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:574:61</span></span>
-        <span class="t-3003-c">bleiben soll oder weiter zum Zustand
-          <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:575:9</span></span><span class="t-3003-c">$B$<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:575:46</span></span><span class="t-3003-c">
-          gehen soll.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:575:49</span></span>
+        Leider ist diese Lösung auch nicht korrekt: jetzt gibt es
+        zu viele Pfeile! Aus dem Zustand $A$ gehen zwei Pfeile mit
+        $1$ beschriftet hinaus. Wenn wir uns vor Augen halten, was
+        die von $G$ erzeugte Sprache ist, so wird das Problem
+        klarer: $G$ erzeugt die Sprache aller Wörter über
+        <span class="nowrap">$\{0,1\}$,</span>
+        deren
+        <i>viertletztes</i>
+        Zeichen eine 1 ist. Die
+        Herausforderung ist nun: wenn der Automat eine 1 liest,
+        dann weiß er nicht, ob das jetzt schon das viertletzte
+        Zeichen ist oder nicht; er weiß also nicht, ob er im
+        Zustand $A$ bleiben soll oder weiter zum Zustand $B$ gehen
+        soll.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Um mit Fällen wie dem eben geschilderten umgehen zu<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:577:5</span></span>
-      <span class="t-3003-c">können, erweitern wir die Definition des endlichen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:578:5</span></span>
-      <span class="t-3003-c">Automaten in nächsten Kapitel zu einem<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:579:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:580:5</span></span><i><span class="t-3003-c">nichtdeterministischen<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:580:6</span></span></i><span class="t-3003-c">
-        endlichen Automaten.<span class="t-3003">./course1/wly/05/02-finite-state-machines.wly:580:29</span></span>
+      Um mit Fällen wie dem eben geschilderten umgehen zu
+      können, erweitern wir die Definition des endlichen
+      Automaten in nächsten Kapitel zu einem
+      <i>nichtdeterministischen</i>
+      endlichen Automaten.
     </p>
     <div id="end-of-page-elt">
     </div>

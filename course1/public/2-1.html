@@ -40,103 +40,81 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">2.1&ensp;Fanin, Tiefe, Größe<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:2:11</span></span>
+        2.1&ensp;Fanin, Tiefe, Größe
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Für Boolesche Schaltkreise gibt es drei<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:4:5</span></span>
-      <span class="t-3003-c">Komplexitätsparameter, die uns interessieren.<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:5:5</span></span>
+      Für Boolesche Schaltkreise gibt es drei
+      Komplexitätsparameter, die uns interessieren.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 2.1.1<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:7:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:7:5</span></span>
-        <span class="t-3003-c">Die
-          <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:8:9</span></span><i><span class="t-3003-c">Größe<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:8:14</span></span></i><span class="t-3003-c">
-          eines Schaltkreises ist die Anzahl seiner<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:8:20</span></span>
-        <span class="t-3003-c">Gates, also die Anzahl der Knoten im zugrundeliegenden<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:9:9</span></span>
-        <span class="t-3003-c">DAG. Die Teife ist die Länge des längsten gerichteten<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:10:9</span></span>
-        <span class="t-3003-c">Pfades von einem Input- zu einem Output-Gate. Der<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:11:9</span></span>
-        <span class="t-3003-c">Maximum-Fan-in ist der maximale Rein-Grad aller<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:12:9</span></span>
-        <span class="t-3003-c">Knoten, also der maximale Fan-in aller Gates.<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:13:9</span></span>
+        <b>Definition 2.1.1</b>
+        Die
+        <i>Größe</i>
+        eines Schaltkreises ist die Anzahl seiner
+        Gates, also die Anzahl der Knoten im zugrundeliegenden DAG.
+        Die Teife ist die Länge des längsten gerichteten Pfades von
+        einem Input- zu einem Output-Gate. Der Maximum-Fan-in ist
+        der maximale Rein-Grad aller Knoten, also der maximale
+        Fan-in aller Gates.
       </p>
     </div>
     <p class="main-column">
-      <b><span class="t-3003-c">Vorsicht.<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:15:6</span></span></b><span class="t-3003-c">
-        Manchmal werden zur Bestimmung der Tiefe<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:15:16</span></span>
-      <span class="t-3003-c">die NOT-Gates nicht mitgezählt. Entlang eines Pfades<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:16:5</span></span>
-      <span class="t-3003-c">wird also gelegentlich nur die Anzahl der AND- und<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:17:5</span></span>
-      <span class="t-3003-c">OR-Gates bestimmt. Für alle Parameter Größe, Tiefe,<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:18:5</span></span>
-      <span class="t-3003-c">Maximum-Fan-in gilt: klein ist gut. Dies ist klar,<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:19:5</span></span>
-      <span class="t-3003-c">wenn Sie sich vorstellen, dass Schaltkreis industriell<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:20:5</span></span>
-      <span class="t-3003-c">zum Einsatz kommt. Die Größe bestimmt die Anzahl der<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:21:5</span></span>
-      <span class="t-3003-c">Transistoren, die Sie brauchen; die Tiefe bestimmt die<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:22:5</span></span>
-      <span class="t-3003-c">Dauer, die das Signal braucht, um durch den ganzen<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:23:5</span></span>
-      <span class="t-3003-c">Schaltkreis zu laufen und bestimmt somit die<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:24:5</span></span>
-      <span class="t-3003-c">Geschwindigkeit, mit der Ihr Schaltkreis seinen Job<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:25:5</span></span>
-      <span class="t-3003-c">erledigt. Der Fan-in ist eher von theoretischem<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:26:5</span></span>
-      <span class="t-3003-c">Interesse. Wie bereits oben gesehen, können wir immer<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:27:5</span></span>
-      <span class="t-3003-c">einen Fan-in von 2 garantieren, indem wir AND- und<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:28:5</span></span>
-      <span class="t-3003-c">OR-Gates mit mehr als zwei Inputs als verschachteltes<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:29:5</span></span>
-      <span class="t-3003-c">AND oder OR darstellen:<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:30:5</span></span>
+      <b>Vorsicht.</b>
+      Manchmal werden zur Bestimmung der Tiefe die
+      NOT-Gates nicht mitgezählt. Entlang eines Pfades wird also
+      gelegentlich nur die Anzahl der AND- und OR-Gates bestimmt.
+      Für alle Parameter Größe, Tiefe, Maximum-Fan-in gilt: klein
+      ist gut. Dies ist klar, wenn Sie sich vorstellen, dass
+      Schaltkreis industriell zum Einsatz kommt. Die Größe
+      bestimmt die Anzahl der Transistoren, die Sie brauchen; die
+      Tiefe bestimmt die Dauer, die das Signal braucht, um durch
+      den ganzen Schaltkreis zu laufen und bestimmt somit die
+      Geschwindigkeit, mit der Ihr Schaltkreis seinen Job
+      erledigt. Der Fan-in ist eher von theoretischem Interesse.
+      Wie bereits oben gesehen, können wir immer einen Fan-in von
+      2 garantieren, indem wir AND- und OR-Gates mit mehr als
+      zwei Inputs als verschachteltes AND oder OR darstellen:
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:10em"
           src="img/circuits/and-n-fold-linear-depth.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/and-n-fold-linear-depth.svg</span></span>
+        >
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">oder alternativ:<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:37:5</span></span>
+      oder alternativ:
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:10em"
           src="img/circuits/and-n-fold-log-depth.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/and-n-fold-log-depth.svg</span></span>
+        >
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">In beiden Fällen ersetzen wir ein AND-Gate von Fan-in<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:44:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:45:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:45:5</span></span><span class="t-3003-c">
-        durch
-        <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:45:8</span></span><span class="t-3003-c">$n - 1$<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:45:15</span></span><span class="t-3003-c">
-        AND-Gates von je Fan-in 2. Wenn wir<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:45:22</span></span>
-      <span class="t-3003-c">allerdings die Tiefe betrachten, so sehen wir, dass<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:46:5</span></span>
-      <span class="t-3003-c">der linke Schaltkreis Tiefe
-        <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:47:5</span></span><span class="t-3003-c">$n - 1$<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:47:33</span></span><span class="t-3003-c">
-        hat, der rechte<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:47:40</span></span>
-      <span class="t-3003-c">jedoch nur
-        <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:48:5</span></span><span class="nowrap"><span class="t-3003-c">$\ceil{\log_2(n)}$<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:48:16</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:48:34</span></span></span>
+      In beiden Fällen ersetzen wir ein AND-Gate von Fan-in $n$
+      durch $n - 1$ AND-Gates von je Fan-in 2. Wenn wir
+      allerdings die Tiefe betrachten, so sehen wir, dass der
+      linke Schaltkreis Tiefe $n - 1$ hat, der rechte jedoch nur
+      <span class="nowrap">$\ceil{\log_2(n)}$.</span>
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 2.1.2<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:50:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:50:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:51:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:51:13</span></span><span class="t-3003-c">
-          ein Schaltkreis Maximum-Fan-in
-          <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:51:16</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:51:48</span></span><span class="t-3003-c">
-          Größe
-          <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:51:51</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:51:58</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:51:61</span></span>
-        <span class="t-3003-c">und Tiefe
-          <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:52:9</span></span><span class="nowrap"><span class="t-3003-c">$d$<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:52:19</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:52:22</span></span></span><span class="t-3003-c">
-          Dann gibt es einen äquivalenten<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:52:22</span></span>
-        <span class="t-3003-c">Schaltkreis
-          <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:53:9</span></span><span class="t-3003-c">$C^{\prime}$<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:53:21</span></span><span class="t-3003-c">
-          mit Maximum-Fan-in
-          <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:53:33</span></span><span class="nowrap"><span class="t-3003-c">$2$<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:53:53</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:53:56</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:53:56</span></span>
-        <span class="t-3003-c">Größe höchstens
-          <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:54:9</span></span><span class="t-3003-c">$s(k - 1)$<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:54:25</span></span><span class="t-3003-c">
-          und Tiefe höchstens<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:54:35</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:55:9</span></span><span class="nowrap"><span class="t-3003-c">$d \ceil{\log_{2}k}$<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:55:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/01-Fanin-size-depth.wly:55:29</span></span></span>
+        <b>Theorem 2.1.2</b>
+        Sei $C$ ein Schaltkreis Maximum-Fan-in $k$ Größe $s$ und
+        Tiefe
+        <span class="nowrap">$d$.</span>
+        Dann gibt es einen äquivalenten Schaltkreis
+        $C^{\prime}$ mit Maximum-Fan-in
+        <span class="nowrap">$2$,</span>
+        Größe höchstens
+        $s(k - 1)$ und Tiefe höchstens
+        <span class="nowrap">$d \ceil{\log_{2}k}$.</span>
       </p>
     </div>
     <div id="end-of-page-elt">

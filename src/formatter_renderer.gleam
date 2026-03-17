@@ -126,7 +126,7 @@ fn extract_line_length_and_indentation_penalty(
   }
 }
 
-pub fn formatter_renderer(amendments: ds.CommandLineAmendments) -> Nil {
+pub fn formatter_renderer(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
   let assert Ok(fmt_args) = dict.get(amendments.user_args, "--fmt")
 
   use #(files, fmt_args) <- on.error_ok(extract_files(fmt_args), fn(msg) {
@@ -139,12 +139,19 @@ pub fn formatter_renderer(amendments: ds.CommandLineAmendments) -> Nil {
   )
 
   let pipeline = formatter_pipeline(line_length, indentation_penalty)
-  let assert option.Some(input_dir) = amendments.input_dir
-  let amendments = ds.CommandLineAmendments(..amendments, input_dir: None)
+
+  let #(output_dir_local_path, amendments) = case amendments.output_dir {
+    None -> #("wly", amendments)
+    Some(x) -> #(x, ds.CommandLineAmendments(..amendments, output_dir: None))
+  }
+
+  let assert None = amendments.input_dir
+  let assert None = amendments.output_dir
+
   let parameters =
     ds.RendererParameters(
-      input_dir: "./" <> input_dir <> "/wly",
-      output_dir: "./" <> input_dir <> "/wly",
+      input_dir: "./" <> course_dir <> "/wly/",
+      output_dir: "./" <> course_dir <> "/" <> output_dir_local_path,
       prettifier_behavior: ds.PrettifierOff,
     )
     |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)

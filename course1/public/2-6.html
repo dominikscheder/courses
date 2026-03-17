@@ -40,225 +40,150 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">2.6&ensp;Untere und obere Schranken<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:2:11</span></span>
+        2.6&ensp;Untere und obere Schranken
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir haben zwei Methoden gesehen, zu einer beliebigen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:4:5</span></span>
-      <span class="t-3003-c">Booleschen Funktion
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:5:5</span></span><span class="t-3003-c">$f : \fcube$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:5:25</span></span><span class="t-3003-c">
-        einen Booleschen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:5:37</span></span>
-      <span class="t-3003-c">Schaltkreis zu konstruieren: top-down, indem wir
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:6:5</span></span><span class="t-3003-c">$f$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:6:54</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:6:57</span></span>
-      <span class="t-3003-c">in
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:7:5</span></span><span class="t-3003-c">$f_0$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:7:8</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:7:13</span></span><span class="t-3003-c">$f_1$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:7:18</span></span><span class="t-3003-c">
-        zerlegen und mit Hilfe eines<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:7:23</span></span>
-      <span class="t-3003-c">if-then-else-Gates wieder zusammenfügen; und bottom-up<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:8:5</span></span>
-      <span class="t-3003-c">als DNF oder CNF. Die so entstandenen Schaltkreise<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:9:5</span></span>
-      <span class="t-3003-c">hatten Größe
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:10:5</span></span><span class="t-3003-c">$O(2^n)$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:10:18</span></span><span class="t-3003-c">
-        (bzw.
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:10:26</span></span><span class="t-3003-c">$O(n2^n)$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:10:33</span></span><span class="t-3003-c">
-        wenn wir zuerst<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:10:42</span></span>
-      <span class="t-3003-c">eine CNF oder DNF bauen und dann auf Fan-in 2<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:11:5</span></span>
-      <span class="t-3003-c">bestehen). Die offensichtliche Frage: geht es besser?<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:12:5</span></span>
-      <span class="t-3003-c">Die Antwort: Ja, aber nicht viel besser.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:13:5</span></span>
+      Wir haben zwei Methoden gesehen, zu einer beliebigen
+      Booleschen Funktion $f : \fcube$ einen Booleschen
+      Schaltkreis zu konstruieren: top-down, indem wir $f$ in
+      $f_0$ und $f_1$ zerlegen und mit Hilfe eines
+      if-then-else-Gates wieder zusammenfügen; und bottom-up als
+      DNF oder CNF. Die so entstandenen Schaltkreise hatten Größe
+      $O(2^n)$ (bzw. $O(n2^n)$ wenn wir zuerst eine CNF oder DNF
+      bauen und dann auf Fan-in 2 bestehen). Die offensichtliche
+      Frage: geht es besser? Die Antwort: Ja, aber nicht viel
+      besser.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 2.6.1 (Shannon).<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:15:5</span></span></b><span class="t-3003-c">
-          Es gibt Boolesche Funktionen
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:16:21</span></span><span class="nowrap"><span class="t-3003-c">$f$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:16:51</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:16:54</span></span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:16:54</span></span>
-        <span class="t-3003-c">keine Schaltkreise kleiner als
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:17:9</span></span><span class="t-3003-c">$\Omega(2^n / n)$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:17:40</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:17:57</span></span>
-        <span class="t-3003-c">haben.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:18:9</span></span>
+        <b>Theorem 2.6.1 (Shannon).</b>
+        Es gibt Boolesche Funktionen
+        <span class="nowrap">$f$,</span>
+        die keine
+        Schaltkreise kleiner als $\Omega(2^n / n)$ haben.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        
-        <span class="t-3003-c">Die Beweismethode ist vielleicht neu für Sie, aber in<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:21:9</span></span>
-        <span class="t-3003-c">der Komplexitätstheorie und Kombinatorik sehr wichtig.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:22:9</span></span>
-        <span class="t-3003-c">Wir stellen uns zwei
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:23:9</span></span><span class="nowrap"><i><span class="t-3003-c">Zählaufgaben<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:23:31</span></span></i><span class="t-3003-c">:<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:23:44</span></span></span><span class="t-3003-c">
-          (1) wie viele<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:23:44</span></span>
-        <span class="t-3003-c">Boolesche Funktion
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:24:9</span></span><span class="t-3003-c">$f : \fcube$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:24:28</span></span><span class="t-3003-c">
-          gibt es? (2) Wie<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:24:40</span></span>
-        <span class="t-3003-c">viele Boolesche Schaltkreise mit
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:25:9</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:25:42</span></span><span class="t-3003-c">
-          Input-Variablen,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:25:45</span></span>
-        <span class="t-3003-c">Fan-in 2 und
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:26:9</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:26:22</span></span><span class="t-3003-c">
-          Gates gibt es? Wenn die Antwort auf<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:26:25</span></span>
-        <span class="t-3003-c">(2) kleiner ausfällt als auf (1), dann können nicht<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:27:9</span></span>
-        <span class="t-3003-c">alle Booleschen Funktionen mit
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:28:9</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:28:40</span></span><span class="t-3003-c">
-          Variablen einen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:28:43</span></span>
-        <span class="t-3003-c">Schaltkreis mit weniger als
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:29:9</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:29:37</span></span><span class="t-3003-c">
-          Gates haben. Es gibt<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:29:40</span></span>
-        <span class="t-3003-c">einfach nicht genug für alle. Dahinter steht folgende<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:30:9</span></span>
-        <span class="t-3003-c">Beobachtung: zwei verschiedene Boolesche Funktionen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:31:9</span></span>
-        <span class="t-3003-c">brauchen verschiedene Schaltkreise; sie können sich<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:32:9</span></span>
-        <span class="t-3003-c">nicht einen "teilen" (dieses Behauptung erscheint<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:33:9</span></span>
-        <span class="t-3003-c">trivial und ist es auch; machen Sie sich aber klar,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:34:9</span></span>
-        <span class="t-3003-c">dass wir diese Eigenschaft benötigen, falls Sie<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:35:9</span></span>
-        <span class="t-3003-c">nämlich ein Abzählargument in anderen Kontexten<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:36:9</span></span>
-        <span class="t-3003-c">anwenden). Die Antwort auf (1) ist einfach: es gibt<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:37:9</span></span>
-        <span class="t-3003-c">genau
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:38:9</span></span><span class="t-3003-c">$2^{2^n}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:38:15</span></span><span class="t-3003-c">
-          Boolesche Funktionen mit
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:38:24</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:38:50</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:38:53</span></span>
-        <span class="t-3003-c">Variablen. Warum? Die Wahrheitstabelle hat
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:39:9</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:39:52</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:39:57</span></span>
-        <span class="t-3003-c">Zeilen. Sie könnne sich also
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:40:9</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:40:38</span></span><span class="t-3003-c">
-          mal für
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:40:43</span></span><span class="t-3003-c">$0$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:40:52</span></span><span class="t-3003-c">
-          oder<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:40:55</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:41:9</span></span><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:41:9</span></span><span class="t-3003-c">
-          entscheiden.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:41:12</span></span>
+        Die Beweismethode ist vielleicht neu für Sie, aber in der
+        Komplexitätstheorie und Kombinatorik sehr wichtig. Wir
+        stellen uns zwei
+        <span class="nowrap"><i>Zählaufgaben</i>:</span>
+        (1) wie viele Boolesche
+        Funktion $f : \fcube$ gibt es? (2) Wie viele Boolesche
+        Schaltkreise mit $n$ Input-Variablen, Fan-in 2 und $s$
+        Gates gibt es? Wenn die Antwort auf (2) kleiner ausfällt
+        als auf (1), dann können nicht alle Booleschen Funktionen
+        mit $n$ Variablen einen Schaltkreis mit weniger als $s$
+        Gates haben. Es gibt einfach nicht genug für alle. Dahinter
+        steht folgende Beobachtung: zwei verschiedene Boolesche
+        Funktionen brauchen verschiedene Schaltkreise; sie können
+        sich nicht einen "teilen" (dieses Behauptung erscheint
+        trivial und ist es auch; machen Sie sich aber klar, dass
+        wir diese Eigenschaft benötigen, falls Sie nämlich ein
+        Abzählargument in anderen Kontexten anwenden). Die Antwort
+        auf (1) ist einfach: es gibt genau $2^{2^n}$ Boolesche
+        Funktionen mit $n$ Variablen. Warum? Die Wahrheitstabelle
+        hat $2^n$ Zeilen. Sie könnne sich also $2^n$ mal für $0$
+        oder $1$ entscheiden.
       </p>
       <div class="well remark">
         <p>
           <b>Behauptung</b>
-          
-          <span class="t-3003-c">Sei
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:45:13</span></span><span class="nowrap"><span class="t-3003-c">$s \geq n \geq 1$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:45:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:45:34</span></span></span><span class="t-3003-c">
-            Dann gibt es höchstens<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:45:34</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:46:13</span></span><span class="t-3003-c">$s^{2s+1}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:46:13</span></span><span class="t-3003-c">
-            Schaltkreise mit
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:46:23</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:46:41</span></span><span class="t-3003-c">
-            Input-Variablen,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:46:44</span></span>
-          <span class="t-3003-c">Fan-in 2 und
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:47:13</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:47:26</span></span><span class="t-3003-c">
-            Gates.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:47:29</span></span>
+          Sei
+          <span class="nowrap">$s \geq n \geq 1$.</span>
+          Dann gibt es höchstens $s^{2s+1}$
+          Schaltkreise mit $n$ Input-Variablen, Fan-in 2 und $s$
+          Gates.
         </p>
       </div>
       <div class="well highlight">
         <p>
           <b>Beweis.</b>
-          
-          <span class="t-3003-c">Wir bauen den Schaltkreis, indem wir erst einmal
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:50:13</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:50:62</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:50:65</span></span>
-          <span class="t-3003-c">Gates unbeschriftet "hinmalen". Um nun zu entscheiden,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:51:13</span></span>
-          <span class="t-3003-c">was für ein Schaltkreis das sein soll, müssen wir<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:52:13</span></span>
-          <span class="t-3003-c">Entscheidungen treffen:<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:53:13</span></span>
+          Wir bauen den Schaltkreis, indem wir erst einmal $s$ Gates
+          unbeschriftet "hinmalen". Um nun zu entscheiden, was für
+          ein Schaltkreis das sein soll, müssen wir Entscheidungen
+          treffen:
         </p>
         <ol>
           <li>
             <p>
-              <span class="t-3003-c">Für jedes der
-                <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:57:21</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:57:35</span></span><span class="t-3003-c">
-                Gates, was es sein soll.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:57:38</span></span>
+              Für jedes der $s$ Gates, was es sein soll.
             </p>
             <ul>
               <li>
                 <p>
-                  <span class="t-3003-c">Ein Input-Gate? Dann müssen wir es mit einer der
-                    <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:61:29</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:61:78</span></span><span class="t-3003-c">
-                    <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:61:81</span></span>
-                  <span class="t-3003-c">Input-Variablen beschriften.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:62:29</span></span>
+                  Ein Input-Gate? Dann müssen wir es mit einer der $n$
+                  Input-Variablen beschriften.
                 </p>
               </li>
               <li>
                 <p>
-                  <span class="t-3003-c">Ein Not-Gate? Dann müssen wir eines der anderen Gates<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:65:29</span></span>
-                  <span class="t-3003-c">als Vorgänger-Gate wählen. Wir haben höchstens
-                    <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:66:29</span></span><span class="t-3003-c">$s-1$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:66:76</span></span><span class="t-3003-c">
-                    <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:66:81</span></span>
-                  <span class="t-3003-c">Möglichkeiten.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:67:29</span></span>
+                  Ein Not-Gate? Dann müssen wir eines der anderen Gates als
+                  Vorgänger-Gate wählen. Wir haben höchstens $s-1$
+                  Möglichkeiten.
                 </p>
               </li>
               <li>
                 <p>
-                  <span class="t-3003-c">Ein And-Gate? Dann müssen wir zwei der anderen Gates<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:70:29</span></span>
-                  <span class="t-3003-c">als Vorgänger-Gates wählen. Wir haben höchstesn<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:71:29</span></span>
-                  <span class="t-3003-c">
-                    <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:72:29</span></span><span class="t-3003-c">${s-1 \choose 2} = \frac{(s-1)(s-2)}{2}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:72:29</span></span><span class="t-3003-c">
-                    <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:72:69</span></span>
-                  <span class="t-3003-c">Möglichkeiten.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:73:29</span></span>
+                  Ein And-Gate? Dann müssen wir zwei der anderen Gates als
+                  Vorgänger-Gates wählen. Wir haben höchstesn
+                  ${s-1 \choose 2} = \frac{(s-1)(s-2)}{2}$ Möglichkeiten.
                 </p>
               </li>
               <li>
                 <p>
-                  <span class="t-3003-c">Ein Or-Gate? Dann haben wir auch höchstens<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:76:29</span></span>
-                  <span class="t-3003-c">
-                    <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:77:29</span></span><span class="t-3003-c">${s-1 \choose 2}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:77:29</span></span><span class="t-3003-c">
-                    Möglichkeiten.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:77:46</span></span>
+                  Ein Or-Gate? Dann haben wir auch höchstens
+                  ${s-1 \choose 2}$ Möglichkeiten.
                 </p>
               </li>
             </ul>
             <p>
-              <span class="t-3003-c">Insgesamt haben wir also<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:79:21</span></span>
+              Insgesamt haben wir also
             </p>
             <div class="math-block">
               $$
               n + (s-1) + 2 {s-1 \choose 2} = n + s - 1 + (s-1)(s-2) =
               n + s^2 - 2s + 1 \leq s^2
-              $$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:81:21</span>
+              $$
             </div>
             <p>
-              <span class="t-3003-c">Möglichkeiten.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:86:21</span></span>
+              Möglichkeiten.
             </p>
           </li>
           <li>
             <p>
-              <span class="t-3003-c">Für den gesamten Schaltkreis: welches Gate<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:89:21</span></span>
-              <span class="t-3003-c">Output-Gate sein soll. Da haben wir
-                <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:90:21</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:90:57</span></span><span class="t-3003-c">
-                <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:90:60</span></span>
-              <span class="t-3003-c">Möglichkeiten.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:91:21</span></span>
+              Für den gesamten Schaltkreis: welches Gate Output-Gate
+              sein soll. Da haben wir $s$ Möglichkeiten.
             </p>
           </li>
         </ol>
         <p>
-          <span class="t-3003-c">Um die Gesamtzahl der Möglichkeiten abzuschätzen,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:93:13</span></span>
-          <span class="t-3003-c">müssen wir das alles multiplizieren. Wir haben<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:94:13</span></span>
-          <span class="t-3003-c">höchstens<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:95:13</span></span>
+          Um die Gesamtzahl der Möglichkeiten abzuschätzen, müssen
+          wir das alles multiplizieren. Wir haben höchstens
         </p>
         <div class="math-block">
           $$
           \underbrace{s}_{\textnormal{Output-Gate wählen}} \cdot \underbrace{\prod_{i=1}^s
           (s^2)}_{\textnormal{jedes Gate beschriften}}
           = s \cdot (s^2)^s = s^{2s+1}
-          $$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:97:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">Möglichkeiten. Es gibt also höchstens
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:103:13</span></span><span class="t-3003-c">$s^{2s+1}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:103:51</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:103:61</span></span>
-          <span class="t-3003-c">verschiedene Schaltkreise mit
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:104:13</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:104:43</span></span><span class="t-3003-c">
-            Gates, Fan-in 2 und<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:104:46</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:105:13</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:105:13</span></span><span class="t-3003-c">
-            Variablen.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:105:16</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+          Möglichkeiten. Es gibt also höchstens $s^{2s+1}$
+          verschiedene Schaltkreise mit $s$ Gates, Fan-in 2 und $n$
+          Variablen.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
-        <span class="t-3003-c">Wählen wir nun
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:107:9</span></span><span class="nowrap"><span class="t-3003-c">$s := 2^{n} / (2n)$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:107:24</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:107:43</span></span></span><span class="t-3003-c">
-          Wieviele<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:107:43</span></span>
-        <span class="t-3003-c">Schaltkreise mit
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:108:9</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:108:26</span></span><span class="t-3003-c">
-          Variablen, Fan-in 2 und
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:108:29</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:108:54</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:108:57</span></span>
-        <span class="t-3003-c">Gates gibt es? Die Schranke in der obigen Behauptung<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:109:9</span></span>
-        <span class="t-3003-c">sagt, dies seien höchstens<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:110:9</span></span>
+        Wählen wir nun
+        <span class="nowrap">$s := 2^{n} / (2n)$.</span>
+        Wieviele Schaltkreise
+        mit $n$ Variablen, Fan-in 2 und $s$ Gates gibt es? Die
+        Schranke in der obigen Behauptung sagt, dies seien
+        höchstens
       </p>
       <div class="math-block">
         $$
@@ -267,506 +192,333 @@
         &amp;= 2^{2^{n} + n - \log(2n) \frac{2^{n}}{n} - \log (2n)} \\
         &amp;\lt 2^{2^n} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:112:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Also: es gibt mehr Boolesche Funktionen in
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:118:9</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:118:52</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:118:55</span></span>
-        <span class="t-3003-c">Variablen, als es Boolesche Schaltkreise mit<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:119:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:120:9</span></span><span class="t-3003-c">$\frac{2^n}{2n}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:120:9</span></span><span class="t-3003-c">
-          Gates gibt. Somit benötigen manche<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:120:25</span></span>
-        <span class="t-3003-c">Boolesche Funktionen mehr als
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:121:9</span></span><span class="t-3003-c">$\frac{2^n}{2n}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:121:39</span></span><span class="t-3003-c">
-          Gates.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:121:55</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Also: es gibt mehr Boolesche Funktionen in $n$ Variablen,
+        als es Boolesche Schaltkreise mit $\frac{2^n}{2n}$ Gates
+        gibt. Somit benötigen manche Boolesche Funktionen mehr als
+        $\frac{2^n}{2n}$ Gates.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 2.6.1<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:123:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:123:5</span></span>
-        <span class="t-3003-c">In Theorem und Beweis sprechen wir die ganze Zeit nur<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:124:9</span></span>
-        <span class="t-3003-c">von Schaltkreisen mit Fan-in 2. Was geschieht, wenn<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:125:9</span></span>
-        <span class="t-3003-c">wir beliebigen Fan-in erlauben? Wie ändern sich<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:126:9</span></span>
-        <span class="t-3003-c">Aussage und Beweis? Was geschieht, wenn wir weitere<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:127:9</span></span>
-        <span class="t-3003-c">Gates, z.B.
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:128:9</span></span><span class="t-3003-c">$\oplus$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:128:21</span></span><span class="t-3003-c">
-          als atomare Gates zulassen?<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:128:29</span></span>
+        <b>Übungsaufgabe 2.6.1</b>
+        In Theorem und Beweis sprechen wir die ganze Zeit nur von
+        Schaltkreisen mit Fan-in 2. Was geschieht, wenn wir
+        beliebigen Fan-in erlauben? Wie ändern sich Aussage und
+        Beweis? Was geschieht, wenn wir weitere Gates, z.B.
+        $\oplus$ als atomare Gates zulassen?
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Der obige Beweis sagt noch mehr: der Anteil<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:130:5</span></span>
-      <span class="t-3003-c">Boolescher Funktionen, bei denen wir mit<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:131:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:132:5</span></span><span class="t-3003-c">$\frac{2^n}{2n}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:132:5</span></span><span class="t-3003-c">
-        Gates auskommen, ist verschwindend<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:132:21</span></span>
-      <span class="t-3003-c">klein. Fast
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:133:5</span></span><i><span class="t-3003-c">alle<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:133:18</span></span></i><span class="t-3003-c">
-        Funktionen brauchen also riesige<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:133:23</span></span>
-      <span class="t-3003-c">Schaltkreise. In einem Gewissen Sinne haben wir also<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:134:5</span></span>
-      <span class="t-3003-c">einfach Glück: die Funktionen, die uns interessieren,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:135:5</span></span>
-      <span class="t-3003-c">wie
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:136:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:136:9</span></span><span class="t-3003-c">
-        -Bit-Addition, Majority, Parity und so<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:136:12</span></span>
-      <span class="t-3003-c">weiter, haben einfach niedrige Komplexität. Das liegt<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:137:5</span></span>
-      <span class="t-3003-c">wohl in der Natur der Sache: wir addieren,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:138:5</span></span>
-      <span class="t-3003-c">multiplizieren, bauen Brücken, Häuser, Flugzeuge,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:139:5</span></span>
-      <span class="t-3003-c">Computer, weil wir es
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:140:5</span></span><span class="nowrap"><i><span class="t-3003-c">können<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:140:28</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:140:35</span></span></span><span class="t-3003-c">
-        weil also die dafür<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:140:35</span></span>
-      <span class="t-3003-c">benötigten Berechnungen effizient durchführbar sind.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:141:5</span></span>
+      Der obige Beweis sagt noch mehr: der Anteil Boolescher
+      Funktionen, bei denen wir mit $\frac{2^n}{2n}$ Gates
+      auskommen, ist verschwindend klein. Fast
+      <i>alle</i>
+      Funktionen
+      brauchen also riesige Schaltkreise. In einem Gewissen Sinne
+      haben wir also einfach Glück: die Funktionen, die uns
+      interessieren, wie $n$ -Bit-Addition, Majority, Parity und
+      so weiter, haben einfach niedrige Komplexität. Das liegt
+      wohl in der Natur der Sache: wir addieren, multiplizieren,
+      bauen Brücken, Häuser, Flugzeuge, Computer, weil wir es
+      <span class="nowrap"><i>können</i>,</span>
+      weil also die dafür benötigten Berechnungen
+      effizient durchführbar sind.
     </p>
     <div class="well remark out">
       <p>
         <b>Forschungsprojekt.</b>
-        
-        <span class="t-3003-c">Finde eine konkret beschreibbare Funktion
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:145:9</span></span><span class="nowrap"><span class="t-3003-c">$f: \fcube$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:145:51</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:145:62</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:145:62</span></span>
-        <span class="t-3003-c">die exponentiell viele (oder zumindest<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:146:9</span></span>
-        <span class="t-3003-c">superpolynomiell viele) Gates benötigt.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:147:9</span></span>
+        Finde eine konkret beschreibbare Funktion
+        <span class="nowrap">$f: \fcube$,</span>
+        die
+        exponentiell viele (oder zumindest superpolynomiell viele)
+        Gates benötigt.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Kandidaten für solche Funktionen gibt es viele. Im<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:149:5</span></span>
-      <span class="t-3003-c">Prinzip gibt uns jedes Entscheidungsproblem, dass für<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:150:5</span></span>
-      <span class="t-3003-c">eine "schwierige" Komplexitätsklasse vollständig ist,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:151:5</span></span>
-      <span class="t-3003-c">einen Kandidaten. Also zum Beispiel<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:152:5</span></span>
-      <span class="t-3003-c">Graphenfärbbarkeit.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:153:5</span></span>
+      Kandidaten für solche Funktionen gibt es viele. Im Prinzip
+      gibt uns jedes Entscheidungsproblem, dass für eine
+      "schwierige" Komplexitätsklasse vollständig ist, einen
+      Kandidaten. Also zum Beispiel Graphenfärbbarkeit.
     </p>
     <div class="well remark out">
       <p>
         <b>Entscheidungsproblem 3-Färbbarkeit.</b>
-        
-        <span class="t-3003-c">Gegeben ein Graph
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:157:9</span></span><span class="nowrap"><span class="t-3003-c">$G = (V,E)$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:157:27</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:157:38</span></span></span><span class="t-3003-c">
-          gibt es eine Funktion<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:157:38</span></span>
+        Gegeben ein Graph
+        <span class="nowrap">$G = (V,E)$,</span>
+        gibt es eine Funktion
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         c : V \rightarrow \{\textnormal{rot, grün, blau}\} \ ,
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:159:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">so dass
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:163:9</span></span><span class="t-3003-c">$c(u) \ne c(v)$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:163:17</span></span><span class="t-3003-c">
-          für alle
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:163:32</span></span><span class="t-3003-c">$\{u,v\} \in E$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:163:42</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:163:57</span></span>
-        <span class="t-3003-c">gilt? Dass also benachbarte Knoten verschiedene Farben<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:164:9</span></span>
-        <span class="t-3003-c">bekommen?<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:165:9</span></span>
+        so dass $c(u) \ne c(v)$ für alle $\{u,v\} \in E$ gilt?
+        Dass also benachbarte Knoten verschiedene Farben bekommen?
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">3-Färbbarkeit ist ein zentrales NP-vollständiges<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:167:5</span></span>
-      <span class="t-3003-c">Problem. Wir vermuten also, dass es dafür keinen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:168:5</span></span>
-      <span class="t-3003-c">polynomiellen Algorithmus gibt. Wir können es zur Zeit<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:169:5</span></span>
-      <span class="t-3003-c">(April 2024) aber nicht beweisen. Dies ist das<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:170:5</span></span>
-      <span class="t-3003-c">berühmte Problem P vs NP, von dem Sie sicher schon<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:171:5</span></span>
-      <span class="t-3003-c">gehört haben und das als eines der großen offenen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:172:5</span></span>
-      <span class="t-3003-c">Probleme der Mathematik insgesamt gilt. Die Frage, ob<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:173:5</span></span>
-      <span class="t-3003-c">NP-Probleme polynomiell große Schaltkreise haben, ist<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:174:5</span></span>
-      <span class="t-3003-c">noch offener.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:175:5</span></span>
+      3-Färbbarkeit ist ein zentrales NP-vollständiges Problem.
+      Wir vermuten also, dass es dafür keinen polynomiellen
+      Algorithmus gibt. Wir können es zur Zeit (April 2024) aber
+      nicht beweisen. Dies ist das berühmte Problem P vs NP, von
+      dem Sie sicher schon gehört haben und das als eines der
+      großen offenen Probleme der Mathematik insgesamt gilt. Die
+      Frage, ob NP-Probleme polynomiell große Schaltkreise haben,
+      ist noch offener.
     </p>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 2.6.2<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:177:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:177:5</span></span>
-        <span class="t-3003-c">Formal gesehen ist Graphenfärbbarkeit eine Sprache<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:178:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:179:9</span></span><span class="t-3003-c">$L \subseteq \Sigma^*$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:179:9</span></span><span class="t-3003-c">
-          über einem Alphabet
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:179:31</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:179:52</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:179:60</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:179:60</span></span>
-        <span class="t-3003-c">dass uns erlaubt, Graphen zu codieren. Wie können wir<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:180:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:181:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:181:9</span></span><span class="t-3003-c">
-          als Boolesche Funktion darstellen?<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:181:12</span></span>
+        <b>Übungsaufgabe 2.6.2</b>
+        Formal gesehen ist Graphenfärbbarkeit eine Sprache
+        $L \subseteq \Sigma^*$ über einem Alphabet
+        <span class="nowrap">$\Sigma$,</span>
+        dass
+        uns erlaubt, Graphen zu codieren. Wie können wir $L$ als
+        Boolesche Funktion darstellen?
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Obere Schranken: Die Lupanov-Schranke<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:184:9</span></span>
+      Obere Schranken: Die Lupanov-Schranke
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Wir haben nun eine Konstruktion, die uns für jede<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:186:5</span></span>
-      <span class="t-3003-c">beliebige Funktion
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:187:5</span></span><span class="t-3003-c">$f: \fcube$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:187:24</span></span><span class="t-3003-c">
-        Schaltkresie mit<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:187:35</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:188:5</span></span><span class="t-3003-c">$O(2^n)$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:188:5</span></span><span class="t-3003-c">
-        Gates baut. Wir haben eine untere Schranke,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:188:13</span></span>
-      <span class="t-3003-c">die besagt, dass es mit weniger als
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:189:5</span></span><span class="t-3003-c">$\frac{2^{n}}{2n}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:189:41</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:189:59</span></span>
-      <span class="t-3003-c">Gates nicht geht. Diese beiden Schranken lassen aber<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:190:5</span></span>
-      <span class="t-3003-c">immer noch eine Lücke der Größenordnung
-        <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:191:5</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:191:45</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:191:48</span></span></span><span class="t-3003-c">
-        Können<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:191:48</span></span>
-      <span class="t-3003-c">wir sie schließen?<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:192:5</span></span>
+      Wir haben nun eine Konstruktion, die uns für jede
+      beliebige Funktion $f: \fcube$ Schaltkresie mit $O(2^n)$
+      Gates baut. Wir haben eine untere Schranke, die besagt,
+      dass es mit weniger als $\frac{2^{n}}{2n}$ Gates nicht
+      geht. Diese beiden Schranken lassen aber immer noch eine
+      Lücke der Größenordnung
+      <span class="nowrap">$n$.</span>
+      Können wir sie schließen?
     </p>
     <div
       id="_5_hgi_"
       class="well statement out"
     >
       <p>
-        <span class="nowrap"><b><span class="t-3003-c">Theorem 2.6.2 (Lupanov)<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:194:5</span></span></b><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:196:20</span></span></span><span class="t-3003-c">
-          Für jede Boolesche Funktion in
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:196:20</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:196:53</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:196:56</span></span>
-        <span class="t-3003-c">Variablen gibt es einen Schaltkreis mit Fan-in 2 und<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:197:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:198:9</span></span><span class="t-3003-c">$O(2^n / n)$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:198:9</span></span><span class="t-3003-c">
-          Gates.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:198:21</span></span>
+        <span class="nowrap"><b>Theorem 2.6.2 (Lupanov)</b>.</span>
+        Für jede Boolesche Funktion in $n$ Variablen
+        gibt es einen Schaltkreis mit Fan-in 2 und $O(2^n / n)$
+        Gates.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        
-        <span class="t-3003-c">Der Beweis fußt auf zwei Kernideen: erstens bauen wir<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:201:9</span></span>
-        <span class="t-3003-c">den Schaltkreis nicht mit AND- und OR- und NOT-Gates,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:202:9</span></span>
-        <span class="t-3003-c">sondern mit AND- und XOR-Gates. Da wir nach<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:203:9</span></span>
-        <span class="t-3003-c">vollendeter Konstruktion jedes XOR-Gates durch einen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:204:9</span></span>
-        <span class="t-3003-c">kleinen Schaltkreis aus vier AND/OR/NOT-Gates ersetzen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:205:9</span></span>
-        <span class="t-3003-c">können, spielt dies keine Rolle (der Faktor 4<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:206:9</span></span>
-        <span class="t-3003-c">verschwindet in der
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:207:9</span></span><span class="t-3003-c">$O$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:207:29</span></span><span class="t-3003-c">
-          -Notation). Die zweite Idee<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:207:32</span></span>
-        <span class="t-3003-c">ist, dass wir anstreben, für eine bliebige Menge
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:208:9</span></span><span class="t-3003-c">$F$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:208:58</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:208:61</span></span>
-        <span class="t-3003-c">an Booleschen Funktionen einen "überraschend guten"<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:209:9</span></span>
-        <span class="t-3003-c">Schaltkreis zu bauen, der jede Funktion
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:210:9</span></span><span class="t-3003-c">$f \in F$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:210:49</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:210:58</span></span>
-        <span class="t-3003-c">berechnet. Dieser Schaltkreis wird
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:211:9</span></span><span class="t-3003-c">$|F|$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:211:44</span></span><span class="t-3003-c">
-          Output-Gates<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:211:49</span></span>
-        <span class="t-3003-c">haben, und seine Größe wird auch von
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:212:9</span></span><span class="t-3003-c">$|F|$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:212:46</span></span><span class="t-3003-c">
-          abhängen.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:212:51</span></span>
+        Der Beweis fußt auf zwei Kernideen: erstens bauen wir den
+        Schaltkreis nicht mit AND- und OR- und NOT-Gates, sondern
+        mit AND- und XOR-Gates. Da wir nach vollendeter
+        Konstruktion jedes XOR-Gates durch einen kleinen
+        Schaltkreis aus vier AND/OR/NOT-Gates ersetzen können,
+        spielt dies keine Rolle (der Faktor 4 verschwindet in der
+        $O$ -Notation). Die zweite Idee ist, dass wir anstreben,
+        für eine bliebige Menge $F$ an Booleschen Funktionen einen
+        "überraschend guten" Schaltkreis zu bauen, der jede
+        Funktion $f \in F$ berechnet. Dieser Schaltkreis wird $|F|$
+        Output-Gates haben, und seine Größe wird auch von $|F|$
+        abhängen.
       </p>
       <p>
-        <b><span class="nowrap"><span class="t-3003-c">$\F_2$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:214:10</span></span><span class="t-3003-c">-Polynome.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:214:16</span></span></span></b><span class="t-3003-c">
-          Polynome in mehreren Variablen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:214:27</span></span>
-        <span class="t-3003-c">kennen Sie sicherlich: zum Beispiel<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:215:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:216:9</span></span><span class="nowrap"><span class="t-3003-c">$xyz + xy + 1 + y$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:216:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:216:27</span></span></span><span class="t-3003-c">
-          Der Unterschied hier ist nur,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:216:27</span></span>
-        <span class="t-3003-c">dass wir alle Werte modulo 2 auswerten, also in dem<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:217:9</span></span>
-        <span class="t-3003-c">endlichen Körper
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:218:9</span></span><span class="t-3003-c">$\F_2$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:218:26</span></span><span class="t-3003-c">
-          arbeiten. Wir brauchen daher<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:218:32</span></span>
-        <span class="t-3003-c">auch keine höheren Potenzen:
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:219:9</span></span><span class="t-3003-c">$x^2$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:219:38</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:219:43</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:219:48</span></span><span class="t-3003-c">
-          ergeben<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:219:51</span></span>
-        <span class="t-3003-c">für alle
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:220:9</span></span><span class="t-3003-c">$x \in \{0,1\}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:220:18</span></span><span class="t-3003-c">
-          die gleichen Werte. Wenn wir<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:220:33</span></span>
-        <span class="t-3003-c">in
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:221:9</span></span><span class="t-3003-c">$\F_2$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:221:12</span></span><span class="t-3003-c">
-          rechnen, können wir uns also auf<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:221:18</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:222:9</span></span><i><span class="t-3003-c">multilineare<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:222:10</span></span></i><span class="t-3003-c">
-          Polynome beschränken. Führen wir<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:222:23</span></span>
-        <span class="t-3003-c">Polynome formal ein: wir haben eine Menge<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:223:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:224:9</span></span><span class="t-3003-c">$x_1, \dots, x_n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:224:9</span></span><span class="t-3003-c">
-          von Variablen; ein Monom in diesem<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:224:26</span></span>
-        <span class="t-3003-c">Variablen ist ein Produkt aus Variablen, also<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:225:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:226:9</span></span><span class="t-3003-c">$\prod_{i \in I} x_i$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:226:9</span></span><span class="t-3003-c">
-          für eine Menge<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:226:30</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:227:9</span></span><span class="nowrap"><span class="t-3003-c">$I \subseteq [n]$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:227:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:227:26</span></span></span><span class="t-3003-c">
-          Wir schreiben das kurzerhand als<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:227:26</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:228:9</span></span><span class="nowrap"><span class="t-3003-c">$\x^I$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:228:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:228:15</span></span></span><span class="t-3003-c">
-          Ein Polynom ist nun eine Summe von Monomen:<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:228:15</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:229:9</span></span><span class="nowrap"><span class="t-3003-c">$\x^{I_1} + \x^{I_2} + \dots + \x^{I_t}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:229:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:229:49</span></span></span><span class="t-3003-c">
-          Beachten<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:229:49</span></span>
-        <span class="t-3003-c">Sie, dass wir vor den Monomen keine Koeffizienten<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:230:9</span></span>
-        <span class="t-3003-c">brauchen, da es als Konstanten eh nur 0 und 1 gibt.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:231:9</span></span>
-        <span class="t-3003-c">Ein Polynom
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:232:9</span></span><span class="t-3003-c">$p(\x)$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:232:21</span></span><span class="t-3003-c">
-          berechnet eine Boolesche Funktion<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:232:28</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:233:9</span></span><span class="nowrap"><span class="t-3003-c">$\fcube$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:233:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:233:17</span></span></span>
+        <b><span class="nowrap">$\F_2$-Polynome.</span></b>
+        Polynome in mehreren Variablen kennen
+        Sie sicherlich: zum Beispiel
+        <span class="nowrap">$xyz + xy + 1 + y$.</span>
+        Der
+        Unterschied hier ist nur, dass wir alle Werte modulo 2
+        auswerten, also in dem endlichen Körper $\F_2$ arbeiten.
+        Wir brauchen daher auch keine höheren Potenzen: $x^2$ und
+        $x$ ergeben für alle $x \in \{0,1\}$ die gleichen Werte.
+        Wenn wir in $\F_2$ rechnen, können wir uns also auf
+        <i>multilineare</i>
+        Polynome beschränken. Führen wir Polynome
+        formal ein: wir haben eine Menge $x_1, \dots, x_n$ von
+        Variablen; ein Monom in diesem Variablen ist ein Produkt
+        aus Variablen, also $\prod_{i \in I} x_i$ für eine Menge
+        <span class="nowrap">$I \subseteq [n]$.</span>
+        Wir schreiben das kurzerhand als
+        <span class="nowrap">$\x^I$.</span>
+        Ein Polynom ist nun eine Summe von Monomen:
+        <span class="nowrap">$\x^{I_1} + \x^{I_2} + \dots + \x^{I_t}$.</span>
+        Beachten Sie,
+        dass wir vor den Monomen keine Koeffizienten brauchen, da
+        es als Konstanten eh nur 0 und 1 gibt. Ein Polynom $p(\x)$
+        berechnet eine Boolesche Funktion
+        <span class="nowrap">$\fcube$.</span>
       </p>
       <div class="well exercise">
         <p>
-          <b><span class="t-3003-c">Übungsaufgabe 2.6.3<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:235:9</span></span></b><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:235:9</span></span>
-          <span class="t-3003-c">Zeigen Sie, dass sich jede Boolesche Funktion
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:236:13</span></span><span class="t-3003-c">$f$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:236:59</span></span><span class="t-3003-c">
-            als<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:236:62</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:237:13</span></span><span class="nowrap"><span class="t-3003-c">$\F_2$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:237:13</span></span><span class="t-3003-c">-Polynom<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:237:19</span></span></span><span class="t-3003-c">
-            schreiben lässt.
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:237:19</span></span><b><span class="t-3003-c">Tipp:<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:237:46</span></span></b><span class="t-3003-c">
-            beschränken<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:237:52</span></span>
-          <span class="t-3003-c">Sie sich zuerst auf Funktionen
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:238:13</span></span><span class="nowrap"><span class="t-3003-c">$f$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:238:44</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:238:47</span></span></span><span class="t-3003-c">
-            deren<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:238:47</span></span>
-          <span class="t-3003-c">Wahrheitstabelle in genau einer Zeile eine 1 haben.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:239:13</span></span>
-          <span class="t-3003-c">Schreiben Sie eine solche Funktion als
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:240:13</span></span><span class="nowrap"><span class="t-3003-c">$\F_2$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:240:52</span></span><span class="t-3003-c">-Polynom.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:240:58</span></span></span>
+          <b>Übungsaufgabe 2.6.3</b>
+          Zeigen Sie, dass sich jede Boolesche Funktion $f$ als
+          <span class="nowrap">$\F_2$-Polynom</span>
+          schreiben lässt.
+          <b>Tipp:</b>
+          beschränken Sie
+          sich zuerst auf Funktionen
+          <span class="nowrap">$f$,</span>
+          deren Wahrheitstabelle in
+          genau einer Zeile eine 1 haben. Schreiben Sie eine solche
+          Funktion als
+          <span class="nowrap">$\F_2$-Polynom.</span>
         </p>
       </div>
       <p>
-        <span class="t-3003-c">Wann sind zwei Polynome gleich? Wenn sie die gleichen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:242:9</span></span>
-        <span class="t-3003-c">Monome haben (mit gleichen Koeffizienten, aber die<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:243:9</span></span>
-        <span class="t-3003-c">spielen hier ja keine Rolle). Wir würden also sagen,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:244:9</span></span>
-        <span class="t-3003-c">dass
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:245:9</span></span><span class="t-3003-c">$xyz + x$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:245:14</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:245:23</span></span><span class="t-3003-c">$x + yzx$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:245:28</span></span><span class="t-3003-c">
-          die gleichen Polynome<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:245:37</span></span>
-        <span class="t-3003-c">sind. Dagegen wären
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:246:9</span></span><span class="t-3003-c">$x^2yz + x$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:246:29</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:246:40</span></span><span class="t-3003-c">$xyz+x$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:246:45</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:246:52</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:247:9</span></span><i><span class="t-3003-c">verschiedene<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:247:10</span></span></i><span class="t-3003-c">
-          Polynome. Da wir über
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:247:23</span></span><span class="t-3003-c">$\F_2$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:247:46</span></span><span class="t-3003-c">
-          arbeiten,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:247:52</span></span>
-        <span class="t-3003-c">beschränken wir uns aber eh auf multilineare Polynome,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:248:9</span></span>
-        <span class="t-3003-c">wo also alle Exponenten 1 sind.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:249:9</span></span>
+        Wann sind zwei Polynome gleich? Wenn sie die gleichen
+        Monome haben (mit gleichen Koeffizienten, aber die spielen
+        hier ja keine Rolle). Wir würden also sagen, dass $xyz + x$
+        und $x + yzx$ die gleichen Polynome sind. Dagegen wären
+        $x^2yz + x$ und $xyz+x$
+        <i>verschiedene</i>
+        Polynome. Da wir
+        über $\F_2$ arbeiten, beschränken wir uns aber eh auf
+        multilineare Polynome, wo also alle Exponenten 1 sind.
       </p>
       <div class="well exercise">
         <p>
-          <b><span class="t-3003-c">Übungsaufgabe 2.6.4<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:251:9</span></span></b><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:251:9</span></span>
-          <span class="t-3003-c">Zeigen Sie, dass sich jede Funktion
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:252:13</span></span><span class="t-3003-c">$f :\fcube$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:252:49</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:252:60</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:253:13</span></span><i><span class="t-3003-c">eindeutig<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:253:14</span></span></i><span class="t-3003-c">
-            als multilineares
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:253:24</span></span><span class="nowrap"><span class="t-3003-c">$\F_2$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:253:43</span></span><span class="t-3003-c">-Polynom<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:253:49</span></span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:253:49</span></span>
-          <span class="t-3003-c">schreiben lässt. In anderen Worten: wenn
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:254:13</span></span><span class="t-3003-c">$p$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:254:54</span></span><span class="t-3003-c">
-            und
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:254:57</span></span><span class="t-3003-c">$q$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:254:62</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:254:65</span></span>
-          <span class="t-3003-c">zwei verschiedene multilineare Polynome sind, dann<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:255:13</span></span>
-          <span class="t-3003-c">berechnen sie verschiedene Funktionen.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:256:13</span></span>
+          <b>Übungsaufgabe 2.6.4</b>
+          Zeigen Sie, dass sich jede Funktion $f :\fcube$
+          <i>eindeutig</i>
+          als multilineares
+          <span class="nowrap">$\F_2$-Polynom</span>
+          schreiben
+          lässt. In anderen Worten: wenn $p$ und $q$ zwei
+          verschiedene multilineare Polynome sind, dann berechnen sie
+          verschiedene Funktionen.
         </p>
       </div>
       <p>
-        <span class="t-3003-c">Ein
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:258:9</span></span><span class="nowrap"><span class="t-3003-c">$\F_2$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:258:13</span></span><span class="t-3003-c">-Polynom<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:258:19</span></span></span><span class="t-3003-c">
-          können wir natürlich ganz einfach<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:258:19</span></span>
-        <span class="t-3003-c">als Schaltkreis mit AND- und XOR-Gates schreiben. AND<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:259:9</span></span>
-        <span class="t-3003-c">für die Multiplikation und XOR für die Addition in<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:260:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:261:9</span></span><span class="nowrap"><span class="t-3003-c">$\F_2$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:261:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:261:15</span></span></span><span class="t-3003-c">
-          Dies ist also die erste Kernidee: wir<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:261:15</span></span>
-        <span class="t-3003-c">arbeiten mit AND und XOR und somit mit<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:262:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:263:9</span></span><span class="nowrap"><span class="t-3003-c">$\F_2$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:263:9</span></span><span class="t-3003-c">-Polynomen.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:263:15</span></span></span><span class="t-3003-c">
-          Wieviele Gates brauchen wir dafür?<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:263:15</span></span>
-        <span class="t-3003-c">Schreiben wir<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:264:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:265:9</span></span><span class="nowrap"><span class="t-3003-c">$f = \x^{I_1} + \x^{I_2} + \dots + \x^{I_t}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:265:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:265:53</span></span></span><span class="t-3003-c">
-          Ein<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:265:53</span></span>
-        <span class="t-3003-c">Monom
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:266:9</span></span><span class="t-3003-c">$\x^{I}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:266:15</span></span><span class="t-3003-c">
-          können wir mit
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:266:23</span></span><span class="t-3003-c">$|I|-1$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:266:39</span></span><span class="t-3003-c">
-          AND-Gates<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:266:46</span></span>
-        <span class="t-3003-c">berechnen. Die Summe bilden wir mit
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:267:9</span></span><span class="t-3003-c">$t-1$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:267:45</span></span><span class="t-3003-c">
-          weiteren<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:267:50</span></span>
-        <span class="t-3003-c">XOR-Gates. Da
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:268:9</span></span><span class="t-3003-c">$t \leq 2^n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:268:23</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:268:35</span></span><span class="t-3003-c">$|I| \leq n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:268:40</span></span><span class="t-3003-c">
-          gilt,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:268:52</span></span>
-        <span class="t-3003-c">brauchen wir maximal<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:269:9</span></span>
+        Ein
+        <span class="nowrap">$\F_2$-Polynom</span>
+        können wir natürlich ganz einfach als
+        Schaltkreis mit AND- und XOR-Gates schreiben. AND für die
+        Multiplikation und XOR für die Addition in
+        <span class="nowrap">$\F_2$.</span>
+        Dies
+        ist also die erste Kernidee: wir arbeiten mit AND und XOR
+        und somit mit
+        <span class="nowrap">$\F_2$-Polynomen.</span>
+        Wieviele Gates brauchen
+        wir dafür? Schreiben wir
+        <span class="nowrap">$f = \x^{I_1} + \x^{I_2} + \dots + \x^{I_t}$.</span>
+        Ein Monom
+        $\x^{I}$ können wir mit $|I|-1$ AND-Gates berechnen. Die
+        Summe bilden wir mit $t-1$ weiteren XOR-Gates. Da
+        $t \leq 2^n$ und $|I| \leq n$ gilt, brauchen wir maximal
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         (n-1) 2^n + 2^n - 1 \leq n 2^n
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:271:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Gates. Allerdings ist das eine ungenaue Rechnung:<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:275:9</span></span>
-        <span class="t-3003-c">Selbst wenn
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:276:9</span></span><i><span class="t-3003-c">alle<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:276:22</span></span></i><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:276:27</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:276:28</span></span><span class="t-3003-c">
-          Monome vertreten sind,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:276:33</span></span>
-        <span class="t-3003-c">bestehen nicht alle Monome aus
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:277:9</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:277:40</span></span><span class="t-3003-c">
-          Variablen.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:277:43</span></span>
+        Gates. Allerdings ist das eine ungenaue Rechnung: Selbst
+        wenn
+        <i>alle</i>
+        $2^n$ Monome vertreten sind, bestehen nicht
+        alle Monome aus $n$ Variablen.
       </p>
       <div class="well exercise">
         <p>
-          <b><span class="t-3003-c">Übungsaufgabe 2.6.5<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:279:9</span></span></b><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:279:9</span></span>
-          <span class="t-3003-c">Rechnen Sie genauer! Wenn Sie alle Monome berechnen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:280:13</span></span>
-          <span class="t-3003-c">wollen, brauchen Sie<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:281:13</span></span>
+          <b>Übungsaufgabe 2.6.5</b>
+          Rechnen Sie genauer! Wenn Sie alle Monome berechnen
+          wollen, brauchen Sie
         </p>
         <div class="math-block">
           $$
           \begin{align*}
           \sum_{I \subseteq [n]} (|I| - 1)
           \end{align*}
-          $$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:283:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">viele AND-Gates. Finden Sie eine geschlossene Formel<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:287:13</span></span>
-          <span class="t-3003-c">für diesen Ausdruck.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:288:13</span></span>
+          viele AND-Gates. Finden Sie eine geschlossene Formel für
+          diesen Ausdruck.
         </p>
       </div>
       <p>
-        <span class="t-3003-c">Als nächstes wollen wir zeigen, wie man
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:290:9</span></span><span class="t-3003-c">$f$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:290:49</span></span><span class="t-3003-c">
-          mit<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:290:52</span></span>
-        <span class="t-3003-c">höchstens
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:291:9</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:291:19</span></span><span class="t-3003-c">
-          AND-Gates und
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:291:24</span></span><span class="t-3003-c">$2^n-1$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:291:39</span></span><span class="t-3003-c">
-          XOR-Gates<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:291:46</span></span>
-        <span class="t-3003-c">berechnet. Wir zeigen in der Tat etwas mehr:<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:292:9</span></span>
+        Als nächstes wollen wir zeigen, wie man $f$ mit höchstens
+        $2^n$ AND-Gates und $2^n-1$ XOR-Gates berechnet. Wir
+        zeigen in der Tat etwas mehr:
       </p>
       <div class="well statement">
         <p>
-          <b><span class="t-3003-c">Lemma 2.6.3<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:294:9</span></span></b><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:294:9</span></span>
-          <span class="t-3003-c">Es gibt einen Schaltkreis
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:295:13</span></span><span class="t-3003-c">$C_n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:295:39</span></span><span class="t-3003-c">
-            mit
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:295:44</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:295:49</span></span><span class="t-3003-c">
-            Input-Gates<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:295:52</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:296:13</span></span><span class="t-3003-c">$x_1, \dots, x_n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:296:13</span></span><span class="t-3003-c">
-            und
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:296:30</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:296:35</span></span><span class="t-3003-c">
-            Output-Gates, eines für<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:296:40</span></span>
-          <span class="t-3003-c">jedes Monom
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:297:13</span></span><span class="nowrap"><span class="t-3003-c">$x^{I}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:297:25</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:297:32</span></span></span><span class="t-3003-c">
-            der
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:297:32</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:297:38</span></span><span class="t-3003-c">
-            Gates hat.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:297:43</span></span>
+          <b>Lemma 2.6.3</b>
+          Es gibt einen Schaltkreis $C_n$ mit $n$ Input-Gates
+          $x_1, \dots, x_n$ und $2^n$ Output-Gates, eines für jedes
+          Monom
+          <span class="nowrap">$x^{I}$,</span>
+          der $2^n$ Gates hat.
         </p>
         <div class="figure__container">
           <figure>
             <img
               style="height:10em"
               src="img/circuits/all-monomials.svg"
-            ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/all-monomials.svg</span></span>
+            >
           </figure>
         </div>
       </div>
       <div class="well highlight">
         <p>
           <b>Beweis.</b>
-          
-          <span class="t-3003-c">Die Idee ist: wenn wir
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:305:13</span></span><span class="t-3003-c">$x_1 x_2 x_3 x_4$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:305:36</span></span><span class="t-3003-c">
-            berechnen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:305:53</span></span>
-          <span class="t-3003-c">wollen, brauchen wir drei AND-Gates. Allerdings müssen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:306:13</span></span>
-          <span class="t-3003-c">wir
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:307:13</span></span><span class="t-3003-c">$x_1 x_2 x_3$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:307:17</span></span><span class="t-3003-c">
-            eh berechnen, da wir ja
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:307:30</span></span><i><span class="t-3003-c">alle<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:307:56</span></span></i><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:307:61</span></span>
-          <span class="t-3003-c">Monome wollen. Wenn wir also einen Schaltkreis für<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:308:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:309:13</span></span><span class="t-3003-c">$x_1 x_2 x_3$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:309:13</span></span><span class="t-3003-c">
-            haben, können wir daraus mit
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:309:26</span></span><i><span class="t-3003-c">einem<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:309:57</span></span></i><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:309:63</span></span>
-          <span class="t-3003-c">zusätzlichen AND-Gate
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:310:13</span></span><span class="t-3003-c">$x_1x_2x_3x_4$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:310:35</span></span><span class="t-3003-c">
-            berechnen.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:310:49</span></span>
-          <span class="t-3003-c">Formal geht es mit Induktion über
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:311:13</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:311:47</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:311:50</span></span></span><span class="t-3003-c">
-            Für
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:311:50</span></span><span class="t-3003-c">$n=0$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:311:56</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:311:61</span></span>
-          <span class="t-3003-c">haben wir ein einziges Monom, nämlich
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:312:13</span></span><span class="nowrap"><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:312:51</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:312:54</span></span></span><span class="t-3003-c">
-            und einen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:312:54</span></span>
-          <span class="t-3003-c">Schaltkreis mit einem einzigen Gate: dem<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:313:13</span></span>
-          <span class="t-3003-c">Konstant-1-Gate, das gleichzeitig ein Output-Gate ist.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:314:13</span></span>
-          <span class="t-3003-c">Für
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:315:13</span></span><span class="t-3003-c">$n \geq 1$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:315:17</span></span><span class="t-3003-c">
-            bauen wir zuerst per Induktion einen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:315:27</span></span>
-          <span class="t-3003-c">Schaltkreis
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:316:13</span></span><span class="nowrap"><span class="t-3003-c">$C_{n-1}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:316:25</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:316:34</span></span></span><span class="t-3003-c">
-            der alle
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:316:34</span></span><span class="t-3003-c">$2^{n-1}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:316:45</span></span><span class="t-3003-c">
-            Monome<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:316:54</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:317:13</span></span><span class="t-3003-c">$x^{I}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:317:13</span></span><span class="t-3003-c">
-            für
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:317:20</span></span><span class="t-3003-c">$I \subseteq [n-1]$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:317:25</span></span><span class="t-3003-c">
-            berechnet. Um
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:317:44</span></span><span class="t-3003-c">$C_n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:317:59</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:317:64</span></span>
-          <span class="t-3003-c">zu bauen, schaffen wir für jedes
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:318:13</span></span><span class="t-3003-c">$I \subseteq [n-1]$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:318:46</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:318:65</span></span>
-          <span class="t-3003-c">ein AND-Gate, das
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:319:13</span></span><span class="t-3003-c">$\x^{I} \wedge x_n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:319:31</span></span><span class="t-3003-c">
-            berechnet.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:319:50</span></span>
+          Die Idee ist: wenn wir $x_1 x_2 x_3 x_4$ berechnen wollen,
+          brauchen wir drei AND-Gates. Allerdings müssen wir
+          $x_1 x_2 x_3$ eh berechnen, da wir ja
+          <i>alle</i>
+          Monome
+          wollen. Wenn wir also einen Schaltkreis für $x_1 x_2 x_3$
+          haben, können wir daraus mit
+          <i>einem</i>
+          zusätzlichen AND-Gate
+          $x_1x_2x_3x_4$ berechnen. Formal geht es mit Induktion
+          über
+          <span class="nowrap">$n$.</span>
+          Für $n=0$ haben wir ein einziges Monom, nämlich
+          <span class="nowrap">$1$,</span>
+          und einen Schaltkreis mit einem einzigen Gate: dem
+          Konstant-1-Gate, das gleichzeitig ein Output-Gate ist. Für
+          $n \geq 1$ bauen wir zuerst per Induktion einen
+          Schaltkreis
+          <span class="nowrap">$C_{n-1}$,</span>
+          der alle $2^{n-1}$ Monome $x^{I}$
+          für $I \subseteq [n-1]$ berechnet. Um $C_n$ zu bauen,
+          schaffen wir für jedes $I \subseteq [n-1]$ ein AND-Gate,
+          das $\x^{I} \wedge x_n$ berechnet.
         </p>
         <div class="carousel__container">
           <div class="carousel">
             <div class="carousel__items">
               <div class="carousel__item">
-                <img src="img/circuits/all-monomials-1.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/all-monomials-1.svg</span></span>
+                <img src="img/circuits/all-monomials-1.svg">
               </div>
               <div class="carousel__item">
-                <img src="img/circuits/all-monomials-2.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/all-monomials-2.svg</span></span>
+                <img src="img/circuits/all-monomials-2.svg">
               </div>
             </div>
           </div>
         </div>
         <p>
-          <span class="t-3003-c">Insgesamt erhalten wir
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:325:13</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:325:36</span></span><span class="t-3003-c">
-            Gates, von denen jedes<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:325:41</span></span>
-          <span class="t-3003-c">gleichzeitig ein Ouptut-Gate ist.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:326:13</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+          Insgesamt erhalten wir $2^n$ Gates, von denen jedes
+          gleichzeitig ein Ouptut-Gate ist.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
-        <span class="t-3003-c">Die zweite Kernidee ist, dass Synergien auftreten,<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:328:9</span></span>
-        <span class="t-3003-c">dass wir die Variablen
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:329:9</span></span><span class="t-3003-c">$x_1, \dots, x_n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:329:32</span></span><span class="t-3003-c">
-          in einen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:329:49</span></span>
-        <span class="t-3003-c">vorderen und in einen hinteren Teil aufteilen: die<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:330:9</span></span>
-        <span class="t-3003-c">erste
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:331:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:331:15</span></span><span class="t-3003-c">
-          Variablen
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:331:18</span></span><span class="t-3003-c">$x_1,\dots, x_k$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:331:29</span></span><span class="t-3003-c">
-          benennen wir um<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:331:45</span></span>
-        <span class="t-3003-c">in
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:332:9</span></span><span class="nowrap"><span class="t-3003-c">$y_1, \dots, y_k$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:332:12</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:332:29</span></span></span><span class="t-3003-c">
-          die hinteren
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:332:29</span></span><span class="t-3003-c">$n-k$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:332:44</span></span><span class="t-3003-c">
-          Variablen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:332:49</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:333:9</span></span><span class="t-3003-c">$x_{n-k+1}, \dots, x_n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:333:9</span></span><span class="t-3003-c">
-          in
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:333:32</span></span><span class="nowrap"><span class="t-3003-c">$z_1, \dots, z_n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:333:36</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:333:53</span></span></span><span class="t-3003-c">
-          Wir<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:333:53</span></span>
-        <span class="t-3003-c">können
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:334:9</span></span><span class="t-3003-c">$f$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:334:16</span></span><span class="t-3003-c">
-          also wie folgt schreiben:<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:334:19</span></span>
+        Die zweite Kernidee ist, dass Synergien auftreten, dass
+        wir die Variablen $x_1, \dots, x_n$ in einen vorderen und
+        in einen hinteren Teil aufteilen: die erste $k$ Variablen
+        $x_1,\dots, x_k$ benennen wir um in
+        <span class="nowrap">$y_1, \dots, y_k$;</span>
+        die
+        hinteren $n-k$ Variablen $x_{n-k+1}, \dots, x_n$ in
+        <span class="nowrap">$z_1, \dots, z_n$.</span>
+        Wir können $f$ also wie folgt
+        schreiben:
       </p>
       <div class="math-block">
         $$
@@ -777,82 +529,57 @@
         \tag{den Faktor $\y^A$ ausklammern} \\
         &amp;=: \sum_{A \subseteq [n-k]} \y^A g_A(\z) \tag{der inneren Summe einen Namen geben}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:336:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Die obige Summe beinhaltet also
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:344:9</span></span><span class="t-3003-c">$2^{n-k}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:344:41</span></span><span class="t-3003-c">
-          Terme von<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:344:50</span></span>
-        <span class="t-3003-c">der Form
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:345:9</span></span><span class="nowrap"><span class="t-3003-c">$\y^A g_A(\z)$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:345:18</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:345:32</span></span></span><span class="t-3003-c">
-          Es gibt insgesamt nur<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:345:32</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:346:9</span></span><span class="t-3003-c">$2^{2^k}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:346:9</span></span><span class="t-3003-c">
-          Polynome in den Variablen
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:346:18</span></span><span class="nowrap"><span class="t-3003-c">$\z$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:346:45</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:346:49</span></span></span><span class="t-3003-c">
-          Wenn nun<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:346:49</span></span>
-        <span class="t-3003-c">also
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:347:9</span></span><span class="t-3003-c">$2^{n-k} \gg 2^{2^k}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:347:14</span></span><span class="t-3003-c">
-          ist, werden gewisse<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:347:35</span></span>
-        <span class="t-3003-c">Polynome
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:348:9</span></span><span class="t-3003-c">$g_A$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:348:18</span></span><span class="t-3003-c">
-          mehrfach auftreten, und wir können<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:348:23</span></span>
-        <span class="t-3003-c">sparen. Dafür berechnen wir vorsorglich
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:349:9</span></span><i><span class="t-3003-c">alle<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:349:50</span></span></i><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:349:55</span></span>
-        <span class="t-3003-c">Funktionen in
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:350:9</span></span><span class="nowrap"><span class="t-3003-c">$z_1,\dots,z_k$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:350:23</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:350:38</span></span></span>
+        Die obige Summe beinhaltet also $2^{n-k}$ Terme von der
+        Form
+        <span class="nowrap">$\y^A g_A(\z)$.</span>
+        Es gibt insgesamt nur $2^{2^k}$
+        Polynome in den Variablen
+        <span class="nowrap">$\z$.</span>
+        Wenn nun also
+        $2^{n-k} \gg 2^{2^k}$ ist, werden gewisse Polynome $g_A$
+        mehrfach auftreten, und wir können sparen. Dafür berechnen
+        wir vorsorglich
+        <i>alle</i>
+        Funktionen in
+        <span class="nowrap">$z_1,\dots,z_k$.</span>
       </p>
       <div class="well remark">
         <p>
           <b>Lemma.</b>
-          
-          <span class="t-3003-c">Es gibt einen Schaltkreis mit Input-Gates<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:354:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:355:13</span></span><span class="t-3003-c">$z_1,\dots,z_k$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:355:13</span></span><span class="t-3003-c">
-            und
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:355:28</span></span><span class="t-3003-c">$2^{2^k}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:355:33</span></span><span class="t-3003-c">
-            Output-Gates, einen für<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:355:42</span></span>
-          <span class="t-3003-c">jede Funktion
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:356:13</span></span><span class="nowrap"><span class="t-3003-c">$g: \{0,1\}^k \rightarrow \{0,1\}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:356:27</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:356:61</span></span></span><span class="t-3003-c">
-            Der<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:356:61</span></span>
-          <span class="t-3003-c">Schaltkreis hat Fan-in 2 und insgesamt
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:357:13</span></span><span class="t-3003-c">$2^k + 2^{2^k}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:357:52</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:357:67</span></span>
-          <span class="t-3003-c">Gates (AND-Gates und XOR-Gates).<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:358:13</span></span>
+          Es gibt einen Schaltkreis mit Input-Gates $z_1,\dots,z_k$
+          und $2^{2^k}$ Output-Gates, einen für jede Funktion
+          <span class="nowrap">$g: \{0,1\}^k \rightarrow \{0,1\}$.</span>
+          Der Schaltkreis hat
+          Fan-in 2 und insgesamt $2^k + 2^{2^k}$ Gates (AND-Gates
+          und XOR-Gates).
         </p>
       </div>
       <div class="well exercise">
         <p>
-          <b><span class="t-3003-c">Übungsaufgabe 2.6.6<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:360:9</span></span></b><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:360:9</span></span>
-          <span class="t-3003-c">Beweisen Sie das Lemma. Konstrukieren Sie zuerst wie<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:361:13</span></span>
-          <span class="t-3003-c">im vorherigen Lemma einen Schaltkreis, der Ihnen alle<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:362:13</span></span>
-          <span class="t-3003-c">Monome berechnet.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:363:13</span></span>
+          <b>Übungsaufgabe 2.6.6</b>
+          Beweisen Sie das Lemma. Konstrukieren Sie zuerst wie im
+          vorherigen Lemma einen Schaltkreis, der Ihnen alle Monome
+          berechnet.
         </p>
       </div>
       <div class="well exercise">
         <p>
-          <b><span class="t-3003-c">Übungsaufgabe 2.6.7<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:365:9</span></span></b><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:365:9</span></span>
-          <span class="t-3003-c">Zeigen Sie, dass die obige Konstruktion verbessert<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:366:13</span></span>
-          <span class="t-3003-c">werden kann, indem Sie einen Schaltkreis mit nur<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:367:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:368:13</span></span><span class="t-3003-c">$2^{2^k}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:368:13</span></span><span class="t-3003-c">
-            Gates bauen.
-            <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:368:22</span></span><b><span class="t-3003-c">Tip.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:368:37</span></span></b><span class="t-3003-c">
-            Jedes Gate muss also<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:368:42</span></span>
-          <span class="t-3003-c">gleichzeitig ein Output-Gate sein.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:369:13</span></span>
+          <b>Übungsaufgabe 2.6.7</b>
+          Zeigen Sie, dass die obige Konstruktion verbessert werden
+          kann, indem Sie einen Schaltkreis mit nur $2^{2^k}$ Gates
+          bauen.
+          <b>Tip.</b>
+          Jedes Gate muss also gleichzeitig ein
+          Output-Gate sein.
         </p>
       </div>
       <p>
-        <span class="t-3003-c">Wenn wir nun einen Schaltkreis haben, der uns jedes<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:371:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:372:9</span></span><span class="t-3003-c">$g : \{0,1\}^k \rightarrow \cube$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:372:9</span></span><span class="t-3003-c">
-          berechnet, schauen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:372:42</span></span>
-        <span class="t-3003-c">wir uns wieder
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:373:9</span></span><span class="t-3003-c">$f(\x)$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:373:24</span></span><span class="t-3003-c">
-          an.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:373:31</span></span>
+        Wenn wir nun einen Schaltkreis haben, der uns jedes
+        $g : \{0,1\}^k \rightarrow \cube$ berechnet, schauen wir
+        uns wieder $f(\x)$ an.
       </p>
       <div class="math-block">
         $$
@@ -860,25 +587,15 @@
         f(\x)&amp;=
         \sum_{A \subseteq [n-k]} \y^A g_A(\z)
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:375:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Für jedes
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:380:9</span></span><span class="t-3003-c">$g_A$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:380:19</span></span><span class="t-3003-c">
-          haben wir ja bereits ein Gate, das es<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:380:24</span></span>
-        <span class="t-3003-c">berechnet. Mit einem weiteren Schaltkreis von<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:381:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:382:9</span></span><span class="t-3003-c">$2^{n-k}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:382:9</span></span><span class="t-3003-c">
-          Gates können wir alle Monome
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:382:18</span></span><span class="t-3003-c">$\y^A$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:382:48</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:382:54</span></span>
-        <span class="t-3003-c">berechnen. Schlussendlich müssen wir noch die Summe<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:383:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:384:9</span></span><span class="t-3003-c">$\sum_{A \subseteq [n-k]}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:384:9</span></span><span class="t-3003-c">
-          bilden, wofür wir
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:384:35</span></span><span class="t-3003-c">$2^{n-k}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:384:54</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:384:63</span></span>
-        <span class="t-3003-c">XOR-Gates brauchen. Insgesamt brauchen wir also<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:385:9</span></span>
+        Für jedes $g_A$ haben wir ja bereits ein Gate, das es
+        berechnet. Mit einem weiteren Schaltkreis von $2^{n-k}$
+        Gates können wir alle Monome $\y^A$ berechnen.
+        Schlussendlich müssen wir noch die Summe
+        $\sum_{A \subseteq [n-k]}$ bilden, wofür wir $2^{n-k}$
+        XOR-Gates brauchen. Insgesamt brauchen wir also
       </p>
       <div class="math-block">
         $$
@@ -895,26 +612,17 @@
         2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \ .
         \label{size-lupanov}
         \end{align}
-        $$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:387:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Wir müssen nun
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:401:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:401:24</span></span><span class="t-3003-c">
-          so wählen, dass der obige Ausdruck<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:401:27</span></span>
-        <span class="t-3003-c">minimiert wird. Anstatt nun abzuleiten und gleich 0 zu<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:402:9</span></span>
-        <span class="t-3003-c">setzen, verwenden wir einen Faulheitstrick, der<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:403:9</span></span>
-        <span class="t-3003-c">funktioniert, wenn Sie das Minimum nur ungefähr haben<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:404:9</span></span>
-        <span class="t-3003-c">wollen: wir setzen
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:405:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:405:28</span></span><span class="t-3003-c">
-          so, dass die beiden großen<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:405:31</span></span>
-        <span class="t-3003-c">Ausdrücke -
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:406:9</span></span><span class="t-3003-c">$2^{2^k}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:406:21</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:406:30</span></span><span class="t-3003-c">$2^{n-k}$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:406:35</span></span><span class="t-3003-c">
-          ungefähr gleich<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:406:44</span></span>
-        <span class="t-3003-c">sind. Das gibt nicht das präzise Minimum, aber<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:407:9</span></span>
-        <span class="t-3003-c">sicherlich eine gültige Konstruktion und somit eine<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:408:9</span></span>
-        <span class="t-3003-c">obere Schranke.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:409:9</span></span>
+        Wir müssen nun $k$ so wählen, dass der obige Ausdruck
+        minimiert wird. Anstatt nun abzuleiten und gleich 0 zu
+        setzen, verwenden wir einen Faulheitstrick, der
+        funktioniert, wenn Sie das Minimum nur ungefähr haben
+        wollen: wir setzen $k$ so, dass die beiden großen
+        Ausdrücke - $2^{2^k}$ und $2^{n-k}$ ungefähr gleich sind.
+        Das gibt nicht das präzise Minimum, aber sicherlich eine
+        gültige Konstruktion und somit eine obere Schranke.
       </p>
       <div class="math-block">
         $$
@@ -923,16 +631,12 @@
         2^k&amp;= n-k \qquad \Leftrightarrow \\
         2^k +k&amp;= n
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:411:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Ich habe keine explizite Formel, um das für
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:417:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:417:53</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:417:56</span></span>
-        <span class="t-3003-c">aufzulösen, also setze ich auf gut Glück
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:418:9</span></span><span class="t-3003-c">$k = \log n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:418:50</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:418:62</span></span>
-        <span class="t-3003-c">und wir erhalten<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:419:9</span></span>
+        Ich habe keine explizite Formel, um das für $k$
+        aufzulösen, also setze ich auf gut Glück $k = \log n$ und
+        wir erhalten
       </p>
       <div class="math-block">
         $$
@@ -940,18 +644,13 @@
         (\ref{size-lupanov})&amp;= 2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \\
         &amp;= 2^{2^{\log n}} + \dots
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:421:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">und wir können gleich aufhören, da der erste Term<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:426:9</span></span>
-        <span class="t-3003-c">bereits
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:427:9</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:427:17</span></span><span class="t-3003-c">
-          ergibt. Das ist zu groß. Wir müssen
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:427:22</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:427:59</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:427:62</span></span>
-        <span class="t-3003-c">also kleiner wählen. Nächster Versuch:<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:428:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:429:9</span></span><span class="nowrap"><span class="t-3003-c">$k := \log n - 1$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:429:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:429:26</span></span></span>
+        und wir können gleich aufhören, da der erste Term bereits
+        $2^n$ ergibt. Das ist zu groß. Wir müssen $k$ also kleiner
+        wählen. Nächster Versuch:
+        <span class="nowrap">$k := \log n - 1$.</span>
       </p>
       <div class="math-block">
         $$
@@ -964,10 +663,10 @@
         &amp;=
         O\pfrac{2^n}{n} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:431:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Das ist die behauptete Schranke.<span class="t-3003">./course1/wly/02/06-lower-and-upper-bounds.wly:441:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Das ist die behauptete Schranke.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div id="end-of-page-elt">

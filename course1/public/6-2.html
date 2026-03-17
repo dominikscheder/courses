@@ -40,107 +40,68 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">6.2&ensp;Kontextfreie Grammatiken und Kellerautomaten<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:2:11</span></span>
+        6.2&ensp;Kontextfreie Grammatiken und Kellerautomaten
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 6.2.1<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:4:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:4:5</span></span>
-        <span class="t-3003-c">Zu jeder kontextfreien Grammatik<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:5:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:6:9</span></span><span class="t-3003-c">$G = (\Sigma, N, S, P)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:6:9</span></span><span class="t-3003-c">
-          gibt es einen Kellerautomaten<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:6:32</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:7:9</span></span><span class="nowrap"><span class="t-3003-c">$M = (\Sigma, Q, \Gamma, \qstart, \delta)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:7:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:7:51</span></span></span><span class="t-3003-c">
-          der die<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:7:51</span></span>
-        <span class="t-3003-c">gleiche Sprache akzeptiert, also
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:8:9</span></span><span class="nowrap"><span class="t-3003-c">$L(G) = L(M)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:8:42</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:8:55</span></span></span>
+        <b>Theorem 6.2.1</b>
+        Zu jeder kontextfreien Grammatik $G = (\Sigma, N, S, P)$
+        gibt es einen Kellerautomaten
+        <span class="nowrap">$M = (\Sigma, Q, \Gamma, \qstart, \delta)$,</span>
+        der die
+        gleiche Sprache akzeptiert, also
+        <span class="nowrap">$L(G) = L(M)$.</span>
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        
-        <span class="t-3003-c">Der Beweis ist vergleichsweise einfach, weil wir die<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:11:9</span></span>
-        <span class="t-3003-c">Grammatik eins zu eins in Automatentransitionen<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:12:9</span></span>
-        <span class="t-3003-c">übersetzen können. Die Idee ist, dass die Symbole auf<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:13:9</span></span>
-        <span class="t-3003-c">dem Stack, von unten nach oben gelesen, zu jedem<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:14:9</span></span>
-        <span class="t-3003-c">Zeitpunkt eine Wortform bilden, aus der der noch nicht<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:15:9</span></span>
-        <span class="t-3003-c">gelesene Teil des Restwortes ableitbar ist. Wenn oben<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:16:9</span></span>
-        <span class="t-3003-c">auf dem Stack also ein Terminalsymbol
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:17:9</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:17:47</span></span><span class="t-3003-c">
-          liegt und<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:17:50</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:18:9</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:18:9</span></span><span class="t-3003-c">
-          auch das nächste Inputzeichen ist, dann poppen<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:18:12</span></span>
-        <span class="t-3003-c">wir
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:19:9</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:19:13</span></span><span class="t-3003-c">
-          vom Stack und lesen
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:19:16</span></span><span class="nowrap"><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:19:37</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:19:40</span></span></span><span class="t-3003-c">
-          d.h. schieben den<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:19:40</span></span>
-        <span class="t-3003-c">Lesekopf um ein Zeichen nach rechts; der Stack ist von<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:20:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:21:9</span></span><span class="t-3003-c">$x \alpha$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:21:9</span></span><span class="t-3003-c">
-          auf
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:21:19</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:21:24</span></span><span class="t-3003-c">
-          geschruft und das Restwort<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:21:32</span></span>
-        <span class="t-3003-c">von
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:22:9</span></span><span class="t-3003-c">$xw$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:22:13</span></span><span class="t-3003-c">
-          auf
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:22:17</span></span><span class="nowrap"><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:22:22</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:22:25</span></span></span><span class="t-3003-c">
-          wenn also
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:22:25</span></span><span class="t-3003-c">$x\alpha \Rightarrow^* xw$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:22:37</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:22:63</span></span>
-        <span class="t-3003-c">galt, so gilt nun immer noch
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:23:9</span></span><span class="nowrap"><span class="t-3003-c">$\alpha \Rightarrow^* w$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:23:38</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:23:62</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:23:62</span></span>
-        <span class="t-3003-c">Wenn ein Nichtterminal
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:24:9</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:24:32</span></span><span class="t-3003-c">
-          oben auf dem Stack liegt,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:24:35</span></span>
-        <span class="t-3003-c">dieser also die Form
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:25:9</span></span><span class="t-3003-c">$X \alpha$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:25:30</span></span><span class="t-3003-c">
-          hat, und
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:25:40</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:25:50</span></span><span class="t-3003-c">
-          das<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:25:53</span></span>
-        <span class="t-3003-c">Restwort ist, dann gilt also<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:26:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:27:9</span></span><span class="nowrap"><span class="t-3003-c">$X \alpha \Rightarrow^* w$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:27:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:27:35</span></span></span><span class="t-3003-c">
-          Der Automat rät nun<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:27:35</span></span>
-        <span class="t-3003-c">nichtdeterministisch die erste in der Ableitung<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:28:9</span></span>
-        <span class="t-3003-c">angewandte Produktion
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:29:9</span></span><span class="nowrap"><span class="t-3003-c">$X \rightarrow \beta$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:29:31</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:29:52</span></span></span><span class="t-3003-c">
-          löscht<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:29:52</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:30:9</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:30:9</span></span><span class="t-3003-c">
-          vom Stack und pusht
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:30:12</span></span><span class="nowrap"><span class="t-3003-c">$\beta$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:30:33</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:30:40</span></span></span><span class="t-3003-c">
-          Der Stack ist nun<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:30:40</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:31:9</span></span><span class="nowrap"><span class="t-3003-c">$\beta \alpha$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:31:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:31:23</span></span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:31:23</span></span><span class="nowrap"><span class="t-3003-c">$\beta \alpha \Rightarrow^* w$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:31:29</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:31:59</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:31:59</span></span>
-        <span class="t-3003-c">Entscheidend ist der Nichtdeterminismus: es
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:32:9</span></span><i><span class="t-3003-c">gibt<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:32:54</span></span></i><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:32:59</span></span>
-        <span class="t-3003-c">eine korrekte Produktion
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:33:9</span></span><span class="nowrap"><span class="t-3003-c">$X \rightarrow \beta$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:33:34</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:33:55</span></span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:33:55</span></span>
-        <span class="t-3003-c">schlussendlich zu
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:34:9</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:34:27</span></span><span class="t-3003-c">
-          führt; der Automat
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:34:30</span></span><i><span class="t-3003-c">kann<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:34:51</span></span></i><span class="t-3003-c">
-          also<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:34:56</span></span>
-        <span class="t-3003-c">diese Transition anwenden. Formaler: Die Zustände des<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:35:9</span></span>
-        <span class="t-3003-c">Automaten sind
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:36:9</span></span><span class="nowrap"><span class="t-3003-c">$Q = \{\qstart, q_1, \qend\}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:36:24</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:36:53</span></span></span><span class="t-3003-c">
-          das<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:36:53</span></span>
-        <span class="t-3003-c">Stackalphabet ist<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:37:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:38:9</span></span><span class="t-3003-c">\(\Gamma = \Sigma \cup N \cup \{\$\}\)<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:38:9</span></span><span class="t-3003-c">
-          und die<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:38:47</span></span>
-        <span class="t-3003-c">Transitionsregeln sind<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:39:9</span></span>
+        Der Beweis ist vergleichsweise einfach, weil wir die
+        Grammatik eins zu eins in Automatentransitionen übersetzen
+        können. Die Idee ist, dass die Symbole auf dem Stack, von
+        unten nach oben gelesen, zu jedem Zeitpunkt eine Wortform
+        bilden, aus der der noch nicht gelesene Teil des Restwortes
+        ableitbar ist. Wenn oben auf dem Stack also ein
+        Terminalsymbol $x$ liegt und $x$ auch das nächste
+        Inputzeichen ist, dann poppen wir $x$ vom Stack und lesen
+        <span class="nowrap">$x$,</span>
+        d.h. schieben den Lesekopf um ein Zeichen nach
+        rechts; der Stack ist von $x \alpha$ auf $\alpha$
+        geschruft und das Restwort von $xw$ auf
+        <span class="nowrap">$w$;</span>
+        wenn also
+        $x\alpha \Rightarrow^* xw$ galt, so gilt nun immer noch
+        <span class="nowrap">$\alpha \Rightarrow^* w$.</span>
+        Wenn ein Nichtterminal $X$ oben
+        auf dem Stack liegt, dieser also die Form $X \alpha$ hat,
+        und $w$ das Restwort ist, dann gilt also
+        <span class="nowrap">$X \alpha \Rightarrow^* w$.</span>
+        Der Automat rät nun
+        nichtdeterministisch die erste in der Ableitung angewandte
+        Produktion
+        <span class="nowrap">$X \rightarrow \beta$,</span>
+        löscht $X$ vom Stack und
+        pusht
+        <span class="nowrap">$\beta$.</span>
+        Der Stack ist nun
+        <span class="nowrap">$\beta \alpha$,</span>
+        und
+        <span class="nowrap">$\beta \alpha \Rightarrow^* w$.</span>
+        Entscheidend ist der
+        Nichtdeterminismus: es
+        <i>gibt</i>
+        eine korrekte Produktion
+        <span class="nowrap">$X \rightarrow \beta$,</span>
+        die schlussendlich zu $w$ führt;
+        der Automat
+        <i>kann</i>
+        also diese Transition anwenden.
+        Formaler: Die Zustände des Automaten sind
+        <span class="nowrap">$Q = \{\qstart, q_1, \qend\}$,</span>
+        das Stackalphabet ist
+        \(\Gamma = \Sigma \cup N \cup \{\$\}\) und die
+        Transitionsregeln sind
       </p>
       <div class="math-block">
         $$
@@ -151,24 +112,21 @@
         (\qstart, \epsilon)&amp;\step{\epsilon} (q_1, S \$) \\
         (q_1, \$)&amp;\step{\epsilon} (\qend, \epsilon)
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:41:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Auf einen formalen Beweis, dass
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:49:9</span></span><span class="t-3003-c">$L(M) = L(G)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:49:41</span></span><span class="t-3003-c">
-          ist,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:49:54</span></span>
-        <span class="t-3003-c">verzichte ich an dieser Stelle. Besser als Sipser in<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:50:9</span></span>
-        <span class="t-3003-c">seinem Lehrbuch
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:51:9</span></span><i><span class="t-3003-c">Introduction to the Theory of<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:51:26</span></span>
-          <span class="t-3003-c">Computing<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:52:9</span></span></i><span class="t-3003-c">
-          könnte ich das eh nicht.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:52:19</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Auf einen formalen Beweis, dass $L(M) = L(G)$ ist,
+        verzichte ich an dieser Stelle. Besser als Sipser in seinem
+        Lehrbuch
+        <i>Introduction to the Theory of Computing</i>
+        könnte
+        ich das eh nicht.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beispiel 6.2.2<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:54:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:54:5</span></span>
-        <span class="t-3003-c">Betrachten wir die Grammatik<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:55:9</span></span>
+        <b>Beispiel 6.2.2</b>
+        Betrachten wir die Grammatik
       </p>
       <div class="math-block">
         $$
@@ -178,80 +136,49 @@
         B&amp;\rightarrow \texttt{[} C \texttt{]} S \\
         C&amp;\rightarrow \texttt{(} A \texttt{)} S \ | \ \texttt{()}S \\
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:57:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Ein Wort in der erzeugten Sprache wäre zum Beispiel<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:64:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:65:9</span></span><code><span class="t-3003-c">{<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:65:10</span></span><a href=""><span class="t-3003-c">()()<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:65:12</span></span></a><span class="t-3003-c">}()<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:65:19</span></span></code><span class="t-3003-c">
-          Schreiben wir nun einen<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:65:23</span></span>
-        <span class="t-3003-c">Kellerautomaten, der diese Sprache akzeptiert. Die<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:66:9</span></span>
-        <span class="t-3003-c">Idee ist, dass wir Terminalsymbole und<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:67:9</span></span>
-        <span class="t-3003-c">Nichtterminalsymbole auf den Stack legen. Ein
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:68:9</span></span><code><span class="t-3003-c">[<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:68:56</span></span></code><span class="t-3003-c">
-          oben<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:68:58</span></span>
-        <span class="t-3003-c">auf dem Stack bedeutet dann
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:69:9</span></span><span class="nowrap"><i><span class="t-3003-c">ich will jetzt sofort ein<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:69:38</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:70:9</span></span><span class="nowrap"><code><span class="t-3003-c">[<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:70:10</span></span></code><span class="t-3003-c">lesen<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:70:12</span></span></span></i><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:70:18</span></span></span><span class="t-3003-c">
-          ein Nichtterminal wie
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:70:18</span></span><span class="t-3003-c">$A$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:70:42</span></span><span class="t-3003-c">
-          oben auf dem<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:70:45</span></span>
-        <span class="t-3003-c">Stack bedeutet, dass wir als nächstes ein von
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:71:9</span></span><span class="t-3003-c">$A$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:71:56</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:71:59</span></span>
-        <span class="t-3003-c">ableitbares Wort, also ein<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:72:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:73:9</span></span><span class="t-3003-c">$A \rightarrow w \in \Sigma^*$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:73:9</span></span><span class="t-3003-c">
-          lesen wollen. Um ein<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:73:39</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:74:9</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:74:9</span></span><span class="t-3003-c">
-          mit
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:74:12</span></span><span class="t-3003-c">$A \rightarrow w$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:74:17</span></span><span class="t-3003-c">
-          lesen zu können, müssen wir<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:74:34</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:75:9</span></span><i><span class="t-3003-c">sofort<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:75:10</span></span></i><span class="t-3003-c">
-          ein
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:75:17</span></span><code><span class="t-3003-c">{<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:75:23</span></span></code><span class="t-3003-c">
-          lesen, dann ein Wort
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:75:25</span></span><span class="t-3003-c">$v$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:75:47</span></span><span class="t-3003-c">
-          mit<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:75:50</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:76:9</span></span><span class="nowrap"><span class="t-3003-c">$B \rightarrow v$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:76:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:76:26</span></span></span><span class="t-3003-c">
-          dann ein
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:76:26</span></span><code><span class="t-3003-c">}<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:76:38</span></span></code><span class="t-3003-c">
-          und so weiter. Wir<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:76:40</span></span>
-        <span class="t-3003-c">können das also im Automaten implementieren, indem wir<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:77:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:78:9</span></span><span class="t-3003-c">$A$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:78:9</span></span><span class="t-3003-c">
-          vom Stack löschen und durch<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:78:12</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:79:9</span></span><span class="t-3003-c">$\texttt{\{} B \texttt{\}} S$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:79:9</span></span><span class="t-3003-c">
-          auf den Stack legen,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:79:38</span></span>
-        <span class="t-3003-c">mit dem linkesten Symbol zuoberst. Wenn wir für ein<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:80:9</span></span>
-        <span class="t-3003-c">Nichtterminal mehrere Regeln haben, also z.B.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:81:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:82:9</span></span><span class="t-3003-c">$X \rightarrow \alpha$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:82:9</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:82:31</span></span><span class="nowrap"><span class="t-3003-c">$X \rightarrow \beta$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:82:36</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:82:57</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:82:57</span></span>
-        <span class="t-3003-c">dann können ein
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:83:9</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:83:25</span></span><span class="t-3003-c">
-          auf dem Stack sowohl durch<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:83:28</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:84:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:84:9</span></span><span class="t-3003-c">
-          als auch durch
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:84:17</span></span><span class="t-3003-c">$\beta$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:84:33</span></span><span class="t-3003-c">
-          ersetzen. Hierfür<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:84:40</span></span>
-        <span class="t-3003-c">benötigen wir den Nichtdeterminismus. Beachten Sie,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:85:9</span></span>
-        <span class="t-3003-c">dass wir ein Nichtterminal grundsätzlich immer durch<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:86:9</span></span>
-        <span class="t-3003-c">die entsprechende rechte Seite ersetzen können, egal,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:87:9</span></span>
-        <span class="t-3003-c">was das nächste Zeichen ist; es wird im Automaten also<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:88:9</span></span>
-        <span class="t-3003-c">ein
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:89:9</span></span><span class="nowrap"><span class="t-3003-c">$\step{\epsilon}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:89:13</span></span><span class="t-3003-c">-Übergang<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:89:30</span></span></span><span class="t-3003-c">
-          sein. Konkret also<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:89:30</span></span>
-        <span class="t-3003-c">bauen wir für obige Grammatik die folgenden<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:90:9</span></span>
-        <span class="t-3003-c">Automatentransitionen:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:91:9</span></span>
+        Ein Wort in der erzeugten Sprache wäre zum Beispiel
+        <code>{<a href="">()()</a>}()</code>
+        Schreiben wir nun einen Kellerautomaten, der
+        diese Sprache akzeptiert. Die Idee ist, dass wir
+        Terminalsymbole und Nichtterminalsymbole auf den Stack
+        legen. Ein
+        <code>[</code>
+        oben auf dem Stack bedeutet dann
+        <span class="nowrap"><i>ich will
+            jetzt sofort ein
+            <span class="nowrap"><code>[</code>lesen</span></i>;</span>
+        ein Nichtterminal wie $A$ oben
+        auf dem Stack bedeutet, dass wir als nächstes ein von  $A$
+        ableitbares Wort, also ein $A \rightarrow w \in \Sigma^*$
+        lesen wollen. Um ein $w$ mit $A \rightarrow w$ lesen zu
+        können, müssen wir
+        <i>sofort</i>
+        ein
+        <code>{</code>
+        lesen, dann ein Wort
+        $v$ mit
+        <span class="nowrap">$B \rightarrow v$,</span>
+        dann ein
+        <code>}</code>
+        und so weiter. Wir
+        können das also im Automaten implementieren, indem wir $A$
+        vom Stack löschen und durch $\texttt{\{} B \texttt{\}} S$
+        auf den Stack legen, mit dem linkesten Symbol zuoberst.
+        Wenn wir für ein Nichtterminal mehrere Regeln haben, also
+        z.B. $X \rightarrow \alpha$ und
+        <span class="nowrap">$X \rightarrow \beta$,</span>
+        dann können ein $X$ auf dem Stack sowohl durch $\alpha$
+        als auch durch $\beta$ ersetzen. Hierfür benötigen wir den
+        Nichtdeterminismus. Beachten Sie, dass wir ein
+        Nichtterminal grundsätzlich immer durch die entsprechende
+        rechte Seite ersetzen können, egal, was das nächste Zeichen
+        ist; es wird im Automaten also ein
+        <span class="nowrap">$\step{\epsilon}$-Übergang</span>
+        sein. Konkret also bauen wir
+        für obige Grammatik die folgenden Automatentransitionen:
       </p>
       <div class="math-block">
         $$
@@ -275,22 +202,17 @@
         (q_1,\texttt{(})&amp;\step{\texttt{(}} (q_1, \epsilon) \\
         (q_1,\texttt{)})&amp;\step{\texttt{)}} (q_1, \epsilon) \\
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:93:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Dies ist völlig mechanisch und benötigt kein<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:114:9</span></span>
-        <span class="t-3003-c">Nachdenken. Wie fangen wir an? Wir legen anfangs ein<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:115:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:116:9</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:116:9</span></span><span class="t-3003-c">
-          auf den leeren Stack. Wenn dieses
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:116:12</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:116:47</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:116:50</span></span>
-        <span class="t-3003-c">abgearbeitet ist und das Wort zu Ende ist, akzeptieren<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:117:9</span></span>
-        <span class="t-3003-c">wir, und nur dann. Um festzustellen, dass wir wirklich<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:118:9</span></span>
-        <span class="t-3003-c">den Stack ganz leer gemacht haben, brauchen wir die<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:119:9</span></span>
-        <span class="t-3003-c">Markierung
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:120:9</span></span><span class="nowrap"><code><span><span class="t-3003-c">$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:120:22</span></span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:120:24</span></span></span><span class="t-3003-c">
-          Also:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:120:24</span></span>
+        Dies ist völlig mechanisch und benötigt kein Nachdenken.
+        Wie fangen wir an? Wir legen anfangs ein $S$ auf den
+        leeren Stack. Wenn dieses $S$ abgearbeitet ist und das
+        Wort zu Ende ist, akzeptieren wir, und nur dann. Um
+        festzustellen, dass wir wirklich den Stack ganz leer
+        gemacht haben, brauchen wir die Markierung
+        <span class="nowrap"><code><span>$</span></code>.</span>
+        Also:
       </p>
       <div class="math-block">
         $$
@@ -298,35 +220,24 @@
         (\qstart, \epsilon) \step{\epsilon} (q_1, S \$) \\
         (q_1, \$) \step{\epsilon} (\qend, \epsilon)
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:122:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Unsere Maschine hat also nur drei Zustände:
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:127:9</span></span><span class="nowrap"><span class="t-3003-c">$\qstart$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:127:53</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:127:62</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:127:62</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:128:9</span></span><span class="t-3003-c">$q_1$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:128:9</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:128:14</span></span><span class="nowrap"><span class="t-3003-c">$\qend$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:128:19</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:128:26</span></span></span><span class="t-3003-c">
-          welches der akeptierende<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:128:26</span></span>
-        <span class="t-3003-c">Endzustand ist. Beachten Sie, dass es von
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:129:9</span></span><span class="t-3003-c">$\qend$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:129:51</span></span><span class="t-3003-c">
-          aus<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:129:58</span></span>
-        <span class="t-3003-c">keine ausgehenden Transitionen gibt; sollte es also<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:130:9</span></span>
-        <span class="t-3003-c">nach Erreichen von
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:131:9</span></span><span class="t-3003-c">$\qend$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:131:28</span></span><span class="t-3003-c">
-          noch weitere Zeichen im<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:131:35</span></span>
-        <span class="t-3003-c">Eingabewort geben, so kann der Automat keine weiteren<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:132:9</span></span>
-        <span class="t-3003-c">Schritte durchführen, was einem
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:133:9</span></span><i><span class="t-3003-c">reject<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:133:42</span></span></i><span class="t-3003-c">
-          entspricht.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:133:49</span></span>
-        <span class="t-3003-c">Erreichen des Zustandes
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:134:9</span></span><span class="t-3003-c">$\qend$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:134:33</span></span><span class="t-3003-c">
-          führt also nur dann<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:134:40</span></span>
-        <span class="t-3003-c">zu einem
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:135:9</span></span><span class="nowrap"><i><span class="t-3003-c">accept<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:135:19</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:135:26</span></span></span><span class="t-3003-c">
-          wenn dies am Ende des Wortes<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:135:26</span></span>
-        <span class="t-3003-c">geschieht.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:136:9</span></span>
+        Unsere Maschine hat also nur drei Zustände:
+        <span class="nowrap">$\qstart$,</span>
+        $q_1$ und
+        <span class="nowrap">$\qend$,</span>
+        welches der akeptierende Endzustand
+        ist. Beachten Sie, dass es von $\qend$ aus keine
+        ausgehenden Transitionen gibt; sollte es also nach
+        Erreichen von $\qend$ noch weitere Zeichen im Eingabewort
+        geben, so kann der Automat keine weiteren Schritte
+        durchführen, was einem
+        <i>reject</i>
+        entspricht. Erreichen des
+        Zustandes $\qend$ führt also nur dann zu einem
+        <span class="nowrap"><i>accept</i>,</span>
+        wenn dies am Ende des Wortes geschieht.
       </p>
       <div class="carousel__container">
         <div class="carousel">
@@ -335,409 +246,386 @@
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/01.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/01.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/02.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/02.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/03.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/03.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/04.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/04.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/05.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/05.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/06.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/06.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/07.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/07.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/08.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/08.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/09.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/09.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/10.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/10.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/11.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/11.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/12.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/12.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/13.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/13.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/14.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/14.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/15.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/15.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/16.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/16.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/17.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/17.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/18.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/18.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/19.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/19.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/20.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/20.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/21.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/21.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/22.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/22.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/23.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/23.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/24.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/24.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/25.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/25.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/26.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/26.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/27.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/27.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/28.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/28.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/29.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/29.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/30.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/30.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/31.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/31.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/32.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/32.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/33.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/33.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/34.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/34.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/35.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/35.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/36.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/36.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/37.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/37.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/38.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/38.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/39.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/39.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/40.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/40.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/41.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/41.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/42.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/42.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/43.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/43.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/44.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/44.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/45.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/45.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/46.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/46.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/47.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/47.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/48.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/48.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/49.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/49.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/50.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/50.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/51.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/51.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/52.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/52.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="width:42em"
                 src="img/context-free/cfg-to-pda/53.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/cfg-to-pda/53.svg</span></span>
+              >
             </div>
           </div>
         </div>
       </div>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Die Gegenrichtung ist schwieriger.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:194:5</span></span>
+      Die Gegenrichtung ist schwieriger.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 6.2.3<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:196:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:196:5</span></span>
-        <span class="t-3003-c">Zu jedem Kellerautomaten
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:197:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:197:34</span></span><span class="t-3003-c">
-          gibt es eine<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:197:37</span></span>
-        <span class="t-3003-c">kontextfreie Grammatik
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:198:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:198:32</span></span><span class="t-3003-c">
-          mit
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:198:35</span></span><span class="nowrap"><span class="t-3003-c">$L(M) = L(G)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:198:40</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:198:53</span></span></span>
+        <b>Theorem 6.2.3</b>
+        Zu jedem Kellerautomaten $M$ gibt es eine kontextfreie
+        Grammatik $G$ mit
+        <span class="nowrap">$L(M) = L(G)$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Ich folge hier im Wesentlichen dem Beweis aus Sipsers<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:200:5</span></span>
-      <span class="t-3003-c">Kapitel 2.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:201:5</span></span>
+      Ich folge hier im Wesentlichen dem Beweis aus Sipsers
+      Kapitel 2.
     </p>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:204:9</span></span><span class="t-3003-c">$M = (\Sigma, Q, \Gamma, \qstart, F, \delta)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:204:13</span></span><span class="t-3003-c">
-          der<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:204:58</span></span>
-        <span class="t-3003-c">Kellerautomat. Als erstes führen wir drei<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:205:9</span></span>
-        <span class="t-3003-c">Schönheitsoperation durch:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:206:9</span></span>
+        Sei $M = (\Sigma, Q, \Gamma, \qstart, F, \delta)$ der
+        Kellerautomat. Als erstes führen wir drei
+        Schönheitsoperation durch:
       </p>
       <ol>
         <li>
           <p>
-            <span class="t-3003-c">Der Automat hat einen einzigen akzeptierenden Zustand<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:210:17</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:211:17</span></span><span class="nowrap"><span class="t-3003-c">$\qend$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:211:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:211:24</span></span></span><span class="t-3003-c">
-              Dies können wir einfach durch
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:211:24</span></span><span class="t-3003-c">$\epsilon$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:211:56</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:211:66</span></span>
-            <span class="t-3003-c">-Übergänge erreichen.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:212:17</span></span>
+            Der Automat hat einen einzigen akzeptierenden Zustand
+            <span class="nowrap">$\qend$.</span>
+            Dies können wir einfach durch $\epsilon$
+            -Übergänge erreichen.
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Der Automat leert den Stack, bevor er akzeptiert.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:215:17</span></span>
-            <span class="t-3003-c">Dies können wir z.B. dadurch erreichen, dass wir<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:216:17</span></span>
-            <span class="t-3003-c">anfangs ein
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:217:17</span></span><span class="t-3003-c">\(\$\)<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:217:29</span></span><span class="t-3003-c">
-              auf den Stack legen und am Ende<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:217:35</span></span>
-            <span class="t-3003-c">den Stack poppen, bis wir
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:218:17</span></span><span class="t-3003-c">\(\$\)<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:218:43</span></span><span class="t-3003-c">
-              gepoppt haben.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:218:49</span></span>
+            Der Automat leert den Stack, bevor er akzeptiert. Dies
+            können wir z.B. dadurch erreichen, dass wir anfangs ein
+            \(\$\) auf den Stack legen und am Ende den Stack poppen,
+            bis wir \(\$\) gepoppt haben.
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Für jede Transition<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:221:17</span></span>
+            Für jede Transition
           </p>
           <div class="math-block">
             $$
             \begin{align*}
             (p, x) \step{a} (q, y)
             \end{align*}
-            $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:223:17</span>
+            $$
           </div>
           <p>
-            <span class="t-3003-c">ist genau eines von
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:227:17</span></span><span class="t-3003-c">$x,y$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:227:37</span></span><span class="t-3003-c">
-              leer (und das andere ist<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:227:42</span></span>
-            <span class="t-3003-c">genau ein Stacksymbol aus
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:228:17</span></span><span class="nowrap"><span class="t-3003-c">$\Gamma$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:228:43</span></span><span class="t-3003-c">).<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:228:51</span></span></span><span class="t-3003-c">
-              Eine Transition<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:228:51</span></span>
-            <span class="t-3003-c">der Form
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:229:17</span></span><span class="t-3003-c">$(p, \epsilon) \step{a} (q, x)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:229:26</span></span><span class="t-3003-c">
-              nennen wir<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:229:57</span></span>
-            <span class="t-3003-c">eine
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:230:17</span></span><span class="nowrap"><i><span class="t-3003-c">Push-Operation<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:230:23</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:230:38</span></span></span><span class="t-3003-c">
-              eine der Form<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:230:38</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:231:17</span></span><span class="t-3003-c">$(p, y) \step{a} (q, \epsilon)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:231:17</span></span><span class="t-3003-c">
-              nennen wir eine<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:231:48</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:232:17</span></span><span class="nowrap"><i><span class="t-3003-c">Pop-Operation<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:232:18</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:232:32</span></span></span><span class="t-3003-c">
-              Der Automat kann in diese Form<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:232:32</span></span>
-            <span class="t-3003-c">gebracht werden, indem wir Zwischenzustände einführen:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:233:17</span></span>
+            ist genau eines von $x,y$ leer (und das andere ist genau
+            ein Stacksymbol aus
+            <span class="nowrap">$\Gamma$).</span>
+            Eine Transition der Form
+            $(p, \epsilon) \step{a} (q, x)$ nennen wir eine
+            <span class="nowrap"><i>Push-Operation</i>,</span>
+            eine der Form
+            $(p, y) \step{a} (q, \epsilon)$ nennen wir eine
+            <span class="nowrap"><i>Pop-Operation</i>.</span>
+            Der Automat kann in diese Form gebracht
+            werden, indem wir Zwischenzustände einführen:
           </p>
           <div class="math-block">
             $$
@@ -747,182 +635,132 @@
             &amp;(p, \epsilon) \step{a} (q,\epsilon) \textnormal { wird ersetzt durch die zwei Transitionen }
             (p, \epsilon) \step{a} (p', \bigstar) \textnormal { und }(p', \bigstar) \step{a} (q, \epsilon) \ .
             \end{align*}
-            $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:235:17</span>
+            $$
           </div>
           <p>
-            <span class="t-3003-c">Im zweiten Falle pushen wir also pro Forma ein<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:242:17</span></span>
-            <span class="t-3003-c">ansonsten irrelevantes Symbol
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:243:17</span></span><span class="t-3003-c">$\bigstar$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:243:47</span></span><span class="t-3003-c">
-              auf den<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:243:57</span></span>
-            <span class="t-3003-c">Stack, um es gleich darauf runterzupoppen.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:244:17</span></span>
+            Im zweiten Falle pushen wir also pro Forma ein ansonsten
+            irrelevantes Symbol $\bigstar$ auf den Stack, um es gleich
+            darauf runterzupoppen.
           </p>
         </li>
       </ol>
       <p>
-        <span class="t-3003-c">Wenn nun der Automat die eben beschriebene Form hat,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:246:9</span></span>
-        <span class="t-3003-c">so ist die Idee, dass wir für jedes Paar
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:247:9</span></span><span class="t-3003-c">$p,q$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:247:50</span></span><span class="t-3003-c">
-          von<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:247:55</span></span>
-        <span class="t-3003-c">Zuständen ein Nichtterminalsymbol
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:248:9</span></span><span class="t-3003-c">$A_{pq}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:248:43</span></span><span class="t-3003-c">
-          einführen,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:248:51</span></span>
-        <span class="t-3003-c">dass genau die Wörter
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:249:9</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:249:31</span></span><span class="t-3003-c">
-          ableiten kann, für die<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:249:34</span></span>
+        Wenn nun der Automat die eben beschriebene Form hat, so
+        ist die Idee, dass wir für jedes Paar $p,q$ von Zuständen
+        ein Nichtterminalsymbol $A_{pq}$ einführen, dass genau die
+        Wörter $w$ ableiten kann, für die
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         (p, \epsilon) \Step{w}^* (q,\epsilon)
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:251:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">gilt, die also den Automaten von
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:255:9</span></span><span class="t-3003-c">$p$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:255:42</span></span><span class="t-3003-c">
-          nach
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:255:45</span></span><span class="t-3003-c">$q$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:255:51</span></span><span class="t-3003-c">
-          bringen<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:255:54</span></span>
-        <span class="t-3003-c">können, wobei der Stack am Anfang und am Ende leer<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:256:9</span></span>
-        <span class="t-3003-c">ist. Dies kann auf zwei Weisen geschehen:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:257:9</span></span>
+        gilt, die also den Automaten von $p$ nach $q$ bringen
+        können, wobei der Stack am Anfang und am Ende leer ist.
+        Dies kann auf zwei Weisen geschehen:
       </p>
       <ol>
         <li>
           <p>
-            <span class="t-3003-c">Fall 1: in der Konfigurationsfolge von<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:261:17</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:262:17</span></span><span class="t-3003-c">$(p, \epsilon) \Step{w}^* (q,\epsilon)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:262:17</span></span><span class="t-3003-c">
-              wird der<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:262:56</span></span>
-            <span class="t-3003-c">Stack zwischendurch auch mal leer, und zwar nachdem<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:263:17</span></span>
-            <span class="t-3003-c">der Präfix
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:264:17</span></span><span class="t-3003-c">$u$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:264:28</span></span><span class="t-3003-c">
-              des Wortes
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:264:31</span></span><span class="t-3003-c">$w = uv$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:264:43</span></span><span class="t-3003-c">
-              gelesen ist, und<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:264:51</span></span>
-            <span class="t-3003-c">der Automat ist zu diesem Zeitpunkt im Zustand
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:265:17</span></span><span class="nowrap"><span class="t-3003-c">$r$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:265:64</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:265:67</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:265:67</span></span>
-            <span class="t-3003-c">Also:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:266:17</span></span>
+            Fall 1: in der Konfigurationsfolge von
+            $(p, \epsilon) \Step{w}^* (q,\epsilon)$ wird der Stack
+            zwischendurch auch mal leer, und zwar nachdem der Präfix
+            $u$ des Wortes $w = uv$ gelesen ist, und der Automat ist
+            zu diesem Zeitpunkt im Zustand
+            <span class="nowrap">$r$.</span>
+            Also:
           </p>
           <div class="math-block">
             $$
             \begin{align*}
             (p, \epsilon) \Step{u}^* (r,\epsilon) \Step{v}^* (q,\epsilon) \ .
             \end{align*}
-            $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:268:17</span>
+            $$
           </div>
           <p>
-            <span class="t-3003-c">Es sollte also (wenn unsere Konstruktion erfolgreich<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:272:17</span></span>
-            <span class="t-3003-c">ist) gelten, dass
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:273:17</span></span><span class="t-3003-c">$A_{pr} \Rightarrow^* u$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:273:35</span></span><span class="t-3003-c">
-              und<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:273:59</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:274:17</span></span><span class="nowrap"><span class="t-3003-c">$A_{rq} \Rightarrow^* v$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:274:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:274:41</span></span></span><span class="t-3003-c">
-              Wir führen daher die<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:274:41</span></span>
-            <span class="t-3003-c">Grammatikproduktion<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:275:17</span></span>
+            Es sollte also (wenn unsere Konstruktion erfolgreich ist)
+            gelten, dass $A_{pr} \Rightarrow^* u$ und
+            <span class="nowrap">$A_{rq} \Rightarrow^* v$.</span>
+            Wir führen daher die
+            Grammatikproduktion
           </p>
           <div class="math-block">
             $$
             \begin{align*}
             A_{pq} \rightarrow A_{pr} A_{rq}
             \end{align*}
-            $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:277:17</span>
+            $$
           </div>
           <p>
-            <span class="t-3003-c">ein.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:281:17</span></span>
+            ein.
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Fall 2: in der Konfigurationsfolge von<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:284:17</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:285:17</span></span><span class="t-3003-c">$(p, \epsilon) \Step{w}^* (q,\epsilon)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:285:17</span></span><span class="t-3003-c">
-              ist der Stack<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:285:56</span></span>
-            <span class="t-3003-c">zwischendurch nie leer. Das heißt wiederum, dass das<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:286:17</span></span>
-            <span class="t-3003-c">im ersten Schritt gepushte Stacksymbol
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:287:17</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:287:56</span></span><span class="t-3003-c">
-              am Ende<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:287:59</span></span>
-            <span class="t-3003-c">gepoppt wird, also
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:288:17</span></span><span class="t-3003-c">$w = avb$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:288:36</span></span><span class="t-3003-c">
-              mit<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:288:45</span></span>
+            Fall 2: in der Konfigurationsfolge von
+            $(p, \epsilon) \Step{w}^* (q,\epsilon)$ ist der Stack
+            zwischendurch nie leer. Das heißt wiederum, dass das im
+            ersten Schritt gepushte Stacksymbol $x$ am Ende gepoppt
+            wird, also $w = avb$ mit
           </p>
           <div class="math-block">
             $$
             \begin{align*}
             (p, \epsilon) \step{a} (r, x) \Step{v}^* (s,x) \step{b} (q,\epsilon)
             \end{align*}
-            $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:290:17</span>
+            $$
           </div>
           <p>
-            <span class="t-3003-c">Hier ist wichtig zu wissen, dass die erste Operation<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:294:17</span></span>
-            <span class="t-3003-c">eine Push-Operation sein muss: Pop kann sie eh nicht<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:295:17</span></span>
-            <span class="t-3003-c">sein, und die Möglichkeit<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:296:17</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:297:17</span></span><span class="t-3003-c">$(p,\epsilon) \step{a} (r, \epsilon)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:297:17</span></span><span class="t-3003-c">
-              haben wir durch<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:297:54</span></span>
-            <span class="t-3003-c">unsere Schönheitsoperationen ausgeschlossen. Des<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:298:17</span></span>
-            <span class="t-3003-c">weiteren ist zu beachten, dass in der<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:299:17</span></span>
-            <span class="t-3003-c">Konfigurationsfolge von
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:300:17</span></span><span class="t-3003-c">$(r, x) \Step{v}^* (s,x)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:300:41</span></span><span class="t-3003-c">
-              der<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:300:66</span></span>
-            <span class="t-3003-c">Stack nie leer wird. Keine Transition "liest" also das<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:301:17</span></span>
-            <span class="t-3003-c">unterste Zeichen
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:302:17</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:302:34</span></span><span class="t-3003-c">
-              -- denn dann müsste nacha<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:302:37</span></span>
-            <span class="t-3003-c">Schönheitsoperation das
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:303:17</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:303:41</span></span><span class="t-3003-c">
-              ja gepoppt werden und der<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:303:44</span></span>
-            <span class="t-3003-c">Stack würde vollständig geleert. In anderen Worten:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:304:17</span></span>
-            <span class="t-3003-c">die Konfigurationsfolge wäre auch dann gültig, wenn<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:305:17</span></span>
-            <span class="t-3003-c">Anfangs- und Endstack nicht
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:306:17</span></span><span class="t-3003-c">$[x]$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:306:45</span></span><span class="t-3003-c">
-              sondern
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:306:50</span></span><span class="nowrap"><span class="t-3003-c">$\epsilon$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:306:59</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:306:69</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:306:69</span></span>
-            <span class="t-3003-c">also der leere Stack wäre:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:307:17</span></span>
+            Hier ist wichtig zu wissen, dass die erste Operation eine
+            Push-Operation sein muss: Pop kann sie eh nicht sein, und
+            die Möglichkeit $(p,\epsilon) \step{a} (r, \epsilon)$
+            haben wir durch unsere Schönheitsoperationen
+            ausgeschlossen. Des weiteren ist zu beachten, dass in der
+            Konfigurationsfolge von $(r, x) \Step{v}^* (s,x)$ der
+            Stack nie leer wird. Keine Transition "liest" also das
+            unterste Zeichen $x$ -- denn dann müsste nacha
+            Schönheitsoperation das $x$ ja gepoppt werden und der
+            Stack würde vollständig geleert. In anderen Worten: die
+            Konfigurationsfolge wäre auch dann gültig, wenn Anfangs-
+            und Endstack nicht $[x]$ sondern
+            <span class="nowrap">$\epsilon$,</span>
+            also der
+            leere Stack wäre:
           </p>
           <div class="math-block">
             $$
             \begin{align*}
             (r, \epsilon) \Step{v}^* (s,\epsilon) \ .
             \end{align*}
-            $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:309:17</span>
+            $$
           </div>
           <p>
-            <span class="t-3003-c">Wenn unsere Konstruktion Erfolg hat, hieße das also<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:313:17</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:314:17</span></span><span class="t-3003-c">$A_{rs} \Rightarrow^* v$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:314:17</span></span><span class="t-3003-c">
-              und somit ist<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:314:41</span></span>
+            Wenn unsere Konstruktion Erfolg hat, hieße das also
+            $A_{rs} \Rightarrow^* v$ und somit ist
           </p>
           <div class="math-block">
             $$
             \begin{align*}
             A_{pq} \rightarrow a A_{rs} b
             \end{align*}
-            $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:316:17</span>
+            $$
           </div>
           <p>
-            <span class="t-3003-c">eine gültige Regel.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:320:17</span></span>
+            eine gültige Regel.
           </p>
         </li>
       </ol>
       <p>
-        <span class="t-3003-c">Schlussendlich führen wir noch die offensichtlich<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:322:9</span></span>
-        <span class="t-3003-c">korrekten Regeln
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:323:9</span></span><span class="t-3003-c">$A_pp \rightarrow \epsilon$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:323:26</span></span><span class="t-3003-c">
-          ein, da<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:323:53</span></span>
-        <span class="t-3003-c">ja
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:324:9</span></span><span class="t-3003-c">$(p, \epsilon) \Step{\epsilon}^* (p, \epsilon)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:324:12</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:324:59</span></span>
-        <span class="t-3003-c">offensichtlich gilt (da ja
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:325:9</span></span><span class="t-3003-c">$\Step{}^*$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:325:36</span></span><span class="t-3003-c">
-          auch die aus<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:325:47</span></span>
-        <span class="t-3003-c">null Übergangen bestehende Konfigurationsfolge<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:326:9</span></span>
-        <span class="t-3003-c">erlaubt). Zusammenfassend gesagt besteht unsere<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:327:9</span></span>
-        <span class="t-3003-c">Grammatik
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:328:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:328:19</span></span><span class="t-3003-c">
-          aus drei unterschiedlichen Typen von<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:328:22</span></span>
-        <span class="t-3003-c">Regeln:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:329:9</span></span>
+        Schlussendlich führen wir noch die offensichtlich
+        korrekten Regeln $A_pp \rightarrow \epsilon$ ein, da ja
+        $(p, \epsilon) \Step{\epsilon}^* (p, \epsilon)$
+        offensichtlich gilt (da ja $\Step{}^*$ auch die aus null
+        Übergangen bestehende Konfigurationsfolge erlaubt).
+        Zusammenfassend gesagt besteht unsere Grammatik $G$ aus
+        drei unterschiedlichen Typen von Regeln:
       </p>
       <div class="math-block">
         $$
@@ -932,72 +770,59 @@
         A_{pq}&amp;\rightarrow a A_{rs} b \textnormal{ für alle Pushp-Pop-Paare
         $(p,\epsilon) \step{a} (r,x)$, $(s,x) \step{b} (q,\epsilon)$ von Transitionen}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:331:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Das Startsymbol der Grammatik ist natürlich<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:338:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:339:9</span></span><span class="nowrap"><span class="t-3003-c">$A_{\qstart, \qend}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:339:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:339:29</span></span></span><span class="t-3003-c">
-          Auch hier verzichte ich auf<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:339:29</span></span>
-        <span class="t-3003-c">einen formalen Beweis, dass
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:340:9</span></span><span class="t-3003-c">$L(G)=L(M)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:340:37</span></span><span class="t-3003-c">
-          gilt. Der<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:340:48</span></span>
-        <span class="t-3003-c">Beweis verwendet (wenig überraschend) Induktion über<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:341:9</span></span>
-        <span class="t-3003-c">die Länge der Ableitung bzw. Induktion über die Länge<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:342:9</span></span>
-        <span class="t-3003-c">der Konfigurationsfolge und ist in Sipsers Lehrbuch im<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:343:9</span></span>
-        <span class="t-3003-c">Detail erklärt.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:344:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Das Startsymbol der Grammatik ist natürlich
+        <span class="nowrap">$A_{\qstart, \qend}$.</span>
+        Auch hier verzichte ich auf einen
+        formalen Beweis, dass $L(G)=L(M)$ gilt. Der Beweis
+        verwendet (wenig überraschend) Induktion über die Länge der
+        Ableitung bzw. Induktion über die Länge der
+        Konfigurationsfolge und ist in Sipsers Lehrbuch im Detail
+        erklärt.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beispiel 6.2.4<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:346:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:346:5</span></span>
-        <span class="t-3003-c">Wir betrachten die Sprache<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:347:9</span></span>
+        <b>Beispiel 6.2.4</b>
+        Wir betrachten die Sprache
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         a^m b (a|b)^* b a^m
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:349:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Diese ist
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:353:9</span></span><i><span class="t-3003-c">nicht<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:353:20</span></span></i><span class="t-3003-c">
-          regulär, da der Präfix und der<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:353:26</span></span>
-        <span class="t-3003-c">Suffix aus
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:354:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:354:20</span></span><span class="t-3003-c">
-          die gleiche Länge
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:354:23</span></span><span class="t-3003-c">$m$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:354:42</span></span><span class="t-3003-c">
-          haben müssen.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:354:45</span></span>
-        <span class="t-3003-c">Wir bauen zuerst einen Kellerautomaten und übersetzen<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:355:9</span></span>
-        <span class="t-3003-c">den dann entsprechend dem Schema aus dem letzten<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:356:9</span></span>
-        <span class="t-3003-c">Theorem in eine Grammatik. Dann vergleichen wir die<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:357:9</span></span>
-        <span class="t-3003-c">entstandene Grammatik mit der, die wir per Hand aus<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:358:9</span></span>
-        <span class="t-3003-c">der obigen Sprachbeschreibung bauen würden. Unser<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:359:9</span></span>
-        <span class="t-3003-c">Automat hat einen Zustand
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:360:9</span></span><span class="nowrap"><span class="t-3003-c">$q_1$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:360:35</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:360:40</span></span></span><span class="t-3003-c">
-          in welchem er<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:360:40</span></span>
-        <span class="t-3003-c">führenden
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:361:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:361:19</span></span><span class="t-3003-c">
-          's auf den Stack legt und einen Zustand<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:361:22</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:362:9</span></span><span class="nowrap"><span class="t-3003-c">$q_3$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:362:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:362:14</span></span></span><span class="t-3003-c">
-          in welchem er die
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:362:14</span></span><span class="nowrap"><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:362:34</span></span><span class="t-3003-c">'s<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:362:37</span></span></span><span class="t-3003-c">
-          am Ende liest und vom<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:362:37</span></span>
-        <span class="t-3003-c">Stack poppt. Zwischen den beiden
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:363:9</span></span><span class="nowrap"><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:363:42</span></span><span class="t-3003-c">'s<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:363:45</span></span></span><span class="t-3003-c">
-          in der Mitte<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:363:45</span></span>
-        <span class="t-3003-c">ist er in einem Zustand
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:364:9</span></span><span class="nowrap"><span class="t-3003-c">$q_2$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:364:33</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:364:38</span></span></span><span class="t-3003-c">
-          in welchem er die<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:364:38</span></span>
-        <span class="t-3003-c">Eingabesymbole mehr oder weniger ignoriert. Der<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:365:9</span></span>
-        <span class="t-3003-c">Automat muss nichtdeterministisch sein, da er<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:366:9</span></span>
-        <span class="t-3003-c">"erraten" muss, welches
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:367:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:367:33</span></span><span class="t-3003-c">
-          das letzte ist, weil er<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:367:36</span></span>
-        <span class="t-3003-c">dann mit dem Stack-Poppen beginnen muss.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:368:9</span></span>
+        Diese ist
+        <i>nicht</i>
+        regulär, da der Präfix und der Suffix
+        aus $a$ die gleiche Länge $m$ haben müssen. Wir bauen
+        zuerst einen Kellerautomaten und übersetzen den dann
+        entsprechend dem Schema aus dem letzten Theorem in eine
+        Grammatik. Dann vergleichen wir die entstandene Grammatik
+        mit der, die wir per Hand aus der obigen Sprachbeschreibung
+        bauen würden. Unser Automat hat einen Zustand
+        <span class="nowrap">$q_1$,</span>
+        in
+        welchem er führenden $a$ 's auf den Stack legt und einen
+        Zustand
+        <span class="nowrap">$q_3$,</span>
+        in welchem er die
+        <span class="nowrap">$a$'s</span>
+        am Ende liest und
+        vom Stack poppt. Zwischen den beiden
+        <span class="nowrap">$b$'s</span>
+        in der Mitte
+        ist er in einem Zustand
+        <span class="nowrap">$q_2$,</span>
+        in welchem er die
+        Eingabesymbole mehr oder weniger ignoriert. Der Automat
+        muss nichtdeterministisch sein, da er "erraten" muss,
+        welches $b$ das letzte ist, weil er dann mit dem
+        Stack-Poppen beginnen muss.
       </p>
       <div class="math-block">
         $$
@@ -1011,11 +836,11 @@
         (q_3, a)&amp;\step{a} (q_3, \epsilon) \\ \hline
         (q_3, \$)&amp;\step{\epsilon} (\qend, \epsilon)
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:370:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Die beiden rot gefärbten Transitionen benötigen eine<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:381:9</span></span>
-        <span class="t-3003-c">Schönheitsoperation:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:382:9</span></span><span style="color:purple">
+        Die beiden rot gefärbten Transitionen benötigen eine
+        Schönheitsoperation:<span style="color:purple">
           <div class="math-block">
             $$
             \begin{align*}
@@ -1023,104 +848,68 @@
             (q_2, \epsilon)&amp;\step{b} (q'_2, x) \\
             (q'_2, x)&amp;\step{\epsilon} (q_2, \epsilon) \\
             \end{align*}
-            $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:385:13</span>
+            $$
           </div>
-        </span><span class="t-3003-c">Unsere Zustandsmenge ist also<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:390:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:391:9</span></span><span class="nowrap"><span class="t-3003-c">$Q = \{\qstart, q_1, q_2, q'_2, q_3, \qend\}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:391:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:391:54</span></span></span><span class="t-3003-c">
-          Rein<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:391:54</span></span>
-        <span class="t-3003-c">theoretisch müssten wir nun für alle Tripel
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:392:9</span></span><span class="t-3003-c">$p,r,q$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:392:53</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:392:60</span></span>
-        <span class="t-3003-c">von Zuständen eine Produktion<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:393:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:394:9</span></span><span class="t-3003-c">$A_{pq} \rightarrow A_{pr} A_{rq}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:394:9</span></span><span class="t-3003-c">
-          einführen, also<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:394:43</span></span>
-        <span class="t-3003-c">allein hierfür schon
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:395:9</span></span><span class="t-3003-c">$5^3 = 125$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:395:30</span></span><span class="t-3003-c">
-          Produktionen. Wir<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:395:41</span></span>
-        <span class="t-3003-c">können das reduzieren, indem wir die im Beweis<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:396:9</span></span>
-        <span class="t-3003-c">beschriebene mechanische Prozedur mit ein wenig<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:397:9</span></span>
-        <span class="t-3003-c">selbständigem Denken kombinieren. Die erste<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:398:9</span></span>
-        <span class="t-3003-c">Beobachtung ist, dass wir gar nicht von jedem Zustand<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:399:9</span></span>
-        <span class="t-3003-c">zu jedem kommen können, sondern nur "vorwärts", also<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:400:9</span></span>
-        <span class="t-3003-c">wie in diesem Diagramm:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:401:9</span></span>
+        </span>Unsere Zustandsmenge ist also
+        <span class="nowrap">$Q = \{\qstart, q_1, q_2, q'_2, q_3, \qend\}$.</span>
+        Rein
+        theoretisch müssten wir nun für alle Tripel $p,r,q$ von
+        Zuständen eine Produktion
+        $A_{pq} \rightarrow A_{pr} A_{rq}$ einführen, also allein
+        hierfür schon $5^3 = 125$ Produktionen. Wir können das
+        reduzieren, indem wir die im Beweis beschriebene
+        mechanische Prozedur mit ein wenig selbständigem Denken
+        kombinieren. Die erste Beobachtung ist, dass wir gar nicht
+        von jedem Zustand zu jedem kommen können, sondern nur
+        "vorwärts", also wie in diesem Diagramm:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/context-free/pda-to-cfg-diagram.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/pda-to-cfg-diagram.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Nichtterminale wie
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:408:9</span></span><span class="t-3003-c">$A_{31}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:408:28</span></span><span class="t-3003-c">
-          führen wir also gar nicht<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:408:36</span></span>
-        <span class="t-3003-c">erst ein. Auch schreiben wir
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:409:9</span></span><span class="t-3003-c">$A_{13}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:409:38</span></span><span class="t-3003-c">
-          statt<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:409:46</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:410:9</span></span><span class="t-3003-c">$A_{q_1q_3}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:410:9</span></span><span class="t-3003-c">
-          und verwenden die Indizes 0 für
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:410:21</span></span><span class="t-3003-c">$\qstart$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:410:54</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:410:63</span></span>
-        <span class="t-3003-c">und 4 für
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:411:9</span></span><span class="nowrap"><span class="t-3003-c">$\qend$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:411:19</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:411:26</span></span></span><span class="t-3003-c">
-          Als zweite Beobachtung sehen wir,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:411:26</span></span>
-        <span class="t-3003-c">dass man mit leerem Stapel beispielsweise gar nicht<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:412:9</span></span>
-        <span class="t-3003-c">von
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:413:9</span></span><span class="t-3003-c">$\qstart$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:413:13</span></span><span class="t-3003-c">
-          nach
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:413:22</span></span><span class="t-3003-c">$q_3$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:413:28</span></span><span class="t-3003-c">
-          kommt: auf dem Weg dorthin<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:413:33</span></span>
-        <span class="t-3003-c">wird ein
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:414:9</span></span><span class="t-3003-c">\(\$\)<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:414:18</span></span><span class="t-3003-c">
-          gepusht und nie gepoppt; gleiches<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:414:24</span></span>
-        <span class="t-3003-c">gilt für viele weitere Zustandspaare. Das erweiterte<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:415:9</span></span>
-        <span class="t-3003-c">Diagramm hier gibt eine Orientierung. Neben jeden<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:416:9</span></span>
-        <span class="t-3003-c">Zustand haben wir schematisch den Stack gemalt:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:417:9</span></span>
+        Nichtterminale wie $A_{31}$ führen wir also gar nicht erst
+        ein. Auch schreiben wir $A_{13}$ statt $A_{q_1q_3}$ und
+        verwenden die Indizes 0 für $\qstart$ und 4 für
+        <span class="nowrap">$\qend$.</span>
+        Als zweite Beobachtung sehen wir, dass man mit leerem
+        Stapel beispielsweise gar nicht von $\qstart$ nach $q_3$
+        kommt: auf dem Weg dorthin wird ein \(\$\) gepusht und nie
+        gepoppt; gleiches gilt für viele weitere Zustandspaare. Das
+        erweiterte Diagramm hier gibt eine Orientierung. Neben
+        jeden Zustand haben wir schematisch den Stack gemalt:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/context-free/pda-to-cfg-diagram-stack.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/pda-to-cfg-diagram-stack.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Die einzigen Nichtterminale sind also die "trivialen"<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:424:9</span></span>
-        <span class="t-3003-c">der Form
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:425:9</span></span><span class="t-3003-c">$A_{qq}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:425:18</span></span><span class="t-3003-c">
-          und darüberhinaus<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:425:26</span></span>
+        Die einzigen Nichtterminale sind also die "trivialen" der
+        Form $A_{qq}$ und darüberhinaus
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         A_{04}, A_{13}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:427:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Da man von
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:431:9</span></span><span class="t-3003-c">$\qstart$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:431:20</span></span><span class="t-3003-c">
-          zu sich selber und von
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:431:29</span></span><span class="t-3003-c">$\qend$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:431:53</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:431:60</span></span>
-        <span class="t-3003-c">zu sich selber nur mit dem leeren Wort gelant,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:432:9</span></span>
-        <span class="t-3003-c">ersetzen wir
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:433:9</span></span><span class="t-3003-c">$A_{00}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:433:22</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:433:30</span></span><span class="t-3003-c">$A_{44}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:433:35</span></span><span class="t-3003-c">
-          sofort durch<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:433:43</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:434:9</span></span><span class="nowrap"><span class="t-3003-c">$\epsilon$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:434:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:434:19</span></span></span><span class="t-3003-c">
-          Als Produktionen der Form<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:434:19</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:435:9</span></span><span class="t-3003-c">$A_{pq} \rightarrow A_{pr} A_{rq}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:435:9</span></span><span class="t-3003-c">
-          erhalten wir also:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:435:43</span></span>
+        Da man von $\qstart$ zu sich selber und von $\qend$ zu
+        sich selber nur mit dem leeren Wort gelant, ersetzen wir
+        $A_{00}$ und $A_{44}$ sofort durch
+        <span class="nowrap">$\epsilon$.</span>
+        Als
+        Produktionen der Form $A_{pq} \rightarrow A_{pr} A_{rq}$
+        erhalten wir also:
       </p>
       <div class="math-block">
         $$
@@ -1131,28 +920,20 @@
         A_{22}&amp;\rightarrow A_{22} A_{22} \\
         A_{33}&amp;\rightarrow A_{33} A_{33}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:437:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Schon deutlich besser als die 125 Produktionen, die<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:445:9</span></span>
-        <span class="t-3003-c">wir bekämen, wenn wir stur an der Methode im Beweis<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:446:9</span></span>
-        <span class="t-3003-c">festhalten würden. Wir brauchen noch Produktionen der<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:447:9</span></span>
-        <span class="t-3003-c">Form
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:448:9</span></span><span class="nowrap"><span class="t-3003-c">$A_{pq} \rightarrow a A_{rs} b$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:448:14</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:448:45</span></span></span><span class="t-3003-c">
-          Dafür müssen<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:448:45</span></span>
-        <span class="t-3003-c">wir nach Push-Pop-Paaren<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:449:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:450:9</span></span><span class="nowrap"><span class="t-3003-c">$(p,\epsilon) \step{a} (r,x)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:450:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:450:38</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:450:38</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:451:9</span></span><span class="t-3003-c">$(s,x) \step{b} (q,\epsilon)$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:451:9</span></span><span class="t-3003-c">
-          suchen. Stack-Symbole<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:451:38</span></span>
-        <span class="t-3003-c">sind
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:452:9</span></span><span class="nowrap"><span class="t-3003-c">$a, b, x$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:452:14</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:452:23</span></span></span><span class="t-3003-c">
-          Suchen wir also zuerst nach Paaren<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:452:23</span></span>
-        <span class="t-3003-c">von Transitionen, die
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:453:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:453:31</span></span><span class="t-3003-c">
-          pushen und poppen.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:453:34</span></span>
+        Schon deutlich besser als die 125 Produktionen, die wir
+        bekämen, wenn wir stur an der Methode im Beweis festhalten
+        würden. Wir brauchen noch Produktionen der Form
+        <span class="nowrap">$A_{pq} \rightarrow a A_{rs} b$.</span>
+        Dafür müssen wir nach
+        Push-Pop-Paaren
+        <span class="nowrap">$(p,\epsilon) \step{a} (r,x)$,</span>
+        $(s,x) \step{b} (q,\epsilon)$ suchen. Stack-Symbole sind
+        <span class="nowrap">$a, b, x$.</span>
+        Suchen wir also zuerst nach Paaren von
+        Transitionen, die $a$ pushen und poppen.
       </p>
       <div class="math-block">
         $$
@@ -1161,16 +942,12 @@
         (q_3, a) \step{a} (q_3, \epsilon) \textnormal{ ergibt die Produktion }
         A_{13} \rightarrow a A_{13} a
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:455:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Das waren die einzigen Transitionen, in denen
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:461:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:461:55</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:461:58</span></span>
-        <span class="t-3003-c">gepusht und gepoppt wird. Betrachten wir als nächstes<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:462:9</span></span>
-        <span class="t-3003-c">das Stacksymbol
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:463:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:463:25</span></span><span class="t-3003-c">
-          :<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:463:28</span></span>
+        Das waren die einzigen Transitionen, in denen $a$ gepusht
+        und gepoppt wird. Betrachten wir als nächstes das
+        Stacksymbol $b$ :
       </p>
       <div class="math-block">
         $$
@@ -1179,14 +956,14 @@
         (q_2, b) \step{a} (q_3, \epsilon) \textnormal{ ergibt die Produktion }
         A_{13} \rightarrow b A_{22} b
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:465:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Nun zu den Transitionen mit Stacksymbol
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:471:9</span></span><span class="nowrap"><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:471:49</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:471:52</span></span></span><span class="t-3003-c">
-          Da gibt<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:471:52</span></span>
-        <span class="t-3003-c">es zwei Push-Transitionen und eine Pop-Transition,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:472:9</span></span>
-        <span class="t-3003-c">also zwei Paare:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:473:9</span></span>
+        Nun zu den Transitionen mit Stacksymbol
+        <span class="nowrap">$x$.</span>
+        Da gibt es
+        zwei Push-Transitionen und eine Pop-Transition, also zwei
+        Paare:
       </p>
       <div class="math-block">
         $$
@@ -1198,12 +975,12 @@
         (q'_2, x) \step{\epsilon} (q_2, \epsilon) \textnormal{ ergibt die Produktion }
         A_{22} \rightarrow b A_{2'2'} \\
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:475:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Und schlussendlich die mit Stacksymbol
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:484:9</span></span><span><span class="t-3003-c">$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:484:49</span></span></span><span class="t-3003-c">. Da gibt es<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:484:50</span></span>
-        <span class="t-3003-c">eine Push- und eine Pop-Transition:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:485:9</span></span>
+        Und schlussendlich die mit Stacksymbol
+        <span>$</span>. Da gibt es eine
+        Push- und eine Pop-Transition:
       </p>
       <div class="math-block">
         $$
@@ -1212,10 +989,10 @@
         (q_3, \$) \step{\epsilon} (\qend, \epsilon) \textnormal{ ergibt die Produktion }
         A_{04} \rightarrow A_{13} \\
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:487:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Sammeln wir nun alle Produktionen:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:493:9</span></span>
+        Sammeln wir nun alle Produktionen:
       </p>
       <div class="math-block">
         $$
@@ -1237,23 +1014,14 @@
         {\color{red} A_{33}}    \,\,&amp;{\color{red} \rightarrow \epsilon} \\
         {\color{red} A_{44}}    \,\,&amp;{\color{red} \rightarrow \epsilon} \\
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:495:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">wobei
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:514:9</span></span><span class="t-3003-c">$A_{04}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:514:15</span></span><span class="t-3003-c">
-          das Startsymbol ist. Wir haben<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:514:23</span></span>
-        <span class="t-3003-c">diejenigen Nichtterminale und Produktionen rot<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:515:9</span></span>
-        <span class="t-3003-c">markiert, aus denen nur
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:516:9</span></span><span class="t-3003-c">$\epsilon$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:516:33</span></span><span class="t-3003-c">
-          hervorgehen kann.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:516:43</span></span>
-        <span class="t-3003-c">Wir können die Grammatik nun entsprechend<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:517:9</span></span>
-        <span class="t-3003-c">vereinfachen. Zusätzlich löschen wir
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:518:9</span></span><span class="t-3003-c">$A_{04}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:518:46</span></span><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:518:54</span></span>
-        <span class="t-3003-c">ernennen
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:519:9</span></span><span class="t-3003-c">$A_{13}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:519:18</span></span><span class="t-3003-c">
-          zu unserem Startsymbol:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:519:26</span></span>
+        wobei $A_{04}$ das Startsymbol ist. Wir haben diejenigen
+        Nichtterminale und Produktionen rot markiert, aus denen nur
+        $\epsilon$ hervorgehen kann. Wir können die Grammatik nun
+        entsprechend vereinfachen. Zusätzlich löschen wir $A_{04}$
+        und ernennen $A_{13}$ zu unserem Startsymbol:
       </p>
       <div class="math-block">
         $$
@@ -1265,56 +1033,41 @@
         A_{22}&amp;\rightarrow b \\ \hline
         A_{22}&amp;\rightarrow \epsilon \\
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:521:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Überlegen wir nun, ausgehend von dieser Grammatik,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:530:9</span></span>
-        <span class="t-3003-c">was wir aus dem Startsymbol
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:531:9</span></span><span class="t-3003-c">$A_{13}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:531:37</span></span><span class="t-3003-c">
-          ableiten können.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:531:45</span></span>
-        <span class="t-3003-c">Die einzigen zwei Produktionen mit
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:532:9</span></span><span class="t-3003-c">$A_{13}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:532:44</span></span><span class="t-3003-c">
-          sind<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:532:52</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:533:9</span></span><span class="t-3003-c">$A_{13} \rightarrow a A_{13} a$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:533:9</span></span><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:533:40</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:534:9</span></span><span class="nowrap"><span class="t-3003-c">$A_{13} \rightarrow b A_{22}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:534:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:534:38</span></span></span><span class="t-3003-c">
-          also gilt<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:534:38</span></span>
+        Überlegen wir nun, ausgehend von dieser Grammatik, was wir
+        aus dem Startsymbol $A_{13}$ ableiten können. Die einzigen
+        zwei Produktionen mit $A_{13}$ sind
+        $A_{13} \rightarrow a A_{13} a$ und
+        <span class="nowrap">$A_{13} \rightarrow b A_{22}$,</span>
+        also gilt
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         A_{13} \Rightarrow^* a^m b A_{22} b a^m \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:536:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Aus
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:540:9</span></span><span class="t-3003-c">$A_{22}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:540:13</span></span><span class="t-3003-c">
-          können wir per Produktion<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:540:21</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:541:9</span></span><span class="t-3003-c">$A_{22} \rightarrow A_{22} A_{22}$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:541:9</span></span><span class="t-3003-c">
-          erst einmal alle<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:541:43</span></span>
-        <span class="t-3003-c">Wortformem der Form
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:542:9</span></span><span class="t-3003-c">$A_{22}^*$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:542:29</span></span><span class="t-3003-c">
-          ableiten; per<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:542:39</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:543:9</span></span><span class="t-3003-c">$A_{22} \rightarrow a \ | \ b \ | \ \epsilon$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:543:9</span></span><span class="t-3003-c">
-          dann<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:543:54</span></span>
-        <span class="t-3003-c">alle Wortform
-          <span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:544:9</span></span><span class="nowrap"><span class="t-3003-c">$(a|b)^*$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:544:23</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:544:32</span></span></span><span class="t-3003-c">
-          Also:<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:544:32</span></span>
+        Aus $A_{22}$ können wir per Produktion
+        $A_{22} \rightarrow A_{22} A_{22}$ erst einmal alle
+        Wortformem der Form $A_{22}^*$ ableiten; per
+        $A_{22} \rightarrow a \ | \ b \ | \ \epsilon$ dann alle
+        Wortform
+        <span class="nowrap">$(a|b)^*$.</span>
+        Also:
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         A_{13} \Step{}^* a^m b (a|b)^* b a^m \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:546:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Die Grammatik erzeugt also die gewünschte Sprache.<span class="t-3003">./course1/wly/06/02-cfg-to-pda.wly:550:9</span></span>
+        Die Grammatik erzeugt also die gewünschte Sprache.
       </p>
     </div>
     <div id="end-of-page-elt">

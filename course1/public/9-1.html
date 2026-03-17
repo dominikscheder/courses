@@ -40,209 +40,118 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">9.1&ensp;Das Zeithierarchietheorem<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:2:11</span></span>
+        9.1&ensp;Das Zeithierarchietheorem
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Das Zeithierarchietheorem besagt, dass es zu jeder<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:4:5</span></span>
-      <span class="t-3003-c">"vernünftigen" Komplexitätsfunktion<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:5:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:6:5</span></span><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:6:5</span></span><span class="t-3003-c">
-        ein Entscheidungsproblem<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:6:27</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:7:5</span></span><span class="t-3003-c">$L \subseteq \Sigma^*$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:7:5</span></span><span class="t-3003-c">
-        gibt, dass man in Zeit
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:7:27</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:7:51</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:7:54</span></span>
-      <span class="t-3003-c">entscheiden kann, aber nicht deutlich schneller. Was<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:8:5</span></span>
-      <span class="t-3003-c">"vernünftig" bedeutet, wird weiter unten klar werden.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:9:5</span></span>
-      <span class="t-3003-c">Wir betrachten noch einmal genauer die universelle<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:10:5</span></span>
-      <span class="t-3003-c">Turingmaschine aus
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:11:5</span></span><a
+      Das Zeithierarchietheorem besagt, dass es zu jeder
+      "vernünftigen" Komplexitätsfunktion $t: \N \rightarrow \N$
+      ein Entscheidungsproblem $L \subseteq \Sigma^*$ gibt, dass
+      man in Zeit $t$ entscheiden kann, aber nicht deutlich
+      schneller. Was "vernünftig" bedeutet, wird weiter unten
+      klar werden. Wir betrachten noch einmal genauer die
+      universelle Turingmaschine aus
+      <a
         href="./8-5.html"
         class=""
-      >Kapitel 8.5</a><span class="t-3003-c">
-        Unsere<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:11:5</span></span>
-      <span class="t-3003-c">Implementierung hatte insgesamt fünf Bänder verwendet:<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:12:5</span></span>
-      <span class="t-3003-c">(1) ein Band, um die Regeln von
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:13:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:13:37</span></span><span class="t-3003-c">
-        zu speichern<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:13:40</span></span>
-      <span class="t-3003-c">(also die Funktion
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:14:5</span></span><span class="nowrap"><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:14:24</span></span><span class="t-3003-c">);<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:14:32</span></span></span><span class="t-3003-c">
-        (2) ein Band, um den<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:14:32</span></span>
-      <span class="t-3003-c">Zustand von
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:15:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:15:17</span></span><span class="t-3003-c">
-        zu speichern; (3) um den<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:15:20</span></span>
-      <span class="t-3003-c">akzeptierenden Zustand
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:16:5</span></span><span class="t-3003-c">$\qaccept$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:16:28</span></span><span class="t-3003-c">
-        von
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:16:38</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:16:43</span></span><span class="t-3003-c">
-        zu<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:16:46</span></span>
-      <span class="t-3003-c">speichern; (4) und (5) um das Band von
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:17:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:17:44</span></span><span class="t-3003-c">
-        zu<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:17:47</span></span>
-      <span class="t-3003-c">simulieren. Für letzteres hatten wir
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:18:5</span></span><i><span class="t-3003-c">zwei<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:18:43</span></span></i><span class="t-3003-c">
-        Bänder<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:18:48</span></span>
-      <span class="t-3003-c">verwendet, weil das uns erlaubte, effizient Zeichen<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:19:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:20:5</span></span><i><span class="t-3003-c">einzufügen<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:20:6</span></span></i><span class="t-3003-c">
-        statt einfach zu überschreiben. Wie wir<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:20:17</span></span>
-      <span class="t-3003-c">aber gesehen hatten, können wir (4) und (5) mit einem<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:21:5</span></span>
-      <span class="t-3003-c">Band bewältigen, indem wir zu allererst die Codierung<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:22:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:23:5</span></span><span class="t-3003-c">$\enc(M)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:23:5</span></span><span class="t-3003-c">
-        durchgehen und die Länge
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:23:14</span></span><span class="t-3003-c">$l$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:23:40</span></span><span class="t-3003-c">
-        des längsten<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:23:43</span></span>
-      <span class="t-3003-c">Bandzeichen bestimmen. Wir verwenden dann auf Band (4)<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:24:5</span></span>
-      <span class="t-3003-c">immer Blöcke der Länge
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:25:5</span></span><span class="t-3003-c">$l$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:25:28</span></span><span class="t-3003-c">
-        für ein
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:25:31</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:25:40</span></span><span class="t-3003-c">-Zeichen<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:25:43</span></span></span><span class="t-3003-c">
-        und<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:25:43</span></span>
-      <span class="t-3003-c">separieren diese durch eine Markierung
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:26:5</span></span><span class="nowrap"><span class="t-3003-c">$\texttt{#}$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:26:44</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:26:56</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:26:56</span></span>
-      <span class="t-3003-c">Auch das Band (3) können wir uns sparen: den<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:27:5</span></span>
-      <span class="t-3003-c">akzeptierenden Zustand von
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:28:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:28:32</span></span><span class="t-3003-c">
-        können wir gleich am<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:28:35</span></span>
-      <span class="t-3003-c">Anfang von (1) schreiben, ohne das die Simulation<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:29:5</span></span>
-      <span class="t-3003-c">dadurch nennenswert teurer würde. Wir kommen also mit<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:30:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:31:5</span></span><i><span class="t-3003-c">drei<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:31:6</span></span></i><span class="t-3003-c">
-        Bändern aus. Allerdings hatten wir uns nur<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:31:11</span></span>
-      <span class="t-3003-c">überlegt, wie man Einband-Turingmaschinen
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:32:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:32:47</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:32:50</span></span>
-      <span class="t-3003-c">simuliert. Es ist aber ziemlich einfach zu sehen, dass<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:33:5</span></span>
-      <span class="t-3003-c">man Codierung und Simulation ganz analog für
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:34:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:34:50</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:34:53</span></span>
-      <span class="t-3003-c">-Band-Turingmaschinen durchführen kann. Die<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:35:5</span></span>
-      <span class="t-3003-c">entsprechende Turingmaschine hat dann allerdings
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:36:5</span></span><span class="t-3003-c">$k+2$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:36:54</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:36:59</span></span>
-      <span class="t-3003-c">Bänder:
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:37:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:37:13</span></span><span class="t-3003-c">
-        Arbeitsbänder, eins für den Zustand von<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:37:16</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:38:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:38:5</span></span><span class="t-3003-c">
-        und eins für
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:38:8</span></span><span class="t-3003-c">$\enc(M)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:38:22</span></span><span class="t-3003-c">
-        . Darüberhinaus hatten wir<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:38:31</span></span>
-      <span class="t-3003-c">in
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:39:5</span></span><a
+      >Kapitel 8.5</a>
+      Unsere Implementierung hatte insgesamt fünf Bänder
+      verwendet: (1) ein Band, um die Regeln von $M$ zu
+      speichern (also die Funktion
+      <span class="nowrap">$\delta$);</span>
+      (2) ein Band, um
+      den Zustand von $M$ zu speichern; (3) um den
+      akzeptierenden Zustand $\qaccept$ von $M$ zu speichern;
+      (4) und (5) um das Band von $M$ zu simulieren. Für
+      letzteres hatten wir
+      <i>zwei</i>
+      Bänder verwendet, weil das uns
+      erlaubte, effizient Zeichen
+      <i>einzufügen</i>
+      statt einfach zu
+      überschreiben. Wie wir aber gesehen hatten, können wir (4)
+      und (5) mit einem Band bewältigen, indem wir zu allererst
+      die Codierung $\enc(M)$ durchgehen und die Länge $l$ des
+      längsten Bandzeichen bestimmen. Wir verwenden dann auf Band
+      (4) immer Blöcke der Länge $l$ für ein
+      <span class="nowrap">$M$-Zeichen</span>
+      und
+      separieren diese durch eine Markierung
+      <span class="nowrap">$\texttt{#}$.</span>
+      Auch
+      das Band (3) können wir uns sparen: den akzeptierenden
+      Zustand von $M$ können wir gleich am Anfang von (1)
+      schreiben, ohne das die Simulation dadurch nennenswert
+      teurer würde. Wir kommen also mit
+      <i>drei</i>
+      Bändern aus.
+      Allerdings hatten wir uns nur überlegt, wie man
+      Einband-Turingmaschinen $M$ simuliert. Es ist aber
+      ziemlich einfach zu sehen, dass man Codierung und
+      Simulation ganz analog für $k$ -Band-Turingmaschinen
+      durchführen kann. Die entsprechende Turingmaschine hat dann
+      allerdings $k+2$ Bänder: $k$ Arbeitsbänder, eins für den
+      Zustand von $M$ und eins für $\enc(M)$ . Darüberhinaus
+      hatten wir in
+      <a
         href="./8-6.html"
         class=""
-      >Kapitel 8.6</a><span class="t-3003-c">
-        gesehen, dass wir als<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:39:5</span></span>
-      <span class="t-3003-c">Codierungsalphabet
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:40:5</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:40:24</span></span><span class="t-3003-c">
-        selbst nehmen können,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:40:32</span></span>
-      <span class="t-3003-c">also
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:41:5</span></span><span class="nowrap"><span class="t-3003-c">$\enc(M) \in \Sigma^*$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:41:10</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:41:32</span></span></span><span class="t-3003-c">
-        solange
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:41:32</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:41:42</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:41:50</span></span>
-      <span class="t-3003-c">mindestens zwei Zeichen enthält.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:42:5</span></span>
+      >Kapitel 8.6</a>
+      gesehen, dass
+      wir als Codierungsalphabet $\Sigma$ selbst nehmen können,
+      also
+      <span class="nowrap">$\enc(M) \in \Sigma^*$,</span>
+      solange $\Sigma$ mindestens
+      zwei Zeichen enthält.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 9.1.1<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:44:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:44:5</span></span>
-        <span class="t-3003-c">Für jedes Alphabet
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:45:9</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:45:28</span></span><span class="t-3003-c">
-          mit mindestens zwei<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:45:36</span></span>
-        <span class="t-3003-c">Zeichen und jedes
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:46:9</span></span><span class="t-3003-c">$k \geq 1$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:46:27</span></span><span class="t-3003-c">
-          gibt es eine<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:46:37</span></span>
-        <span class="t-3003-c">Turingmaschine
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:47:9</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:47:24</span></span><span class="t-3003-c">
-          mit
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:47:27</span></span><span class="t-3003-c">$k+2$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:47:32</span></span><span class="t-3003-c">
-          Bändern, die folgendes<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:47:37</span></span>
-        <span class="t-3003-c">kann: sei
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:48:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:48:19</span></span><span class="t-3003-c">
-          eine beliebige
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:48:22</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:48:38</span></span><span class="t-3003-c">
-          -Band-Turingmaschine<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:48:41</span></span>
-        <span class="t-3003-c">mit Eingabealphabet
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:49:9</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:49:29</span></span><span class="t-3003-c">
-          und sei
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:49:37</span></span><span class="nowrap"><span class="t-3003-c">$x \in \Sigma^*$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:49:46</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:49:62</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:49:62</span></span>
-        <span class="t-3003-c">Dann gilt<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:50:9</span></span>
+        <b>Theorem 9.1.1</b>
+        Für jedes Alphabet $\Sigma$ mit mindestens zwei Zeichen
+        und jedes $k \geq 1$ gibt es eine Turingmaschine $U$ mit
+        $k+2$ Bändern, die folgendes kann: sei $M$ eine beliebige
+        $k$ -Band-Turingmaschine mit Eingabealphabet $\Sigma$ und
+        sei
+        <span class="nowrap">$x \in \Sigma^*$.</span>
+        Dann gilt
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         f_{U} (\enc(M)x) = f_M(x) \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:52:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Weiterhin gilt: wenn
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:56:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:56:30</span></span><span class="t-3003-c">
-          auf
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:56:33</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:56:38</span></span><span class="t-3003-c">
-          innerhalb von
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:56:41</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:56:56</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:56:59</span></span>
-        <span class="t-3003-c">Schritten terminiert, dann terminiert
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:57:9</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:57:47</span></span><span class="t-3003-c">
-          auf<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:57:50</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:58:9</span></span><span class="t-3003-c">$\enc(M)x$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:58:9</span></span><span class="t-3003-c">
-          innerhalb von<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:58:19</span></span>
+        Weiterhin gilt: wenn $M$ auf $x$ innerhalb von $s$
+        Schritten terminiert, dann terminiert $U$ auf $\enc(M)x$
+        innerhalb von
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         C \cdot |\enc(M)| \cdot (|x| + s)
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:60:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Schritten. Das
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:64:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:64:24</span></span><span class="t-3003-c">
-          ist hier eine
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:64:27</span></span><span class="nowrap"><i><span class="t-3003-c">absolute<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:64:43</span></span>
-            <span class="t-3003-c">Konstante<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:65:9</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:65:19</span></span></span><span class="t-3003-c">
-          hängt also weder von
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:65:19</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:65:42</span></span><span class="t-3003-c">
-          noch von
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:65:45</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:65:55</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:65:63</span></span>
-        <span class="t-3003-c">ab.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:66:9</span></span>
+        Schritten. Das $C$ ist hier eine
+        <span class="nowrap"><i>absolute Konstante</i>,</span>
+        hängt also weder von $M$ noch von $\Sigma$ ab.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Dass es so ein
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:68:5</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:68:20</span></span><span class="t-3003-c">
-        gibt, hatten wir ja schon gesehen.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:68:23</span></span>
-      <span class="t-3003-c">Gehen wir aber noch einmal die Zeitschranke durch. In<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:69:5</span></span>
-      <span class="t-3003-c">einer vorbereitenden Phase bestimmt
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:70:5</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:70:41</span></span><span class="t-3003-c">
-        die Länge
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:70:44</span></span><span class="t-3003-c">$l$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:70:55</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:70:58</span></span>
-      <span class="t-3003-c">des längsten Bandzeichen von
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:71:5</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:71:34</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:71:37</span></span></span><span class="t-3003-c">
-        Dann schreibt es<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:71:37</span></span>
-      <span class="t-3003-c">das Eingabewort
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:72:5</span></span><span class="t-3003-c">$x_1 x_2 \dots x_n$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:72:21</span></span><span class="t-3003-c">
-        als Folge von<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:72:40</span></span>
-      <span class="t-3003-c">Blöcken der Länge
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:73:5</span></span><span class="t-3003-c">$l$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:73:23</span></span><span class="t-3003-c">
-        auf das Arbeitsband. Zellen in<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:73:26</span></span>
-      <span class="t-3003-c">einem Block, die nicht verwendet werden, werden mit<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:74:5</span></span>
-      <span class="t-3003-c">einem
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:75:5</span></span><span class="t-3003-c">$\texttt{-}$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:75:11</span></span><span class="t-3003-c">
-        gefüllt. Hier ein Beispiel für den<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:75:23</span></span>
-      <span class="t-3003-c">Fall
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:76:5</span></span><span class="nowrap"><span class="t-3003-c">$l=4$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:76:10</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:76:15</span></span></span>
+      Dass es so ein $U$ gibt, hatten wir ja schon gesehen.
+      Gehen wir aber noch einmal die Zeitschranke durch. In einer
+      vorbereitenden Phase bestimmt $U$ die Länge $l$ des
+      längsten Bandzeichen von
+      <span class="nowrap">$M$.</span>
+      Dann schreibt es das
+      Eingabewort $x_1 x_2 \dots x_n$ als Folge von Blöcken der
+      Länge $l$ auf das Arbeitsband. Zellen in einem Block, die
+      nicht verwendet werden, werden mit einem $\texttt{-}$
+      gefüllt. Hier ein Beispiel für den Fall
+      <span class="nowrap">$l=4$:</span>
     </p>
     <div class="math-block main-column">
       $$
@@ -252,99 +161,68 @@
       \texttt{-} \texttt{-} \texttt{-}
       \texttt{#}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:78:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Diese Vorbereitungsphase benötigt maximal<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:85:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:86:5</span></span><span class="t-3003-c">$C \cdot |\enc(M)| \cdot |x|$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:86:5</span></span><span class="t-3003-c">
-        Schritte. Um nun einen<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:86:34</span></span>
-      <span class="t-3003-c">Schritt von
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:87:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:87:17</span></span><span class="t-3003-c">
-        zu simulieren, müssen wir das gerade<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:87:20</span></span>
-      <span class="t-3003-c">gelesene
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:88:5</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:88:14</span></span><span class="t-3003-c">-Zeichen<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:88:17</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:88:17</span></span><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:88:26</span></span><span class="t-3003-c">
-        auf Band 2 schreiben, so<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:88:29</span></span>
-      <span class="t-3003-c">dass dann dort
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:89:5</span></span><span class="t-3003-c">$\enc(q)\texttt{,}\enc(z)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:89:20</span></span><span class="t-3003-c">
-        steht. Das<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:89:46</span></span>
-      <span class="t-3003-c">braucht
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:90:5</span></span><span class="t-3003-c">$l+1$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:90:13</span></span><span class="t-3003-c">
-        Schritte. Als nächstes müssen wir<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:90:18</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:91:5</span></span><span class="t-3003-c">$\delta_M(q,z)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:91:5</span></span><span class="t-3003-c">
-        bestimmen, müssen wir
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:91:20</span></span><span class="t-3003-c">$\enc(M)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:91:43</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:91:52</span></span>
-      <span class="t-3003-c">durchgehen und den Eintrag für<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:92:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:93:5</span></span><span class="t-3003-c">$\enc(q)\texttt{,}\enc(z)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:93:5</span></span><span class="t-3003-c">
-        suchen, was maximal<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:93:31</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:94:5</span></span><span class="t-3003-c">$2 \cdot |\enc(M)|$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:94:5</span></span><span class="t-3003-c">
-        Schritte benötigt. Dann müssen<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:94:24</span></span>
-      <span class="t-3003-c">wir den Schritt ausführen, also den neuen Zustand auf<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:95:5</span></span>
-      <span class="t-3003-c">Band 2 schreiben, das neue Zeichen in den Block auf<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:96:5</span></span>
-      <span class="t-3003-c">dem Arbeitsband eintragen und den Kopf bewegen. All<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:97:5</span></span>
-      <span class="t-3003-c">das benötigt maximal
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:98:5</span></span><span class="t-3003-c">$C \cdot |\enc(M)|$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:98:26</span></span><span class="t-3003-c">
-        Schritte.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:98:45</span></span>
+      Diese Vorbereitungsphase benötigt maximal
+      $C \cdot |\enc(M)| \cdot |x|$ Schritte. Um nun einen
+      Schritt von $M$ zu simulieren, müssen wir das gerade
+      gelesene
+      <span class="nowrap">$M$-Zeichen</span>
+      $z$ auf Band 2 schreiben, so dass
+      dann dort $\enc(q)\texttt{,}\enc(z)$ steht. Das braucht
+      $l+1$ Schritte. Als nächstes müssen wir $\delta_M(q,z)$
+      bestimmen, müssen wir $\enc(M)$ durchgehen und den Eintrag
+      für $\enc(q)\texttt{,}\enc(z)$ suchen, was maximal
+      $2 \cdot |\enc(M)|$ Schritte benötigt. Dann müssen wir den
+      Schritt ausführen, also den neuen Zustand auf Band 2
+      schreiben, das neue Zeichen in den Block auf dem
+      Arbeitsband eintragen und den Kopf bewegen. All das
+      benötigt maximal $C \cdot |\enc(M)|$ Schritte.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Untere Schranken für Zeitkomplexität<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:101:9</span></span>
+      Untere Schranken für Zeitkomplexität
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Wir wollen nun eine Sprache definieren, die wir in<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:103:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:104:5</span></span><span class="t-3003-c">$t(n)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:104:5</span></span><span class="t-3003-c">
-        Schritten entscheiden können aber nicht<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:104:11</span></span>
-      <span class="t-3003-c">deutlich schneller. Wir erinnern uns an
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:105:5</span></span><span class="nowrap"><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:105:45</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:105:52</span></span></span><span class="t-3003-c">
-        die<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:105:52</span></span>
-      <span class="t-3003-c">von der universellen Turingmaschine
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:106:5</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:106:41</span></span><span class="t-3003-c">
-        akzeptierte<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:106:44</span></span>
-      <span class="t-3003-c">Sprache:<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:107:5</span></span>
+      Wir wollen nun eine Sprache definieren, die wir in $t(n)$
+      Schritten entscheiden können aber nicht deutlich schneller.
+      Wir erinnern uns an
+      <span class="nowrap">$\halt$,</span>
+      die von der universellen
+      Turingmaschine $U$ akzeptierte Sprache:
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \halt := L(U) =\{ \enc(M) w \ | \ M \textnormal{ akzeptiert } w\} \ .
       \end{align*}
-      $$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:109:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">und davon abgeleitete "Diagonalisierungssprache"<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:113:5</span></span>
+      und davon abgeleitete "Diagonalisierungssprache"
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \negdiag := \{ \enc(M) \in \Sigma^* \ | \ \enc(M) \enc(M) \not \in \halt\}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:115:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir haben gesehen, dass
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:119:5</span></span><span class="t-3003-c">$\negdiag$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:119:29</span></span><span class="t-3003-c">
-        nicht entscheidbar<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:119:39</span></span>
-      <span class="t-3003-c">ist. Nun wollen wir eine Version von
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:120:5</span></span><span class="nowrap"><span class="t-3003-c">$\negdiag$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:120:42</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:120:52</span></span></span><span class="t-3003-c">
-        die<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:120:52</span></span>
-      <span class="t-3003-c">in
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:121:5</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:121:8</span></span><span class="t-3003-c">
-        Schritten entscheidbar ist, aber nicht in sehr<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:121:11</span></span>
-      <span class="t-3003-c">viel weniger. Dafür definieren wir uns ein<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:122:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:123:5</span></span><i><span class="t-3003-c">Halteproblem mit Zeitbudget.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:123:6</span></span></i>
+      Wir haben gesehen, dass $\negdiag$ nicht entscheidbar ist.
+      Nun wollen wir eine Version von
+      <span class="nowrap">$\negdiag$,</span>
+      die in $t$
+      Schritten entscheidbar ist, aber nicht in sehr viel
+      weniger. Dafür definieren wir uns ein
+      <i>Halteproblem mit
+        Zeitbudget.</i>
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 9.1.2 (Zeitbudgetiertes Halteproblem).<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:125:5</span></span></b><span class="t-3003-c">
-          Sei
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:126:43</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:126:48</span></span><span class="t-3003-c">
-          ein<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:126:56</span></span>
-        <span class="t-3003-c">endliches Alphabet. Wir definieren die Sprache<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:127:9</span></span>
+        <b>Definition 9.1.2 (Zeitbudgetiertes Halteproblem).</b>
+        Sei $\Sigma$ ein
+        endliches Alphabet. Wir definieren die Sprache
       </p>
       <div class="math-block">
         $$
@@ -353,275 +231,161 @@
         U \textnormal{ akzeptiert $\enc(M)x$ innerhalb von $b$ Schritten}
         \}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:129:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Mit
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:135:9</span></span><span class="t-3003-c">$1^b$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:135:13</span></span><span class="t-3003-c">
-          bezeichnen wir die Folge von
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:135:18</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:135:48</span></span><span class="t-3003-c">
-          vielen<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:135:51</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:136:9</span></span><span class="nowrap"><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:136:9</span></span><span class="t-3003-c">en.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:136:12</span></span></span><span class="t-3003-c">
-          Des Weiteren ist
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:136:12</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:136:33</span></span><span class="t-3003-c">
-          eine
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:136:36</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:136:42</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:136:45</span></span>
-        <span class="t-3003-c">-Band-Turingmaschine mit Eingabealphabet
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:137:9</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:137:50</span></span><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:137:58</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:138:9</span></span><span class="t-3003-c">$x \in \Sigma^*$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:138:9</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:138:25</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:138:30</span></span><span class="t-3003-c">
-          die universelle<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:138:33</span></span>
-        <span class="t-3003-c">Turingmaschine, die selbst
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:139:9</span></span><span class="t-3003-c">$k+2$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:139:36</span></span><span class="t-3003-c">
-          Bänder hat. Wir<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:139:41</span></span>
-        <span class="t-3003-c">sollten strenggenommen also
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:140:9</span></span><span class="t-3003-c">$\bhalt_{\Sigma,k}$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:140:37</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:140:56</span></span>
-        <span class="t-3003-c">definieren, unterlassen dies aber der Lesbarkeit<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:141:9</span></span>
-        <span class="t-3003-c">halber.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:142:9</span></span>
+        Mit $1^b$ bezeichnen wir die Folge von $n$ vielen
+        <span class="nowrap">$1$en.</span>
+        Des Weiteren ist $M$ eine $k$ -Band-Turingmaschine mit
+        Eingabealphabet $\Sigma$ und $x \in \Sigma^*$ und $U$ die
+        universelle Turingmaschine, die selbst $k+2$ Bänder hat.
+        Wir sollten strenggenommen also $\bhalt_{\Sigma,k}$
+        definieren, unterlassen dies aber der Lesbarkeit halber.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Bitte erinnern Sie sich daran, dass unsere Codierung<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:144:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:145:5</span></span><span class="t-3003-c">$\enc(M)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:145:5</span></span><span class="t-3003-c">
-        immer mit dem Sonderzeichen
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:145:14</span></span><span class="t-3003-c">$\texttt{;}$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:145:43</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:145:55</span></span>
-      <span class="t-3003-c">endet, oder besser gesagt: mit der Codierung von<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:146:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:147:5</span></span><span class="t-3003-c">$\texttt{;} \in \Lambda$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:147:5</span></span><span class="t-3003-c">
-        über dem Alphabet
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:147:29</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:147:48</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:147:56</span></span>
-      <span class="t-3003-c">selbst. Eine Turingmaschine kann also, gegeben ein<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:148:5</span></span>
-      <span class="t-3003-c">Eingabewort
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:149:5</span></span><span class="nowrap"><span class="t-3003-c">$\enc(M)1^b 0 x$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:149:17</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:149:33</span></span></span><span class="t-3003-c">
-        dieses in die<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:149:33</span></span>
-      <span class="t-3003-c">Bestandteile
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:150:5</span></span><span class="nowrap"><span class="t-3003-c">$\enc(M)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:150:18</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:150:27</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:150:27</span></span><span class="nowrap"><span class="t-3003-c">$1^b$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:150:29</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:150:34</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:150:34</span></span><span class="t-3003-c">$0$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:150:36</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:150:39</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:150:44</span></span><span class="t-3003-c">
-        zerlegen.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:150:47</span></span>
-      <span class="t-3003-c">Die
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:151:5</span></span><span class="t-3003-c">$0$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:151:9</span></span><span class="t-3003-c">
-        dient dazu, das "Budget"
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:151:12</span></span><span class="t-3003-c">$1^b$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:151:38</span></span><span class="t-3003-c">
-        vom "inneren<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:151:43</span></span>
-      <span class="t-3003-c">Eingabewort"
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:152:5</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:152:18</span></span><span class="t-3003-c">
-        abzugrenzen.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:152:21</span></span>
+      Bitte erinnern Sie sich daran, dass unsere Codierung
+      $\enc(M)$ immer mit dem Sonderzeichen $\texttt{;}$ endet,
+      oder besser gesagt: mit der Codierung von
+      $\texttt{;} \in \Lambda$ über dem Alphabet $\Sigma$
+      selbst. Eine Turingmaschine kann also, gegeben ein
+      Eingabewort
+      <span class="nowrap">$\enc(M)1^b 0 x$,</span>
+      dieses in die Bestandteile
+      <span class="nowrap">$\enc(M)$,</span>
+      <span class="nowrap">$1^b$,</span>
+      $0$ und $x$ zerlegen. Die $0$ dient
+      dazu, das "Budget" $1^b$ vom "inneren Eingabewort" $x$
+      abzugrenzen.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beobachtung 9.1.3<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:154:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:154:5</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:155:9</span></span><span class="nowrap"><span class="t-3003-c">$\bhalt \in \TIME_{k+3}(n)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:155:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:155:36</span></span></span>
+        <b>Beobachtung 9.1.3</b>
+        <span class="nowrap">$\bhalt \in \TIME_{k+3}(n)$.</span>
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        
-        <span class="t-3003-c">Wir nehmen die universelle Turingmaschine
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:158:9</span></span><span class="nowrap"><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:158:51</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:158:54</span></span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:158:54</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:159:9</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:159:9</span></span><span class="t-3003-c">-Band-Turingmaschinen<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:159:12</span></span></span><span class="t-3003-c">
-          simulieren kann, und statten<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:159:12</span></span>
-        <span class="t-3003-c">sie mit einem Stoppuhrband aus. Sie hat nun also
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:160:9</span></span><span class="t-3003-c">$k+3$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:160:58</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:160:63</span></span>
-        <span class="t-3003-c">Bänder. Sei
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:161:9</span></span><span class="t-3003-c">$n = |\enc(M)| + b + 1 + |x|$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:161:21</span></span><span class="t-3003-c">
-          die Länge<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:161:50</span></span>
-        <span class="t-3003-c">des Eingabewortes. In
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:162:9</span></span><span class="t-3003-c">$O(n)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:162:31</span></span><span class="t-3003-c">
-          Schritten sorgt sie<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:162:37</span></span>
-        <span class="t-3003-c">dafür, dass auf dem Eingabeband das Wort
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:163:9</span></span><span class="t-3003-c">$\enc(M)x$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:163:50</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:163:60</span></span>
-        <span class="t-3003-c">steht und auf dem Stoppuhrband das Budget
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:164:9</span></span><span class="nowrap"><span class="t-3003-c">$1^b$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:164:51</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:164:56</span></span></span><span class="t-3003-c">
-          Nun<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:164:56</span></span>
-        <span class="t-3003-c">lassen wir die universelle Turingmaschine
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:165:9</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:165:51</span></span><span class="t-3003-c">
-          laufen,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:165:54</span></span>
-        <span class="t-3003-c">nur dass wir in jedem Schritt den Kopf auf dem<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:166:9</span></span>
-        <span class="t-3003-c">Stoppuhrband nach rechts verschieben. Wenn
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:167:9</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:167:52</span></span><span class="t-3003-c">
-          hält,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:167:55</span></span>
-        <span class="t-3003-c">dann hält unsere Turingmaschine auch und gibt das<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:168:9</span></span>
-        <span class="t-3003-c">gleiche Ergebnis aus. Wenn wir das Ende des<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:169:9</span></span>
-        <span class="t-3003-c">Stoppuhrbandes erreicht haben, haben wir unsere
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:170:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:170:57</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:170:60</span></span>
-        <span class="t-3003-c">Schritte verbraucht und lehnen ab. Wir brauchen<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:171:9</span></span>
-        <span class="t-3003-c">insgesamt
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:172:9</span></span><span class="t-3003-c">$O(n+b) = O(n)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:172:19</span></span><span class="t-3003-c">
-          Schritte.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:172:34</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Wir nehmen die universelle Turingmaschine
+        <span class="nowrap">$U$,</span>
+        die
+        <span class="nowrap">$k$-Band-Turingmaschinen</span>
+        simulieren kann, und statten sie
+        mit einem Stoppuhrband aus. Sie hat nun also $k+3$ Bänder.
+        Sei $n = |\enc(M)| + b + 1 + |x|$ die Länge des
+        Eingabewortes. In $O(n)$ Schritten sorgt sie dafür, dass
+        auf dem Eingabeband das Wort $\enc(M)x$ steht und auf dem
+        Stoppuhrband das Budget
+        <span class="nowrap">$1^b$.</span>
+        Nun lassen wir die
+        universelle Turingmaschine $U$ laufen, nur dass wir in
+        jedem Schritt den Kopf auf dem Stoppuhrband nach rechts
+        verschieben. Wenn $U$ hält, dann hält unsere
+        Turingmaschine auch und gibt das gleiche Ergebnis aus. Wenn
+        wir das Ende des Stoppuhrbandes erreicht haben, haben wir
+        unsere $b$ Schritte verbraucht und lehnen ab. Wir brauchen
+        insgesamt $O(n+b) = O(n)$ Schritte.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Sei nun
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:174:5</span></span><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:174:13</span></span><span class="t-3003-c">
-        eine monoton steigende<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:174:35</span></span>
-      <span class="t-3003-c">Funktion mit
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:175:5</span></span><span class="nowrap"><span class="t-3003-c">$t(n) \geq n$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:175:18</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:175:31</span></span></span><span class="t-3003-c">
-        Wir definieren eine<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:175:31</span></span>
-      <span class="t-3003-c">Zeitbudgetierte Version der Diagonalisierungssprache:<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:176:5</span></span>
+      Sei nun $t: \N \rightarrow \N$ eine monoton steigende
+      Funktion mit
+      <span class="nowrap">$t(n) \geq n$.</span>
+      Wir definieren eine
+      Zeitbudgetierte Version der Diagonalisierungssprache:
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \bnegdiag := \{ \enc(M)1^m \ | \ \enc(M)1^{b} 0 \enc(M) 1^m \not \in \bhalt, \ b = t(|\enc(M)|+m) \}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:178:5</span>
+      $$
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Behauptung 9.1.4 (nicht ganz korrekt).<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:182:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:183:32</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:184:9</span></span><span class="nowrap"><span class="t-3003-c">$\bnegdiag \in \TIME_{k+3}(t)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:184:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:184:39</span></span></span>
+        <b>Behauptung 9.1.4 (nicht ganz korrekt).</b>
+        <span class="nowrap">$\bnegdiag \in \TIME_{k+3}(t)$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Sei
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:186:5</span></span><span class="t-3003-c">$n := |\enc(M) + m|$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:186:9</span></span><span class="t-3003-c">
-        die Länge des Inputwortes.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:186:29</span></span>
-      <span class="t-3003-c">Wir können
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:187:5</span></span><span class="t-3003-c">$\bnegdiag$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:187:16</span></span><span class="t-3003-c">
-        entscheiden, indem wir aus<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:187:27</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:188:5</span></span><span class="t-3003-c">$\enc(M)1^m$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:188:5</span></span><span class="t-3003-c">
-        den String
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:188:17</span></span><span class="t-3003-c">$\enc(M)1^b 0 \enc(M) 1^m$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:188:29</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:188:55</span></span>
-      <span class="t-3003-c">berechnen und dann die Turingmaschine für
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:189:5</span></span><span class="t-3003-c">$\bhalt$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:189:47</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:189:55</span></span>
-      <span class="t-3003-c">laufen lassen, welche
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:190:5</span></span><span class="t-3003-c">$k+3$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:190:27</span></span><span class="t-3003-c">
-        Bänder hat und selbst<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:190:32</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:191:5</span></span><span class="t-3003-c">$O(2|\enc(M)| + b + 1 + m) = O(|\enc(M)| + b) = O(b)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:191:5</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:191:58</span></span>
-      <span class="t-3003-c">Schritte braucht. Die Vorbereitungsphase braucht<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:192:5</span></span>
-      <span class="t-3003-c">ungefähr so lange, wie wir brauchen, um<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:193:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:194:5</span></span><span class="t-3003-c">$b = t(|\enc(M)+m|) = t(n)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:194:5</span></span><span class="t-3003-c">
-        zu berechnen. Übliche<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:194:32</span></span>
-      <span class="t-3003-c">Zeitschranken
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:195:5</span></span><span class="nowrap"><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:195:19</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:195:22</span></span></span><span class="t-3003-c">
-        die uns interessieren, wären zum<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:195:22</span></span>
-      <span class="t-3003-c">Beispiel
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:5</span></span><span class="nowrap"><span class="t-3003-c">$n \log n$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:14</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:24</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:24</span></span><span class="nowrap"><span class="t-3003-c">$n^2$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:26</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:31</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:31</span></span><span class="nowrap"><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:33</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:38</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:38</span></span><span class="t-3003-c">$n!$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:40</span></span><span class="t-3003-c">
-        oder
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:44</span></span><span class="nowrap"><span class="t-3003-c">$n^n$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:50</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:55</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:196:55</span></span>
-      <span class="t-3003-c">All diese stellen kein Problem dar. Insgesamt sind wir<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:197:5</span></span>
-      <span class="t-3003-c">auf der sicheren Seite, wenn wir die Funktion
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:198:5</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:198:51</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:198:54</span></span>
-      <span class="t-3003-c">selbst in
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:199:5</span></span><span class="t-3003-c">$O(t)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:199:15</span></span><span class="t-3003-c">
-        Schritten berechnen können.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:199:21</span></span>
+      Sei $n := |\enc(M) + m|$ die Länge des Inputwortes. Wir
+      können $\bnegdiag$ entscheiden, indem wir aus $\enc(M)1^m$
+      den String $\enc(M)1^b 0 \enc(M) 1^m$ berechnen und dann
+      die Turingmaschine für $\bhalt$ laufen lassen, welche $k+3$
+      Bänder hat und selbst
+      $O(2|\enc(M)| + b + 1 + m) = O(|\enc(M)| + b) = O(b)$
+      Schritte braucht. Die Vorbereitungsphase braucht ungefähr
+      so lange, wie wir brauchen, um $b = t(|\enc(M)+m|) = t(n)$
+      zu berechnen. Übliche Zeitschranken
+      <span class="nowrap">$t$,</span>
+      die uns
+      interessieren, wären zum Beispiel
+      <span class="nowrap">$n \log n$,</span>
+      <span class="nowrap">$n^2$,</span>
+      <span class="nowrap">$2^n$,</span>
+      $n!$ oder
+      <span class="nowrap">$n^n$.</span>
+      All diese stellen kein Problem dar.
+      Insgesamt sind wir auf der sicheren Seite, wenn wir die
+      Funktion $t$ selbst in $O(t)$ Schritten berechnen können.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 9.1.5<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:201:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:201:5</span></span>
-        <span class="t-3003-c">Eine Funktion
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:202:9</span></span><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:202:23</span></span><span class="t-3003-c">
-          heißt<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:202:45</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:203:9</span></span><span class="nowrap"><i><span class="t-3003-c">zeitkonstruierbar<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:203:10</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:203:28</span></span></span><span class="t-3003-c">
-          wenn es eine Turingmaschine gibt,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:203:28</span></span>
-        <span class="t-3003-c">die aus dem Eingabewort
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:204:9</span></span><span class="t-3003-c">$1^n$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:204:33</span></span><span class="t-3003-c">
-          das Ausgabewort<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:204:38</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:205:9</span></span><span class="t-3003-c">$1^{t(n)}$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:205:9</span></span><span class="t-3003-c">
-          berechnet und selbst maximal
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:205:19</span></span><span class="t-3003-c">$O(t(n))$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:205:49</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:205:58</span></span>
-        <span class="t-3003-c">Schritte läuft.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:206:9</span></span>
+        <b>Definition 9.1.5</b>
+        Eine Funktion $t: \N \rightarrow \N$ heißt
+        <span class="nowrap"><i>zeitkonstruierbar</i>,</span>
+        wenn es eine Turingmaschine gibt, die
+        aus dem Eingabewort $1^n$ das Ausgabewort $1^{t(n)}$
+        berechnet und selbst maximal $O(t(n))$ Schritte läuft.
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Behauptung 9.1.6 (jetzt korrekt).<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:208:5</span></span></b><span class="t-3003-c">
-          Sei
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:209:27</span></span><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:209:32</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:209:54</span></span>
-        <span class="t-3003-c">zeitkonstruierbar, monoton steigend und
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:210:9</span></span><span class="nowrap"><span class="t-3003-c">$t(n) \geq n$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:210:49</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:210:62</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:210:62</span></span>
-        <span class="t-3003-c">Dann gilt
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:211:9</span></span><span class="nowrap"><span class="t-3003-c">$\bnegdiag \in \TIME_{k+3}(t)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:211:19</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:211:49</span></span></span>
+        <b>Behauptung 9.1.6 (jetzt korrekt).</b>
+        Sei $t: \N \rightarrow \N$
+        zeitkonstruierbar, monoton steigend und
+        <span class="nowrap">$t(n) \geq n$.</span>
+        Dann gilt
+        <span class="nowrap">$\bnegdiag \in \TIME_{k+3}(t)$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">So weit, so gut. Wonach wir allerdings aus sind, ist<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:213:5</span></span>
-      <span class="t-3003-c">ein Beweis, dass
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:214:5</span></span><span class="t-3003-c">$\bnegdiag$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:214:22</span></span><span class="t-3003-c">
-        nicht signifikant<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:214:33</span></span>
-      <span class="t-3003-c">schneller zu berechnen ist.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:215:5</span></span>
+      So weit, so gut. Wonach wir allerdings aus sind, ist ein
+      Beweis, dass $\bnegdiag$ nicht signifikant schneller zu
+      berechnen ist.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Lemma 9.1.7<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:217:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:217:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:218:9</span></span><span class="t-3003-c">$s: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:218:13</span></span><span class="t-3003-c">
-          eine Funktion mit<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:218:35</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:219:9</span></span><span class="t-3003-c">$s(n) \geq n$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:219:9</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:219:22</span></span><span class="nowrap"><span class="t-3003-c">$s = o(t)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:219:27</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:219:37</span></span></span><span class="t-3003-c">
-          also<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:219:37</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:220:9</span></span><span class="nowrap"><span class="t-3003-c">$\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:220:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:220:60</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:220:60</span></span>
-        <span class="t-3003-c">Dann gilt
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:221:9</span></span><span class="nowrap"><span class="t-3003-c">$\bnegdiag \not \in \TIME_k(s)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:221:19</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:221:50</span></span></span>
+        <b>Lemma 9.1.7</b>
+        Sei $s: \N \rightarrow \N$ eine Funktion mit $s(n) \geq n$
+        und
+        <span class="nowrap">$s = o(t)$,</span>
+        also
+        <span class="nowrap">$\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$.</span>
+        Dann
+        gilt
+        <span class="nowrap">$\bnegdiag \not \in \TIME_k(s)$.</span>
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        
-        <span class="t-3003-c">Wir nehmen an, es gäbe eine Turingmaschine
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:224:9</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:224:52</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:224:55</span></span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:224:55</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:225:9</span></span><span class="t-3003-c">$\bnegdiag$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:225:9</span></span><span class="t-3003-c">
-          in Zeit
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:225:20</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:225:29</span></span><span class="t-3003-c">
-          entscheidet und leiten einen<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:225:32</span></span>
-        <span class="t-3003-c">Widerspruch her. Sei
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:226:9</span></span><span class="nowrap"><span class="t-3003-c">$x := \enc(M)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:226:30</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:226:44</span></span></span><span class="t-3003-c">
-          Wir wählen eine<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:226:44</span></span>
-        <span class="t-3003-c">natürliche Zahl
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:227:9</span></span><span class="nowrap"><span class="t-3003-c">$m$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:227:25</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:227:28</span></span></span><span class="t-3003-c">
-          deren genauen Wert wir weiter<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:227:28</span></span>
-        <span class="t-3003-c">unten diskutieren und setzen
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:228:9</span></span><span class="nowrap"><span class="t-3003-c">$b := t(|x| + m)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:228:38</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:228:55</span></span></span><span class="t-3003-c">
-          Wir<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:228:55</span></span>
-        <span class="t-3003-c">fragen uns nun: ist
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:229:9</span></span><span class="nowrap"><span class="t-3003-c">$x1^m \in \bnegdiag$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:229:29</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:229:49</span></span></span>
+        Wir nehmen an, es gäbe eine Turingmaschine
+        <span class="nowrap">$M$,</span>
+        die
+        $\bnegdiag$ in Zeit $s$ entscheidet und leiten einen
+        Widerspruch her. Sei
+        <span class="nowrap">$x := \enc(M)$.</span>
+        Wir wählen eine
+        natürliche Zahl
+        <span class="nowrap">$m$,</span>
+        deren genauen Wert wir weiter unten
+        diskutieren und setzen
+        <span class="nowrap">$b := t(|x| + m)$.</span>
+        Wir fragen uns
+        nun: ist
+        <span class="nowrap">$x1^m \in \bnegdiag$?</span>
       </p>
       <div class="math-block">
         $$
@@ -629,83 +393,53 @@
         x1^m \in \bnegdiag&amp;\Longleftrightarrow \enc(M) 1^b 0 x1^m \not \in \bhalt \\
         &amp;\Longleftrightarrow U \textnormal{ akzeptiert $\enc(M)x1^m$ nicht innerhalb von $b$ Schritten}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:231:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Langsam nun. Sei
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:236:9</span></span><span class="t-3003-c">$n := |\enc(M)|+m$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:236:26</span></span><span class="t-3003-c">
-          die Länge des<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:236:44</span></span>
-        <span class="t-3003-c">Wortes
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:237:9</span></span><span class="nowrap"><span class="t-3003-c">$x1^m$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:237:16</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:237:22</span></span></span><span class="t-3003-c">
-          Nach Annahme terminiert
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:237:22</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:237:48</span></span><span class="t-3003-c">
-          auf dem<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:237:51</span></span>
-        <span class="t-3003-c">Eingabewort
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:238:9</span></span><span class="t-3003-c">$x1^m$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:238:21</span></span><span class="t-3003-c">
-          innerhalb von
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:238:27</span></span><span class="t-3003-c">$s(n)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:238:42</span></span><span class="t-3003-c">
-          Schritten.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:238:48</span></span>
-        <span class="t-3003-c">Wenn
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:239:9</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:239:14</span></span><span class="t-3003-c">
-          die Maschine
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:239:17</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:239:31</span></span><span class="t-3003-c">
-          simuliert, braucht sie nach<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:239:34</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:240:9</span></span><a
+        Langsam nun. Sei $n := |\enc(M)|+m$ die Länge des Wortes
+        <span class="nowrap">$x1^m$.</span>
+        Nach Annahme terminiert $M$ auf dem Eingabewort
+        $x1^m$ innerhalb von $s(n)$ Schritten. Wenn $U$ die
+        Maschine $M$ simuliert, braucht sie nach
+        <a
           href="./8-5.html#_36_hgi_"
           class=""
-        >Theorem 8.5.1</a><span class="t-3003-c">
-          höchstens<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:240:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:241:9</span></span><span class="t-3003-c">$C \cdot |\enc(M)| \cdot (n + s(n))$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:241:9</span></span><span class="t-3003-c">
-          Schritte. Da<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:241:45</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:242:9</span></span><span class="t-3003-c">$s(n) \geq n$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:242:9</span></span><span class="t-3003-c">
-          gilt, sind dies höchstens<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:242:22</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:243:9</span></span><span class="t-3003-c">$2C \cdot |\enc(M)| \cdot s(n) = 2C \cdot |\enc(M)|
-          \cdot s(|x|+m)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:243:9</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:244:24</span></span>
-        <span class="t-3003-c">Schritte. Da<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:245:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:246:9</span></span><span class="t-3003-c">$\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:246:9</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:246:60</span></span>
-        <span class="t-3003-c">ist, ist auch<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:247:9</span></span>
+        >Theorem 8.5.1</a>
+        höchstens
+        $C \cdot |\enc(M)| \cdot (n + s(n))$ Schritte. Da
+        $s(n) \geq n$ gilt, sind dies höchstens
+        $2C \cdot |\enc(M)| \cdot s(n) = 2C \cdot |\enc(M)| \cdot
+        s(|x|+m)$
+        Schritte. Da
+        $\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$ ist,
+        ist auch
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \lim_{m \rightarrow \infty }\frac{2C \cdot |\enc(M)| \cdot s(|x|+m)}{t(|x|+m)} = 0 \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:249:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Wenn wir also
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:253:9</span></span><span class="t-3003-c">$m$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:253:23</span></span><span class="t-3003-c">
-          hinreichend groß wählen, dann ist<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:253:26</span></span>
-        <span class="t-3003-c">dieser Bruch kleiner als
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:254:9</span></span><span class="nowrap"><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:254:34</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:254:37</span></span></span><span class="t-3003-c">
-          und die Simulation<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:254:37</span></span>
-        <span class="t-3003-c">terminiert also innerhalb von<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:255:9</span></span>
+        Wenn wir also $m$ hinreichend groß wählen, dann ist dieser
+        Bruch kleiner als
+        <span class="nowrap">$1$,</span>
+        und die Simulation terminiert also
+        innerhalb von
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         2C \cdot |\enc(M)| \cdot s(|x|+m) \leq t(|x|+m) = b
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:257:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Schritten. Das heißt, dass die universelle<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:261:9</span></span>
-        <span class="t-3003-c">Turingmaschine
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:262:9</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:262:24</span></span><span class="t-3003-c">
-          das Wort
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:262:27</span></span><span class="t-3003-c">$\enc(M)x1^m$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:262:37</span></span><span class="t-3003-c">
-          innerhalb<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:262:50</span></span>
-        <span class="t-3003-c">von
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:263:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:263:13</span></span><span class="t-3003-c">
-          Schritten ablehnt, wenn sie es überhaupt<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:263:16</span></span>
-        <span class="t-3003-c">irgendwann ablehnt. Also schließen wir weiter:<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:264:9</span></span>
+        Schritten. Das heißt, dass die universelle Turingmaschine
+        $U$ das Wort $\enc(M)x1^m$ innerhalb von $b$ Schritten
+        ablehnt, wenn sie es überhaupt irgendwann ablehnt. Also
+        schließen wir weiter:
       </p>
       <div class="math-block">
         $$
@@ -718,124 +452,88 @@
         &amp;\Longleftrightarrow U \textnormal{ lehnt $\enc(M)x1^m$ ab} \\
         &amp;\Longleftrightarrow M \textnormal{ lehnt $x1^m$ ab} \\
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:266:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">und da ist er, der Widerspruch:<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:276:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:277:9</span></span><span class="nowrap"><span class="t-3003-c">$x1^m \in \bnegdiag \Longleftrightarrow f_M(x1^m) =
-            \texttt{reject}$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:277:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:278:25</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:278:25</span></span>
-        <span class="t-3003-c">entgegen unserer Annahme, dass
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:279:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:279:40</span></span><span class="t-3003-c">
-          die Sprache<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:279:43</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:280:9</span></span><span class="t-3003-c">$\bnegdiag$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:280:9</span></span><span class="t-3003-c">
-          entscheidet.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:280:20</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        und da ist er, der Widerspruch:
+        <span class="nowrap">$x1^m \in \bnegdiag \Longleftrightarrow f_M(x1^m) =
+          \texttt{reject}$,</span>
+        entgegen unserer Annahme, dass $M$ die Sprache $\bnegdiag$
+        entscheidet.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Zusammenfassend erhalten wir die "Rohversion" des<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:282:5</span></span>
-      <span class="t-3003-c">Zeithierarchiesatzes:<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:283:5</span></span>
+      Zusammenfassend erhalten wir die "Rohversion" des
+      Zeithierarchiesatzes:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 9.1.8 (Zeithierarchiesatz, Rohversion).<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:285:5</span></span></b><span class="t-3003-c">
-          Seien<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:286:44</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:287:9</span></span><span class="t-3003-c">$s, t: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:287:9</span></span><span class="t-3003-c">
-          zeitkonstruierbare<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:287:34</span></span>
-        <span class="t-3003-c">Funktionen mit
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:288:9</span></span><span class="t-3003-c">$s(n) \geq n$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:288:24</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:288:37</span></span><span class="t-3003-c">$s \in o(t)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:288:42</span></span><span class="t-3003-c">
-          (also<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:288:54</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:289:9</span></span><span class="t-3003-c">$\lim_{n \rightarrow \infty} s(n)/t(n) = 0$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:289:9</span></span><span class="t-3003-c">
-          ). Dann<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:289:52</span></span>
-        <span class="t-3003-c">gilt<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:290:9</span></span>
+        <b>Theorem 9.1.8 (Zeithierarchiesatz, Rohversion).</b>
+        Seien
+        $s, t: \N \rightarrow \N$ zeitkonstruierbare Funktionen
+        mit $s(n) \geq n$ und $s \in o(t)$ (also
+        $\lim_{n \rightarrow \infty} s(n)/t(n) = 0$ ). Dann gilt
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \TIME_k(s) \subsetneq \TIME_{k+3}(t)
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:292:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">für alle
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:296:9</span></span><span class="nowrap"><span class="t-3003-c">$k \geq 1$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:296:18</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:296:28</span></span></span>
+        für alle
+        <span class="nowrap">$k \geq 1$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Zusammen mit der Simulation von
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:298:5</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:298:37</span></span><span class="t-3003-c">-Band-TMs<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:298:40</span></span></span><span class="t-3003-c">
-        durch
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:298:40</span></span><span class="t-3003-c">$2$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:298:56</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:298:59</span></span>
-      <span class="t-3003-c">-Band-TMs, also
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:299:5</span></span><a
+      Zusammen mit der Simulation von
+      <span class="nowrap">$k$-Band-TMs</span>
+      durch $2$
+      -Band-TMs, also
+      <a
         href="./9-0.html#_41_hgi_"
         class=""
-      >Theorem 9.3</a><span class="t-3003-c">
-        folgt nun<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:299:5</span></span>
+      >Theorem 9.3</a>
+      folgt nun
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \TIME(s) \subsetneq \TIME_2(s \log s) \subsetneq \TIME_5(t \log t)
       \end{align*}
-      $$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:301:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">oder, alternativ ausgedrückt:<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:305:5</span></span>
+      oder, alternativ ausgedrückt:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 9.1.9 (Zeithierarchiesatz).<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:307:5</span></span></b><span class="t-3003-c">
-          Seien<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:308:32</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:309:9</span></span><span class="t-3003-c">$s, t: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:309:9</span></span><span class="t-3003-c">
-          mit
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:309:34</span></span><span class="t-3003-c">$s(n) \geq n$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:309:39</span></span><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:309:52</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:310:9</span></span><span class="nowrap"><span class="t-3003-c">$s \log s \in o(t)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:310:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:310:28</span></span></span><span class="t-3003-c">
-          Dann gilt<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:310:28</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:311:9</span></span><span class="nowrap"><span class="t-3003-c">$\TIME(s) \subsetneq \TIME(t)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:311:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:311:39</span></span></span>
+        <b>Theorem 9.1.9 (Zeithierarchiesatz).</b>
+        Seien $s, t: \N \rightarrow \N$
+        mit $s(n) \geq n$ und
+        <span class="nowrap">$s \log s \in o(t)$.</span>
+        Dann gilt
+        <span class="nowrap">$\TIME(s) \subsetneq \TIME(t)$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Bitte beachten Sie, dass wir diese Version nicht<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:313:5</span></span>
-      <span class="t-3003-c">vollständig bewiesen habe, da ich die effizientere<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:314:5</span></span>
-      <span class="t-3003-c">Simulation einer
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:315:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:315:22</span></span><span class="t-3003-c">
-        -Band-Turingmaschine durch eine<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:315:25</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:316:5</span></span><span class="nowrap"><span class="t-3003-c">$2$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:316:5</span></span><span class="t-3003-c">-Band-Turingmaschine,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:316:8</span></span></span><span class="t-3003-c">
-        also<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:316:8</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:317:5</span></span><span class="t-3003-c">$\TIME_k(t) \subseteq \TIME_2(t \log t)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:317:5</span></span><span class="t-3003-c">
-        nicht<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:317:45</span></span>
-      <span class="t-3003-c">erklärt habe. Mit der ineffiziten, also<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:318:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:319:5</span></span><span class="nowrap"><span class="t-3003-c">$\TIME_k(t) \subseteq \TIME_1(t^2)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:319:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:319:40</span></span></span><span class="t-3003-c">
-        erhalten wir<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:319:40</span></span>
-      <span class="t-3003-c">einen Zeithierarchiesatz solange
-        <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:320:5</span></span><span class="t-3003-c">$s^2 \in o(t)$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:320:38</span></span><span class="t-3003-c">
-        ist.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:320:52</span></span>
+      Bitte beachten Sie, dass wir diese Version nicht
+      vollständig bewiesen habe, da ich die effizientere
+      Simulation einer $k$ -Band-Turingmaschine durch eine
+      <span class="nowrap">$2$-Band-Turingmaschine,</span>
+      also
+      $\TIME_k(t) \subseteq \TIME_2(t \log t)$ nicht erklärt
+      habe. Mit der ineffiziten, also
+      <span class="nowrap">$\TIME_k(t) \subseteq \TIME_1(t^2)$,</span>
+      erhalten wir einen
+      Zeithierarchiesatz solange $s^2 \in o(t)$ ist.
     </p>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 9.1.1<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:322:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:322:5</span></span>
-        <span class="t-3003-c">Zeigen Sie, dass
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:323:9</span></span><span class="t-3003-c">$n \mapsto n^2$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:323:26</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:323:41</span></span><span class="t-3003-c">$n \mapsto 2^n$<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:323:46</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:323:61</span></span>
-        <span class="t-3003-c">zeitkonstruierbar sind.<span class="t-3003">./course1/wly/09/01-Time-hierarchy-theorem.wly:324:9</span></span>
+        <b>Übungsaufgabe 9.1.1</b>
+        Zeigen Sie, dass $n \mapsto n^2$ und $n \mapsto 2^n$
+        zeitkonstruierbar sind.
       </p>
     </div>
     <div id="end-of-page-elt">

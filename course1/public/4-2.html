@@ -40,195 +40,143 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">4.2&ensp;Primitive Rekursion: Konstruktionen und Tricks<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:2:11</span></span>
+        4.2&ensp;Primitive Rekursion: Konstruktionen und Tricks
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Ich beginne dieses Teilkapitel, manche der<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:4:5</span></span>
-      <span class="t-3003-c">primitiv-rekursive Implementierungen in<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:5:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:6:5</span></span><a href="code/primitive-recursion/stockpile.py"><span class="codelink"><span class="t-3003-c">stockpile.py<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:6:7</span></span></span></a><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:6:70</span></span>
-      <span class="t-3003-c">zu erklären und werde dann weitere, weniger<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:7:5</span></span>
-      <span class="t-3003-c">offensichtliche Konstruktionen diskutieren.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:8:5</span></span>
+      Ich beginne dieses Teilkapitel, manche der
+      primitiv-rekursive Implementierungen in
+      <a href="code/primitive-recursion/stockpile.py"><span class="codelink">stockpile.py</span></a>
+      zu erklären und werde dann weitere, weniger offensichtliche
+      Konstruktionen diskutieren.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Arithmetische Operationen<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:11:9</span></span>
+      Arithmetische Operationen
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Wir haben bereits gesehen, dass wir die Addition per<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:13:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:14:5</span></span><span class="t-3003-c">${\rm add} = \primrec (\pi_0, \comp(\succ, \pi_0))$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:14:5</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:14:56</span></span>
-      <span class="t-3003-c">schreiben können. Beachten Sie, dass ich hier die<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:15:5</span></span>
-      <span class="t-3003-c">Indizierung immer bei 0 beginnen lasse, im Python-Code<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:16:5</span></span>
-      <span class="t-3003-c">sowie im Mathematik-Modus (in der Vorlesung hatte ich<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:17:5</span></span>
-      <span class="t-3003-c">an der Tafel das oft bei 1 beginnen lassen,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:18:5</span></span>
-      <span class="t-3003-c">entschuldigen Sie die Inkonsistenz). Multiplikation<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:19:5</span></span>
-      <span class="t-3003-c">geht nach dem gleichen Schema. Wir schreiben
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:20:5</span></span><code><span class="t-3003-c">mult<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:20:51</span></span></code><span class="t-3003-c">
-        in<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:20:56</span></span>
-      <span class="t-3003-c">der Schleifenform, wie sie die primitive Rekursion<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:21:5</span></span>
-      <span class="t-3003-c">zulässt, und schreiben in Orange auch gleich die<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:22:5</span></span>
-      <span class="t-3003-c">Funktionen
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:23:5</span></span><span class="t-3003-c">$g$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:23:16</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:23:19</span></span><span class="t-3003-c">$h$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:23:24</span></span><span class="t-3003-c">
-        dazu:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:23:27</span></span>
+      Wir haben bereits gesehen, dass wir die Addition per
+      ${\rm add} = \primrec (\pi_0, \comp(\succ, \pi_0))$
+      schreiben können. Beachten Sie, dass ich hier die
+      Indizierung immer bei 0 beginnen lasse, im Python-Code
+      sowie im Mathematik-Modus (in der Vorlesung hatte ich an
+      der Tafel das oft bei 1 beginnen lassen, entschuldigen Sie
+      die Inkonsistenz). Multiplikation geht nach dem gleichen
+      Schema. Wir schreiben
+      <code>mult</code>
+      in der Schleifenform, wie sie
+      die primitive Rekursion zulässt, und schreiben in Orange
+      auch gleich die Funktionen $g$ und $h$ dazu:
     </p>
     <div class="main-column">
 <pre class="orange-comments">
-<span class="t-3003-c">def mult(t,x):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:26:5</span></span>
-<span class="t-3003-c">    temp = 0 <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:27:5</span></span><span class="actual-orange-comment"><span class="t-3003-c">= zero(x)<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:27:20</span></span></span>
-<span class="t-3003-c">    for i in range(t):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:28:5</span></span>
-<span class="t-3003-c">        temp = add(temp,x) <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:29:5</span></span><span class="actual-orange-comment"><span class="t-3003-c">= Comp(add, p_0, p2) (temp,i,x)<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:29:34</span></span></span>
-<span class="t-3003-c">    return temp<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:30:5</span></span>
+def mult(t,x):
+    temp = 0 <span class="actual-orange-comment">= zero(x)</span>
+    for i in range(t):
+        temp = add(temp,x) <span class="actual-orange-comment">= Comp(add, p_0, p2) (temp,i,x)</span>
+    return temp
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">erinnern Sie sich daran:
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:33:5</span></span><span class="t-3003-c">$h$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:33:30</span></span><span class="t-3003-c">
-        muss immer eine Funktion<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:33:33</span></span>
-      <span class="t-3003-c">in der lokalen Variable temp, der Laufvariable
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:34:5</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:34:52</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:34:55</span></span>
-      <span class="t-3003-c">und
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:35:5</span></span><span class="t-3003-c">$\vec{x}$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:35:9</span></span><span class="t-3003-c">
-        sein. Daher:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:35:18</span></span>
+      erinnern Sie sich daran: $h$ muss immer eine Funktion in
+      der lokalen Variable temp, der Laufvariable $i$ und
+      $\vec{x}$ sein. Daher:
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       {\rm mult} = \primrec(\zero, \comp({\rm add}, \pi_0, \pi_2))
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:37:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Genauso erhalten wir
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:41:5</span></span><span class="nowrap"><span class="t-3003-c">$x^t$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:41:26</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:41:31</span></span></span><span class="t-3003-c">
-        indem wir statt bei 0 bei<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:41:31</span></span>
-      <span class="t-3003-c">1 beginnen und statt
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:42:5</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:42:26</span></span><span class="t-3003-c">
-        draufzuzählen, es<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:42:29</span></span>
-      <span class="t-3003-c">draufmultiplizieren:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:43:5</span></span>
+      Genauso erhalten wir
+      <span class="nowrap">$x^t$,</span>
+      indem wir statt bei 0 bei 1
+      beginnen und statt $x$ draufzuzählen, es
+      draufmultiplizieren:
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       {\rm expReverse} = \primrec({\rm one}, \comp({\rm mult}, \pi_0, \pi_2))
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:45:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Allerdings gibt uns das
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:49:5</span></span><span class="nowrap"><span class="t-3003-c">$(t,x) \mapsto x^t$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:49:29</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:49:48</span></span></span><span class="t-3003-c">
-        Für<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:49:48</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:50:5</span></span><span class="t-3003-c">${\rm exp}(a,b) = a^b$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:50:5</span></span><span class="t-3003-c">
-        müssen wir die Argumente<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:50:27</span></span>
-      <span class="t-3003-c">umdrehen:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:51:5</span></span>
+      Allerdings gibt uns das
+      <span class="nowrap">$(t,x) \mapsto x^t$.</span>
+      Für
+      ${\rm exp}(a,b) = a^b$ müssen wir die Argumente umdrehen:
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       {\rm exp} = \comp({\rm expReverse}, \pi_1, \pi_0)
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:53:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Die Fakultätsfunktion
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:57:5</span></span><span class="t-3003-c">$t!$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:57:27</span></span><span class="t-3003-c">
-        ist konzeptuell ähnlich,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:57:31</span></span>
-      <span class="t-3003-c">allerdings etwas interessanter, weil wir hier auf das<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:58:5</span></span>
-      <span class="t-3003-c">Zwischenergebnis und die Laufvariable zugreifen<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:59:5</span></span>
-      <span class="t-3003-c">müssen:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:60:5</span></span>
+      Die Fakultätsfunktion $t!$ ist konzeptuell ähnlich,
+      allerdings etwas interessanter, weil wir hier auf das
+      Zwischenergebnis und die Laufvariable zugreifen müssen:
     </p>
     <div class="main-column">
 <pre class="orange-comments">
-<span class="t-3003-c">def factorial(t):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:63:5</span></span>
-<span class="t-3003-c">    temp = 1 <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:64:5</span></span><span class="actual-orange-comment"><span class="t-3003-c">= one()<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:64:20</span></span></span>
-<span class="t-3003-c">for i in range(t):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:65:5</span></span>
-<span class="t-3003-c">    temp = mult(temp,i+1) <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:66:5</span></span><span class="actual-orange-comment"><span class="t-3003-c">= Comp(mult, p_0, Comp(succ, p_1)) (temp,i)<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:66:33</span></span></span>
-<span class="t-3003-c">    return temp<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:67:5</span></span>
+def factorial(t):
+    temp = 1 <span class="actual-orange-comment">= one()</span>
+for i in range(t):
+    temp = mult(temp,i+1) <span class="actual-orange-comment">= Comp(mult, p_0, Comp(succ, p_1)) (temp,i)</span>
+    return temp
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir können nicht einfach
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:70:5</span></span><span class="t-3003-c">$i+1$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:70:30</span></span><span class="t-3003-c">
-        schreiben! Wir müssen<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:70:35</span></span>
-      <span class="t-3003-c">dies via
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:71:5</span></span><span class="t-3003-c">$\comp(\succ,\pi_1)$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:71:14</span></span><span class="t-3003-c">
-        konstruieren. Denn: die<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:71:34</span></span>
-      <span class="t-3003-c">Funktion
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:72:5</span></span><span class="t-3003-c">$h$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:72:14</span></span><span class="t-3003-c">
-        bekommt
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:72:17</span></span><span class="t-3003-c">${\rm temp}, i, \vec{x}$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:72:26</span></span><span class="t-3003-c">
-        als<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:72:50</span></span>
-      <span class="t-3003-c">Input;
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:73:5</span></span><span class="t-3003-c">$\pi_1$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:73:12</span></span><span class="t-3003-c">
-        gibt uns davon das
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:73:19</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:73:39</span></span><span class="t-3003-c">
-        zurück und<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:73:42</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:74:5</span></span><span class="t-3003-c">$\comp(\succ, \pi_1)$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:74:5</span></span><span class="t-3003-c">
-        gibt uns
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:74:26</span></span><span class="nowrap"><span class="t-3003-c">$i+1$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:74:36</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:74:41</span></span></span><span class="t-3003-c">
-        Operationen wie<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:74:41</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:75:5</span></span><span class="t-3003-c">$\pred: t \mapsto t-1$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:75:5</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:75:27</span></span><span class="t-3003-c">${\rm minus}$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:75:32</span></span><span class="t-3003-c">
-        sind<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:75:45</span></span>
-      <span class="t-3003-c">konzeptuell nur ein bisschen anders. Das liegt auch<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:76:5</span></span>
-      <span class="t-3003-c">daran, dass wir keine negativen Zahlen haben. Was ist<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:77:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:78:5</span></span><span class="nowrap"><span class="t-3003-c">$\pred(0)$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:78:5</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:78:15</span></span></span><span class="t-3003-c">
-        Wir definieren das als 0. So können wir<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:78:15</span></span>
-      <span class="t-3003-c">pred implementieren:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:79:5</span></span>
+      Wir können nicht einfach $i+1$ schreiben! Wir müssen dies
+      via $\comp(\succ,\pi_1)$ konstruieren. Denn: die Funktion
+      $h$ bekommt ${\rm temp}, i, \vec{x}$ als Input; $\pi_1$
+      gibt uns davon das $i$ zurück und $\comp(\succ, \pi_1)$
+      gibt uns
+      <span class="nowrap">$i+1$.</span>
+      Operationen wie $\pred: t \mapsto t-1$ und
+      ${\rm minus}$ sind konzeptuell nur ein bisschen anders.
+      Das liegt auch daran, dass wir keine negativen Zahlen
+      haben. Was ist
+      <span class="nowrap">$\pred(0)$?</span>
+      Wir definieren das als 0. So
+      können wir pred implementieren:
     </p>
     <div class="main-column">
 <pre class="orange-comments">
-<span class="t-3003-c">def pred(t):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:82:5</span></span>
-<span class="t-3003-c">    temp = 0 <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:83:5</span></span><span class="actual-orange-comment"><span class="t-3003-c">= zero()<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:83:20</span></span></span>
-<span class="t-3003-c">    for i in range(t):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:84:5</span></span>
-<span class="t-3003-c">        temp = i <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:85:5</span></span><span class="actual-orange-comment"><span class="t-3003-c">= p1 (temp,i)<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:85:24</span></span></span>
-<span class="t-3003-c">    return temp<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:86:5</span></span>
+def pred(t):
+    temp = 0 <span class="actual-orange-comment">= zero()</span>
+    for i in range(t):
+        temp = i <span class="actual-orange-comment">= p1 (temp,i)</span>
+    return temp
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">In Worten: wenn
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:89:5</span></span><span class="nowrap"><span class="t-3003-c">$t=0$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:89:21</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:89:26</span></span></span><span class="t-3003-c">
-        dann geben wir einfach<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:89:26</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:90:5</span></span><span class="t-3003-c">$\zero()$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:90:5</span></span><span class="t-3003-c">
-        zurück, also
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:90:14</span></span><span class="nowrap"><span class="t-3003-c">$0$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:90:28</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:90:31</span></span></span><span class="t-3003-c">
-        Ansonsten durchlaufen wir<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:90:31</span></span>
-      <span class="t-3003-c">die Schleife
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:91:5</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:91:18</span></span><span class="t-3003-c">
-        mal; der letzte Schleifenindex ist<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:91:21</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:92:5</span></span><span class="nowrap"><span class="t-3003-c">$t-1$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:92:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:92:10</span></span></span><span class="t-3003-c">
-        und das ist dann auch der Wert von temp, der<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:92:10</span></span>
-      <span class="t-3003-c">zurückgegeben wird. Daher:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:93:5</span></span>
+      In Worten: wenn
+      <span class="nowrap">$t=0$,</span>
+      dann geben wir einfach $\zero()$
+      zurück, also
+      <span class="nowrap">$0$.</span>
+      Ansonsten durchlaufen wir die Schleife
+      $t$ mal; der letzte Schleifenindex ist
+      <span class="nowrap">$t-1$,</span>
+      und das ist
+      dann auch der Wert von temp, der zurückgegeben wird. Daher:
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \pred = \primrec(\zero, \pi_1)
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:95:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Für minus schreiben wir uns erst mal<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:99:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:100:5</span></span><span class="nowrap"><span class="t-3003-c">${\rm subtractFrom}: (t,x) \mapsto x-t$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:100:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:100:44</span></span></span><span class="t-3003-c">
-        Hierfür<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:100:44</span></span>
-      <span class="t-3003-c">wenden wir einfach pred
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:101:5</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:101:29</span></span><span class="t-3003-c">
-        mal auf
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:101:32</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:101:41</span></span><span class="t-3003-c">
-        an:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:101:44</span></span>
+      Für minus schreiben wir uns erst mal
+      <span class="nowrap">${\rm subtractFrom}: (t,x) \mapsto x-t$.</span>
+      Hierfür wenden
+      wir einfach pred $t$ mal auf $x$ an:
     </p>
     <div class="math-block main-column">
       $$
@@ -236,123 +184,106 @@
       {\rm subtractFrom}&amp;= \primrec(\pi_0, \comp(\pred, \pi_0)) \\
       {\rm minus}&amp;= \comp({\rm subtractFrom}, \pi_1, \pi_0)
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:103:5</span>
+      $$
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Boolesche Werte<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:109:9</span></span>
+      Boolesche Werte
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Die primitive Rekursion stellt uns als "Datentyp" nur<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:111:5</span></span>
-      <span class="t-3003-c">die natürlichen Zahlen zur Verfügung. Alles andere<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:112:5</span></span>
-      <span class="t-3003-c">müssen wir als natürliche Zahlen nach einem von uns<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:113:5</span></span>
-      <span class="t-3003-c">selbst gewählten Schema codieren. Für Boolesche Werte<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:114:5</span></span>
-      <span class="t-3003-c">ist das recht naheliegend. Wir codieren
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:115:5</span></span><code><span class="t-3003-c">True<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:115:46</span></span></code><span class="t-3003-c">
-        als 1<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:115:51</span></span>
-      <span class="t-3003-c">und
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:116:5</span></span><code><span class="t-3003-c">False<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:116:10</span></span></code><span class="t-3003-c">
-        als 0. Unser erstes Prädikat, also<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:116:16</span></span>
-      <span class="t-3003-c">Funktion mit Booleschem Ausgabewert, ist
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:117:5</span></span><span class="nowrap"><code><span class="t-3003-c">isPositive<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:117:47</span></span></code><span class="t-3003-c">:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:117:58</span></span></span>
+      Die primitive Rekursion stellt uns als "Datentyp" nur die
+      natürlichen Zahlen zur Verfügung. Alles andere müssen wir
+      als natürliche Zahlen nach einem von uns selbst gewählten
+      Schema codieren. Für Boolesche Werte ist das recht
+      naheliegend. Wir codieren
+      <code>True</code>
+      als 1 und
+      <code>False</code>
+      als 0.
+      Unser erstes Prädikat, also Funktion mit Booleschem
+      Ausgabewert, ist
+      <span class="nowrap"><code>isPositive</code>:</span>
     </p>
     <div class="main-column">
 <pre class="orange-comments">
-<span class="t-3003-c">def pred(t):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:120:5</span></span>
-<span class="t-3003-c">    temp = 0 <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:121:5</span></span><span class="actual-orange-comment"><span class="t-3003-c">= zero()<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:121:20</span></span></span>
-<span class="t-3003-c">    for i in range(t):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:122:5</span></span>
-<span class="t-3003-c">        temp = 1 <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:123:5</span></span><span class="actual-orange-comment"><span class="t-3003-c">= one<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:123:24</span></span></span>
-<span class="t-3003-c">    return temp<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:124:5</span></span>
+def pred(t):
+    temp = 0 <span class="actual-orange-comment">= zero()</span>
+    for i in range(t):
+        temp = 1 <span class="actual-orange-comment">= one</span>
+    return temp
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">und somit<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:127:5</span></span>
+      und somit
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       {\rm isPositive} = \primrec(\zero, {\rm one})
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:129:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Auf ähnliche Weise können wir uns nun lessThan,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:133:5</span></span>
-      <span class="t-3003-c">lessEqual, and, or, not, ifThenElse konstruieren.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:134:5</span></span>
+      Auf ähnliche Weise können wir uns nun lessThan, lessEqual,
+      and, or, not, ifThenElse konstruieren.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Wurzel und Suchen im Allgemeinen<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:137:9</span></span>
+      Wurzel und Suchen im Allgemeinen
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Eine größere Herausforderung stellt die ganzzahlige<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:139:5</span></span>
-      <span class="t-3003-c">Wurzel
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:140:5</span></span><span class="t-3003-c">$x \mapsto \floor{\sqrt{x}}$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:140:12</span></span><span class="t-3003-c">
-        dar. Hierfür<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:140:40</span></span>
-      <span class="t-3003-c">haben wir keine Formel mit
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:141:5</span></span><span class="nowrap"><span class="t-3003-c">$+, *, -$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:141:32</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:141:41</span></span></span><span class="t-3003-c">
-        auch keine<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:141:41</span></span>
-      <span class="t-3003-c">schöne rekursive Formel zur Hand. Es handelt sich um<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:142:5</span></span>
-      <span class="t-3003-c">ein Suchproblem:
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:143:5</span></span><span class="t-3003-c">$\floor{\sqrt{x}}$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:143:22</span></span><span class="t-3003-c">
-        ist die größte<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:143:40</span></span>
-      <span class="t-3003-c">natürliche Zahl
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:144:5</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:144:21</span></span><span class="t-3003-c">
-        mit
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:144:24</span></span><span class="nowrap"><span class="t-3003-c">$i^2 \leq x$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:144:29</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:144:41</span></span></span><span class="t-3003-c">
-        Wir können auch<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:144:41</span></span>
-      <span class="t-3003-c">den Suchraum begrenzen: da
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:145:5</span></span><span class="t-3003-c">$\sqrt{x} \leq x$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:145:32</span></span><span class="t-3003-c">
-        für alle<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:145:49</span></span>
-      <span class="t-3003-c">natürlichen Zahlen, so gilt:
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:146:5</span></span><span class="t-3003-c">$\floor{\sqrt{x}}$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:146:34</span></span><span class="t-3003-c">
-        ist<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:146:52</span></span>
-      <span class="t-3003-c">die größte natürliche Zahl
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:147:5</span></span><span class="t-3003-c">$i \in \{0,1,\dots,x\}$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:147:32</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:147:55</span></span>
-      <span class="t-3003-c">mit
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:148:5</span></span><span class="nowrap"><span class="t-3003-c">$i^2 \leq x$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:148:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:148:21</span></span></span><span class="t-3003-c">
-        Das Prädikat<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:148:21</span></span>
+      Eine größere Herausforderung stellt die ganzzahlige Wurzel
+      $x \mapsto \floor{\sqrt{x}}$ dar. Hierfür haben wir keine
+      Formel mit
+      <span class="nowrap">$+, *, -$,</span>
+      auch keine schöne rekursive Formel
+      zur Hand. Es handelt sich um ein Suchproblem:
+      $\floor{\sqrt{x}}$ ist die größte natürliche Zahl $i$ mit
+      <span class="nowrap">$i^2 \leq x$.</span>
+      Wir können auch den Suchraum begrenzen: da
+      $\sqrt{x} \leq x$ für alle natürlichen Zahlen, so gilt:
+      $\floor{\sqrt{x}}$ ist die größte natürliche Zahl
+      $i \in \{0,1,\dots,x\}$ mit
+      <span class="nowrap">$i^2 \leq x$.</span>
+      Das Prädikat
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       {\rm iSquareLessEqualX } (i,x)&amp;= [ i^2 \leq x ]
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:150:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">ist primitiv rekursiv:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:154:5</span></span>
+      ist primitiv rekursiv:
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       {\rm iSquareLessEqualX } = \comp({\rm lessEqual}, \comp({\rm mult}, \pi_0, \pi_0), \pi_1)
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:156:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">und damit können wir die ganzzahlige Wurzel schreiben<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:160:5</span></span>
-      <span class="t-3003-c">als<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:161:5</span></span>
+      und damit können wir die ganzzahlige Wurzel schreiben als
     </p>
     <div class="main-column">
 <pre class="orange-comments">
-<span class="t-3003-c">def largestIbelowTwithISquareLessEqualX(t,x):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:164:5</span></span>
-<span class="t-3003-c">    temp = 0 <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:165:5</span></span><span class="actual-orange-comment"><span class="t-3003-c">= zero(x)<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:165:20</span></span></span>
-<span class="t-3003-c">    for i in range(t):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:166:5</span></span>
-<span class="t-3003-c">        temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:167:5</span></span><span class="actual-orange-comment"><span class="t-3003-c">= Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x)<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:167:66</span></span></span>
-<span class="t-3003-c">    return temp<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:168:5</span></span>
+def largestIbelowTwithISquareLessEqualX(t,x):
+    temp = 0 <span class="actual-orange-comment">= zero(x)</span>
+    for i in range(t):
+        temp = ifThenElse(iSquareLessEqualX(i,x), i, temp) <span class="actual-orange-comment">= Comp(ifThenElse, Comp(iSquareLessEqual, p_1, p_2), p_1, p_0) (temp,i,x)</span>
+    return temp
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Was geht hier vor? Wenn<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:171:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:172:5</span></span><span class="t-3003-c">${\rm iSquareLessEqualX}(i,x))$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:172:5</span></span><span class="t-3003-c">
-        True ist, dann<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:172:36</span></span>
-      <span class="t-3003-c">ersetzen wir temp durch
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:173:5</span></span><span class="nowrap"><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:173:29</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:173:32</span></span></span><span class="t-3003-c">
-        Ansonsten belassen wir<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:173:32</span></span>
-      <span class="t-3003-c">es beim alten Wert; der endgültige Wert von temp ist<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:174:5</span></span>
-      <span class="t-3003-c">also das letzte
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:175:5</span></span><span class="nowrap"><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:175:21</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:175:24</span></span></span><span class="t-3003-c">
-        für das das Prädikat True wahr.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:175:24</span></span>
+      Was geht hier vor? Wenn ${\rm iSquareLessEqualX}(i,x))$
+      True ist, dann ersetzen wir temp durch
+      <span class="nowrap">$i$.</span>
+      Ansonsten
+      belassen wir es beim alten Wert; der endgültige Wert von
+      temp ist also das letzte
+      <span class="nowrap">$i$,</span>
+      für das das Prädikat True
+      wahr.
     </p>
     <div class="math-block main-column">
       $$
@@ -360,131 +291,114 @@
       {\rm largestIbelowTwithISquareLessEqualX = \primrec(zero,
       \comp(ifThenElse, \comp(iSquareLessEqual, \pi_1, \pi_2), \pi_1, \pi_0))}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:177:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Und schließlich ist<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:182:5</span></span>
+      Und schließlich ist
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       {\rm sqrt} = \comp({\rm largestIbelowTwithISquareLessEqualX}, \pi_0, \pi_0)
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:184:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">da wir zum Suchen der Wurzel von
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:188:5</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:188:38</span></span><span class="t-3003-c">
-        gleich
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:188:41</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:188:49</span></span><span class="t-3003-c">
-        als<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:188:52</span></span>
-      <span class="t-3003-c">Obergrenze des Suchraumes angeben können. Ganz<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:189:5</span></span>
-      <span class="t-3003-c">allgemein können wir für ein Prädikat<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:190:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:191:5</span></span><span class="t-3003-c">${\rm predicate}(i,x)$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:191:5</span></span><span class="t-3003-c">
-        das größte<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:191:27</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:192:5</span></span><span class="t-3003-c">$i \in \{0,\dots,t\}$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:192:5</span></span><span class="t-3003-c">
-        finden, für das<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:192:26</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:193:5</span></span><span class="t-3003-c">${\rm predicate}(i,x)$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:193:5</span></span><span class="t-3003-c">
-        True ergibt. Da wir wissen,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:193:27</span></span>
-      <span class="t-3003-c">wie wir das primitiv rekursiv machen können, erlauben<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:194:5</span></span>
-      <span class="t-3003-c">wir uns, einen neuen Kombinator zu definieren, anstatt<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:195:5</span></span>
-      <span class="t-3003-c">diese Konstruktion jedes Mal "von Hand" durchzuführen:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:196:5</span></span>
+      da wir zum Suchen der Wurzel von $t$ gleich $t$ als
+      Obergrenze des Suchraumes angeben können. Ganz allgemein
+      können wir für ein Prädikat ${\rm predicate}(i,x)$ das
+      größte $i \in \{0,\dots,t\}$ finden, für das
+      ${\rm predicate}(i,x)$ True ergibt. Da wir wissen, wie wir
+      das primitiv rekursiv machen können, erlauben wir uns,
+      einen neuen Kombinator zu definieren, anstatt diese
+      Konstruktion jedes Mal "von Hand" durchzuführen:
     </p>
     <div class="main-column">
 <pre>
-<span class="t-3003-c">def LargestLessThan(upperBound, predicate):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:199:5</span></span>
-<span class="t-3003-c">        def new_function(*x):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:200:5</span></span>
-<span class="t-3003-c">                temp = 0<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:201:5</span></span>
-<span class="t-3003-c">                for i in range(upperBound(*x)):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:202:5</span></span>
-<span class="t-3003-c">                        if (predicate(i, *x)):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:203:5</span></span>
-<span class="t-3003-c">                                temp = i<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:204:5</span></span>
-<span class="t-3003-c">                return temp<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:205:5</span></span>
-<span class="t-3003-c">        return new_function<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:206:5</span></span>
+def LargestLessThan(upperBound, predicate):
+        def new_function(*x):
+                temp = 0
+                for i in range(upperBound(*x)):
+                        if (predicate(i, *x)):
+                                temp = i
+                return temp
+        return new_function
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">und somit können wir sqrt schreiben als<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:209:5</span></span>
+      und somit können wir sqrt schreiben als
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       {\rm sqrt} = {\rm LargestLessThan} (\pi_0, {\rm iSquareLessEqual})
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:211:5</span>
+      $$
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Paare und Listen<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:216:9</span></span>
+      Paare und Listen
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Eine recht stark anmutende Beschränkung primitiv<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:218:5</span></span>
-      <span class="t-3003-c">rekursiver Funktionen ist die Tatsache, dass wir in<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:219:5</span></span>
-      <span class="t-3003-c">der Schleife nur
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:220:5</span></span><i><span class="t-3003-c">eine<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:220:23</span></span></i><span class="t-3003-c">
-        lokale Variable führen dürfen,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:220:28</span></span>
-      <span class="t-3003-c">hier meistens
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:221:5</span></span><code><span class="t-3003-c">temp<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:221:20</span></span></code><span class="t-3003-c">
-        genannt. Manche Funktionen<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:221:25</span></span>
-      <span class="t-3003-c">scheinen inhärent mindestens zwei zu benötigen.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:222:5</span></span>
-      <span class="t-3003-c">Betrachten wir den Fall der Fibonacci-Zahlen:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:223:5</span></span>
+      Eine recht stark anmutende Beschränkung primitiv
+      rekursiver Funktionen ist die Tatsache, dass wir in der
+      Schleife nur
+      <i>eine</i>
+      lokale Variable führen dürfen, hier
+      meistens
+      <code>temp</code>
+      genannt. Manche Funktionen scheinen
+      inhärent mindestens zwei zu benötigen. Betrachten wir den
+      Fall der Fibonacci-Zahlen:
     </p>
     <div class="main-column">
 <pre>
-<span class="t-3003-c">def fibIterative(t):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:226:5</span></span>
-<span class="t-3003-c">    a = 0<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:227:5</span></span>
-<span class="t-3003-c">    b = 1<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:228:5</span></span>
-<span class="t-3003-c">    for i in range(t):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:229:5</span></span>
-<span class="t-3003-c">        c = a+b<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:230:5</span></span>
-<span class="t-3003-c">        a = b<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:231:5</span></span>
-<span class="t-3003-c">        b = c<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:232:5</span></span>
-<span class="t-3003-c">    return a<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:233:5</span></span>
+def fibIterative(t):
+    a = 0
+    b = 1
+    for i in range(t):
+        c = a+b
+        a = b
+        b = c
+    return a
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir führen hier zwei lokale Variable,
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:236:5</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:236:43</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:236:46</span></span><span class="nowrap"><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:236:51</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:236:54</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:236:54</span></span>
-      <span class="t-3003-c">Das
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:237:5</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:237:9</span></span><span class="t-3003-c">
-        könnten wir mit diesem schönen Trick<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:237:12</span></span>
-      <span class="t-3003-c">eliminieren:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:238:5</span></span>
+      Wir führen hier zwei lokale Variable, $a$ und
+      <span class="nowrap">$b$.</span>
+      Das $c$
+      könnten wir mit diesem schönen Trick eliminieren:
     </p>
     <div class="main-column">
 <pre>
-<span class="t-3003-c">b = a+b<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:241:5</span></span>
-<span class="t-3003-c">a = b-a<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:242:5</span></span>
+b = a+b
+a = b-a
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Doch selbst dann hätten wir immer noch zwei lokale<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:245:5</span></span>
-      <span class="t-3003-c">Variable. Die Fibonacci-Zahlen rekursiv per
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:246:5</span></span><code><span class="t-3003-c">return<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:246:50</span></span>
-        <span class="t-3003-c">F(n-1)+F(n-2)<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:247:5</span></span></code><span class="t-3003-c">
-        scheint noch weiter weg zu sein vom<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:247:19</span></span>
-      <span class="t-3003-c">Paradigma der primitiven Rekursion; primitive<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:248:5</span></span>
-      <span class="t-3003-c">Rekursion verzweigt sich nie. Dennoch ist es möglich,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:249:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:250:5</span></span><code><span class="t-3003-c">fib<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:250:6</span></span></code><span class="t-3003-c">
-        primitiv rekursiv zu implementieren. Hauptzutat<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:250:10</span></span>
-      <span class="t-3003-c">hierbei ist es, dass wir
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:251:5</span></span><i><span class="t-3003-c">Paare<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:251:31</span></span></i><span class="t-3003-c">
-        als neue<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:251:37</span></span>
-      <span class="t-3003-c">Datenstruktur verwenden. Erinnern Sie sich: die<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:252:5</span></span>
-      <span class="t-3003-c">primitive Rekursion stellt uns als Datentyp von Haus<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:253:5</span></span>
-      <span class="t-3003-c">aus nur die natürlichen Zahlen zur Verfügung. Alles<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:254:5</span></span>
-      <span class="t-3003-c">andere müssen wir nach einem selbst gewählten Schema<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:255:5</span></span>
-      <span class="t-3003-c">codieren. Bei Booleschen Werten war es einfach. Wie<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:256:5</span></span>
-      <span class="t-3003-c">steht es mit
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:257:5</span></span><i><span class="t-3003-c">Paaren<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:257:19</span></span></i><span class="t-3003-c">
-        von natürlichen Zahlen? In<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:257:26</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:258:5</span></span><a href="./3-0.html"><span class="t-3003-c">Kapitel 2: Unendliche Mengen<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:258:6</span></span></a><span class="t-3003-c">
-        haben<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:258:52</span></span>
-      <span class="t-3003-c">wir die bijektive Funktion<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:259:5</span></span>
+      Doch selbst dann hätten wir immer noch zwei lokale
+      Variable. Die Fibonacci-Zahlen rekursiv per
+      <code>return
+        F(n-1)+F(n-2)</code>
+      scheint noch weiter weg zu sein vom
+      Paradigma der primitiven Rekursion; primitive Rekursion
+      verzweigt sich nie. Dennoch ist es möglich,
+      <code>fib</code>
+      primitiv
+      rekursiv zu implementieren. Hauptzutat hierbei ist es, dass
+      wir
+      <i>Paare</i>
+      als neue Datenstruktur verwenden. Erinnern Sie
+      sich: die primitive Rekursion stellt uns als Datentyp von
+      Haus aus nur die natürlichen Zahlen zur Verfügung. Alles
+      andere müssen wir nach einem selbst gewählten Schema
+      codieren. Bei Booleschen Werten war es einfach. Wie steht
+      es mit
+      <i>Paaren</i>
+      von natürlichen Zahlen? In
+      <a href="./3-0.html">Kapitel 2:
+        Unendliche Mengen</a>
+      haben wir die bijektive
+      Funktion
     </p>
     <div class="math-block main-column">
       $$
@@ -492,25 +406,22 @@
       \pair : \N^2&amp;\rightarrow \N \\
       (x,y)&amp;\mapsto {x + y + 1 \choose 2} + x
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:261:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">kennengelernt. Diese Funktion ist primitiv rekursiv:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:266:5</span></span>
-      <span class="t-3003-c">es gilt
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:267:5</span></span><span class="t-3003-c">${n \choose 2} = 1 + 2 + \cdots + (n-1)$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:267:13</span></span><span class="t-3003-c">
-        und<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:267:53</span></span>
-      <span class="t-3003-c">somit<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:268:5</span></span>
+      kennengelernt. Diese Funktion ist primitiv rekursiv: es
+      gilt ${n \choose 2} = 1 + 2 + \cdots + (n-1)$ und somit
     </p>
     <div class="main-column">
 <pre class="orange-comments">
-<span class="t-3003-c">def choose2(t):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:271:5</span></span>
-<span class="t-3003-c">    temp = 0 <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:272:5</span></span><span class="actual-orange-comment"><span class="t-3003-c">= zero()<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:272:20</span></span></span>
-<span class="t-3003-c">    for i in range(t):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:273:5</span></span>
-<span class="t-3003-c">        temp = add(temp,i) <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:274:5</span></span><span class="actual-orange-comment"><span class="t-3003-c">= Comp(add, p0, p1)<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:274:34</span></span></span>
+def choose2(t):
+    temp = 0 <span class="actual-orange-comment">= zero()</span>
+    for i in range(t):
+        temp = add(temp,i) <span class="actual-orange-comment">= Comp(add, p0, p1)</span>
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">und somit<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:277:5</span></span>
+      und somit
     </p>
     <div class="math-block main-column">
       $$
@@ -518,28 +429,15 @@
       {\rm choose2}&amp;= \primrec(\zero, \comp({\rm add},\pi_0,\pi_1)) \\
       \pair&amp;= \comp({\rm add}, \comp({\rm choose2}, \comp({\rm add}, \pi_0, \comp(\succ, \pi_1)), \pi_0)
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:279:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Um die Umkehrfunktionen
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:284:5</span></span><span class="t-3003-c">$\first, \second$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:284:29</span></span><span class="t-3003-c">
-        zu<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:284:46</span></span>
-      <span class="t-3003-c">implementieren, die uns aus
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:285:5</span></span><span class="t-3003-c">$\pair(x,y)$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:285:33</span></span><span class="t-3003-c">
-        wieder
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:285:45</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:285:53</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:285:56</span></span>
-      <span class="t-3003-c">und
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:286:5</span></span><span class="t-3003-c">$y$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:286:9</span></span><span class="t-3003-c">
-        berechnen, bestimmen wir erst den Wert von<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:286:12</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:287:5</span></span><span class="nowrap"><span class="t-3003-c">$x+y$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:287:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:287:10</span></span></span><span class="t-3003-c">
-        Wenn
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:287:10</span></span><span class="t-3003-c">$\pair(x,y) = n$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:287:17</span></span><span class="t-3003-c">
-        gilt und
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:287:33</span></span><span class="t-3003-c">$x+y=i)$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:287:43</span></span><span class="t-3003-c">
-        ist,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:287:51</span></span>
-      <span class="t-3003-c">dann ist<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:288:5</span></span>
+      Um die Umkehrfunktionen $\first, \second$ zu
+      implementieren, die uns aus $\pair(x,y)$ wieder $x$ und $y$
+      berechnen, bestimmen wir erst den Wert von
+      <span class="nowrap">$x+y$.</span>
+      Wenn
+      $\pair(x,y) = n$ gilt und $x+y=i)$ ist, dann ist
     </p>
     <div class="math-block main-column">
       $$
@@ -547,27 +445,15 @@
       n = \pair(x,y) = {i + 1 \choose 2} + x \geq
       {i+1 \choose 2} + 0 = \pair(0,i) \ ,
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:290:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">und somit ist
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:295:5</span></span><span class="t-3003-c">$x+y$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:295:19</span></span><span class="t-3003-c">
-        der größte Wert von
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:295:24</span></span><span class="nowrap"><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:295:45</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:295:48</span></span></span><span class="t-3003-c">
-        so dass<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:295:48</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:296:5</span></span><span class="t-3003-c">$n \geq \pair(0,i)$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:296:5</span></span><span class="t-3003-c">
-        ist. Aus
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:296:24</span></span><span class="t-3003-c">$x+y$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:296:34</span></span><span class="t-3003-c">
-        und<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:296:39</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:297:5</span></span><span class="t-3003-c">${x+y+1 \choose 2} + x$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:297:5</span></span><span class="t-3003-c">
-        können wir dann leicht
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:297:28</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:297:52</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:297:55</span></span>
-      <span class="t-3003-c">und
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:298:5</span></span><span class="t-3003-c">$y$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:298:9</span></span><span class="t-3003-c">
-        berechnen:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:298:12</span></span>
+      und somit ist $x+y$ der größte Wert von
+      <span class="nowrap">$i$,</span>
+      so dass
+      $n \geq \pair(0,i)$ ist. Aus $x+y$ und
+      ${x+y+1 \choose 2} + x$ können wir dann leicht $x$ und $y$
+      berechnen:
     </p>
     <div class="math-block main-column">
       $$
@@ -577,34 +463,29 @@
       \first&amp;= \comp({\rm minus}, \pi_0, \comp(\pair, \zero, {\rm getXplusY}))\\
       \second&amp;= \comp({\rm minus}, {\rm getXplusY}, \first)
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:300:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Listen können wir implementieren, indem wir Paare<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:307:5</span></span>
-      <span class="t-3003-c">verschachtelt zusammenhängen, z.B.
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:308:5</span></span><span class="t-3003-c">$[5,7,9]$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:308:40</span></span><span class="t-3003-c">
-        wird zu<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:308:49</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:309:5</span></span><span class="red"><span class="t-3003-c">$\pair(5, \pair(7, 9))$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:309:6</span></span></span><span class="t-3003-c">. Das ist natürlich<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:309:35</span></span>
-      <span class="t-3003-c">inkorrekt:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:310:5</span></span>
+      Listen können wir implementieren, indem wir Paare
+      verschachtelt zusammenhängen, z.B. $[5,7,9]$ wird zu
+      <span class="red">$\pair(5, \pair(7, 9))$</span>. Das ist natürlich
+      inkorrekt:
     </p>
     <div class="main-column">
 <pre class="python-prompt">
-<span class="python-prompt-carets"><span class="t-3003-c">&gt;&gt;&gt;<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:313:5</span></span></span><span class="python-prompt-content"><span class="t-3003-c"> pair(5,pair(7,9))<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:313:8</span></span></span>
-<span class="python-prompt-ok-response"><span class="t-3003-c">11031<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:314:5</span></span></span>
-<span class="python-prompt-carets"><span class="t-3003-c">&gt;&gt;&gt;<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:315:5</span></span></span><span class="python-prompt-content"><span class="t-3003-c"> pair(7,9)<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:315:8</span></span></span>
-<span class="python-prompt-ok-response"><span class="t-3003-c">143<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:316:5</span></span></span>
-<span class="python-prompt-carets"><span class="t-3003-c">&gt;&gt;&gt;<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:317:5</span></span></span><span class="python-prompt-content"><span class="t-3003-c"> pair(5,143)<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:317:8</span></span></span>
-<span class="python-prompt-ok-response"><span class="t-3003-c">11031<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:318:5</span></span></span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(5,pair(7,9))</span>
+<span class="python-prompt-ok-response">11031</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(7,9)</span>
+<span class="python-prompt-ok-response">143</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> pair(5,143)</span>
+<span class="python-prompt-ok-response">11031</span>
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Das Problem ist, dass wir das Ende der Liste nicht<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:321:5</span></span>
-      <span class="t-3003-c">kennen. Wir lösen das Problem, indem wir die leere<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:322:5</span></span>
-      <span class="t-3003-c">Liste mit
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:323:5</span></span><span class="t-3003-c">$0$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:323:15</span></span><span class="t-3003-c">
-        codieren und dann aber beim Davorhängen<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:323:18</span></span>
-      <span class="t-3003-c">eines Elements 1 draufaddieren müssen, also<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:324:5</span></span>
+      Das Problem ist, dass wir das Ende der Liste nicht kennen.
+      Wir lösen das Problem, indem wir die leere Liste mit $0$
+      codieren und dann aber beim Davorhängen eines Elements 1
+      draufaddieren müssen, also
     </p>
     <div class="math-block main-column">
       $$
@@ -613,50 +494,46 @@
       {\rm head} ({\rm list})&amp;= \first({\rm list} - 1)\\
       {\rm second} ({\rm list})&amp;= \second({\rm list} - 1)
       \end{align*}
-      $$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:326:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Jetzt klappt alles wunderbar:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:332:5</span></span>
+      Jetzt klappt alles wunderbar:
     </p>
     <div class="main-column">
 <pre class="python-prompt">
-<span class="python-prompt-carets"><span class="t-3003-c">&gt;&gt;&gt;<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:335:5</span></span></span><span class="python-prompt-content"><span class="t-3003-c"> push(11, push(7, push(5, 0)))<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:335:8</span></span></span>
-<span class="python-prompt-ok-response"><span class="t-3003-c">90537<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:336:5</span></span></span>
-<span class="python-prompt-carets"><span class="t-3003-c">&gt;&gt;&gt;<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:337:5</span></span></span><span class="python-prompt-content"><span class="t-3003-c"> head(90537)<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:337:8</span></span></span>
-<span class="python-prompt-ok-response"><span class="t-3003-c">11<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:338:5</span></span></span>
-<span class="python-prompt-carets"><span class="t-3003-c">&gt;&gt;&gt;<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:339:5</span></span></span><span class="python-prompt-content"><span class="t-3003-c"> head(tail(90537))<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:339:8</span></span></span>
-<span class="python-prompt-ok-response"><span class="t-3003-c">7<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:340:5</span></span></span>
-<span class="python-prompt-carets"><span class="t-3003-c">&gt;&gt;&gt;<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:341:5</span></span></span><span class="python-prompt-content"><span class="t-3003-c"> head(tail(tail(90537)))<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:341:8</span></span></span>
-<span class="python-prompt-ok-response"><span class="t-3003-c">5<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:342:5</span></span></span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> push(11, push(7, push(5, 0)))</span>
+<span class="python-prompt-ok-response">90537</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(90537)</span>
+<span class="python-prompt-ok-response">11</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(tail(90537))</span>
+<span class="python-prompt-ok-response">7</span>
+<span class="python-prompt-carets">&gt;&gt;&gt;</span><span class="python-prompt-content"> head(tail(tail(90537)))</span>
+<span class="python-prompt-ok-response">5</span>
 </pre>
     </div>
     <p class="main-column">
-      <b><span class="t-3003-c">Native Implementierung.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:345:6</span></span></b><span class="t-3003-c">
-        Die primitive Rekursion ist<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:345:30</span></span>
-      <span class="t-3003-c">ein theoretischer Berechenbarkeitsbegriff für<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:346:5</span></span>
-      <span class="t-3003-c">Funktionen auf natürlichen Zahlen. Es ist definitiv<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:347:5</span></span>
-      <span class="t-3003-c">keine ernstzunehmende Programmiersprache. Ich finde<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:348:5</span></span>
-      <span class="t-3003-c">allerdings, dass es hilfreich ist, sie als<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:349:5</span></span>
-      <span class="t-3003-c">Programmiersprache zu begreifen und zu verwenden, rein<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:350:5</span></span>
-      <span class="t-3003-c">experimentell. Leider ist sie extrem ineffizient:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:351:5</span></span>
-      <span class="t-3003-c">selbst Subtraktion hat quadratische Komplexität.<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:352:5</span></span>
-      <span class="t-3003-c">Längere Listen wie die gerade werden Sie in<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:353:5</span></span>
-      <span class="t-3003-c">vertretbarer Zeit nicht behandeln können. Bei meinen<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:354:5</span></span>
-      <span class="t-3003-c">eigenen Experimenten mit meinem Python-Framework bin<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:355:5</span></span>
-      <span class="t-3003-c">ich daher dazu übergegangen, dass ich, sobald ich<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:356:5</span></span>
-      <span class="t-3003-c">gezeigt habe, dass eine Funktion
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:357:5</span></span><span class="t-3003-c">$f$<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:357:38</span></span><span class="t-3003-c">
-        primitiv<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:357:41</span></span>
-      <span class="t-3003-c">rekursiv ist, sie
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:358:5</span></span><i><span class="t-3003-c">nativ<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:358:24</span></span></i><span class="t-3003-c">
-        in Python zu implementieren,<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:358:30</span></span>
-      <span class="t-3003-c">also beispielsweise in meiner Datei
-        <span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:359:5</span></span><span class="nowrap"><code><span class="t-3003-c">stockpile.py<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:359:42</span></span></code><span class="t-3003-c">:<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:359:55</span></span></span>
+      <b>Native Implementierung.</b>
+      Die primitive Rekursion ist ein
+      theoretischer Berechenbarkeitsbegriff für Funktionen auf
+      natürlichen Zahlen. Es ist definitiv keine ernstzunehmende
+      Programmiersprache. Ich finde allerdings, dass es hilfreich
+      ist, sie als Programmiersprache zu begreifen und zu
+      verwenden, rein experimentell. Leider ist sie extrem
+      ineffizient: selbst Subtraktion hat quadratische
+      Komplexität. Längere Listen wie die gerade werden Sie in
+      vertretbarer Zeit nicht behandeln können. Bei meinen
+      eigenen Experimenten mit meinem Python-Framework bin ich
+      daher dazu übergegangen, dass ich, sobald ich gezeigt habe,
+      dass eine Funktion $f$ primitiv rekursiv ist, sie
+      <i>nativ</i>
+      in Python zu implementieren, also beispielsweise in meiner
+      Datei
+      <span class="nowrap"><code>stockpile.py</code>:</span>
     </p>
     <div class="main-column">
 <pre class="listing">
-<span class="listing-bol"></span><span class="t-3003-c">def pair(x,y):<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:362:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    return int(((x+y+1) * (x+y)) / 2 + x )<span class="t-3003">./course1/wly/04/02-primitive-recursion-constructions.wly:363:5</span></span>
+<span class="listing-bol"></span>def pair(x,y):
+<span class="listing-bol"></span>    return int(((x+y+1) * (x+y)) / 2 + x )
 </pre>
     </div>
     <div id="end-of-page-elt">

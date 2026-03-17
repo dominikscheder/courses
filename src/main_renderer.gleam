@@ -426,15 +426,30 @@ fn expand_filename_shorthands_to_path_fragments(
   )
 }
 
-pub fn main_renderer(amendments: ds.CommandLineAmendments) -> Nil {
-  let amendments = expand_filename_shorthands_to_path_fragments(amendments)
-  let assert Some(input_dir) = amendments.input_dir
+pub fn main_renderer(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
+  let #(output_dir_local_path, amendments) = case amendments.output_dir {
+    None -> #("public", amendments)
+    Some(x) -> #(x, ds.CommandLineAmendments(..amendments, output_dir: None))
+  }
+
+  let assert None = amendments.input_dir
+  let assert None = amendments.output_dir
+
+  let parameters =
+    ds.RendererParameters(
+      input_dir: "./" <> course_dir <> "/wly",
+      output_dir: "./" <> course_dir <> "/" <> output_dir_local_path,
+      prettifier_behavior: ds.PrettifierOff,
+    )
+    |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)
+
   let author_mode = dict.has_key(amendments.user_args, "--local")
+  let amendments = expand_filename_shorthands_to_path_fragments(amendments)
   let renderer =
     ds.Renderer(
       assembler: ds.default_writerly_assembler(amendments.only_paths),
       parser: ds.default_writerly_parser(amendments.only_key_values),
-      pipeline: main_pipeline(input_dir, author_mode),
+      pipeline: main_pipeline(parameters, author_mode),
       splitter: our_splitter,
       emitter: our_emitter,
       writer: ds.default_writer,
@@ -442,16 +457,6 @@ pub fn main_renderer(amendments: ds.CommandLineAmendments) -> Nil {
     )
     |> ds.amend_renderer_by_command_line_amendments(amendments)
 
-  let assert Some(input_dir) = amendments.input_dir
-  let amendments = ds.CommandLineAmendments(..amendments, input_dir: None)
-
-  let parameters =
-    ds.RendererParameters(
-      input_dir: "./" <> input_dir <> "/wly",
-      output_dir: "./" <> input_dir <> "/public",
-      prettifier_behavior: ds.PrettifierOff,
-    )
-    |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)
 
   let debug_options =
     ds.vanilla_options()

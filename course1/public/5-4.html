@@ -40,186 +40,145 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">5.4&ensp;Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:2:11</span></span>
+        5.4&ensp;Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 5.4.1<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:4:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:4:5</span></span>
-        <span class="t-3003-c">Zu jeder kontextfreien Grammatik<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:5:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:6:9</span></span><span class="t-3003-c">$G = (\Sigma, N, S, P)$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:6:9</span></span><span class="t-3003-c">
-          gibt es einen Kellerautomaten<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:6:32</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:7:9</span></span><span class="nowrap"><span class="t-3003-c">$M = (\Sigma, Q, \Gamma, \qstart, \delta)$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:7:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:7:51</span></span></span><span class="t-3003-c">
-          der die<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:7:51</span></span>
-        <span class="t-3003-c">gleiche Sprache akzeptiert, also
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:8:9</span></span><span class="nowrap"><span class="t-3003-c">$L(G) = L(M)$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:8:42</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:8:55</span></span></span>
+        <b>Theorem 5.4.1</b>
+        Zu jeder kontextfreien Grammatik $G = (\Sigma, N, S, P)$
+        gibt es einen Kellerautomaten
+        <span class="nowrap">$M = (\Sigma, Q, \Gamma, \qstart, \delta)$,</span>
+        der die
+        gleiche Sprache akzeptiert, also
+        <span class="nowrap">$L(G) = L(M)$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">In diesem Unterkapitel wollen wir das Gelernte an<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:10:5</span></span>
-      <span class="t-3003-c">einem konkreten Beispiel anwenden. Wir beginnen (1)<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:11:5</span></span>
-      <span class="t-3003-c">mit einer Beschreibung eines Formats in natürlicher<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:12:5</span></span>
-      <span class="t-3003-c">Sprache; (2) basteln uns daraus mit Hilfe des<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:13:5</span></span>
-      <span class="t-3003-c">"Baukastenprinzips" eine reguläre Sprache; (3) säubern<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:14:5</span></span>
-      <span class="t-3003-c">diese, indem wir Regeln der Form
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:15:5</span></span><span class="t-3003-c">$X \rightarrow Y$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:15:38</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:15:55</span></span>
-      <span class="t-3003-c">und
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:16:5</span></span><span class="t-3003-c">$X \rightarrow a$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:16:9</span></span><span class="t-3003-c">
-        eliminieren; (4) bauen einen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:16:26</span></span>
-      <span class="t-3003-c">nichtdeterministischen endlichen Automaten; (5)<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:17:5</span></span>
-      <span class="t-3003-c">transformieren diesen in einen deterministischen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:18:5</span></span>
-      <span class="t-3003-c">endlichen Automaten.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:19:5</span></span>
+      In diesem Unterkapitel wollen wir das Gelernte an einem
+      konkreten Beispiel anwenden. Wir beginnen (1) mit einer
+      Beschreibung eines Formats in natürlicher Sprache; (2)
+      basteln uns daraus mit Hilfe des "Baukastenprinzips" eine
+      reguläre Sprache; (3) säubern diese, indem wir Regeln der
+      Form $X \rightarrow Y$ und $X \rightarrow a$ eliminieren;
+      (4) bauen einen nichtdeterministischen endlichen Automaten;
+      (5) transformieren diesen in einen deterministischen
+      endlichen Automaten.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">1. Beschreibung des Formats in natürlicher Sprache<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:22:9</span></span>
+      1. Beschreibung des Formats in natürlicher Sprache
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Unsere Sprache
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:24:5</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:24:20</span></span><span class="t-3003-c">
-        soll so ähnlich sein wie die der<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:24:23</span></span>
-      <span class="t-3003-c">erlaubten Domainnamen, allerdings mit ein paar<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:25:5</span></span>
-      <span class="t-3003-c">Abänderungen, um die obigen Transformationen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:26:5</span></span>
-      <span class="t-3003-c">spannender zu machen. Ein Wort in unserer Sprache<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:27:5</span></span>
-      <span class="t-3003-c">besteht aus einer nichtleeren Folge von
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:28:5</span></span><i><span class="t-3003-c">Labels<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:28:46</span></span></i><span class="t-3003-c">
-        die<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:28:53</span></span>
-      <span class="t-3003-c">jeweils durch einen
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:29:5</span></span><code><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:29:26</span></span></code><span class="t-3003-c">
-        separiert sind. Jedes Label<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:29:28</span></span>
-      <span class="t-3003-c">ist eine nichtleere Folge von Blöcken (ein nichtleerer<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:30:5</span></span>
-      <span class="t-3003-c">String aus Buchstaben und Zahlen), separiert durch
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:31:5</span></span><code><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:31:57</span></span></code><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:31:59</span></span>
-      <span class="t-3003-c">oder
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:32:5</span></span><code><span class="t-3003-c">-<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:32:11</span></span></code><span class="t-3003-c">
-        aber niemals durch beides innerhalb eines<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:32:13</span></span>
-      <span class="t-3003-c">Blockes. Also:<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:33:5</span></span>
+      Unsere Sprache $L$ soll so ähnlich sein wie die der
+      erlaubten Domainnamen, allerdings mit ein paar
+      Abänderungen, um die obigen Transformationen spannender zu
+      machen. Ein Wort in unserer Sprache besteht aus einer
+      nichtleeren Folge von
+      <i>Labels</i>
+      die jeweils durch einen
+      <code>.</code>
+      separiert sind. Jedes Label ist eine nichtleere Folge von
+      Blöcken (ein nichtleerer String aus Buchstaben und Zahlen),
+      separiert durch
+      <code>:</code>
+      oder
+      <code>-</code>
+      aber niemals durch beides
+      innerhalb eines Blockes. Also:
     </p>
     <div class="pseudowell">
       <figure class="textfigure">
-        <code><span class="t-3003-c">bla:bla:blue.xyz-12-zx.b:x:yyy:xxx:aaa<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:37:10</span></span></code>
+        <code>bla:bla:blue.xyz-12-zx.b:x:yyy:xxx:aaa</code>
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">ist ein Wort in
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:39:5</span></span><span class="nowrap"><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:39:21</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:39:24</span></span></span><span class="t-3003-c">
-        aber<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:39:24</span></span>
+      ist ein Wort in
+      <span class="nowrap">$L$,</span>
+      aber
     </p>
     <div class="pseudowell">
       <figure class="textfigure">
-        <code><span class="t-3003-c">a:b-c.hello<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:43:10</span></span></code>
+        <code>a:b-c.hello</code>
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">ist kein Wort in
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:45:5</span></span><span class="nowrap"><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:45:22</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:45:25</span></span></span><span class="t-3003-c">
-        da das erste Label die<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:45:25</span></span>
-      <span class="t-3003-c">Separatoren
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:46:5</span></span><code><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:46:18</span></span></code><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:46:20</span></span><code><span class="t-3003-c">-<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:46:26</span></span></code><span class="t-3003-c">
-        mischt. Habe ich
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:46:28</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:46:46</span></span><span class="t-3003-c">
-        genau<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:46:49</span></span>
-      <span class="t-3003-c">genug beschrieben? Stellen wir eine Meta-Frage: Was<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:47:5</span></span>
-      <span class="t-3003-c">zählt überhaupt als
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:48:5</span></span><i><span class="t-3003-c">genaue Beschreibung<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:48:26</span></span></i><span class="t-3003-c">
-        einer<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:48:46</span></span>
-      <span class="t-3003-c">Sprache? Wir können uns dem Mund fusselig reden und<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:49:5</span></span>
-      <span class="t-3003-c">Beispiele und Nicht-Beispiele angeben, am Ende aber<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:50:5</span></span>
-      <span class="t-3003-c">werden wir irgendwann beginnen, formale Regeln<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:51:5</span></span>
-      <span class="t-3003-c">aufzustellen, die unsere Sprache beschreiben - wir<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:52:5</span></span>
-      <span class="t-3003-c">werden also im Prinzip eine
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:53:5</span></span><i><span class="t-3003-c">Grammatik<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:53:34</span></span></i><span class="t-3003-c">
-        schreiben. Tun<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:53:44</span></span>
-      <span class="t-3003-c">wir dies also.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:54:5</span></span>
+      ist kein Wort in
+      <span class="nowrap">$L$,</span>
+      da das erste Label die Separatoren
+      <code>:</code>
+      und
+      <code>-</code>
+      mischt. Habe ich $L$ genau genug beschrieben?
+      Stellen wir eine Meta-Frage: Was zählt überhaupt als
+      <i>genaue Beschreibung</i>
+      einer Sprache? Wir können uns dem
+      Mund fusselig reden und Beispiele und Nicht-Beispiele
+      angeben, am Ende aber werden wir irgendwann beginnen,
+      formale Regeln aufzustellen, die unsere Sprache beschreiben
+      - wir werden also im Prinzip eine
+      <i>Grammatik</i>
+      schreiben.
+      Tun wir dies also.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">2. Eine reguläre Grammatik<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:57:9</span></span>
+      2. Eine reguläre Grammatik
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Beginnen wir mit dem Alphabet. Da es 62<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:59:5</span></span>
-      <span class="t-3003-c">alphanumerische Zeichen gibt:
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:60:5</span></span><code><span class="t-3003-c">a..zA..Z0..9<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:60:36</span></span></code><span class="t-3003-c">
-        und wir<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:60:49</span></span>
-      <span class="t-3003-c">uns keine unnötige Arbeit machen wollen, beschränken<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:61:5</span></span>
-      <span class="t-3003-c">wir uns auf ein Zeichen:
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:62:5</span></span><span class="nowrap"><code><span class="t-3003-c">a<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:62:31</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:62:33</span></span></span><span class="t-3003-c">
-        Dazu kommen die<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:62:33</span></span>
-      <span class="t-3003-c">Separatoren
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:63:5</span></span><span class="nowrap"><code><span class="t-3003-c">:-.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:63:18</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:63:22</span></span></span><span class="t-3003-c">
-        Also:
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:63:22</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma = \{a,.,:,-\}$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:63:30</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:63:52</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:63:52</span></span>
-      <span class="t-3003-c">Stellen Sie sich einfach vor,
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:64:5</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:64:35</span></span><span class="t-3003-c">
-        stehe für beliebige<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:64:38</span></span>
-      <span class="t-3003-c">alphanumerische Zeichen. Sowohl Grammatik als auch<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:65:5</span></span>
-      <span class="t-3003-c">Automaten lassen sich einfach anpassen. Wir beginnen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:66:5</span></span>
-      <span class="t-3003-c">ganz unten und schreiben eine Grammatik für Blöcke,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:67:5</span></span>
-      <span class="t-3003-c">also nichtleere Strings aus alphanumerischen Zeichen.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:68:5</span></span>
+      Beginnen wir mit dem Alphabet. Da es 62 alphanumerische
+      Zeichen gibt:
+      <code>a..zA..Z0..9</code>
+      und wir uns keine unnötige
+      Arbeit machen wollen, beschränken wir uns auf ein Zeichen:
+      <span class="nowrap"><code>a</code>.</span>
+      Dazu kommen die Separatoren
+      <span class="nowrap"><code>:-.</code>.</span>
+      Also:
+      <span class="nowrap">$\Sigma = \{a,.,:,-\}$.</span>
+      Stellen Sie sich einfach vor, $a$
+      stehe für beliebige alphanumerische Zeichen. Sowohl
+      Grammatik als auch Automaten lassen sich einfach anpassen.
+      Wir beginnen ganz unten und schreiben eine Grammatik für
+      Blöcke, also nichtleere Strings aus alphanumerischen
+      Zeichen.
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       B &amp;\rightarrow a \ | \ aB
       \end{align*}
-      $$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:70:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Als nächstes führen wir ein nichtterminales Symbole<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:74:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:75:5</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:75:5</span></span><span class="t-3003-c">
-        für Labels mit
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:75:8</span></span><code><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:75:25</span></span></code><span class="t-3003-c">
-        ein und ein Nichtterminal
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:75:27</span></span><span class="t-3003-c">$D$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:75:54</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:75:57</span></span>
-      <span class="t-3003-c">für Labels mit
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:76:5</span></span><span class="nowrap"><code><span class="t-3003-c">-<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:76:21</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:76:23</span></span></span><span class="t-3003-c">
-        Wir wählen die Buchstaben
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:76:23</span></span><span class="nowrap"><span class="t-3003-c">$C,D$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:76:51</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:76:56</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:76:56</span></span>
-      <span class="t-3003-c">weil
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:77:5</span></span><code><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:77:11</span></span></code><span class="t-3003-c">
-        auf Englisch
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:77:13</span></span><i><span class="t-3003-c">colon<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:77:28</span></span></i><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:77:34</span></span><code><span class="t-3003-c">-<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:77:40</span></span></code><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:77:42</span></span><i><span class="t-3003-c">dash<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:77:44</span></span></i><span class="t-3003-c">
-        heißt.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:77:49</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:78:5</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:78:5</span></span><span class="t-3003-c">-Labels<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:78:8</span></span></span><span class="t-3003-c">
-        können wir uns nach dem Baukastenprizip<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:78:8</span></span>
-      <span class="t-3003-c">bauen, in dem wir
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:79:5</span></span><a
+      Als nächstes führen wir ein nichtterminales Symbole $C$
+      für Labels mit
+      <code>:</code>
+      ein und ein Nichtterminal $D$ für
+      Labels mit
+      <span class="nowrap"><code>-</code>.</span>
+      Wir wählen die Buchstaben
+      <span class="nowrap">$C,D$,</span>
+      weil
+      <code>:</code>
+      auf Englisch
+      <i>colon</i>
+      und
+      <code>-</code>
+      <i>dash</i>
+      heißt.
+      <span class="nowrap">$C$-Labels</span>
+      können wir uns nach dem Baukastenprizip bauen, in dem wir
+      <a
         href="./5-1.html#_20_hgi_"
         class=""
-      >Theorem 5.1.14</a><span class="t-3003-c">
-        anwenden. Wir<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:79:5</span></span>
-      <span class="t-3003-c">fügen zur "End-Produktion"
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:80:5</span></span><span class="t-3003-c">$B \rightarrow a$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:80:32</span></span><span class="t-3003-c">
-        eine<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:80:49</span></span>
-      <span class="t-3003-c">weiter Produktion
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:81:5</span></span><span class="t-3003-c">$B \rightarrow a:B$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:81:23</span></span><span class="t-3003-c">
-        hinzu und tun<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:81:42</span></span>
-      <span class="t-3003-c">das gleiche für
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:82:5</span></span><span class="nowrap"><span class="t-3003-c">$B \rightarrow b$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:82:21</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:82:38</span></span></span><span class="t-3003-c">
-        Allerdings<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:82:38</span></span>
-      <span class="t-3003-c">benennen wir
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:83:5</span></span><span class="t-3003-c">$B$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:83:18</span></span><span class="t-3003-c">
-        in
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:83:21</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:83:25</span></span><span class="t-3003-c">
-        um, damit keine<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:83:28</span></span>
-      <span class="t-3003-c">Verwechslungsgefahr mit dem ursprünglichen
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:84:5</span></span><span class="t-3003-c">$B$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:84:48</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:84:51</span></span>
-      <span class="t-3003-c">aufkommt. Das gleiche machen wir für
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:85:5</span></span><span class="nowrap"><span class="t-3003-c">$D$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:85:42</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:85:45</span></span></span>
+      >Theorem 5.1.14</a>
+      anwenden. Wir fügen zur
+      "End-Produktion" $B \rightarrow a$ eine weiter Produktion
+      $B \rightarrow a:B$ hinzu und tun das gleiche für
+      <span class="nowrap">$B \rightarrow b$.</span>
+      Allerdings benennen wir $B$ in $C$ um,
+      damit keine Verwechslungsgefahr mit dem ursprünglichen $B$
+      aufkommt. Das gleiche machen wir für
+      <span class="nowrap">$D$.</span>
     </p>
     <div class="math-block main-column">
       $$
@@ -228,29 +187,21 @@
       D&amp;\rightarrow a \ | \ aD \ | \ a{-}D \\
       T&amp;\rightarrow C \ | D
       \end{align*}
-      $$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:87:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Von
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:93:5</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:93:9</span></span><span class="t-3003-c">
-        lassen sich nun also alle Labels ableiten.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:93:12</span></span>
-      <span class="t-3003-c">Wir brauchen nun zum Schluss wieder eine Folge von<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:94:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:95:5</span></span><span class="nowrap"><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:95:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:95:8</span></span></span><span class="t-3003-c">
-        mit
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:95:8</span></span><code><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:95:15</span></span></code><span class="t-3003-c">
-        separiert, müssen also wieder
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:95:17</span></span><a
+      Von $L$ lassen sich nun also alle Labels ableiten. Wir
+      brauchen nun zum Schluss wieder eine Folge von
+      <span class="nowrap">$L$,</span>
+      mit
+      <code>.</code>
+      separiert, müssen also wieder
+      <a
         href="./5-1.html#_20_hgi_"
         class=""
-      >Theorem 5.1.14</a><span class="t-3003-c">
-        anwenden, dieses mal auf die von
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:96:5</span></span><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:96:52</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:96:55</span></span>
-      <span class="t-3003-c">erzeugte Sprache. Im Ergebnis benennen wir das<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:97:5</span></span>
-      <span class="t-3003-c">Startsymbol in
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:98:5</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:98:20</span></span><span class="t-3003-c">
-        um.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:98:23</span></span>
+      >Theorem 5.1.14</a>
+      anwenden, dieses mal auf die von $T$ erzeugte Sprache. Im
+      Ergebnis benennen wir das Startsymbol in $S$ um.
     </p>
     <div class="math-block main-column">
       $$
@@ -259,16 +210,14 @@
       C&amp;\rightarrow a \ | \ aC \ | \ a{:}C \ | a{.}S \ \\
       D&amp;\rightarrow a \ | \ aD \ | \ a\text{-}D \ | \ a{.}S \\
       \end{align*}
-      $$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:100:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Um eine "richtig" reguläre Sprache zu erhalten,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:106:5</span></span>
-      <span class="t-3003-c">entzerren wir die erweitert regulären Produktionen wie<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:107:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:108:5</span></span><span class="nowrap"><span class="t-3003-c">$C \rightarrow a{:}C$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:108:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:108:26</span></span></span><span class="t-3003-c">
-        Dafür brauchen wir neue<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:108:26</span></span>
-      <span class="t-3003-c">Symbole
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:109:5</span></span><span class="nowrap"><span class="t-3003-c">$C', D', S'$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:109:13</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:109:25</span></span></span>
+      Um eine "richtig" reguläre Sprache zu erhalten, entzerren
+      wir die erweitert regulären Produktionen wie
+      <span class="nowrap">$C \rightarrow a{:}C$.</span>
+      Dafür brauchen wir neue Symbole
+      <span class="nowrap">$C', D', S'$:</span>
     </p>
     <div class="math-block main-column">
       $$
@@ -280,29 +229,19 @@
       D'&amp;\rightarrow \text{-}D \\
       S'&amp;\rightarrow {.}S
       \end{align*}
-      $$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:111:5</span>
+      $$
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">3. Die reguläre Grammatik säubern<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:121:9</span></span>
+      3. Die reguläre Grammatik säubern
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Wir wollen nun alle Produktionen der Form<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:123:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:124:5</span></span><span class="t-3003-c">$Y \rightarrow x$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:124:5</span></span><span class="t-3003-c">
-        eliminieren. Hierfür nehmen wir uns<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:124:22</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:125:5</span></span><i><span class="t-3003-c">ein<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:125:6</span></span></i><span class="t-3003-c">
-        neues Nichtterminal
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:125:10</span></span><span class="t-3003-c">$E$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:125:31</span></span><span class="t-3003-c">
-        und ersetzen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:125:34</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:126:5</span></span><span class="t-3003-c">$Y \rightarrow x$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:126:5</span></span><span class="t-3003-c">
-        durch
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:126:22</span></span><span class="t-3003-c">$Y \rightarrow xE$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:126:29</span></span><span class="t-3003-c">
-        und fügen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:126:47</span></span>
-      <span class="t-3003-c">die Produktion
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:127:5</span></span><span class="t-3003-c">$E \rightarrow \epsilon$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:127:20</span></span><span class="t-3003-c">
-        hinzu.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:127:44</span></span>
+      Wir wollen nun alle Produktionen der Form $Y \rightarrow x$
+      eliminieren. Hierfür nehmen wir uns
+      <i>ein</i>
+      neues
+      Nichtterminal $E$ und ersetzen $Y \rightarrow x$ durch
+      $Y \rightarrow xE$ und fügen die Produktion
+      $E \rightarrow \epsilon$ hinzu.
     </p>
     <div class="math-block main-column">
       $$
@@ -315,48 +254,33 @@
       S'&amp;\rightarrow {.}S \\
       E&amp;\rightarrow \epsilon
       \end{align*}
-      $$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:129:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">In einem zweiten Schritt wollen wir die Produktionen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:139:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:140:5</span></span><span class="t-3003-c">$S \rightarrow C$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:140:5</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:140:22</span></span><span class="t-3003-c">$S \rightarrow D$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:140:27</span></span><span class="t-3003-c">
-        eliminieren,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:140:44</span></span>
-      <span class="t-3003-c">sodass wir nur noch Produktionen der From<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:141:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:142:5</span></span><span class="t-3003-c">$X \rightarrow aY$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:142:5</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:142:23</span></span><span class="t-3003-c">$E \rightarrow \epsilon$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:142:28</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:142:52</span></span>
-      <span class="t-3003-c">haben. Wir gehen vor wie in
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:143:5</span></span><a
+      In einem zweiten Schritt wollen wir die Produktionen
+      $S \rightarrow C$ und $S \rightarrow D$ eliminieren,
+      sodass wir nur noch Produktionen der From
+      $X \rightarrow aY$ und $E \rightarrow \epsilon$ haben. Wir
+      gehen vor wie in
+      <a
         href="./5-1.html#_17_hgi_"
         class=""
-      >Theorem 5.1.7</a><span class="t-3003-c">
-        beschrieben. Wir ersetzen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:144:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:145:5</span></span><span class="t-3003-c">$S \rightarrow C$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:145:5</span></span><span class="t-3003-c">
-        also durch alle Produktionen der<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:145:22</span></span>
-      <span class="t-3003-c">Form
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:146:5</span></span><span class="nowrap"><span class="t-3003-c">$S \rightarrow \alpha$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:146:10</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:146:32</span></span></span><span class="t-3003-c">
-        wobei
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:146:32</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:146:40</span></span><span class="t-3003-c">
-        eine<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:146:48</span></span>
-      <span class="t-3003-c">Wortform ist, die sich aus
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:147:5</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:147:32</span></span><span class="t-3003-c">
-        ableiten lässt und<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:147:35</span></span>
-      <span class="t-3003-c">nicht nur aus einem einzelnen Nichtterminal besteht;<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:148:5</span></span>
-      <span class="t-3003-c">dies trifft glücklicherweise auf
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:149:5</span></span><i><span class="t-3003-c">alle<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:149:39</span></span></i><span class="t-3003-c">
-        rechten Seiten<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:149:44</span></span>
-      <span class="t-3003-c">der
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:150:5</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:150:9</span></span><span class="t-3003-c">-Produktionen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:150:12</span></span></span><span class="t-3003-c">
-        zu; gleiches gilt für
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:150:12</span></span><span class="nowrap"><span class="t-3003-c">$D$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:150:48</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:150:51</span></span></span><span class="t-3003-c">
-        Wir<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:150:51</span></span>
-      <span class="t-3003-c">erhalten:<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:151:5</span></span>
+      >Theorem 5.1.7</a>
+      beschrieben. Wir ersetzen $S \rightarrow C$ also durch
+      alle Produktionen der Form
+      <span class="nowrap">$S \rightarrow \alpha$,</span>
+      wobei
+      $\alpha$ eine Wortform ist, die sich aus $C$ ableiten
+      lässt und nicht nur aus einem einzelnen Nichtterminal
+      besteht; dies trifft glücklicherweise auf
+      <i>alle</i>
+      rechten
+      Seiten der
+      <span class="nowrap">$C$-Produktionen</span>
+      zu; gleiches gilt für
+      <span class="nowrap">$D$.</span>
+      Wir
+      erhalten:
     </p>
     <div class="math-block main-column">
       $$
@@ -369,68 +293,54 @@
       S'&amp;\rightarrow {.}S \\
       E&amp;\rightarrow \epsilon
       \end{align*}
-      $$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:153:5</span>
+      $$
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">4. Einen nichtdeterministischen endlichen Automaten<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:164:9</span></span>
-      <span class="t-3003-c">bauen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:165:9</span></span>
+      4. Einen nichtdeterministischen endlichen Automaten bauen
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Dies sollte nun einfach sein. Wir erschaffen Zustände<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:167:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:168:5</span></span><span class="t-3003-c">$S, C, C', D, D', S', E$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:168:5</span></span><span class="t-3003-c">
-        und übersetzen jeden<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:168:29</span></span>
-      <span class="t-3003-c">Grammatik-Pfeil in einen Automaten-Pfeil.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:169:5</span></span>
+      Dies sollte nun einfach sein. Wir erschaffen Zustände
+      $S, C, C', D, D', S', E$ und übersetzen jeden
+      Grammatik-Pfeil in einen Automaten-Pfeil.
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:17em"
           src="img/finite-state-automata/nfsm-example-03-big.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/nfsm-example-03-big.svg</span></span>
+        >
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Ich habe die Zeichen
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:176:5</span></span><code><span class="t-3003-c">.:-<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:176:27</span></span></code><span class="t-3003-c">
-        rot unterlegt, weil man<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:176:31</span></span>
-      <span class="t-3003-c">sie sonst kaum erkennen würde in dem Automaten.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:177:5</span></span>
+      Ich habe die Zeichen
+      <code>.:-</code>
+      rot unterlegt, weil man sie
+      sonst kaum erkennen würde in dem Automaten.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">5. Den nichtdeterministischen Automaten in einen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:180:9</span></span>
-      <span class="t-3003-c">deterministischen umwandeln<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:181:9</span></span>
+      5. Den nichtdeterministischen Automaten in einen
+      deterministischen umwandeln
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Unser nichtdeterministischer endlicher Automat hat<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:183:5</span></span>
-      <span class="t-3003-c">Zustandsmenge
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:184:5</span></span><span class="nowrap"><span class="t-3003-c">$Q = \{S, S', C, C', D, D', E\}$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:184:19</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:184:51</span></span></span><span class="t-3003-c">
-        also<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:184:51</span></span>
-      <span class="t-3003-c">insgesamt sieben Zustände. Wenn wir genau nach Buch<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:185:5</span></span>
-      <span class="t-3003-c">vorgingen, müssten wir den endlichen Automaten auf der<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:186:5</span></span>
-      <span class="t-3003-c">Zustandsmenge
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:187:5</span></span><span class="t-3003-c">$2^Q$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:187:19</span></span><span class="t-3003-c">
-        definieren, er hätte also<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:187:24</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:188:5</span></span><span class="t-3003-c">$2^7 = 128$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:188:5</span></span><span class="t-3003-c">
-        viele Zustände. Das wäre jetzt für einen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:188:16</span></span>
-      <span class="t-3003-c">Rechner kein Problem, aber in diesem vorlesungsskript<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:189:5</span></span>
-      <span class="t-3003-c">doch etwas ungünstig. Wir gehen
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:190:5</span></span><i><span class="t-3003-c">lazy<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:190:38</span></span></i><span class="t-3003-c">
-        vor, erschaffen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:190:43</span></span>
-      <span class="t-3003-c">Zustände in
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:191:5</span></span><span class="t-3003-c">$2^Q$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:191:17</span></span><span class="t-3003-c">
-        also nur dann, wenn wir sie<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:191:22</span></span>
-      <span class="t-3003-c">brauchen. Wir beginnen mit dem Zustand
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:192:5</span></span><span class="t-3003-c">$\{S\}$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:192:44</span></span><span class="t-3003-c">
-        und<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:192:51</span></span>
-      <span class="t-3003-c">legen dann an jeden Zustand Kanten an, jeweils mit<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:193:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:194:5</span></span><span class="t-3003-c">$a, :, -, .$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:194:5</span></span><span class="t-3003-c">
-        beschriftet, und erschaffen, falls<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:194:17</span></span>
-      <span class="t-3003-c">nötig, dabei neue Zustände. In der folgenden Animation<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:195:5</span></span>
-      <span class="t-3003-c">sehen Sie manchmal den mit einem Kreuz markierten<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:196:5</span></span>
-      <span class="t-3003-c">Fehlerzustand (trap state). Die akzeptierenden<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:197:5</span></span>
-      <span class="t-3003-c">Zustände sind mit fettem Rand markiert.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:198:5</span></span>
+      Unser nichtdeterministischer endlicher Automat hat
+      Zustandsmenge
+      <span class="nowrap">$Q = \{S, S', C, C', D, D', E\}$,</span>
+      also
+      insgesamt sieben Zustände. Wenn wir genau nach Buch
+      vorgingen, müssten wir den endlichen Automaten auf der
+      Zustandsmenge $2^Q$ definieren, er hätte also $2^7 = 128$
+      viele Zustände. Das wäre jetzt für einen Rechner kein
+      Problem, aber in diesem vorlesungsskript doch etwas
+      ungünstig. Wir gehen
+      <i>lazy</i>
+      vor, erschaffen Zustände in
+      $2^Q$ also nur dann, wenn wir sie brauchen. Wir beginnen
+      mit dem Zustand $\{S\}$ und legen dann an jeden Zustand
+      Kanten an, jeweils mit $a, :, -, .$ beschriftet, und
+      erschaffen, falls nötig, dabei neue Zustände. In der
+      folgenden Animation sehen Sie manchmal den mit einem Kreuz
+      markierten Fehlerzustand (trap state). Die akzeptierenden
+      Zustände sind mit fettem Rand markiert.
     </p>
     <div class="pseudowell">
       <div class="top-align group">
@@ -442,15 +352,15 @@
               <img
                 style="height:12em"
                 src="img/finite-state-automata/nfsm-example-03-big.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/nfsm-example-03-big.svg</span></span>
+              >
               <figcaption class="topcaption">
-                <span class="t-3003-c">Der nichtdeterministische<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:208:17</span></span><br><span class="t-3003-c">Automat<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:210:17</span></span>
+                Der nichtdeterministische<br>Automat
               </figcaption>
             </figure>
           </div>
           <div class="carousel__container">
             <figcaption class="topcaption">
-              <span class="t-3003-c">Der deterministische Automat,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:242:17</span></span><br><span class="t-3003-c">Schritt für Schritt gebaut:<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:244:17</span></span>
+              Der deterministische Automat,<br>Schritt für Schritt gebaut:
             </figcaption>
             <div class="carousel">
               <div class="carousel__items">
@@ -458,163 +368,163 @@
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/01.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/01.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/02.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/02.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/03.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/03.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/04.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/04.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/05.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/05.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/06.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/06.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/07.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/07.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/08.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/08.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/09.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/09.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/10.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/10.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/11.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/11.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/12.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/12.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/13.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/13.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/14.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/14.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/15.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/15.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/16.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/16.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/17.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/17.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/18.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/18.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/19.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/19.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/20.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/20.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/21.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/21.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/22.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/22.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/23.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/23.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/24.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/24.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/25.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/25.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/26.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/26.svg</span></span>
+                  >
                 </div>
                 <div class="carousel__item">
                   <img
                     style="height:12em"
                     src="img/finite-state-automata/transformation/27.svg"
-                  ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/transformation/27.svg</span></span>
+                  >
                 </div>
               </div>
             </div>
@@ -623,17 +533,16 @@
       </div>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Dieser Automat hat deutlich weniger also 128<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:246:5</span></span>
-      <span class="t-3003-c">Zustände, nämlich mit nur sieben genau so viele wie<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:247:5</span></span>
-      <span class="t-3003-c">der nichtdeterministische (es ist Zufall, dass beide<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:248:5</span></span>
-      <span class="t-3003-c">gleich viele Zustände haben; messen Sie dieser<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:249:5</span></span>
-      <span class="t-3003-c">Tatsache keine Bedeutung bei). Wir könnten nun von<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:250:5</span></span>
-      <span class="t-3003-c">diesem Automaten ausgehend wiederum eine reguläre<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:251:5</span></span>
-      <span class="t-3003-c">Grammtik bauen, die in diesem Falle sogar einfacher<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:252:5</span></span>
-      <span class="t-3003-c">und klarer wäre als die ursprüngliche. Wenn wir<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:253:5</span></span>
-      <span class="t-3003-c">erweitert reguläre Grammatiken erlauben, so können wir<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:254:5</span></span>
-      <span class="t-3003-c">den deterministischen Automaten besonders konzise in<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:255:5</span></span>
-      <span class="t-3003-c">eine Grammatik fassen:<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:256:5</span></span>
+      Dieser Automat hat deutlich weniger also 128 Zustände,
+      nämlich mit nur sieben genau so viele wie der
+      nichtdeterministische (es ist Zufall, dass beide gleich
+      viele Zustände haben; messen Sie dieser Tatsache keine
+      Bedeutung bei). Wir könnten nun von diesem Automaten
+      ausgehend wiederum eine reguläre Grammtik bauen, die in
+      diesem Falle sogar einfacher und klarer wäre als die
+      ursprüngliche. Wenn wir erweitert reguläre Grammatiken
+      erlauben, so können wir den deterministischen Automaten
+      besonders konzise in eine Grammatik fassen:
     </p>
     <div class="math-block main-column">
       $$
@@ -643,82 +552,63 @@
       C&amp;\rightarrow aC \ | \ {:}aC \ | \ {.}S \\
       D&amp;\rightarrow aD \ | \ \text{-}aD \ | \ {.}S
       \end{align*}
-      $$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:258:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Die Zustände des deterministischen Automaten<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:265:5</span></span>
-      <span class="t-3003-c">beschreiben im Prinzip das, was wir uns merken müssen,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:266:5</span></span>
-      <span class="t-3003-c">wenn wir so einen String "parsen": Zustand<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:267:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:268:5</span></span><span class="nowrap"><span class="t-3003-c">$\{C',C,E,D,D',S'\}$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:268:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:268:25</span></span></span><span class="t-3003-c">
-        der in der Grammatik dann zum<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:268:25</span></span>
-      <span class="t-3003-c">Nichtterminal
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:269:5</span></span><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:269:19</span></span><span class="t-3003-c">
-        wird, bedeutet beispielsweise
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:269:22</span></span><span class="nowrap"><i><span class="t-3003-c">das<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:269:54</span></span>
-          <span class="t-3003-c">Label hat schon begonnen, wir wissen aber noch nicht,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:270:5</span></span>
-          <span class="t-3003-c">ob es eines mit
-            <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:271:5</span></span><code><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:271:22</span></span></code><span class="t-3003-c">
-            oder eines mit
-            <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:271:24</span></span><code><span class="t-3003-c">-<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:271:41</span></span></code><span class="t-3003-c">
-            ist. Der<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:271:43</span></span>
-          <span class="t-3003-c">Zustand
-            <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:272:5</span></span><span class="t-3003-c">$\{C',C,E,S'\}$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:272:13</span></span><span class="t-3003-c">
-            bzw. das Nichtterminal
-            <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:272:28</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:272:52</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:272:55</span></span>
-          <span class="t-3003-c">heißt dann
-            <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:273:5</span></span><code><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:273:17</span></span></code><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:273:19</span></span></i><span class="t-3003-c">wir<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:273:21</span></span></span><span class="t-3003-c">
-        sind innerhalb eines Labels mit_<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:273:21</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:274:5</span></span><span class="nowrap"><code><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:274:6</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:274:8</span></span></span>
+      Die Zustände des deterministischen Automaten beschreiben
+      im Prinzip das, was wir uns merken müssen, wenn wir so
+      einen String "parsen": Zustand
+      <span class="nowrap">$\{C',C,E,D,D',S'\}$,</span>
+      der
+      in der Grammatik dann zum Nichtterminal $T$ wird, bedeutet
+      beispielsweise
+      <span class="nowrap"><i>das Label hat schon begonnen, wir wissen
+          aber noch nicht, ob es eines mit
+          <code>:</code>
+          oder eines mit
+          <code>-</code>
+          ist. Der Zustand $\{C',C,E,S'\}$ bzw. das Nichtterminal $C$
+          heißt dann
+          <code>:</code>
+          </i>wir</span>
+      sind innerhalb eines Labels mit_
+      <span class="nowrap"><code>:</code>.</span>
     </p>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.4.1<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:276:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:276:5</span></span>
-        <span class="t-3003-c">Erinnern Sie sich an
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:277:9</span></span><a
+        <b>Übungsaufgabe 5.4.1</b>
+        Erinnern Sie sich an
+        <a
           href="./5-3.html#_23_hgi_"
           class=""
-        >Aufgabe 5.3.1</a><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:277:9</span></span>
-        <span class="t-3003-c">Hier sehen Sie einen nichtdeterministischen endlichen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:278:9</span></span>
-        <span class="t-3003-c">Automaten für die Sprache
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:279:9</span></span><span class="nowrap"><span class="t-3003-c">$L_4 \cup L_6$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:279:35</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:279:49</span></span></span><span class="t-3003-c">
-          also die<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:279:49</span></span>
-        <span class="t-3003-c">Sprache aller Wörter
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:280:9</span></span><span class="t-3003-c">$1^n$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:280:30</span></span><span class="t-3003-c">
-          für ein
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:280:35</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:280:44</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:280:47</span></span></span><span class="t-3003-c">
-          das durch 4<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:280:47</span></span>
-        <span class="t-3003-c">oder 6 teilbar ist. Da unser Alphabet
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:281:9</span></span><span class="t-3003-c">$\Sigma = \{1\}$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:281:47</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:281:63</span></span>
-        <span class="t-3003-c">eh nur aus einem Zeichen besteht, habe ich auf die<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:282:9</span></span>
-        <span class="t-3003-c">Beschriftung der Kanten verzichtet.<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:283:9</span></span>
+        >Aufgabe 5.3.1</a>. Hier
+        sehen Sie einen nichtdeterministischen endlichen Automaten
+        für die Sprache
+        <span class="nowrap">$L_4 \cup L_6$,</span>
+        also die Sprache aller
+        Wörter $1^n$ für ein
+        <span class="nowrap">$n$,</span>
+        das durch 4 oder 6 teilbar ist.
+        Da unser Alphabet $\Sigma = \{1\}$ eh nur aus einem
+        Zeichen besteht, habe ich auf die Beschriftung der Kanten
+        verzichtet.
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:14em"
             src="img/finite-state-automata/divisibility-automaton/divisibility.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/divisibility-automaton/divisibility.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Dieser Automat hat 11 Zustände. Sein<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:290:9</span></span>
-        <span class="t-3003-c">Potenzmengenautomat hätte also
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:291:9</span></span><span class="t-3003-c">$2^{11} = 2048$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:291:40</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:291:55</span></span>
-        <span class="t-3003-c">Zustände. Führen Sie die Konstruktion
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:292:9</span></span><i><span class="t-3003-c">lazy<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:292:48</span></span></i><span class="t-3003-c">
-          durch,<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:292:53</span></span>
-        <span class="t-3003-c">indem Sie vom Startzustand
-          <span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:293:9</span></span><span class="t-3003-c">$\{S\}$<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:293:36</span></span><span class="t-3003-c">
-          ausgehend die<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:293:43</span></span>
-        <span class="t-3003-c">Folgezustände konstruieren. Wieviele Zustände bekommen<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:294:9</span></span>
-        <span class="t-3003-c">Sie?<span class="t-3003">./course1/wly/05/04-regular-grammar-to-fsm.wly:295:9</span></span>
+        Dieser Automat hat 11 Zustände. Sein Potenzmengenautomat
+        hätte also $2^{11} = 2048$ Zustände. Führen Sie die
+        Konstruktion
+        <i>lazy</i>
+        durch, indem Sie vom Startzustand
+        $\{S\}$ ausgehend die Folgezustände konstruieren. Wieviele
+        Zustände bekommen Sie?
       </p>
     </div>
     <div id="end-of-page-elt">

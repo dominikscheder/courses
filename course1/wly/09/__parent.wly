@@ -2,21 +2,19 @@
     handle=complexity-theory:page
     title=Complexity Theory
 
-    Turingmaschinen erlauben uns, den Resourcenverbrauch
-    einer Berechnung zu quantifizieren: zum einen die
-    _Zeit_, also die Anzahl der Schritte, die die
-    Turingmaschine durchführt, bis sie anhält; zum anderen
-    der _Speicherplatz_, also die Anzahl der Zellen auf
-    dem Band (oder den Bändern), die im Verlauf der
-    Berechnung beschrieben werden. Beides sind Maße, die
-    tatsächlich im echten Leben relevant sind.
-    Turingmaschinen erlauben uns, diese genau zu
-    quantifizieren und die Zeitkomplexität und
-    Speicherkomplexität eines Problems zu untersuchen. In
-    diesem Kapitel werden wir uns zum Großteil auf
-    Zeitkomplexität beschränken. Es gibt weitere
-    Resourcen, die man mit Turingmaschinen nicht wirklich
-    quantifizieren kann:
+    Turingmaschinen erlauben uns, den Resourcenverbrauch einer
+    Berechnung zu quantifizieren: zum einen die _Zeit_, also
+    die Anzahl der Schritte, die die Turingmaschine durchführt,
+    bis sie anhält; zum anderen der _Speicherplatz_, also die
+    Anzahl der Zellen auf dem Band (oder den Bändern), die im
+    Verlauf der Berechnung beschrieben werden. Beides sind
+    Maße, die tatsächlich im echten Leben relevant sind.
+    Turingmaschinen erlauben uns, diese genau zu quantifizieren
+    und die Zeitkomplexität und Speicherkomplexität eines
+    Problems zu untersuchen. In diesem Kapitel werden wir uns
+    zum Großteil auf Zeitkomplexität beschränken. Es gibt
+    weitere Resourcen, die man mit Turingmaschinen nicht
+    wirklich quantifizieren kann:
 
     |> ul
         |> li
@@ -28,43 +26,39 @@
             langsamer ist.
 
         |> li
-            *Kommunikationskomplexität.* Bei verteilten
-            Anwendungen (Cloud Computing) ist die limitierende
-            Resource eventuell gar nicht die Rechenkapazität
-            sondern das _Netzwerk_, über das die Daten
-            ausgetauscht werden.
+            *Kommunikationskomplexität.* Bei verteilten Anwendungen
+            (Cloud Computing) ist die limitierende Resource eventuell
+            gar nicht die Rechenkapazität sondern das _Netzwerk_, über
+            das die Daten ausgetauscht werden.
 
-    Also: Turingmaschinen sind zwar universell in dem
-    Sinne, dass sie wohl alle physikalisch realisierbaren
-    Rechnermodelle simulieren können (ich sage _wohl_,
-    weil wir nicht wissen, was alles physikalisch
-    realisierbar ist). Allerdings ist es möglich, dass
-    Sie, abhängig von Ihrem Anwendungsfeld, ein
-    abgewandeltes oder völlig anderes Modell benötigen, um
-    den Resourcenverbrauch modellieren zu können. Dennoch:
-    in diesem Kapitel beschränken wir uns auf die Resource
-    _Zeit_, und daher sind Turingmaschinen das Modell der
-    Wahl.
+    Also: Turingmaschinen sind zwar universell in dem Sinne,
+    dass sie wohl alle physikalisch realisierbaren
+    Rechnermodelle simulieren können (ich sage _wohl_, weil wir
+    nicht wissen, was alles physikalisch realisierbar ist).
+    Allerdings ist es möglich, dass Sie, abhängig von Ihrem
+    Anwendungsfeld, ein abgewandeltes oder völlig anderes
+    Modell benötigen, um den Resourcenverbrauch modellieren zu
+    können. Dennoch: in diesem Kapitel beschränken wir uns auf
+    die Resource _Zeit_, und daher sind Turingmaschinen das
+    Modell der Wahl.
 
     |> TopicAnnouncement
         Zeitkomplexitätsklassen
 
     Wir beschränken uns der Einfachheit halber auf das
     Eingabealphabet $\Sigma = \{0,1\}$ und auf
-    Entscheidungsprobleme, wo uns also nur eine
-    Ja/Nein-Antwort interessiert.
+    Entscheidungsprobleme, wo uns also nur eine Ja/Nein-Antwort
+    interessiert.
 
     |> Definition
         Sei $t: \N \rightarrow \N$. Eine Turingmaschinen $M$
-        _entscheidet_ eine Sprache $L \subseteq \Sigma^*$ in
-        Zeit $t$ wenn
+        _entscheidet_ eine Sprache $L \subseteq \Sigma^*$ in Zeit
+        $t$ wenn
 
         |> ul
             |> li
                 sie die Sprache entscheidet, also
-                $x \in L \Longleftrightarrow f_M(x) =
-                \texttt{accept}$
-                und
+                $x \in L \Longleftrightarrow f_M(x) = \texttt{accept}$ und
 
             |> li
                 für jede Eingabe $x$ in maximal $O(t(|x|))$ Schritten
@@ -84,30 +78,29 @@
         \end{align*}
 
     Falls Sie sich nicht mehr genau an die $O$-Notation
-    erinnern können: in diesem Zusammenhang heißt das,
-    dass es Konstanten $c$ und $d$ gibt, so dass $M$ in
-    maximal $c t(|x|) + d$ Schritten terminiert. Die
-    Konstanten $c$ und $d$ dürfen von $M$ abhängen, aber
-    nicht von der Eingabe $x$ oder der Länge $|x|$. Wir
-    haben in Kapitel >>turing-variants gezeigt, wie man
-    eine $k$ -Band-Turingmaschine $M$ durch eine
-    Ein-Band-Turingmaschine $M'$. Der Aufwand war
-    quadratisch: wenn $M$ innerhalb von $t$ Schritten
-    terminiert, so terminiert $M'$ innerhalb von $c t^2$
-    Schritten, wobei $c$ eine Konstante ist, die von $M$
-    abhängt. Mit unser neuen Notation können wir das sehr
-    konzis schreiben:
+    erinnern können: in diesem Zusammenhang heißt das, dass es
+    Konstanten $c$ und $d$ gibt, so dass $M$ in maximal
+    $c t(|x|) + d$ Schritten terminiert. Die Konstanten $c$
+    und $d$ dürfen von $M$ abhängen, aber nicht von der
+    Eingabe $x$ oder der Länge $|x|$. Wir haben in Kapitel
+    >>turing-variants gezeigt, wie man eine $k$
+    -Band-Turingmaschine $M$ durch eine
+    Ein-Band-Turingmaschine $M'$. Der Aufwand war quadratisch:
+    wenn $M$ innerhalb von $t$ Schritten terminiert, so
+    terminiert $M'$ innerhalb von $c t^2$ Schritten, wobei $c$
+    eine Konstante ist, die von $M$ abhängt. Mit unser neuen
+    Notation können wir das sehr konzis schreiben:
 
     |> Theorem
-        *($k$-Band zu $1$-Band).* Sei $t: \N \rightarrow \N$.
-        Dann gilt $\TIME_k(t) \subseteq \TIME_1(t^2)$.
+        *($k$-Band zu $1$-Band).* Sei $t: \N \rightarrow \N$. Dann
+        gilt $\TIME_k(t) \subseteq \TIME_1(t^2)$.
 
-    Der quadratische Overhead wird tatsächlich störend,
-    wenn man Zeit als Resource untersucht. Daher gibt es
-    eine bessere Simulation; die benötigt allerdings zwei
-    Bänder (Oder drei? Weiß ich gerade nicht exakt) und
-    die Konstruktion ist deutlich komplizierter. Daher
-    vorerst ohne Beweis:
+    Der quadratische Overhead wird tatsächlich störend, wenn
+    man Zeit als Resource untersucht. Daher gibt es eine
+    bessere Simulation; die benötigt allerdings zwei Bänder
+    (Oder drei? Weiß ich gerade nicht exakt) und die
+    Konstruktion ist deutlich komplizierter. Daher vorerst ohne
+    Beweis:
 
     |> Theorem
         handle=k-tape-to-2-tape
@@ -125,104 +118,97 @@
         \textnormal{P} := \bigcup_{k=1}^{\infty} \TIME(n^k) \ ,
         \end{align*}
 
-        also die Klasse aller Probleme (formal: Sprachen),
-        die man in _polynomieller Zeit_ entscheiden kann.
+        also die Klasse aller Probleme (formal: Sprachen), die man
+        in _polynomieller Zeit_ entscheiden kann.
 
-    Wenn wir in der Komplexitätstheorie davon sprechen,
-    dass ein Algorithmus effizient ist, dann meinen wir:
-    seine Laufzeit ist polynomiell, also $O(|x|^k)$ für
-    ein beliebiges aber fixes $k$. Wenn wir zeigen
-    wollen, dass ein Problem (bzw. eine Sprache) in P ist,
-    dann bauen wir üblicherweise keine Turingmaschine,
-    sondern beschreiben (oder implementieren) einen
-    _Algorithmus_, denn wir wissen ja mittlerweile (bzw.
-    vertrauen darauf), dass man diesen Algorithmus dann
-    effizient auf einer Mehrband-Turingmaschine
-    implementieren kann. Wir sind also bildlich gesprochen
-    wieder in
+    Wenn wir in der Komplexitätstheorie davon sprechen, dass
+    ein Algorithmus effizient ist, dann meinen wir: seine
+    Laufzeit ist polynomiell, also $O(|x|^k)$ für ein
+    beliebiges aber fixes $k$. Wenn wir zeigen wollen, dass
+    ein Problem (bzw. eine Sprache) in P ist, dann bauen wir
+    üblicherweise keine Turingmaschine, sondern beschreiben
+    (oder implementieren) einen _Algorithmus_, denn wir wissen
+    ja mittlerweile (bzw. vertrauen darauf), dass man diesen
+    Algorithmus dann effizient auf einer
+    Mehrband-Turingmaschine implementieren kann. Wir sind also
+    bildlich gesprochen wieder in
     [TI-1](https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-1)
-    und können sagen: ein Problem ist in $P$, wenn es
-    dafür einen effizienten Algorithmus gibt. Hier ist
-    eine kleine Liste von Problemen in P:
+    und können sagen: ein Problem ist in $P$, wenn es dafür
+    einen effizienten Algorithmus gibt. Hier ist eine kleine
+    Liste von Problemen in P:
 
     |> ol
         |> li
-            `Undirected Graph Reachability`{sc}: Gegeben ein
-            Graph $(V,E)$ und zwei Knoten $s$ und $t$. Gibt es
-            einen Pfad von $s$ nach $t$? Algorithmus: Tiefensuche
-            oder Breitensuche. Beachten Sie: um das als "Sprache"
-            zu betrachten, müssen wir eine Codierung für Graphen
+            `Undirected Graph Reachability`{sc}: Gegeben ein Graph
+            $(V,E)$ und zwei Knoten $s$ und $t$. Gibt es einen Pfad
+            von $s$ nach $t$? Algorithmus: Tiefensuche oder
+            Breitensuche. Beachten Sie: um das als "Sprache" zu
+            betrachten, müssen wir eine Codierung für Graphen
             festlegen. Das ist wohl kein Problem: wir brauchen
             Klammern, Kommas und ein Alphabet, um unsere Knoten
             bezeichnen zu können.
 
         |> li
-            `Acyclicity`{sc}: Gegeben ein gerichteter Graph
-            $(V,E)$, ist er azyklisch?
+            `Acyclicity`{sc}: Gegeben ein gerichteter Graph $(V,E)$,
+            ist er azyklisch?
 
         |> li
             `Perfect Square`{sc}: Gegeben ein Binärzahl
-            $x \in \{0,1\}^*$; ist sie eine Quadratzahl?
-            Algorithmus: sei $X$ die von $x$ beschriebene
-            natürliche Zahl. Es gilt $0 \leq X \leq 2^{|x|} - 1$.
-            Mit binärer Suche finden wir das größte $k$ mit
-            $k^2 \leq X$. Die Berechnung von $k^2$ hat
-            quadratische Laufzeit in der Anzahl der Bits von $k$;
+            $x \in \{0,1\}^*$; ist sie eine Quadratzahl? Algorithmus:
+            sei $X$ die von $x$ beschriebene natürliche Zahl. Es gilt
+            $0 \leq X \leq 2^{|x|} - 1$. Mit binärer Suche finden wir
+            das größte $k$ mit $k^2 \leq X$. Die Berechnung von $k^2$
+            hat quadratische Laufzeit in der Anzahl der Bits von $k$;
             diese ist höchstens $|x|$; die binäre Suche tätigt
-            $\log N \leq |x|$ Durchläufe. Die Gesamtlaufzeit ist
-            also $O(|x|^3)$ .
+            $\log N \leq |x|$ Durchläufe. Die Gesamtlaufzeit ist also
+            $O(|x|^3)$ .
 
         |> li
-            `Unary Primes`{sc}: Gegeben eine natürliche Zahl in
-            unärer Codierung, also $1^{n}$ mit Eingabealphabet
-            $\Sigma = \{1\}$; ist $n$ eine Primzahl? Algorithmus:
-            wir prüfen für jedes $2 \leq k \leq n-1$, ob es $n$
-            teilt. (Wie programmiert man Teilbarkeit auf einer
-            Turingmaschine? Sie könnten zum Beispiel $1^k$ auf
-            das zweite Band schreiben und dann beide Bänder
-            durchgehen, das zweite mehrmals, und schauen, ob es
-            "aufgeht"; das geht in Zeit $n$). Die Gesamtlaufzeit
-            ist also $n^2$.
+            `Unary Primes`{sc}: Gegeben eine natürliche Zahl in unärer
+            Codierung, also $1^{n}$ mit Eingabealphabet
+            $\Sigma = \{1\}$; ist $n$ eine Primzahl? Algorithmus: wir
+            prüfen für jedes $2 \leq k \leq n-1$, ob es $n$ teilt.
+            (Wie programmiert man Teilbarkeit auf einer Turingmaschine?
+            Sie könnten zum Beispiel $1^k$ auf das zweite Band
+            schreiben und dann beide Bänder durchgehen, das zweite
+            mehrmals, und schauen, ob es "aufgeht"; das geht in Zeit
+            $n$). Die Gesamtlaufzeit ist also $n^2$.
 
         |> li
             `Primes`{sc}: Gegeben eine binär codierte Zahl
-            $x \in \{0,1\}^n$, ist sie eine Primzahl?
-            Algorithmus: der obige Algorithmus, alle potenziellen
-            Teiler auszuprobieren, benötigt $X^2$ Schritte, wobei
-            $X \in \N$ die von $x$ codierte Zahl ist. Da
-            $X \leq 2^n - 1$ ist dies nicht mehr polynomiell in
-            der Eingabelänge $n$. Wir brauchen also einen
-            Algorithmus, der polynomiell in der Bitgröße von $X$
-            ist, also in $n = |x|$. _Randomisierte_ Algorithmen
-            dieser Art kennt man schon seit den 1970er Jahren,
-            z.B. den
+            $x \in \{0,1\}^n$, ist sie eine Primzahl? Algorithmus: der
+            obige Algorithmus, alle potenziellen Teiler auszuprobieren,
+            benötigt $X^2$ Schritte, wobei $X \in \N$ die von $x$
+            codierte Zahl ist. Da $X \leq 2^n - 1$ ist dies nicht mehr
+            polynomiell in der Eingabelänge $n$. Wir brauchen also
+            einen Algorithmus, der polynomiell in der Bitgröße von $X$
+            ist, also in $n = |x|$. _Randomisierte_ Algorithmen dieser
+            Art kennt man schon seit den 1970er Jahren, z.B. den
             [Miller-Rabin-Test](https://de.wikipedia.org/wiki/Miller-Rabin-Test).
-            Ein deterministischer polynomieller Algorithmus ist
-            zum Beispiel der 2002 veröffentlichte
-            [Agrawal–Kayal–Saxena primality
+            Ein deterministischer polynomieller Algorithmus ist zum
+            Beispiel der 2002 veröffentlichte [Agrawal–Kayal–Saxena
+            primality
             test](https://en.wikipedia.org/wiki/AKS_primality_test);
-            die Laufzeit dieses Algorithmus ist polynomiell,
-            allerdings ist $O(n^6)$ die beste derzeit bekannte
-            Schranke.
+            die Laufzeit dieses Algorithmus ist polynomiell, allerdings
+            ist $O(n^6)$ die beste derzeit bekannte Schranke.
 
     In vielen Kontexten wollen wir keine Ja/Nein-Antwort,
-    sondern ein konkretes Objekt als Antwort. Wir nennen
-    diese Probleme _Funktionsprobleme_ im Gegensatz zu den
+    sondern ein konkretes Objekt als Antwort. Wir nennen diese
+    Probleme _Funktionsprobleme_ im Gegensatz zu den
     _Entscheidungsproblemen_. Hier müssen wir auf die
     Definition zurückgreifen, was es heißt, dass eine
     Turingmaschine eine Funktion
     $f: \Sigma_1^* \rightarrow \Sigma_2^*$ berechnet. Die
-    entsprechende Komplexitätsklasse aller Funktionen, die
-    man in polynomieller Zeit berechnen kann, nennt man
-    FP. Folgende Probleme sind in FP:
+    entsprechende Komplexitätsklasse aller Funktionen, die man
+    in polynomieller Zeit berechnen kann, nennt man FP.
+    Folgende Probleme sind in FP:
 
     |> ol
         |> li
             `Multiplication`{sc}: gegeben zwei Zahlen
-            $x, y \in \{0,1\}^n$ in binärer Codierung, berechne
-            ihr Produkt. Algorithmus: sowohl die Schulmethode als
-            auch Karatsubas Algorithmus haben polynomielle
-            Laufzeit.
+            $x, y \in \{0,1\}^n$ in binärer Codierung, berechne ihr
+            Produkt. Algorithmus: sowohl die Schulmethode als auch
+            Karatsubas Algorithmus haben polynomielle Laufzeit.
 
         |> li
             `Maximum Flow`{sc}: gegeben ein Flussnetzwerk (vgl.
@@ -232,54 +218,50 @@
 
         |> li
             `Linear Equations`{sc}: gegeben ein lineares
-            Gleichungssystem, also eine Matrix
-            $A \in \Q^{m \times n}$ und einen Vektor
-            $b \in \Q^{m}$, finde ein $x \in \Q^n$ mit $Ax = b$.
-            Algorithmus: Gaußsche Eliminierung; obwohl Sie hier
-            aufpassen müssen, dass die Bit-Darstellung Ihrer
+            Gleichungssystem, also eine Matrix $A \in \Q^{m \times n}$
+            und einen Vektor $b \in \Q^{m}$, finde ein $x \in \Q^n$
+            mit $Ax = b$. Algorithmus: Gaußsche Eliminierung; obwohl
+            Sie hier aufpassen müssen, dass die Bit-Darstellung Ihrer
             Zwischenergebnisse nicht zu groß wird.
 
         |> li
             `Linear Programming`{sc}: gegeben ein lineares
             Ungleichungssystem, also eine Matrix
-            $A \in \Q^{m \times n}$ und einen Vektor
-            $b \in \Q^{m}$, finde ein $x \in \Q^n$ mit $Ax \leq b$
-            (für $y,b \in \Q^m$ bedeutet die Schreibweise
-            $y \leq b$, dass $y_i \leq b_i$ für alle $i \in [m]$
-            gilt). Algorithmus: der bekannteste Algorithmus für
-            `Linear Programming`{sc} ist der
+            $A \in \Q^{m \times n}$ und einen Vektor $b \in \Q^{m}$,
+            finde ein $x \in \Q^n$ mit $Ax \leq b$ (für $y,b \in \Q^m$
+            bedeutet die Schreibweise $y \leq b$, dass $y_i \leq b_i$
+            für alle $i \in [m]$ gilt). Algorithmus: der bekannteste
+            Algorithmus für `Linear Programming`{sc} ist der
             [Simplex-Algorithmus](https://de.wikipedia.org/wiki/Simplex-Verfahren).
-            Allerdings ist seine Worst-Case-Laufzeit nicht
-            polynomiell. Erst 1979 wurde mit Leonid Khachiyans
+            Allerdings ist seine Worst-Case-Laufzeit nicht polynomiell.
+            Erst 1979 wurde mit Leonid Khachiyans
             [Ellipsoid-Algorithmus](https://de.wikipedia.org/wiki/Ellipsoidmethode)
             ein Algorithmus mit polynomieller Worst-Case-Laufzeit
             gefunden.
 
-    Und zum Schluss eine Liste von Problemen (Funktions-
-    und Entscheidungsprobleme), von denen nicht bekannt
-    ist (Stand Juni 2025), ob sie in P sind oder nicht.
+    Und zum Schluss eine Liste von Problemen (Funktions- und
+    Entscheidungsprobleme), von denen nicht bekannt ist (Stand
+    Juni 2025), ob sie in P sind oder nicht.
 
     |> ol
         |> li
-            `Graph 3-Colorability`{sc}: Gegeben ein Graph
-            $G = (V,E)$. Gibt es eine "Färbung"
-            $c: V \rightarrow \{1,2,3\}$ mit $c(u) \ne c(v)$ für
-            alle $\{u,v\} \in E$?
+            `Graph 3-Colorability`{sc}: Gegeben ein Graph $G = (V,E)$.
+            Gibt es eine "Färbung" $c: V \rightarrow \{1,2,3\}$ mit
+            $c(u) \ne c(v)$ für alle $\{u,v\} \in E$?
 
         |> li
-            `CNF-Satisfiability`{sc}: Gegeben eine Boolesche
-            Formel in konjunktiver Normalform, also beispielsweise
-            $(x \vee \bar{y}) \wedge (\bar{x} \vee y \vee z)
-            \wedge (x \vee \bar{z})$,
-            gibt es eine Belegung ihrer Variablen, so dass die
-            Formel zu `True` auswertet?
+            `CNF-Satisfiability`{sc}: Gegeben eine Boolesche Formel in
+            konjunktiver Normalform, also beispielsweise
+            $(x \vee \bar{y}) \wedge (\bar{x} \vee y \vee z) \wedge (x
+            \vee \bar{z})$,
+            gibt es eine Belegung ihrer Variablen, so dass die Formel
+            zu `True` auswertet?
 
         |> li
-            `Hamilton Cycle`{sc}: Gegeben ein Graph $G=(V,E)$,
-            gibt es einen Kreis der Länge $n$? Gibt es also einen
+            `Hamilton Cycle`{sc}: Gegeben ein Graph $G=(V,E)$, gibt es
+            einen Kreis der Länge $n$? Gibt es also einen
             geschlossenen Kantenzug, der jeden Knoten genau einmal
-            besucht (wobei der Endknoten gleich der Startknoten
-            ist)?
+            besucht (wobei der Endknoten gleich der Startknoten ist)?
 
         |> li
             `Graph Isomorphism`{sc}: Gegeben zwei Graphen
@@ -291,21 +273,20 @@
             \{u,v\} \in E_1 \Longleftrightarrow \{f(u), f(v)\} \in E_2 \ ?
             \end{align*}
 
-            In Worten: kann ich von $G_1$ zu $G_2$ gelangen,
-            indem ich die Knoten einfach umbenenne?
+            In Worten: kann ich von $G_1$ zu $G_2$ gelangen, indem ich
+            die Knoten einfach umbenenne?
 
         |> li
             `Factoring`{sc}: Gegeben eine natürliche Zahl in
             Binärcodierung $x \in \{0,1\}^n$, finde ihre
-            Primfaktorzerlegung. Beachten Sie, dass die oben
-            erwähnten Algorithmen für`Primes`{sc}, also
-            Miller-Rabin-Test und Agrawal–Kayal–Saxena-Test, im
-            Falle einer Antwort _Nein, ist keine Primzahl_ uns
-            nicht eine Faktorisierung der Zahl ausgeben, sondern
-            eben nur ein _Nein_.
+            Primfaktorzerlegung. Beachten Sie, dass die oben erwähnten
+            Algorithmen für`Primes`{sc}, also Miller-Rabin-Test und
+            Agrawal–Kayal–Saxena-Test, im Falle einer Antwort _Nein,
+            ist keine Primzahl_ uns nicht eine Faktorisierung der Zahl
+            ausgeben, sondern eben nur ein _Nein_.
 
         |> li
             `Go`{sc}: gegeben eine Spielposition auf einem
             $n \times n$-Gobrett (siehe
-            [Go](https://de.wikipedia.org/wiki/Go_(Spiel))), kann
-            Weiß einen Sieg erzwingen?
+            [Go](https://de.wikipedia.org/wiki/Go_(Spiel))), kann Weiß
+            einen Sieg erzwingen?

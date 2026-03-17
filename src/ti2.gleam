@@ -1,5 +1,6 @@
 import argv
 import desugaring as ds
+import infrastructure as infra
 import formatter_renderer
 import gleam/dict
 import gleam/io
@@ -7,6 +8,7 @@ import gleam/list
 import gleam/option
 import gleam/string
 import main_renderer
+import simplifile
 import on
 
 const ins = string.inspect
@@ -26,11 +28,11 @@ fn local_cli_usage() {
   io.println(margin <> "     • -file <name>: format only the given file")
   io.println("")
   io.println(margin <> "--local")
-  io.println(
-    margin
-    <> "  -> include source-linking tooltips (! to use with 'local-goto.js'",
-  )
+  io.println(margin <> "  -> include source-linking tooltips")
   io.println(margin <> "     server !)")
+  io.println("")
+  io.println("...and don't forget to include '--which <project name>' in")
+  io.println("order to specify which course you want to compile/run!")
   io.println("")
 }
 
@@ -40,62 +42,86 @@ pub fn main() {
     |> list.map(fn(x) {
       case x {
         "only" -> "--only"
+        "which" -> "--which"
         _ -> x
       }
     })
 
-  case args {
-    ["--help"] | ["-help"] | ["-h"] -> {
-      ds.basic_cli_usage("\nCommand line options (basic):")
-      local_cli_usage()
+  use _ <- on.stay(
+    case args {
+      ["--help"] | ["-help"] | ["-h"] -> {
+        ds.basic_cli_usage("\nCommand line options (basic):")
+        local_cli_usage()
+        on.Return(Nil)
+      }
+
+      ["--esoteric"] -> {
+        ds.advanced_cli_usage("Command line options (esoteric):")
+        on.Return(Nil)
+      }
+
+      _ -> on.Stay(Nil)
+    }
+  )
+
+  use amendments <- on.stay(
+    case ds.process_command_line_arguments(args, ["--fmt", "--local", "--which"]) {
+      Error(error) -> {
+        io.println("")
+        io.println("cli error: " <> ins(error))
+        ds.basic_cli_usage("\ncommand line options:")
+        local_cli_usage()
+        on.Return(Nil)
+      }
+
+      Ok(amendments) -> {
+        on.Stay(amendments)
+      }
+    }
+  )
+
+  use course_dir <- on.stay(
+    case dict.get(amendments.user_args, "--which") {
+      Ok([name]) -> {
+        let name = name |> infra.drop_ending_slash |> infra.drop_prefix("./")
+        case simplifile.is_directory(name <> "/wly") {
+          Ok(_) -> {
+            on.Stay(name)
+          }
+          _ -> {
+            io.println("\nexpecting '" <> name <> "' to be a local directory with subdirectory 'wly'; crashing out")
+            on.Return(Nil)
+          }
+        }
+      }
+      _ -> {
+        io.println("\nuse '--which' option to specify a project_dir name pls (without spaces); crashing out\n")
+        on.Return(Nil)
+      }
+    }
+  )
+
+  use _ <- on.stay(
+    case amendments.input_dir {
+      option.Some(_) -> {
+        io.println("\nunexpected --input-dir argument; use '--which' to specify a local project directory; crashing out\n")
+        on.Return(Nil)
+      }
+      _ -> on.Stay(Nil)
+    }
+  )
+
+  case dict.get(amendments.user_args, "--fmt") {
+    Ok(_) -> {
+      io.println("")
+      io.println("wly -> wly formatter")
+      formatter_renderer.formatter_renderer(amendments, course_dir)
     }
 
-    ["--esoteric"] -> {
-      ds.basic_cli_usage("\nCommand line options (basic):")
-      local_cli_usage()
-      ds.advanced_cli_usage("Command line options (esoteric):")
-    }
-
-    _ -> {
-      use amendments <- on.error_ok(
-        ds.process_command_line_arguments(args, ["--fmt", "--local"]),
-        fn(error) {
-          io.println("")
-          io.println("cli error: " <> ins(error))
-          ds.basic_cli_usage("\ncommand line options:")
-          local_cli_usage()
-        },
-      )
-      case amendments.input_dir {
-        option.Some(_) -> Nil
-        _ -> {
-          io.println("missing --input-dir argument")
-          panic
-        }
-      }
-
-      case amendments.input_dir {
-        option.Some("course1") -> Nil
-        option.Some("course2") -> Nil
-        _ -> {
-          io.println("must specify --input-dir 'course1' or 'course2'")
-          panic
-        }
-      }
-
-      case dict.get(amendments.user_args, "--fmt") {
-        Ok(_) -> {
-          io.println("")
-          io.println("wly -> wly formatter")
-          formatter_renderer.formatter_renderer(amendments)
-        }
-
-        Error(_) -> {
-          io.println("")
-          io.println("wly -> html renderer")
-          main_renderer.main_renderer(amendments)
-        }
-      }
+    Error(_) -> {
+      io.println("")
+      io.println("wly -> html renderer")
+      main_renderer.main_renderer(amendments, course_dir)
     }
   }
 }

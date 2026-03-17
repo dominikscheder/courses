@@ -2,20 +2,19 @@
     title=Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel
 
     |> Theorem
-        Zu jeder kontextfreien Grammatik
-        $G = (\Sigma, N, S, P)$ gibt es einen Kellerautomaten
+        Zu jeder kontextfreien Grammatik $G = (\Sigma, N, S, P)$
+        gibt es einen Kellerautomaten
         $M = (\Sigma, Q, \Gamma, \qstart, \delta)$, der die
         gleiche Sprache akzeptiert, also $L(G) = L(M)$.
 
-    In diesem Unterkapitel wollen wir das Gelernte an
-    einem konkreten Beispiel anwenden. Wir beginnen (1)
-    mit einer Beschreibung eines Formats in natürlicher
-    Sprache; (2) basteln uns daraus mit Hilfe des
-    "Baukastenprinzips" eine reguläre Sprache; (3) säubern
-    diese, indem wir Regeln der Form $X \rightarrow Y$
-    und $X \rightarrow a$ eliminieren; (4) bauen einen
-    nichtdeterministischen endlichen Automaten; (5)
-    transformieren diesen in einen deterministischen
+    In diesem Unterkapitel wollen wir das Gelernte an einem
+    konkreten Beispiel anwenden. Wir beginnen (1) mit einer
+    Beschreibung eines Formats in natürlicher Sprache; (2)
+    basteln uns daraus mit Hilfe des "Baukastenprinzips" eine
+    reguläre Sprache; (3) säubern diese, indem wir Regeln der
+    Form $X \rightarrow Y$ und $X \rightarrow a$ eliminieren;
+    (4) bauen einen nichtdeterministischen endlichen Automaten;
+    (5) transformieren diesen in einen deterministischen
     endlichen Automaten.
 
     |> TopicAnnouncement
@@ -23,14 +22,13 @@
 
     Unsere Sprache $L$ soll so ähnlich sein wie die der
     erlaubten Domainnamen, allerdings mit ein paar
-    Abänderungen, um die obigen Transformationen
-    spannender zu machen. Ein Wort in unserer Sprache
-    besteht aus einer nichtleeren Folge von _Labels_ die
-    jeweils durch einen `.` separiert sind. Jedes Label
-    ist eine nichtleere Folge von Blöcken (ein nichtleerer
-    String aus Buchstaben und Zahlen), separiert durch `:`
-    oder `-` aber niemals durch beides innerhalb eines
-    Blockes. Also:
+    Abänderungen, um die obigen Transformationen spannender zu
+    machen. Ein Wort in unserer Sprache besteht aus einer
+    nichtleeren Folge von _Labels_ die jeweils durch einen `.`
+    separiert sind. Jedes Label ist eine nichtleere Folge von
+    Blöcken (ein nichtleerer String aus Buchstaben und Zahlen),
+    separiert durch `:` oder `-` aber niemals durch beides
+    innerhalb eines Blockes. Also:
 
     |> figure
         class=textfigure
@@ -42,46 +40,44 @@
         class=textfigure
         `a:b-c.hello`
 
-    ist kein Wort in $L$, da das erste Label die
-    Separatoren `:` und `-` mischt. Habe ich $L$ genau
-    genug beschrieben? Stellen wir eine Meta-Frage: Was
-    zählt überhaupt als _genaue Beschreibung_ einer
-    Sprache? Wir können uns dem Mund fusselig reden und
-    Beispiele und Nicht-Beispiele angeben, am Ende aber
-    werden wir irgendwann beginnen, formale Regeln
-    aufzustellen, die unsere Sprache beschreiben - wir
-    werden also im Prinzip eine _Grammatik_ schreiben. Tun
-    wir dies also.
+    ist kein Wort in $L$, da das erste Label die Separatoren
+    `:` und `-` mischt. Habe ich $L$ genau genug beschrieben?
+    Stellen wir eine Meta-Frage: Was zählt überhaupt als
+    _genaue Beschreibung_ einer Sprache? Wir können uns dem
+    Mund fusselig reden und Beispiele und Nicht-Beispiele
+    angeben, am Ende aber werden wir irgendwann beginnen,
+    formale Regeln aufzustellen, die unsere Sprache beschreiben
+    - wir werden also im Prinzip eine _Grammatik_ schreiben.
+    Tun wir dies also.
 
     |> TopicAnnouncement
         2. Eine reguläre Grammatik
 
-    Beginnen wir mit dem Alphabet. Da es 62
-    alphanumerische Zeichen gibt: `a..zA..Z0..9` und wir
-    uns keine unnötige Arbeit machen wollen, beschränken
-    wir uns auf ein Zeichen: `a`. Dazu kommen die
-    Separatoren `:-.`. Also: $\Sigma = \{a,.,:,-\}$.
-    Stellen Sie sich einfach vor, $a$ stehe für beliebige
-    alphanumerische Zeichen. Sowohl Grammatik als auch
-    Automaten lassen sich einfach anpassen. Wir beginnen
-    ganz unten und schreiben eine Grammatik für Blöcke,
-    also nichtleere Strings aus alphanumerischen Zeichen.
+    Beginnen wir mit dem Alphabet. Da es 62 alphanumerische
+    Zeichen gibt: `a..zA..Z0..9` und wir uns keine unnötige
+    Arbeit machen wollen, beschränken wir uns auf ein Zeichen:
+    `a`. Dazu kommen die Separatoren `:-.`. Also:
+    $\Sigma = \{a,.,:,-\}$. Stellen Sie sich einfach vor, $a$
+    stehe für beliebige alphanumerische Zeichen. Sowohl
+    Grammatik als auch Automaten lassen sich einfach anpassen.
+    Wir beginnen ganz unten und schreiben eine Grammatik für
+    Blöcke, also nichtleere Strings aus alphanumerischen
+    Zeichen.
 
     \begin{align*}
     B &\rightarrow a \ | \ aB
     \end{align*}
 
-    Als nächstes führen wir ein nichtterminales Symbole
-    $C$ für Labels mit `:` ein und ein Nichtterminal $D$
-    für Labels mit `-`. Wir wählen die Buchstaben $C,D$,
-    weil `:` auf Englisch _colon_ und `-` _dash_ heißt.
-    $C$-Labels können wir uns nach dem Baukastenprizip
-    bauen, in dem wir Theorem >>operation-L anwenden. Wir
-    fügen zur "End-Produktion" $B \rightarrow a$ eine
-    weiter Produktion $B \rightarrow a:B$ hinzu und tun
-    das gleiche für $B \rightarrow b$. Allerdings
-    benennen wir $B$ in $C$ um, damit keine
-    Verwechslungsgefahr mit dem ursprünglichen $B$
+    Als nächstes führen wir ein nichtterminales Symbole $C$
+    für Labels mit `:` ein und ein Nichtterminal $D$ für
+    Labels mit `-`. Wir wählen die Buchstaben $C,D$, weil `:`
+    auf Englisch _colon_ und `-` _dash_ heißt. $C$-Labels
+    können wir uns nach dem Baukastenprizip bauen, in dem wir
+    Theorem >>operation-L anwenden. Wir fügen zur
+    "End-Produktion" $B \rightarrow a$ eine weiter Produktion
+    $B \rightarrow a:B$ hinzu und tun das gleiche für
+    $B \rightarrow b$. Allerdings benennen wir $B$ in $C$ um,
+    damit keine Verwechslungsgefahr mit dem ursprünglichen $B$
     aufkommt. Das gleiche machen wir für $D$.
 
     \begin{align*}
@@ -90,12 +86,11 @@
     T&\rightarrow C \ | D
     \end{align*}
 
-    Von $L$ lassen sich nun also alle Labels ableiten.
-    Wir brauchen nun zum Schluss wieder eine Folge von
-    $L$, mit `.` separiert, müssen also wieder Theorem
-    >>operation-L anwenden, dieses mal auf die von $T$
-    erzeugte Sprache. Im Ergebnis benennen wir das
-    Startsymbol in $S$ um.
+    Von $L$ lassen sich nun also alle Labels ableiten. Wir
+    brauchen nun zum Schluss wieder eine Folge von $L$, mit
+    `.` separiert, müssen also wieder Theorem >>operation-L
+    anwenden, dieses mal auf die von $T$ erzeugte Sprache. Im
+    Ergebnis benennen wir das Startsymbol in $S$ um.
 
     \begin{align*}
     S&\rightarrow C \ | \ D \\
@@ -103,10 +98,10 @@
     D&\rightarrow a \ | \ aD \ | \ a\text{-}D \ | \ a{.}S \\
     \end{align*}
 
-    Um eine "richtig" reguläre Sprache zu erhalten,
-    entzerren wir die erweitert regulären Produktionen wie
-    $C \rightarrow a{:}C$. Dafür brauchen wir neue
-    Symbole $C', D', S'$:
+    Um eine "richtig" reguläre Sprache zu erhalten, entzerren
+    wir die erweitert regulären Produktionen wie
+    $C \rightarrow a{:}C$. Dafür brauchen wir neue Symbole
+    $C', D', S'$:
 
     \begin{align*}
     S &\rightarrow C \ | \ D \\
@@ -120,11 +115,11 @@
     |> TopicAnnouncement
         3. Die reguläre Grammatik säubern
 
-    Wir wollen nun alle Produktionen der Form
-    $Y \rightarrow x$ eliminieren. Hierfür nehmen wir uns
-    _ein_ neues Nichtterminal $E$ und ersetzen
-    $Y \rightarrow x$ durch $Y \rightarrow xE$ und fügen
-    die Produktion $E \rightarrow \epsilon$ hinzu.
+    Wir wollen nun alle Produktionen der Form $Y \rightarrow x$
+    eliminieren. Hierfür nehmen wir uns _ein_ neues
+    Nichtterminal $E$ und ersetzen $Y \rightarrow x$ durch
+    $Y \rightarrow xE$ und fügen die Produktion
+    $E \rightarrow \epsilon$ hinzu.
 
     \begin{align*}
     S&\rightarrow C \ | \ D \\
@@ -139,15 +134,14 @@
     In einem zweiten Schritt wollen wir die Produktionen
     $S \rightarrow C$ und $S \rightarrow D$ eliminieren,
     sodass wir nur noch Produktionen der From
-    $X \rightarrow aY$ und $E \rightarrow \epsilon$
-    haben. Wir gehen vor wie in Theorem
-    >>theorem-regular-simplified beschrieben. Wir ersetzen
-    $S \rightarrow C$ also durch alle Produktionen der
-    Form $S \rightarrow \alpha$, wobei $\alpha$ eine
-    Wortform ist, die sich aus $C$ ableiten lässt und
-    nicht nur aus einem einzelnen Nichtterminal besteht;
-    dies trifft glücklicherweise auf _alle_ rechten Seiten
-    der $C$-Produktionen zu; gleiches gilt für $D$. Wir
+    $X \rightarrow aY$ und $E \rightarrow \epsilon$ haben. Wir
+    gehen vor wie in Theorem >>theorem-regular-simplified
+    beschrieben. Wir ersetzen $S \rightarrow C$ also durch
+    alle Produktionen der Form $S \rightarrow \alpha$, wobei
+    $\alpha$ eine Wortform ist, die sich aus $C$ ableiten
+    lässt und nicht nur aus einem einzelnen Nichtterminal
+    besteht; dies trifft glücklicherweise auf _alle_ rechten
+    Seiten der $C$-Produktionen zu; gleiches gilt für $D$. Wir
     erhalten:
 
     \begin{align*}
@@ -161,8 +155,7 @@
     \end{align*}
 
     |> TopicAnnouncement
-        4. Einen nichtdeterministischen endlichen Automaten
-        bauen
+        4. Einen nichtdeterministischen endlichen Automaten bauen
 
     Dies sollte nun einfach sein. Wir erschaffen Zustände
     $S, C, C', D, D', S', E$ und übersetzen jeden
@@ -173,8 +166,8 @@
             style=height:17em
             src=img/finite-state-automata/nfsm-example-03-big.svg
 
-    Ich habe die Zeichen `.:-` rot unterlegt, weil man
-    sie sonst kaum erkennen würde in dem Automaten.
+    Ich habe die Zeichen `.:-` rot unterlegt, weil man sie
+    sonst kaum erkennen würde in dem Automaten.
 
     |> TopicAnnouncement
         5. Den nichtdeterministischen Automaten in einen
@@ -184,17 +177,16 @@
     Zustandsmenge $Q = \{S, S', C, C', D, D', E\}$, also
     insgesamt sieben Zustände. Wenn wir genau nach Buch
     vorgingen, müssten wir den endlichen Automaten auf der
-    Zustandsmenge $2^Q$ definieren, er hätte also
-    $2^7 = 128$ viele Zustände. Das wäre jetzt für einen
-    Rechner kein Problem, aber in diesem vorlesungsskript
-    doch etwas ungünstig. Wir gehen _lazy_ vor, erschaffen
-    Zustände in $2^Q$ also nur dann, wenn wir sie
-    brauchen. Wir beginnen mit dem Zustand $\{S\}$ und
-    legen dann an jeden Zustand Kanten an, jeweils mit
-    $a, :, -, .$ beschriftet, und erschaffen, falls
-    nötig, dabei neue Zustände. In der folgenden Animation
-    sehen Sie manchmal den mit einem Kreuz markierten
-    Fehlerzustand (trap state). Die akzeptierenden
+    Zustandsmenge $2^Q$ definieren, er hätte also $2^7 = 128$
+    viele Zustände. Das wäre jetzt für einen Rechner kein
+    Problem, aber in diesem vorlesungsskript doch etwas
+    ungünstig. Wir gehen _lazy_ vor, erschaffen Zustände in
+    $2^Q$ also nur dann, wenn wir sie brauchen. Wir beginnen
+    mit dem Zustand $\{S\}$ und legen dann an jeden Zustand
+    Kanten an, jeweils mit $a, :, -, .$ beschriftet, und
+    erschaffen, falls nötig, dabei neue Zustände. In der
+    folgenden Animation sehen Sie manchmal den mit einem Kreuz
+    markierten Fehlerzustand (trap state). Die akzeptierenden
     Zustände sind mit fettem Rand markiert.
 
     |> Group
@@ -243,17 +235,16 @@
                 |> br
                 Schritt für Schritt gebaut:
 
-    Dieser Automat hat deutlich weniger also 128
-    Zustände, nämlich mit nur sieben genau so viele wie
-    der nichtdeterministische (es ist Zufall, dass beide
-    gleich viele Zustände haben; messen Sie dieser
-    Tatsache keine Bedeutung bei). Wir könnten nun von
-    diesem Automaten ausgehend wiederum eine reguläre
-    Grammtik bauen, die in diesem Falle sogar einfacher
-    und klarer wäre als die ursprüngliche. Wenn wir
-    erweitert reguläre Grammatiken erlauben, so können wir
-    den deterministischen Automaten besonders konzise in
-    eine Grammatik fassen:
+    Dieser Automat hat deutlich weniger also 128 Zustände,
+    nämlich mit nur sieben genau so viele wie der
+    nichtdeterministische (es ist Zufall, dass beide gleich
+    viele Zustände haben; messen Sie dieser Tatsache keine
+    Bedeutung bei). Wir könnten nun von diesem Automaten
+    ausgehend wiederum eine reguläre Grammtik bauen, die in
+    diesem Falle sogar einfacher und klarer wäre als die
+    ursprüngliche. Wenn wir erweitert reguläre Grammatiken
+    erlauben, so können wir den deterministischen Automaten
+    besonders konzise in eine Grammatik fassen:
 
     \begin{align*}
     S&\rightarrow aT \\
@@ -262,34 +253,31 @@
     D&\rightarrow aD \ | \ \text{-}aD \ | \ {.}S
     \end{align*}
 
-    Die Zustände des deterministischen Automaten
-    beschreiben im Prinzip das, was wir uns merken müssen,
-    wenn wir so einen String "parsen": Zustand
-    $\{C',C,E,D,D',S'\}$, der in der Grammatik dann zum
-    Nichtterminal $T$ wird, bedeutet beispielsweise _das
-    Label hat schon begonnen, wir wissen aber noch nicht,
-    ob es eines mit `:` oder eines mit `-` ist. Der
-    Zustand $\{C',C,E,S'\}$ bzw. das Nichtterminal $C$
-    heißt dann `:` _wir sind innerhalb eines Labels mit_
-    `:`.
+    Die Zustände des deterministischen Automaten beschreiben
+    im Prinzip das, was wir uns merken müssen, wenn wir so
+    einen String "parsen": Zustand $\{C',C,E,D,D',S'\}$, der
+    in der Grammatik dann zum Nichtterminal $T$ wird, bedeutet
+    beispielsweise _das Label hat schon begonnen, wir wissen
+    aber noch nicht, ob es eines mit `:` oder eines mit `-`
+    ist. Der Zustand $\{C',C,E,S'\}$ bzw. das Nichtterminal $C$
+    heißt dann `:` _wir sind innerhalb eines Labels mit_ `:`.
 
     |> Exercise
-        Erinnern Sie sich an Aufgabe >>exercise-divisibility.
-        Hier sehen Sie einen nichtdeterministischen endlichen
-        Automaten für die Sprache $L_4 \cup L_6$, also die
-        Sprache aller Wörter $1^n$ für ein $n$, das durch 4
-        oder 6 teilbar ist. Da unser Alphabet $\Sigma = \{1\}$
-        eh nur aus einem Zeichen besteht, habe ich auf die
-        Beschriftung der Kanten verzichtet.
+        Erinnern Sie sich an Aufgabe >>exercise-divisibility. Hier
+        sehen Sie einen nichtdeterministischen endlichen Automaten
+        für die Sprache $L_4 \cup L_6$, also die Sprache aller
+        Wörter $1^n$ für ein $n$, das durch 4 oder 6 teilbar ist.
+        Da unser Alphabet $\Sigma = \{1\}$ eh nur aus einem
+        Zeichen besteht, habe ich auf die Beschriftung der Kanten
+        verzichtet.
 
         |> figure
             |> img
                 style=height:14em
                 src=img/finite-state-automata/divisibility-automaton/divisibility.svg
 
-        Dieser Automat hat 11 Zustände. Sein
-        Potenzmengenautomat hätte also $2^{11} = 2048$
-        Zustände. Führen Sie die Konstruktion _lazy_ durch,
-        indem Sie vom Startzustand $\{S\}$ ausgehend die
-        Folgezustände konstruieren. Wieviele Zustände bekommen
-        Sie?
+        Dieser Automat hat 11 Zustände. Sein Potenzmengenautomat
+        hätte also $2^{11} = 2048$ Zustände. Führen Sie die
+        Konstruktion _lazy_ durch, indem Sie vom Startzustand
+        $\{S\}$ ausgehend die Folgezustände konstruieren. Wieviele
+        Zustände bekommen Sie?

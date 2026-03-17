@@ -1,16 +1,15 @@
 |> Sub
     title=Primitive Rekursion: Motivation und Definitionen
 
-    Primitive Rekursion ist ein Versuch, Berechbarkeit
-    von Funktionen $f: \N^k \rightarrow \N$ anhand eines
+    Primitive Rekursion ist ein Versuch, Berechbarkeit von
+    Funktionen $f: \N^k \rightarrow \N$ anhand eines
     "Baukastenprinzips" zu modellieren. Man stellt gewisse
     Basisfunktionen als "offensichtlich berechenbar" zur
-    Verfügung und beschreibt _Kombinatoren_, die aus
-    bereits konstruierten Funktionen neue bauen können.
-    Die primitiv-rekursiven Funktionen sind dann all jene,
-    die mittels der Kombinatoren von den Basisfunktionen
-    ausgehend konstruiert werden können. Die
-    Basisfunktionen sind:
+    Verfügung und beschreibt _Kombinatoren_, die aus bereits
+    konstruierten Funktionen neue bauen können. Die
+    primitiv-rekursiven Funktionen sind dann all jene, die
+    mittels der Kombinatoren von den Basisfunktionen ausgehend
+    konstruiert werden können. Die Basisfunktionen sind:
 
     \begin{align*}
     \zero: &\ \N^* \rightarrow \N \\
@@ -22,49 +21,46 @@
     &\  x \mapsto x+1
     \end{align*}
 
-    Sind diese Funktionen "offensichtlich berechenbar"?
-    Ich würde sagen, die fundamentale Eigenschaft der
-    natürlichen Zahlen ist, dass jede Zahl einen
-    Nachfolger (successor) hat; daher ist irgendwie klar,
-    dass $\succ$ berechen bar ist. Aber seien wir
-    vorsichtig: wenn wir für natürliche Zahlen die
-    Dezimaldarstellung (oder Binärdarstellung, spielt
-    keine Rolle) verwenden, dann ist die Operation
+    Sind diese Funktionen "offensichtlich berechenbar"? Ich
+    würde sagen, die fundamentale Eigenschaft der natürlichen
+    Zahlen ist, dass jede Zahl einen Nachfolger (successor)
+    hat; daher ist irgendwie klar, dass $\succ$ berechen bar
+    ist. Aber seien wir vorsichtig: wenn wir für natürliche
+    Zahlen die Dezimaldarstellung (oder Binärdarstellung,
+    spielt keine Rolle) verwenden, dann ist die Operation
     $x \mapsto x+1$ bereits eine nicht ganz triviale
     Operation, sie erfordert beispielsweise Schleifen (von
-    rechts nach links durchgehen), if-then-else-Ausdrücke
-    (gibt es ein Carry?) etc. Daher sollten Sie so tun,
-    also würden wir natürliche Zahlen in _unärer
-    Schreibweise_ (auhc Steinzeitnotation genannt)
-    darstellen, also vier $= 1111$, sieben = $= 1111111$.
-    Jezt brauchen wir für succ kein if-then-else und keine
-    Schleifen, denn $\succ(x) = 1x$. Eine weitere Klasse
-    von "offensichtlich" berechenbaren Funktionen sind die
-    sogenannten Projektionen $\pi^n_k$, definiert als
+    rechts nach links durchgehen), if-then-else-Ausdrücke (gibt
+    es ein Carry?) etc. Daher sollten Sie so tun, also würden
+    wir natürliche Zahlen in _unärer Schreibweise_ (auhc
+    Steinzeitnotation genannt) darstellen, also vier $= 1111$,
+    sieben = $= 1111111$. Jezt brauchen wir für succ kein
+    if-then-else und keine Schleifen, denn $\succ(x) = 1x$.
+    Eine weitere Klasse von "offensichtlich" berechenbaren
+    Funktionen sind die sogenannten Projektionen $\pi^n_k$,
+    definiert als
 
     \begin{align*}
     \succ: &\ \N \rightarrow \N \\
     &\ x \mapsto x+1
     \end{align*}
 
-    Irgendwie sollte auch hier klar sein, dass die
-    Vorschrift "gib von den 3 Argumenten, die Du erhältst,
-    das erste zurück" ohne Zweifel "berechenbar" ist. Weil
-    wir bald alles in einem Python-Framework
-    implementieren werden, sei angemerkt, dass ich die
-    Zählung der Indizes bei 0 beginnen lasse, also zum
-    Beispiel
+    Irgendwie sollte auch hier klar sein, dass die Vorschrift
+    "gib von den 3 Argumenten, die Du erhältst, das erste
+    zurück" ohne Zweifel "berechenbar" ist. Weil wir bald alles
+    in einem Python-Framework implementieren werden, sei
+    angemerkt, dass ich die Zählung der Indizes bei 0 beginnen
+    lasse, also zum Beispiel
 
     \begin{align*}
     &\pi^3_0: (x,y,z) \mapsto x \ ,\\
     &\pi^3_1: (x,y,z) \mapsto y \ .
     \end{align*}
 
-    Auch die Stelligkeit $n$ lasse ich oft weg und
-    schreibe einfach $\pi_k$ statt $\pi^n_k$.
-    *Kombinatoren.* Die primitive Rekursion stellt zwei
-    Kombinatoren zur Verfügung: Komposition (Verknüpfung)
-    und primitive Rekursion.
+    Auch die Stelligkeit $n$ lasse ich oft weg und schreibe
+    einfach $\pi_k$ statt $\pi^n_k$. *Kombinatoren.* Die
+    primitive Rekursion stellt zwei Kombinatoren zur Verfügung:
+    Komposition (Verknüpfung) und primitive Rekursion.
 
     |> Definition
         *(Komposition)* Sei $f: \N^k \rightarrow \N$ und
@@ -83,16 +79,15 @@
                 style=height:15em
                 src=img/primitive-rekursion/composition.svg
 
-    Um aber komplexere Operationen implementieren zu
-    können, brauchen wir eine Art von Schleife. Was ist
-    die einfachste Art von Schleife oder Rekursion. Wir
-    dürfen nur eine sehr beschränkte Form der Rekursion
-    verwenden:
+    Um aber komplexere Operationen implementieren zu können,
+    brauchen wir eine Art von Schleife. Was ist die einfachste
+    Art von Schleife oder Rekursion. Wir dürfen nur eine sehr
+    beschränkte Form der Rekursion verwenden:
 
     |> Definition
-        *Primitive Rekursion* Seien $g: \N^k \rightarrow \N$
-        und $h: \N^{k+2} \rightarrow \N$. Wir definieren eine
-        neue Funktion $f: \N^{k+1} \rightarrow \N$ wie folgt:
+        *Primitive Rekursion* Seien $g: \N^k \rightarrow \N$ und
+        $h: \N^{k+2} \rightarrow \N$. Wir definieren eine neue
+        Funktion $f: \N^{k+1} \rightarrow \N$ wie folgt:
 
         \begin{align*}
         f : \N^{k+1}&\rightarrow \N \\
@@ -105,9 +100,9 @@
         Für diese Konstruktion schreiben wir kompakt
         $f := \primrec(g,h)$.
 
-    Wenn Sie Rekursionshasser sind, dann können Sie sich
-    es als Funktion mit einer `for`-Schleife vorstellen,
-    in der nur eine lokale Variable erlaubt ist:
+    Wenn Sie Rekursionshasser sind, dann können Sie sich es
+    als Funktion mit einer `for`-Schleife vorstellen, in der
+    nur eine lokale Variable erlaubt ist:
 
     ```.listing
     def PrimRec(g, h):
@@ -119,18 +114,18 @@
         return f
     ```
 
-    Die Forderung, dass man nur _eine_ lokale Variable
-    durch die Schleife führen darf, scheint sehr
-    restriktiv; es ist aber wohl die einfachste Form einer
-    Schleife, die wirklich etwas "schleifenhaftes" tut.
+    Die Forderung, dass man nur _eine_ lokale Variable durch
+    die Schleife führen darf, scheint sehr restriktiv; es ist
+    aber wohl die einfachste Form einer Schleife, die wirklich
+    etwas "schleifenhaftes" tut.
 
     |> Demo
         Speichern Sie die Datei
         [`primrec.py`{codelink}](./code/primitive-recursion/primrec.py)
-        auf Ihrem Rechner. Diese Datei stellt ein Framework
-        für die Implementierung primitiv rekursiver Funktionen
-        zur Verfügung. Insbesondere implementiert sie die
-        folgenden Funktion $\N^k \rightarrow \N$:
+        auf Ihrem Rechner. Diese Datei stellt ein Framework für die
+        Implementierung primitiv rekursiver Funktionen zur
+        Verfügung. Insbesondere implementiert sie die folgenden
+        Funktion $\N^k \rightarrow \N$:
 
         \begin{align*}
         {\rm zero}:&\vec{x} \mapsto 0 \\
@@ -138,9 +133,9 @@
         \end{align*}
 
         als "übliche" Python-Funktionen. Darüberhinaus
-        implementiert sie die folgenden Kombinatoren, welche
-        Ihnen nach den Regeln der primitiven Rekursion neue
-        Funktionen erstellt:
+        implementiert sie die folgenden Kombinatoren, welche Ihnen
+        nach den Regeln der primitiven Rekursion neue Funktionen
+        erstellt:
 
         |> ul
             |> li
@@ -158,9 +153,9 @@
                 \vec{x} \mapsto f(g0(x), g1(x), ...)
                 \end{align*}
 
-                Sie als User müssen sicherstellen, dass die
-                Stelligkeit von $f$ mit der Anzahl der als $g_i$
-                übergebenen Funktionen übereinstimmt.
+                Sie als User müssen sicherstellen, dass die Stelligkeit
+                von $f$ mit der Anzahl der als $g_i$ übergebenen
+                Funktionen übereinstimmt.
 
             |> li
                 `PrimRec(g,h)`: erzeugt die Funktion
@@ -172,27 +167,26 @@
                 \end{cases}
                 \end{align*}
 
-        Wenn wir die primitive Rekursion als
-        "Programmiersprache" betrachten, dann heißt das, dass
-        wir neue Funktionen bauen dürfen, indem wir
-        `zero,succ,Proj,Comp,PrimRec` verwenden, aber nicht
-        selbst Python-Funktionen schreiben. Wir dürfen also
-        nie selbst Integers in die Hand nehmen. Lassen Sie
-        mich das am Beispiel der Addition erklären. Ich will
-        eine Funktion ${\rm add}: \N^2 \rightarrow \N$
-        schreiben, die ihre beiden Argumente addiert. Ich darf
-        also nicht einfach python programmieren und
+        Wenn wir die primitive Rekursion als "Programmiersprache"
+        betrachten, dann heißt das, dass wir neue Funktionen bauen
+        dürfen, indem wir `zero,succ,Proj,Comp,PrimRec` verwenden,
+        aber nicht selbst Python-Funktionen schreiben. Wir dürfen
+        also nie selbst Integers in die Hand nehmen. Lassen Sie
+        mich das am Beispiel der Addition erklären. Ich will eine
+        Funktion ${\rm add}: \N^2 \rightarrow \N$ schreiben, die
+        ihre beiden Argumente addiert. Ich darf also nicht einfach
+        python programmieren und
 
         ```.redyellow.listing
         def add(x, y)
             return x + y
         ```
 
-        schreiben, denn unsere "Programmiersprache" ist
-        Primitive Rekursion, nicht Python! Wir müssen uns
-        `add` aus den Kombinatoren zusammenbasteln. Ich
-        schreibe nun ${\rm add}(t,x)$ statt ${\rm add}(x,y)$,
-        um den Rekursionsparameter $t$ deutlich zu machen.
+        schreiben, denn unsere "Programmiersprache" ist Primitive
+        Rekursion, nicht Python! Wir müssen uns `add` aus den
+        Kombinatoren zusammenbasteln. Ich schreibe nun
+        ${\rm add}(t,x)$ statt ${\rm add}(x,y)$, um den
+        Rekursionsparameter $t$ deutlich zu machen.
 
         \begin{align*}
         {\rm add}(t,x)&= \begin{cases}
@@ -205,8 +199,8 @@
         \end{cases} \\
         \end{align*}
 
-        Wir sehen also, dass dies eine Anwendung der
-        primitiven Rekursion ist mit $g = \pi_0$ und
+        Wir sehen also, dass dies eine Anwendung der primitiven
+        Rekursion ist mit $g = \pi_0$ und
         $h = {\comp}(\succ, \pi_0)$, also
 
         ```.listing
@@ -217,8 +211,8 @@
     |> Exercise
         Zeigen Sie, dass die folgenden Funktionen
         primitiv-rekursiv sind, und implementieren Sie sie in
-        meinem Python-Framework, so wie ich Addition mit `add
-        = PrimRec (p0, Comp(succ,p0))` implementiert habe:
+        meinem Python-Framework, so wie ich Addition mit `add =
+        PrimRec (p0, Comp(succ,p0))` implementiert habe:
 
         |> ol
             |> li
@@ -233,19 +227,18 @@
             |> li
                 ${\rm minus}: (x,y) \mapsto x-y$
 
-        *Tip:* Für exp und minus ist es einfacher, die
-        Argumente "umgedreht" zu betrachten, also
-        $(a,b) \mapsto b^a$ und $(x,y) \mapsto y-x$.
+        *Tip:* Für exp und minus ist es einfacher, die Argumente
+        "umgedreht" zu betrachten, also $(a,b) \mapsto b^a$ und
+        $(x,y) \mapsto y-x$.
 
     |> Exercise
-        Wenn Sie die vorherige Übungsaufgabe gelöst (oder
-        darüber aufgegeben) haben, sehen Sie sich die Datei
+        Wenn Sie die vorherige Übungsaufgabe gelöst (oder darüber
+        aufgegeben) haben, sehen Sie sich die Datei
         [`stockpile.py`{codelink}](code/primitive-recursion/stockpile.py)
-        an, in der ich diese Funktionen zum Großteil
-        implementiert habe (basierend auf den Übungen, die wir
-        direkt in der Vorlesung gemacht haben).
-        Experimentieren Sie weiter und implementieren Sie
-        "Boolesche" Prädikate und Funktionen wie
+        an, in der ich diese Funktionen zum Großteil implementiert
+        habe (basierend auf den Übungen, die wir direkt in der
+        Vorlesung gemacht haben). Experimentieren Sie weiter und
+        implementieren Sie "Boolesche" Prädikate und Funktionen wie
 
         |> ul
             |> li
@@ -258,5 +251,5 @@
                 `max, min`
 
             |> li
-                `ifThenElse(x,y,z)`: dies soll $z$ zurückliefern,
-                falls $x=0$ (also `false`) ist, und $y$ sonst.
+                `ifThenElse(x,y,z)`: dies soll $z$ zurückliefern, falls
+                $x=0$ (also `false`) ist, und $y$ sonst.

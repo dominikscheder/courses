@@ -40,743 +40,526 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">5.5&ensp;Reguläre Ausdrücke<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:2:11</span></span>
+        5.5&ensp;Reguläre Ausdrücke
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir werden nun eine weitere Weise finden, reguläre<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:4:5</span></span>
-      <span class="t-3003-c">Sprachen zu beschreiben: neben regulären Grammatik (ob<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:5:5</span></span>
-      <span class="t-3003-c">normal, erweitert, eingeschränkt), endlichen Automaten<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:6:5</span></span>
-      <span class="t-3003-c">und nichtdeterministischen endlichen Automaten gibt es<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:7:5</span></span>
-      <span class="t-3003-c">noch die
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:8:5</span></span><span class="nowrap"><i><span class="t-3003-c">regulären Ausdrücke<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:8:15</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:8:35</span></span></span><span class="t-3003-c">
-        Dies wird<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:8:35</span></span>
-      <span class="t-3003-c">wahrscheinlich von allen Beschreibungsweise die sein,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:9:5</span></span>
-      <span class="t-3003-c">mit der Sie in der Praxis am ehesten in Berührung<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:10:5</span></span>
-      <span class="t-3003-c">kommen. Wir haben bereits in
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:11:5</span></span><a
+      Wir werden nun eine weitere Weise finden, reguläre
+      Sprachen zu beschreiben: neben regulären Grammatik (ob
+      normal, erweitert, eingeschränkt), endlichen Automaten und
+      nichtdeterministischen endlichen Automaten gibt es noch die
+      <span class="nowrap"><i>regulären Ausdrücke</i>.</span>
+      Dies wird wahrscheinlich von allen
+      Beschreibungsweise die sein, mit der Sie in der Praxis am
+      ehesten in Berührung kommen. Wir haben bereits in
+      <a
         href="./5-1.html#_19_hgi_"
         class=""
       >Kapitel
-      </a><span class="t-3003-c">
-        das<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:11:5</span></span>
-      <span class="t-3003-c">Baukastenprinzip kennengelernt:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:12:5</span></span>
+      </a>
+      das Baukastenprinzip kennengelernt:
     </p>
     <div class="main-column">
       <ol>
         <li>
           <p>
-            <span class="t-3003-c">Wenn
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:16:13</span></span><span class="t-3003-c">$L_1$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:16:18</span></span><span class="t-3003-c">
-              und
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:16:23</span></span><span class="t-3003-c">$L_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:16:28</span></span><span class="t-3003-c">
-              reguläre Sprachen sind, dann ist<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:16:33</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:17:13</span></span><span class="t-3003-c">$L_1 \cup L_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:17:13</span></span><span class="t-3003-c">
-              auch regulär;<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:17:27</span></span>
+            Wenn $L_1$ und $L_2$ reguläre Sprachen sind, dann ist
+            $L_1 \cup L_2$ auch regulär;
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">dann ist auch die Konkatenation<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:20:13</span></span>
+            dann ist auch die Konkatenation
           </p>
           <div class="math-block">
             $$
             \begin{align*}
             L_1 \circ L_2 := \{\alpha \beta \ | \alpha \in L_1, \beta \in L_2\}
             \end{align*}
-            $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:22:13</span>
+            $$
           </div>
           <p>
-            <span class="t-3003-c">regulär;<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:26:13</span></span>
+            regulär;
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">wenn
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:29:13</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:29:18</span></span><span class="t-3003-c">
-              regulär ist, dann ist auch ihre Kleenesche<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:29:21</span></span>
-            <span class="t-3003-c">Hülle<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:30:13</span></span>
+            wenn $L$ regulär ist, dann ist auch ihre Kleenesche Hülle
           </p>
           <div class="math-block">
             $$
             \begin{align*}
             L^* := \{ \alpha_1 \dots \alpha_n \ | \ n \geq 0, \alpha_1,\dots,\alpha_n \in L\}
             \end{align*}
-            $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:32:13</span>
+            $$
           </div>
           <p>
-            <span class="t-3003-c">regulär.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:36:13</span></span>
+            regulär.
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Darüberhinaus haben wir Techniken kennengelernt, um<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:38:5</span></span>
-      <span class="t-3003-c">aus den gegebenen regulären Grammatiken eine neue<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:39:5</span></span>
-      <span class="t-3003-c">Grammatik für
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:40:5</span></span><span class="nowrap"><span class="t-3003-c">$L_1 \cup L_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:40:19</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:40:33</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:40:33</span></span><span class="t-3003-c">$L_1 \circ L_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:40:35</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:40:50</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:40:55</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:40:58</span></span>
-      <span class="t-3003-c">konstruieren zu können. Sie sollten sich jetzt<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:41:5</span></span>
-      <span class="t-3003-c">folgende Frage stellen:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:42:5</span></span>
+      Darüberhinaus haben wir Techniken kennengelernt, um aus
+      den gegebenen regulären Grammatiken eine neue Grammatik für
+      <span class="nowrap">$L_1 \cup L_2$,</span>
+      $L_1 \circ L_2$ und $L$ konstruieren zu
+      können. Sie sollten sich jetzt folgende Frage stellen:
     </p>
     <div class="display main-column">
       <p>
-        <b><span class="t-3003-c">Frage:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:46:10</span></span></b><span class="t-3003-c">
-          Können
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:46:17</span></span><i><span class="t-3003-c">alle<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:46:26</span></span></i><span class="t-3003-c">
-          regulären Sprachen nach diesem<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:46:31</span></span>
-        <span class="t-3003-c">Baukastenprinzip erstellt werden?<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:47:9</span></span>
+        <b>Frage:</b>
+        Können
+        <i>alle</i>
+        regulären Sprachen nach diesem
+        Baukastenprinzip erstellt werden?
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Damit diese Frage überhaupt die Chance hat, mit
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:49:5</span></span><i><span class="t-3003-c">ja<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:49:54</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:49:57</span></span>
-      <span class="t-3003-c">beantwortet zu werden, müssen wir "Atome" zur<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:50:5</span></span>
-      <span class="t-3003-c">Verfügung stellen, mit denen wir beginnen können.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:51:5</span></span>
-      <span class="t-3003-c">Daher:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:52:5</span></span>
+      Damit diese Frage überhaupt die Chance hat, mit
+      <i>ja</i>
+      beantwortet zu werden, müssen wir "Atome" zur Verfügung
+      stellen, mit denen wir beginnen können. Daher:
     </p>
     <div class="main-column">
       <ul>
         <li>
           <p>
-            <span class="t-3003-c">Die Sprachen
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:56:13</span></span><span class="nowrap"><span class="t-3003-c">$\emptyset$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:56:26</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:56:37</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:56:37</span></span><span class="t-3003-c">$\{\epsilon\}$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:56:39</span></span><span class="t-3003-c">
-              und
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:56:53</span></span><span class="t-3003-c">$\{x\}$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:56:58</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:56:65</span></span>
-            <span class="t-3003-c">für jedes
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:57:13</span></span><span class="t-3003-c">$x \in \Sigma$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:57:23</span></span><span class="t-3003-c">
-              sind regulär.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:57:37</span></span>
+            Die Sprachen
+            <span class="nowrap">$\emptyset$,</span>
+            $\{\epsilon\}$ und $\{x\}$ für
+            jedes $x \in \Sigma$ sind regulär.
           </p>
         </li>
       </ul>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Aus diesen
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:59:5</span></span><span class="t-3003-c">$|\Sigma|+2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:59:16</span></span><span class="t-3003-c">
-        "Grundbausteinen" und den<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:59:28</span></span>
-      <span class="t-3003-c">drei Kombinatoren
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:60:5</span></span><span class="nowrap"><span class="t-3003-c">$\cup$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:60:23</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:60:29</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:60:29</span></span><span class="t-3003-c">$\circ$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:60:31</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:60:38</span></span><span class="t-3003-c">$^*$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:60:43</span></span><span class="t-3003-c">
-        können Sie<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:60:47</span></span>
-      <span class="t-3003-c">jede reguläre Sprache zusammenbauen. Dieses<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:61:5</span></span>
-      <span class="t-3003-c">Baukastenprinzip hat auch einen Namen: reguläre<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:62:5</span></span>
-      <span class="t-3003-c">Ausdrücke. Definieren wir diese nun formal.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:63:5</span></span>
+      Aus diesen $|\Sigma|+2$ "Grundbausteinen" und den drei
+      Kombinatoren
+      <span class="nowrap">$\cup$,</span>
+      $\circ$ und $^*$ können Sie jede
+      reguläre Sprache zusammenbauen. Dieses Baukastenprinzip hat
+      auch einen Namen: reguläre Ausdrücke. Definieren wir diese
+      nun formal.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 5.5.1<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:65:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:65:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:66:9</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:66:13</span></span><span class="t-3003-c">
-          einendliches Alphabet. Die regulären<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:66:21</span></span>
-        <span class="t-3003-c">Audrücke über
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:67:9</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:67:23</span></span><span class="t-3003-c">
-          sind induktiv definiert wie<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:67:31</span></span>
-        <span class="t-3003-c">folgt und beschreiben folgende Sprachen:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:68:9</span></span>
+        <b>Definition 5.5.1</b>
+        Sei $\Sigma$ einendliches Alphabet. Die regulären Audrücke
+        über $\Sigma$ sind induktiv definiert wie folgt und
+        beschreiben folgende Sprachen:
       </p>
       <ul>
         <li>
           <p>
-            <b><span class="t-3003-c">Atome.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:72:18</span></span></b><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:72:25</span></span><span class="t-3003-c">$\emptyset$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:72:26</span></span><span class="t-3003-c">
-              ist ein regulärer Ausdruck und<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:72:37</span></span>
-            <span class="t-3003-c">beschreibt die Sprache
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:73:17</span></span><span class="nowrap"><span class="t-3003-c">$\emptyset$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:73:40</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:73:51</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:73:51</span></span><span class="t-3003-c">$\epsilon$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:73:53</span></span><span class="t-3003-c">
-              ist<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:73:63</span></span>
-            <span class="t-3003-c">ein regulärer Ausdruck und beschreibt die Sprache<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:74:17</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:75:17</span></span><span class="nowrap"><span class="t-3003-c">$\{\epsilon\}$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:75:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:75:31</span></span></span><span class="t-3003-c">
-              Jedes einzelne Zeichen
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:75:31</span></span><span class="t-3003-c">$x \in \Sigma$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:75:56</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:75:70</span></span>
-            <span class="t-3003-c">ist ein regulärer Ausdruck und beschreibt die Sprache<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:76:17</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:77:17</span></span><span class="nowrap"><span class="t-3003-c">$\{x\}$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:77:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:77:24</span></span></span>
+            <b>Atome.</b>
+            $\emptyset$ ist ein regulärer Ausdruck und
+            beschreibt die Sprache
+            <span class="nowrap">$\emptyset$.</span>
+            $\epsilon$ ist ein
+            regulärer Ausdruck und beschreibt die Sprache
+            <span class="nowrap">$\{\epsilon\}$.</span>
+            Jedes einzelne Zeichen $x \in \Sigma$ ist
+            ein regulärer Ausdruck und beschreibt die Sprache
+            <span class="nowrap">$\{x\}$.</span>
           </p>
         </li>
         <li>
           <p>
-            <b><span class="t-3003-c">Alternative.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:80:18</span></span></b><span class="t-3003-c">
-              Wenn
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:80:31</span></span><span class="t-3003-c">$R_1, R_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:80:37</span></span><span class="t-3003-c">
-              reguläre Ausdrücke<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:80:47</span></span>
-            <span class="t-3003-c">über
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:81:17</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:81:22</span></span><span class="t-3003-c">
-              sind und die Sprachen
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:81:30</span></span><span class="t-3003-c">$L_1$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:81:53</span></span><span class="t-3003-c">
-              und
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:81:58</span></span><span class="t-3003-c">$L_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:81:63</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:81:68</span></span>
-            <span class="t-3003-c">beschreiben, so ist
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:82:17</span></span><span class="t-3003-c">$(R_1 | R_2)$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:82:37</span></span><span class="t-3003-c">
-              ein regulärer<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:82:50</span></span>
-            <span class="t-3003-c">Ausdruck und beschreibt die Sprache
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:83:17</span></span><span class="t-3003-c">$L_1 \cup L_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:83:53</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:83:67</span></span>
-            <span class="t-3003-c">(die regulär ist, wie wir in
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:84:17</span></span><a
+            <b>Alternative.</b>
+            Wenn $R_1, R_2$ reguläre Ausdrücke über
+            $\Sigma$ sind und die Sprachen $L_1$ und $L_2$
+            beschreiben, so ist $(R_1 | R_2)$ ein regulärer Ausdruck
+            und beschreibt die Sprache $L_1 \cup L_2$ (die regulär
+            ist, wie wir in
+            <a
               href="./5-1.html#_19_hgi_"
               class=""
             >Kapitel
-            </a><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:84:17</span></span>
-            <span class="t-3003-c">gesehen haben).<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:85:17</span></span>
+            </a>
+            gesehen haben).
           </p>
         </li>
         <li>
           <p>
-            <b><span class="t-3003-c">Konkatenation.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:88:18</span></span></b><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:88:33</span></span><span class="t-3003-c">$(R_1R_2)$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:88:34</span></span><span class="t-3003-c">
-              ist ein regulärer<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:88:44</span></span>
-            <span class="t-3003-c">Ausdruck, der die Sprache
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:89:17</span></span><span class="t-3003-c">$L_1 \circ L_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:89:43</span></span><span class="t-3003-c">
-              beschreibt<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:89:58</span></span>
-            <span class="t-3003-c">(die auch wiederum regulär ist). Der Deutlichkeit<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:90:17</span></span>
-            <span class="t-3003-c">halber schreiben wir auch manchmal
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:91:17</span></span><span class="nowrap"><span class="t-3003-c">$R_1 \circ R_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:91:52</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:91:67</span></span></span>
+            <b>Konkatenation.</b>
+            $(R_1R_2)$ ist ein regulärer Ausdruck,
+            der die Sprache $L_1 \circ L_2$ beschreibt (die auch
+            wiederum regulär ist). Der Deutlichkeit halber schreiben
+            wir auch manchmal
+            <span class="nowrap">$R_1 \circ R_2$.</span>
           </p>
         </li>
         <li>
           <p>
-            <b><span class="t-3003-c">Kleenesche Hülle.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:94:18</span></span></b><span class="t-3003-c">
-              Wenn
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:94:36</span></span><span class="t-3003-c">$R$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:94:42</span></span><span class="t-3003-c">
-              ein regulärer Ausdruck<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:94:45</span></span>
-            <span class="t-3003-c">ist und die Sprache
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:95:17</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:95:37</span></span><span class="t-3003-c">
-              beschreibt, dann ist
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:95:40</span></span><span class="t-3003-c">$(R^*)$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:95:62</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:95:69</span></span>
-            <span class="t-3003-c">ein regulärer Ausdruck und beschreibt die Sprache<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:96:17</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:97:17</span></span><span class="nowrap"><span class="t-3003-c">$L^*$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:97:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:97:22</span></span></span>
+            <b>Kleenesche Hülle.</b>
+            Wenn $R$ ein regulärer Ausdruck ist
+            und die Sprache $L$ beschreibt, dann ist $(R^*)$ ein
+            regulärer Ausdruck und beschreibt die Sprache
+            <span class="nowrap">$L^*$.</span>
           </p>
         </li>
       </ul>
       <p>
-        <span class="t-3003-c">Weil in der Praxis neben
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:99:9</span></span><span class="nowrap"><span class="t-3003-c">$L^*$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:99:34</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:99:39</span></span></span><span class="t-3003-c">
-          also beliebig langen,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:99:39</span></span>
-        <span class="t-3003-c">möglicherweise leeren Folgen von
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:100:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:100:42</span></span><span class="t-3003-c">
-          -Wörtern wir oft<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:100:45</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:101:9</span></span><i><span class="t-3003-c">nichtleere<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:101:10</span></span></i><span class="t-3003-c">
-          Folgen wollen, führen wir die Abkürzung<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:101:21</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:102:9</span></span><span class="t-3003-c">$R^+$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:102:9</span></span><span class="t-3003-c">
-          für
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:102:14</span></span><span class="t-3003-c">$R (R^*)$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:102:19</span></span><span class="t-3003-c">
-          ein und bezeichnen die<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:102:28</span></span>
-        <span class="t-3003-c">beschriebene Sprache
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:103:9</span></span><span class="t-3003-c">$L \circ L^*$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:103:30</span></span><span class="t-3003-c">
-          kurzerhand als<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:103:43</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:104:9</span></span><span class="nowrap"><span class="t-3003-c">$L^+$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:104:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:104:14</span></span></span>
+        Weil in der Praxis neben
+        <span class="nowrap">$L^*$,</span>
+        also beliebig langen,
+        möglicherweise leeren Folgen von $L$ -Wörtern wir oft
+        <i>nichtleere</i>
+        Folgen wollen, führen wir die Abkürzung $R^+$
+        für $R (R^*)$ ein und bezeichnen die beschriebene Sprache
+        $L \circ L^*$ kurzerhand als
+        <span class="nowrap">$L^+$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">In konkreten fällen lassen gerne die Klammerung weg,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:106:5</span></span>
-      <span class="t-3003-c">wenn keine Verwechslungsgefahr besteht. Auch gehen wir<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:107:5</span></span>
-      <span class="t-3003-c">davon aus, dass die Operatoren die Präzedenz
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:108:5</span></span><span class="t-3003-c">$^*$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:108:50</span></span><span class="t-3003-c">
-        vor<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:108:54</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:109:5</span></span><span class="t-3003-c">$\circ$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:109:5</span></span><span class="t-3003-c">
-        vor
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:109:12</span></span><span class="t-3003-c">$|$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:109:17</span></span><span class="t-3003-c">
-        haben (wie
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:109:20</span></span><i><span class="t-3003-c">hoch<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:109:33</span></span></i><span class="t-3003-c">
-        vor
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:109:38</span></span><i><span class="t-3003-c">Punkt<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:109:44</span></span></i><span class="t-3003-c">
-        vor<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:109:50</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:110:5</span></span><i><span class="t-3003-c">Strich<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:110:6</span></span></i><span class="t-3003-c">
-        in der Arithmetik), sodass beispielsweise der<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:110:13</span></span>
-      <span class="t-3003-c">Ausdruck
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:111:5</span></span><span class="t-3003-c">$a^*b|c^*$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:111:14</span></span><span class="t-3003-c">
-        die Bedeutung von<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:111:24</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:112:5</span></span><span class="t-3003-c">$(((a^*)b)(c^*))$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:112:5</span></span><span class="t-3003-c">
-        hat, genauso wie wir in der<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:112:22</span></span>
-      <span class="t-3003-c">Arithmetik
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:113:5</span></span><span class="t-3003-c">$a^2 b + c^3$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:113:16</span></span><span class="t-3003-c">
-        statt
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:113:29</span></span><span class="t-3003-c">$(((a^2)b) + c^3)$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:113:36</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:113:54</span></span>
-      <span class="t-3003-c">schreiben. Die von den atomaren Ausdrücken<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:114:5</span></span>
-      <span class="t-3003-c">beschriebenen Sprachen sind alle regulär, da sie alle<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:115:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:116:5</span></span><i><span class="t-3003-c">endliche Sprachen<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:116:6</span></span></i><span class="t-3003-c">
-        sind. Dank unserer Vorarbeit aus<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:116:24</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:117:5</span></span><a
+      In konkreten fällen lassen gerne die Klammerung weg, wenn
+      keine Verwechslungsgefahr besteht. Auch gehen wir davon
+      aus, dass die Operatoren die Präzedenz $^*$ vor $\circ$
+      vor $|$ haben (wie
+      <i>hoch</i>
+      vor
+      <i>Punkt</i>
+      vor
+      <i>Strich</i>
+      in der
+      Arithmetik), sodass beispielsweise der Ausdruck $a^*b|c^*$
+      die Bedeutung von $(((a^*)b)(c^*))$ hat, genauso wie wir
+      in der Arithmetik $a^2 b + c^3$ statt $(((a^2)b) + c^3)$
+      schreiben. Die von den atomaren Ausdrücken beschriebenen
+      Sprachen sind alle regulär, da sie alle
+      <i>endliche Sprachen</i>
+      sind. Dank unserer Vorarbeit aus
+      <a
         href="./5-1.html#_19_hgi_"
         class=""
       >Kapitel
-      </a><span class="t-3003-c">
-        wissen wir, dass Alterantive,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:117:5</span></span>
-      <span class="t-3003-c">Konkatenation und Kleenesche Hülle wiederum reguläre<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:118:5</span></span>
-      <span class="t-3003-c">Sprachen erzeugen. Wir erhalten das folgende Ergebnis:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:119:5</span></span>
+      </a>
+      wissen
+      wir, dass Alterantive, Konkatenation und Kleenesche Hülle
+      wiederum reguläre Sprachen erzeugen. Wir erhalten das
+      folgende Ergebnis:
     </p>
     <div
       id="_26_hgi_"
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Lemma 5.5.2<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:121:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:121:5</span></span>
-        <span class="t-3003-c">Die von einem regulären Ausdruck
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:123:9</span></span><span class="t-3003-c">$R$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:123:42</span></span><span class="t-3003-c">
-          beschriebene<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:123:45</span></span>
-        <span class="t-3003-c">Sprache
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:124:9</span></span><span class="t-3003-c">$L(R)$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:124:17</span></span><span class="t-3003-c">
-          ist regulär.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:124:23</span></span>
+        <b>Lemma 5.5.2</b>
+        Die von einem regulären Ausdruck $R$ beschriebene Sprache
+        $L(R)$ ist regulär.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Es ist Zeit für ein paar Beispiele.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:126:5</span></span>
+      Es ist Zeit für ein paar Beispiele.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beispiel 5.5.3<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:128:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:128:5</span></span>
-        <span class="t-3003-c">Nehmen wir die Sprache der Wörter der Form<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:129:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:130:9</span></span><code><span class="t-3003-c">bla:bla:blu.xyz-12-ab.b:x<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:130:10</span></span></code><span class="t-3003-c">
-          aus dem letzten Kapitel.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:130:36</span></span>
-        <span class="t-3003-c">Sie erinnern sich: eine endliche Folge von
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:131:9</span></span><span class="nowrap"><i><span class="t-3003-c">Labels<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:131:53</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:131:60</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:131:60</span></span>
-        <span class="t-3003-c">wo ein Label eine nichtleere Folge von Blöcken ist,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:132:9</span></span>
-        <span class="t-3003-c">die entweder
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:133:9</span></span><code><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:133:23</span></span></code><span class="t-3003-c">
-          oder durch
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:133:25</span></span><code><span class="t-3003-c">-<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:133:38</span></span></code><span class="t-3003-c">
-          separiert sind, wobei<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:133:40</span></span>
-        <span class="t-3003-c">innerhalb eines Labels immer nur ein Separatortyp<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:134:9</span></span>
-        <span class="t-3003-c">vorkommen darf, und wobei ein Block eine nichtleere<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:135:9</span></span>
-        <span class="t-3003-c">Folge von alphanumerischen Zeichen ist (wir haben uns<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:136:9</span></span>
-        <span class="t-3003-c">dann auf den Buchstaben
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:137:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:137:33</span></span><span class="t-3003-c">
-          beschränkt). Sehen Sie,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:137:36</span></span>
-        <span class="t-3003-c">dass bereits unsere natürlichsprachliche Beschreibung<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:138:9</span></span>
-        <span class="t-3003-c">von
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:139:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:139:13</span></span><span class="t-3003-c">
-          von dem Baukastenprinzip gebraucht macht.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:139:16</span></span>
-        <span class="t-3003-c">Wenn wir nun einen regulären Ausdruck für
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:140:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:140:51</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:140:54</span></span>
-        <span class="t-3003-c">erstellen wollen, so können wir bequem Stück für Stück<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:141:9</span></span>
-        <span class="t-3003-c">vorgehen. Ein Block ist eine nichtleere Folge von<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:142:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:143:9</span></span><span class="nowrap"><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:143:9</span></span><span class="t-3003-c">'s.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:143:12</span></span></span><span class="t-3003-c">
-          Der entsprechende reguläre Ausdruck
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:143:12</span></span><span class="t-3003-c">$B$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:143:52</span></span><span class="t-3003-c">
-          für<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:143:55</span></span>
-        <span class="t-3003-c">Blöcke ist also<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:144:9</span></span>
+        <b>Beispiel 5.5.3</b>
+        Nehmen wir die Sprache der Wörter der Form
+        <code>bla:bla:blu.xyz-12-ab.b:x</code>
+        aus dem letzten Kapitel. Sie
+        erinnern sich: eine endliche Folge von
+        <span class="nowrap"><i>Labels</i>,</span>
+        wo ein
+        Label eine nichtleere Folge von Blöcken ist, die entweder
+        <code>:</code>
+        oder durch
+        <code>-</code>
+        separiert sind, wobei innerhalb eines
+        Labels immer nur ein Separatortyp vorkommen darf, und wobei
+        ein Block eine nichtleere Folge von alphanumerischen
+        Zeichen ist (wir haben uns dann auf den Buchstaben $a$
+        beschränkt). Sehen Sie, dass bereits unsere
+        natürlichsprachliche Beschreibung von $L$ von dem
+        Baukastenprinzip gebraucht macht. Wenn wir nun einen
+        regulären Ausdruck für $L$ erstellen wollen, so können wir
+        bequem Stück für Stück vorgehen. Ein Block ist eine
+        nichtleere Folge von
+        <span class="nowrap">$a$'s.</span>
+        Der entsprechende reguläre
+        Ausdruck $B$ für Blöcke ist also
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         B : = a^+
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:146:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Für ein Label müssen wir uns entscheiden, ob wir die<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:150:9</span></span>
-        <span class="t-3003-c">Blöcke mit
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:151:9</span></span><code><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:151:21</span></span></code><span class="t-3003-c">
-          oder
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:151:23</span></span><code><span class="t-3003-c">-<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:151:30</span></span></code><span class="t-3003-c">
-          separieren; wir erhalten den<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:151:32</span></span>
-        <span class="t-3003-c">regulären Ausdruck
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:152:9</span></span><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:152:28</span></span><span class="t-3003-c">
-          für Labels ist also<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:152:31</span></span>
+        Für ein Label müssen wir uns entscheiden, ob wir die
+        Blöcke mit
+        <code>:</code>
+        oder
+        <code>-</code>
+        separieren; wir erhalten den
+        regulären Ausdruck $T$ für Labels ist also
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         T := B ({:}B)^* | B (\text{-}B)^*
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:154:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Sehen Sie, dass wir in
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:158:9</span></span><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:158:32</span></span><span class="t-3003-c">
-          das erste
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:158:35</span></span><span class="t-3003-c">$B$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:158:46</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:158:49</span></span>
-        <span class="t-3003-c">"ausfaktorisieren" können und statt dem obigen<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:159:9</span></span>
-        <span class="t-3003-c">folgenden Ausdruck schreiben können:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:160:9</span></span>
+        Sehen Sie, dass wir in $T$ das erste $B$
+        "ausfaktorisieren" können und statt dem obigen folgenden
+        Ausdruck schreiben können:
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         T' := B ( ({:}B)^* | (\text{-}B)^* )
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:162:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Beide Varianten sind äquivalent, d.h., sie<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:166:9</span></span>
-        <span class="t-3003-c">beschreiben die gleiche Sprache; die erste Variante,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:167:9</span></span>
-        <span class="t-3003-c">also
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:168:9</span></span><span class="nowrap"><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:168:14</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:168:17</span></span></span><span class="t-3003-c">
-          ähnelt mehr dem, was wir in unserer<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:168:17</span></span>
-        <span class="t-3003-c">Grammatik bzw. dem nichtdeterministischen Automaten<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:169:9</span></span>
-        <span class="t-3003-c">für
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:170:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:170:13</span></span><span class="t-3003-c">
-          getan haben, während
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:170:16</span></span><span class="t-3003-c">$T'$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:170:38</span></span><span class="t-3003-c">
-          eher die<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:170:42</span></span>
-        <span class="t-3003-c">Arbeitsweise des determinisitschen Automaten<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:171:9</span></span>
-        <span class="t-3003-c">reflektiert (wir lesen erst einmal einen Block und<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:172:9</span></span>
-        <span class="t-3003-c">erst, wenn wir zum ersten mal auf
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:173:9</span></span><code><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:173:44</span></span></code><span class="t-3003-c">
-          oder
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:173:46</span></span><code><span class="t-3003-c">-<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:173:53</span></span></code><span class="t-3003-c">
-          stoßen,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:173:55</span></span>
-        <span class="t-3003-c">entscheiden wir uns für den "Typ" des Labels).<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:174:9</span></span>
-        <span class="t-3003-c">Schlussendlich ist ein Wort in der Sprache eine mit<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:175:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:176:9</span></span><code><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:176:10</span></span></code><span class="t-3003-c">
-          separierte Folge von Labels, also:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:176:12</span></span>
+        Beide Varianten sind äquivalent, d.h., sie beschreiben die
+        gleiche Sprache; die erste Variante, also
+        <span class="nowrap">$T$,</span>
+        ähnelt mehr
+        dem, was wir in unserer Grammatik bzw. dem
+        nichtdeterministischen Automaten für $L$ getan haben,
+        während $T'$ eher die Arbeitsweise des determinisitschen
+        Automaten reflektiert (wir lesen erst einmal einen Block
+        und erst, wenn wir zum ersten mal auf
+        <code>:</code>
+        oder
+        <code>-</code>
+        stoßen,
+        entscheiden wir uns für den "Typ" des Labels).
+        Schlussendlich ist ein Wort in der Sprache eine mit
+        <code>.</code>
+        separierte Folge von Labels, also:
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         R := T ({.}T)^*
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:178:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Somit können wir nun den regulären Ausdruck für
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:182:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:182:57</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:182:60</span></span>
-        <span class="t-3003-c">in seiner ganzen Pracht zeigen:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:183:9</span></span>
+        Somit können wir nun den regulären Ausdruck für $L$ in
+        seiner ganzen Pracht zeigen:
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         R := (a^+ ({:}a^+)^* | a^+ (\text{-}a^+)^*) ({.}(a^+ ({:}a^+)^* | a^+ (\text{-}a^+)^*))^*
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:185:9</span>
+        $$
       </div>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.5.1<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:189:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:189:5</span></span>
-        <span class="t-3003-c">Laden Sie sich<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:190:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:191:9</span></span><a href="./code/regular-expressions/TestRegex.java"><span class="t-3003-c">TextRegex.java<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:191:10</span></span></a><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:191:68</span></span>
-        <span class="t-3003-c">herunter, kompilieren und starten Sie es.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:192:9</span></span>
+        <b>Übungsaufgabe 5.5.1</b>
+        Laden Sie sich
+        <a href="./code/regular-expressions/TestRegex.java">TextRegex.java</a>
+        herunter, kompilieren und starten Sie es.
       </p>
 <pre class="arbitrary-prompt-response">
-<span class="terminal-prompt"><span class="t-3003-c">user@home:~$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:195:9</span></span></span><span class="terminal-prompt-content"><span class="t-3003-c"> java TestRegex<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:195:23</span></span></span>
-<span class="arbitrary-prompt"><span class="t-3003-c">Please enter a regular expression: <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:196:9</span></span></span><span class="arbitrary-response"><span class="t-3003-c">(a+)(:a+)*<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:196:46</span></span></span>
-<span class="arbitrary-prompt"><span class="t-3003-c">Enter words to be matched, one per line<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:197:9</span></span></span><span class="arbitrary-response"></span>
-<span class="arbitrary-prompt"></span><span class="arbitrary-response"><span class="t-3003-c">aaaaa:aa:aaaa:a<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:198:11</span></span></span>
-<span class="arbitrary-prompt"><span class="t-3003-c">true<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:199:9</span></span></span><span class="arbitrary-response"></span>
-<span class="arbitrary-prompt"></span><span class="arbitrary-response"><span class="t-3003-c">aaa:aa:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:200:11</span></span></span>
-<span class="arbitrary-prompt"><span class="t-3003-c">false<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:201:9</span></span></span><span class="arbitrary-response"></span>
+<span class="terminal-prompt">user@home:~$</span><span class="terminal-prompt-content"> java TestRegex</span>
+<span class="arbitrary-prompt">Please enter a regular expression: </span><span class="arbitrary-response">(a+)(:a+)*</span>
+<span class="arbitrary-prompt">Enter words to be matched, one per line</span><span class="arbitrary-response"></span>
+<span class="arbitrary-prompt"></span><span class="arbitrary-response">aaaaa:aa:aaaa:a</span>
+<span class="arbitrary-prompt">true</span><span class="arbitrary-response"></span>
+<span class="arbitrary-prompt"></span><span class="arbitrary-response">aaa:aa:</span>
+<span class="arbitrary-prompt">false</span><span class="arbitrary-response"></span>
 </pre>
       <p>
-        <span class="t-3003-c">Schreiben Sie nun einen regulären Ausdruck
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:204:9</span></span><span class="t-3003-c">$R$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:204:52</span></span><span class="t-3003-c">
-          für<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:204:55</span></span>
-        <span class="t-3003-c">die obige Sprache und testen Sie ihn mit dem<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:205:9</span></span>
-        <span class="t-3003-c">Java-Programm.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:206:9</span></span>
+        Schreiben Sie nun einen regulären Ausdruck $R$ für die
+        obige Sprache und testen Sie ihn mit dem Java-Programm.
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.5.2<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:208:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:208:5</span></span>
-        <span class="t-3003-c">In der Praxis gibt es bei reguläre Ausdrücken viele<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:209:9</span></span>
-        <span class="t-3003-c">Abkürzung, so beschreibt
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:210:9</span></span><code><span class="t-3003-c">[a-z]<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:210:35</span></span></code><span class="t-3003-c">
-          beispielsweise die<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:210:41</span></span>
-        <span class="t-3003-c">Menge aller Kleinbuchstaben,
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:211:9</span></span><code><span class="t-3003-c">[aoeiuy]<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:211:39</span></span></code><span class="t-3003-c">
-          beschreibt die<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:211:48</span></span>
-        <span class="t-3003-c">Menge \{a,o,e,i,u,y\} etc. Der reguläre Ausdruck<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:212:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:213:9</span></span><code><span class="t-3003-c">[a-z]*[aeiuoy][a-z]*<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:213:10</span></span></code><span class="t-3003-c">
-          beschreibt also die Menge aller<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:213:31</span></span>
-        <span class="t-3003-c">Wörter, die mindesten einen Vokal enthalten. Lesen Sie<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:214:9</span></span>
-        <span class="t-3003-c">hierfür unter Anderem<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:215:9</span></span>
+        <b>Übungsaufgabe 5.5.2</b>
+        In der Praxis gibt es bei reguläre Ausdrücken viele
+        Abkürzung, so beschreibt
+        <code>[a-z]</code>
+        beispielsweise die Menge
+        aller Kleinbuchstaben,
+        <code>[aoeiuy]</code>
+        beschreibt die Menge
+        \{a,o,e,i,u,y\} etc. Der reguläre Ausdruck
+        <code>[a-z]*[aeiuoy][a-z]*</code>
+        beschreibt also die Menge aller
+        Wörter, die mindesten einen Vokal enthalten. Lesen Sie
+        hierfür unter Anderem
       </p>
       <div class="display">
         <p>
-          <a href="https://www.w3schools.com/java/java_regex.asp"><span class="t-3003-c">W3School<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:219:14</span></span></a>
+          <a href="https://www.w3schools.com/java/java_regex.asp">W3School</a>
         </p>
       </div>
       <p>
-        <span class="t-3003-c">und<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:221:9</span></span>
+        und
       </p>
       <div class="display">
         <p>
-          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html"><span class="t-3003-c">Patternl.html auf der<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:225:14</span></span>
-            <span class="t-3003-c">Java-API<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:226:13</span></span></a><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:226:94</span></span>
+          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html">Patternl.html auf der
+            Java-API</a>,
         </p>
       </div>
       <p>
-        <span class="t-3003-c">lassen sich aber bitte nicht von der Menge an Details<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:228:9</span></span>
-        <span class="t-3003-c">erschlagen. Schreiben Sie nun in der Java-Regex-Syntax<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:229:9</span></span>
-        <span class="t-3003-c">einen regulären Ausdruck für unsere obige Sprache
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:230:9</span></span><span class="nowrap"><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:230:59</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:230:62</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:230:62</span></span>
-        <span class="t-3003-c">wo Sie aber neben
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:231:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:231:27</span></span><span class="t-3003-c">
-          alle alphanumerischen Zeichen<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:231:30</span></span>
-        <span class="t-3003-c">zulassen.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:232:9</span></span>
+        lassen sich aber bitte nicht von der Menge an Details
+        erschlagen. Schreiben Sie nun in der Java-Regex-Syntax
+        einen regulären Ausdruck für unsere obige Sprache
+        <span class="nowrap">$L$,</span>
+        wo
+        Sie aber neben $a$ alle alphanumerischen Zeichen zulassen.
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Einen regulären Ausdruck für jede reguläre Sprache<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:235:9</span></span>
+      Einen regulären Ausdruck für jede reguläre Sprache
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Wir beweisen nun das Gegenstück zu
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:237:5</span></span><a
+      Wir beweisen nun das Gegenstück zu
+      <a
         href="./5-5.html#_26_hgi_"
         class=""
-      >Lemma 5.5.2</a><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:238:5</span></span>
+      >Lemma 5.5.2</a>:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 5.5.4<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:240:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:240:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:241:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:241:13</span></span><span class="t-3003-c">
-          eine reguläre Sprache. Dann gibt es einen<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:241:16</span></span>
-        <span class="t-3003-c">regulären Ausdruck
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:242:9</span></span><span class="nowrap"><span class="t-3003-c">$R$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:242:28</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:242:31</span></span></span><span class="t-3003-c">
-          der
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:242:31</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:242:37</span></span><span class="t-3003-c">
-          beschreibt, also<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:242:40</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:243:9</span></span><span class="nowrap"><span class="t-3003-c">$L(R) = R$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:243:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:243:19</span></span></span>
+        <b>Theorem 5.5.4</b>
+        Sei $L$ eine reguläre Sprache. Dann gibt es einen
+        regulären Ausdruck
+        <span class="nowrap">$R$,</span>
+        der $L$ beschreibt, also
+        <span class="nowrap">$L(R) = R$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir paraphrasieren hier den Beweis aus Michael<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:245:5</span></span>
-      <span class="t-3003-c">Sipsers
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:246:5</span></span><span class="nowrap"><i><span class="t-3003-c">Introduction to the Theory of Computation<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:246:14</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:246:56</span></span></span>
+      Wir paraphrasieren hier den Beweis aus Michael Sipsers
+      <span class="nowrap"><i>Introduction to the Theory of Computation</i>.</span>
     </p>
     <div class="well highlight out">
       <p>
         <b>Beweis.</b>
-        
-        <span class="t-3003-c">Zunächst skizzieren wir die Beweisidee. Da
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:249:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:249:52</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:249:55</span></span>
-        <span class="t-3003-c">regulär ist, gibt es einen nichtdeterministischen<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:250:9</span></span>
-        <span class="t-3003-c">endlichen Automaten
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:251:9</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:251:29</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:251:32</span></span></span><span class="t-3003-c">
-          die
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:251:32</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:251:38</span></span><span class="t-3003-c">
-          akzeptiert. Wir<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:251:41</span></span>
-        <span class="t-3003-c">werden nun
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:252:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:252:20</span></span><span class="t-3003-c">
-          Schritt für Schritt in einen regulären<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:252:23</span></span>
-        <span class="t-3003-c">Ausdruck verwandeln. Kern der Idee ist, dass wir neben<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:253:9</span></span>
-        <span class="t-3003-c">den üblichen Übergängen<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:254:9</span></span>
+        Zunächst skizzieren wir die Beweisidee. Da $L$ regulär
+        ist, gibt es einen nichtdeterministischen endlichen
+        Automaten
+        <span class="nowrap">$M$,</span>
+        die $L$ akzeptiert. Wir werden nun $M$
+        Schritt für Schritt in einen regulären Ausdruck verwandeln.
+        Kern der Idee ist, dass wir neben den üblichen Übergängen
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         q_1 \step{x} q_2
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:256:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">komplexere Übergänge wie zum Beispiel<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:260:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:261:9</span></span><span class="t-3003-c">$q_1 \step{xy} q_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:261:9</span></span><span class="t-3003-c">
-          zulassen. Die Bedeutung wäre hier<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:261:28</span></span>
-        <span class="t-3003-c">beispielsweise, dass der Automat von
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:262:9</span></span><span class="t-3003-c">$q_1$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:262:46</span></span><span class="t-3003-c">
-          nach
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:262:51</span></span><span class="t-3003-c">$q_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:262:57</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:262:62</span></span>
-        <span class="t-3003-c">übergehen kann, wenn er die Eingabesymbole
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:263:9</span></span><span class="t-3003-c">$xy$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:263:52</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:263:56</span></span>
-        <span class="t-3003-c">liest. Wir lassen auch komplexere Übergänge wie<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:264:9</span></span>
+        komplexere Übergänge wie zum Beispiel $q_1 \step{xy} q_2$
+        zulassen. Die Bedeutung wäre hier beispielsweise, dass der
+        Automat von $q_1$ nach $q_2$ übergehen kann, wenn er die
+        Eingabesymbole $xy$ liest. Wir lassen auch komplexere
+        Übergänge wie
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         q_1 \step{x|yz^*} q_2
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:266:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">zu, also "von
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:270:9</span></span><span class="t-3003-c">$q_1$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:270:23</span></span><span class="t-3003-c">
-          kann der Automat nach
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:270:28</span></span><span class="t-3003-c">$q_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:270:51</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:270:56</span></span>
-        <span class="t-3003-c">gehen, wenn er ein
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:271:9</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:271:28</span></span><span class="t-3003-c">
-          liest oder ein
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:271:31</span></span><span class="nowrap"><span class="t-3003-c">$y$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:271:47</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:271:50</span></span></span><span class="t-3003-c">
-          gefolgt<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:271:50</span></span>
-        <span class="t-3003-c">von beliebig vielen
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:272:9</span></span><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:272:29</span></span><span class="t-3003-c">
-          "; ganz allgemein lassen wir<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:272:32</span></span>
-        <span class="t-3003-c">Übergänge der Form<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:273:9</span></span>
+        zu, also "von $q_1$ kann der Automat nach $q_2$ gehen,
+        wenn er ein $x$ liest oder ein
+        <span class="nowrap">$y$,</span>
+        gefolgt von beliebig
+        vielen $z$ "; ganz allgemein lassen wir Übergänge der Form
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         q_1 \step{R} q_2 \ ,
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:275:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">wobei
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:279:9</span></span><span class="t-3003-c">$R$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:279:15</span></span><span class="t-3003-c">
-          ein regulärer Ausdruck ist. Insbesondere<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:279:18</span></span>
-        <span class="t-3003-c">lassen wir Übergänge der Form<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:280:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:281:9</span></span><span class="t-3003-c">$q_1 \step{\epsilon} q_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:281:9</span></span><span class="t-3003-c">
-          zu. Dies bedeutet, dass der<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:281:34</span></span>
-        <span class="t-3003-c">Automat von
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:282:9</span></span><span class="t-3003-c">$q_1$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:282:21</span></span><span class="t-3003-c">
-          nach
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:282:26</span></span><span class="t-3003-c">$q_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:282:32</span></span><span class="t-3003-c">
-          "springen" kann, ohne<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:282:37</span></span>
-        <span class="t-3003-c">ein Eingabesymbol zu lesen. Des weiteren verlangen<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:283:9</span></span>
-        <span class="t-3003-c">wir, dass es genau einen akzeptierenden Endzustand<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:284:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:285:9</span></span><span class="t-3003-c">$q_{\rm end}$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:285:9</span></span><span class="t-3003-c">
-          mit
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:285:22</span></span><span class="nowrap"><span class="t-3003-c">$\qstart \ne q_{\rm end}$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:285:27</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:285:52</span></span></span><span class="t-3003-c">
-          und dass<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:285:52</span></span>
-        <span class="t-3003-c">es keine Kanten gibt, die in
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:286:9</span></span><span class="t-3003-c">$\qstart$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:286:38</span></span><span class="t-3003-c">
-          hineingehen,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:286:47</span></span>
-        <span class="t-3003-c">und keine, die aus
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:287:9</span></span><span class="t-3003-c">$q_{\rm end}$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:287:28</span></span><span class="t-3003-c">
-          hinausgehen. All<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:287:41</span></span>
-        <span class="t-3003-c">dies lässt sich leicht verwirklichen, wenn wir<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:288:9</span></span>
-        <span class="t-3003-c">reguläre Ausdrücke als Kantenbeschriftung zulassen.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:289:9</span></span>
-        <span class="t-3003-c">Wir nennen so einen Automaten einen
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:290:9</span></span><span class="nowrap"><i><span class="t-3003-c">verallgemeinerten<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:290:46</span></span>
-            <span class="t-3003-c">nichtdeterministischen endlichen Automaten (VNEA)<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:291:9</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:291:59</span></span></span>
+        wobei $R$ ein regulärer Ausdruck ist. Insbesondere lassen
+        wir Übergänge der Form $q_1 \step{\epsilon} q_2$ zu. Dies
+        bedeutet, dass der Automat von $q_1$ nach $q_2$ "springen"
+        kann, ohne ein Eingabesymbol zu lesen. Des weiteren
+        verlangen wir, dass es genau einen akzeptierenden
+        Endzustand $q_{\rm end}$ mit
+        <span class="nowrap">$\qstart \ne q_{\rm end}$,</span>
+        und dass es keine Kanten gibt, die in $\qstart$
+        hineingehen, und keine, die aus $q_{\rm end}$ hinausgehen.
+        All dies lässt sich leicht verwirklichen, wenn wir reguläre
+        Ausdrücke als Kantenbeschriftung zulassen. Wir nennen so
+        einen Automaten einen
+        <span class="nowrap"><i>verallgemeinerten
+            nichtdeterministischen endlichen Automaten (VNEA)</i>.</span>
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:14em"
             src="img/finite-state-automata/to-regex/nea-to-vnea.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/to-regex/nea-to-vnea.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Definieren wir nun formal, was VNEAs sind und welche<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:298:9</span></span>
-        <span class="t-3003-c">Sprache sie akzeptieren:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:299:9</span></span>
+        Definieren wir nun formal, was VNEAs sind und welche
+        Sprache sie akzeptieren:
       </p>
       <div class="well statement">
         <p>
-          <b><span class="t-3003-c">Definition 5.5.5 (Verallgemeinerter nichtdeterministischer endlicher<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:301:9</span></span>
-            <span class="t-3003-c">Automat, VNEA).<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:303:13</span></span></b><span class="t-3003-c">
-            Ein VNEA besteht aus einem Alphabet<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:303:29</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:304:13</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:304:13</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:304:21</span></span></span><span class="t-3003-c">
-            einer Zustandsmenge
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:304:21</span></span><span class="nowrap"><span class="t-3003-c">$Q$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:304:43</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:304:46</span></span></span><span class="t-3003-c">
-            einen Startzustand<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:304:46</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:305:13</span></span><span class="nowrap"><span class="t-3003-c">$\qstart \in Q$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:305:13</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:305:28</span></span></span><span class="t-3003-c">
-            einem akzeptierenden Zustand<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:305:28</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:306:13</span></span><span class="nowrap"><span class="t-3003-c">$q_{\rm end} \in Q \setminus \{\qstart\}$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:306:13</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:306:54</span></span></span><span class="t-3003-c">
-            einer<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:306:54</span></span>
-          <span class="t-3003-c">Menge von gerichteten Kanten<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:307:13</span></span>
+          <b>Definition 5.5.5 (Verallgemeinerter nichtdeterministischer endlicher
+            Automat, VNEA).</b>
+          Ein VNEA besteht aus einem Alphabet
+          <span class="nowrap">$\Sigma$,</span>
+          einer Zustandsmenge
+          <span class="nowrap">$Q$,</span>
+          einen Startzustand
+          <span class="nowrap">$\qstart \in Q$,</span>
+          einem akzeptierenden Zustand
+          <span class="nowrap">$q_{\rm end} \in Q \setminus \{\qstart\}$,</span>
+          einer Menge von
+          gerichteten Kanten
         </p>
         <div class="math-block">
           $$
           \begin{align*}
           E \subseteq (Q \setminus \{\qstart\}) \times (Q \setminus \{q_{\rm end}\}) \ .
           \end{align*}
-          $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:309:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">Jede Kante
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:313:13</span></span><span class="t-3003-c">$(q_i, q_j) \in E$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:313:24</span></span><span class="t-3003-c">
-            ist mit einem regulären<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:313:42</span></span>
-          <span class="t-3003-c">Ausdruck
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:314:13</span></span><span class="t-3003-c">$\delta(q_i, q_j)$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:314:22</span></span><span class="t-3003-c">
-            beschriftet. Wenn<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:314:40</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:315:13</span></span><span class="t-3003-c">$R = \delta(q_i, q_j)$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:315:13</span></span><span class="t-3003-c">
-            gilt, dann schreiben wir<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:315:35</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:316:13</span></span><span class="nowrap"><span class="t-3003-c">$q_i \step{R} q_j$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:316:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:316:31</span></span></span><span class="t-3003-c">
-            Wenn
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:316:31</span></span><span class="t-3003-c">$\beta \in L(R)$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:316:38</span></span><span class="t-3003-c">
-            gilt,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:316:54</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:317:13</span></span><span class="t-3003-c">$\beta$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:317:13</span></span><span class="t-3003-c">
-            also ein Wort in der von
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:317:20</span></span><span class="t-3003-c">$R$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:317:46</span></span><span class="t-3003-c">
-            beschriebenen<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:317:49</span></span>
-          <span class="t-3003-c">Sprache ist, dann schreiben wir auch<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:318:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:319:13</span></span><span class="nowrap"><span class="t-3003-c">$q_i \step{\beta \in R} q_j$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:319:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:319:41</span></span></span><span class="t-3003-c">
-            Für
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:319:41</span></span><span class="t-3003-c">$q, q' \in Q$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:319:47</span></span><span class="t-3003-c">
-            und<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:319:60</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:320:13</span></span><span class="t-3003-c">$\alpha \in \Sigma^*$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:320:13</span></span><span class="t-3003-c">
-            schreiben wir<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:320:34</span></span>
+          Jede Kante $(q_i, q_j) \in E$ ist mit einem regulären
+          Ausdruck $\delta(q_i, q_j)$ beschriftet. Wenn
+          $R = \delta(q_i, q_j)$ gilt, dann schreiben wir
+          <span class="nowrap">$q_i \step{R} q_j$.</span>
+          Wenn $\beta \in L(R)$ gilt, $\beta$
+          also ein Wort in der von $R$ beschriebenen Sprache ist,
+          dann schreiben wir auch
+          <span class="nowrap">$q_i \step{\beta \in R} q_j$.</span>
+          Für
+          $q, q' \in Q$ und $\alpha \in \Sigma^*$ schreiben wir
         </p>
         <div class="math-block">
           $$
           \begin{align*}
           q \Step{\alpha} q'
           \end{align*}
-          $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:322:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">wenn man
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:326:13</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:326:22</span></span><span class="t-3003-c">
-            zerlegen kann als<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:326:30</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:327:13</span></span><span class="t-3003-c">$\alpha = \beta_1 \beta_2 \dots \beta_k$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:327:13</span></span><span class="t-3003-c">
-            gibt (wobei<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:327:53</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:328:13</span></span><span class="t-3003-c">$\beta_i = \epsilon$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:328:13</span></span><span class="t-3003-c">
-            zulässig ist) und es eine<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:328:33</span></span>
-          <span class="t-3003-c">Zustandsfolge
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:329:13</span></span><span class="t-3003-c">$q = q_0, q_1, \dots, q_k = q'$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:329:27</span></span><span class="t-3003-c">
-            gibt,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:329:58</span></span>
-          <span class="t-3003-c">wobei
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:330:13</span></span><span class="t-3003-c">$(q_{i-1}, q_i)\in E$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:330:19</span></span><span class="t-3003-c">
-            ist und mit einem<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:330:40</span></span>
-          <span class="t-3003-c">regulären Ausdruck
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:331:13</span></span><span class="t-3003-c">$R_i$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:331:32</span></span><span class="t-3003-c">
-            beschriftet ist und jedes<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:331:37</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:332:13</span></span><span class="t-3003-c">$\beta_i$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:332:13</span></span><span class="t-3003-c">
-            in der von
-            <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:332:22</span></span><span class="t-3003-c">$R_i$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:332:34</span></span><span class="t-3003-c">
-            beschriebenen Sprache ist.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:332:39</span></span>
-          <span class="t-3003-c">Wenn also<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:333:13</span></span>
+          wenn man $\alpha$ zerlegen kann als
+          $\alpha = \beta_1 \beta_2 \dots \beta_k$ gibt (wobei
+          $\beta_i = \epsilon$ zulässig ist) und es eine
+          Zustandsfolge $q = q_0, q_1, \dots, q_k = q'$ gibt, wobei
+          $(q_{i-1}, q_i)\in E$ ist und mit einem regulären Ausdruck
+          $R_i$ beschriftet ist und jedes $\beta_i$ in der von $R_i$
+          beschriebenen Sprache ist. Wenn also
         </p>
         <div class="math-block">
           $$
@@ -784,183 +567,126 @@
           q_0 \step{\beta_1 \in R_1} q_1 \step{\beta_2 \in R_2} q_2 \dots q_{k-1} \step{\beta_k
           \in R_k} p_k
           \end{align*}
-          $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:335:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">gilt.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:340:13</span></span>
+          gilt.
         </p>
       </div>
       <p>
-        <span class="t-3003-c">Einen gegebenen NEA können wir leicht in einen VNEA<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:342:9</span></span>
-        <span class="t-3003-c">transformieren, indem wir, soweit nötig, (1) einen<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:343:9</span></span>
-        <span class="t-3003-c">neuen Startzustand kreieren (damit dieser keine<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:344:9</span></span>
-        <span class="t-3003-c">eingehenden Kanten hat), (2) einen neuen Endzustand<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:345:9</span></span>
-        <span class="t-3003-c">kreieren, (3) "parallele" Übergänge wie<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:346:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:347:9</span></span><span class="t-3003-c">$(q_i, x, q_j), (q_i, y, q_j)$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:347:9</span></span><span class="t-3003-c">
-          zu einer Kante<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:347:39</span></span>
-        <span class="t-3003-c">zusammenfassen, der dann mit dem regulären Ausdruck<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:348:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:349:9</span></span><span class="t-3003-c">$x | y$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:349:9</span></span><span class="t-3003-c">
-          beschriftet ist. Wir haben den ganzen Aufwand<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:349:16</span></span>
-        <span class="t-3003-c">betrieben, weil wir für einen VNEA sehr leicht<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:350:9</span></span>
-        <span class="t-3003-c">Zustände eliminieren können. Wenn wir zum Beispiel<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:351:9</span></span>
+        Einen gegebenen NEA können wir leicht in einen VNEA
+        transformieren, indem wir, soweit nötig, (1) einen neuen
+        Startzustand kreieren (damit dieser keine eingehenden
+        Kanten hat), (2) einen neuen Endzustand kreieren, (3)
+        "parallele" Übergänge wie $(q_i, x, q_j), (q_i, y, q_j)$
+        zu einer Kante zusammenfassen, der dann mit dem regulären
+        Ausdruck $x | y$ beschriftet ist. Wir haben den ganzen
+        Aufwand betrieben, weil wir für einen VNEA sehr leicht
+        Zustände eliminieren können. Wenn wir zum Beispiel
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         q_0 \step{R_1} q_1 \step{R_2} q_2
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:353:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">haben, dann können wir ja ein Wort in
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:357:9</span></span><span class="t-3003-c">$R_1 R_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:357:47</span></span><span class="t-3003-c">
-          lesen<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:357:56</span></span>
-        <span class="t-3003-c">und direkt von
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:358:9</span></span><span class="t-3003-c">$q_0$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:358:24</span></span><span class="t-3003-c">
-          nach
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:358:29</span></span><span class="t-3003-c">$q_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:358:35</span></span><span class="t-3003-c">
-          übergehen; wir<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:358:40</span></span>
-        <span class="t-3003-c">brauchen also
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:359:9</span></span><span class="t-3003-c">$q_1$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:359:23</span></span><span class="t-3003-c">
-          gar nicht. Wir müssen nur<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:359:28</span></span>
-        <span class="t-3003-c">aufpassen, das neue
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:360:9</span></span><span class="t-3003-c">$R_1 R_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:360:29</span></span><span class="t-3003-c">
-          mit einem eventuell<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:360:38</span></span>
-        <span class="t-3003-c">bereits bestehenden Übergang von
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:361:9</span></span><span class="t-3003-c">$q_0$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:361:42</span></span><span class="t-3003-c">
-          nach
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:361:47</span></span><span class="t-3003-c">$q_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:361:53</span></span><span class="t-3003-c">
-          zu<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:361:58</span></span>
-        <span class="t-3003-c">kombinieren. Im allgemeinen:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:362:9</span></span>
+        haben, dann können wir ja ein Wort in $R_1 R_2$ lesen und
+        direkt von $q_0$ nach $q_2$ übergehen; wir brauchen also
+        $q_1$ gar nicht. Wir müssen nur aufpassen, das neue
+        $R_1 R_2$ mit einem eventuell bereits bestehenden Übergang
+        von $q_0$ nach $q_2$ zu kombinieren. Im allgemeinen:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/finite-state-automata/to-regex/eliminate-B.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/to-regex/eliminate-B.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Falls die mit
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:369:9</span></span><span class="t-3003-c">$R_2$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:369:23</span></span><span class="t-3003-c">
-          beschriftete Selbstschleife an<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:369:28</span></span>
-        <span class="t-3003-c">Zustand
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:370:9</span></span><span class="t-3003-c">$B$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:370:17</span></span><span class="t-3003-c">
-          nicht existieren sollte, dann schreiben<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:370:20</span></span>
-        <span class="t-3003-c">wir einfach
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:371:9</span></span><span class="t-3003-c">$R_1R_3$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:371:21</span></span><span class="t-3003-c">
-          anstatt
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:371:29</span></span><span class="nowrap"><span class="t-3003-c">$R_1 R_2^* R_3$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:371:38</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:371:53</span></span></span><span class="t-3003-c">
-          falls<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:371:53</span></span>
-        <span class="t-3003-c">der Übergang
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:372:9</span></span><span class="t-3003-c">$A \step{R_4} B$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:372:22</span></span><span class="t-3003-c">
-          nicht existieren sollte<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:372:38</span></span>
-        <span class="t-3003-c">, lassen wir das
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:373:9</span></span><span class="t-3003-c">$R_4 |$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:373:26</span></span><span class="t-3003-c">
-          im rechten Bild einfach weg.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:373:33</span></span>
-        <span class="t-3003-c">(Sipser führt hier den eleganten Formalismus ein, zu<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:374:9</span></span>
-        <span class="t-3003-c">verlangen, dass
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:375:9</span></span><i><span class="t-3003-c">jedes<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:375:26</span></span></i><span class="t-3003-c">
-          Paar durch eine Kante<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:375:32</span></span>
-        <span class="t-3003-c">verbunden ist und würde fehlende Kanten einfach mit<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:376:9</span></span>
-        <span class="t-3003-c">dem regulären Ausdruck
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:377:9</span></span><span class="t-3003-c">$\emptyset$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:377:32</span></span><span class="t-3003-c">
-          beschriften.) Wir<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:377:43</span></span>
-        <span class="t-3003-c">suchen uns also einen Zustand<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:378:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:379:9</span></span><span class="nowrap"><span class="t-3003-c">$B \in Q \setminus \{\qstart, \qend\}$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:379:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:379:47</span></span></span><span class="t-3003-c">
-          den wir<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:379:47</span></span>
-        <span class="t-3003-c">eliminieren wollen, und führen die oben beschriebene<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:380:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:381:9</span></span><span class="nowrap"><span class="t-3003-c">$B$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:381:9</span></span><span class="t-3003-c">-Umfahrung<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:381:12</span></span></span><span class="t-3003-c">
-          parallel für alle Paare
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:381:12</span></span><span class="t-3003-c">$A,C$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:381:47</span></span><span class="t-3003-c">
-          aus, für<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:381:52</span></span>
-        <span class="t-3003-c">die es
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:382:9</span></span><span class="t-3003-c">$A \step{} B \step{} C$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:382:16</span></span><span class="t-3003-c">
-          gibt. Wir erhalten<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:382:39</span></span>
-        <span class="t-3003-c">einen VNEA mit einem Zustand weniger, der zu dem<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:383:9</span></span>
-        <span class="t-3003-c">vorherigen VNEA äquivalent ist, also die gleiche<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:384:9</span></span>
-        <span class="t-3003-c">Sprache akzeptiert. Wiederholen wir diesen Schritt, so<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:385:9</span></span>
-        <span class="t-3003-c">erhalten wir am Ende einen Automat mit nur zwei<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:386:9</span></span>
-        <span class="t-3003-c">Zuständen, nämlich<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:387:9</span></span>
+        Falls die mit $R_2$ beschriftete Selbstschleife an Zustand
+        $B$ nicht existieren sollte, dann schreiben wir einfach
+        $R_1R_3$ anstatt
+        <span class="nowrap">$R_1 R_2^* R_3$;</span>
+        falls der Übergang
+        $A \step{R_4} B$ nicht existieren sollte , lassen wir das
+        $R_4 |$ im rechten Bild einfach weg. (Sipser führt hier
+        den eleganten Formalismus ein, zu verlangen, dass
+        <i>jedes</i>
+        Paar durch eine Kante verbunden ist und würde fehlende
+        Kanten einfach mit dem regulären Ausdruck $\emptyset$
+        beschriften.) Wir suchen uns also einen Zustand
+        <span class="nowrap">$B \in Q \setminus \{\qstart, \qend\}$,</span>
+        den wir
+        eliminieren wollen, und führen die oben beschriebene
+        <span class="nowrap">$B$-Umfahrung</span>
+        parallel für alle Paare $A,C$ aus, für die
+        es $A \step{} B \step{} C$ gibt. Wir erhalten einen VNEA
+        mit einem Zustand weniger, der zu dem vorherigen VNEA
+        äquivalent ist, also die gleiche Sprache akzeptiert.
+        Wiederholen wir diesen Schritt, so erhalten wir am Ende
+        einen Automat mit nur zwei Zuständen, nämlich
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:2.5em"
             src="img/finite-state-automata/to-regex/nvea-final.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/to-regex/nvea-final.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Dieser VNEA akzeptiert immer noch die gleiche Sprache<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:394:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:395:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:395:9</span></span><span class="t-3003-c">
-          wie der ursprüngliche NEA, mit dem wir begonnen<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:395:12</span></span>
-        <span class="t-3003-c">haben. Welche Sprache ist das? Es ist die Sprache<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:396:9</span></span>
-        <span class="t-3003-c">aller
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:397:9</span></span><span class="t-3003-c">$\alpha \in \Sigma$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:397:15</span></span><span class="t-3003-c">
-          mit<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:397:34</span></span>
+        Dieser VNEA akzeptiert immer noch die gleiche Sprache $L$
+        wie der ursprüngliche NEA, mit dem wir begonnen haben.
+        Welche Sprache ist das? Es ist die Sprache aller
+        $\alpha \in \Sigma$ mit
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \qstart \Step{\alpha} \qend
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:399:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Da der Pfad von
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:403:9</span></span><span class="t-3003-c">$\qstart$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:403:25</span></span><span class="t-3003-c">
-          nach
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:403:34</span></span><span class="t-3003-c">$\qend$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:403:40</span></span><span class="t-3003-c">
-          nur eine Kante<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:403:47</span></span>
-        <span class="t-3003-c">hat, muss
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:404:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:404:19</span></span><span class="t-3003-c">
-          in der von
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:404:27</span></span><span class="t-3003-c">$R$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:404:39</span></span><span class="t-3003-c">
-          beschriebenen<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:404:42</span></span>
-        <span class="t-3003-c">Sprache liegen.
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:405:9</span></span><span class="t-3003-c">$R$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:405:25</span></span><span class="t-3003-c">
-          ist der gesuchte reguläre<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:405:28</span></span>
-        <span class="t-3003-c">Ausdruck: er beschreibt die Sprache
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:406:9</span></span><span class="nowrap"><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:406:45</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:406:48</span></span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Da der Pfad von $\qstart$ nach $\qend$ nur eine Kante hat,
+        muss $\alpha$ in der von $R$ beschriebenen Sprache liegen.
+        $R$ ist der gesuchte reguläre Ausdruck: er beschreibt die
+        Sprache
+        <span class="nowrap">$L$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Hier sehen Sie den ganzen Ablauf an uNserer<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:408:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:409:5</span></span><span class="nowrap"><code><span class="t-3003-c">aaaa:a:aaa.aa-aa<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:409:6</span></span></code><span class="t-3003-c">-Sprache:<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:409:23</span></span></span>
+      Hier sehen Sie den ganzen Ablauf an uNserer
+      <span class="nowrap"><code>aaaa:a:aaa.aa-aa</code>-Sprache:</span>
     </p>
     <div class="pseudowell">
       <figure style="overflow-x:auto;scroll-padding:0;">
         <img
           style="height:20em"
           src="img/finite-state-automata/to-regex/nfsm-to-regex-carpet.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/to-regex/nfsm-to-regex-carpet.svg</span></span>
+        >
       </figure>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.5.3<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:417:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/05-regular-expressions.wly:417:5</span></span>
-        <span class="t-3003-c">Wandeln Sie nach dem eben beschriebenen Schema den<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:418:9</span></span>
-        <span class="t-3003-c">Automaten<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:419:9</span></span>
+        <b>Übungsaufgabe 5.5.3</b>
+        Wandeln Sie nach dem eben beschriebenen Schema den
+        Automaten
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/finite-state-automata/nfsm-example-02.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/nfsm-example-02.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">in einen regulären Ausdruck um.<span class="t-3003">./course1/wly/05/05-regular-expressions.wly:426:9</span></span>
+        in einen regulären Ausdruck um.
       </p>
     </div>
     <div id="end-of-page-elt">

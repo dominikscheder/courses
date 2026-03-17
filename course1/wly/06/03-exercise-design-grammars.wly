@@ -23,19 +23,19 @@
             Dem Eingabefenster für das Eingabewort.
 
         |> li
-            Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist
-            der Versuch, das Eingabewort aus den Grammatikregeln
-            per Linksableitung abzuleiten. Die Pfade, die in
-            Sackgassen enden, sind rot markiert.
+            Der Backtrack-Baum. Jeder Pfad im Backtrack-Baum ist der
+            Versuch, das Eingabewort aus den Grammatikregeln per
+            Linksableitung abzuleiten. Die Pfade, die in Sackgassen
+            enden, sind rot markiert.
 
         |> li
-            Der Ableitungsbaum. Für jeden Knoten $w$ im
-            Backtrack-Baum stellt der Pfad von Wurzel nach $w$
-            eine Linksableitung dar. Wenn Sie auf $w$ klicken,
-            sehen Sie den entsprechenden Ableitungsbaum. Per
-            Default wird die erste erfolgreiche Linksableitung in
-            einen Ableitungsbaum umgewandelt und angezeigt (wenn
-            es denn überhaupt eine erfolgreiche Ableitung gibt).
+            Der Ableitungsbaum. Für jeden Knoten $w$ im Backtrack-Baum
+            stellt der Pfad von Wurzel nach $w$ eine Linksableitung
+            dar. Wenn Sie auf $w$ klicken, sehen Sie den
+            entsprechenden Ableitungsbaum. Per Default wird die erste
+            erfolgreiche Linksableitung in einen Ableitungsbaum
+            umgewandelt und angezeigt (wenn es denn überhaupt eine
+            erfolgreiche Ableitung gibt).
 
     |> Exercise
         Geben Sie folgende Grammatik in die App ein:
@@ -46,36 +46,34 @@
         S ->; "(" S "]" S;
         ```
 
-        Was ist die erzeugte Sprache? Können Sie sie in
-        Worten beschreiben? Erzeugen Sie Wörter in dieser
-        Sprache, für die der Backtrack-Baum viele rote
-        Sackgassen enthält. Schreiben Sie eine äquivalente
-        Grammatik (d.h., die die gleiche Sprache erzeugt), für
-        die es keine oder nur sehr kurze Sackgassen gibt.
-        Testen Sie die beiden Grammatiken mit "großen"
-        Eingabewörtern und schauen Sie, ob Sie
+        Was ist die erzeugte Sprache? Können Sie sie in Worten
+        beschreiben? Erzeugen Sie Wörter in dieser Sprache, für die
+        der Backtrack-Baum viele rote Sackgassen enthält. Schreiben
+        Sie eine äquivalente Grammatik (d.h., die die gleiche
+        Sprache erzeugt), für die es keine oder nur sehr kurze
+        Sackgassen gibt. Testen Sie die beiden Grammatiken mit
+        "großen" Eingabewörtern und schauen Sie, ob Sie
         Laufzeitunterschiede bemerken. (Hier erweist sich mein
-        ineffizienter Code als Vorteil: eine schlechte
-        Grammatik wird sofort bestraft).
+        ineffizienter Code als Vorteil: eine schlechte Grammatik
+        wird sofort bestraft).
 
     |> Exercise
-        Schreiben Sie eine kontextfreie Grammatik für die
-        Sprache aller "korrekten" URLs; also Folgen von
-        mindestens zwei _Labels_, die durch `.` separiert
-        sind. Sie können den "Regelvorschlag" ganz links unten
-        in der App reinkopieren, um automatisch Regeln für
-        alphanumerische Zeichen zu bekommen (allerdings
-        verschlechtert das die Laufzeit; ich habe erstmal gar
-        nicht auf Effizienz geachtet). Geben Sie das
-        Eingabewort `a.aaaaa.aaaa.aaaa.aaaa.aaaa` ein. Wie
+        Schreiben Sie eine kontextfreie Grammatik für die Sprache
+        aller "korrekten" URLs; also Folgen von mindestens zwei
+        _Labels_, die durch `.` separiert sind. Sie können den
+        "Regelvorschlag" ganz links unten in der App reinkopieren,
+        um automatisch Regeln für alphanumerische Zeichen zu
+        bekommen (allerdings verschlechtert das die Laufzeit; ich
+        habe erstmal gar nicht auf Effizienz geachtet). Geben Sie
+        das Eingabewort `a.aaaaa.aaaa.aaaa.aaaa.aaaa` ein. Wie
         sieht Ihr Backtrack-Baum aus? Hat er viele Sackgassen?
-        Können Sie Ihre Grammatik so abändern, dass sie zwar
-        noch die gleiche Sprache erzeugt, aber keine / nur
-        wenige Sackgassen hat?
+        Können Sie Ihre Grammatik so abändern, dass sie zwar noch
+        die gleiche Sprache erzeugt, aber keine / nur wenige
+        Sackgassen hat?
 
     |> Exercise
-        Entwerfen Sie eine Grammatik für arithmetische
-        Ausdrücke im Racket-Stil, also
+        Entwerfen Sie eine Grammatik für arithmetische Ausdrücke
+        im Racket-Stil, also
 
         ```
         (* (+ 2 3) (- 4 (* 2 4) 5)
@@ -83,15 +81,15 @@
         ```
 
         Leidet Ihre Grammatik an langen Sackgassen? Wenn ja,
-        können Sie die Grammatik abändern? Haben Sie
-        mittlerweile ein Schema erkannt, welche Konstrukte
-        lange Sackgassen begünstigen?
+        können Sie die Grammatik abändern? Haben Sie mittlerweile
+        ein Schema erkannt, welche Konstrukte lange Sackgassen
+        begünstigen?
 
     |> Exercise
         Wiederholen Sie die vorherige Übung für arithmetische
-        Ausdrücke in der uns geläufigen Infix-Notation.
-        Hierbei sollten die Konventionen Punkt-vor-Strich
-        beachtet werden. Im Ableitungsbaum von
+        Ausdrücke in der uns geläufigen Infix-Notation. Hierbei
+        sollten die Konventionen Punkt-vor-Strich beachtet werden.
+        Im Ableitungsbaum von
 
         ```
         2+3*(5+4)
@@ -109,33 +107,31 @@
         ```
 
         Überlegen Sie, was diese "bedeutet". Sie sehen, die
-        Grammatik ist nicht eindeutig. Das Wort `[([()(` hat
-        zwei verschiedene Ableitungsbäume. Können Sie eine
-        äquivalente _eindeutige_ Grammatik schreiben?
+        Grammatik ist nicht eindeutig. Das Wort `[([()(` hat zwei
+        verschiedene Ableitungsbäume. Können Sie eine äquivalente
+        _eindeutige_ Grammatik schreiben?
 
     |> Exercise
-        *(Challenge)* Die folgende Grammatik hat User _babou_
-        auf
+        *(Challenge)* Die folgende Grammatik hat User _babou_ auf
         [StackExchange](https://cstheory.stackexchange.com/questions/22520/example-of-context-free-grammar-that-triggers-exponential-behaviour-without-memo)
-        vorgeschlagen als Beispiel für eine eindeutige
-        Grammatik, bei der Sie exponentiell große
-        Backtrack-Bäume bekommen können:
+        vorgeschlagen als Beispiel für eine eindeutige Grammatik,
+        bei der Sie exponentiell große Backtrack-Bäume bekommen
+        können:
 
         ```
         S ->;  "a" X "b" | "a" X "c";
         X ->; "a" | "a" X | "a" X X;
         ```
 
-        Das ist aber keine Kunst, da die Grammatik
-        uneindeutig ist. Können Sie eine _eindeutige_
-        Grammatik angebene, die ähnlich exponentielles
-        Verhalten zeigt? Exponentiell heißt: mit jedem
-        zusätlichen Zeichen des Eingabewortes kann die Größe
-        des Backtrack-Baumes um einen Faktor $R \gt 1$
+        Das ist aber keine Kunst, da die Grammatik uneindeutig
+        ist. Können Sie eine _eindeutige_ Grammatik angebene, die
+        ähnlich exponentielles Verhalten zeigt? Exponentiell heißt:
+        mit jedem zusätlichen Zeichen des Eingabewortes kann die
+        Größe des Backtrack-Baumes um einen Faktor $R \gt 1$
         wachsen.
 
     |> Exercise
-        *(Super-Challenge; ich hab selbst keine Lösung)*.
-        Finden Sie eine kontextfreie Sprache $L$, für die
-        _jede_ Grammatik, die $L$ erzeugt, unter exponentiell
-        großen Backtrack-Bäumen leidet.
+        *(Super-Challenge; ich hab selbst keine Lösung)*. Finden
+        Sie eine kontextfreie Sprache $L$, für die _jede_
+        Grammatik, die $L$ erzeugt, unter exponentiell großen
+        Backtrack-Bäumen leidet.

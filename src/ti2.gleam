@@ -13,7 +13,7 @@ import on
 
 const ins = string.inspect
 
-fn local_cli_usage() {
+fn local_usage_message() {
   let margin = "   "
   io.println(margin <> "--fmt [<cols>] [<cols> <penalty>] [-file <name>]")
   io.println(margin <> "  -> (local option) run the formatter")
@@ -31,8 +31,14 @@ fn local_cli_usage() {
   io.println(margin <> "  -> include source-linking tooltips")
   io.println(margin <> "     server !)")
   io.println("")
-  io.println("...and don't forget to include '--which <project name>' in")
+  io.println("...and don't forget to include '--which <course dir>' in")
   io.println("order to specify which course you want to compile/run!")
+  io.println("")
+  io.println("                             ***")
+  io.println("")
+  io.println("Local server usage: use 'COURSE=<course dir> npm run dev' to")
+  io.println("serve book on localhost:3003, or prefix 'PORT=xxxx' argument")
+  io.println("to serve on  specific port! Enjoy!")
   io.println("")
 }
 
@@ -50,13 +56,13 @@ pub fn main() {
   use _ <- on.stay(
     case args {
       ["--help"] | ["-help"] | ["-h"] -> {
-        ds.basic_cli_usage("\nCommand line options (basic):")
-        local_cli_usage()
+        ds.basic_cli_usage("\n'gleam run' command line options (basic):")
+        local_usage_message()
         on.Return(Nil)
       }
 
       ["--esoteric"] -> {
-        ds.advanced_cli_usage("Command line options (esoteric):")
+        ds.advanced_cli_usage("\n'gleam run' command line options (esoteric):")
         on.Return(Nil)
       }
 
@@ -68,9 +74,9 @@ pub fn main() {
     case ds.process_command_line_arguments(args, ["--fmt", "--local", "--which"]) {
       Error(error) -> {
         io.println("")
-        io.println("cli error: " <> ins(error))
-        ds.basic_cli_usage("\ncommand line options:")
-        local_cli_usage()
+        io.println("command line error: " <> ins(error))
+        ds.basic_cli_usage("\ncommand line usage:")
+        local_usage_message()
         on.Return(Nil)
       }
 

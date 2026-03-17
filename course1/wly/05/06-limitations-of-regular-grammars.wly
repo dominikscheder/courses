@@ -130,8 +130,8 @@
 
         |> div
             class=display
-            Wenn $M$ ein endlicher Automat ist, dann gilt $L(M) \ne L$
-            . Daher ist $L$ keine reguläre Sprache.
+            Wenn $M$ ein endlicher Automat ist, dann gilt $L(M) \ne L$.
+            Daher ist $L$ keine reguläre Sprache.
 
         Zusammenfassend lautet unser Argument: wenn der Automat
         die Präfixe $\alpha$ und $\alpha'$ nicht unterscheiden

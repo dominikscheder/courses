@@ -303,8 +303,7 @@
         der Grammatik $G'$.
 
         |> Proof
-            Wir verwenden Induktion über die Länge des Wortes $\alpha$
-            .
+            Wir verwenden Induktion über die Länge des Wortes $\alpha$.
 
             *Induktionsbasis.* Wenn $\alpha = \epsilon$ gilt, also
             $\alpha$ die Länge 0 hat, dann gilt

@@ -8,7 +8,7 @@ import infrastructure.{type Pipe} as infra
 import prefabricated_pipelines as pp
 import vxml
 
-const our_blame = bl.Des([], "main_pipeline", 9)
+const our_blame = bl.Des([], "pipeline", 9)
 
 const p_cannot_contain = [
   "Carousel",
@@ -80,7 +80,7 @@ const p_cannot_be_contained_in = [
 
 const post_counter_space = " "
 
-pub fn main_pipeline(parameters: ds.RendererParameters, author_mode: Bool) -> List(Pipe) {
+pub fn pipeline(parameters: ds.RendererParameters, author_mode: Bool) -> List(Pipe) {
   let escaped_dollar_to_span_rr_splitter =
     grs.rr_splitter_for_groups([
       #("\\\\", grs.Trash),

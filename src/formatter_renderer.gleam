@@ -126,7 +126,7 @@ fn extract_line_length_and_indentation_penalty(
   }
 }
 
-pub fn formatter_renderer(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
+pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
   let assert Ok(fmt_args) = dict.get(amendments.user_args, "--fmt")
 
   use #(files, fmt_args) <- on.error_ok(extract_files(fmt_args), fn(msg) {

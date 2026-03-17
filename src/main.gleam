@@ -7,7 +7,7 @@ import gleam/io
 import gleam/list
 import gleam/option
 import gleam/string
-import main_renderer
+import renderer
 import simplifile
 import on
 
@@ -121,13 +121,13 @@ pub fn main() {
     Ok(_) -> {
       io.println("")
       io.println("wly -> wly formatter")
-      formatter_renderer.formatter_renderer(amendments, course_dir)
+      formatter_renderer.render(amendments, course_dir)
     }
 
     Error(_) -> {
       io.println("")
       io.println("wly -> html renderer")
-      main_renderer.main_renderer(amendments, course_dir)
+      renderer.render(amendments, course_dir)
     }
   }
 }

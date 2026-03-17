@@ -361,9 +361,10 @@
         wobei wir der Lesbarkeit halber $\{A,B\}$ etc. schreiben.
         Um bei der Konstruktion des Potenzmengenautomaten unnötige
         Zustände zu vermeiden, bauen wir ihn Schritt für Schritt,
-        angefangen mit dem Startzustand $\{A\}$ bzw. $A$, und hängen
-        jedem Zustand einen ausgehenden $0$ -Pfeil und $1$-Pfeil
-        an, wobei wir womöglich neue Zustände "entdecken".
+        angefangen mit dem Startzustand $\{A\}$ bzw. $A$, und
+        hängen jedem Zustand einen ausgehenden $0$ -Pfeil und
+        $1$-Pfeil an, wobei wir womöglich neue Zustände
+        "entdecken".
 
         |> Carousel
             src=img/finite-state-automata/potenzmengenautomat/01.svg

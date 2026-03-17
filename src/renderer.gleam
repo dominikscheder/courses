@@ -9,7 +9,7 @@ import gleam/result
 import gleam/string.{inspect as ins}
 import infrastructure as infra
 import io_lines.{type OutputLine, OutputLine}
-import main_pipeline.{main_pipeline}
+import pipeline
 import simplifile
 import vxml.{type VXML}
 
@@ -426,7 +426,7 @@ fn expand_filename_shorthands_to_path_fragments(
   )
 }
 
-pub fn main_renderer(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
+pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
   let #(output_dir_local_path, amendments) = case amendments.output_dir {
     None -> #("public", amendments)
     Some(x) -> #(x, ds.CommandLineAmendments(..amendments, output_dir: None))
@@ -449,7 +449,7 @@ pub fn main_renderer(amendments: ds.CommandLineAmendments, course_dir: String) -
     ds.Renderer(
       assembler: ds.default_writerly_assembler(amendments.only_paths),
       parser: ds.default_writerly_parser(amendments.only_key_values),
-      pipeline: main_pipeline(parameters, author_mode),
+      pipeline: pipeline.pipeline(parameters, author_mode),
       splitter: our_splitter,
       emitter: our_emitter,
       writer: ds.default_writer,

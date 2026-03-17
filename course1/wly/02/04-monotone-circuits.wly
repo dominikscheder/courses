@@ -255,10 +255,10 @@
 
             *Induktionsbasis.* Wenn $n=0$ ist, dann gibt es nur zwei
             mögliche Boolesche Funktionen, nämlich die konstanten
-            Funktionen $0$ und $1$ . Für beide Funktionen gibt es
-            einen Schaltkreis, nämlich bestehend aus einem Input-Gate
-            (mit der Konstant 0 bzw. 1 beschriftet), das gleichzeitig
-            auch Output-Gate ist.
+            Funktionen $0$ und $1$. Für beide Funktionen gibt es einen
+            Schaltkreis, nämlich bestehend aus einem Input-Gate (mit
+            der Konstant 0 bzw. 1 beschriftet), das gleichzeitig auch
+            Output-Gate ist.
 
             |> div
                 class=well alert-warning
@@ -514,8 +514,7 @@
             f_0(x_2,\dots,x_n) .$
 
         |> Proof
-            Wir machen eine Fallunterscheidung nach dem Wert von $x_1$
-            .
+            Wir machen eine Fallunterscheidung nach dem Wert von $x_1$.
 
             |> ul
                 |> li

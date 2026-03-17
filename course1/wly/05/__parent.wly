@@ -239,8 +239,8 @@
     |> ul
         |> li
             Das Alphabet $\Sigma$ aller verwendeten Zeichen, in
-            unserem Fall also $\Sigma = \{a,\dots,z,A,\dots,Z,.,-,@\}$
-            . Wir nennen $\Sigma$ die Menge der _terminalen Symbole_.
+            unserem Fall also $\Sigma = \{a,\dots,z,A,\dots,Z,.,-,@\}$.
+            Wir nennen $\Sigma$ die Menge der _terminalen Symbole_.
 
         |> li
             Eine Menge $N$ abstrakter Symbole, hier
@@ -329,8 +329,8 @@
     landen wir im Millionenbereich. In den theoretischen
     Beispielen, die in diesem Kurs folgen werden, ist das
     Alphabet fast immer viel kleiner: typische Alphabete zum
-    Beispiel sind $\{0,1\}$ , $\{a,b,c,d\}$ oder auch $\{1\}$
-    , ein Alphabet mit nur einem Zeichen. Für ein Alphabet
+    Beispiel sind $\{0,1\}$ , $\{a,b,c,d\}$ oder auch $\{1\}$,
+    ein Alphabet mit nur einem Zeichen. Für ein Alphabet
     $\Sigma$ bezeichnen wir mit  $\Sigma^*$ die Menge aller
     endlichen Strings über diesem Alphabet; das schließt den
     _leeren String_ mit ein, den wir mit $\epsilon$

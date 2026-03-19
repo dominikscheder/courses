@@ -40,69 +40,54 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">1.1&ensp;Definitions<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:2:11</span></span>
+        1.1&ensp;Definitions
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 1.1.1 (Tseitin formulas).<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:3:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:4:30</span></span>
-        <span class="t-3003-c">Let
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:5:9</span></span><span class="t-3003-c">$G = (V,E)$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:5:13</span></span><span class="t-3003-c">
-          be an undirected graph and let
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:5:24</span></span><span class="nowrap"><span class="t-3003-c">$s : V \rightarrow \{0,1\}$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:5:56</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:5:83</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:5:83</span></span>
-        <span class="t-3003-c">called the
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:6:9</span></span><span class="nowrap"><i><span class="t-3003-c">parity requirements<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:6:21</span></span></i><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:6:41</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:6:41</span></span>
-        <span class="t-3003-c">The
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:7:9</span></span><i><span class="t-3003-c">Tseitin system for
-            <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:7:14</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:7:33</span></span><span class="t-3003-c">
-            and
-            <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:7:36</span></span><span class="t-3003-c">$s$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:7:41</span></span></i><span class="t-3003-c">
-          is a system of linear equations<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:7:45</span></span>
-        <span class="t-3003-c">over
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:8:9</span></span><span class="t-3003-c">$GF(2)$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:8:14</span></span><span class="t-3003-c">
-          with one variable
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:8:21</span></span><span class="t-3003-c">$x_e$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:8:40</span></span><span class="t-3003-c">
-          for each
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:8:45</span></span><span class="t-3003-c">$e \in E$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:8:55</span></span><span class="t-3003-c">
-          and a constraint<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:8:64</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:9:9</span></span><span class="t-3003-c">$c_u$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:9:9</span></span><span class="t-3003-c">
-          for each
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:9:14</span></span><span class="nowrap"><span class="t-3003-c">$u \in V$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:9:24</span></span><span class="t-3003-c">:<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:9:33</span></span></span>
+        <b>Definition 1.1.1 (Tseitin formulas).</b>
+        Let $G = (V,E)$ be an
+        undirected graph and let
+        <span class="nowrap">$s : V \rightarrow \{0,1\}$,</span>
+        called the
+        <span class="nowrap"><i>parity requirements</i>.</span>
+        The
+        <i>Tseitin system
+          for $G$ and $s$</i>
+        is a system of linear equations over
+        $GF(2)$ with one variable $x_e$ for each $e \in E$
+        and a constraint $c_u$ for each
+        <span class="nowrap">$u \in V$:</span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \sum_{e: u \in e} x_e \equiv s(u) \mod 2 \tag{$c_u$}\ .
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:10:9</span>
+        $$
       </div>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Example 1.1.2<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:13:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:13:5</span></span>
-        <span class="t-3003-c">Let us consider<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:14:9</span></span>
-        <span class="t-3003-c">the following system of four equations on five variables defined<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:15:9</span></span>
-        <span class="t-3003-c">by the following graph and parity requirement:<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:16:9</span></span>
+        <b>Example 1.1.2</b>
+        Let us consider the following system of four
+        equations on five variables defined by the following
+        graph and parity requirement:
       </p>
       <div class="figure__container">
         <figure>
           <img
             src="img/tseitin/tseitin-01-02.svg"
             style="height:10em"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course2/public/img/tseitin/tseitin.ipe</span><br><span class="t-3003-i-url">course2/public/img/tseitin/tseitin-01-02.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Vertices without a 1 next to them are considered to have<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:22:9</span></span>
-        <span class="t-3003-c">a parity requirement of
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:23:9</span></span><span class="nowrap"><span class="t-3003-c">$0$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:23:33</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:23:36</span></span></span><span class="t-3003-c">
-          Let's write the system<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:23:36</span></span>
-        <span class="t-3003-c">of equations:<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:24:9</span></span>
+        Vertices without a 1 next to them are considered to
+        have a parity requirement of
+        <span class="nowrap">$0$.</span>
+        Let's write the
+        system of equations:
       </p>
       <div class="math-block">
         $$
@@ -112,42 +97,36 @@
         f + g + i&amp;= 0 \tag{$c_v$}\\
         e + g + h&amp;= 0 \tag{$c_w$}
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:25:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">We write
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:31:9</span></span><span class="t-3003-c">$e + f$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:31:18</span></span><span class="t-3003-c">
-          instead of
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:31:25</span></span><span class="t-3003-c">$x_e + x_f$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:31:37</span></span><span class="t-3003-c">
-          to increase<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:31:48</span></span>
-        <span class="t-3003-c">readability. This system of equations has a solution,<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:32:9</span></span>
-        <span class="t-3003-c">for example<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:33:9</span></span>
+        We write $e + f$ instead of $x_e + x_f$ to increase
+        readability. This system of equations has a solution,
+        for example
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         (e,f,g,h,i) = (1,0,1,0,1) \ .
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:34:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Let's look at the same graph but with different<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:37:9</span></span>
-        <span class="t-3003-c">parity requirements:<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:38:9</span></span>
+        Let's look at the same graph but with different
+        parity requirements:
       </p>
       <div class="figure__container">
         <figure>
           <img
             src="img/tseitin/tseitin-01-01.svg"
             style="height:10em"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course2/public/img/tseitin/tseitin.ipe</span><br><span class="t-3003-i-url">course2/public/img/tseitin/tseitin-01-01.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">The system of equations is as the above,<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:44:9</span></span>
-        <span class="t-3003-c">just the right-hand side of
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:45:9</span></span><span class="t-3003-c">$c'_u$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:45:37</span></span><span class="t-3003-c">
-          is now
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:45:43</span></span><span class="nowrap"><span class="t-3003-c">$0$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:45:51</span></span><span class="t-3003-c">:<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:45:54</span></span></span>
+        The system of equations is as the above, just the
+        right-hand side of $c'_u$ is now
+        <span class="nowrap">$0$:</span>
       </p>
       <div class="math-block">
         $$
@@ -157,11 +136,11 @@
         f + g + i&amp;= 0 \tag{$c'_v$}\\
         e + g + h&amp;= 0 \tag{$c'_w$}
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:46:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">This system of equations is unsatisfiable. Adding<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:52:9</span></span>
-        <span class="t-3003-c">up all constraints gives us<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:53:9</span></span>
+        This system of equations is unsatisfiable. Adding up
+        all constraints gives us
       </p>
       <div class="math-block">
         $$
@@ -169,124 +148,95 @@
         h + i + e + f + f + g + i + e + g + h = 1
         \label{eqn-sum-all-constraints}
         \end{align}
-        $$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:54:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Every variable occurs twice on the left-hand side;<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:58:9</span></span>
-        <span class="t-3003-c">this is clear since for each edge
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:59:9</span></span><span class="nowrap"><span class="t-3003-c">$e = \{u,v\}$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:59:43</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:59:56</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:59:56</span></span>
-        <span class="t-3003-c">the variable
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:60:9</span></span><span class="t-3003-c">$x_e$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:60:22</span></span><span class="t-3003-c">
-          appears in
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:60:27</span></span><span class="t-3003-c">$c_u$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:60:39</span></span><span class="t-3003-c">
-          and
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:60:44</span></span><span class="t-3003-c">$c_v$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:60:49</span></span><span class="t-3003-c">
-          and nowhere else.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:60:54</span></span>
-        <span class="t-3003-c">Modulo 2 the above (\ref{eqn-sum-all-constraints}) reduces<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:61:9</span></span>
-        <span class="t-3003-c">to<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:62:9</span></span>
+        Every variable occurs twice on the left-hand side;
+        this is clear since for each edge
+        <span class="nowrap">$e = \{u,v\}$,</span>
+        the
+        variable $x_e$ appears in $c_u$ and $c_v$ and nowhere
+        else. Modulo 2 the above
+        (\ref{eqn-sum-all-constraints}) reduces to
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         0 = 1 \ ,
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:63:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">which is clearly unsatisfiable.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:66:9</span></span>
+        which is clearly unsatisfiable.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">A vector
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:67:5</span></span><span class="t-3003-c">$\x \in \{0,1\}^E$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:67:14</span></span><span class="t-3003-c">
-        can be interpreted as a spanning subgraph<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:67:32</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:68:5</span></span><span class="t-3003-c">$G_x = (V,E_x)$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:68:5</span></span><span class="t-3003-c">
-        of
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:68:20</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:68:24</span></span><span class="t-3003-c">
-        with<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:68:27</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:69:5</span></span><span class="nowrap"><span class="t-3003-c">$E_x := \{e \in E \ | \ x_e = 1\}$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:69:5</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:69:39</span></span></span><span class="t-3003-c">
-        This
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:69:39</span></span><span class="t-3003-c">$\x$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:69:46</span></span><span class="t-3003-c">
-        is a solution<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:69:50</span></span>
-      <span class="t-3003-c">to the Tseitin system if and only if the degree of each<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:70:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:71:5</span></span><span class="t-3003-c">$v \in V$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:71:5</span></span><span class="t-3003-c">
-        in
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:71:14</span></span><span class="t-3003-c">$G_x$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:71:18</span></span><span class="t-3003-c">
-        is odd if
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:71:23</span></span><span class="t-3003-c">$s(v)=1$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:71:34</span></span><span class="t-3003-c">
-        and even if
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:71:42</span></span><span class="nowrap"><span class="t-3003-c">$s(v)=0$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:71:55</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:71:63</span></span></span>
+      A vector $\x \in \{0,1\}^E$ can be interpreted as a
+      spanning subgraph $G_x = (V,E_x)$ of $G$ with
+      <span class="nowrap">$E_x := \{e \in E \ | \ x_e = 1\}$.</span>
+      This $\x$ is a
+      solution to the Tseitin system if and only if the
+      degree of each $v \in V$ in $G_x$ is odd if $s(v)=1$
+      and even if
+      <span class="nowrap">$s(v)=0$.</span>
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Example 1.1.3<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:72:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:72:5</span></span>
-        <span class="t-3003-c">Here is a graph with parity requirements:<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:73:9</span></span>
+        <b>Example 1.1.3</b>
+        Here is a graph with parity requirements:
       </p>
       <div class="figure__container">
         <figure>
-          <img src="img/tseitin/tseitin-02-01.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course2/public/img/tseitin/tseitin.ipe</span><br><span class="t-3003-i-url">course2/public/img/tseitin/tseitin-02-01.svg</span></span>
+          <img src="img/tseitin/tseitin-02-01.svg">
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Here is a vector
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:78:9</span></span><span class="t-3003-c">$\x \in \{0,1\}^E$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:78:26</span></span><span class="t-3003-c">
-          that is
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:78:44</span></span><i><span class="t-3003-c">not<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:78:54</span></span></i><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:78:58</span></span>
-        <span class="t-3003-c">a solution: constraints
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:79:9</span></span><span class="t-3003-c">$c_u$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:79:33</span></span><span class="t-3003-c">
-          and
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:79:38</span></span><span class="t-3003-c">$c_v$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:79:43</span></span><span class="t-3003-c">
-          are violated:<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:79:48</span></span>
+        Here is a vector $\x \in \{0,1\}^E$ that is
+        <i>not</i>
+        a
+        solution: constraints $c_u$ and $c_v$ are violated:
       </p>
       <div class="figure__container">
         <figure>
-          <img src="img/tseitin/tseitin-02-02.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course2/public/img/tseitin/tseitin.ipe</span><br><span class="t-3003-i-url">course2/public/img/tseitin/tseitin-02-02.svg</span></span>
+          <img src="img/tseitin/tseitin-02-02.svg">
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">The subgraph below is a solution<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:84:9</span></span>
+        The subgraph below is a solution
       </p>
       <div class="figure__container">
         <figure>
-          <img src="img/tseitin/tseitin-02-03.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course2/public/img/tseitin/tseitin.ipe</span><br><span class="t-3003-i-url">course2/public/img/tseitin/tseitin-02-03.svg</span></span>
+          <img src="img/tseitin/tseitin-02-03.svg">
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">because all parity requirements are satisfied. We can<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:89:9</span></span>
-        <span class="t-3003-c">"add subgraphs modulo 2":<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:90:9</span></span>
+        because all parity requirements are satisfied. We can
+        "add subgraphs modulo 2":
       </p>
       <div class="figure__container">
         <figure>
-          <img src="img/tseitin/tseitin-03-01.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course2/public/img/tseitin/tseitin.ipe</span><br><span class="t-3003-i-url">course2/public/img/tseitin/tseitin-03-01.svg</span></span>
+          <img src="img/tseitin/tseitin-03-01.svg">
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Let's look again at the graph, and let's call the middle<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:95:9</span></span>
-        <span class="t-3003-c">edge
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:96:9</span></span><span class="nowrap"><span class="t-3003-c">$f$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:96:14</span></span><span class="t-3003-c">:<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:96:17</span></span></span>
+        Let's look again at the graph, and let's call the
+        middle edge
+        <span class="nowrap">$f$:</span>
       </p>
       <div class="figure__container">
         <figure>
-          <img src="img/tseitin/tseitin-04-01.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course2/public/img/tseitin/tseitin.ipe</span><br><span class="t-3003-i-url">course2/public/img/tseitin/tseitin-04-01.svg</span></span>
+          <img src="img/tseitin/tseitin-04-01.svg">
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Every solution must have
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:101:9</span></span><span class="nowrap"><span class="t-3003-c">$x_f = 1$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:101:34</span></span><span class="t-3003-c">;<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:101:43</span></span></span><span class="t-3003-c">
-          every subgraph<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:101:43</span></span>
-        <span class="t-3003-c">corresponding to a solution must contain
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:102:9</span></span><span class="nowrap"><span class="t-3003-c">$f$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:102:50</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:102:53</span></span></span><span class="t-3003-c">
-          Why?<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:102:53</span></span>
-        <span class="t-3003-c">Let's look at the four vertices
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:103:9</span></span><span class="t-3003-c">$a,b,c,d$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:103:41</span></span><span class="t-3003-c">
-          on the left<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:103:50</span></span>
-        <span class="t-3003-c">and their constraints:<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:104:9</span></span>
+        Every solution must have
+        <span class="nowrap">$x_f = 1$;</span>
+        every subgraph
+        corresponding to a solution must contain
+        <span class="nowrap">$f$.</span>
+        Why?
+        Let's look at the four vertices $a,b,c,d$ on the left
+        and their constraints:
       </p>
       <div class="math-block">
         $$
@@ -296,64 +246,47 @@
         x_{\{b,c\}} + x_{\{c,d\}}&amp;= 0 \tag{$c_c$} \\
         x_{\{a,d\}} + x_{\{b,d\}} + x_{\{c,d\}} + x_f&amp;= 0 \tag{$c_d$}
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:105:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Adding them up (and reducing modulo 2) gives us<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:111:9</span></span>
+        Adding them up (and reducing modulo 2) gives us
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         x_f = 1
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:112:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">because every edge inside
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:115:9</span></span><span class="t-3003-c">$S = \{a,b,c,d\}$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:115:35</span></span><span class="t-3003-c">
-          appears twice<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:115:52</span></span>
-        <span class="t-3003-c">and gets canceled. Edges like
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:116:9</span></span><span class="t-3003-c">$\{u,v\}$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:116:39</span></span><span class="t-3003-c">
-          outside
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:116:48</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:116:57</span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:116:60</span></span>
-        <span class="t-3003-c">don't appear at all; edges between
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:117:9</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:117:44</span></span><span class="t-3003-c">
-          and
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:117:47</span></span><span class="t-3003-c">$V \setminus S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:117:52</span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:117:67</span></span>
-        <span class="t-3003-c">appear exactly once. In this example, this is just
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:118:9</span></span><span class="nowrap"><span class="t-3003-c">$f$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:118:60</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:118:63</span></span></span>
+        because every edge inside $S = \{a,b,c,d\}$ appears
+        twice and gets canceled. Edges like $\{u,v\}$ outside
+        $S$ don't appear at all; edges between $S$ and
+        $V \setminus S$ appear exactly once. In this example,
+        this is just
+        <span class="nowrap">$f$.</span>
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 1.1.4 (Boundary).<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:119:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:120:22</span></span>
-        <span class="t-3003-c">Let
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:121:9</span></span><span class="t-3003-c">$G = (V,E)$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:121:13</span></span><span class="t-3003-c">
-          be an undirected graph and
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:121:24</span></span><span class="t-3003-c">$S \subseteq V$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:121:52</span></span><span class="t-3003-c">
-          be a set<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:121:67</span></span>
-        <span class="t-3003-c">of vertices. The
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:122:9</span></span><i><span class="t-3003-c">edge boundary of
-            <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:122:27</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:122:44</span></span></i><span class="t-3003-c">
-          is<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:122:48</span></span>
+        <b>Definition 1.1.4 (Boundary).</b>
+        Let $G = (V,E)$ be an undirected graph
+        and $S \subseteq V$ be a set of vertices. The
+        <i>edge
+          boundary of $S$</i>
+        is
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \delta(S) := \{e \in E \ | \ |e \cap S| = 1 \} \ .
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:123:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Note that
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:126:9</span></span><span class="t-3003-c">$\delta(S) = \emptyset$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:126:19</span></span><span class="t-3003-c">
-          if and only if
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:126:42</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:126:58</span></span><span class="t-3003-c">
-          is the union of<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:126:61</span></span>
-        <span class="t-3003-c">connected components (possible the empty union of zero connected components).<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:127:9</span></span>
+        Note that $\delta(S) = \emptyset$ if and only if $S$
+        is the union of connected components (possible the
+        empty union of zero connected components).
       </p>
     </div>
     <div
@@ -361,20 +294,15 @@
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Observation 1.1.5<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:128:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:128:5</span></span>
-        <span class="t-3003-c">Let
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:130:9</span></span><span class="nowrap"><span class="t-3003-c">$S \subseteq V$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:130:13</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:130:29</span></span></span><span class="t-3003-c">
-          When we add up the<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:130:29</span></span>
-        <span class="t-3003-c">constraints
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:131:9</span></span><span class="t-3003-c">$c_u$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:131:21</span></span><span class="t-3003-c">
-          for all
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:131:26</span></span><span class="nowrap"><span class="t-3003-c">$u \in S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:131:35</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:131:44</span></span></span><span class="t-3003-c">
-          i.e., when<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:131:44</span></span>
-        <span class="t-3003-c">building
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:132:9</span></span><span class="nowrap"><span class="t-3003-c">$\sum_{u \in S} c_u$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:132:18</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:132:38</span></span></span><span class="t-3003-c">
-          we obtain<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:132:38</span></span>
-        <span class="t-3003-c">the equation<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:133:9</span></span>
+        <b>Observation 1.1.5</b>
+        Let
+        <span class="nowrap">$S \subseteq V$.</span>
+        When we add up the constraints
+        $c_u$ for all
+        <span class="nowrap">$u \in S$,</span>
+        i.e., when building
+        <span class="nowrap">$\sum_{u \in S} c_u$,</span>
+        we obtain the equation
       </p>
       <div class="math-block">
         $$
@@ -382,71 +310,43 @@
         \sum_{e \in \delta(S)} x_e \equiv \sum_{u \in S} s(u)
         \mod 2
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:134:9</span>
+        $$
       </div>
     </div>
     <div class="well highlight out">
       <p>
         <b>Proof</b>
-        
-        <span class="t-3003-c">As argued in the above example: when an<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:139:9</span></span>
-        <span class="t-3003-c">edge
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:140:9</span></span><span class="t-3003-c">$f = \{u,v\}$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:140:14</span></span><span class="t-3003-c">
-          is completely inside
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:140:27</span></span><span class="nowrap"><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:140:49</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:140:52</span></span></span><span class="t-3003-c">
-          i.e.,<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:140:52</span></span>
-        <span class="t-3003-c">when
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:141:9</span></span><span class="nowrap"><span class="t-3003-c">$u, v \in S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:141:14</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:141:26</span></span></span><span class="t-3003-c">
-          then
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:141:26</span></span><span class="t-3003-c">$x_f$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:141:33</span></span><span class="t-3003-c">
-          appears twice<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:141:38</span></span>
-        <span class="t-3003-c">in the sum over the constraints; if
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:142:9</span></span><span class="t-3003-c">$f$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:142:45</span></span><span class="t-3003-c">
-          lies<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:142:48</span></span>
-        <span class="t-3003-c">completely outside
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:143:9</span></span><span class="nowrap"><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:143:28</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:143:31</span></span></span><span class="t-3003-c">
-          i.e.,
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:143:31</span></span><span class="nowrap"><span class="t-3003-c">$u, v \not \in S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:143:39</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:143:56</span></span></span><span class="t-3003-c">
-          then<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:143:56</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:144:9</span></span><span class="t-3003-c">$x_f$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:144:9</span></span><span class="t-3003-c">
-          doesn't appear at all; if
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:144:14</span></span><span class="t-3003-c">$f \in \delta(S)$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:144:41</span></span><span class="t-3003-c">
-          then<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:144:58</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:145:9</span></span><span class="t-3003-c">$x_f$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:145:9</span></span><span class="t-3003-c">
-          appears once.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:145:14</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        As argued in the above example: when an edge
+        $f = \{u,v\}$ is completely inside
+        <span class="nowrap">$S$,</span>
+        i.e., when
+        <span class="nowrap">$u, v \in S$,</span>
+        then $x_f$ appears twice in the sum
+        over the constraints; if $f$ lies completely outside
+        <span class="nowrap">$S$,</span>
+        i.e.,
+        <span class="nowrap">$u, v \not \in S$,</span>
+        then $x_f$ doesn't
+        appear at all; if $f \in \delta(S)$ then $x_f$
+        appears once.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">From linear algebra we know (or should know) that a system<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:148:5</span></span>
-      <span class="t-3003-c">of equations
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:149:5</span></span><span class="t-3003-c">$A \x = \s$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:149:18</span></span><span class="t-3003-c">
-        is unsolvable if and only if<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:149:29</span></span>
-      <span class="t-3003-c">there exists a row vector
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:150:5</span></span><span class="t-3003-c">$\r^T$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:150:31</span></span><span class="t-3003-c">
-        with<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:150:37</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:151:5</span></span><span class="t-3003-c">$\r^T \cdot A = \mathbf{0}$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:151:5</span></span><span class="t-3003-c">
-        and
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:151:32</span></span><span class="nowrap"><span class="t-3003-c">$\r^T \cdot \s = 1$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:151:37</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:151:56</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:151:56</span></span>
-      <span class="t-3003-c">In our case, where everything is modulo 2, the<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:152:5</span></span>
-      <span class="t-3003-c">product
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:153:5</span></span><span class="t-3003-c">$\r \cdot A$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:153:13</span></span><span class="t-3003-c">
-        just means selecting a subset
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:153:25</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:153:56</span></span><span class="t-3003-c">
-        of<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:153:59</span></span>
-      <span class="t-3003-c">constraints and adding them up, by setting
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:154:5</span></span><span class="nowrap"><span class="t-3003-c">$S := \{v \in S \ | \ r_v = 1\}$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:154:48</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:154:80</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:154:80</span></span>
-      <span class="t-3003-c">By
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:155:5</span></span><a
+      From linear algebra we know (or should know) that a
+      system of equations $A \x = \s$ is unsolvable if and
+      only if there exists a row vector $\r^T$ with
+      $\r^T \cdot A = \mathbf{0}$ and
+      <span class="nowrap">$\r^T \cdot \s = 1$.</span>
+      In our case, where everything is modulo 2, the product
+      $\r \cdot A$ just means selecting a subset $S$ of
+      constraints and adding them up, by setting
+      <span class="nowrap">$S := \{v \in S \ | \ r_v = 1\}$.</span>
+      By
+      <a
         href="./1-1.html#_1_hgi_"
         class=""
-      >Observation 1.1.5</a><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:155:5</span></span>
-      <span class="t-3003-c">this means that<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:156:5</span></span>
+      >Observation 1.1.5</a>
+      this means that
     </p>
     <div class="math-block main-column">
       $$
@@ -454,105 +354,76 @@
       \mathbf{0} = \r^T \cdot A&amp;= \sum_{e \in \delta(S)} x_e \\
       1 = \r^T \cdot \s&amp;= \sum_{u \in S} s(u)
       \end{align*}
-      $$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:157:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">The first equation implies that
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:161:5</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:161:37</span></span><span class="t-3003-c">
-        is a union of<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:161:40</span></span>
-      <span class="t-3003-c">connected components; the second one says that the<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:162:5</span></span>
-      <span class="t-3003-c">number of vertices in
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:163:5</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:163:27</span></span><span class="t-3003-c">
-        that have parity requirement 1<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:163:30</span></span>
-      <span class="t-3003-c">is odd. From this it follows that there is at least<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:164:5</span></span>
-      <span class="t-3003-c">one connected component
-        <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:165:5</span></span><span class="t-3003-c">$S'$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:165:29</span></span><span class="t-3003-c">
-        with an odd number<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:165:33</span></span>
-      <span class="t-3003-c">of parity-requirement-1 vertices:<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:166:5</span></span>
+      The first equation implies that $S$ is a union of
+      connected components; the second one says that the
+      number of vertices in $S$ that have parity
+      requirement 1 is odd. From this it follows that there
+      is at least one connected component $S'$ with an odd
+      number of parity-requirement-1 vertices:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Lemma 1.1.6<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:167:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:167:5</span></span>
-        <span class="t-3003-c">The Tseitin<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:168:9</span></span>
-        <span class="t-3003-c">system is satisfiable if and only if<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:169:9</span></span>
-        <span class="t-3003-c">every connected component has an even number of vertices<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:170:9</span></span>
-        <span class="t-3003-c">with parity requirement
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:171:9</span></span><span class="nowrap"><span class="t-3003-c">$1$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:171:33</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:171:36</span></span></span>
+        <b>Lemma 1.1.6</b>
+        The Tseitin system is satisfiable if and only if
+        every connected component has an even number of
+        vertices with parity requirement
+        <span class="nowrap">$1$.</span>
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Proof</b>
-        
-        <span class="t-3003-c">The
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:174:9</span></span><i><span class="t-3003-c">only if<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:174:14</span></span></i><span class="t-3003-c">
-          direction is clear: if a connected<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:174:22</span></span>
-        <span class="t-3003-c">component
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:175:9</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:175:19</span></span><span class="t-3003-c">
-          has an odd number of parity-1-vertices, then<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:175:22</span></span>
-        <span class="t-3003-c">adding up the constraints
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:176:9</span></span><span class="t-3003-c">$c_u$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:176:35</span></span><span class="t-3003-c">
-          for all
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:176:40</span></span><span class="t-3003-c">$u \in S$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:176:49</span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:176:58</span></span>
-        <span class="t-3003-c">gives us
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:177:9</span></span><span class="nowrap"><span class="t-3003-c">$0=1$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:177:18</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:177:23</span></span></span><span class="t-3003-c">
-          so the system is clearly unsatisfiable.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:177:23</span></span>
+        The
+        <i>only if</i>
+        direction is clear: if a connected
+        component $S$ has an odd number of parity-1-vertices,
+        then adding up the constraints $c_u$ for all $u \in S$
+        gives us
+        <span class="nowrap">$0=1$,</span>
+        so the system is clearly
+        unsatisfiable.
       </p>
       <p>
-        <span class="t-3003-c">For the
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:179:9</span></span><i><span class="t-3003-c">if<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:179:18</span></span></i><span class="t-3003-c">
-          part we can use the linear algebra<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:179:21</span></span>
-        <span class="t-3003-c">reasoning from above; or we can prove it directly:<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:180:9</span></span>
-        <span class="t-3003-c">First, if
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:181:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:181:19</span></span><span class="t-3003-c">
-          has multiple connected components, we can<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:181:22</span></span>
-        <span class="t-3003-c">construct a solution for each component separately.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:182:9</span></span>
-        <span class="t-3003-c">So let's assume that
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:183:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:183:30</span></span><span class="t-3003-c">
-          is connected.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:183:33</span></span>
-        <span class="t-3003-c">Let us look at the vertices of parity requirement 1 and<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:184:9</span></span>
-        <span class="t-3003-c">call them<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:185:9</span></span>
+        For the
+        <i>if</i>
+        part we can use the linear algebra
+        reasoning from above; or we can prove it directly:
+        First, if $G$ has multiple connected components, we
+        can construct a solution for each component
+        separately. So let's assume that $G$ is connected.
+        Let us look at the vertices of parity requirement 1
+        and call them
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         v_1, v_2, \dots, v_l \ .
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:186:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">By assumption,
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:189:9</span></span><span class="t-3003-c">$l$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:189:24</span></span><span class="t-3003-c">
-          is even. We put them in pairs:<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:189:27</span></span>
+        By assumption, $l$ is even. We put them in pairs:
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         (v_1, v_2), (v_3, v_4), \dots, (v_{l-1}, v_l) \ .
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:190:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">For each such pair
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:193:9</span></span><span class="t-3003-c">$(v_{2i-1}, v_{2i})$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:193:28</span></span><span class="t-3003-c">
-          we<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:193:48</span></span>
-        <span class="t-3003-c">find a path
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:194:9</span></span><span class="t-3003-c">$p$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:194:21</span></span><span class="t-3003-c">
-          between them; this exists because
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:194:24</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:194:59</span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:194:62</span></span>
-        <span class="t-3003-c">is connected by assumption. We consider
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:195:9</span></span><span class="t-3003-c">$p$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:195:49</span></span><span class="t-3003-c">
-          as a subgraph<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:195:52</span></span>
-        <span class="t-3003-c">of
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:196:9</span></span><span class="nowrap"><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:196:12</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:196:15</span></span></span><span class="t-3003-c">
-          We take
-          <span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:196:15</span></span><span class="t-3003-c">$l/2$<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:196:25</span></span><span class="t-3003-c">
-          such paths, connecting<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:196:30</span></span>
-        <span class="t-3003-c">each pair. Then we "add up the paths" as described above<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:197:9</span></span>
-        <span class="t-3003-c">and obtain a subgraph that satisfies all constraints.<span class="t-3003">./course2/wly/01/01-Tseitin-formulas.wly:198:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        For each such pair $(v_{2i-1}, v_{2i})$ we find a
+        path $p$ between them; this exists because $G$ is
+        connected by assumption. We consider $p$ as a
+        subgraph of
+        <span class="nowrap">$G$.</span>
+        We take $l/2$ such paths, connecting
+        each pair. Then we "add up the paths" as described
+        above and obtain a subgraph that satisfies all
+        constraints.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div id="end-of-page-elt">

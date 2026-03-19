@@ -412,7 +412,7 @@ fn expand_filename_shorthands_to_path_fragments(
   amendments: ds.CommandLineAmendments,
 ) -> ds.CommandLineAmendments {
   let assert Ok(filename_shorthand_regexp) =
-    regexp.from_string("^([\\d]{1,2})[\\.\\-]([\\d]{1,2})$")
+    regexp.from_string("^([1-9][\\d]{0,1})[\\.]([1-9][\\d]{0,1})$")
 
   let only_paths =
     list.map(amendments.only_paths, filename_shorthand_to_path_fragment(
@@ -472,6 +472,7 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
 
   let author_mode = dict.has_key(amendments.user_args, "--local")
   let amendments = expand_filename_shorthands_to_path_fragments(amendments)
+
   let renderer =
     ds.Renderer(
       assembler: ds.default_writerly_assembler(amendments.only_paths),
@@ -493,6 +494,7 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
     Ok(_) -> Nil
     Error(error) -> io.println("HTML cleanup failed: " <> error)
   }
+
 
   case ds.run_renderer(renderer, parameters, debug_options) {
     Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")

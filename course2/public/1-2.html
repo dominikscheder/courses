@@ -40,340 +40,223 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">1.2&ensp;Resolution<span class="t-3003">./course2/wly/01/02-resolution.wly:2:11</span></span>
+        1.2&ensp;Resolution
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Let
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:3:5</span></span><span class="t-3003-c">$G=(V,E)$<span class="t-3003">./course2/wly/01/02-resolution.wly:3:9</span></span><span class="t-3003-c">
-        be a graph and
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:3:18</span></span><span class="t-3003-c">$s : V \rightarrow \{0,1\}$<span class="t-3003">./course2/wly/01/02-resolution.wly:3:34</span></span><span class="t-3003-c">
-        the parity requirements.<span class="t-3003">./course2/wly/01/02-resolution.wly:3:61</span></span>
-      <span class="t-3003-c">We can encode each constraint
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:4:5</span></span><span class="t-3003-c">$c_u: \sum_{e \sim v} x_e$<span class="t-3003">./course2/wly/01/02-resolution.wly:4:35</span></span><span class="t-3003-c">
-        as a CNF formula. This<span class="t-3003">./course2/wly/01/02-resolution.wly:4:61</span></span>
-      <span class="t-3003-c">creates
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:5:5</span></span><span class="t-3003-c">$2^{d(v)-1}$<span class="t-3003">./course2/wly/01/02-resolution.wly:5:13</span></span><span class="t-3003-c">
-        clauses, each of size
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:5:25</span></span><span class="nowrap"><span class="t-3003-c">$d(v)$<span class="t-3003">./course2/wly/01/02-resolution.wly:5:48</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:5:54</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:5:54</span></span>
-      <span class="t-3003-c">Let us denote this CNF formula by
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:6:5</span></span><span class="t-3003-c">$F_u(G,s)$<span class="t-3003">./course2/wly/01/02-resolution.wly:6:39</span></span><span class="t-3003-c">
-        or simply
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:6:49</span></span><span class="t-3003-c">$F_u$<span class="t-3003">./course2/wly/01/02-resolution.wly:6:60</span></span><span class="t-3003-c">
-        if<span class="t-3003">./course2/wly/01/02-resolution.wly:6:65</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:7:5</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/02-resolution.wly:7:5</span></span><span class="t-3003-c">
-        and
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:7:8</span></span><span class="t-3003-c">$s$<span class="t-3003">./course2/wly/01/02-resolution.wly:7:13</span></span><span class="t-3003-c">
-        are understood from the context.<span class="t-3003">./course2/wly/01/02-resolution.wly:7:16</span></span>
-      <span class="t-3003-c">We finally define<span class="t-3003">./course2/wly/01/02-resolution.wly:8:5</span></span>
+      Let $G=(V,E)$ be a graph and
+      $s : V \rightarrow \{0,1\}$ the parity requirements.
+      We can encode each constraint
+      $c_u: \sum_{e \sim v} x_e$ as a CNF formula. This
+      creates $2^{d(v)-1}$ clauses, each of size
+      <span class="nowrap">$d(v)$.</span>
+      Let us denote this CNF formula by $F_u(G,s)$ or
+      simply $F_u$ if $G$ and $s$ are understood from the
+      context. We finally define
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \tseitin(G,s) := \bigwedge_{u \in V} F_u(G,s) \ .
       \end{align*}
-      $$<span class="t-3003">./course2/wly/01/02-resolution.wly:9:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">If
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:12:5</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/02-resolution.wly:12:8</span></span><span class="t-3003-c">
-        has maximum degree
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:12:11</span></span><span class="t-3003-c">$k$<span class="t-3003">./course2/wly/01/02-resolution.wly:12:31</span></span><span class="t-3003-c">
-        then<span class="t-3003">./course2/wly/01/02-resolution.wly:12:34</span></span>
-      <span class="t-3003-c">this gives us a
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:13:5</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course2/wly/01/02-resolution.wly:13:21</span></span><span class="t-3003-c">-CNF<span class="t-3003">./course2/wly/01/02-resolution.wly:13:24</span></span></span><span class="t-3003-c">
-        formula with
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:13:24</span></span><span class="t-3003-c">$|E|$<span class="t-3003">./course2/wly/01/02-resolution.wly:13:42</span></span><span class="t-3003-c">
-        variables and at most
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:13:47</span></span><span class="t-3003-c">$2^{k-1} |V|$<span class="t-3003">./course2/wly/01/02-resolution.wly:13:70</span></span><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:13:83</span></span>
-      <span class="t-3003-c">clauses. If
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:14:5</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/02-resolution.wly:14:17</span></span><span class="t-3003-c">
-        is
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:14:20</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course2/wly/01/02-resolution.wly:14:24</span></span><span class="t-3003-c">-regular<span class="t-3003">./course2/wly/01/02-resolution.wly:14:27</span></span></span><span class="t-3003-c">
-        then
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:14:27</span></span><span class="t-3003-c">$\tseitin(G,s)$<span class="t-3003">./course2/wly/01/02-resolution.wly:14:41</span></span><span class="t-3003-c">
-        has exactly<span class="t-3003">./course2/wly/01/02-resolution.wly:14:56</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:15:5</span></span><span class="t-3003-c">$2^{k-1} |V|$<span class="t-3003">./course2/wly/01/02-resolution.wly:15:5</span></span><span class="t-3003-c">
-        clauses, each of width exactly
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:15:18</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course2/wly/01/02-resolution.wly:15:50</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:15:53</span></span></span>
+      If $G$ has maximum degree $k$ then this gives us a
+      <span class="nowrap">$k$-CNF</span>
+      formula with $|E|$ variables and at most
+      $2^{k-1} |V|$ clauses. If $G$ is
+      <span class="nowrap">$k$-regular</span>
+      then
+      $\tseitin(G,s)$ has exactly $2^{k-1} |V|$ clauses,
+      each of width exactly
+      <span class="nowrap">$k$.</span>
     </p>
     <p class="main-column">
-      <span class="t-3003-c">If an odd number of vertices have a parity requirement of
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:17:5</span></span><span class="nowrap"><span class="t-3003-c">$1$<span class="t-3003">./course2/wly/01/02-resolution.wly:17:63</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:17:66</span></span></span><span class="t-3003-c">
-        then<span class="t-3003">./course2/wly/01/02-resolution.wly:17:66</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:18:5</span></span><span class="t-3003-c">$\tseitin(G,s)$<span class="t-3003">./course2/wly/01/02-resolution.wly:18:5</span></span><span class="t-3003-c">
-        is unsatisfiable and we can reason about<span class="t-3003">./course2/wly/01/02-resolution.wly:18:20</span></span>
-      <span class="t-3003-c">resolution refutations of it.<span class="t-3003">./course2/wly/01/02-resolution.wly:19:5</span></span>
+      If an odd number of vertices have a parity
+      requirement of
+      <span class="nowrap">$1$,</span>
+      then $\tseitin(G,s)$ is
+      unsatisfiable and we can reason about resolution
+      refutations of it.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Resolution<span class="t-3003">./course2/wly/01/02-resolution.wly:22:9</span></span>
+      Resolution
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">When two clauses
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:24:5</span></span><span class="t-3003-c">$C, D$<span class="t-3003">./course2/wly/01/02-resolution.wly:24:22</span></span><span class="t-3003-c">
-        contain opposing literals, i.e., when<span class="t-3003">./course2/wly/01/02-resolution.wly:24:28</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:25:5</span></span><span class="t-3003-c">$C = C' \vee x$<span class="t-3003">./course2/wly/01/02-resolution.wly:25:5</span></span><span class="t-3003-c">
-        and
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:25:20</span></span><span class="t-3003-c">$D = D' \vee \bar{x}$<span class="t-3003">./course2/wly/01/02-resolution.wly:25:25</span></span><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:25:46</span></span>
-      <span class="t-3003-c">then
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:26:5</span></span><span class="t-3003-c">$C \vee D$<span class="t-3003">./course2/wly/01/02-resolution.wly:26:10</span></span><span class="t-3003-c">
-        is called a
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:26:20</span></span><span class="nowrap"><i><span class="t-3003-c">resolvent of
-            <span class="t-3003">./course2/wly/01/02-resolution.wly:26:34</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:26:47</span></span><span class="t-3003-c">
-            and
-            <span class="t-3003">./course2/wly/01/02-resolution.wly:26:50</span></span><span class="t-3003-c">$D$<span class="t-3003">./course2/wly/01/02-resolution.wly:26:55</span></span></i><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:26:59</span></span></span><span class="t-3003-c">
-        The<span class="t-3003">./course2/wly/01/02-resolution.wly:26:59</span></span>
-      <span class="t-3003-c">variable
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:27:5</span></span><span class="t-3003-c">$x$<span class="t-3003">./course2/wly/01/02-resolution.wly:27:14</span></span><span class="t-3003-c">
-        is called the
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:27:17</span></span><span class="nowrap"><i><span class="t-3003-c">resolved variable<span class="t-3003">./course2/wly/01/02-resolution.wly:27:33</span></span></i><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:27:51</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:27:51</span></span>
-      <span class="t-3003-c">We write
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:28:5</span></span><i><span class="t-3003-c">a<span class="t-3003">./course2/wly/01/02-resolution.wly:28:15</span></span></i><span class="t-3003-c">
-        resolvent rather than
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:28:17</span></span><i><span class="t-3003-c">the<span class="t-3003">./course2/wly/01/02-resolution.wly:28:41</span></span></i><span class="t-3003-c">
-        resolvent<span class="t-3003">./course2/wly/01/02-resolution.wly:28:45</span></span>
-      <span class="t-3003-c">since there might be multiple resolvents:<span class="t-3003">./course2/wly/01/02-resolution.wly:29:5</span></span>
-      <span class="t-3003-c">for example when
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:30:5</span></span><span class="t-3003-c">$C = (x \vee y \vee z)$<span class="t-3003">./course2/wly/01/02-resolution.wly:30:22</span></span><span class="t-3003-c">
-        and
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:30:45</span></span><span class="t-3003-c">$D = (\bar{x} \vee \bar{y} \vee w)$<span class="t-3003">./course2/wly/01/02-resolution.wly:30:50</span></span><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:30:85</span></span>
-      <span class="t-3003-c">then both
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:31:5</span></span><span class="t-3003-c">$(y \vee z \vee \bar{y} \vee w)$<span class="t-3003">./course2/wly/01/02-resolution.wly:31:15</span></span><span class="t-3003-c">
-        and
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:31:47</span></span><span class="t-3003-c">$(x \vee z \vee \bar{x} \vee w)$<span class="t-3003">./course2/wly/01/02-resolution.wly:31:52</span></span><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:31:84</span></span>
-      <span class="t-3003-c">are resolvents; in this case of course both resolvents are trivial:<span class="t-3003">./course2/wly/01/02-resolution.wly:32:5</span></span>
-      <span class="t-3003-c">they always evaluate to
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:33:5</span></span><span class="nowrap"><span class="t-3003-c">$1$<span class="t-3003">./course2/wly/01/02-resolution.wly:33:29</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:33:32</span></span></span><span class="t-3003-c">
-        We observe: if two clauses have a non-trivial<span class="t-3003">./course2/wly/01/02-resolution.wly:33:32</span></span>
-      <span class="t-3003-c">resolvent then this is their unique resolvent; and if two clauses<span class="t-3003">./course2/wly/01/02-resolution.wly:34:5</span></span>
-      <span class="t-3003-c">have a unique resolvent then it is also non-trivial.<span class="t-3003">./course2/wly/01/02-resolution.wly:35:5</span></span>
+      When two clauses $C, D$ contain opposing literals,
+      i.e., when $C = C' \vee x$ and $D = D' \vee \bar{x}$
+      then $C \vee D$ is called a
+      <span class="nowrap"><i>resolvent of $C$ and
+          $D$</i>.</span>
+      The variable $x$ is called the
+      <span class="nowrap"><i>resolved
+          variable</i>.</span>
+      We write
+      <i>a</i>
+      resolvent rather than
+      <i>the</i>
+      resolvent since there might be multiple resolvents:
+      for example when $C = (x \vee y \vee z)$ and
+      $D = (\bar{x} \vee \bar{y} \vee w)$ then both
+      $(y \vee z \vee \bar{y} \vee w)$ and
+      $(x \vee z \vee \bar{x} \vee w)$ are resolvents; in
+      this case of course both resolvents are trivial: they
+      always evaluate to
+      <span class="nowrap">$1$.</span>
+      We observe: if two clauses
+      have a non-trivial resolvent then this is their unique
+      resolvent; and if two clauses have a unique resolvent
+      then it is also non-trivial.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 1.2.1 (Resolution Proof).<span class="t-3003">./course2/wly/01/02-resolution.wly:36:5</span></span></b><span class="t-3003-c">
-          Let
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:37:30</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:37:35</span></span><span class="t-3003-c">
-          be a CNF formula.<span class="t-3003">./course2/wly/01/02-resolution.wly:37:38</span></span>
-        <span class="t-3003-c">A
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:38:9</span></span><i><span class="t-3003-c">resolution proof from
-            <span class="t-3003">./course2/wly/01/02-resolution.wly:38:12</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:38:34</span></span></i><span class="t-3003-c">
-          is a sequence<span class="t-3003">./course2/wly/01/02-resolution.wly:38:38</span></span>
+        <b>Definition 1.2.1 (Resolution Proof).</b>
+        Let $F$ be a CNF formula. A
+        <i>resolution proof from $F$</i>
+        is a sequence
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         C_1, C_2, \dots, C_l
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/02-resolution.wly:39:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">of clauses such that for each
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:42:9</span></span><span class="t-3003-c">$1 \leq i \leq l$<span class="t-3003">./course2/wly/01/02-resolution.wly:42:39</span></span>
+        of clauses such that for each $1 \leq i \leq l$
       </p>
       <ol>
         <li>
           <p>
-            <span class="t-3003-c">$C_i$<span class="t-3003">./course2/wly/01/02-resolution.wly:45:17</span></span><span class="t-3003-c">
-              is a clause of
-              <span class="t-3003">./course2/wly/01/02-resolution.wly:45:22</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:45:38</span></span><span class="t-3003-c">
-              or<span class="t-3003">./course2/wly/01/02-resolution.wly:45:41</span></span>
+            $C_i$ is a clause of $F$ or
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">There are earlier clauses
-              <span class="t-3003">./course2/wly/01/02-resolution.wly:47:17</span></span><span class="t-3003-c">$C_{j_1}, C_{j_2}$<span class="t-3003">./course2/wly/01/02-resolution.wly:47:43</span></span><span class="t-3003-c">
-              with
-              <span class="t-3003">./course2/wly/01/02-resolution.wly:47:61</span></span><span class="t-3003-c">$j_1, j_2 \lt i$<span class="t-3003">./course2/wly/01/02-resolution.wly:47:67</span></span><span class="t-3003-c">
-              <span class="t-3003">./course2/wly/01/02-resolution.wly:47:83</span></span>
-            <span class="t-3003-c">such that
-              <span class="t-3003">./course2/wly/01/02-resolution.wly:48:17</span></span><span class="t-3003-c">$C_i$<span class="t-3003">./course2/wly/01/02-resolution.wly:48:27</span></span><span class="t-3003-c">
-              is a
-              <span class="t-3003">./course2/wly/01/02-resolution.wly:48:32</span></span><i><span class="t-3003-c">resolvent<span class="t-3003">./course2/wly/01/02-resolution.wly:48:39</span></span></i><span class="t-3003-c">
-              of
-              <span class="t-3003">./course2/wly/01/02-resolution.wly:48:49</span></span><span class="nowrap"><span class="t-3003-c">$C_{j_1}, C_{j_2}$<span class="t-3003">./course2/wly/01/02-resolution.wly:48:53</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:48:71</span></span></span>
+            There are earlier clauses $C_{j_1}, C_{j_2}$ with
+            $j_1, j_2 \lt i$ such that $C_i$ is a
+            <i>resolvent</i>
+            of
+            <span class="nowrap">$C_{j_1}, C_{j_2}$.</span>
           </p>
         </li>
       </ol>
       <p>
-        <span class="t-3003-c">If
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:49:9</span></span><span class="t-3003-c">$C_l = \Box$<span class="t-3003">./course2/wly/01/02-resolution.wly:49:12</span></span><span class="t-3003-c">
-          then the proof is called a
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:49:24</span></span><i><span class="t-3003-c">resolution refutation<span class="t-3003">./course2/wly/01/02-resolution.wly:49:53</span></span></i><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:49:75</span></span>
-        <span class="t-3003-c">of
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:50:9</span></span><span class="nowrap"><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:50:12</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:50:15</span></span></span><span class="t-3003-c">
-          The
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:50:15</span></span><i><span class="t-3003-c">size<span class="t-3003">./course2/wly/01/02-resolution.wly:50:22</span></span></i><span class="t-3003-c">
-          of the proof is
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:50:27</span></span><span class="nowrap"><span class="t-3003-c">$l$<span class="t-3003">./course2/wly/01/02-resolution.wly:50:44</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:50:47</span></span></span><span class="t-3003-c">
-          The
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:50:47</span></span><i><span class="t-3003-c">width<span class="t-3003">./course2/wly/01/02-resolution.wly:50:54</span></span></i><span class="t-3003-c">
-          of<span class="t-3003">./course2/wly/01/02-resolution.wly:50:60</span></span>
-        <span class="t-3003-c">the proof is
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:51:9</span></span><span class="nowrap"><span class="t-3003-c">$\max \{|C_i| \ | \ 1 \leq i \leq l \}$<span class="t-3003">./course2/wly/01/02-resolution.wly:51:22</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:51:61</span></span></span>
+        If $C_l = \Box$ then the proof is called a
+        <i>resolution refutation</i>
+        of
+        <span class="nowrap">$F$.</span>
+        The
+        <i>size</i>
+        of the
+        proof is
+        <span class="nowrap">$l$.</span>
+        The
+        <i>width</i>
+        of the proof is
+        <span class="nowrap">$\max \{|C_i| \ | \ 1 \leq i \leq l \}$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Suppose
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:52:5</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:52:13</span></span><span class="t-3003-c">
-        is a clause appearing in a resolution proof from
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:52:16</span></span><span class="nowrap"><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:52:66</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:52:69</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:52:69</span></span>
-      <span class="t-3003-c">Then
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:53:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:53:10</span></span><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:53:13</span></span><i><span class="t-3003-c">logically implies<span class="t-3003">./course2/wly/01/02-resolution.wly:53:15</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:53:33</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:53:34</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:53:37</span></span></span><span class="t-3003-c">
-        denoted by
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:53:37</span></span><span class="nowrap"><span class="t-3003-c">$F \Rightarrow C$<span class="t-3003">./course2/wly/01/02-resolution.wly:53:50</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:53:67</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:53:67</span></span>
-      <span class="t-3003-c">meaning that for every assignment
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:54:5</span></span><span class="t-3003-c">$\alpha \in \{0,1\}^V$<span class="t-3003">./course2/wly/01/02-resolution.wly:54:39</span></span><span class="t-3003-c">
-        with<span class="t-3003">./course2/wly/01/02-resolution.wly:54:61</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:55:5</span></span><span class="t-3003-c">$F(\alpha) = 1$<span class="t-3003">./course2/wly/01/02-resolution.wly:55:5</span></span><span class="t-3003-c">
-        also
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:55:20</span></span><span class="nowrap"><span class="t-3003-c">$C(\alpha)=1$<span class="t-3003">./course2/wly/01/02-resolution.wly:55:26</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:55:39</span></span></span><span class="t-3003-c">
-        Maybe
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:55:39</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:55:47</span></span><span class="t-3003-c">
-        is already implied<span class="t-3003">./course2/wly/01/02-resolution.wly:55:50</span></span>
-      <span class="t-3003-c">by a subset of clauses of
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:56:5</span></span><span class="nowrap"><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:56:31</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:56:34</span></span></span><span class="t-3003-c">
-        The following question turns out to be important:<span class="t-3003">./course2/wly/01/02-resolution.wly:56:34</span></span>
+      Suppose $C$ is a clause appearing in a resolution
+      proof from
+      <span class="nowrap">$F$.</span>
+      Then $F$
+      <i>logically implies</i>
+      <span class="nowrap">$C$,</span>
+      denoted by
+      <span class="nowrap">$F \Rightarrow C$,</span>
+      meaning that for every
+      assignment $\alpha \in \{0,1\}^V$ with $F(\alpha) = 1$
+      also
+      <span class="nowrap">$C(\alpha)=1$.</span>
+      Maybe $C$ is already implied by a
+      subset of clauses of
+      <span class="nowrap">$F$.</span>
+      The following question
+      turns out to be important:
     </p>
     <div class="quotation">
       <p>
-        <span class="t-3003-c">What is a minimal set
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:59:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/02-resolution.wly:59:31</span></span><span class="t-3003-c">
-          of clauses of
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:59:34</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:59:49</span></span><span class="t-3003-c">
-          that still implies<span class="t-3003">./course2/wly/01/02-resolution.wly:59:52</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:60:9</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:60:9</span></span><span class="t-3003-c">?<span class="t-3003">./course2/wly/01/02-resolution.wly:60:12</span></span></span>
+        What is a minimal set $G$ of clauses of $F$ that
+        still implies
+        <span class="nowrap">$C$?</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">In the case of a Tseitin formulas
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:62:5</span></span><span class="nowrap"><span class="t-3003-c">$F = \tseitin(G,s)$<span class="t-3003">./course2/wly/01/02-resolution.wly:62:39</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:62:58</span></span></span><span class="t-3003-c">
-        the clauses of<span class="t-3003">./course2/wly/01/02-resolution.wly:62:58</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:63:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:63:5</span></span><span class="t-3003-c">
-        come in bundles
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:63:8</span></span><span class="nowrap"><span class="t-3003-c">$F_u(G,s)$<span class="t-3003">./course2/wly/01/02-resolution.wly:63:25</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:63:35</span></span></span><span class="t-3003-c">
-        our encoding of the constraint<span class="t-3003">./course2/wly/01/02-resolution.wly:63:35</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:64:5</span></span><span class="nowrap"><span class="t-3003-c">$c_u: \sum_{e \sim v} x_e \equiv s(v)$<span class="t-3003">./course2/wly/01/02-resolution.wly:64:5</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:64:43</span></span></span><span class="t-3003-c">
-        In this case, the following<span class="t-3003">./course2/wly/01/02-resolution.wly:64:43</span></span>
-      <span class="t-3003-c">slightly different question turns out to be better:<span class="t-3003">./course2/wly/01/02-resolution.wly:65:5</span></span>
+      In the case of a Tseitin formulas
+      <span class="nowrap">$F = \tseitin(G,s)$,</span>
+      the clauses of $F$ come in bundles
+      <span class="nowrap">$F_u(G,s)$,</span>
+      our
+      encoding of the constraint
+      <span class="nowrap">$c_u: \sum_{e \sim v} x_e \equiv s(v)$.</span>
+      In this case,
+      the following slightly different question turns out to
+      be better:
     </p>
     <div class="quotation">
       <p>
-        <span class="t-3003-c">What is a minimal set
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:68:9</span></span><span class="t-3003-c">$S \subseteq V$<span class="t-3003">./course2/wly/01/02-resolution.wly:68:31</span></span><span class="t-3003-c">
-          of vertices such that<span class="t-3003">./course2/wly/01/02-resolution.wly:68:46</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:69:9</span></span><span class="t-3003-c">$F_S := \bigwedge_{v \in S} F_v(G,s)$<span class="t-3003">./course2/wly/01/02-resolution.wly:69:9</span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:69:46</span></span>
-        <span class="t-3003-c">implies
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:70:9</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:70:17</span></span><span class="t-3003-c">?<span class="t-3003">./course2/wly/01/02-resolution.wly:70:20</span></span></span>
+        What is a minimal set $S \subseteq V$ of vertices
+        such that $F_S := \bigwedge_{v \in S} F_v(G,s)$
+        implies
+        <span class="nowrap">$C$?</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">The second question is different insofar as we still ask for a subset of<span class="t-3003">./course2/wly/01/02-resolution.wly:72:5</span></span>
-      <span class="t-3003-c">clauses of
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:73:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:73:16</span></span><span class="t-3003-c">
-        implying
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:73:19</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:73:29</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:73:32</span></span></span><span class="t-3003-c">
-        but we enforce an all-or-nothing policy<span class="t-3003">./course2/wly/01/02-resolution.wly:73:32</span></span>
-      <span class="t-3003-c">for our bundles
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:74:5</span></span><span class="nowrap"><span class="t-3003-c">$F_u$<span class="t-3003">./course2/wly/01/02-resolution.wly:74:21</span></span><span class="t-3003-c">:<span class="t-3003">./course2/wly/01/02-resolution.wly:74:26</span></span></span><span class="t-3003-c">
-        either take all clauses of
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:74:26</span></span><span class="t-3003-c">$F_u$<span class="t-3003">./course2/wly/01/02-resolution.wly:74:55</span></span><span class="t-3003-c">
-        or none.<span class="t-3003">./course2/wly/01/02-resolution.wly:74:60</span></span>
-      <span class="t-3003-c">The second question is important because it ties the boundary<span class="t-3003">./course2/wly/01/02-resolution.wly:75:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:76:5</span></span><span class="t-3003-c">$\delta(S)$<span class="t-3003">./course2/wly/01/02-resolution.wly:76:5</span></span><span class="t-3003-c">
-        of a set to the width of a clause:<span class="t-3003">./course2/wly/01/02-resolution.wly:76:16</span></span>
+      The second question is different insofar as we still
+      ask for a subset of clauses of $F$ implying
+      <span class="nowrap">$C$,</span>
+      but
+      we enforce an all-or-nothing policy for our bundles
+      <span class="nowrap">$F_u$:</span>
+      either take all clauses of $F_u$ or none. The
+      second question is important because it ties the
+      boundary $\delta(S)$ of a set to the width of a
+      clause:
     </p>
     <div
       id="_2_hgi_"
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Lemma 1.2.2<span class="t-3003">./course2/wly/01/02-resolution.wly:77:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:77:5</span></span>
-        <span class="t-3003-c">Let
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:79:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:79:13</span></span><span class="t-3003-c">
-          be a clause implied<span class="t-3003">./course2/wly/01/02-resolution.wly:79:16</span></span>
-        <span class="t-3003-c">by
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:80:9</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:80:12</span></span><span class="t-3003-c">
-          and let
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:80:15</span></span><span class="t-3003-c">$S \subseteq V$<span class="t-3003">./course2/wly/01/02-resolution.wly:80:24</span></span><span class="t-3003-c">
-          be a minimal subset such that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:80:39</span></span><span class="t-3003-c">$F_S$<span class="t-3003">./course2/wly/01/02-resolution.wly:80:70</span></span><span class="t-3003-c">
-          implies
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:80:75</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:80:84</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:80:87</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:80:87</span></span>
-        <span class="t-3003-c">Then
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:81:9</span></span><span class="nowrap"><span class="t-3003-c">$\delta(S) \subseteq \var(C)$<span class="t-3003">./course2/wly/01/02-resolution.wly:81:14</span></span><span class="t-3003-c">:<span class="t-3003">./course2/wly/01/02-resolution.wly:81:43</span></span></span><span class="t-3003-c">
-          all edges leaving
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:81:43</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/02-resolution.wly:81:63</span></span><span class="t-3003-c">
-          appear<span class="t-3003">./course2/wly/01/02-resolution.wly:81:66</span></span>
-        <span class="t-3003-c">in
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:82:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:82:12</span></span><span class="t-3003-c">
-          as variables (negated or not).<span class="t-3003">./course2/wly/01/02-resolution.wly:82:15</span></span>
+        <b>Lemma 1.2.2</b>
+        Let $C$ be a clause implied by $F$ and let
+        $S \subseteq V$ be a minimal subset such that $F_S$
+        implies
+        <span class="nowrap">$C$.</span>
+        Then
+        <span class="nowrap">$\delta(S) \subseteq \var(C)$:</span>
+        all
+        edges leaving $S$ appear in $C$ as variables (negated
+        or not).
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Proof</b>
-        
-        <span class="t-3003-c">Let
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:84:9</span></span><span class="nowrap"><span class="t-3003-c">$e \in \delta(S)$<span class="t-3003">./course2/wly/01/02-resolution.wly:84:13</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:84:30</span></span></span><span class="t-3003-c">
-          This means that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:84:30</span></span><span class="t-3003-c">$e = \{u,w\}$<span class="t-3003">./course2/wly/01/02-resolution.wly:84:48</span></span><span class="t-3003-c">
-          with<span class="t-3003">./course2/wly/01/02-resolution.wly:84:61</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:85:9</span></span><span class="t-3003-c">$u \in S$<span class="t-3003">./course2/wly/01/02-resolution.wly:85:9</span></span><span class="t-3003-c">
-          and
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:85:18</span></span><span class="nowrap"><span class="t-3003-c">$w \not \in S$<span class="t-3003">./course2/wly/01/02-resolution.wly:85:23</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:85:37</span></span></span><span class="t-3003-c">
-          We have to show that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:85:37</span></span><span class="t-3003-c">$x_e$<span class="t-3003">./course2/wly/01/02-resolution.wly:85:60</span></span><span class="t-3003-c">
-          or
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:85:65</span></span><span class="t-3003-c">$\bar{x}_e$<span class="t-3003">./course2/wly/01/02-resolution.wly:85:69</span></span><span class="t-3003-c">
-          appears<span class="t-3003">./course2/wly/01/02-resolution.wly:85:80</span></span>
-        <span class="t-3003-c">in
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:86:9</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:86:12</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:86:15</span></span></span>
+        Let
+        <span class="nowrap">$e \in \delta(S)$.</span>
+        This means that $e = \{u,w\}$
+        with $u \in S$ and
+        <span class="nowrap">$w \not \in S$.</span>
+        We have to show
+        that $x_e$ or $\bar{x}_e$ appears in
+        <span class="nowrap">$C$.</span>
       </p>
       <p>
-        <span class="t-3003-c">Since
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:88:9</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/02-resolution.wly:88:15</span></span><span class="t-3003-c">
-          is a
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:88:18</span></span><i><span class="t-3003-c">minimal<span class="t-3003">./course2/wly/01/02-resolution.wly:88:25</span></span></i><span class="t-3003-c">
-          set of constraints implying
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:88:33</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:88:62</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:88:65</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:88:65</span></span>
-        <span class="t-3003-c">the set
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:89:9</span></span><span class="t-3003-c">$S \setminus \{u\}$<span class="t-3003">./course2/wly/01/02-resolution.wly:89:17</span></span><span class="t-3003-c">
-          does not imply
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:89:36</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:89:52</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:89:55</span></span></span><span class="t-3003-c">
-          What does it mean<span class="t-3003">./course2/wly/01/02-resolution.wly:89:55</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:90:9</span></span><i><span class="t-3003-c">not<span class="t-3003">./course2/wly/01/02-resolution.wly:90:10</span></span></i><span class="t-3003-c">
-          to imply somthing? It means that there is an assignment<span class="t-3003">./course2/wly/01/02-resolution.wly:90:14</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:91:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/02-resolution.wly:91:9</span></span><span class="t-3003-c">
-          to the variables such that<span class="t-3003">./course2/wly/01/02-resolution.wly:91:17</span></span>
+        Since $S$ is a
+        <i>minimal</i>
+        set of constraints implying
+        <span class="nowrap">$C$,</span>
+        the set $S \setminus \{u\}$ does not imply
+        <span class="nowrap">$C$.</span>
+        What does it mean
+        <i>not</i>
+        to imply somthing? It means
+        that there is an assignment $\alpha$ to the variables
+        such that
       </p>
       <div class="math-block">
         $$
@@ -381,35 +264,21 @@
         F_{S \setminus \{u\}} (\alpha) = 1 \textnormal{ but }
         C(\alpha) = 0 \ .
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/02-resolution.wly:92:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">So
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:96:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/02-resolution.wly:96:12</span></span><span class="t-3003-c">
-          satisfies all constraints
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:96:20</span></span><span class="t-3003-c">$c_v$<span class="t-3003">./course2/wly/01/02-resolution.wly:96:47</span></span><span class="t-3003-c">
-          for
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:96:52</span></span><span class="nowrap"><span class="t-3003-c">$v \in S \setminus \{u\}$<span class="t-3003">./course2/wly/01/02-resolution.wly:96:57</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:96:82</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:96:82</span></span>
-        <span class="t-3003-c">But it violates
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:97:9</span></span><span class="nowrap"><span class="t-3003-c">$c_u$<span class="t-3003">./course2/wly/01/02-resolution.wly:97:25</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:97:30</span></span></span><span class="t-3003-c">
-          Why? Suppose
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:97:30</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/02-resolution.wly:97:45</span></span><span class="t-3003-c">
-          did satisfy
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:97:53</span></span><span class="t-3003-c">$c_u$<span class="t-3003">./course2/wly/01/02-resolution.wly:97:66</span></span><span class="t-3003-c">
-          as well;<span class="t-3003">./course2/wly/01/02-resolution.wly:97:71</span></span>
-        <span class="t-3003-c">then it would satisfy all of
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:98:9</span></span><span class="nowrap"><span class="t-3003-c">$F_S$<span class="t-3003">./course2/wly/01/02-resolution.wly:98:38</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:98:43</span></span></span><span class="t-3003-c">
-          By choice of
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:98:43</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/02-resolution.wly:98:58</span></span><span class="t-3003-c">
-          we know that<span class="t-3003">./course2/wly/01/02-resolution.wly:98:61</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:99:9</span></span><span class="t-3003-c">$F_S$<span class="t-3003">./course2/wly/01/02-resolution.wly:99:9</span></span><span class="t-3003-c">
-          implies
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:99:14</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:99:23</span></span><span class="t-3003-c">
-          so
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:99:26</span></span><span class="nowrap"><span class="t-3003-c">$C(\alpha)=1$<span class="t-3003">./course2/wly/01/02-resolution.wly:99:30</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:99:43</span></span></span><span class="t-3003-c">
-          a contradiction. We conclude:<span class="t-3003">./course2/wly/01/02-resolution.wly:99:43</span></span>
+        So $\alpha$ satisfies all constraints $c_v$ for
+        <span class="nowrap">$v \in S \setminus \{u\}$.</span>
+        But it violates
+        <span class="nowrap">$c_u$.</span>
+        Why? Suppose $\alpha$ did satisfy $c_u$ as well; then
+        it would satisfy all of
+        <span class="nowrap">$F_S$.</span>
+        By choice of $S$ we
+        know that $F_S$ implies $C$ so
+        <span class="nowrap">$C(\alpha)=1$,</span>
+        a
+        contradiction. We conclude:
       </p>
       <div class="math-block">
         $$
@@ -420,22 +289,16 @@
         1&amp;\textnormal{ if $v \in S \setminus \{u\}$.}
         \end{cases}
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/02-resolution.wly:100:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">We don't know about
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:107:9</span></span><span class="t-3003-c">$F_v(\alpha)$<span class="t-3003">./course2/wly/01/02-resolution.wly:107:29</span></span><span class="t-3003-c">
-          for
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:107:42</span></span><span class="t-3003-c">$v \in V \setminus S$<span class="t-3003">./course2/wly/01/02-resolution.wly:107:47</span></span><span class="t-3003-c">
-          but<span class="t-3003">./course2/wly/01/02-resolution.wly:107:68</span></span>
-        <span class="t-3003-c">we don't care, either. Suppose we take
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:108:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/02-resolution.wly:108:48</span></span><span class="t-3003-c">
-          and flip the value<span class="t-3003">./course2/wly/01/02-resolution.wly:108:56</span></span>
-        <span class="t-3003-c">it assigns to edge
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:109:9</span></span><span class="nowrap"><span class="t-3003-c">$f$<span class="t-3003">./course2/wly/01/02-resolution.wly:109:28</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:109:31</span></span></span><span class="t-3003-c">
-          We get a new assignment
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:109:31</span></span><span class="t-3003-c">$\beta$<span class="t-3003">./course2/wly/01/02-resolution.wly:109:57</span></span><span class="t-3003-c">
-          defined by<span class="t-3003">./course2/wly/01/02-resolution.wly:109:64</span></span>
+        We don't know about $F_v(\alpha)$ for
+        $v \in V \setminus S$ but we don't care, either.
+        Suppose we take $\alpha$ and flip the value it
+        assigns to edge
+        <span class="nowrap">$f$.</span>
+        We get a new assignment $\beta$
+        defined by
       </p>
       <div class="math-block">
         $$
@@ -445,63 +308,44 @@
         \alpha(x_e)&amp;\textnormal{ if $e \ne f$.}
         \end{cases}
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/02-resolution.wly:110:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Now consider some
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:116:9</span></span><span class="nowrap"><span class="t-3003-c">$v \in S \setminus \{v\}$<span class="t-3003">./course2/wly/01/02-resolution.wly:116:27</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:116:52</span></span></span><span class="t-3003-c">
-          The edge
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:116:52</span></span><span class="t-3003-c">$f = \{u,w\}$<span class="t-3003">./course2/wly/01/02-resolution.wly:116:63</span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:116:76</span></span>
-        <span class="t-3003-c">is not incident to
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:117:9</span></span><span class="t-3003-c">$v$<span class="t-3003">./course2/wly/01/02-resolution.wly:117:28</span></span><span class="t-3003-c">
-          and thus
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:117:31</span></span><span class="t-3003-c">$x_f$<span class="t-3003">./course2/wly/01/02-resolution.wly:117:41</span></span><span class="t-3003-c">
-          does not appear in
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:117:46</span></span><span class="t-3003-c">$c_v$<span class="t-3003">./course2/wly/01/02-resolution.wly:117:66</span></span><span class="t-3003-c">
-          and<span class="t-3003">./course2/wly/01/02-resolution.wly:117:71</span></span>
-        <span class="t-3003-c">neither in
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:118:9</span></span><span class="nowrap"><span class="t-3003-c">$F_v$<span class="t-3003">./course2/wly/01/02-resolution.wly:118:20</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:118:25</span></span></span><span class="t-3003-c">
-          its equivalent CNF formula.<span class="t-3003">./course2/wly/01/02-resolution.wly:118:25</span></span>
-        <span class="t-3003-c">This means that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:119:9</span></span><span class="nowrap"><span class="t-3003-c">$F_v(\beta)=F_v(\alpha)=1$<span class="t-3003">./course2/wly/01/02-resolution.wly:119:25</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:119:51</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:119:51</span></span>
-        <span class="t-3003-c">What about
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:120:9</span></span><span class="nowrap"><span class="t-3003-c">$c_u$<span class="t-3003">./course2/wly/01/02-resolution.wly:120:20</span></span><span class="t-3003-c">?<span class="t-3003">./course2/wly/01/02-resolution.wly:120:25</span></span></span><span class="t-3003-c">
-          The assignment
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:120:25</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/02-resolution.wly:120:42</span></span><span class="t-3003-c">
-          violates
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:120:50</span></span><span class="nowrap"><span class="t-3003-c">$c_u$<span class="t-3003">./course2/wly/01/02-resolution.wly:120:60</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:120:65</span></span></span><span class="t-3003-c">
-          as seen above:<span class="t-3003">./course2/wly/01/02-resolution.wly:120:65</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:121:9</span></span><span class="nowrap"><span class="t-3003-c">$\sum_{e \sim u} \alpha(x_e) \ne s(u)$<span class="t-3003">./course2/wly/01/02-resolution.wly:121:9</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:121:47</span></span></span><span class="t-3003-c">
-          This sum also includes the edge
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:121:47</span></span><span class="nowrap"><span class="t-3003-c">$f$<span class="t-3003">./course2/wly/01/02-resolution.wly:121:81</span></span><span class="t-3003-c">;<span class="t-3003">./course2/wly/01/02-resolution.wly:121:84</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:121:84</span></span>
-        <span class="t-3003-c">thus, when we consider<span class="t-3003">./course2/wly/01/02-resolution.wly:122:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:123:9</span></span><span class="nowrap"><span class="t-3003-c">$\sum_{e \sim u} \beta(x_e)$<span class="t-3003">./course2/wly/01/02-resolution.wly:123:9</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:123:37</span></span></span><span class="t-3003-c">
-          the two sums differ in exactly one term,<span class="t-3003">./course2/wly/01/02-resolution.wly:123:37</span></span>
-        <span class="t-3003-c">namely that of
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:124:9</span></span><span class="nowrap"><span class="t-3003-c">$x_f$<span class="t-3003">./course2/wly/01/02-resolution.wly:124:24</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:124:29</span></span></span><span class="t-3003-c">
-          and thus the latter has a different parity, and thus<span class="t-3003">./course2/wly/01/02-resolution.wly:124:29</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:125:9</span></span><span class="nowrap"><span class="t-3003-c">$\sum_{e \sim u} \beta(x_e) \ne \sum_{e \sim u} \alpha(x_e) \ne s(u)$<span class="t-3003">./course2/wly/01/02-resolution.wly:125:9</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:125:78</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:125:78</span></span>
-        <span class="t-3003-c">This means that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:126:9</span></span><span class="t-3003-c">$\beta$<span class="t-3003">./course2/wly/01/02-resolution.wly:126:25</span></span><span class="t-3003-c">
-          satisfies
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:126:32</span></span><span class="nowrap"><span class="t-3003-c">$c_u$<span class="t-3003">./course2/wly/01/02-resolution.wly:126:43</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:126:48</span></span></span><span class="t-3003-c">
-          So
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:126:48</span></span><span class="nowrap"><span class="t-3003-c">$F_S(\beta)=1$<span class="t-3003">./course2/wly/01/02-resolution.wly:126:53</span></span><span class="t-3003-c">;<span class="t-3003">./course2/wly/01/02-resolution.wly:126:67</span></span></span><span class="t-3003-c">
-          since
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:126:67</span></span><span class="t-3003-c">$F_S$<span class="t-3003">./course2/wly/01/02-resolution.wly:126:75</span></span><span class="t-3003-c">
-          implies<span class="t-3003">./course2/wly/01/02-resolution.wly:126:80</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:127:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:127:9</span></span><span class="t-3003-c">
-          we also know that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:127:12</span></span><span class="nowrap"><span class="t-3003-c">$C(\beta)=1$<span class="t-3003">./course2/wly/01/02-resolution.wly:127:31</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:127:43</span></span></span><span class="t-3003-c">
-          To summarize:<span class="t-3003">./course2/wly/01/02-resolution.wly:127:43</span></span>
+        Now consider some
+        <span class="nowrap">$v \in S \setminus \{v\}$.</span>
+        The
+        edge $f = \{u,w\}$ is not incident to $v$ and thus
+        $x_f$ does not appear in $c_v$ and neither in
+        <span class="nowrap">$F_v$,</span>
+        its equivalent CNF formula. This means that
+        <span class="nowrap">$F_v(\beta)=F_v(\alpha)=1$.</span>
+        What about
+        <span class="nowrap">$c_u$?</span>
+        The
+        assignment $\alpha$ violates
+        <span class="nowrap">$c_u$,</span>
+        as seen above:
+        <span class="nowrap">$\sum_{e \sim u} \alpha(x_e) \ne s(u)$.</span>
+        This sum also
+        includes the edge
+        <span class="nowrap">$f$;</span>
+        thus, when we consider
+        <span class="nowrap">$\sum_{e \sim u} \beta(x_e)$,</span>
+        the two sums differ in
+        exactly one term, namely that of
+        <span class="nowrap">$x_f$,</span>
+        and thus the
+        latter has a different parity, and thus
+        <span class="nowrap">$\sum_{e \sim u} \beta(x_e) \ne \sum_{e \sim u}
+          \alpha(x_e) \ne s(u)$.</span>
+        This means that $\beta$ satisfies
+        <span class="nowrap">$c_u$.</span>
+        So
+        <span class="nowrap">$F_S(\beta)=1$;</span>
+        since $F_S$ implies $C$ we also know
+        that
+        <span class="nowrap">$C(\beta)=1$.</span>
+        To summarize:
       </p>
       <div class="math-block">
         $$
@@ -509,62 +353,43 @@
         C(\alpha)&amp;= 0 \\
         C(\beta)&amp;= 1 \ .
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/02-resolution.wly:128:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">How can that be? How can
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:132:9</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:132:34</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:132:37</span></span></span><span class="t-3003-c">
-          violated by
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:132:37</span></span><span class="nowrap"><span class="t-3003-c">$\alpha$<span class="t-3003">./course2/wly/01/02-resolution.wly:132:51</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:132:59</span></span></span><span class="t-3003-c">
-          suddenly be satisfied<span class="t-3003">./course2/wly/01/02-resolution.wly:132:59</span></span>
-        <span class="t-3003-c">by
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:133:9</span></span><span class="nowrap"><span class="t-3003-c">$\beta$<span class="t-3003">./course2/wly/01/02-resolution.wly:133:12</span></span><span class="t-3003-c">?<span class="t-3003">./course2/wly/01/02-resolution.wly:133:19</span></span></span><span class="t-3003-c">
-          The two assignments differ only in
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:133:19</span></span><span class="nowrap"><span class="t-3003-c">$x_f$<span class="t-3003">./course2/wly/01/02-resolution.wly:133:56</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:133:61</span></span></span><span class="t-3003-c">
-          so this can only<span class="t-3003">./course2/wly/01/02-resolution.wly:133:61</span></span>
-        <span class="t-3003-c">happens if
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:134:9</span></span><span class="nowrap"><span class="t-3003-c">$x_f \in \var(C)$<span class="t-3003">./course2/wly/01/02-resolution.wly:134:20</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:134:37</span></span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        How can that be? How can
+        <span class="nowrap">$C$,</span>
+        violated by
+        <span class="nowrap">$\alpha$,</span>
+        suddenly be satisfied by
+        <span class="nowrap">$\beta$?</span>
+        The two assignments
+        differ only in
+        <span class="nowrap">$x_f$,</span>
+        so this can only happens if
+        <span class="nowrap">$x_f \in \var(C)$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Now if
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:136:5</span></span><span class="t-3003-c">$F = \tseitin(G,s)$<span class="t-3003">./course2/wly/01/02-resolution.wly:136:12</span></span><span class="t-3003-c">
-        is unsatisfiable and we could somehow<span class="t-3003">./course2/wly/01/02-resolution.wly:136:31</span></span>
-      <span class="t-3003-c">show that every resolution refutation of
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:137:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:137:46</span></span><span class="t-3003-c">
-        contains a clause
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:137:49</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:137:68</span></span><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:137:71</span></span>
-      <span class="t-3003-c">for which this minimal implying set
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:138:5</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/02-resolution.wly:138:41</span></span><span class="t-3003-c">
-        has a large boundary
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:138:44</span></span><span class="nowrap"><span class="t-3003-c">$\delta(S)$<span class="t-3003">./course2/wly/01/02-resolution.wly:138:66</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:138:77</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:138:77</span></span>
-      <span class="t-3003-c">then we could show that
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:139:5</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:139:29</span></span><span class="t-3003-c">
-        must be large, too. In other words:<span class="t-3003">./course2/wly/01/02-resolution.wly:139:32</span></span>
-      <span class="t-3003-c">we could show that every resolution refutation of
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:140:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:140:55</span></span><span class="t-3003-c">
-        has large width.<span class="t-3003">./course2/wly/01/02-resolution.wly:140:58</span></span>
+      Now if $F = \tseitin(G,s)$ is unsatisfiable and we
+      could somehow show that every resolution refutation of
+      $F$ contains a clause $C$ for which this minimal
+      implying set $S$ has a large boundary
+      <span class="nowrap">$\delta(S)$,</span>
+      then we could show that $C$ must be large, too. In
+      other words: we could show that every resolution
+      refutation of $F$ has large width.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Resolution width lower bounds from expansion<span class="t-3003">./course2/wly/01/02-resolution.wly:142:9</span></span>
+      Resolution width lower bounds from expansion
     </h2>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 1.2.3<span class="t-3003">./course2/wly/01/02-resolution.wly:144:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:144:5</span></span>
-        <span class="t-3003-c">Let
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:145:9</span></span><span class="t-3003-c">$h \in \R$<span class="t-3003">./course2/wly/01/02-resolution.wly:145:13</span></span><span class="t-3003-c">
-          and<span class="t-3003">./course2/wly/01/02-resolution.wly:145:23</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:146:9</span></span><span class="nowrap"><span class="t-3003-c">$t \in \N$<span class="t-3003">./course2/wly/01/02-resolution.wly:146:9</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:146:19</span></span></span><span class="t-3003-c">
-          A graph
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:146:19</span></span><span class="t-3003-c">$G=(V,E)$<span class="t-3003">./course2/wly/01/02-resolution.wly:146:29</span></span><span class="t-3003-c">
-          is a<span class="t-3003">./course2/wly/01/02-resolution.wly:146:38</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:147:9</span></span><span class="nowrap"><span class="t-3003-c">$(t,h)$<span class="t-3003">./course2/wly/01/02-resolution.wly:147:9</span></span><span class="t-3003-c">-expander<span class="t-3003">./course2/wly/01/02-resolution.wly:147:16</span></span></span><span class="t-3003-c">
-          if<span class="t-3003">./course2/wly/01/02-resolution.wly:147:16</span></span>
+        <b>Definition 1.2.3</b>
+        Let $h \in \R$ and
+        <span class="nowrap">$t \in \N$.</span>
+        A graph $G=(V,E)$ is a
+        <span class="nowrap">$(t,h)$-expander</span>
+        if
       </p>
       <div class="math-block">
         $$
@@ -572,90 +397,57 @@
         \label{eqn-expansion}
         |\delta(S)| \geq h \cdot |S|
         \end{align}
-        $$<span class="t-3003">./course2/wly/01/02-resolution.wly:148:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">for every set
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:152:9</span></span><span class="t-3003-c">$S \subseteq V$<span class="t-3003">./course2/wly/01/02-resolution.wly:152:23</span></span><span class="t-3003-c">
-          of size
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:152:38</span></span><span class="nowrap"><span class="t-3003-c">$|S| \leq t$<span class="t-3003">./course2/wly/01/02-resolution.wly:152:47</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:152:59</span></span></span>
+        for every set $S \subseteq V$ of size
+        <span class="nowrap">$|S| \leq t$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Typically, we say that
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:153:5</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/02-resolution.wly:153:28</span></span><span class="t-3003-c">
-        is a good expander if it is
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:153:31</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course2/wly/01/02-resolution.wly:153:60</span></span><span class="t-3003-c">-regular<span class="t-3003">./course2/wly/01/02-resolution.wly:153:63</span></span></span><span class="t-3003-c">
-        for<span class="t-3003">./course2/wly/01/02-resolution.wly:153:63</span></span>
-      <span class="t-3003-c">constant
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:154:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course2/wly/01/02-resolution.wly:154:14</span></span><span class="t-3003-c">
-        and
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:154:17</span></span><span class="t-3003-c">$t \in \Omega(n)$<span class="t-3003">./course2/wly/01/02-resolution.wly:154:22</span></span><span class="t-3003-c">
-        and
-        <span class="t-3003">./course2/wly/01/02-resolution.wly:154:39</span></span><span class="nowrap"><span class="t-3003-c">$h \in \Omega(k)$<span class="t-3003">./course2/wly/01/02-resolution.wly:154:44</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:154:61</span></span></span><span class="t-3003-c">
-        I don't want to make this formal right<span class="t-3003">./course2/wly/01/02-resolution.wly:154:61</span></span>
-      <span class="t-3003-c">now.<span class="t-3003">./course2/wly/01/02-resolution.wly:155:5</span></span>
+      Typically, we say that $G$ is a good expander if it
+      is
+      <span class="nowrap">$k$-regular</span>
+      for constant $k$ and $t \in \Omega(n)$
+      and
+      <span class="nowrap">$h \in \Omega(k)$.</span>
+      I don't want to make this
+      formal right now.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Example 1.2.4<span class="t-3003">./course2/wly/01/02-resolution.wly:156:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:156:5</span></span>
-        <span class="t-3003-c">If
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:157:9</span></span><span class="t-3003-c">$G = (V,E)$<span class="t-3003">./course2/wly/01/02-resolution.wly:157:12</span></span><span class="t-3003-c">
-          is
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:157:23</span></span><span class="nowrap"><span class="t-3003-c">$d$<span class="t-3003">./course2/wly/01/02-resolution.wly:157:27</span></span><span class="t-3003-c">-regular<span class="t-3003">./course2/wly/01/02-resolution.wly:157:30</span></span></span><span class="t-3003-c">
-          and<span class="t-3003">./course2/wly/01/02-resolution.wly:157:30</span></span>
-        <span class="t-3003-c">has girth at least
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:158:9</span></span><span class="nowrap"><span class="t-3003-c">$g$<span class="t-3003">./course2/wly/01/02-resolution.wly:158:28</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:158:31</span></span></span><span class="t-3003-c">
-          i.e., if every cycle of
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:158:31</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/02-resolution.wly:158:57</span></span><span class="t-3003-c">
-          has length at least
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:158:60</span></span><span class="nowrap"><span class="t-3003-c">$g$<span class="t-3003">./course2/wly/01/02-resolution.wly:158:81</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:158:84</span></span></span><span class="t-3003-c">
-          then<span class="t-3003">./course2/wly/01/02-resolution.wly:158:84</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:159:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/02-resolution.wly:159:9</span></span><span class="t-3003-c">
-          is a
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:159:12</span></span><span class="nowrap"><span class="t-3003-c">$(g-1,d-2)$<span class="t-3003">./course2/wly/01/02-resolution.wly:159:18</span></span><span class="t-3003-c">-expander.<span class="t-3003">./course2/wly/01/02-resolution.wly:159:29</span></span></span>
+        <b>Example 1.2.4</b>
+        If $G = (V,E)$ is
+        <span class="nowrap">$d$-regular</span>
+        and has girth at least
+        <span class="nowrap">$g$,</span>
+        i.e., if every cycle of $G$ has length at least
+        <span class="nowrap">$g$,</span>
+        then $G$ is a
+        <span class="nowrap">$(g-1,d-2)$-expander.</span>
       </p>
       <p>
-        <span class="t-3003-c">Why? Well, take a set
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:161:9</span></span><span class="t-3003-c">$S \subseteq V$<span class="t-3003">./course2/wly/01/02-resolution.wly:161:31</span></span><span class="t-3003-c">
-          with
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:161:46</span></span><span class="nowrap"><span class="t-3003-c">$|S| \leq g-1$<span class="t-3003">./course2/wly/01/02-resolution.wly:161:52</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:161:66</span></span></span><span class="t-3003-c">
-          The induced graph
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:161:66</span></span><span class="t-3003-c">$H = G[S] =
-          (S,E_S)$<span class="t-3003">./course2/wly/01/02-resolution.wly:161:86</span></span><span class="t-3003-c">
-          must be<span class="t-3003">./course2/wly/01/02-resolution.wly:162:17</span></span>
-        <span class="t-3003-c">acyclic, i.e., a forest. A forest has fewer edges than vertices, so
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:163:9</span></span><span class="nowrap"><span class="t-3003-c">$|E_S| \leq |E|-1$<span class="t-3003">./course2/wly/01/02-resolution.wly:163:77</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:163:95</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:163:95</span></span>
-        <span class="t-3003-c">Let's sum up the<span class="t-3003">./course2/wly/01/02-resolution.wly:164:9</span></span>
-        <span class="t-3003-c">degrees of the<span class="t-3003">./course2/wly/01/02-resolution.wly:165:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:166:9</span></span><span class="nowrap"><span class="t-3003-c">$u \in S$<span class="t-3003">./course2/wly/01/02-resolution.wly:166:9</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:166:18</span></span></span><span class="t-3003-c">
-          Since
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:166:18</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/02-resolution.wly:166:26</span></span><span class="t-3003-c">
-          is
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:166:29</span></span><span class="nowrap"><span class="t-3003-c">$d$<span class="t-3003">./course2/wly/01/02-resolution.wly:166:33</span></span><span class="t-3003-c">-regular,<span class="t-3003">./course2/wly/01/02-resolution.wly:166:36</span></span></span><span class="t-3003-c">
-          this is
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:166:36</span></span><span class="nowrap"><span class="t-3003-c">$d|S|$<span class="t-3003">./course2/wly/01/02-resolution.wly:166:54</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:166:60</span></span></span><span class="t-3003-c">
-          Expanding the sum differently, we get<span class="t-3003">./course2/wly/01/02-resolution.wly:166:60</span></span>
-        <span class="t-3003-c">the following (the notation
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:167:9</span></span><span class="t-3003-c">$u \sim v$<span class="t-3003">./course2/wly/01/02-resolution.wly:167:37</span></span><span class="t-3003-c">
-          means that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:167:47</span></span><span class="nowrap"><span class="t-3003-c">$\{u,v\} \in E$<span class="t-3003">./course2/wly/01/02-resolution.wly:167:59</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:167:74</span></span></span><span class="t-3003-c">
-          and the expression
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:167:74</span></span><span class="t-3003-c">$[u
-          \sim v]$<span class="t-3003">./course2/wly/01/02-resolution.wly:167:95</span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:168:17</span></span>
-        <span class="t-3003-c">is
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:169:9</span></span><span class="t-3003-c">$1$<span class="t-3003">./course2/wly/01/02-resolution.wly:169:12</span></span><span class="t-3003-c">
-          if
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:169:15</span></span><span class="t-3003-c">$u \sim v$<span class="t-3003">./course2/wly/01/02-resolution.wly:169:19</span></span><span class="t-3003-c">
-          and
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:169:29</span></span><span class="t-3003-c">$0$<span class="t-3003">./course2/wly/01/02-resolution.wly:169:34</span></span><span class="t-3003-c">
-          if
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:169:37</span></span><span class="nowrap"><span class="t-3003-c">$u \not \sim v$<span class="t-3003">./course2/wly/01/02-resolution.wly:169:41</span></span><span class="t-3003-c">):<span class="t-3003">./course2/wly/01/02-resolution.wly:169:56</span></span></span>
+        Why? Well, take a set $S \subseteq V$ with
+        <span class="nowrap">$|S| \leq g-1$.</span>
+        The induced graph $H = G[S] = (S,E_S)$
+        must be acyclic, i.e., a forest. A forest has fewer
+        edges than vertices, so
+        <span class="nowrap">$|E_S| \leq |E|-1$.</span>
+        Let's sum
+        up the degrees of the
+        <span class="nowrap">$u \in S$.</span>
+        Since $G$ is
+        <span class="nowrap">$d$-regular,</span>
+        this is
+        <span class="nowrap">$d|S|$.</span>
+        Expanding the sum
+        differently, we get the following (the notation
+        $u \sim v$ means that
+        <span class="nowrap">$\{u,v\} \in E$,</span>
+        and the
+        expression $[u \sim v]$ is $1$ if $u \sim v$ and $0$
+        if
+        <span class="nowrap">$u \not \sim v$):</span>
       </p>
       <div class="math-block">
         $$
@@ -668,25 +460,18 @@
         &amp;= 2 |E_S| + |\delta(S)| \\
         &amp;\leq 2 (|S|-1) + \delta(S) \leq 2 |S| + \delta(S) \ .
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/02-resolution.wly:170:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">In words: the edges included in
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:179:9</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/02-resolution.wly:179:41</span></span><span class="t-3003-c">
-          or leaving
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:179:44</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/02-resolution.wly:179:56</span></span><span class="t-3003-c">
-          generate
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:179:59</span></span><span class="t-3003-c">$d|S|$<span class="t-3003">./course2/wly/01/02-resolution.wly:179:69</span></span><span class="t-3003-c">
-          "endpoints". At most<span class="t-3003">./course2/wly/01/02-resolution.wly:179:75</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:180:9</span></span><span class="t-3003-c">$2 |E_S|$<span class="t-3003">./course2/wly/01/02-resolution.wly:180:9</span></span><span class="t-3003-c">
-          of them can be inside
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:180:18</span></span><span class="nowrap"><span class="t-3003-c">$G[S]$<span class="t-3003">./course2/wly/01/02-resolution.wly:180:41</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:180:47</span></span></span><span class="t-3003-c">
-          The others must be on an edge leaving
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:180:47</span></span><span class="nowrap"><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/02-resolution.wly:180:87</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:180:90</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:180:90</span></span>
-        <span class="t-3003-c">We conclude that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:181:9</span></span><span class="nowrap"><span class="t-3003-c">$\delta(S) \geq (d-2) |S|$<span class="t-3003">./course2/wly/01/02-resolution.wly:181:26</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:181:52</span></span></span>
+        In words: the edges included in $S$ or leaving $S$
+        generate $d|S|$ "endpoints". At most $2 |E_S|$ of
+        them can be inside
+        <span class="nowrap">$G[S]$.</span>
+        The others must be on an
+        edge leaving
+        <span class="nowrap">$S$.</span>
+        We conclude that
+        <span class="nowrap">$\delta(S) \geq (d-2) |S|$.</span>
       </p>
     </div>
     <div
@@ -694,79 +479,54 @@
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Theorem 1.2.5 (Good expanders give<span class="t-3003">./course2/wly/01/02-resolution.wly:182:5</span></span>
-          <span class="t-3003-c">hard Tseitin formulas).<span class="t-3003">./course2/wly/01/02-resolution.wly:185:9</span></span></b><span class="t-3003-c">
-          Let
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:185:33</span></span><span class="t-3003-c">$F = \tseitin(G,s)$<span class="t-3003">./course2/wly/01/02-resolution.wly:185:38</span></span><span class="t-3003-c">
-          be an unsatisfiable<span class="t-3003">./course2/wly/01/02-resolution.wly:185:57</span></span>
-        <span class="t-3003-c">Tseitin formula. If
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:186:9</span></span><span class="t-3003-c">$G=(V,E)$<span class="t-3003">./course2/wly/01/02-resolution.wly:186:29</span></span><span class="t-3003-c">
-          is connected and a
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:186:38</span></span><span class="nowrap"><span class="t-3003-c">$(t,h)$<span class="t-3003">./course2/wly/01/02-resolution.wly:186:58</span></span><span class="t-3003-c">-expander<span class="t-3003">./course2/wly/01/02-resolution.wly:186:65</span></span></span><span class="t-3003-c">
-          then every resolution<span class="t-3003">./course2/wly/01/02-resolution.wly:186:65</span></span>
-        <span class="t-3003-c">refutation of
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:187:9</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:187:23</span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:187:26</span></span>
-        <span class="t-3003-c">has width at least
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:188:9</span></span><span class="nowrap"><span class="t-3003-c">$th/2$<span class="t-3003">./course2/wly/01/02-resolution.wly:188:28</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:188:34</span></span></span>
+        <b>Theorem 1.2.5 (Good expanders give hard Tseitin formulas).</b>
+        Let
+        $F = \tseitin(G,s)$ be an unsatisfiable Tseitin
+        formula. If $G=(V,E)$ is connected and a
+        <span class="nowrap">$(t,h)$-expander</span>
+        then every resolution refutation of
+        $F$ has width at least
+        <span class="nowrap">$th/2$.</span>
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Proof</b>
-        
-        <span class="t-3003-c">Recall that for a clause
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:190:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:190:34</span></span><span class="t-3003-c">
-          implied by
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:190:37</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:190:49</span></span><span class="t-3003-c">
-          we considered a minimal set
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:190:52</span></span><span class="t-3003-c">$S \subseteq V$<span class="t-3003">./course2/wly/01/02-resolution.wly:190:81</span></span><span class="t-3003-c">
-          such<span class="t-3003">./course2/wly/01/02-resolution.wly:190:96</span></span>
-        <span class="t-3003-c">that<span class="t-3003">./course2/wly/01/02-resolution.wly:191:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:192:9</span></span><span class="t-3003-c">$F_S(G,s)$<span class="t-3003">./course2/wly/01/02-resolution.wly:192:9</span></span><span class="t-3003-c">
-          implies
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:192:19</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:192:28</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:192:31</span></span></span><span class="t-3003-c">
-          Let's formally define a
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:192:31</span></span><i><span class="t-3003-c">complexity measure<span class="t-3003">./course2/wly/01/02-resolution.wly:192:58</span></span></i><span class="t-3003-c">
-          for
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:192:77</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:192:82</span></span><span class="t-3003-c">:<span class="t-3003">./course2/wly/01/02-resolution.wly:192:85</span></span></span>
+        Recall that for a clause $C$ implied by $F$ we
+        considered a minimal set $S \subseteq V$ such that
+        $F_S(G,s)$ implies
+        <span class="nowrap">$C$.</span>
+        Let's formally define a
+        <i>complexity measure</i>
+        for
+        <span class="nowrap">$C$:</span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \mu(C) := \min \{|S| \ | S \subseteq V \textnormal{ and } F_S \textnormal{ implies } C \} \ .
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/02-resolution.wly:193:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">First we claim that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:196:9</span></span><span class="nowrap"><span class="t-3003-c">$\mu(\Box) = |V|$<span class="t-3003">./course2/wly/01/02-resolution.wly:196:29</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:196:46</span></span></span><span class="t-3003-c">
-          Indeed,
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:196:46</span></span><span class="t-3003-c">$F_V = F = \tseitin(G,s)$<span class="t-3003">./course2/wly/01/02-resolution.wly:196:56</span></span><span class="t-3003-c">
-          implies
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:196:81</span></span><span class="t-3003-c">$\Box$<span class="t-3003">./course2/wly/01/02-resolution.wly:196:90</span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:196:96</span></span>
-        <span class="t-3003-c">(since<span class="t-3003">./course2/wly/01/02-resolution.wly:197:9</span></span>
-        <span class="t-3003-c">it is unsatisfiable) so
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:198:9</span></span><span class="t-3003-c">$V$<span class="t-3003">./course2/wly/01/02-resolution.wly:198:33</span></span><span class="t-3003-c">
-          can take the role of
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:198:36</span></span><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/02-resolution.wly:198:58</span></span><span class="t-3003-c">
-          in the definition of
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:198:61</span></span><span class="nowrap"><span class="t-3003-c">$\mu$<span class="t-3003">./course2/wly/01/02-resolution.wly:198:83</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:198:88</span></span></span><span class="t-3003-c">
-          But are we<span class="t-3003">./course2/wly/01/02-resolution.wly:198:88</span></span>
-        <span class="t-3003-c">sure<span class="t-3003">./course2/wly/01/02-resolution.wly:199:9</span></span>
-        <span class="t-3003-c">there is no smaller such
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:200:9</span></span><span class="nowrap"><span class="t-3003-c">$S$<span class="t-3003">./course2/wly/01/02-resolution.wly:200:34</span></span><span class="t-3003-c">?<span class="t-3003">./course2/wly/01/02-resolution.wly:200:37</span></span></span><span class="t-3003-c">
-          Suppose
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:200:37</span></span><span class="nowrap"><span class="t-3003-c">$S \subsetneq V$<span class="t-3003">./course2/wly/01/02-resolution.wly:200:47</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:200:63</span></span></span><span class="t-3003-c">
-          So there is a vertex
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:200:63</span></span><span class="nowrap"><span class="t-3003-c">$u \not \in S$<span class="t-3003">./course2/wly/01/02-resolution.wly:200:86</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:200:100</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:200:100</span></span>
-        <span class="t-3003-c">Let's change the parity requirement of
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:201:9</span></span><span class="t-3003-c">$u$<span class="t-3003">./course2/wly/01/02-resolution.wly:201:48</span></span><span class="t-3003-c">
-          to obtain new requirements
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:201:51</span></span><span class="nowrap"><span class="t-3003-c">$s'$<span class="t-3003">./course2/wly/01/02-resolution.wly:201:79</span></span><span class="t-3003-c">:<span class="t-3003">./course2/wly/01/02-resolution.wly:201:83</span></span></span>
+        First we claim that
+        <span class="nowrap">$\mu(\Box) = |V|$.</span>
+        Indeed,
+        $F_V = F = \tseitin(G,s)$ implies $\Box$ (since it is
+        unsatisfiable) so $V$ can take the role of $S$ in the
+        definition of
+        <span class="nowrap">$\mu$.</span>
+        But are we sure there is no
+        smaller such
+        <span class="nowrap">$S$?</span>
+        Suppose
+        <span class="nowrap">$S \subsetneq V$.</span>
+        So there
+        is a vertex
+        <span class="nowrap">$u \not \in S$.</span>
+        Let's change the parity
+        requirement of $u$ to obtain new requirements
+        <span class="nowrap">$s'$:</span>
       </p>
       <div class="math-block">
         $$
@@ -776,175 +536,115 @@
         s(v)&amp;\textnormal{ if $v \ne u$.}
         \end{cases}
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/02-resolution.wly:202:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Since
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:208:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/02-resolution.wly:208:15</span></span><span class="t-3003-c">
-          is connected and the number of vertices with parity requirement
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:208:18</span></span><span class="t-3003-c">$1$<span class="t-3003">./course2/wly/01/02-resolution.wly:208:83</span></span><span class="t-3003-c">
-          is even in<span class="t-3003">./course2/wly/01/02-resolution.wly:208:86</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:209:9</span></span><span class="nowrap"><span class="t-3003-c">$s'$<span class="t-3003">./course2/wly/01/02-resolution.wly:209:9</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:209:13</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:209:13</span></span>
-        <span class="t-3003-c">the formula
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:210:9</span></span><span class="t-3003-c">$\tseitin(G,s')$<span class="t-3003">./course2/wly/01/02-resolution.wly:210:21</span></span><span class="t-3003-c">
-          is satisfiable. Since all other parity requirements are<span class="t-3003">./course2/wly/01/02-resolution.wly:210:37</span></span>
-        <span class="t-3003-c">the same, the formula
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:211:9</span></span><span class="t-3003-c">$F_S$<span class="t-3003">./course2/wly/01/02-resolution.wly:211:31</span></span><span class="t-3003-c">
-          is also a subformula of
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:211:36</span></span><span class="t-3003-c">$\tseitin(G,s')$<span class="t-3003">./course2/wly/01/02-resolution.wly:211:61</span></span><span class="t-3003-c">
-          and thus
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:211:77</span></span><span class="t-3003-c">$F_S$<span class="t-3003">./course2/wly/01/02-resolution.wly:211:87</span></span><span class="t-3003-c">
-          is<span class="t-3003">./course2/wly/01/02-resolution.wly:211:92</span></span>
-        <span class="t-3003-c">satisfiable.<span class="t-3003">./course2/wly/01/02-resolution.wly:212:9</span></span>
-        <span class="t-3003-c">Therefore
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:213:9</span></span><span class="t-3003-c">$F_S$<span class="t-3003">./course2/wly/01/02-resolution.wly:213:19</span></span><span class="t-3003-c">
-          cannot imply
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:213:24</span></span><span class="nowrap"><span class="t-3003-c">$\Box$<span class="t-3003">./course2/wly/01/02-resolution.wly:213:38</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:213:44</span></span></span><span class="t-3003-c">
-          We conclude that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:213:44</span></span><span class="nowrap"><span class="t-3003-c">$\mu(\Box) = |V|$<span class="t-3003">./course2/wly/01/02-resolution.wly:213:63</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:213:80</span></span></span>
+        Since $G$ is connected and the number of vertices
+        with parity requirement $1$ is even in
+        <span class="nowrap">$s'$,</span>
+        the
+        formula $\tseitin(G,s')$ is satisfiable. Since all
+        other parity requirements are the same, the formula
+        $F_S$ is also a subformula of $\tseitin(G,s')$ and
+        thus $F_S$ is satisfiable. Therefore $F_S$ cannot
+        imply
+        <span class="nowrap">$\Box$.</span>
+        We conclude that
+        <span class="nowrap">$\mu(\Box) = |V|$.</span>
       </p>
       <p>
-        <span class="t-3003-c">Now consider a resolution refutation of
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:215:9</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:215:49</span></span><span class="t-3003-c">
-          and a clause
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:215:52</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:215:66</span></span><span class="t-3003-c">
-          in it. If
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:215:69</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:215:80</span></span><span class="t-3003-c">
-          is the resolvent<span class="t-3003">./course2/wly/01/02-resolution.wly:215:83</span></span>
-        <span class="t-3003-c">of two earlier clauses
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:216:9</span></span><span class="t-3003-c">$D_1$<span class="t-3003">./course2/wly/01/02-resolution.wly:216:32</span></span><span class="t-3003-c">
-          and
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:216:37</span></span><span class="nowrap"><span class="t-3003-c">$D_2$<span class="t-3003">./course2/wly/01/02-resolution.wly:216:42</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:216:47</span></span></span><span class="t-3003-c">
-          how are
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:216:47</span></span><span class="t-3003-c">$\mu(C), \mu(D_1), \mu(D_2)$<span class="t-3003">./course2/wly/01/02-resolution.wly:216:57</span></span><span class="t-3003-c">
-          related?<span class="t-3003">./course2/wly/01/02-resolution.wly:216:85</span></span>
-        <span class="t-3003-c">If
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:217:9</span></span><span class="t-3003-c">$S_1 \subseteq V$<span class="t-3003">./course2/wly/01/02-resolution.wly:217:12</span></span><span class="t-3003-c">
-          is a smallest set such that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:217:29</span></span><span class="t-3003-c">$F_{S_1}$<span class="t-3003">./course2/wly/01/02-resolution.wly:217:58</span></span><span class="t-3003-c">
-          implies
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:217:67</span></span><span class="nowrap"><span class="t-3003-c">$D_1$<span class="t-3003">./course2/wly/01/02-resolution.wly:217:76</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:217:81</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:217:81</span></span>
-        <span class="t-3003-c">and
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:218:9</span></span><span class="t-3003-c">$S_2 \subseteq V$<span class="t-3003">./course2/wly/01/02-resolution.wly:218:13</span></span><span class="t-3003-c">
-          is a smallest set such that<span class="t-3003">./course2/wly/01/02-resolution.wly:218:30</span></span>
-        <span class="t-3003-c">that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:219:9</span></span><span class="t-3003-c">$F_{S_2}$<span class="t-3003">./course2/wly/01/02-resolution.wly:219:14</span></span><span class="t-3003-c">
-          implies
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:219:23</span></span><span class="nowrap"><span class="t-3003-c">$D_2$<span class="t-3003">./course2/wly/01/02-resolution.wly:219:32</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:219:37</span></span></span><span class="t-3003-c">
-          then clearly
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:219:37</span></span><span class="t-3003-c">$F_{S_1} \wedge F_{S_2}$<span class="t-3003">./course2/wly/01/02-resolution.wly:219:52</span></span><span class="t-3003-c">
-          implies
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:219:76</span></span><span class="nowrap"><span class="t-3003-c">$D_1 \wedge
-            D_2$<span class="t-3003">./course2/wly/01/02-resolution.wly:219:85</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:220:13</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:220:13</span></span>
-        <span class="t-3003-c">Therefore it implies
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:221:9</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:221:30</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:221:33</span></span></span><span class="t-3003-c">
-          We conclude: for
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:221:33</span></span><span class="t-3003-c">$S := S_1 \cup S_2$<span class="t-3003">./course2/wly/01/02-resolution.wly:221:52</span></span><span class="t-3003-c">
-          it holds that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:221:71</span></span><span class="t-3003-c">$F_S$<span class="t-3003">./course2/wly/01/02-resolution.wly:221:86</span></span><span class="t-3003-c">
-          implies<span class="t-3003">./course2/wly/01/02-resolution.wly:221:91</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:222:9</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:222:9</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:222:12</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:222:12</span></span>
-        <span class="t-3003-c">Therefore
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:223:9</span></span><span class="nowrap"><span class="t-3003-c">$\mu(C) \leq |S| \leq |S_1| + |S_2| = \mu(C_1) + \mu(C_2)$<span class="t-3003">./course2/wly/01/02-resolution.wly:223:19</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:223:77</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:223:77</span></span>
-        <span class="t-3003-c">This implies in particular that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:224:9</span></span><span class="nowrap"><span class="t-3003-c">$\max ( \mu(C_1), \mu(C_2)) \geq \mu(C) / 2$<span class="t-3003">./course2/wly/01/02-resolution.wly:224:41</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:224:85</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:224:85</span></span>
-        <span class="t-3003-c">Let's call
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:225:9</span></span><span class="t-3003-c">$C_1, C_2$<span class="t-3003">./course2/wly/01/02-resolution.wly:225:20</span></span><span class="t-3003-c">
-          the
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:225:30</span></span><i><span class="t-3003-c">predecessors<span class="t-3003">./course2/wly/01/02-resolution.wly:225:36</span></span></i><span class="t-3003-c">
-          of
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:225:49</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:225:53</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:225:56</span></span></span><span class="t-3003-c">
-          It holds that every
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:225:56</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:225:78</span></span><span class="t-3003-c">
-          in the<span class="t-3003">./course2/wly/01/02-resolution.wly:225:81</span></span>
-        <span class="t-3003-c">refutation<span class="t-3003">./course2/wly/01/02-resolution.wly:226:9</span></span>
-        <span class="t-3003-c">is either<span class="t-3003">./course2/wly/01/02-resolution.wly:227:9</span></span>
+        Now consider a resolution refutation of $F$ and a
+        clause $C$ in it. If $C$ is the resolvent of two
+        earlier clauses $D_1$ and
+        <span class="nowrap">$D_2$,</span>
+        how are
+        $\mu(C), \mu(D_1), \mu(D_2)$ related? If
+        $S_1 \subseteq V$ is a smallest set such that
+        $F_{S_1}$ implies
+        <span class="nowrap">$D_1$,</span>
+        and $S_2 \subseteq V$ is a
+        smallest set such that that $F_{S_2}$ implies
+        <span class="nowrap">$D_2$,</span>
+        then clearly $F_{S_1} \wedge F_{S_2}$ implies
+        <span class="nowrap">$D_1 \wedge D_2$.</span>
+        Therefore it implies
+        <span class="nowrap">$C$.</span>
+        We
+        conclude: for $S := S_1 \cup S_2$ it holds that $F_S$
+        implies
+        <span class="nowrap">$C$.</span>
+        Therefore
+        <span class="nowrap">$\mu(C) \leq |S| \leq |S_1| + |S_2| = \mu(C_1) +
+          \mu(C_2)$.</span>
+        This implies in particular that
+        <span class="nowrap">$\max ( \mu(C_1), \mu(C_2)) \geq \mu(C) / 2$.</span>
+        Let's
+        call $C_1, C_2$ the
+        <i>predecessors</i>
+        of
+        <span class="nowrap">$C$.</span>
+        It holds
+        that every $C$ in the refutation is either
       </p>
       <ol>
         <li>
           <p>
-            <span class="t-3003-c">a clause of
-              <span class="t-3003">./course2/wly/01/02-resolution.wly:230:17</span></span><span class="t-3003-c">$F$<span class="t-3003">./course2/wly/01/02-resolution.wly:230:29</span></span><span class="t-3003-c">
-              itself; in this case we have
-              <span class="t-3003">./course2/wly/01/02-resolution.wly:230:32</span></span><span class="nowrap"><span class="t-3003-c">$\mu(C) = 1$<span class="t-3003">./course2/wly/01/02-resolution.wly:230:62</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:230:74</span></span></span><span class="t-3003-c">
-              or<span class="t-3003">./course2/wly/01/02-resolution.wly:230:74</span></span>
+            a clause of $F$ itself; in this case we have
+            <span class="nowrap">$\mu(C) = 1$,</span>
+            or
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">has a predecessor
-              <span class="t-3003">./course2/wly/01/02-resolution.wly:232:17</span></span><span class="t-3003-c">$D$<span class="t-3003">./course2/wly/01/02-resolution.wly:232:35</span></span><span class="t-3003-c">
-              with
-              <span class="t-3003">./course2/wly/01/02-resolution.wly:232:38</span></span><span class="nowrap"><span class="t-3003-c">$\mu(D) \geq \mu(C)/2$<span class="t-3003">./course2/wly/01/02-resolution.wly:232:44</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:232:66</span></span></span>
+            has a predecessor $D$ with
+            <span class="nowrap">$\mu(D) \geq \mu(C)/2$.</span>
           </p>
         </li>
       </ol>
       <p>
-        <span class="t-3003-c">Thus, if we start at
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:233:9</span></span><span class="t-3003-c">$\Box$<span class="t-3003">./course2/wly/01/02-resolution.wly:233:30</span></span><span class="t-3003-c">
-          and trace back its predecessors, we can make sure that<span class="t-3003">./course2/wly/01/02-resolution.wly:233:36</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:234:9</span></span><span class="t-3003-c">$\mu(C)$<span class="t-3003">./course2/wly/01/02-resolution.wly:234:9</span></span><span class="t-3003-c">
-          never drops by more than a factor
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:234:17</span></span><span class="nowrap"><span class="t-3003-c">$1/2$<span class="t-3003">./course2/wly/01/02-resolution.wly:234:52</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:234:57</span></span></span><span class="t-3003-c">
-          It starts at
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:234:57</span></span><span class="t-3003-c">$|V|$<span class="t-3003">./course2/wly/01/02-resolution.wly:234:72</span></span><span class="t-3003-c">
-          and ends at
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:234:77</span></span><span class="nowrap"><span class="t-3003-c">$1$<span class="t-3003">./course2/wly/01/02-resolution.wly:234:90</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:234:93</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:234:93</span></span>
-        <span class="t-3003-c">so surely at some point it falls in the interval
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:235:9</span></span><span class="nowrap"><span class="t-3003-c">$[t/2, t]$<span class="t-3003">./course2/wly/01/02-resolution.wly:235:58</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:235:68</span></span></span><span class="t-3003-c">
-          At this point we have a clause<span class="t-3003">./course2/wly/01/02-resolution.wly:235:68</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:236:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:236:9</span></span><span class="t-3003-c">
-          in the refutation with
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:236:12</span></span><span class="nowrap"><span class="t-3003-c">$t/2 \leq \mu(C) \leq t$<span class="t-3003">./course2/wly/01/02-resolution.wly:236:36</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:236:60</span></span></span><span class="t-3003-c">
-          This is often called a<span class="t-3003">./course2/wly/01/02-resolution.wly:236:60</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:237:9</span></span><i><span class="t-3003-c">clause of intermediate complexity.<span class="t-3003">./course2/wly/01/02-resolution.wly:237:10</span></span></i>
+        Thus, if we start at $\Box$ and trace back its
+        predecessors, we can make sure that $\mu(C)$ never
+        drops by more than a factor
+        <span class="nowrap">$1/2$.</span>
+        It starts at $|V|$
+        and ends at
+        <span class="nowrap">$1$,</span>
+        so surely at some point it falls in
+        the interval
+        <span class="nowrap">$[t/2, t]$.</span>
+        At this point we have a
+        clause $C$ in the refutation with
+        <span class="nowrap">$t/2 \leq \mu(C) \leq t$.</span>
+        This is often called a
+        <i>clause of intermediate complexity.</i>
       </p>
       <p>
-        <span class="t-3003-c">Let
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:239:9</span></span><span class="t-3003-c">$S \subseteq V$<span class="t-3003">./course2/wly/01/02-resolution.wly:239:13</span></span><span class="t-3003-c">
-          be a smallest set such that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:239:28</span></span><span class="t-3003-c">$F_S$<span class="t-3003">./course2/wly/01/02-resolution.wly:239:57</span></span><span class="t-3003-c">
-          implies
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:239:62</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course2/wly/01/02-resolution.wly:239:71</span></span><span class="t-3003-c">,<span class="t-3003">./course2/wly/01/02-resolution.wly:239:74</span></span></span><span class="t-3003-c">
-          i.e.,
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:239:74</span></span><span class="nowrap"><span class="t-3003-c">$|S| = \mu(C)$<span class="t-3003">./course2/wly/01/02-resolution.wly:239:82</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:239:96</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:239:96</span></span>
-        <span class="t-3003-c">Since
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:240:9</span></span><span class="t-3003-c">$|S| \leq t$<span class="t-3003">./course2/wly/01/02-resolution.wly:240:15</span></span><span class="t-3003-c">
-          we can apply that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:240:27</span></span><span class="t-3003-c">$G$<span class="t-3003">./course2/wly/01/02-resolution.wly:240:46</span></span><span class="t-3003-c">
-          is a
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:240:49</span></span><span class="nowrap"><span class="t-3003-c">$(t,h)$<span class="t-3003">./course2/wly/01/02-resolution.wly:240:55</span></span><span class="t-3003-c">-expander<span class="t-3003">./course2/wly/01/02-resolution.wly:240:62</span></span></span><span class="t-3003-c">
-          and conclude that<span class="t-3003">./course2/wly/01/02-resolution.wly:240:62</span></span>
+        Let $S \subseteq V$ be a smallest set such that $F_S$
+        implies
+        <span class="nowrap">$C$,</span>
+        i.e.,
+        <span class="nowrap">$|S| = \mu(C)$.</span>
+        Since $|S| \leq t$
+        we can apply that $G$ is a
+        <span class="nowrap">$(t,h)$-expander</span>
+        and
+        conclude that
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         |\delta(S)| \geq h\cdot |S| \geq ht/2 \ .
         \end{align*}
-        $$<span class="t-3003">./course2/wly/01/02-resolution.wly:241:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Together with
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:244:9</span></span><a
+        Together with
+        <a
           href="./1-2.html#_2_hgi_"
           class=""
-        >Lemma 1.2.2</a><span class="t-3003-c">
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:244:9</span></span>
-        <span class="t-3003-c">this implies that
-          <span class="t-3003">./course2/wly/01/02-resolution.wly:245:9</span></span><span class="nowrap"><span class="t-3003-c">$|C| \geq ht/2$<span class="t-3003">./course2/wly/01/02-resolution.wly:245:27</span></span><span class="t-3003-c">.<span class="t-3003">./course2/wly/01/02-resolution.wly:245:42</span></span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        >Lemma 1.2.2</a>
+        this implies that
+        <span class="nowrap">$|C| \geq ht/2$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div id="end-of-page-elt">

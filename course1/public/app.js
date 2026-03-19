@@ -604,8 +604,9 @@ const onMouseMove = (e) => {
 const onScrollMenuDisplay = (e) => {
   const currentScrollY = window.scrollY;
   const currentScrollYMoment = Date.now();
-  const velocity =
-    (currentScrollY - lastScrollY) / (currentScrollYMoment - lastScrollYMoment);
+  const displacement = currentScrollY - lastScrollY;
+  const time = Math.max(currentScrollYMoment - lastScrollYMoment, 5.0);
+  const velocity = displacement / time;
 
   if (
     (velocity < -7 ||
@@ -614,6 +615,7 @@ const onScrollMenuDisplay = (e) => {
       (velocity < 0 && currentScrollY <= 200)) &&
     !topMenuVisible
   ) {
+    // console.log("ididit, lastScrollY, currentScrollY, velocity:", lastScrollY, currentScrollY, velocity);
     setTopMenuVisible(true);
   } else if (
     currentScrollY > lastScrollY &&
@@ -626,6 +628,7 @@ const onScrollMenuDisplay = (e) => {
 
   lastScrollY = currentScrollY;
   lastScrollYMoment = currentScrollYMoment;
+  // console.log("set lastScrollY to", lastScrollY);
 };
 
 const smoothRecenterMaybe = (_) => {
@@ -1294,10 +1297,26 @@ const onDOMContentLoaded = () => {
   topMenu = document.getElementById("top-menu");
   bottomMenu = document.getElementById("bottom-menu");
   bodyWrapper = document.getElementById("body-wrapper");
-  setTopMenuVisible(true);
   setupMenuTooltips();
   onResize();
   authorModeInit();
+  // top menu is visible by default but we do
+  // want to hide it if we're about to scroll to
+  // something that might be hidden by it:
+  if (window.location.href.includes("#")) {
+    topMenu?.classList.add("insta");
+    setTopMenuVisible(false);
+    window.requestAnimationFrame(() => {
+      topMenu?.classList.remove("insta");
+    });
+  }
+  // add the onScrollMenuDisplay with a delay
+  // to avoid artifacts caused by initial browser
+  // "jump-scrolling" all over the place as it
+  // looks for an href or whatever:
+  window.setTimeout(() => {
+    document.addEventListener("scroll", onScrollMenuDisplay, { passive: true });
+  }, 100);
 };
 
 const onLoad = () => {
@@ -1473,7 +1492,6 @@ window.addEventListener("resize", onResize);
 window.addEventListener("DOMContentLoaded", onDOMContentLoaded);
 window.addEventListener("load", onLoad);
 document.addEventListener("click", onClick);
-document.addEventListener("scroll", onScrollMenuDisplay, { passive: true });
 document.addEventListener("mousemove", onMouseMove, { passive: true });
 document.addEventListener("scrollend", onScrollEnd);
 document.addEventListener("touchend", onTouchEnd, { passive: true });

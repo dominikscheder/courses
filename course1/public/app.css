@@ -418,6 +418,10 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
   top: -100px;
 }
 
+#top-menu.insta {
+  transition: 0s;
+}
+
 #top-menu {
   display: flex;
   position: var(--top-menu-position);

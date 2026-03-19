@@ -71,7 +71,8 @@ Local server-related:
 
 ```
 npm install            // to install node stuff needed to run local server
-npm run dev            // run local server that is needed to respond to the local 'dev mode' requests
+COURSE=<dirname> npm run dev                   // run local server that is needed to respond for '--local' mode, serving <dirname>/public folder
+COURSE=<dirname> PORT=<xxxx> npm run dev       // ...same but serving on custom port number
 ```
 
 Main project commands:
@@ -80,7 +81,7 @@ Main project commands:
 gleam run              // main command
 gleam run -- --local   // source with tooltips
 gleam run -- --fmt <x> // re-formats the source at x chars per line
-gleam run -- --help    // more esoteric options
+gleam run -- --help    // more options
 ```
 
 Git cheat sheet:
@@ -98,7 +99,7 @@ git pull --rebase      // when a conflict arises during push or pull, try this; 
 
 # Known issues
 
-1. The `--local` mode has some layout artifacts to do with showing the tooltips. DO NOT FREAK OUT if a layout bug occurs in `--local` mode. Double-check if the same artifact occurs without `--local`.
+1. The `--local` mode has some CSSlayout artifacts to do with showing the tooltips. DO NOT FREAK OUT if a layout bug occurs in `--local` mode. Double-check if the same artifact occurs without `--local`.
 
 2. Italics prevent line breaks if they end right before a punctuation mark. To fix this issue, write `this is _a sample long italic phrase that ends with a period._` instead of `this is _a sample long italic phrase that ends with a period_.`.
 
@@ -106,15 +107,9 @@ git pull --rebase      // when a conflict arises during push or pull, try this; 
 
 Steps: 
 
-1. `cd ~/github.com/vistuleB/wly`
-2. `git pull`
-3. `cd ~/github.com/vistuleB`
-4. `git clone git@github.com:vistuleB/ti2_html.git`
-5. `cd ti2_html`
-6. replace contents of `./public/pages` with the TI-1 `.html` source files (it currently contains TI-2 source files)
-7. `rm -rf wly_content/*` (get rid of old TI-2 .wly output) inside `ti2_html` directory
-8. `gleam run -- --parse-html public/pages` & then work through errors (it will crash as soon as it finds an unmatched tag e.g., you have to fix unmatched tags manually; it might be picky about the .html structure in some other ways; if the same pattern is repeatedly causing a crash then one can augment the function named `bad_html_pre_processor` found in `github.com/vistuleB/wly/vxml/vxml.gleam` to pre-process that pattern away)
-
-Discrepancies in file naming conventions between TI-1 and TI-2 may also cause crashes in the last step, as the html-to-wly converter becomes confused how to name an output file. In that case, rename the files according the same convention as TI-2.
-
-Note that the `.wly` source obtained is just a first draft, not adapted to final usage. (But still 90% of the way there, compared to starting with raw HTML.)
+1. `cd ~/github.com/vistuleB`
+2. `git clone git@github.com:vistuleB/ti2_html.git`
+3. `cd ti2_html`
+4. replace contents of `./public/pages` with the TI-1 `.html` source files (it currently contains TI-2 source files)
+5. `rm -rf wly_content/*` (get rid of old TI-2 .wly output) inside `ti2_html` directory
+6. `gleam run -- --parse-html public/pages` & then work through errors (it will crash as soon as it finds an unmatched tag e.g., you have to fix unmatched tags manually; it might be picky about the .html structure in some other ways; if the same pattern is repeatedly causing a crash then one can augment the function named `bad_html_pre_processor` found in `github.com/vistuleB/wly/vxml/vxml.gleam` to pre-process that pattern away)

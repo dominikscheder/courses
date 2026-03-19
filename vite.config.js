@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import { exec } from "child_process";
 
-const courseFolder = process.env.COURSE || "";
+const courseFolder = process.env.COURSE || "course1";
 const rootPath = `${courseFolder}/public`;
 const serverPort = Number(process.env.PORT) || 3003;
 const name = `vite ${rootPath} ${serverPort}-local server`

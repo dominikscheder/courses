@@ -1,18 +1,33 @@
 import { defineConfig } from "vite";
 import { exec } from "child_process";
+import path from "path";
 
 const courseFolder = process.env.COURSE || "course1";
 const rootPath = `${courseFolder}/public`;
 const serverPort = Number(process.env.PORT) || 3003;
 const name = `vite ${rootPath} ${serverPort}-local server`;
+const projectRoot = path.resolve(process.cwd());
+
+function isPathSafe(filePath) {
+  // Check if path starts with ..
+  if (filePath.startsWith("..")) {
+    return false;
+  }
+
+  const resolved = path.resolve(projectRoot, filePath);
+
+  // Check if resolved path is inside projectRoot
+  return (
+    resolved.startsWith(projectRoot + path.sep) || resolved === projectRoot
+  );
+}
 
 const ALLOWED_COMMANDS = {
   open: {
-    pattern: /^open\s+(.+)$/,
+    pattern: /^open\s+([\w\/\-\.]+)$/,
     executor: (match) => {
       const target = match[1].trim();
-      if (target.includes("://")) return null; // no urls
-      if (/[;&|`$(){}]/.test(target)) return null; // no shell metacharacters
+      if (!isPathSafe(target)) return null;
       return `open "${target}"`;
     },
   },
@@ -108,7 +123,9 @@ export default defineConfig({
   ],
   server: {
     port: serverPort,
-    host: "0.0.0.0",
-    cors: true,
+    host: "127.0.0.1",
+    cors: {
+      origin: ["http://localhost:*", "http://127.0.0.1:*"],
+    },
   },
 });

@@ -73,6 +73,7 @@ Local server-related:
 npm install            // to install node stuff needed to run local server
 COURSE=<dirname> npm run dev                   // run local server that is needed to respond for '--local' mode, serving <dirname>/public folder
 COURSE=<dirname> PORT=<xxxx> npm run dev       // ...same but serving on custom port number
+lsof -i tcp:3003       // find process number (PID) of process listening to port 3003 (if and when the need to kill a localserver arises)
 ```
 
 Main project commands:

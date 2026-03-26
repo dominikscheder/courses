@@ -105,7 +105,7 @@ pub fn main() {
     }
     _ -> {
       io.println(
-        "\nuse '--which' option to specify a project_dir name pls (without spaces); crashing out\n",
+        "\nuse '--which' option to specify a course directory pls (without spaces); crashing out\n",
       )
       on.Return(Nil)
     }

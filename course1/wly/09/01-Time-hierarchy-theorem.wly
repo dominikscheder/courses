@@ -33,7 +33,7 @@
     durchführen kann. Die entsprechende Turingmaschine hat dann
     allerdings $k+2$ Bänder: $k$ Arbeitsbänder, eins für den
     Zustand von $M$ und eins für $\enc(M)$ . Darüberhinaus
-    hatten wir in Kapitel >>undecidability:page gesehen, dass
+    hatten wir in Kapitel >>undecidability#page gesehen, dass
     wir als Codierungsalphabet $\Sigma$ selbst nehmen können,
     also $\enc(M) \in \Sigma^*$, solange $\Sigma$ mindestens
     zwei Zeichen enthält.

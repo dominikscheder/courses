@@ -245,7 +245,7 @@
     andere müssen wir nach einem selbst gewählten Schema
     codieren. Bei Booleschen Werten war es einfach. Wie steht
     es mit _Paaren_ von natürlichen Zahlen? In [Kapitel 2:
-    Unendliche Mengen](>>inf-sets:page) haben wir die bijektive
+    Unendliche Mengen](>>inf-sets#page) haben wir die bijektive
     Funktion
 
     \begin{align*}

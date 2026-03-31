@@ -1,6 +1,6 @@
 |> Sub
     title=Die Grenzen kontextfreier Sprachen
-    handle=limitations-of-context-free-grammars:page
+    handle=limitations-of-context-free-grammars#page
 
     Im letzten Teilkapitel haben wir den CYK-Algorithmus
     kennengelernt. Dieser verwendet das Prinzip des _Dynamic

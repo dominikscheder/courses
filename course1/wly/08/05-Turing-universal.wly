@@ -1,6 +1,6 @@
 |> Sub
     title=Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine
-    handle=turing-universal:page
+    handle=turing-universal#page
 
     Im letzten Teilkapitel haben wir gesehen, wie wir jede
     Turingmaschine $M$ mit Eingabealphabet $\Sigma$ codieren

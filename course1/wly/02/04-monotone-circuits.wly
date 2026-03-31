@@ -1,5 +1,5 @@
 |> Sub
-    handle=monotone-circuits:page
+    handle=monotone-circuits#page
     title=Monotone Funktionen und monotone Schaltkreise
 
     Für zwei Tupel $\mathbf{x}, \mathbf{y} \in \{0,1\}^n$

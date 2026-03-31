@@ -10,7 +10,7 @@
         $\sigma_i \in \Sigma$ als natürliche Zahl $i$ codieren.
         Ein Wort $\alpha \in \Sigma^*$ wird somit zu einer Folge
         $(a_1, a_2, \dots, a_n) \in \N^*$, was wir wiederum mit
-        den Methoden aus Kapitel >>wahrheitstabellen:page als
+        den Methoden aus Kapitel >>wahrheitstabellen#page als
         _eine_ natürliche Zahl $\bar{\alpha}$ codieren können.
         Mittels dieser Codierung wird eine Sprache
         $L \subseteq \Sigma^*$ zu einer Funktion

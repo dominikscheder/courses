@@ -1,5 +1,5 @@
 |> Chapter
-    handle=complexity-theory:page
+    handle=complexity-theory#page
     title=Complexity Theory
 
     Turingmaschinen erlauben uns, den Resourcenverbrauch einer

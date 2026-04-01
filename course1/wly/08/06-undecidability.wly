@@ -1,6 +1,6 @@
 |> Sub
     title=Unentscheidbarkeit
-    handle=undecidability
+    handle=undecidability#page
 
     Im vorherigen Teilkapitel haben wir die _universelle
     Turingmaschine_ $U$ konstruiert, die eine andere

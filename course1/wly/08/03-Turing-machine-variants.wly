@@ -1,5 +1,5 @@
 |> Sub
-    handle=turing-variants
+    handle=turing-variants#page
     title=Variationen: Mehrband-Maschinen, nichtdeterministische Maschinen
 
     |> TopicAnnouncement

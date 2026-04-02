@@ -136,13 +136,17 @@ To add a new course (e.g., `course3`):
    This is the first section.
    ```
 
-4. Copy necessary assets:
-   ```bash
-   cp course1/public/app.css course3/public/
-   cp course1/public/app.js course3/public/
-   cp course1/public/mathjax_setup.js course3/public/
-   cp -r course1/public/img course3/public/
-   ```
+4. Symlink necessary assets from shared directory
+
+  Given the name of the new course is `course3`
+
+  1. `cd` into project root
+  2. Run the following commands
+  ```bash
+    ln -s ../../shared/app.css course3/public/app.css
+    ln -s ../../shared/app.js course3/public/app.js
+    ln -s ../../shared/mathjax_setup.js course3/public/mathjax_setup.js
+  ```
 
 5. Create `vite.course3.config.js`:
    ```javascript

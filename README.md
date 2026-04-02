@@ -65,6 +65,13 @@ Note: Go-to-source tooltips will only work if `code` has been bound to open the 
 
 Run `gleam run -- --fmt` for default 55 to reformat at char per line formatting or `gleam run -- --fmt <X>` to format line length to X chars per line.
 
+## 9. Add a shared asset to a course
+
+As an example, say we would like to add `mathjax_setup.js` to course `course1`. We would follow these steps
+
+1. `cd` into project root
+2. `ln -s ../../shared/mathjax_setup.js course1/public/mathjax_setup.js`
+
 # Cheat Sheet
 
 Local server-related:

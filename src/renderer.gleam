@@ -3,7 +3,7 @@ import desugaring as ds
 import gleam/dict
 import gleam/io
 import gleam/list
-import gleam/option.{None, Some}
+import gleam/option.{type Option, None, Some}
 import gleam/regexp.{type Regexp}
 import gleam/result
 import gleam/string.{inspect as ins}
@@ -34,6 +34,18 @@ pub type TI2SplitterError {
   NoChapters
   MoreThanOneIndex
   NoIndex
+}
+
+type DocumentInfo {
+  DocumentInfo(
+    title: String,
+    banner: String,
+    program: String,
+    institution: String,
+    language: String,
+    lecturer: String,
+    homepage: String
+  )
 }
 
 fn index_error(e: infra.SingletonError) -> TI2SplitterError {
@@ -106,7 +118,7 @@ fn our_splitter(root: VXML) -> Result(List(Fragment(VXML)), TI2SplitterError) {
 // index emitter - handles index fragments
 fn index_emitter(
   fragment: Fragment(VXML),
-  title_banner: String,
+  document_info: DocumentInfo,
 ) -> Result(Fragment(OL), String) {
   let blame = Ext([], "index_emitter")
   let lines =
@@ -115,17 +127,10 @@ fn index_emitter(
         OutputLine(blame, 0, "<!DOCTYPE html>"),
         OutputLine(blame, 0, "<html>"),
         OutputLine(blame, 0, "<head>"),
-        OutputLine(blame, 2, "<meta charset=\"utf-8\">"),
-        OutputLine(
-          blame,
-          2,
-          "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">",
-        ),
-        OutputLine(
-          blame,
-          2,
-          "<meta name=\"description\" content=\"Table of contents for TI-2 - Theoretische Informatik 2\">",
-        ),
+      ],
+      document_meta_tags(blame, Some("Inhaltsverzeichnis"), document_info),
+      social_share_meta_tags(blame, Some("Inhaltsverzeichnis"), document_info),
+      [
         OutputLine(
           blame,
           2,
@@ -143,21 +148,11 @@ fn index_emitter(
           2,
           "<script type=\"text/javascript\" src=\"/mathjax_setup.js\"></script>",
         ),
-        // OutputLine(
-        //   blame,
-        //   2,
-        //   "<script type=\"text/javascript\" id=\"mathjax-script\" src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>",
-        // ),
         OutputLine(
           blame,
           2,
           "<script type=\"text/javascript\" src=\"/app.js\"></script>",
         ),
-        // OutputLine(
-        //   blame,
-        //   2,
-        //   "<title>" <> title_banner <> "Inhaltsverzeichnis</title>",
-        // ),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body>"),
       ],
@@ -178,40 +173,33 @@ fn index_emitter(
 // chapter emitter - handles chapter fragments
 fn chapter_emitter(
   fragment: Fragment(VXML),
-  title_banner: String,
+  document_info: DocumentInfo,
 ) -> Result(Fragment(OL), String) {
   let assert Chapter(n) = fragment.classifier
   let blame = Ext([], "chapter_emitter")
+  let chapter_title = "Kapitel " <> string.inspect(n)
+
   let lines =
     list.flatten([
       [
         OutputLine(blame, 0, "<!DOCTYPE html>"),
         OutputLine(blame, 0, "<html>"),
         OutputLine(blame, 0, "<head>"),
-        OutputLine(blame, 2, "<meta charset=\"utf-8\">"),
-        OutputLine(
-          blame,
-          2,
-          "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">",
-        ),
-        OutputLine(
-          blame,
-          2,
-          "<meta name=\"description\" content=\"Chapter "
-            <> string.inspect(n)
-            <> " of TI-2 - Theoretische Informatik 2\">",
-        ),
-        OutputLine(
-          blame,
-          2,
-          "<link rel=\"stylesheet\" type=\"text/css\" href=\"app.css\" />",
-        ),
+      ],
+      document_meta_tags(blame, Some(chapter_title), document_info),
+      social_share_meta_tags(blame, Some(chapter_title), document_info),
+      [
         OutputLine(
           blame,
           2,
           "<link rel=\"icon\" type=\"image/x-icon\" href=\""
             <> favicon_loc
             <> "\">",
+        ),
+        OutputLine(
+          blame,
+          2,
+          "<link rel=\"stylesheet\" type=\"text/css\" href=\"app.css\" />",
         ),
         OutputLine(
           blame,
@@ -229,15 +217,6 @@ fn chapter_emitter(
           blame,
           2,
           "<script type=\"text/javascript\" src=\"/app.js\"></script>",
-        ),
-        OutputLine(
-          blame,
-          2,
-          "<title>"
-            <> title_banner
-            <> "Kapitel "
-            <> string.inspect(n)
-            <> "</title>",
         ),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body>"),
@@ -259,31 +238,22 @@ fn chapter_emitter(
 // subchapter emitter - handles sub fragments
 fn subchapter_emitter(
   fragment: Fragment(VXML),
-  title_banner: String,
+  document_info: DocumentInfo,
 ) -> Result(Fragment(OL), String) {
   let assert Sub(chapter_n, sub_n) = fragment.classifier
   let blame = Ext([], "subchapter_emitter")
+  let subchapter_title = "Kapitel " <> string.inspect(chapter_n) <> "." <> string.inspect(sub_n)
+
   let lines =
     list.flatten([
       [
         OutputLine(blame, 0, "<!DOCTYPE html>"),
         OutputLine(blame, 0, "<html>"),
         OutputLine(blame, 0, "<head>"),
-        OutputLine(blame, 2, "<meta charset=\"utf-8\">"),
-        OutputLine(
-          blame,
-          2,
-          "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">",
-        ),
-        OutputLine(
-          blame,
-          2,
-          "<meta name=\"description\" content=\"Section "
-            <> string.inspect(chapter_n)
-            <> "."
-            <> string.inspect(sub_n)
-            <> " of TI-2 - Theoretische Informatik 2\">",
-        ),
+      ],
+      document_meta_tags(blame, Some(subchapter_title), document_info),
+      social_share_meta_tags(blame, Some(subchapter_title), document_info),
+      [
         OutputLine(
           blame,
           2,
@@ -304,25 +274,7 @@ fn subchapter_emitter(
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" id=\"mathjax-script\" src=\""
-            <> mathjax_loc
-            <> "\"></script>",
-        ),
-        OutputLine(
-          blame,
-          2,
           "<script type=\"text/javascript\" src=\"/app.js\"></script>",
-        ),
-        OutputLine(
-          blame,
-          2,
-          "<title>"
-            <> title_banner
-            <> "Kapitel "
-            <> string.inspect(chapter_n)
-            <> "."
-            <> string.inspect(sub_n)
-            <> "</title>",
         ),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body>"),
@@ -341,15 +293,157 @@ fn subchapter_emitter(
   Ok(ds.OutputFragment(..fragment, payload: lines))
 }
 
+fn document_meta_tags(
+  blame: blame.Blame,
+  title: Option(String),
+  document_info: DocumentInfo,
+) -> List(OutputLine) {
+  [
+    OutputLine(blame, 2, "<meta charset=\"utf-8\">"),
+    OutputLine(
+      blame,
+      2,
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">",
+    ),
+    OutputLine(
+      blame,
+      2,
+      "<title>" <> generate_title(document_info, title) <> "</title>",
+    ),
+    OutputLine(
+      blame,
+      2,
+      "<meta name=\"description\" content=\""
+        <> generate_description(document_info)
+        <> "\">",
+    ),
+    // Author & publisher
+    OutputLine(
+      blame,
+      2,
+      "<meta name=\"author\" content=\"" <> document_info.lecturer <> "\">",
+    ),
+    OutputLine(
+      blame,
+      2,
+      "<meta name=\"publisher\" content=\""
+        <> generate_publisher(document_info)
+        <> "\">",
+    ),
+
+    // Course / academic metadata
+    OutputLine(
+      blame,
+      2,
+      "<meta name=\"subject\" content=\"" <> document_info.title <> "\">",
+    ),
+    OutputLine(
+      blame,
+      2,
+      "<meta name=\"program\" content=\"" <> document_info.program <> "\">",
+    ),
+    OutputLine(
+      blame,
+      2,
+      "<meta name=\"institution\" content=\"" <> document_info.institution <> "\">",
+    ),
+  ]
+}
+
+fn social_share_meta_tags(
+  blame: blame.Blame,
+  title: Option(String),
+  document_info: DocumentInfo,
+) -> List(OutputLine) {
+  [
+    // Open Graph
+    OutputLine(
+      blame,
+      2,
+      "<meta property=\"og:title\" content=\""
+        <> generate_title(document_info, title)
+        <> "\">",
+    ),
+    OutputLine(
+      blame,
+      2,
+      "<meta property=\"og:description\" content=\""
+        <> generate_description(document_info)
+        <> "\">",
+    ),
+    OutputLine(blame, 2, "<meta property=\"og:type\" content=\"article\">"),
+    OutputLine(
+      blame,
+      2,
+      "<meta property=\"og:site_name\" content=\""
+        <> document_info.program
+        <> " | "
+        <> document_info.institution
+        <> "\">",
+    ),
+    OutputLine(blame, 2, "<meta property=\"og:locale\" content=\"de_DE\">"),
+
+    // Twitter card
+    OutputLine(
+      blame,
+      2,
+      "<meta name=\"twitter:card\" content=\"summary_large_image\">",
+    ),
+    OutputLine(
+      blame,
+      2,
+      "<meta name=\"twitter:title\" content=\""
+        <> generate_title(document_info, title)
+        <> "\">",
+    ),
+    OutputLine(
+      blame,
+      2,
+      "<meta property=\"twitter:description\" content=\""
+        <> generate_description(document_info)
+        <> "\">",
+    ),
+  ]
+}
+
+fn generate_description(document_info: DocumentInfo) -> String {
+  document_info.title
+  <> " for "
+  <> document_info.program
+  <> " - by "
+  <> document_info.lecturer
+  <> ", "
+  <> document_info.institution
+}
+
+fn generate_title(
+  document_info: DocumentInfo,
+  chapter_or_section_title: Option(String),
+) -> String {
+  case chapter_or_section_title {
+    None -> ""
+    Some(x) -> x <> ": "
+  }
+  <> document_info.title
+  <> " - "
+  <> document_info.program
+  <> " | "
+  <> document_info.institution
+}
+
+fn generate_publisher(document_info: DocumentInfo) -> String {
+  document_info.institution
+}
+
 // main emitter that dispatches to appropriate sub-emitters
 fn our_emitter(
   fragment: Fragment(VXML),
-  title_banner: String,
+  document_info: DocumentInfo,
 ) -> Result(Fragment(OL), String) {
   case fragment.classifier {
-    Index -> index_emitter(fragment, title_banner)
-    Chapter(_) -> chapter_emitter(fragment, title_banner)
-    Sub(_, _) -> subchapter_emitter(fragment, title_banner)
+    Index -> index_emitter(fragment, document_info)
+    Chapter(_) -> chapter_emitter(fragment, document_info)
+    Sub(_, _) -> subchapter_emitter(fragment, document_info)
   }
 }
 
@@ -456,18 +550,55 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
   let assert Ok(contents) = simplifile.read(parent)
   let assert Ok([parsed_contents, ..]) = writerly.parse_string(contents, "")
   let parsed_contents = writerly.writerly_to_vxml(parsed_contents)
-  let language = case infra.v_first_attr_with_key(parsed_contents, "language") {
-    None -> panic as "__parent.wly did not specify the language attribute"
-    Some(x) -> x.val
-  }
-  let title_banner = case
-    infra.v_first_attr_with_key(parsed_contents, "banner")
-  {
+  let banner = case infra.v_first_attr_with_key(parsed_contents, "banner") {
     None ->
       panic as "__parent.wly did not specify the banner attribute (what should appear in the browser tab)"
     Some(x) -> x.val
   }
-  io.println("author set banner to be " <> title_banner)
+  io.println("author set banner to be " <> banner)
+  let title = case infra.v_first_attr_with_key(parsed_contents, "title") {
+    None -> panic as "__parent.wly did not specify any title attribute"
+    Some(x) -> x.val
+  }
+  io.println("author set title to be " <> title)
+  let program = case infra.v_first_attr_with_key(parsed_contents, "program") {
+    None -> panic as "__parent.wly did not specify any program attribute"
+    Some(x) -> x.val
+  }
+  io.println("author set course to be " <> program)
+  let institution = case infra.v_first_attr_with_key(parsed_contents, "institution") {
+    None -> panic as "__parent.wly did not specify any institution attribute"
+    Some(x) -> x.val
+  }
+  io.println("author set term to be " <> institution)
+  let language = case
+    infra.v_first_attr_with_key(parsed_contents, "language")
+  {
+    None -> panic as "__parent.wly did not specify any language attribute"
+    Some(x) -> x.val
+  }
+  io.println("author set department to be " <> language)
+  let lecturer = case infra.v_first_attr_with_key(parsed_contents, "lecturer") {
+    None -> panic as "__parent.wly did not specify any lecturer attribute"
+    Some(x) -> x.val
+  }
+  io.println("author set lecturer to be " <> lecturer)
+  let homepage = case infra.v_first_attr_with_key(parsed_contents, "homepage") {
+    None -> panic as "__parent.wly did not specify any homepage attribute"
+    Some(x) -> x.val
+  }
+  io.println("author set lecturer to be " <> homepage)
+
+  let document_info =
+    DocumentInfo(
+      title: title,
+      banner: banner,
+      program: program,
+      institution: institution,
+      language: language,
+      lecturer: lecturer,
+      homepage: homepage
+    )
 
   let parameters =
     ds.RendererParameters(
@@ -486,7 +617,7 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
       parser: ds.default_writerly_parser(amendments.only_key_values),
       pipeline: pipeline.pipeline(parameters, author_mode, language),
       splitter: our_splitter,
-      emitter: our_emitter(_, title_banner),
+      emitter: our_emitter(_, document_info),
       writer: ds.default_writer,
       prettifier: ds.default_prettier_prettifier,
     )

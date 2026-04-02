@@ -129,28 +129,35 @@ fn index_emitter(
         OutputLine(
           blame,
           2,
+          "<link rel=\"icon\" type=\"image/x-icon\" href=\""
+            <> favicon_loc
+            <> "\">",
+        ),
+        OutputLine(
+          blame,
+          2,
           "<link rel=\"stylesheet\" type=\"text/css\" href=\"app.css\" />",
         ),
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>",
+          "<script type=\"text/javascript\" src=\"/mathjax_setup.js\"></script>",
         ),
+        // OutputLine(
+        //   blame,
+        //   2,
+        //   "<script type=\"text/javascript\" id=\"mathjax-script\" src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>",
+        // ),
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" id=\"MathJax-script\" src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>",
+          "<script type=\"text/javascript\" src=\"/app.js\"></script>",
         ),
-        OutputLine(
-          blame,
-          2,
-          "<script type=\"text/javascript\" src=\"./app.js\"></script>",
-        ),
-        OutputLine(
-          blame,
-          2,
-          "<title>" <> title_banner <> "Inhaltsverzeichnis</title>",
-        ),
+        // OutputLine(
+        //   blame,
+        //   2,
+        //   "<title>" <> title_banner <> "Inhaltsverzeichnis</title>",
+        // ),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body>"),
       ],
@@ -209,19 +216,19 @@ fn chapter_emitter(
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>",
+          "<script type=\"text/javascript\" src=\"/mathjax_setup.js\"></script>",
         ),
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" id=\"MathJax-script\" src=\""
+          "<script type=\"text/javascript\" id=\"mathjax-script\" src=\""
             <> mathjax_loc
             <> "\"></script>",
         ),
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" src=\"./app.js\"></script>",
+          "<script type=\"text/javascript\" src=\"/app.js\"></script>",
         ),
         OutputLine(
           blame,
@@ -292,19 +299,19 @@ fn subchapter_emitter(
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" src=\"./mathjax_setup.js\"></script>",
+          "<script type=\"text/javascript\" src=\"/mathjax_setup.js\"></script>",
         ),
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" id=\"MathJax-script\" src=\""
+          "<script type=\"text/javascript\" id=\"mathjax-script\" src=\""
             <> mathjax_loc
             <> "\"></script>",
         ),
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" src=\"./app.js\"></script>",
+          "<script type=\"text/javascript\" src=\"/app.js\"></script>",
         ),
         OutputLine(
           blame,

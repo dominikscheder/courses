@@ -16,8 +16,6 @@ import writerly
 
 const favicon_loc = "./img/favicon.svg"
 
-const mathjax_loc = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
-
 pub type FragmentType {
   Chapter(Int)
   Sub(Int, Int)
@@ -118,6 +116,7 @@ fn our_splitter(root: VXML) -> Result(List(Fragment(VXML)), TI2SplitterError) {
 // index emitter - handles index fragments
 fn index_emitter(
   fragment: Fragment(VXML),
+  offline_mathjax: Bool,
   document_info: DocumentInfo,
 ) -> Result(Fragment(OL), String) {
   let blame = Ext([], "index_emitter")
@@ -148,6 +147,18 @@ fn index_emitter(
           2,
           "<script type=\"text/javascript\" src=\"/mathjax_setup.js\"></script>",
         ),
+        case offline_mathjax {
+        True ->         OutputLine(
+          blame,
+          2,
+          "<script type=\"text/javascript\" src=\"/tex-svg.js\"></script>",
+        )
+        False ->         OutputLine(
+          blame,
+          2,
+          "<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js\"></script>",
+        )
+        },
         OutputLine(
           blame,
           2,
@@ -173,6 +184,7 @@ fn index_emitter(
 // chapter emitter - handles chapter fragments
 fn chapter_emitter(
   fragment: Fragment(VXML),
+  offline_mathjax: Bool,
   document_info: DocumentInfo,
 ) -> Result(Fragment(OL), String) {
   let assert Chapter(n) = fragment.classifier
@@ -206,13 +218,18 @@ fn chapter_emitter(
           2,
           "<script type=\"text/javascript\" src=\"/mathjax_setup.js\"></script>",
         ),
-        OutputLine(
+        case offline_mathjax {
+        True ->         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" id=\"mathjax-script\" src=\""
-            <> mathjax_loc
-            <> "\"></script>",
-        ),
+          "<script type=\"text/javascript\" src=\"/tex-svg.js\"></script>",
+        )
+        False ->         OutputLine(
+          blame,
+          2,
+          "<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js\"></script>",
+        )
+        },
         OutputLine(
           blame,
           2,
@@ -238,6 +255,7 @@ fn chapter_emitter(
 // subchapter emitter - handles sub fragments
 fn subchapter_emitter(
   fragment: Fragment(VXML),
+  offline_mathjax: Bool,
   document_info: DocumentInfo,
 ) -> Result(Fragment(OL), String) {
   let assert Sub(chapter_n, sub_n) = fragment.classifier
@@ -257,11 +275,6 @@ fn subchapter_emitter(
         OutputLine(
           blame,
           2,
-          "<link rel=\"stylesheet\" type=\"text/css\" href=\"app.css\" />",
-        ),
-        OutputLine(
-          blame,
-          2,
           "<link rel=\"icon\" type=\"image/x-icon\" href=\""
             <> favicon_loc
             <> "\">",
@@ -269,8 +282,25 @@ fn subchapter_emitter(
         OutputLine(
           blame,
           2,
+          "<link rel=\"stylesheet\" type=\"text/css\" href=\"app.css\" />",
+        ),
+        OutputLine(
+          blame,
+          2,
           "<script type=\"text/javascript\" src=\"/mathjax_setup.js\"></script>",
         ),
+        case offline_mathjax {
+        True -> OutputLine(
+          blame,
+          2,
+          "<script type=\"text/javascript\" src=\"/tex-svg.js\"></script>",
+        )
+        False -> OutputLine(
+          blame,
+          2,
+          "<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js\"></script>",
+        )
+        },
         OutputLine(
           blame,
           2,
@@ -438,12 +468,13 @@ fn generate_publisher(document_info: DocumentInfo) -> String {
 // main emitter that dispatches to appropriate sub-emitters
 fn our_emitter(
   fragment: Fragment(VXML),
+  offline_mathjax: Bool,
   document_info: DocumentInfo,
 ) -> Result(Fragment(OL), String) {
   case fragment.classifier {
-    Index -> index_emitter(fragment, document_info)
-    Chapter(_) -> chapter_emitter(fragment, document_info)
-    Sub(_, _) -> subchapter_emitter(fragment, document_info)
+    Index -> index_emitter(fragment, offline_mathjax, document_info)
+    Chapter(_) -> chapter_emitter(fragment, offline_mathjax, document_info)
+    Sub(_, _) -> subchapter_emitter(fragment, offline_mathjax, document_info)
   }
 }
 
@@ -609,6 +640,7 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
     |> ds.amend_renderer_paramaters_by_command_line_amendments(amendments)
 
   let author_mode = dict.has_key(amendments.user_args, "--local")
+  let offline_mathjax = dict.has_key(amendments.user_args, "--offline-mathjax")
   let amendments = expand_filename_shorthands_to_path_fragments(amendments)
 
   let renderer =
@@ -617,7 +649,7 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
       parser: ds.default_writerly_parser(amendments.only_key_values),
       pipeline: pipeline.pipeline(parameters, author_mode, language),
       splitter: our_splitter,
-      emitter: our_emitter(_, document_info),
+      emitter: our_emitter(_, offline_mathjax, document_info),
       writer: ds.default_writer,
       prettifier: ds.default_prettier_prettifier,
     )

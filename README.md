@@ -72,6 +72,13 @@ As an example, say we would like to add `mathjax_setup.js` to course `course1`. 
 1. `cd` into project root
 2. `ln -s ../../shared/mathjax_setup.js course1/public/mathjax_setup.js`
 
+
+## 10. MathJAX
+
+Currently version 3 is supported and use CDN url by default.
+
+Offline mode is available via `--offline-mathjax` flag passed to `gleam run`
+
 # Cheat Sheet
 
 Local server-related:

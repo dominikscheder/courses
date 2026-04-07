@@ -150,43 +150,6 @@ export default defineConfig(({ mode }) => {
           };
         },
       },
-      {
-        name: "mathjax-injector",
-        transformIndexHtml(html) {
-          const version = (env.MATHJAX_VERSION || "3").trim();
-          const offline = (env.OFFLINE_MODE || "false").toLowerCase().trim();
-
-          const version_offline = `${version}-${offline}`;
-
-          const mathjax_url = () => {
-            switch (version_offline) {
-              case "3-true":
-                return "/tex-svg.js";
-              case "4-true":
-                console.warn(
-                  "Currently MATHJAX_VERSION 4 OFFLINE_MODE is not supported. Using CDN version instead.",
-                );
-                return "https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js";
-              case "3-false":
-                return "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js";
-              case "4-false":
-                return "https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js";
-              default:
-                console.warn(
-                  `[MathJax Plugin] Cannot parse: VERSION=${version}, OFFLINE=${offline}`,
-                );
-                console.warn("Defaulting to CDN mathjax version 3");
-                return "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js";
-            }
-          };
-
-          // inject MathJax script between mathjax_setup.js and app.js
-          return html.replace(
-            /(<script[^>]+src="\/mathjax_setup\.js"><\/script>)/,
-            `$1\n<script type="text/javascript" id="mathjax-script" src="${mathjax_url()}"></script>`,
-          );
-        },
-      },
     ],
     server: {
       port: serverPort,

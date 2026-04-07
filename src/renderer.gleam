@@ -9,6 +9,7 @@ import gleam/result
 import gleam/string.{inspect as ins}
 import infrastructure as infra
 import io_lines.{type OutputLine, OutputLine}
+import on
 import pipeline
 import simplifile
 import vxml.{type VXML}
@@ -42,7 +43,7 @@ type DocumentInfo {
     institution: String,
     language: String,
     lecturer: String,
-    homepage: String
+    homepage: String,
   )
 }
 
@@ -148,16 +149,18 @@ fn index_emitter(
           "<script type=\"text/javascript\" src=\"/mathjax_setup.js\"></script>",
         ),
         case offline_mathjax {
-        True ->         OutputLine(
-          blame,
-          2,
-          "<script type=\"text/javascript\" src=\"/tex-svg.js\"></script>",
-        )
-        False ->         OutputLine(
-          blame,
-          2,
-          "<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js\"></script>",
-        )
+          True ->
+            OutputLine(
+              blame,
+              2,
+              "<script type=\"text/javascript\" src=\"/tex-svg.js\"></script>",
+            )
+          False ->
+            OutputLine(
+              blame,
+              2,
+              "<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js\"></script>",
+            )
         },
         OutputLine(
           blame,
@@ -219,16 +222,18 @@ fn chapter_emitter(
           "<script type=\"text/javascript\" src=\"/mathjax_setup.js\"></script>",
         ),
         case offline_mathjax {
-        True ->         OutputLine(
-          blame,
-          2,
-          "<script type=\"text/javascript\" src=\"/tex-svg.js\"></script>",
-        )
-        False ->         OutputLine(
-          blame,
-          2,
-          "<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js\"></script>",
-        )
+          True ->
+            OutputLine(
+              blame,
+              2,
+              "<script type=\"text/javascript\" src=\"/tex-svg.js\"></script>",
+            )
+          False ->
+            OutputLine(
+              blame,
+              2,
+              "<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js\"></script>",
+            )
         },
         OutputLine(
           blame,
@@ -260,7 +265,8 @@ fn subchapter_emitter(
 ) -> Result(Fragment(OL), String) {
   let assert Sub(chapter_n, sub_n) = fragment.classifier
   let blame = Ext([], "subchapter_emitter")
-  let subchapter_title = "Kapitel " <> string.inspect(chapter_n) <> "." <> string.inspect(sub_n)
+  let subchapter_title =
+    "Kapitel " <> string.inspect(chapter_n) <> "." <> string.inspect(sub_n)
 
   let lines =
     list.flatten([
@@ -290,16 +296,18 @@ fn subchapter_emitter(
           "<script type=\"text/javascript\" src=\"/mathjax_setup.js\"></script>",
         ),
         case offline_mathjax {
-        True -> OutputLine(
-          blame,
-          2,
-          "<script type=\"text/javascript\" src=\"/tex-svg.js\"></script>",
-        )
-        False -> OutputLine(
-          blame,
-          2,
-          "<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js\"></script>",
-        )
+          True ->
+            OutputLine(
+              blame,
+              2,
+              "<script type=\"text/javascript\" src=\"/tex-svg.js\"></script>",
+            )
+          False ->
+            OutputLine(
+              blame,
+              2,
+              "<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js\"></script>",
+            )
         },
         OutputLine(
           blame,
@@ -375,7 +383,9 @@ fn document_meta_tags(
     OutputLine(
       blame,
       2,
-      "<meta name=\"institution\" content=\"" <> document_info.institution <> "\">",
+      "<meta name=\"institution\" content=\""
+        <> document_info.institution
+        <> "\">",
     ),
   ]
 }
@@ -578,7 +588,9 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
   let assert None = amendments.input_dir
   let assert None = amendments.output_dir
   let parent = course_dir <> "/wly/__parent.wly"
-  let assert Ok(contents) = simplifile.read(parent)
+  use contents <- on.error_ok(simplifile.read(parent), fn(_) {
+    io.println("\nunable to read '" <> parent <> "'")
+  })
   let assert Ok([parsed_contents, ..]) = writerly.parse_string(contents, "")
   let parsed_contents = writerly.writerly_to_vxml(parsed_contents)
   let banner = case infra.v_first_attr_with_key(parsed_contents, "banner") {
@@ -597,14 +609,14 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
     Some(x) -> x.val
   }
   io.println("author set course to be " <> program)
-  let institution = case infra.v_first_attr_with_key(parsed_contents, "institution") {
+  let institution = case
+    infra.v_first_attr_with_key(parsed_contents, "institution")
+  {
     None -> panic as "__parent.wly did not specify any institution attribute"
     Some(x) -> x.val
   }
   io.println("author set term to be " <> institution)
-  let language = case
-    infra.v_first_attr_with_key(parsed_contents, "language")
-  {
+  let language = case infra.v_first_attr_with_key(parsed_contents, "language") {
     None -> panic as "__parent.wly did not specify any language attribute"
     Some(x) -> x.val
   }
@@ -628,7 +640,7 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
       institution: institution,
       language: language,
       lecturer: lecturer,
-      homepage: homepage
+      homepage: homepage,
     )
 
   let parameters =
@@ -664,7 +676,6 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
     Ok(_) -> Nil
     Error(error) -> io.println("HTML cleanup failed: " <> error)
   }
-
 
   case ds.run_renderer(renderer, parameters, debug_options) {
     Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")

@@ -10,14 +10,7 @@ _SSH_
 
 ```
 git clone git@github.com:vistuleB/wly.git
-git clone git@github.com:dominikscheder/TI-2.git
-```
-
-_HTTPS_
-
-```
-git clone https://github.com/vistuleB/wly.git
-git clone https://github.com:dominikscheder/TI-2.git
+git clone git@github.com:dominikscheder/courses.git
 ```
 
 Copy the Github folder structure: put one repo in a folder `vistuleB/wly` and the other in a folder `dominikscheder/TI-2`, with `vistuleB/` and `dominikscheder/` as siblings inside the same parent folder.
@@ -72,12 +65,11 @@ As an example, say we would like to add `mathjax_setup.js` to course `course1`. 
 1. `cd` into project root
 2. `ln -s ../../shared/mathjax_setup.js course1/public/mathjax_setup.js`
 
+## 10. Option for offline MathJax
 
-## 10. MathJAX
+Use the `--offline-mathjax` flag to use the local copy of MathJax installed inside the repo.
 
-Currently version 3 is supported and use CDN url by default.
-
-Offline mode is available via `--offline-mathjax` flag passed to `gleam run`
+WARNING: Don't publish an `--offline-mathjax` build. It will break the page the for readers!
 
 # Cheat Sheet
 

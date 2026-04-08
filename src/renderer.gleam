@@ -598,39 +598,32 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
       panic as "__parent.wly did not specify the banner attribute (what should appear in the browser tab)"
     Some(x) -> x.val
   }
-  io.println("author set banner to be " <> banner)
   let title = case infra.v_first_attr_with_key(parsed_contents, "title") {
     None -> panic as "__parent.wly did not specify any title attribute"
     Some(x) -> x.val
   }
-  io.println("author set title to be " <> title)
   let program = case infra.v_first_attr_with_key(parsed_contents, "program") {
     None -> panic as "__parent.wly did not specify any program attribute"
     Some(x) -> x.val
   }
-  io.println("author set course to be " <> program)
   let institution = case
     infra.v_first_attr_with_key(parsed_contents, "institution")
   {
     None -> panic as "__parent.wly did not specify any institution attribute"
     Some(x) -> x.val
   }
-  io.println("author set term to be " <> institution)
   let language = case infra.v_first_attr_with_key(parsed_contents, "language") {
     None -> panic as "__parent.wly did not specify any language attribute"
     Some(x) -> x.val
   }
-  io.println("author set department to be " <> language)
   let lecturer = case infra.v_first_attr_with_key(parsed_contents, "lecturer") {
     None -> panic as "__parent.wly did not specify any lecturer attribute"
     Some(x) -> x.val
   }
-  io.println("author set lecturer to be " <> lecturer)
   let homepage = case infra.v_first_attr_with_key(parsed_contents, "homepage") {
     None -> panic as "__parent.wly did not specify any homepage attribute"
     Some(x) -> x.val
   }
-  io.println("author set lecturer to be " <> homepage)
 
   let document_info =
     DocumentInfo(

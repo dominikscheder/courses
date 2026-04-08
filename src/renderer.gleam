@@ -153,7 +153,7 @@ fn index_emitter(
             OutputLine(
               blame,
               2,
-              "<script type=\"text/javascript\" src=\"/tex-svg.js\"></script>",
+              "<script type=\"text/javascript\" src=\"/mathjax3/tex-svg.js\"></script>",
             )
           False ->
             OutputLine(
@@ -226,7 +226,7 @@ fn chapter_emitter(
             OutputLine(
               blame,
               2,
-              "<script type=\"text/javascript\" src=\"/tex-svg.js\"></script>",
+              "<script type=\"text/javascript\" src=\"/mathjax3/tex-svg.js\"></script>",
             )
           False ->
             OutputLine(
@@ -300,7 +300,7 @@ fn subchapter_emitter(
             OutputLine(
               blame,
               2,
-              "<script type=\"text/javascript\" src=\"/tex-svg.js\"></script>",
+              "<script type=\"text/javascript\" src=\"/mathjax3/tex-svg.js\"></script>",
             )
           False ->
             OutputLine(

@@ -5,6 +5,16 @@ import fs from "node:fs";
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
+
+  // disallow any param after `npm run dev`
+  const args = process.argv.slice(4); // anything beyond `node vite --config vite.config.js`
+  if (args.length !== 0) {
+    console.error(
+      `\n\x1b[41m\x1b[37m ERROR \x1b[0m Unknown command: '${args[0]}'. Please put '.env' arguments as prefixes to 'npm run'.`,
+    );
+    process.exit(1);
+  }
+
   const courseFolder = env.COURSE || "course1";
   const rootPath = `${courseFolder}/public`;
   const serverPort = Number(env.PORT) || 3003;

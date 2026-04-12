@@ -4,7 +4,7 @@
     "vite": "^7.0.6"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --config vite.config.js",
     "watch": "nodemon --watch ${COURSE}/wly --ext wly --exec \"gleam run\"",
     "build": "gleam run -- --which ${COURSE}"
   }

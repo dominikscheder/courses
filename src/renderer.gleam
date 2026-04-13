@@ -146,14 +146,14 @@ fn index_emitter(
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" src=\"/mathjax_setup.js\"></script>",
+          "<script type=\"text/javascript\" src=\"mathjax_setup.js\"></script>",
         ),
         case offline_mathjax {
           True ->
             OutputLine(
               blame,
               2,
-              "<script type=\"text/javascript\" src=\"/mathjax3/tex-svg.js\"></script>",
+              "<script type=\"text/javascript\" src=\"mathjax3/tex-svg.js\"></script>",
             )
           False ->
             OutputLine(
@@ -165,7 +165,7 @@ fn index_emitter(
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" src=\"/app.js\"></script>",
+          "<script type=\"text/javascript\" src=\"app.js\"></script>",
         ),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body>"),
@@ -219,14 +219,14 @@ fn chapter_emitter(
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" src=\"/mathjax_setup.js\"></script>",
+          "<script type=\"text/javascript\" src=\"mathjax_setup.js\"></script>",
         ),
         case offline_mathjax {
           True ->
             OutputLine(
               blame,
               2,
-              "<script type=\"text/javascript\" src=\"/mathjax3/tex-svg.js\"></script>",
+              "<script type=\"text/javascript\" src=\"mathjax3/tex-svg.js\"></script>",
             )
           False ->
             OutputLine(
@@ -238,7 +238,7 @@ fn chapter_emitter(
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" src=\"/app.js\"></script>",
+          "<script type=\"text/javascript\" src=\"app.js\"></script>",
         ),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body>"),
@@ -293,14 +293,14 @@ fn subchapter_emitter(
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" src=\"/mathjax_setup.js\"></script>",
+          "<script type=\"text/javascript\" src=\"mathjax_setup.js\"></script>",
         ),
         case offline_mathjax {
           True ->
             OutputLine(
               blame,
               2,
-              "<script type=\"text/javascript\" src=\"/mathjax3/tex-svg.js\"></script>",
+              "<script type=\"text/javascript\" src=\"mathjax3/tex-svg.js\"></script>",
             )
           False ->
             OutputLine(
@@ -312,7 +312,7 @@ fn subchapter_emitter(
         OutputLine(
           blame,
           2,
-          "<script type=\"text/javascript\" src=\"/app.js\"></script>",
+          "<script type=\"text/javascript\" src=\"app.js\"></script>",
         ),
         OutputLine(blame, 0, "</head>"),
         OutputLine(blame, 0, "<body>"),

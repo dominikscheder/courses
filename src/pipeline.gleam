@@ -464,7 +464,7 @@ pub fn pipeline(
       dl.handles_add_ids(),
       dl.handles_generate_dictionary_and_id_list("path"),
       dl.handles_substitute_and_fix_nonlocal_id_links(
-        #("path", "a", "a", [], []),
+        #("path", "a", "a", [], [], ["a"]),
       ),
       dl.tokenize_href_surroundings(),
       dl.rearrange_links_4_pre_tokenized_src__batch([

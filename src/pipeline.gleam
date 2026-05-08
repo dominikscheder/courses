@@ -4,7 +4,7 @@ import desugaring as ds
 import gleam/list
 import gleam/string
 import group_replacement_splitting as grs
-import infrastructure.{type Pipe} as infra
+import infrastructure.{type Pipeline} as infra
 import prefabricated_pipelines as pp
 import vxml
 
@@ -90,7 +90,7 @@ pub fn pipeline(
   parameters: ds.RendererParameters,
   author_mode: Bool,
   language: String,
-) -> List(Pipe) {
+) -> Pipeline {
   let language: Language = case language {
     "de" -> German
     "en" -> English
@@ -609,5 +609,4 @@ pub fn pipeline(
     ],
   ]
   |> list.flatten
-  |> infra.desugarers_2_pipeline
 }

@@ -562,20 +562,9 @@ fn expand_filename_shorthands_to_path_fragments(
       filename_shorthand_regexp,
     ))
 
-  let only_key_values =
-    list.map(amendments.only_key_values, fn(x) {
-      let #(path, k, v) = x
-      #(
-        filename_shorthand_to_path_fragment(path, filename_shorthand_regexp),
-        k,
-        v,
-      )
-    })
-
   ds.CommandLineAmendments(
     ..amendments,
     only_paths: only_paths,
-    only_key_values: only_key_values,
   )
 }
 
@@ -591,7 +580,7 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
   use contents <- on.error_ok(simplifile.read(parent), fn(_) {
     io.println("\nunable to read '" <> parent <> "'")
   })
-  let assert Ok([parsed_contents, ..]) = writerly.parse_string(contents, "")
+  let assert Ok([parsed_contents, ..]) = writerly.string_to_writerlys(contents, "")
   let parsed_contents = writerly.writerly_to_vxml(parsed_contents)
   let banner = case infra.v_first_attr_with_key(parsed_contents, "banner") {
     None ->
@@ -650,8 +639,8 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
 
   let renderer =
     ds.Renderer(
-      assembler: ds.default_writerly_assembler(amendments.only_paths),
-      parser: ds.default_writerly_parser(amendments.only_key_values),
+      assembler: ds.default_writerly_assembler(_, amendments.only_paths),
+      parser: ds.default_writerly_parser,
       pipeline: pipeline.pipeline(parameters, author_mode, language),
       splitter: our_splitter,
       emitter: our_emitter(_, offline_mathjax, document_info),

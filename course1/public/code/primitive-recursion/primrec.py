@@ -1,3 +1,6 @@
+from timeMyPrograms import *
+
+
 def zero(*x):
 	return 0 
 

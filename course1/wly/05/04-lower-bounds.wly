@@ -1,0 +1,93 @@
+|> Sub
+    title=Untere Schranken für DEAs und NEAs 
+
+    Wir betrachten das Alphabet $\Sigma_k = \{1,\dots, k\}$ und 
+    die Sprache 
+    \begin{align*}
+    L_k & := \{ w \in \Sigma_k^* \ | \ 
+    \exists x \in \Sigma: \textnormal{ $x$ kommt nicht in $w$ vor } \}\\
+    & = \bigcup_{x \in \Sigma} \left( \Sigma \setminus \{x\}\right)^* \\
+    & = \{ w \in \Sigma_k^* \ | \ \char(w) \subsetneq \Sigma\} \ , 
+    \end{align*} 
+    wobei $\char(w)$ die Menge aller Zeichen ist, die in $w$ vorkommt.
+    Also: $\char(w_1, \dots, w_n) = \{w_1, \dots, w_n\}$.
+    Die Sprache $L_k$ ist regulär:
+    \begin{align*}
+    S & \rightarrow A_1 \ | \ A_2 \ | \ \dots  \ | \ A_k  \\
+    A_1 & \rightarrow 2 \ | \ 3 \ | \ 4 \ | \ \dots \ | \ k \\
+    A_2 & \rightarrow 1 \ | \ 3 \ | \ 4  \ | \ \dots \ | \ k \\
+    & \vdots \\
+    A_k & \rightarrow 1 \ | \ 2 \ | \ 3 \ | \ \dots \ | \ k-1 \ . 
+    \end{align*}
+    Hier ist ein NEA zu dieser Sprache:
+
+    |> figure
+        |> img
+            style=height: 10em
+            src=img/finite-state-automata/lower-bounds/nea-01-01.svg
+
+    Jeder Zustand ist akzeptierend. Das heißt aber nicht, dass dieser NEA 
+    alles akzeptiert. So gibt es zum Beispiel 
+    keinen Übergang $A_3 \step{3} ...$ Seltsamer vielleicht, dass jeder 
+    Zustand <em>Startzustand</em> ist. Aber auch das haben wir in 
+    unserer Definition ja erlaubt. Falls es Ihnen Kopfschmerzen bereitet, 
+    dann hier nochmal ein äquivalenter NEA, dieses Mal mit nur einem 
+    Startzustand:
+
+    |> figure
+        |> img
+            style=height: 15em
+            src=img/finite-state-automata/lower-bounds/nea-02-01.svg
+
+    Um einen DEA zu bauen, können wir natürlich die Potenzmengenkonstruktion 
+    anwenden; oder nachdenken: an jedem Zustand merken wir uns 
+    die Menge $I \subseteq [k]$ der Symbole, die wir noch nicht gelesen haben. 
+    Für $k=3$ sieht das so aus:
+
+    |> figure
+        |> img 
+            style=height: 20em 
+            src=img/finite-state-automata/lower-bounds/nea-03-01.svg
+
+    Allgemein: für $L_k$ bekommen Sie einen DEA mit $2^k$ Zuständen. Das 
+    ist eine ganze Menge. Geht es besser? Die Antwort ist <em>Nein</em>. 
+    Intuitiv gesprochen muss der DEA sich die Menge der bereits gelesenen 
+    Zeichen merken, ansonsten könnte er einen Fehler machen. 
+    Warum? Falls $v, w$ Wörter sind und es ein Zeichen 
+    $x$ gibt, das in $v$ vorkommt, aber nicht in $w$, also 
+    $x \in \char(v) \setminus \char(w)$, dann sei 
+    $\gamma$ ein Wort mit $\Sigma \setminus \char(v)$. Dann gilt 
+    \begin{align*}
+    v \gamma & \not \in L_k \\
+    w \gamma & \in L_k
+    \end{align*}
+    Da ja in $v \gamma$ alle Zeichen vorkommen, in $w \gamma$ aber das 
+    Zeichen $x$ fehlt. Ein Automat, der nun vergessen hat, ob er 
+    bislang $\char(v)$ oder $\char(w)$ gelesen hat, wird 
+    eventuell ein falsches Ergebnis liefern! 
+    Was heißt es, dass der DEA etwas "vergessen" hat? Nun, wenn 
+    $v$ und $w$ ihn in den gleichen Zustand bringen, dann kann er 
+    sich nicht mehr erinnern, ob er $v$ oder $w$ gelesen hat. 
+    Formal:
+    
+    |> Definition
+        handle=def-distinguishable
+        *(Unterscheidbares Paar).* Sei
+        $L \subseteq \Sigma^*$ eine Sprache. Zwei Wörter 
+        $v, w \in \Sigma^*$ heißen _unterscheidbar_ in $L$,  
+        wenn es ein $\gamma \in \Sigma^*$ gibt mit 
+        \begin{align*}
+        v \gamma & \not \in L \\
+        w \gamma &  \in L \\
+        \end{align*}
+        (oder umgekehrt).
+
+    |> Lemma
+        handle=lemma-distinguishable 
+        Sei $L \subseteq \Sigma^*$ eine Sprache 
+        und  $M = (\Sigma, Q, \qstart, F, \delta)$ ein
+        deterministischer endlicher Automat mit $L(M) = L$. 
+        Wenn $v$ und $w$ in $L$ unterscheidbar sind, dann 
+        gilt 
+        $\hat{\delta}(\qstart, v) \ne \hat{\delta}(\qstart, w)$.
+       

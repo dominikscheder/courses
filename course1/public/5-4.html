@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <title>Kapitel 5.4: Theoretische Informatik 2 - Bachelor-Studium Informatik | TU Chemnitz</title>
+  <meta name="description" content="Theoretische Informatik 2 for Bachelor-Studium Informatik - by Dominik Scheder, TU Chemnitz">
+  <meta name="author" content="Dominik Scheder">
+  <meta name="publisher" content="TU Chemnitz">
+  <meta name="subject" content="Theoretische Informatik 2">
+  <meta name="program" content="Bachelor-Studium Informatik">
+  <meta name="institution" content="TU Chemnitz">
+  <meta property="og:title" content="Kapitel 5.4: Theoretische Informatik 2 - Bachelor-Studium Informatik | TU Chemnitz">
+  <meta property="og:description" content="Theoretische Informatik 2 for Bachelor-Studium Informatik - by Dominik Scheder, TU Chemnitz">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Bachelor-Studium Informatik | TU Chemnitz">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kapitel 5.4: Theoretische Informatik 2 - Bachelor-Studium Informatik | TU Chemnitz">
+  <meta property="twitter:description" content="Theoretische Informatik 2 for Bachelor-Studium Informatik - by Dominik Scheder, TU Chemnitz">
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <script type="text/javascript" src="mathjax_setup.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./5-3.html"
+        >&lt;&lt; Kapitel 5.3<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Nichtdeterministische Endliche Automaten</span></a><a
+          id="next-page"
+          href="./5-5.html"
+          class="menu-row-right"
+        >Kapitel 5.5 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        5.4&ensp;Untere Schranken für DEAs und NEAs
+      </p>
+    </div>
+    <p class="main-column">
+      Wir betrachten das Alphabet $\Sigma_k = \{1,\dots, k\}$ und 
+      die Sprache
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      L_k &amp; := \{ w \in \Sigma_k^* \ | \ 
+      \exists x \in \Sigma: \textnormal{ $x$ kommt nicht in $w$ vor } \}\\
+      &amp; = \bigcup_{x \in \Sigma} \left( \Sigma \setminus \{x\}\right)^* \\
+      &amp; = \{ w \in \Sigma_k^* \ | \ \char(w) \subsetneq \Sigma\} \ , 
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      wobei $\char(w)$ die Menge aller Zeichen ist, die in $w$ vorkommt.
+      Also:
+      <span class="nowrap">$\char(w_1, \dots, w_n) = \{w_1, \dots, w_n\}$.</span>
+      Die Sprache $L_k$ ist regulär:
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      S &amp; \rightarrow A_1 \ | \ A_2 \ | \ \dots  \ | \ A_k  \\
+      A_1 &amp; \rightarrow 2 \ | \ 3 \ | \ 4 \ | \ \dots \ | \ k \\
+      A_2 &amp; \rightarrow 1 \ | \ 3 \ | \ 4  \ | \ \dots \ | \ k \\
+      &amp; \vdots \\
+      A_k &amp; \rightarrow 1 \ | \ 2 \ | \ 3 \ | \ \dots \ | \ k-1 \ . 
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Hier ist ein NEA zu dieser Sprache:
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="height: 10em"
+          src="img/finite-state-automata/lower-bounds/nea-01-01.svg"
+        >
+      </figure>
+    </div>
+    <p class="main-column">
+      Jeder Zustand ist akzeptierend. Das heißt aber nicht, dass dieser NEA 
+      alles akzeptiert. So gibt es zum Beispiel 
+      keinen Übergang $A_3 \step{3} ...$ Seltsamer vielleicht, dass jeder 
+      Zustand &lt;em&gt;Startzustand&lt;/em&gt; ist. Aber auch das haben wir in 
+      unserer Definition ja erlaubt. Falls es Ihnen Kopfschmerzen bereitet, 
+      dann hier nochmal ein äquivalenter NEA, dieses Mal mit nur einem 
+      Startzustand:
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="height: 15em"
+          src="img/finite-state-automata/lower-bounds/nea-02-01.svg"
+        >
+      </figure>
+    </div>
+    <p class="main-column">
+      Um einen DEA zu bauen, können wir natürlich die Potenzmengenkonstruktion 
+      anwenden; oder nachdenken: an jedem Zustand merken wir uns 
+      die Menge $I \subseteq [k]$ der Symbole, die wir noch nicht gelesen haben. 
+      Für $k=3$ sieht das so aus:
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="height: 20em"
+          src="img/finite-state-automata/lower-bounds/nea-03-01.svg"
+        >
+      </figure>
+    </div>
+    <p class="main-column">
+      Allgemein: für $L_k$ bekommen Sie einen DEA mit $2^k$ Zuständen. Das 
+      ist eine ganze Menge. Geht es besser? Die Antwort ist &lt;em&gt;Nein&lt;/em&gt;. 
+      Intuitiv gesprochen muss der DEA sich die Menge der bereits gelesenen 
+      Zeichen merken, ansonsten könnte er einen Fehler machen. 
+      Warum? Falls $v, w$ Wörter sind und es ein Zeichen 
+      $x$ gibt, das in $v$ vorkommt, aber nicht in
+      <span class="nowrap">$w$,</span>
+      also
+      <span class="nowrap">$x \in \char(v) \setminus \char(w)$,</span>
+      dann sei 
+      $\gamma$ ein Wort mit
+      <span class="nowrap">$\Sigma \setminus \char(v)$.</span>
+      Dann gilt
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      v \gamma &amp; \not \in L_k \\
+      w \gamma &amp; \in L_k
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Da ja in $v \gamma$ alle Zeichen vorkommen, in $w \gamma$ aber das 
+      Zeichen $x$ fehlt. Ein Automat, der nun vergessen hat, ob er 
+      bislang $\char(v)$ oder $\char(w)$ gelesen hat, wird 
+      eventuell ein falsches Ergebnis liefern! 
+      Was heißt es, dass der DEA etwas "vergessen" hat? Nun, wenn 
+      $v$ und $w$ ihn in den gleichen Zustand bringen, dann kann er 
+      sich nicht mehr erinnern, ob er $v$ oder $w$ gelesen hat. 
+      Formal:
+    </p>
+    <div
+      id="_26_hgi_"
+      class="well statement out"
+    >
+      <p>
+        <b>Definition 5.4.1 (Unterscheidbares Paar).</b>
+        Sei
+        $L \subseteq \Sigma^*$ eine Sprache. Zwei Wörter 
+        $v, w \in \Sigma^*$ heißen
+        <i>unterscheidbar</i>
+        in
+        <span class="nowrap">$L$,</span>
+        wenn es ein $\gamma \in \Sigma^*$ gibt mit
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        v \gamma &amp; \not \in L \\
+        w \gamma &amp;  \in L \\
+        \end{align*}
+        $$
+      </div>
+      <p>
+        (oder umgekehrt).
+      </p>
+    </div>
+    <div
+      id="_27_hgi_"
+      class="well statement out"
+    >
+      <p>
+        <b>Lemma 5.4.2</b>
+        Sei $L \subseteq \Sigma^*$ eine Sprache 
+        und  $M = (\Sigma, Q, \qstart, F, \delta)$ ein
+        deterministischer endlicher Automat mit
+        <span class="nowrap">$L(M) = L$.</span>
+        Wenn $v$ und $w$ in $L$ unterscheidbar sind, dann 
+        gilt
+        <span class="nowrap">$\hat{\delta}(\qstart, v) \ne \hat{\delta}(\qstart, w)$.</span>
+      </p>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./5-3.html">&lt;&lt; Kapitel 5.3<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Nichtdeterministische Endliche Automaten</span></a><a
+          href="./5-5.html"
+          class="menu-row-right"
+        >Kapitel 5.5 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

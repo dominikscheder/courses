@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <title>Kapitel 6: Theoretische Informatik 2 - Bachelor-Studium Informatik | TU Chemnitz</title>
+  <meta name="description" content="Theoretische Informatik 2 for Bachelor-Studium Informatik - by Dominik Scheder, TU Chemnitz">
+  <meta name="author" content="Dominik Scheder">
+  <meta name="publisher" content="TU Chemnitz">
+  <meta name="subject" content="Theoretische Informatik 2">
+  <meta name="program" content="Bachelor-Studium Informatik">
+  <meta name="institution" content="TU Chemnitz">
+  <meta property="og:title" content="Kapitel 6: Theoretische Informatik 2 - Bachelor-Studium Informatik | TU Chemnitz">
+  <meta property="og:description" content="Theoretische Informatik 2 for Bachelor-Studium Informatik - by Dominik Scheder, TU Chemnitz">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Bachelor-Studium Informatik | TU Chemnitz">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kapitel 6: Theoretische Informatik 2 - Bachelor-Studium Informatik | TU Chemnitz">
+  <meta property="twitter:description" content="Theoretische Informatik 2 for Bachelor-Studium Informatik - by Dominik Scheder, TU Chemnitz">
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <script type="text/javascript" src="mathjax_setup.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./5-8.html"
+        >&lt;&lt; Kapitel 5.8<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Übungsaufgaben</span></a><a
+          id="next-page"
+          href="./6-1.html"
+          class="menu-row-right"
+        >Kapitel 6.1 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Ableitungen und Ableitungsbäume</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        6.&ensp;Kontextfreie Sprachen
+      </p>
+    </div>
+    <p class="main-column">
+      Betrachten wir die Sprache
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      L := \{a^n b^n x^* \} \ . 
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Wie wir zuvor gelernt haben, ist sie nicht regulär: die Wörter
+      <span class="nowrap">$a^i$,</span>
+      $a^j$ sind
+      <i>unterscheidbar</i>
+      für
+      <span class="nowrap">$i\ne j$,</span>
+      denn für $\gamma := b^i$ gilt
+      <span class="nowrap">$a^i \gamma \in L$,</span>
+      aber
+      <span class="nowrap">$a^j \gamma \not \in L$.</span>
+      Hier ist eine
+      <i>kontextfreie</i>
+      Grammatik für
+      <span class="nowrap">$L$.</span>
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      S &amp; \step{1} TX \\
+      T &amp; \step{2} aTb \\
+      T &amp; \step{3} \epsilon \\
+      X &amp; \step{4} xX \\
+      X &amp; \step{5} \epsilon
+      \end{align*}
+      $$
+    </div>
+    <p class="main-column">
+      Ich habe die Produktionen alle mal durchnumeriert. Hier ist eine 
+      Ableitung des Wortes
+      <span class="nowrap">$aabbx$:</span>
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align}
+      S \Step{1} TX \Step{2} aTbX \Step{2} aaTbbX \Step{3} aabbX \Step{4} aabbxX \Step{5} aabbx  \ . 
+      \label{linksableitung}
+      \end{align}
+      $$
+    </div>
+    <p class="main-column">
+      Sie sehen: ich habe über jeden Ableitungsschritt die Nummer der Produktion geschrieben,
+      die wir gerade verwendet haben. Auch habe ich immer das am weitesten links stehende 
+      Nichtterminal ersetzt. Dies nennt man eine
+      <span class="nowrap"><i>Linksableitung</i>.</span>
+      Es geht auch anders:
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align}
+      S \Step{1} TX \Step{4} TxX \Step{5} Tx \Step{2} aTbx \Step{2} aaTbbx \Step{3} aabbx \ . 
+      \label{rechtsableitung}
+      \end{align}
+      $$
+    </div>
+    <p class="main-column">
+      Dies nennt man eine
+      <span class="nowrap"><i>Rechtsableitung</i>.</span>
+      Man kann es natürlich auch mischen, zum Beispiel
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align}
+      S \Step{1} TX \Step{2} aTbX \Step{4} aTbxX \Step{2} aaTbbxX \Step{5} aaTbbx \Step{3} aabbx  \ .  
+      \label{gemischtableitung}
+      \end{align}
+      $$
+    </div>
+    <p class="main-column">
+      Letztes ist weder eine Links- noch eine Rechtsableitung.
+    </p>
+    <p class="main-column">
+      Sind die drei Ableitungen (\ref{linksableitung}), (\ref{rechtsableitung}) und 
+      (\ref{gemischtableitung}) wirklich verschieden? Syntaktisch schon. Emotional aber 
+      fühlen sie sich alle identisch an: man macht die selben Ableitungsschritte, 
+      nur in unterschiedlicher Reihenfolge. Und in der Tat: wir können alle 
+      drei Ableitungen mit dem selben Ableitungsbaum visualisieren.
+    </p>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./5-8.html">&lt;&lt; Kapitel 5.8<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Übungsaufgaben</span></a><a
+          href="./6-1.html"
+          class="menu-row-right"
+        >Kapitel 6.1 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Ableitungen und Ableitungsbäume</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

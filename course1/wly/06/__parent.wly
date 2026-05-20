@@ -2,5 +2,44 @@
     title=Kontextfreie Sprachen
 
 
+    Betrachten wir die Sprache 
+    \begin{align*}
+    L := \{a^n b^n x^* \} \ . 
+    \end{align*}
+    Wie wir zuvor gelernt haben, ist sie nicht regulär: die Wörter 
+    $a^i$, $a^j$ sind _unterscheidbar_ für $i\ne j$, denn für $\gamma := b^i$ gilt 
+    $a^i \gamma \in L$, aber $a^j \gamma \not \in L$. 
+    Hier ist eine _kontextfreie_ Grammatik für $L$. 
+    \begin{align*}
+    S & \step{1} TX \\
+    T & \step{2} aTb \\
+    T & \step{3} \epsilon \\
+    X & \step{4} xX \\
+    X & \step{5} \epsilon
+    \end{align*}
+    Ich habe die Produktionen alle mal durchnumeriert. Hier ist eine 
+    Ableitung des Wortes $aabbx$: 
+    \begin{align}
+    S \Step{1} TX \Step{2} aTbX \Step{2} aaTbbX \Step{3} aabbX \Step{4} aabbxX \Step{5} aabbx  \ . 
+    \label{linksableitung}
+    \end{align}
+    Sie sehen: ich habe über jeden Ableitungsschritt die Nummer der Produktion geschrieben,
+    die wir gerade verwendet haben. Auch habe ich immer das am weitesten links stehende 
+    Nichtterminal ersetzt. Dies nennt man eine _Linksableitung_. 
+    Es geht auch anders:
+    \begin{align}
+    S \Step{1} TX \Step{4} TxX \Step{5} Tx \Step{2} aTbx \Step{2} aaTbbx \Step{3} aabbx \ . 
+    \label{rechtsableitung}
+    \end{align}
+    Dies nennt man eine _Rechtsableitung_. Man kann es natürlich auch mischen, zum Beispiel 
+    \begin{align}
+    S \Step{1} TX \Step{2} aTbX \Step{4} aTbxX \Step{2} aaTbbxX \Step{5} aaTbbx \Step{3} aabbx  \ .  
+    \label{gemischtableitung}
+    \end{align}    
+    Letztes ist weder eine Links- noch eine Rechtsableitung. 
 
-Blabla
+    Sind die drei Ableitungen (\ref{linksableitung}), (\ref{rechtsableitung}) und 
+    (\ref{gemischtableitung}) wirklich verschieden? Syntaktisch schon. Emotional aber 
+    fühlen sie sich alle identisch an: man macht die selben Ableitungsschritte, 
+    nur in unterschiedlicher Reihenfolge. Und in der Tat: wir können alle 
+    drei Ableitungen mit dem selben Ableitungsbaum visualisieren.

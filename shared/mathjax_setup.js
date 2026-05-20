@@ -45,6 +45,7 @@ window.MathJax = {
       succ: "\\textnormal{succ}",
       comp: "\\textnormal{Comp}",
       primrec: "\\textnormal{PrimRec}",
+      char: "\\textnormal{char}",
       b: "\\mathbf{b}",
       x: "\\mathbf{x}",
       y: "\\mathbf{y}",

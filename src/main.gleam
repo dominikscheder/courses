@@ -41,7 +41,7 @@ fn local_usage_message() {
   io.println("")
   io.println("Local server usage: use 'COURSE=<course dir> npm run dev' to")
   io.println("serve book on localhost:3003, or prefix 'PORT=xxxx' argument")
-  io.println("to serve on  specific port! Enjoy!")
+  io.println("to serve on specific port! Enjoy!")
   io.println("")
 }
 

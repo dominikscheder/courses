@@ -578,7 +578,10 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
   let assert None = amendments.output_dir
   let parent = course_dir <> "/wly/__parent.wly"
   use contents <- on.error_ok(simplifile.read(parent), fn(_) {
-    io.println("\nunable to read '" <> parent <> "'")
+    case simplifile.is_file(parent) {
+      Ok(True) | Error(_) -> io.println("\nunable to read '" <> parent <> "'")
+      Ok(False) -> io.println("\nfile not found: '" <> parent <> "'")
+    }
   })
   let assert Ok([parsed_contents, ..]) = writerly.string_to_writerlys(contents, "")
   let parsed_contents = writerly.writerly_to_vxml(parsed_contents)

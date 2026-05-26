@@ -639,11 +639,15 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
   let author_mode = dict.has_key(amendments.user_args, "--local")
   let offline_mathjax = dict.has_key(amendments.user_args, "--offline-mathjax")
   let amendments = expand_filename_shorthands_to_path_fragments(amendments)
+  let options =
+    ds.vanilla_options()
+    |> ds.amend_renderer_options_by_command_line_amendments(amendments)
 
   let renderer =
     ds.Renderer(
-      assembler: ds.default_writerly_assembler(_, amendments.only_paths),
+      assembler: ds.default_writerly_assembler(_, options),
       parser: ds.default_writerly_parser,
+      filterer: ds.default_filterer(_, options, []),
       pipeline: pipeline.pipeline(parameters, author_mode, language),
       splitter: our_splitter,
       emitter: our_emitter(_, offline_mathjax, document_info),
@@ -652,17 +656,13 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
     )
     |> ds.amend_renderer_by_command_line_amendments(amendments)
 
-  let debug_options =
-    ds.vanilla_options()
-    |> ds.amend_renderer_options_by_command_line_amendments(amendments)
-
   // clean up HTML files before rendering
   case cleanup_html_files(parameters.output_dir) {
     Ok(_) -> Nil
     Error(error) -> io.println("HTML cleanup failed: " <> error)
   }
 
-  case ds.run_renderer(renderer, parameters, debug_options) {
+  case ds.run_renderer(renderer, parameters, options) {
     Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
     _ -> Nil
   }

@@ -175,10 +175,15 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
       }
     })
 
+  let options =
+    ds.RendererOptions(..ds.vanilla_options(), verbose: True)
+    |> ds.amend_renderer_options_by_command_line_amendments(amendments)
+
   let renderer =
     ds.Renderer(
-      assembler: ds.default_writerly_assembler(_, amendments.only_paths),
+      assembler: ds.default_writerly_assembler(_, options),
       parser: ds.default_writerly_parser,
+      filterer: ds.default_filterer(_, options, []),
       pipeline: pipeline,
       splitter: case files {
         [] -> whole_book_splitter
@@ -189,10 +194,6 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
       prettifier: ds.default_prettier_prettifier,
     )
     |> ds.amend_renderer_by_command_line_amendments(amendments)
-
-  let debug_options =
-    ds.RendererOptions(..ds.vanilla_options(), verbose: True)
-    |> ds.amend_renderer_options_by_command_line_amendments(amendments)
 
   let _ = simplifile.delete(parameters.output_dir <> "/*")
 
@@ -208,7 +209,7 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
           ..parameters,
           input_dir: parameters.input_dir <> f,
         )
-      case ds.run_renderer(renderer, parameters, debug_options) {
+      case ds.run_renderer(renderer, parameters, options) {
         Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
         _ -> Nil
       }

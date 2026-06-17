@@ -9,3 +9,5 @@ node_modules/
 npm-debug.log*
 *.code-workspace
 .env
+.last-command
+.vscode

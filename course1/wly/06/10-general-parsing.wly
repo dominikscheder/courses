@@ -1,5 +1,5 @@
 |> Sub
-    title=Allgemeines Parsing
+    title=Allgemeines Parsing 
 
     Wir haben drei Methoden kennengelernt, kontextfreie
     Sprachen zu parsen: rekursiver Abstieg (mit Demoseite

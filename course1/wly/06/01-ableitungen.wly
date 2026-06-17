@@ -1,8 +1,40 @@
 |> Sub
     title=Ableitungen und Ableitungsbäume
 
+    |> Definition 
+        *(Kontextfreie Grammatik)* Sei $\Sigma$ ein endliches 
+        Alphabet. Eine kontextfreie Grammatik besteht aus 
+        |> ul
+            |> li 
+                einer endlichen Menge $N$ von Nichtterminalsymbolen;
+            |> li 
+                einem Startsymbol $S$;
+            |> li 
+                einer endlichen Menge $P$ von _Produktionen_; eine 
+                Produktion hat die Form 
+                \begin{align*}
+                X \rightarrow \alpha 
+                \end{align*}
+                mit $X \in N$ und $\alpha \in (\Sigma \cup N)^*$.
+    
+    Wir sehen: reguläre Grammatiken sind ein Sonderfall der kontextfreien. 
+    Ein _Wort_ ist ein $w \in \Sigma^*$; eine _Wortform_ ist ein $\alpha \in (\Sigma \cup N)^*$.
+    Wir benutzen meist lateinische Buchstäben am Ende des Alphabets ($u,v,w$) für Wörter 
+    und griechische Buchstaben ($\alpha, $\beta$, $\gamma$) für Wortformen.
+
     |> Definition
-        *(Ableitung)* Sei $G$ eine Grammatik mit Startsymbol $S$.
+        *(Ableitungschritt und Ableitung)* Sei $G$ eine kontextfreie Grammatik. 
+        Seien $\alpha, \beta$ zwei Wortformen. Wir schreiben 
+        \begin{align*}
+        \alpha \Step \beta 
+        \end{align*}
+        wenn wir $\alpha$ und $\beta$ zerlegen können als 
+        $\alpha = \alpha_1 X \alpha_2$ und $\beta = \alpha_1 \gamma \alpha_2$ 
+        und $X \rightarrow \gamma$ eine Produktion in $G$ ist. Wir nennen 
+        $\alpha \Step \beta$ einen Ableitungsschritt. 
+        
+        Wir schreiben 
+         mit Startsymbol $S$.
         Die Ableitung eines Wortes $\alpha$ ist eine Sequenz von
         Wortformen $w_0, w_1, \dots, w_n$ mit
         $w_0 = S, w_n = \alpha$ und $w_{i-1} \Longrightarrow w_i$.

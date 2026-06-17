@@ -1,5 +1,5 @@
 |> Sub
-    title=Kontextfreie Grammatiken und Kellerautomaten
+    title=Kontextfreie Grammatiken und Kellerautomaten (nicht im Sommer 2026)
 
     |> Theorem
         Zu jeder kontextfreien Grammatik $G = (\Sigma, N, S, P)$

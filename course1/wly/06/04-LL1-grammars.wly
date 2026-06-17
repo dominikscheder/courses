@@ -1,5 +1,5 @@
 |> Sub
-    title=LL(\(k\))-Grammatiken (nicht im Sommersemester 2025)
+    title=LL(\(k\))-Grammatiken (nicht im Sommersemester 2026) 
 
     |> Definition
         *Grenzform* Sei $G = (\Sigma, N, S, P)$ eine kontextfreie

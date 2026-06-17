@@ -21,7 +21,7 @@
   <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
   <link rel="stylesheet" type="text/css" href="app.css" />
   <script type="text/javascript" src="mathjax_setup.js"></script>
-  <script type="text/javascript" src="mathjax3/tex-svg.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
@@ -48,7 +48,7 @@
         >Kapitel 6.2 &gt;&gt;<span
             style="visibility:hidden"
             id="top-next-page-tooltip"
-          >Kontextfreie Grammatiken und Kellerautomaten</span></a>
+          >Kontextfreie Grammatiken und Kellerautomaten (nicht im Sommer 2026)</span></a>
       </div>
     </div>
     <div class="main-column page-title">
@@ -58,7 +58,46 @@
     </div>
     <div class="well statement out">
       <p>
-        <b>Definition 6.1.1 (Ableitung)</b>
+        <b>Definition 6.1.1 (Kontextfreie Grammatik)</b>
+        Sei $\Sigma$ ein endliches 
+        Alphabet. Eine kontextfreie Grammatik besteht aus
+      </p>
+      <ul>
+        <li>
+          <p>
+            einer endlichen Menge $N$ von Nichtterminalsymbolen;
+          </p>
+        </li>
+        <li>
+          <p>
+            einem Startsymbol
+            <span class="nowrap">$S$;</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            einer endlichen Menge $P$ von
+            <span class="nowrap"><i>Produktionen</i>;</span>
+            eine 
+            Produktion hat die Form
+          </p>
+          <div class="math-block">
+            $$
+            \begin{align*}
+            X \rightarrow \alpha 
+            \end{align*}
+            $$
+          </div>
+          <p>
+            mit $X \in N$ und
+            <span class="nowrap">$\alpha \in (\Sigma \cup N)^*$.</span>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="well statement out">
+      <p>
+        <b>Definition 6.1.2 (Ableitung)</b>
         Sei $G$ eine Grammatik mit Startsymbol
         <span class="nowrap">$S$.</span>
         Die Ableitung eines Wortes $\alpha$ ist eine Sequenz von
@@ -181,7 +220,7 @@
         >Kapitel 6.2 &gt;&gt;<span
             style="visibility:hidden"
             id="bottom-next-page-tooltip"
-          >Kontextfreie Grammatiken und Kellerautomaten</span></a>
+          >Kontextfreie Grammatiken und Kellerautomaten (nicht im Sommer 2026)</span></a>
       </div>
     </div>
   </div>

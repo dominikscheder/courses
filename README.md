@@ -58,14 +58,33 @@ Note: Go-to-source tooltips will only work if `code` has been bound to open the 
 
 Run `gleam run -- --fmt` for default 55 to reformat at char per line formatting or `gleam run -- --fmt <X>` to format line length to X chars per line.
 
-## 9. Add a shared asset to a course
+## 9. `--last-command` (VSCode build task integration)
+
+The `--last-command` flag reruns the exact same arguments as the previous successful run,
+reading them from a local `.last-command` file written automatically at the end of each run.
+
+This is useful when combined with a VSCode build task that fires on every `.wly` file save.
+Create `.vscode/tasks.json` in the project root (you can copy `sample_tasks_dot_json.json`
+from this repo as a starting point):
+
+```sh
+cp sample_tasks_dot_json.json .vscode/tasks.json
+```
+
+The task runs `gleam run -- --last-command`, which picks up whatever flags you last used
+(e.g. `--which course1 --offline-mathjax`). The first time you run with `--last-command` you
+must have run the renderer at least once without it so that a `.last-command` file exists.
+
+The `.last-command` file is local; add it to `.gitignore` if you do not want it committed.
+
+## 10. Add a shared asset to a course
 
 As an example, say we would like to add `mathjax_setup.js` to course `course1`. We would follow these steps
 
 1. `cd` into project root
 2. `ln -s ../../shared/mathjax_setup.js course1/public/mathjax_setup.js`
 
-## 10. Option for offline MathJax
+## 11. Option for offline MathJax
 
 Use the `--offline-mathjax` flag to use the local copy of MathJax installed inside the repo.
 

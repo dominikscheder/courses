@@ -613,7 +613,7 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
     Some(x) -> x.val
   }
   let homepage = case infra.v_first_attr_with_key(parsed_contents, "homepage") {
-    None -> panic as "__parent.wly did not specify any homepage attribute"
+    None -> ""
     Some(x) -> x.val
   }
 

@@ -34,7 +34,7 @@
         $\alpha \Step \beta$ einen Ableitungsschritt. 
         
         Wir schreiben 
-         mit Startsymbol $S$.
+        mit Startsymbol $S$.
         Die Ableitung eines Wortes $\alpha$ ist eine Sequenz von
         Wortformen $w_0, w_1, \dots, w_n$ mit
         $w_0 = S, w_n = \alpha$ und $w_{i-1} \Longrightarrow w_i$.

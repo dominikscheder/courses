@@ -95,10 +95,45 @@
         </li>
       </ul>
     </div>
+    <p class="main-column">
+      Wir sehen: reguläre Grammatiken sind ein Sonderfall der kontextfreien. 
+      Ein
+      <i>Wort</i>
+      ist ein
+      <span class="nowrap">$w \in \Sigma^*$;</span>
+      eine
+      <i>Wortform</i>
+      ist ein
+      <span class="nowrap">$\alpha \in (\Sigma \cup N)^*$.</span>
+      Wir benutzen meist lateinische Buchstäben am Ende des Alphabets
+      <span class="nowrap">($u,v,w$)</span>
+      für Wörter 
+      und griechische Buchstaben
+      <span class="nowrap">($\alpha,$\beta</span><span class="nowrap">$,$\gamma$)</span>
+      für Wortformen.
+    </p>
     <div class="well statement out">
       <p>
-        <b>Definition 6.1.2 (Ableitung)</b>
-        Sei $G$ eine Grammatik mit Startsymbol
+        <b>Definition 6.1.2 (Ableitungschritt und Ableitung)</b>
+        Sei $G$ eine kontextfreie Grammatik. 
+        Seien $\alpha, \beta$ zwei Wortformen. Wir schreiben
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \alpha \Step \beta 
+        \end{align*}
+        $$
+      </div>
+      <p>
+        wenn wir $\alpha$ und $\beta$ zerlegen können als 
+        $\alpha = \alpha_1 X \alpha_2$ und $\beta = \alpha_1 \gamma \alpha_2$ 
+        und $X \rightarrow \gamma$ eine Produktion in $G$ ist. Wir nennen 
+        $\alpha \Step \beta$ einen Ableitungsschritt.
+      </p>
+      <p>
+        Wir schreiben 
+        mit Startsymbol
         <span class="nowrap">$S$.</span>
         Die Ableitung eines Wortes $\alpha$ ist eine Sequenz von
         Wortformen $w_0, w_1, \dots, w_n$ mit

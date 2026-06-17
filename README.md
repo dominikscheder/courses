@@ -68,6 +68,7 @@ Create `.vscode/tasks.json` in the project root (you can copy `sample_tasks_dot_
 from this repo as a starting point):
 
 ```sh
+mkdir .vscode
 cp sample_tasks_dot_json.json .vscode/tasks.json
 ```
 

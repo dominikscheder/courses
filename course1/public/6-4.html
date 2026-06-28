@@ -327,7 +327,7 @@
       </p>
     </div>
     <div
-      id="_29_h.a.i_"
+      id="_32_h.a.i_"
       class="well exercise out"
     >
       <p>
@@ -781,12 +781,15 @@
         Nichtterminalsymbol ist, und berechnen dann
         $\First_k(\alpha)$ wie folgt:
       </p>
-      <div class="math-block">
+      <div
+        id="_33_h.a.i_"
+        class="math-block"
+      >
         $$
         \begin{align}
         \First_k(\alpha) = \First_k(\sigma_1) \circ_k \First_k(\sigma_2) \circ_k \dots \circ_k \First_k
         (\sigma_n) \ .
-        \label{first-k-wortform}
+        \tag{4}
         \end{align}
         $$
       </div>
@@ -838,7 +841,7 @@
       nur das Wort $c$ ableiten lässt. Für Nichtterminale müssen
       wir uns anstrengen. Die erste Idee ist, dass wir für
       $\First_k(X)$ eine Gleichung schreiben können, die
-      $(\ref{first-k-wortform})$ verwendet.
+      (<a href="./6-4.html#_33_h.a.i_">4</a>) verwendet.
     </p>
     <div class="well statement out">
       <p>
@@ -859,11 +862,14 @@
         die Produktionen der Grammatik mit $X$ auf der linken
         Seite. Dann gilt
       </p>
-      <div class="math-block">
+      <div
+        id="_34_h.a.i_"
+        class="math-block"
+      >
         $$
         \begin{align}
         \First_k(X) = \bigcup_{i=1}^k \First_k(\alpha_i)
-        \label{first-k-nonterminal}
+        \tag{5}
         \end{align}
         $$
       </div>
@@ -877,17 +883,17 @@
       </p>
     </div>
     <p class="main-column">
-      Die Gleichungen $(\ref{first-k-wortform})$ und
-      $(\ref{first-k-nonterminal})$ leuchten zwar ein, scheinen
+      Die Gleichungen (<a href="./6-4.html#_33_h.a.i_">4</a>) und
+      (<a href="./6-4.html#_34_h.a.i_">5</a>) leuchten zwar ein, scheinen
       aber erstmal nicht hilfreich, diese Mengen auch tatsächlich
       zu berechnen. Denn eventuell taucht $X$ selbst wieder auf
       einer rechten Seite auf, sagen wir
       <span class="nowrap">$\alpha_1$.</span>
       Um
       $\First_k(X)$ zu berechnen, müssen wir also laut
-      $(\ref{first-k-nonterminal})$ die Menge
+      (<a href="./6-4.html#_34_h.a.i_">5</a>) die Menge
       $\First_k(\alpha_1)$ kennen; um diese zu berechnen,
-      brauchen wir laut $(\ref{first-k-wortform})$ allerdings
+      brauchen wir laut (<a href="./6-4.html#_33_h.a.i_">4</a>) allerdings
       zuerst unter Anderem die Menge
       <span class="nowrap">$\First_k(X)$.</span>
       Wo sollen

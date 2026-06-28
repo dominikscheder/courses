@@ -156,10 +156,13 @@
             <p>
               Insgesamt haben wir also
             </p>
-            <div class="math-block">
+            <div
+              id="_5_h.a.i_"
+              class="math-block"
+            >
               $$
               n + (s-1) + 2 {s-1 \choose 2} = n + s - 1 + (s-1)(s-2) =
-              n + s^2 - 2s + 1 \leq s^2
+              n + s^2 - 2s + 1 \leq s^2 \tag{1}
               $$
             </div>
             <p>
@@ -177,11 +180,14 @@
           Um die Gesamtzahl der Möglichkeiten abzuschätzen, müssen
           wir das alles multiplizieren. Wir haben höchstens
         </p>
-        <div class="math-block">
+        <div
+          id="_6_h.a.i_"
+          class="math-block"
+        >
           $$
           \underbrace{s}_{\textnormal{Output-Gate wählen}} \cdot \underbrace{\prod_{i=1}^s
           (s^2)}_{\textnormal{jedes Gate beschriften}}
-          = s \cdot (s^2)^s = s^{2s+1}
+          = s \cdot (s^2)^s = s^{2s+1} \tag{2}
           $$
         </div>
         <p>
@@ -195,7 +201,7 @@
         <span class="nowrap">$s := 2^{n} / (2n)$.</span>
         Wieviele Schaltkreise
         mit $n$ Variablen, Fan-in 2 und $s$ Gates gibt es? Die
-        Schranke in der obigen Behauptung sagt, dies seien
+        Schranke (<a href="./2-6.html#_6_h.a.i_">2</a>) sagt, dies seien
         höchstens
       </p>
       <div class="math-block">
@@ -310,7 +316,7 @@
       Können wir sie schließen?
     </p>
     <div
-      id="_5_h.a.i_"
+      id="_7_h.a.i_"
       class="well statement out"
     >
       <p>
@@ -422,10 +428,13 @@
         Summe bilden wir mit $t-1$ weiteren XOR-Gates. Da
         $t \leq 2^n$ und $|I| \leq n$ gilt, brauchen wir maximal
       </p>
-      <div class="math-block">
+      <div
+        id="_8_h.a.i_"
+        class="math-block"
+      >
         $$
         \begin{align*}
-        (n-1) 2^n + 2^n - 1 \leq n 2^n
+        (n-1) 2^n + 2^n - 1 \leq n 2^n \tag{3}
         \end{align*}
         $$
       </div>

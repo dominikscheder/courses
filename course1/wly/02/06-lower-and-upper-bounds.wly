@@ -76,7 +76,7 @@
 
                     $$
                     n + (s-1) + 2 {s-1 \choose 2} = n + s - 1 + (s-1)(s-2) =
-                    n + s^2 - 2s + 1 \leq s^2
+                    n + s^2 - 2s + 1 \leq s^2 \label{eq:gate-choices##<<}
                     $$
 
                     Möglichkeiten.
@@ -91,7 +91,7 @@
             $$
             \underbrace{s}_{\textnormal{Output-Gate wählen}} \cdot \underbrace{\prod_{i=1}^s
             (s^2)}_{\textnormal{jedes Gate beschriften}}
-            = s \cdot (s^2)^s = s^{2s+1}
+            = s \cdot (s^2)^s = s^{2s+1} \label{eq:circuit-count##<<}
             $$
 
             Möglichkeiten. Es gibt also höchstens $s^{2s+1}$
@@ -100,7 +100,7 @@
 
         Wählen wir nun $s := 2^{n} / (2n)$. Wieviele Schaltkreise
         mit $n$ Variablen, Fan-in 2 und $s$ Gates gibt es? Die
-        Schranke in der obigen Behauptung sagt, dies seien
+        Schranke (>>eq:circuit-count) sagt, dies seien
         höchstens
 
         \begin{align*}

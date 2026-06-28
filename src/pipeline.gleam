@@ -261,7 +261,6 @@ pub fn pipeline(
       dl.ti2_backfill(),
       dl.append_attribute__batch([
         #("Document", "counter", "ChapterCounter"),
-        #("Document", "counter", "EquationCounter"),
         #("Chapter", "counter", "SubCounter"),
         #("Chapter", "counter", "ExerciseCounter"),
         #("Chapter", "counter", "StatementCounter"),

@@ -261,6 +261,7 @@ pub fn pipeline(
       dl.ti2_backfill(),
       dl.append_attribute__batch([
         #("Document", "counter", "ChapterCounter"),
+        #("Document", "counter", "EquationCounter"),
         #("Chapter", "counter", "SubCounter"),
         #("Chapter", "counter", "ExerciseCounter"),
         #("Chapter", "counter", "StatementCounter"),
@@ -461,6 +462,9 @@ pub fn pipeline(
     ],
     pp.splitting_empty_lines_cleanup(),
     [
+      dl.math_label_to_tag_handle(#("MathBlock", "::++EquationCounter")),
+      dl.substitute_counters(),
+      dl.handles_generate_v_definitions_from_t_definitions(),
       dl.handles_add_ids(),
       dl.handles_generate_dictionary_and_id_list("path"),
       dl.handles_substitute_and_fix_nonlocal_id_links(

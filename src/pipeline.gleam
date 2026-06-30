@@ -466,6 +466,7 @@ pub fn pipeline(
       dl.handles_generate_v_definitions_from_t_definitions(),
       dl.handles_add_ids(),
       dl.handles_generate_dictionary_and_id_list("path"),
+      dl.substitute_bare_eq_refs_in_mathblock(),
       dl.handles_substitute_and_fix_nonlocal_id_links(
         #("path", "a", "a", [], [], ["a"]),
       ),

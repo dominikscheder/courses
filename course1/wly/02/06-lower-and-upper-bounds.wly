@@ -376,7 +376,7 @@
         \nonumber \\
         =&
         2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \ .
-        \label{size-lupanov}
+        size-lupanov##<<
         \end{align}
 
         Wir müssen nun $k$ so wählen, dass der obige Ausdruck
@@ -399,7 +399,7 @@
         wir erhalten
 
         \begin{align*}
-        (\ref{size-lupanov})&= 2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \\
+        (>>size-lupanov)&= 2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \\
         &= 2^{2^{\log n}} + \dots
         \end{align*}
 
@@ -408,7 +408,7 @@
         wählen. Nächster Versuch: $k := \log n - 1$.
 
         \begin{align*}
-        (\ref{size-lupanov})&= 2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \\
+        (>>size-lupanov)&= 2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \\
         &=
         2^{2^{\log n - 1}} + 3 \cdot 2^{n - \log n + 1} + 2^{\log n - 1} - 1 \\
         &=

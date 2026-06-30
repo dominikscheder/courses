@@ -162,7 +162,7 @@
             >
               $$
               n + (s-1) + 2 {s-1 \choose 2} = n + s - 1 + (s-1)(s-2) =
-              n + s^2 - 2s + 1 \leq s^2 \tag{1}
+              n + s^2 - 2s + 1 \leq s^2 \tag{1}\label{eq:gate-choices}
               $$
             </div>
             <p>
@@ -187,7 +187,7 @@
           $$
           \underbrace{s}_{\textnormal{Output-Gate wählen}} \cdot \underbrace{\prod_{i=1}^s
           (s^2)}_{\textnormal{jedes Gate beschriften}}
-          = s \cdot (s^2)^s = s^{2s+1} \tag{2}
+          = s \cdot (s^2)^s = s^{2s+1} \tag{2}\label{eq:circuit-count}
           $$
         </div>
         <p>
@@ -434,7 +434,7 @@
       >
         $$
         \begin{align*}
-        (n-1) 2^n + 2^n - 1 \leq n 2^n \tag{3}
+        (n-1) 2^n + 2^n - 1 \leq n 2^n \tag{3}\label{eq:naive-bound}
         \end{align*}
         $$
       </div>
@@ -619,7 +619,10 @@
         $\sum_{A \subseteq [n-k]}$ bilden, wofür wir $2^{n-k}$
         XOR-Gates brauchen. Insgesamt brauchen wir also
       </p>
-      <div class="math-block">
+      <div
+        id="_9_h.a.i_"
+        class="math-block"
+      >
         $$
         \begin{align}
         &amp;\underbrace{2^{2^k} + 2^k}_{\textnormal{für alle $g: \cube^k \rightarrow \cube$}}
@@ -632,7 +635,7 @@
         \nonumber \\
         =&amp;
         2^{2^k} + 3 \cdot 2^{n-k} + 2^k - 1 \ .
-        \label{size-lupanov}
+        \tag{4}\label{size-lupanov}
         \end{align}
         $$
       </div>

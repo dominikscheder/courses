@@ -10,7 +10,7 @@
 
     \begin{align}
     \{ c w \ | \ c = \enc(M) \textnormal{ und $M$ akzeptiert $w$} \} \ .
-    \label{halting-language-old-encoding}
+    halting-language-old-encoding##<<
     \end{align}
 
     Allerdings: wenn $M$ auf $x$ nicht terminiert, dann

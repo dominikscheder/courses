@@ -372,7 +372,7 @@
 
                 \begin{align}
                 \alpha \beta w' \rstep{} \alpha' A w'
-                \label{left-reduction-w'}
+                left-reduction-w'##<<
                 \end{align}
 
                 ein korrekter Linksreduktionsschritt. Die letzte
@@ -384,12 +384,12 @@
 
                 \begin{align}
                 \alpha \beta w \rstep{} \alpha A w
-                \label{left-reduction-w}
+                left-reduction-w##<<
                 \end{align}
 
-                an. Da (\ref{left-reduction-w'}) korrekt ist und
+                an. Da (>>left-reduction-w') korrekt ist und
                 $\alpha \beta w$ nach Invariante eine gültige Wortform
-                ist, ist nach LR(0)-Bedingung auch (\ref{left-reduction-w})
+                ist, ist nach LR(0)-Bedingung auch (>>left-reduction-w)
                 ein korrekter Schritt; $\alpha Aw$ ist also auch eine
                 gültige Wortform; somit gilt Teil (i) der Invariante. Um zu
                 sehen, dass (ii) gilt, beachten Sie, dass nun auf dem Stack

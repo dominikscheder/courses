@@ -195,7 +195,7 @@
 
     \begin{align}
     N_{i,i+1} := \{X \in N \ | \ X \step{} w_i \textnormal{ ist eine Produktion in $G$}\} \ .
-    \label{Nii}
+    Nii##<<
     \end{align}
 
     Das gilt nur, weil $G$ in Chomsky-Normalform vorliegt und
@@ -221,7 +221,7 @@
     \begin{align}
     N_{i,k} = \bigcup_{j=i+1}^{k-1} \{X \in N \ | \ \textnormal{ es gibt $X \rightarrow YZ$ mit $Y
     \in N_{i,j}$ und $Z \in N_{j,k}$}\} \ .
-    \label{equation-Nij}
+    equation-Nij##<<
     \end{align}
 
     Dies können wir mit einer Schleife über $j = i+1 \dots k-1$
@@ -253,7 +253,7 @@
                                 # wir betrachten das Interval w[i:k] der Länge l
 
                         |> li
-                            Berechne $N_{i,k}$ wie in $(\ref{equation-Nij})$. Konkret
+                            Berechne $N_{i,k}$ wie in (>>equation-Nij). Konkret
                             heißt das:
 
                         |> li

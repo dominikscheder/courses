@@ -21,7 +21,7 @@
     Ableitung des Wortes $aabbx$: 
     \begin{align}
     S \Step{1} TX \Step{2} aTbX \Step{2} aaTbbX \Step{3} aabbX \Step{4} aabbxX \Step{5} aabbx  \ . 
-    \label{linksableitung}
+    linksableitung##<<
     \end{align}
     Sie sehen: ich habe über jeden Ableitungsschritt die Nummer der Produktion geschrieben,
     die wir gerade verwendet haben. Auch habe ich immer das am weitesten links stehende 
@@ -29,17 +29,17 @@
     Es geht auch anders:
     \begin{align}
     S \Step{1} TX \Step{4} TxX \Step{5} Tx \Step{2} aTbx \Step{2} aaTbbx \Step{3} aabbx \ . 
-    \label{rechtsableitung}
+    rechtsableitung##<<
     \end{align}
     Dies nennt man eine _Rechtsableitung_. Man kann es natürlich auch mischen, zum Beispiel 
     \begin{align}
     S \Step{1} TX \Step{2} aTbX \Step{4} aTbxX \Step{2} aaTbbxX \Step{5} aaTbbx \Step{3} aabbx  \ .  
-    \label{gemischtableitung}
+    gemischtableitung##<<
     \end{align}    
     Letztes ist weder eine Links- noch eine Rechtsableitung. 
 
-    Sind die drei Ableitungen (\ref{linksableitung}), (\ref{rechtsableitung}) und 
-    (\ref{gemischtableitung}) wirklich verschieden? Syntaktisch schon. Emotional aber 
+    Sind die drei Ableitungen (>>linksableitung), (>>rechtsableitung) und 
+    (>>gemischtableitung) wirklich verschieden? Syntaktisch schon. Emotional aber 
     fühlen sie sich alle identisch an: man macht die selben Ableitungsschritte, 
     nur in unterschiedlicher Reihenfolge. Und in der Tat: wir können alle 
     drei Ableitungen mit dem selben Ableitungsbaum visualisieren; dies tun 

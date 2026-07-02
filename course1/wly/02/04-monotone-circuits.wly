@@ -206,7 +206,7 @@
         unseren Beweis von Theorem 2 in der Vorlesung erinnern
         können und eher an Theorem 1 als an allgemeinen
         Beweismethoden interessiert sind, dürfen Sie gerne
-        [runterspringen](#after-sub-proof).
+        [runterspringen](>>after-sub-proof).
 
         |> Proof
             Als _Beweismethode_ verwenden wir Induktion über $n$, die
@@ -404,9 +404,8 @@
             Wir haben also erfolgreich einen Schaltkreis für
             $f: \{0,1\}^n \rightarrow \{0,1\}$ konstruiert. Unser
             Induktionsbeweis von Theorem 2 ist nun abgeschlossen.
+            after-sub-proof##<<
 
-    |> span
-        id=after-sub-proof
     Diesen "hellblauen" Beweis haben wir ja bereits in der
     Vorlesung geführt. Ich habe ihn hier wiederholt und in
     größerem Detail besprochen, um auf verschiedene formale

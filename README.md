@@ -22,7 +22,7 @@ Copy the Github folder structure: put one repo in a folder `vistuleB/wly` and th
 
 Various output should come out like this:
 
-![wly/desugaring gleam run -m desugarers terminal output](writerly-desugaring-m-terminal-output.png)
+<img src="writerly-desugaring-m-terminal-output.png" width="400">
 
 ## 4. "raw HTML" test
 

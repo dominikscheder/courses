@@ -18,9 +18,11 @@ gleam clean
 gleam build
 ```
 
-in each separate gleam repo. (Project.)
+inside of `vistuleB/wly/desugaring/` [note the `DESUGARING/` part of the path!] as 
+well as inside of `dominikscheder/courses` or `vistuleB/ti2_html`,
+depending on where you're working. (See next.)
 
-## 2. Clone repos
+## 3. Clone repos
 
 Git clone `github.com/vistuleB/wly` and this repo.
 
@@ -31,9 +33,23 @@ git clone git@github.com:vistuleB/wly.git
 git clone git@github.com:dominikscheder/courses.git
 ```
 
-Copy the Github folder structure: put one repo in a folder `vistuleB/wly` and the other in a folder `dominikscheder/TI-2`, with `vistuleB/` and `dominikscheder/` as siblings inside the same parent folder.
+Possibly also `github.com/vistuleB/ti2_html` for HTML ingestion:
 
-## 3. 'wly' test
+```
+git clone git@github.com:vistuleB/ti2_html.git
+```
+
+Create a folder named `github.com` in your home directory
+and copy this directory structure
+for the location of the various repos:
+
+```
+github.com/vistuleB/wly
+github.com/vistuleB/ti2_html            // (if desired)
+github.com/dominikscheder/courses
+```
+
+## 4. 'wly' test
 
 1. `cd vistuleB/wly/desugaring`
 2. `gleam clean`, `gleam build`
@@ -43,7 +59,7 @@ Various output should come out like this:
 
 <img src="writerly-desugaring-m-terminal-output.png" width="400">
 
-## 4. "raw HTML" test
+## 5. Plain HTML test
 
 1. goto `dominikscheder/courses` folder
 2. `gleam run -- --which course1 --verbose`
@@ -52,19 +68,19 @@ Various messages from the desugaring engine (situated in `wly` repo) should prin
 
 To check, open `course1/public/index.html` inside a browser.
 
-## 5. localhost test
+## 6. localhost test
 
 1. `npm install`
 2. `COURSE=course1 npm run dev`
 3. clicking on the localhost link should take you to your default browser
 
-## 6. Source location
+## 7. VSCode 'Writerly' extension
 
-Author source is contained in `course1/wly/` and `course2/wly` folders.
+Author source is contained in `dominikscheder/courses/course1/wly/` and `dominikscheder/courses/course2/wly` folders.
 
 In VSCode, download the [Writerly](https://marketplace.visualstudio.com/items?itemName=TabbyNotes.writerly-vscode-extension) extension for syntax highlighting.
 
-## 7. Go-to-source tooltips (`--local` mode)
+## 8. Go-to-source tooltips (`--local` mode)
 
 1. Run the local server (see "localhost test")
 2. `gleam run -- --which course1 --local`

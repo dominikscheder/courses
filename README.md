@@ -74,13 +74,15 @@ To check, open `course1/public/index.html` inside a browser.
 2. `COURSE=course1 npm run dev`
 3. clicking on the localhost link should take you to your default browser
 
-## 7. VSCode 'Writerly' extension
+## 7. Install 'Writerly' extension in VSCode
 
 Author source is contained in `dominikscheder/courses/course1/wly/` and `dominikscheder/courses/course2/wly` folders.
 
 In VSCode, download the [Writerly](https://marketplace.visualstudio.com/items?itemName=TabbyNotes.writerly-vscode-extension) extension for syntax highlighting.
 
-## 8. Go-to-source tooltips (`--local` mode)
+# Usage
+
+## 1. Go-to-source tooltips (`--local` mode)
 
 1. Run the local server (see "localhost test")
 2. `gleam run -- --which course1 --local`
@@ -89,11 +91,11 @@ Note: Go-to-source tooltips will only work if `code` has been bound to open the 
 
 ⚠️ Do not forget to an ordinary `gleam run` before publishing the `public/` folder again—you don't want to publish the go-to-source tooltips! ️️⚠️
 
-## 9. Source Formatter
+## 2. Source Formatter
 
 Run `gleam run -- --which course1 --fmt` for default 55 to reformat at char per line formatting or `gleam run -- --which course1 --fmt <X>` to format line length to X chars per line.
 
-## 10. VSCode Settings
+## 3. Build from inside VSCode (Cmd + Shift + B)
 
 Without getting into the details, do this inside the
 project's home directory:
@@ -108,24 +110,22 @@ After doing this, running `Cmd + Shift + B` from inside
 VSCode will run the same exact `gleam run` command that
 last run in the terminal (same arguments). Try it!
 
-## 11. Non-Manual File Renaming
+## 4. Non-Manual File Renaming & Moving
 
 Type `Cmd + R` when the cursor is on a filename to rename it inside
 all your files and on the filesystem at once. (It works!)
-
-## 12. Non-Manual File Moving
 
 Type `Cmd + R` when the cursor is on the directory part of a filepath
 to move that file to a different existing directory. This will move
 the file on disk and all .wly references.
 
-## 13. Offline MathJax
+## Offline MathJax
 
 Use the `--offline-mathjax` flag to use the local copy of MathJax installed inside the repo.
 
 WARNING: Don't publish an `--offline-mathjax` build. It will break the page the for readers!
 
-## 14. Adding a file shared by several courses
+## Adding a file shared by several courses
 
 As an example, say we would like to share `mathjax_setup.js` between `course1`
 and `course2`. We would follow these steps:

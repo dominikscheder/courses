@@ -53,70 +53,57 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">9.3&ensp;Nichtdeterministische Zeit<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:2:11</span></span>
+        9.3&ensp;Nichtdeterministische Zeit
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">In
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:4:5</span></span><a
+      In
+      <a
         href="./8-3.html#_47_h.a.i_"
         class=""
-      >Theorem 8.3.5</a><span class="t-3003-c">
-        haben wir gesehen, dass jede<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:4:5</span></span>
-      <span class="t-3003-c">nichtdeterministische Turing-Maschine durch eine<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:5:5</span></span>
-      <span class="t-3003-c">deterministische simuliert werden kann, wobei der<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:6:5</span></span>
-      <span class="t-3003-c">Zeit-Overhead exponentiell ist. Hier werden wir formal<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:7:5</span></span>
-      <span class="t-3003-c">nicht-deterministische Zeitklassen definieren und eine<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:8:5</span></span>
-      <span class="t-3003-c">leicht andere, zugänglichere Definition einführen.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:9:5</span></span>
+      >Theorem 8.3.5</a>
+      haben wir gesehen, dass
+      jede nichtdeterministische Turing-Maschine durch eine
+      deterministische simuliert werden kann, wobei der
+      Zeit-Overhead exponentiell ist. Hier werden wir formal
+      nicht-deterministische Zeitklassen definieren und eine
+      leicht andere, zugänglichere Definition einführen.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 9.3.1<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:11:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:11:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:12:9</span></span><span class="nowrap"><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:12:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:12:35</span></span></span><span class="t-3003-c">
-          Eine nicht-deterministische<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:12:35</span></span>
-        <span class="t-3003-c">Turingmaschinen
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:13:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:13:25</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:13:28</span></span><i><span class="t-3003-c">entscheidet<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:13:30</span></span></i><span class="t-3003-c">
-          eine Sprache<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:13:42</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:14:9</span></span><span class="t-3003-c">$L \subseteq \Sigma^*$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:14:9</span></span><span class="t-3003-c">
-          in Zeit
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:14:31</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:14:40</span></span><span class="t-3003-c">
-          wenn<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:14:43</span></span>
+        <b>Definition 9.3.1</b>
+        Sei
+        <span class="nowrap">$t: \N \rightarrow \N$.</span>
+        Eine
+        nicht-deterministische Turingmaschinen $M$
+        <i>entscheidet</i>
+        eine Sprache $L \subseteq \Sigma^*$ in
+        Zeit $t$ wenn
       </p>
       <ul>
         <li>
           <p>
-            <span class="t-3003-c">$x \in L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:18:17</span></span><span class="t-3003-c">
-              genau dann, wenn es eine Folge von<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:18:26</span></span>
-            <span class="t-3003-c">Konfigurationen<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:19:17</span></span>
+            $x \in L$ genau dann, wenn es eine Folge von
+            Konfigurationen
           </p>
           <div class="math-block">
             $$
             \begin{align*}
             \qstart x \Rightarrow C_1 \Rightarrow \dots \Rightarrow C_m
             \end{align*}
-            $$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:21:17</span>
+            $$
           </div>
           <p>
-            <span class="t-3003-c">gibt, so dass
-              <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:25:17</span></span><span class="t-3003-c">$C_m$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:25:31</span></span><span class="t-3003-c">
-              eine akzeptierende Endkonfiguration<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:25:36</span></span>
-            <span class="t-3003-c">ist und<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:26:17</span></span>
+            gibt, so dass $C_m$ eine akzeptierende
+            Endkonfiguration ist und
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">jede Folge von Konfigurationen, ausgehend mit der<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:29:17</span></span>
-            <span class="t-3003-c">Startkonfiguration, nach höchstens
-              <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:30:17</span></span><span class="t-3003-c">$O(t)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:30:52</span></span><span class="t-3003-c">
-              Schritten<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:30:58</span></span>
-            <span class="t-3003-c">terminiert. Formal, wenn es Konstanten
-              <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:31:17</span></span><span class="t-3003-c">$a, b \in \N$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:31:56</span></span><span class="t-3003-c">
-              gibt,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:31:69</span></span>
-            <span class="t-3003-c">so dass für jede Folge<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:32:17</span></span>
+            jede Folge von Konfigurationen, ausgehend mit der
+            Startkonfiguration, nach höchstens $O(t)$ Schritten
+            terminiert. Formal, wenn es Konstanten $a, b \in \N$
+            gibt, so dass für jede Folge
           </p>
           <div class="math-block">
             $$
@@ -124,25 +111,20 @@
             \qstart x = C_0 \Rightarrow C_1 \Rightarrow C_2 \Rightarrow \dots \Rightarrow
             C_{at(|x|)+b}
             \end{align*}
-            $$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:34:17</span>
+            $$
           </div>
           <p>
-            <span class="t-3003-c">die Konfiguration
-              <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:39:17</span></span><span class="t-3003-c">$C_{at(|x|)+b}$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:39:35</span></span><span class="t-3003-c">
-              eine Endkonfiguration<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:39:50</span></span>
-            <span class="t-3003-c">ist.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:40:17</span></span>
+            die Konfiguration $C_{at(|x|)+b}$ eine
+            Endkonfiguration ist.
           </p>
         </li>
       </ul>
       <p>
-        <span class="t-3003-c">Die Konstanten
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:42:9</span></span><span class="t-3003-c">$a, b$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:42:24</span></span><span class="t-3003-c">
-          dürfen von
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:42:30</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:42:42</span></span><span class="t-3003-c">
-          abhängen, aber<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:42:45</span></span>
-        <span class="t-3003-c">natürlich nicht vom Eingabewort
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:43:9</span></span><span class="nowrap"><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:43:41</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:43:44</span></span></span><span class="t-3003-c">
-          Wir definieren nun<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:43:44</span></span>
+        Die Konstanten $a, b$ dürfen von $L$ abhängen, aber
+        natürlich nicht vom Eingabewort
+        <span class="nowrap">$x$.</span>
+        Wir definieren
+        nun
       </p>
       <div class="math-block">
         $$
@@ -151,189 +133,125 @@
         \textnormal{es gibt eine nichtdeterministische $k$-Band-TM $M$, die $L$ in Zeit $t$
         entscheidet}\}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:45:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">und schließlich<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:51:9</span></span>
+        und schließlich
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \NTIME(t) := \bigcup_{k \geq 1} \NTIME_k(t) \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:53:9</span>
+        $$
       </div>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Analog zur Komplexitätsklasse P (polynomielle Zeit)<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:57:5</span></span>
-      <span class="t-3003-c">definieren wir NP (nichtdeterministisch polynomielle Zeit):<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:58:5</span></span>
+      Analog zur Komplexitätsklasse P (polynomielle Zeit)
+      definieren wir NP (nichtdeterministisch polynomielle
+      Zeit):
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 9.3.2<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:60:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:60:5</span></span>
-        <span class="t-3003-c">Wir definieren<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:61:9</span></span>
+        <b>Definition 9.3.2</b>
+        Wir definieren
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \textnormal{NP} := \bigcup_{k=1}^{\infty} \NTIME(n^k) \ ,
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:63:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">also die Klasse aller Probleme (formal: Sprachen), die man<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:67:9</span></span>
-        <span class="t-3003-c">in nichtdeterministisch polynomieller Zeit entscheiden<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:68:9</span></span>
-        <span class="t-3003-c">kann.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:69:9</span></span>
+        also die Klasse aller Probleme (formal: Sprachen),
+        die man in nichtdeterministisch polynomieller Zeit
+        entscheiden kann.
       </p>
     </div>
     <h3 class="main-column subtopic-announcement">
-      <span class="t-3003-c">Zertifikatmaschinen<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:72:9</span></span>
+      Zertifikatmaschinen
     </h3>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 9.3.3 (Zertifikatmaschine).<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:74:5</span></span></b><span class="t-3003-c">
-          Eine Zertifikatmaschine ist eine<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:75:32</span></span>
-        <span class="t-3003-c">deterministische Turingmaschine mit
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:76:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:76:45</span></span><span class="t-3003-c">
-          Bändern. Band 1<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:76:48</span></span>
-        <span class="t-3003-c">ist das Eingabeband und Band 2 das
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:77:9</span></span><i><span class="t-3003-c">Zertifikatband.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:77:45</span></span></i><span class="t-3003-c">
-          Seien<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:77:61</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:78:9</span></span><span class="nowrap"><span class="t-3003-c">$x, z \in \Sigma^*$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:78:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:78:28</span></span></span><span class="t-3003-c">
-          Mit<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:78:28</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:79:9</span></span><span class="t-3003-c">$f_M(x,z) \in \{\texttt{accept}, \texttt{reject},
-          \texttt{undefined}\}$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:79:9</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:80:30</span></span>
-        <span class="t-3003-c">bezeichnen wir den Endzustand, den
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:81:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:81:44</span></span><span class="t-3003-c">
-          erreicht, wenn wir<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:81:47</span></span>
-        <span class="t-3003-c">sie mit
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:82:9</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:82:17</span></span><span class="t-3003-c">
-          auf Band 1 und
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:82:20</span></span><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:82:36</span></span><span class="t-3003-c">
-          auf Band 2 starten, bzw.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:82:39</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:83:9</span></span><span class="t-3003-c">$\texttt{undefined}$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:83:9</span></span><span class="t-3003-c">
-          wenn
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:83:29</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:83:35</span></span><span class="t-3003-c">
-          gar nicht terminiert. Die<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:83:38</span></span>
-        <span class="t-3003-c">von
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:84:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:84:13</span></span><span class="t-3003-c">
-          akzeptierte Sprache ist<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:84:16</span></span>
+        <b>Definition 9.3.3 (Zertifikatmaschine).</b>
+        Eine Zertifikatmaschine ist
+        eine deterministische Turingmaschine mit $k$ Bändern.
+        Band 1 ist das Eingabeband und Band 2 das
+        <i>Zertifikatband.</i>
+        Seien
+        <span class="nowrap">$x, z \in \Sigma^*$.</span>
+        Mit
+        $f_M(x,z) \in \{\texttt{accept}, \texttt{reject},
+        \texttt{undefined}\}$
+        bezeichnen wir den Endzustand, den $M$ erreicht, wenn
+        wir sie mit $x$ auf Band 1 und $z$ auf Band 2
+        starten, bzw. $\texttt{undefined}$ wenn $M$ gar nicht
+        terminiert. Die von $M$ akzeptierte Sprache ist
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         L(M) := \{x \in \Sigma^* \ | \ \exists z \in \Sigma^*: M(x,z) = \texttt{accept}\} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:86:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Wenn
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:90:9</span></span><span class="t-3003-c">$L(M) = L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:90:14</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:90:24</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:90:29</span></span><span class="t-3003-c">
-          für jede Eingabe
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:90:32</span></span><span class="t-3003-c">$x, z$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:90:50</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:90:56</span></span>
-        <span class="t-3003-c">terminiert, dann
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:91:9</span></span><i><span class="t-3003-c">entscheidet<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:91:27</span></span></i><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:91:39</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:91:40</span></span><span class="t-3003-c">
-          die Sprache
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:91:43</span></span><span class="nowrap"><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:91:56</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:91:59</span></span></span><span class="t-3003-c">
-          Sei<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:91:59</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:92:9</span></span><span class="nowrap"><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:92:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:92:31</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:92:31</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:92:33</span></span><span class="t-3003-c">
-          entscheidet
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:92:36</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:92:49</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:92:52</span></span><i><span class="t-3003-c">in Zeit
-            <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:92:54</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:92:62</span></span></i><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:92:66</span></span>
-        <span class="t-3003-c">wenn für alle
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:93:9</span></span><span class="t-3003-c">$x, z \in \Sigma^*$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:93:23</span></span><span class="t-3003-c">
-          die Berechnung
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:93:42</span></span><span class="t-3003-c">$M(x,z)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:93:58</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:93:66</span></span>
-        <span class="t-3003-c">in maximal
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:94:9</span></span><span class="t-3003-c">$O(t(|x|))$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:94:20</span></span><span class="t-3003-c">
-          Schritten terminiert. Die Konstante<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:94:31</span></span>
-        <span class="t-3003-c">in der
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:95:9</span></span><span class="t-3003-c">$O$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:95:16</span></span><span class="t-3003-c">
-          -Notation darf von
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:95:19</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:95:39</span></span><span class="t-3003-c">
-          abhängen, aber nicht von<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:95:42</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:96:9</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:96:9</span></span><span class="t-3003-c">
-          oder
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:96:12</span></span><span class="nowrap"><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:96:18</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:96:21</span></span></span>
+        Wenn $L(M) = L$ und $M$ für jede Eingabe $x, z$
+        terminiert, dann
+        <i>entscheidet</i>
+        $M$ die Sprache
+        <span class="nowrap">$L$.</span>
+        Sei
+        <span class="nowrap">$t: \N \rightarrow \N$.</span>
+        $M$ entscheidet $L$
+        <i>in
+          Zeit $t$</i>
+        wenn für alle $x, z \in \Sigma^*$ die
+        Berechnung $M(x,z)$ in maximal $O(t(|x|))$ Schritten
+        terminiert. Die Konstante in der $O$ -Notation darf
+        von $M$ abhängen, aber nicht von $x$ oder
+        <span class="nowrap">$z$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir zeigen nun, dass Zertifikatmaschinen und<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:98:5</span></span>
-      <span class="t-3003-c">nichtdeterministische Turingmaschinen sich gegenseitig<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:99:5</span></span>
-      <span class="t-3003-c">effizient simulieren können und somit zwei äquivalente<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:100:5</span></span>
-      <span class="t-3003-c">Sichtweisen auf das gleiche Konzept darstellen.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:101:5</span></span>
+      Wir zeigen nun, dass Zertifikatmaschinen und
+      nichtdeterministische Turingmaschinen sich gegenseitig
+      effizient simulieren können und somit zwei äquivalente
+      Sichtweisen auf das gleiche Konzept darstellen.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 9.3.4 (NDTM simulieren Zertifikatmaschinen).<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:103:5</span></span></b><span class="t-3003-c">
-          Sei<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:104:49</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:105:9</span></span><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:105:9</span></span><span class="t-3003-c">
-          zeitkonstruierbar. Sei
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:105:31</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:105:55</span></span><span class="t-3003-c">
-          eine<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:105:58</span></span>
-        <span class="t-3003-c">Zertifikatmaschine, die die Sprache
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:106:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:106:45</span></span><span class="t-3003-c">
-          in Zeit
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:106:48</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:106:57</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:106:60</span></span>
-        <span class="t-3003-c">entscheidet. Dann gibt es eine nichtdeterministische<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:107:9</span></span>
-        <span class="t-3003-c">Turingmaschine
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:108:9</span></span><span class="nowrap"><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:108:24</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:108:28</span></span></span><span class="t-3003-c">
-          die
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:108:28</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:108:34</span></span><span class="t-3003-c">
-          in Zeit
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:108:37</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:108:46</span></span><span class="t-3003-c">
-          entscheidet.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:108:49</span></span>
+        <b>Theorem 9.3.4 (NDTM simulieren Zertifikatmaschinen).</b>
+        Sei
+        $t: \N \rightarrow \N$ zeitkonstruierbar. Sei $M$
+        eine Zertifikatmaschine, die die Sprache $L$ in Zeit
+        $t$ entscheidet. Dann gibt es eine
+        nichtdeterministische Turingmaschine
+        <span class="nowrap">$M'$,</span>
+        die $L$ in
+        Zeit $t$ entscheidet.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Die Maschine
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:111:9</span></span><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:111:22</span></span><span class="t-3003-c">
-          hat so viele Bänder wie
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:111:26</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:111:51</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:111:54</span></span></span><span class="t-3003-c">
-          wobei zu<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:111:54</span></span>
-        <span class="t-3003-c">Beginn der Berechnung allerdings das zweite Band leer ist.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:112:9</span></span>
-        <span class="t-3003-c">Die Funktionsweise von
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:113:9</span></span><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:113:32</span></span><span class="t-3003-c">
-          ist nun wie folgt: In Phase 1<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:113:36</span></span>
-        <span class="t-3003-c">berechnet sie in
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:114:9</span></span><span class="t-3003-c">$O(t(|x|))$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:114:26</span></span><span class="t-3003-c">
-          Schritten die Zahl<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:114:37</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:115:9</span></span><span class="t-3003-c">$T:= t(|x|)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:115:9</span></span><span class="t-3003-c">
-          , das heißt, sie schreibt das Wort
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:115:21</span></span><span class="t-3003-c">$1^{T}$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:115:57</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:115:64</span></span>
-        <span class="t-3003-c">auf dem zweiten Band. Dann wechselt sie in den Zustand<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:116:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:117:9</span></span><code><span class="t-3003-c">guessCertificate<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:117:10</span></span></code><span class="t-3003-c">
-          und beginnt Phase 2. Hier ersetzt sie<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:117:27</span></span>
-        <span class="t-3003-c">jede
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:118:9</span></span><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:118:14</span></span><span class="t-3003-c">
-          auf dem zweiten Band durch ein beliebiges Zeichen<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:118:17</span></span>
-        <span class="t-3003-c">in
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:119:9</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:119:12</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:119:20</span></span></span><span class="t-3003-c">
-          Formal setzen wir für jedes
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:119:20</span></span><span class="nowrap"><span class="t-3003-c">$x \in \Sigma$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:119:50</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:119:64</span></span></span>
+        Die Maschine $M'$ hat so viele Bänder wie
+        <span class="nowrap">$M$,</span>
+        wobei
+        zu Beginn der Berechnung allerdings das zweite Band
+        leer ist. Die Funktionsweise von $M'$ ist nun wie
+        folgt: In Phase 1 berechnet sie in $O(t(|x|))$
+        Schritten die Zahl $T:= t(|x|)$ , das heißt, sie
+        schreibt das Wort $1^{T}$ auf dem zweiten Band. Dann
+        wechselt sie in den Zustand
+        <code>guessCertificate</code>
+        und
+        beginnt Phase 2. Hier ersetzt sie jede $1$ auf dem
+        zweiten Band durch ein beliebiges Zeichen in
+        <span class="nowrap">$\Sigma$.</span>
+        Formal setzen wir für jedes
+        <span class="nowrap">$x \in \Sigma$:</span>
       </p>
       <div class="math-block">
         $$
@@ -342,151 +260,87 @@
         \{(\texttt{guessCertificate}, x, y, \Box, \dots, \Box), (S, R, S, \dots, S) \ | \ y \in \Sigma
         \} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:121:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Nun geht
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:127:9</span></span><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:127:18</span></span><span class="t-3003-c">
-          auf dem zweiten Band wieder zum linken Rand<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:127:22</span></span>
-        <span class="t-3003-c">und wechselt in wechselt in
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:128:9</span></span><span class="nowrap"><span class="t-3003-c">$\qstart$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:128:37</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:128:46</span></span></span><span class="t-3003-c">
-          den Startzustand<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:128:46</span></span>
-        <span class="t-3003-c">von
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:129:9</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:129:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:129:16</span></span></span><span class="t-3003-c">
-          Nun beginnt Phase 3, in der sie genau so arbeitet<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:129:16</span></span>
-        <span class="t-3003-c">wie
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:130:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:130:13</span></span><span class="t-3003-c">
-          . Wir müssen nun zeigen, dass für alle<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:130:16</span></span>
-        <span class="t-3003-c">Eingabewörter
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:131:9</span></span><span class="t-3003-c">$w \in \Sigma^*$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:131:23</span></span>
+        Nun geht $M'$ auf dem zweiten Band wieder zum linken
+        Rand und wechselt in wechselt in
+        <span class="nowrap">$\qstart$,</span>
+        den
+        Startzustand von
+        <span class="nowrap">$M$.</span>
+        Nun beginnt Phase 3, in der sie
+        genau so arbeitet wie $M$ . Wir müssen nun zeigen,
+        dass für alle Eingabewörter $w \in \Sigma^*$
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         w \in L(M) \Longleftrightarrow w \in L(M') \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:133:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:137:9</span></span><span class="nowrap"><span class="t-3003-c">$w \in L(M)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:137:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:137:25</span></span></span><span class="t-3003-c">
-          Nach Definition von Zertifikatmaschinen<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:137:25</span></span>
-        <span class="t-3003-c">heißt das, dass es ein Zertifikat
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:138:9</span></span><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:138:43</span></span><span class="t-3003-c">
-          gibt, so dass<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:138:46</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:139:9</span></span><span class="t-3003-c">$M(x,z) = \texttt{accept}$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:139:9</span></span><span class="t-3003-c">
-          und dass diese Berechnung<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:139:35</span></span>
-        <span class="t-3003-c">höchstens
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:140:9</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:140:19</span></span><span class="t-3003-c">
-          Schritte benötigt. Wir können also annehmen,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:140:22</span></span>
-        <span class="t-3003-c">dass
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:141:9</span></span><span class="nowrap"><span class="t-3003-c">$z \in \Sigma^{t}$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:141:14</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:141:32</span></span></span><span class="t-3003-c">
-          denn mehr wird
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:141:32</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:141:49</span></span><span class="t-3003-c">
-          eh nicht<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:141:52</span></span>
-        <span class="t-3003-c">lesen. Nun gibt es für
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:142:9</span></span><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:142:32</span></span><span class="t-3003-c">
-          eine Folge von<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:142:36</span></span>
-        <span class="t-3003-c">Konfigurationen, in der
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:143:9</span></span><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:143:33</span></span><span class="t-3003-c">
-          nach Berechnung von
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:143:37</span></span><span class="t-3003-c">$t(|x|)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:143:58</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:143:66</span></span>
-        <span class="t-3003-c">auf das zweite Band genau die Zeichenfolge
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:144:9</span></span><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:144:52</span></span><span class="t-3003-c">
-          schreibt.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:144:55</span></span>
-        <span class="t-3003-c">Danach startet sie
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:145:9</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:145:28</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:145:31</span></span></span><span class="t-3003-c">
-          die dann nach weiteren
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:145:31</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:145:56</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:145:59</span></span>
-        <span class="t-3003-c">Schritten
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:146:9</span></span><code><span class="t-3003-c">accept<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:146:20</span></span></code><span class="t-3003-c">
-          ausgibt. Es gilt also
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:146:27</span></span><span class="nowrap"><span class="t-3003-c">$w \in L(M')$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:146:50</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:146:63</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:146:63</span></span>
-        <span class="t-3003-c">und somit gilt
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:147:9</span></span><span class="nowrap"><span class="t-3003-c">$w \in L(M) \Longrightarrow w \in L(M')$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:147:24</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:147:64</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:147:64</span></span>
-        <span class="t-3003-c">Sei nun andererseits
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:148:9</span></span><span class="nowrap"><span class="t-3003-c">$w \in L(M')$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:148:30</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:148:43</span></span></span><span class="t-3003-c">
-          Betrachten wir die<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:148:43</span></span>
-        <span class="t-3003-c">Konfigurationsfolge, die zu einem
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:149:9</span></span><code><span class="t-3003-c">accept<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:149:44</span></span></code><span class="t-3003-c">
-          führt. Sei<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:149:51</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:150:9</span></span><span class="t-3003-c">$z \in \Sigma^t$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:150:9</span></span><span class="t-3003-c">
-          das Wort, dass
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:150:25</span></span><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:150:41</span></span><span class="t-3003-c">
-          in Phase 2 auf das<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:150:45</span></span>
-        <span class="t-3003-c">Band schreibt. In Phase 3 wird ja
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:151:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:151:43</span></span><span class="t-3003-c">
-          simuliert, und
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:151:46</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:151:62</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:151:65</span></span>
-        <span class="t-3003-c">gibt offensichtlich
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:152:9</span></span><code><span class="t-3003-c">accept<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:152:30</span></span></code><span class="t-3003-c">
-          aus. Also gibt
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:152:37</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:152:53</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:152:56</span></span></span><span class="t-3003-c">
-          wenn wir<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:152:56</span></span>
-        <span class="t-3003-c">es mit
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:153:9</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:153:16</span></span><span class="t-3003-c">
-          auf dem ersten Band und
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:153:19</span></span><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:153:44</span></span><span class="t-3003-c">
-          auf dem zweiten<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:153:47</span></span>
-        <span class="t-3003-c">Band starten, auch
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:154:9</span></span><code><span class="t-3003-c">accept<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:154:29</span></span></code><span class="t-3003-c">
-          aus, und somit gilt<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:154:36</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:155:9</span></span><span class="nowrap"><span class="t-3003-c">$x \in L(M)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:155:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:155:21</span></span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Sei
+        <span class="nowrap">$w \in L(M)$.</span>
+        Nach Definition von
+        Zertifikatmaschinen heißt das, dass es ein Zertifikat
+        $z$ gibt, so dass $M(x,z) = \texttt{accept}$ und dass
+        diese Berechnung höchstens $t$ Schritte benötigt. Wir
+        können also annehmen, dass
+        <span class="nowrap">$z \in \Sigma^{t}$,</span>
+        denn
+        mehr wird $M$ eh nicht lesen. Nun gibt es für $M'$
+        eine Folge von Konfigurationen, in der $M'$ nach
+        Berechnung von $t(|x|)$ auf das zweite Band genau die
+        Zeichenfolge $z$ schreibt. Danach startet sie
+        <span class="nowrap">$M$,</span>
+        die dann nach weiteren $t$ Schritten
+        <code>accept</code>
+        ausgibt. Es gilt also
+        <span class="nowrap">$w \in L(M')$,</span>
+        und somit gilt
+        <span class="nowrap">$w \in L(M) \Longrightarrow w \in L(M')$.</span>
+        Sei nun
+        andererseits
+        <span class="nowrap">$w \in L(M')$.</span>
+        Betrachten wir die
+        Konfigurationsfolge, die zu einem
+        <code>accept</code>
+        führt. Sei
+        $z \in \Sigma^t$ das Wort, dass $M'$ in Phase 2 auf
+        das Band schreibt. In Phase 3 wird ja $M$ simuliert,
+        und $M$ gibt offensichtlich
+        <code>accept</code>
+        aus. Also gibt
+        <span class="nowrap">$M$,</span>
+        wenn wir es mit $x$ auf dem ersten Band und $z$
+        auf dem zweiten Band starten, auch
+        <code>accept</code>
+        aus, und
+        somit gilt
+        <span class="nowrap">$x \in L(M)$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 9.3.1<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:157:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:157:5</span></span>
-        <span class="t-3003-c">Der obige Beweis enthält einige kleine Fehler. So tätigt<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:158:9</span></span>
-        <span class="t-3003-c">nach Annahme die Berechnung von
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:159:9</span></span><span class="t-3003-c">$M(x,z)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:159:41</span></span><span class="t-3003-c">
-          ja maximal<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:159:49</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:160:9</span></span><span class="t-3003-c">$O(t(|x|))$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:160:9</span></span><span class="t-3003-c">
-          Schritte, formal also maximal
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:160:20</span></span><span class="nowrap"><span class="t-3003-c">$a t(|x|) + b$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:160:51</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:160:65</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:160:65</span></span>
-        <span class="t-3003-c">nicht maximal
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:161:9</span></span><span class="t-3003-c">$T = t(|x|)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:161:23</span></span><span class="t-3003-c">
-          . Es kann also durchaus sein,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:161:35</span></span>
-        <span class="t-3003-c">dass mehr als
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:162:9</span></span><span class="t-3003-c">$T = t(|x|)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:162:23</span></span><span class="t-3003-c">
-          Zeichen von
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:162:35</span></span><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:162:48</span></span><span class="t-3003-c">
-          gelesen werden.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:162:51</span></span>
-        <span class="t-3003-c">Der zweite Fehler ist, dass eventuell das einzige
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:163:9</span></span><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:163:59</span></span><span class="t-3003-c">
-          ,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:163:62</span></span>
-        <span class="t-3003-c">dass
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:164:9</span></span><span class="t-3003-c">$M(x,z)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:164:14</span></span><span class="t-3003-c">
-          zum akzeptieren bringt, die Länge<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:164:22</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:165:9</span></span><span class="t-3003-c">$|z| = k \lt t(|x|)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:165:9</span></span><span class="t-3003-c">
-          hat, und
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:165:29</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:165:39</span></span><span class="t-3003-c">
-          wirklich überprüft, ob<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:165:42</span></span>
-        <span class="t-3003-c">nach
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:166:9</span></span><span class="t-3003-c">$k+1$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:166:14</span></span><span class="t-3003-c">
-          Zeichen auf ein Band ein
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:166:19</span></span><span class="t-3003-c">$\Box$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:166:45</span></span><span class="t-3003-c">
-          steht, und<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:166:51</span></span>
-        <span class="t-3003-c">andernfalls ablehnt. Dann würde unser
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:167:9</span></span><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:167:47</span></span><span class="t-3003-c">
-          oben immer<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:167:51</span></span>
-        <span class="t-3003-c">ablehnen, weil sie in Phase 2 ja wirklich
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:168:9</span></span><i><span class="t-3003-c">genau<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:168:52</span></span></i><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:168:58</span></span><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:168:59</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:168:62</span></span>
-        <span class="t-3003-c">Zeichen schreibt. Flicken Sie diese beiden Fehler!<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:169:9</span></span>
+        <b>Übungsaufgabe 9.3.1</b>
+        Der obige Beweis enthält einige kleine Fehler. So
+        tätigt nach Annahme die Berechnung von $M(x,z)$ ja
+        maximal $O(t(|x|))$ Schritte, formal also maximal
+        <span class="nowrap">$a t(|x|) + b$,</span>
+        nicht maximal $T = t(|x|)$ . Es kann
+        also durchaus sein, dass mehr als $T = t(|x|)$
+        Zeichen von $z$ gelesen werden. Der zweite Fehler
+        ist, dass eventuell das einzige $z$ , dass $M(x,z)$
+        zum akzeptieren bringt, die Länge $|z| = k \lt t(|x|)$
+        hat, und $M$ wirklich überprüft, ob nach $k+1$
+        Zeichen auf ein Band ein $\Box$ steht, und
+        andernfalls ablehnt. Dann würde unser $M'$ oben immer
+        ablehnen, weil sie in Phase 2 ja wirklich
+        <i>genau</i>
+        $T$
+        Zeichen schreibt. Flicken Sie diese beiden Fehler!
       </p>
     </div>
     <div
@@ -494,90 +348,56 @@
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Theorem 9.3.5 (Zertifikatmaschinen simulieren NDTM).<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:171:5</span></span></b><span class="t-3003-c">
-          Sei<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:173:49</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:174:9</span></span><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:174:9</span></span><span class="t-3003-c">
-          zeitkonstruierbar. Sei
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:174:31</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:174:55</span></span><span class="t-3003-c">
-          eine<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:174:58</span></span>
-        <span class="t-3003-c">nichtdeterministische Turingmaschine, die die Sprache
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:175:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:175:63</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:175:66</span></span>
-        <span class="t-3003-c">in Zeit
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:176:9</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:176:17</span></span><span class="t-3003-c">
-          entscheidet. Dann gibt es eine<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:176:20</span></span>
-        <span class="t-3003-c">Zertifikatmaschine
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:177:9</span></span><span class="nowrap"><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:177:28</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:177:32</span></span></span><span class="t-3003-c">
-          die
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:177:32</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:177:38</span></span><span class="t-3003-c">
-          in Zeit
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:177:41</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:177:50</span></span><span class="t-3003-c">
-          entscheidet.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:177:53</span></span>
+        <b>Theorem 9.3.5 (Zertifikatmaschinen simulieren NDTM).</b>
+        Sei
+        $t: \N \rightarrow \N$ zeitkonstruierbar. Sei $M$
+        eine nichtdeterministische Turingmaschine, die die
+        Sprache $L$ in Zeit $t$ entscheidet. Dann gibt es
+        eine Zertifikatmaschine
+        <span class="nowrap">$M'$,</span>
+        die $L$ in Zeit $t$
+        entscheidet.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Da
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:180:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:180:12</span></span><span class="t-3003-c">
-          nichtdeterministisch ist, ist<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:180:15</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:181:9</span></span><span class="t-3003-c">$\delta \subseteq (Q \times \Gamma^k) \times (Q \times
-          \Gamma^k \times \{L,S,R\}^k)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:181:9</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:182:38</span></span>
-        <span class="t-3003-c">eine Relation, keine Funktion. Wir können es aber als<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:183:9</span></span>
-        <span class="t-3003-c">Funktion in die Potenzmenge betrachten, also<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:184:9</span></span>
+        Da $M$ nichtdeterministisch ist, ist
+        $\delta \subseteq (Q \times \Gamma^k) \times (Q
+        \times \Gamma^k \times \{L,S,R\}^k)$
+        eine Relation, keine Funktion. Wir können es aber als
+        Funktion in die Potenzmenge betrachten, also
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \delta: Q \times \Gamma^k \rightarrow \mathcal{P} (Q \times \Gamma^k \times \{L,S,R\}^k)
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:186:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Nun bezeichnet
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:190:9</span></span><span class="t-3003-c">$\delta(q, x_1, \dots, x_k)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:190:24</span></span><span class="t-3003-c">
-          also die<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:190:52</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:191:9</span></span><i><span class="t-3003-c">Menge<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:191:10</span></span></i><span class="t-3003-c">
-          der Aktionen, die die Turingmaschine nun ausführen<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:191:16</span></span>
-        <span class="t-3003-c">könnte. Wie im Beweis von
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:192:9</span></span><a
+        Nun bezeichnet $\delta(q, x_1, \dots, x_k)$ also die
+        <i>Menge</i>
+        der Aktionen, die die Turingmaschine nun
+        ausführen könnte. Wie im Beweis von
+        <a
           href="./8-3.html#_47_h.a.i_"
           class=""
-        >Theorem 8.3.5</a><span class="t-3003-c">
-          können<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:192:9</span></span>
-        <span class="t-3003-c">wir
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:193:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:193:13</span></span><span class="t-3003-c">
-          so umprogrammieren, dass sie die selbe Sprache<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:193:16</span></span>
-        <span class="t-3003-c">entscheidet, aber
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:194:9</span></span><span class="t-3003-c">$|\delta(q,x_1,x_2,\dots,x_k)| = 2$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:194:27</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:194:62</span></span>
-        <span class="t-3003-c">gilt, außer für<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:195:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:196:9</span></span><span class="nowrap"><span class="t-3003-c">$q \in \{\texttt{accept}, \texttt{reject}\}$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:196:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:196:53</span></span></span><span class="t-3003-c">
-          Wir wählen<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:196:53</span></span>
-        <span class="t-3003-c">uns zwei beliebige Symbole in
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:197:9</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:197:39</span></span><span class="t-3003-c">
-          und geben ihnen in<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:197:47</span></span>
-        <span class="t-3003-c">diesem Beweis die Spitznamen
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:198:9</span></span><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:198:38</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:198:41</span></span><span class="nowrap"><span class="t-3003-c">$2$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:198:46</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:198:49</span></span></span><span class="t-3003-c">
-          Der<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:198:49</span></span>
-        <span class="t-3003-c">Zertifikatmaschine
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:199:9</span></span><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:199:28</span></span><span class="t-3003-c">
-          geben wir zusätzlich zu den<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:199:32</span></span>
-        <span class="t-3003-c">Bändern von
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:200:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:200:21</span></span><span class="t-3003-c">
-          ein weiteres Zertifikatband (das wir nun<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:200:24</span></span>
-        <span class="t-3003-c">als das
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:201:9</span></span><i><span class="t-3003-c">zweite<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:201:18</span></span></i><span class="t-3003-c">
-          Band bezeichnen). Sie verfährt nun wie<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:201:25</span></span>
-        <span class="t-3003-c">folgt:<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:202:9</span></span>
+        >Theorem 8.3.5</a>
+        können wir $M$ so umprogrammieren,
+        dass sie die selbe Sprache entscheidet, aber
+        $|\delta(q,x_1,x_2,\dots,x_k)| = 2$ gilt, außer für
+        <span class="nowrap">$q \in \{\texttt{accept}, \texttt{reject}\}$.</span>
+        Wir
+        wählen uns zwei beliebige Symbole in $\Sigma$ und
+        geben ihnen in diesem Beweis die Spitznamen $1$ und
+        <span class="nowrap">$2$.</span>
+        Der Zertifikatmaschine $M'$ geben wir zusätzlich
+        zu den Bändern von $M$ ein weiteres Zertifikatband
+        (das wir nun als das
+        <i>zweite</i>
+        Band bezeichnen). Sie
+        verfährt nun wie folgt:
       </p>
       <div class="math-block">
         $$
@@ -589,190 +409,107 @@
         \texttt{reject}&amp;\textnormal{ ansonsten.}
         \end{cases}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:204:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Falls nun
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:213:9</span></span><span class="t-3003-c">$x \in L(M')$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:213:19</span></span><span class="t-3003-c">
-          ist, dann gibt es also einen<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:213:32</span></span>
-        <span class="t-3003-c">Bandinhalt
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:214:9</span></span><span class="t-3003-c">$z \in \Sigma^*$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:214:20</span></span><span class="t-3003-c">
-          für das zweite Band, so dass<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:214:36</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:215:9</span></span><span class="t-3003-c">$M'(x,z)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:215:9</span></span><span class="t-3003-c">
-          akzeptiert. Wenn wir die Konfigurationsfolge von<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:215:18</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:216:9</span></span><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:216:9</span></span><span class="t-3003-c">
-          betrachten, aber das zweite Band ignorieren, dann ist<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:216:13</span></span>
-        <span class="t-3003-c">das genau eine Konfigurationsfolge von
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:217:9</span></span><span class="nowrap"><span class="t-3003-c">$M(x)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:217:48</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:217:54</span></span></span><span class="t-3003-c">
-          die zu<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:217:54</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:218:9</span></span><code><span class="t-3003-c">accept<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:218:10</span></span></code><span class="t-3003-c">
-          führt. Somit gilt auch
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:218:17</span></span><span class="nowrap"><span class="t-3003-c">$x \in L(M)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:218:41</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:218:53</span></span></span><span class="t-3003-c">
-          Falls<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:218:53</span></span>
-        <span class="t-3003-c">umgekehrt
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:219:9</span></span><span class="t-3003-c">$x \in L(M)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:219:19</span></span><span class="t-3003-c">
-          ist, dann gibt es eine<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:219:31</span></span>
-        <span class="t-3003-c">Konfigurationsfolge, die zu
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:220:9</span></span><code><span class="t-3003-c">accept<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:220:38</span></span></code><span class="t-3003-c">
-          führt. In jedem<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:220:45</span></span>
-        <span class="t-3003-c">Schritt wird dabei entweder das erste oder das zweite<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:221:9</span></span>
-        <span class="t-3003-c">Element aus
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:222:9</span></span><span class="t-3003-c">$\delta(q,x_1,\dots,x_k)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:222:21</span></span><span class="t-3003-c">
-          genommen. Wir<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:222:46</span></span>
-        <span class="t-3003-c">schreiben diese Folge als
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:223:9</span></span><span class="t-3003-c">$z \in \{1,2\}^{T}$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:223:35</span></span><span class="t-3003-c">
-          auf. Es gilt<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:223:54</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:224:9</span></span><span class="nowrap"><span class="t-3003-c">$T \in O(|t(x)|)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:224:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:224:26</span></span></span><span class="t-3003-c">
-          da
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:224:26</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:224:31</span></span><span class="t-3003-c">
-          ja Laufzeit
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:224:34</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:224:47</span></span><span class="t-3003-c">
-          hat. Wenn wir<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:224:50</span></span>
-        <span class="t-3003-c">nun der Maschine
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:225:9</span></span><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:225:26</span></span><span class="t-3003-c">
-          das Wort
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:225:30</span></span><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:225:40</span></span><span class="t-3003-c">
-          auf ihr zweites Band<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:225:43</span></span>
-        <span class="t-3003-c">schreiben, dann wird sie genau die Konfigurationsfolge von<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:226:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:227:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:227:9</span></span><span class="t-3003-c">
-          reproduzieren und zu
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:227:12</span></span><code><span class="t-3003-c">accept<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:227:35</span></span></code><span class="t-3003-c">
-          gelangen. Also<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:227:42</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:228:9</span></span><span class="nowrap"><span class="t-3003-c">$x \in L(M')$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:228:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:228:22</span></span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Falls nun $x \in L(M')$ ist, dann gibt es also einen
+        Bandinhalt $z \in \Sigma^*$ für das zweite Band, so
+        dass $M'(x,z)$ akzeptiert. Wenn wir die
+        Konfigurationsfolge von $M'$ betrachten, aber das
+        zweite Band ignorieren, dann ist das genau eine
+        Konfigurationsfolge von
+        <span class="nowrap">$M(x)$,</span>
+        die zu
+        <code>accept</code>
+        führt. Somit gilt auch
+        <span class="nowrap">$x \in L(M)$.</span>
+        Falls umgekehrt
+        $x \in L(M)$ ist, dann gibt es eine
+        Konfigurationsfolge, die zu
+        <code>accept</code>
+        führt. In jedem
+        Schritt wird dabei entweder das erste oder das zweite
+        Element aus $\delta(q,x_1,\dots,x_k)$ genommen. Wir
+        schreiben diese Folge als $z \in \{1,2\}^{T}$ auf. Es
+        gilt
+        <span class="nowrap">$T \in O(|t(x)|)$,</span>
+        da $M$ ja Laufzeit $t$ hat.
+        Wenn wir nun der Maschine $M'$ das Wort $z$ auf ihr
+        zweites Band schreiben, dann wird sie genau die
+        Konfigurationsfolge von $M$ reproduzieren und zu
+        <code>accept</code>
+        gelangen. Also
+        <span class="nowrap">$x \in L(M')$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Im obigen Beweis nehmen wir stillschweigend ann, dass<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:230:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:231:5</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:231:5</span></span><span class="t-3003-c">
-        mindestens zwei Zeichen enthält (die wir als
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:231:13</span></span><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:231:59</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:231:62</span></span>
-      <span class="t-3003-c">und
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:232:5</span></span><span class="t-3003-c">$2$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:232:9</span></span><span class="t-3003-c">
-        verwenden können). Wenn nun
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:232:12</span></span><span class="t-3003-c">$|\Sigma| = 1$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:232:41</span></span><span class="t-3003-c">
-        wäre,<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:232:55</span></span>
-      <span class="t-3003-c">dann müssten wir unserer Zertifikatmaschine erlauben, auf<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:233:5</span></span>
-      <span class="t-3003-c">Band 2 ein separates
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:234:5</span></span><i><span class="t-3003-c">Zertifikatalphabet<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:234:27</span></span></i><span class="t-3003-c">
-        zu verwenden;<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:234:46</span></span>
-      <span class="t-3003-c">ansonsten würde die Simulation nicht funktionieren.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:235:5</span></span>
+      Im obigen Beweis nehmen wir stillschweigend ann, dass
+      $\Sigma$ mindestens zwei Zeichen enthält (die wir als
+      $1$ und $2$ verwenden können). Wenn nun $|\Sigma| = 1$
+      wäre, dann müssten wir unserer Zertifikatmaschine
+      erlauben, auf Band 2 ein separates
+      <i>Zertifikatalphabet</i>
+      zu verwenden; ansonsten würde die
+      Simulation nicht funktionieren.
     </p>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 9.3.2<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:237:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:237:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:238:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:238:13</span></span><span class="t-3003-c">
-          eine Zertifikatmaschine und
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:238:16</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:238:45</span></span><span class="t-3003-c">
-          ein unäres<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:238:53</span></span>
-        <span class="t-3003-c">Alphabet, also
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:239:9</span></span><span class="nowrap"><span class="t-3003-c">$|\Sigma|=1$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:239:24</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:239:36</span></span></span><span class="t-3003-c">
-          Wir nehmen an, dass
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:239:36</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:239:58</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:239:61</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:240:9</span></span><i><span class="t-3003-c">kein<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:240:10</span></span></i><span class="t-3003-c">
-          separates Zertifikatalphabet hat. Zeigen Sie: wenn<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:240:15</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:241:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:241:9</span></span><span class="t-3003-c">
-          die Sprache
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:241:12</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:241:25</span></span><span class="t-3003-c">
-          in Zeit
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:241:28</span></span><span class="t-3003-c">$t(n)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:241:37</span></span><span class="t-3003-c">
-          entscheidet, dann gibt<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:241:43</span></span>
-        <span class="t-3003-c">es eine
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:242:9</span></span><i><span class="t-3003-c">deterministische<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:242:18</span></span></i><span class="t-3003-c">
-          Turingmaschine, die
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:242:35</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:242:56</span></span><span class="t-3003-c">
-          in Zeit<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:242:59</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:243:9</span></span><span class="t-3003-c">$t^2(n)$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:243:9</span></span><span class="t-3003-c">
-          entscheidet.<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:243:17</span></span>
+        <b>Übungsaufgabe 9.3.2</b>
+        Sei $M$ eine Zertifikatmaschine und $\Sigma$ ein
+        unäres Alphabet, also
+        <span class="nowrap">$|\Sigma|=1$.</span>
+        Wir nehmen an,
+        dass $M$
+        <i>kein</i>
+        separates Zertifikatalphabet hat.
+        Zeigen Sie: wenn $M$ die Sprache $L$ in Zeit $t(n)$
+        entscheidet, dann gibt es eine
+        <i>deterministische</i>
+        Turingmaschine, die $L$ in Zeit $t^2(n)$ entscheidet.
       </p>
     </div>
     <h3 class="main-column subtopic-announcement">
-      <span class="t-3003-c">NP als Klasse der Probleme mit effizienten Zertifikaten<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:246:9</span></span>
+      NP als Klasse der Probleme mit effizienten
+      Zertifikaten
     </h3>
     <p class="main-column">
-      <span class="t-3003-c">Nach Definition ist eine Sprache
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:248:5</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:248:38</span></span><span class="t-3003-c">
-        ist in NP, wenn es<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:248:41</span></span>
-      <span class="t-3003-c">eine nichtdeterministische Turingmaschine mit polynomieller<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:249:5</span></span>
-      <span class="t-3003-c">Laufzeit
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:250:5</span></span><span class="t-3003-c">$t(n) = n^k$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:250:14</span></span><span class="t-3003-c">
-        gibt, die
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:250:26</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:250:37</span></span><span class="t-3003-c">
-        entscheidet. Nach<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:250:40</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:251:5</span></span><a
+      Nach Definition ist eine Sprache $L$ ist in NP, wenn
+      es eine nichtdeterministische Turingmaschine mit
+      polynomieller Laufzeit $t(n) = n^k$ gibt, die $L$
+      entscheidet. Nach
+      <a
         href="./9-3.html#_56_h.a.i_"
         class=""
-      >Theorem 9.3.5</a><span class="t-3003-c">
-        also, wenn<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:251:5</span></span>
-      <span class="t-3003-c">es eine Zertifikatmaschine
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:252:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:252:32</span></span><span class="t-3003-c">
-        gibt, die
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:252:35</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:252:46</span></span><span class="t-3003-c">
-        in Zeit
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:252:49</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:252:58</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:252:61</span></span>
-      <span class="t-3003-c">entscheidet. Wenn also<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:253:5</span></span>
+      >Theorem 9.3.5</a>
+      also, wenn es
+      eine Zertifikatmaschine $M$ gibt, die $L$ in Zeit $t$
+      entscheidet. Wenn also
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       x \in L \Longleftrightarrow \exists z \in \Sigma^*: M(x,z) = \texttt{accept}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:255:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Da
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:259:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:259:8</span></span><span class="t-3003-c">
-        nur
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:259:11</span></span><span class="t-3003-c">$T = |x|^k$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:259:16</span></span><span class="t-3003-c">
-        Schritte tätigt, können wir<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:259:27</span></span>
-      <span class="t-3003-c">annehmen, dass
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:260:5</span></span><span class="t-3003-c">$|z| \leq T$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:260:20</span></span><span class="t-3003-c">
-        ist. Weiterhin können wir
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:260:32</span></span><span class="t-3003-c">$x,z$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:260:59</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:260:64</span></span>
-      <span class="t-3003-c">als
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:261:5</span></span><i><span class="t-3003-c">ein<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:261:10</span></span></i><span class="t-3003-c">
-        Wort mit dem Trennzeichen "," auffassen.
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:261:14</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:261:56</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:261:59</span></span>
-      <span class="t-3003-c">wird somit zu einer handelsüblichen deterministischen<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:262:5</span></span>
-      <span class="t-3003-c">Turingmaschine, die die Sprache<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:263:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:264:5</span></span><span class="t-3003-c">$\{x,z \ | \ M(x,z) = \texttt{accept}\}$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:264:5</span></span><span class="t-3003-c">
-        entscheidet und<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:264:45</span></span>
-      <span class="t-3003-c">auch Laufzeit
-        <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:265:5</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:265:19</span></span><span class="t-3003-c">
-        hat. Somit können wir die Sprache NP wie<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:265:22</span></span>
-      <span class="t-3003-c">folgt charakterisieren:<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:266:5</span></span>
+      Da $M$ nur $T = |x|^k$ Schritte tätigt, können wir
+      annehmen, dass $|z| \leq T$ ist. Weiterhin können wir
+      $x,z$ als
+      <i>ein</i>
+      Wort mit dem Trennzeichen ","
+      auffassen. $M$ wird somit zu einer handelsüblichen
+      deterministischen Turingmaschine, die die Sprache
+      $\{x,z \ | \ M(x,z) = \texttt{accept}\}$ entscheidet
+      und auch Laufzeit $t$ hat. Somit können wir die
+      Sprache NP wie folgt charakterisieren:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 9.3.6<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:268:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:268:5</span></span>
-        <span class="t-3003-c">Eine Sprache
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:269:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:269:22</span></span><span class="t-3003-c">
-          ist genau dann in NP, wenn es ein<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:269:25</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:270:9</span></span><span class="t-3003-c">$k \in \N$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:270:9</span></span><span class="t-3003-c">
-          und eine Sprache
-          <span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:270:19</span></span><span class="t-3003-c">$L' \in \textnormal{P}$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:270:37</span></span><span class="t-3003-c">
-          gibt<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:270:60</span></span>
-        <span class="t-3003-c">mit<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:271:9</span></span>
+        <b>Theorem 9.3.6</b>
+        Eine Sprache $L$ ist genau dann in NP, wenn es ein
+        $k \in \N$ und eine Sprache $L' \in \textnormal{P}$
+        gibt mit
       </p>
       <div class="math-block">
         $$
@@ -780,7 +517,7 @@
         x \in L \Longleftrightarrow \exists z \in \Sigma^*: |z| \leq |x|^k \textnormal{ und } (x,z) \in
         L'
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/03-nondeterministic-time.wly:273:9</span>
+        $$
       </div>
     </div>
     <div id="end-of-page-elt">

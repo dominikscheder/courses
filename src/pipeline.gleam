@@ -407,7 +407,6 @@ pub fn pipeline(
       )),
       dl.append_custom(#("Sub", end_of_page_element, infra.GoBack)),
       dl.append_custom(#("Index", end_of_page_element, infra.GoBack)),
-      dl.table_marker(),
       dl.ti2_create_menu(),
       dl.delete__batch(["PrevChapterOrSubTitle", "NextChapterOrSubTitle"]),
       dl.wrap_and_custom_steal(
@@ -458,7 +457,6 @@ pub fn pipeline(
         ["Math", "i", "b", "code"],
         "NoWrap",
       )),
-      dl.table_marker(),
     ],
     pp.splitting_empty_lines_cleanup(),
     [
@@ -468,9 +466,9 @@ pub fn pipeline(
       dl.handles_add_ids(),
       dl.handles_generate_dictionary_and_id_list("path"),
       dl.handles_substitute_inside_math(["Math", "MathBlock"]),
-      dl.handles_substitute_and_fix_nonlocal_id_links(
-        #("path", "a", "a", [], [], ["a"]),
-      ),
+      dl.handles_substitute(#("path", "a", "a", [], [], ["a"])),
+      dl.table_marker(),
+      dl.unwrap("GrandWrapper"),
       dl.tokenize_href_surroundings(),
       dl.rearrange_links_4_pre_tokenized_src__batch([
         #("Theorem <a href=1>_1_</a>", "<a href=1>Theorem _1_</a>"),

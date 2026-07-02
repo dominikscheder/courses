@@ -53,121 +53,108 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">9.&ensp;Complexity Theory<span class="t-3003">./course1/wly/09/__parent.wly:3:11</span></span>
+        9.&ensp;Complexity Theory
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Turingmaschinen erlauben uns, den Resourcenverbrauch einer<span class="t-3003">./course1/wly/09/__parent.wly:5:5</span></span>
-      <span class="t-3003-c">Berechnung zu quantifizieren: zum einen die
-        <span class="t-3003">./course1/wly/09/__parent.wly:6:5</span></span><span class="nowrap"><i><span class="t-3003-c">Zeit<span class="t-3003">./course1/wly/09/__parent.wly:6:50</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:6:55</span></span></span><span class="t-3003-c">
-        also<span class="t-3003">./course1/wly/09/__parent.wly:6:55</span></span>
-      <span class="t-3003-c">die Anzahl der Schritte, die die Turingmaschine durchführt,<span class="t-3003">./course1/wly/09/__parent.wly:7:5</span></span>
-      <span class="t-3003-c">bis sie anhält; zum anderen der
-        <span class="t-3003">./course1/wly/09/__parent.wly:8:5</span></span><span class="nowrap"><i><span class="t-3003-c">Speicherplatz<span class="t-3003">./course1/wly/09/__parent.wly:8:38</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:8:52</span></span></span><span class="t-3003-c">
-        also die<span class="t-3003">./course1/wly/09/__parent.wly:8:52</span></span>
-      <span class="t-3003-c">Anzahl der Zellen auf dem Band (oder den Bändern), die im<span class="t-3003">./course1/wly/09/__parent.wly:9:5</span></span>
-      <span class="t-3003-c">Verlauf der Berechnung beschrieben werden. Beides sind<span class="t-3003">./course1/wly/09/__parent.wly:10:5</span></span>
-      <span class="t-3003-c">Maße, die tatsächlich im echten Leben relevant sind.<span class="t-3003">./course1/wly/09/__parent.wly:11:5</span></span>
-      <span class="t-3003-c">Turingmaschinen erlauben uns, diese genau zu quantifizieren<span class="t-3003">./course1/wly/09/__parent.wly:12:5</span></span>
-      <span class="t-3003-c">und die Zeitkomplexität und Speicherkomplexität eines<span class="t-3003">./course1/wly/09/__parent.wly:13:5</span></span>
-      <span class="t-3003-c">Problems zu untersuchen. In diesem Kapitel werden wir uns<span class="t-3003">./course1/wly/09/__parent.wly:14:5</span></span>
-      <span class="t-3003-c">zum Großteil auf Zeitkomplexität beschränken. Es gibt<span class="t-3003">./course1/wly/09/__parent.wly:15:5</span></span>
-      <span class="t-3003-c">weitere Resourcen, die man mit Turingmaschinen nicht<span class="t-3003">./course1/wly/09/__parent.wly:16:5</span></span>
-      <span class="t-3003-c">wirklich quantifizieren kann:<span class="t-3003">./course1/wly/09/__parent.wly:17:5</span></span>
+      Turingmaschinen erlauben uns, den Resourcenverbrauch
+      einer Berechnung zu quantifizieren: zum einen die
+      <span class="nowrap"><i>Zeit</i>,</span>
+      also die Anzahl der Schritte, die die
+      Turingmaschine durchführt, bis sie anhält; zum anderen
+      der
+      <span class="nowrap"><i>Speicherplatz</i>,</span>
+      also die Anzahl der Zellen auf
+      dem Band (oder den Bändern), die im Verlauf der
+      Berechnung beschrieben werden. Beides sind Maße, die
+      tatsächlich im echten Leben relevant sind.
+      Turingmaschinen erlauben uns, diese genau zu
+      quantifizieren und die Zeitkomplexität und
+      Speicherkomplexität eines Problems zu untersuchen. In
+      diesem Kapitel werden wir uns zum Großteil auf
+      Zeitkomplexität beschränken. Es gibt weitere
+      Resourcen, die man mit Turingmaschinen nicht wirklich
+      quantifizieren kann:
     </p>
     <div class="main-column">
       <ul>
         <li>
           <p>
-            <b><span class="t-3003-c">I/O-Komplexität.<span class="t-3003">./course1/wly/09/__parent.wly:21:14</span></span></b><span class="t-3003-c">
-              In echten Rechnern haben wir eine<span class="t-3003">./course1/wly/09/__parent.wly:21:31</span></span>
-            <span class="t-3003-c">Hierarchie von Speichermedien. Den extrem schnellen<span class="t-3003">./course1/wly/09/__parent.wly:22:13</span></span>
-            <span class="t-3003-c">Prozessorcache; schnellen Cache; den vergleichsweise<span class="t-3003">./course1/wly/09/__parent.wly:23:13</span></span>
-            <span class="t-3003-c">langsamen Hauptstpeicher (RAM); eventuell sogar einen<span class="t-3003">./course1/wly/09/__parent.wly:24:13</span></span>
-            <span class="t-3003-c">externen Festplattenspeichern, der um Größenordnungen<span class="t-3003">./course1/wly/09/__parent.wly:25:13</span></span>
-            <span class="t-3003-c">langsamer ist.<span class="t-3003">./course1/wly/09/__parent.wly:26:13</span></span>
+            <b>I/O-Komplexität.</b>
+            In echten Rechnern haben wir eine
+            Hierarchie von Speichermedien. Den extrem schnellen
+            Prozessorcache; schnellen Cache; den vergleichsweise
+            langsamen Hauptstpeicher (RAM); eventuell sogar einen
+            externen Festplattenspeichern, der um Größenordnungen
+            langsamer ist.
           </p>
         </li>
         <li>
           <p>
-            <b><span class="t-3003-c">Kommunikationskomplexität.<span class="t-3003">./course1/wly/09/__parent.wly:29:14</span></span></b><span class="t-3003-c">
-              Bei verteilten Anwendungen<span class="t-3003">./course1/wly/09/__parent.wly:29:41</span></span>
-            <span class="t-3003-c">(Cloud Computing) ist die limitierende Resource eventuell<span class="t-3003">./course1/wly/09/__parent.wly:30:13</span></span>
-            <span class="t-3003-c">gar nicht die Rechenkapazität sondern das
-              <span class="t-3003">./course1/wly/09/__parent.wly:31:13</span></span><span class="nowrap"><i><span class="t-3003-c">Netzwerk<span class="t-3003">./course1/wly/09/__parent.wly:31:56</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:31:65</span></span></span><span class="t-3003-c">
-              über<span class="t-3003">./course1/wly/09/__parent.wly:31:65</span></span>
-            <span class="t-3003-c">das die Daten ausgetauscht werden.<span class="t-3003">./course1/wly/09/__parent.wly:32:13</span></span>
+            <b>Kommunikationskomplexität.</b>
+            Bei verteilten
+            Anwendungen (Cloud Computing) ist die limitierende
+            Resource eventuell gar nicht die Rechenkapazität
+            sondern das
+            <span class="nowrap"><i>Netzwerk</i>,</span>
+            über das die Daten
+            ausgetauscht werden.
           </p>
         </li>
       </ul>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Also: Turingmaschinen sind zwar universell in dem Sinne,<span class="t-3003">./course1/wly/09/__parent.wly:34:5</span></span>
-      <span class="t-3003-c">dass sie wohl alle physikalisch realisierbaren<span class="t-3003">./course1/wly/09/__parent.wly:35:5</span></span>
-      <span class="t-3003-c">Rechnermodelle simulieren können (ich sage
-        <span class="t-3003">./course1/wly/09/__parent.wly:36:5</span></span><span class="nowrap"><i><span class="t-3003-c">wohl<span class="t-3003">./course1/wly/09/__parent.wly:36:49</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:36:54</span></span></span><span class="t-3003-c">
-        weil wir<span class="t-3003">./course1/wly/09/__parent.wly:36:54</span></span>
-      <span class="t-3003-c">nicht wissen, was alles physikalisch realisierbar ist).<span class="t-3003">./course1/wly/09/__parent.wly:37:5</span></span>
-      <span class="t-3003-c">Allerdings ist es möglich, dass Sie, abhängig von Ihrem<span class="t-3003">./course1/wly/09/__parent.wly:38:5</span></span>
-      <span class="t-3003-c">Anwendungsfeld, ein abgewandeltes oder völlig anderes<span class="t-3003">./course1/wly/09/__parent.wly:39:5</span></span>
-      <span class="t-3003-c">Modell benötigen, um den Resourcenverbrauch modellieren zu<span class="t-3003">./course1/wly/09/__parent.wly:40:5</span></span>
-      <span class="t-3003-c">können. Dennoch: in diesem Kapitel beschränken wir uns auf<span class="t-3003">./course1/wly/09/__parent.wly:41:5</span></span>
-      <span class="t-3003-c">die Resource
-        <span class="t-3003">./course1/wly/09/__parent.wly:42:5</span></span><span class="nowrap"><i><span class="t-3003-c">Zeit<span class="t-3003">./course1/wly/09/__parent.wly:42:19</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:42:24</span></span></span><span class="t-3003-c">
-        und daher sind Turingmaschinen das<span class="t-3003">./course1/wly/09/__parent.wly:42:24</span></span>
-      <span class="t-3003-c">Modell der Wahl.<span class="t-3003">./course1/wly/09/__parent.wly:43:5</span></span>
+      Also: Turingmaschinen sind zwar universell in dem
+      Sinne, dass sie wohl alle physikalisch realisierbaren
+      Rechnermodelle simulieren können (ich sage
+      <span class="nowrap"><i>wohl</i>,</span>
+      weil wir nicht wissen, was alles physikalisch
+      realisierbar ist). Allerdings ist es möglich, dass
+      Sie, abhängig von Ihrem Anwendungsfeld, ein
+      abgewandeltes oder völlig anderes Modell benötigen, um
+      den Resourcenverbrauch modellieren zu können. Dennoch:
+      in diesem Kapitel beschränken wir uns auf die Resource
+      <span class="nowrap"><i>Zeit</i>,</span>
+      und daher sind Turingmaschinen das Modell der
+      Wahl.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Zeitkomplexitätsklassen<span class="t-3003">./course1/wly/09/__parent.wly:46:9</span></span>
+      Zeitkomplexitätsklassen
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Wir beschränken uns der Einfachheit halber auf das<span class="t-3003">./course1/wly/09/__parent.wly:48:5</span></span>
-      <span class="t-3003-c">Eingabealphabet
-        <span class="t-3003">./course1/wly/09/__parent.wly:49:5</span></span><span class="t-3003-c">$\Sigma = \{0,1\}$<span class="t-3003">./course1/wly/09/__parent.wly:49:21</span></span><span class="t-3003-c">
-        und auf<span class="t-3003">./course1/wly/09/__parent.wly:49:39</span></span>
-      <span class="t-3003-c">Entscheidungsprobleme, wo uns also nur eine Ja/Nein-Antwort<span class="t-3003">./course1/wly/09/__parent.wly:50:5</span></span>
-      <span class="t-3003-c">interessiert.<span class="t-3003">./course1/wly/09/__parent.wly:51:5</span></span>
+      Wir beschränken uns der Einfachheit halber auf das
+      Eingabealphabet $\Sigma = \{0,1\}$ und auf
+      Entscheidungsprobleme, wo uns also nur eine
+      Ja/Nein-Antwort interessiert.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 9.1<span class="t-3003">./course1/wly/09/__parent.wly:53:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/__parent.wly:53:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/09/__parent.wly:54:9</span></span><span class="nowrap"><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/__parent.wly:54:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:54:35</span></span></span><span class="t-3003-c">
-          Eine Turingmaschinen
-          <span class="t-3003">./course1/wly/09/__parent.wly:54:35</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/__parent.wly:54:58</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/__parent.wly:54:61</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/__parent.wly:55:9</span></span><i><span class="t-3003-c">entscheidet<span class="t-3003">./course1/wly/09/__parent.wly:55:10</span></span></i><span class="t-3003-c">
-          eine Sprache
-          <span class="t-3003">./course1/wly/09/__parent.wly:55:22</span></span><span class="t-3003-c">$L \subseteq \Sigma^*$<span class="t-3003">./course1/wly/09/__parent.wly:55:36</span></span><span class="t-3003-c">
-          in Zeit<span class="t-3003">./course1/wly/09/__parent.wly:55:58</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/__parent.wly:56:9</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/__parent.wly:56:9</span></span><span class="t-3003-c">
-          wenn<span class="t-3003">./course1/wly/09/__parent.wly:56:12</span></span>
+        <b>Definition 9.1</b>
+        Sei
+        <span class="nowrap">$t: \N \rightarrow \N$.</span>
+        Eine Turingmaschinen $M$
+        <i>entscheidet</i>
+        eine Sprache $L \subseteq \Sigma^*$ in
+        Zeit $t$ wenn
       </p>
       <ul>
         <li>
           <p>
-            <span class="t-3003-c">sie die Sprache entscheidet, also<span class="t-3003">./course1/wly/09/__parent.wly:60:17</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:61:17</span></span><span class="t-3003-c">$x \in L \Longleftrightarrow f_M(x) = \texttt{accept}$<span class="t-3003">./course1/wly/09/__parent.wly:61:17</span></span><span class="t-3003-c">
-              und<span class="t-3003">./course1/wly/09/__parent.wly:61:71</span></span>
+            sie die Sprache entscheidet, also
+            $x \in L \Longleftrightarrow f_M(x) =
+            \texttt{accept}$
+            und
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">für jede Eingabe
-              <span class="t-3003">./course1/wly/09/__parent.wly:64:17</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/__parent.wly:64:34</span></span><span class="t-3003-c">
-              in maximal
-              <span class="t-3003">./course1/wly/09/__parent.wly:64:37</span></span><span class="t-3003-c">$O(t(|x|))$<span class="t-3003">./course1/wly/09/__parent.wly:64:49</span></span><span class="t-3003-c">
-              Schritten<span class="t-3003">./course1/wly/09/__parent.wly:64:60</span></span>
-            <span class="t-3003-c">terminiert.<span class="t-3003">./course1/wly/09/__parent.wly:65:17</span></span>
+            für jede Eingabe $x$ in maximal $O(t(|x|))$ Schritten
+            terminiert.
           </p>
         </li>
       </ul>
       <p>
-        <span class="t-3003-c">Wir definieren nun<span class="t-3003">./course1/wly/09/__parent.wly:67:9</span></span>
+        Wir definieren nun
       </p>
       <div class="math-block">
         $$
@@ -175,500 +162,378 @@
         \TIME_k(t) := \{L \subseteq \Sigma^* \ | \
         \textnormal{es gibt eine $k$-Band-TM $M$, die $L$ in Zeit $t$ entscheidet}\}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/__parent.wly:69:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">und schließlich<span class="t-3003">./course1/wly/09/__parent.wly:74:9</span></span>
+        und schließlich
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \TIME(t) := \bigcup_{k \geq 1} \TIME_k(t) \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/__parent.wly:76:9</span>
+        $$
       </div>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Falls Sie sich nicht mehr genau an die
-        <span class="t-3003">./course1/wly/09/__parent.wly:80:5</span></span><span class="nowrap"><span class="t-3003-c">$O$<span class="t-3003">./course1/wly/09/__parent.wly:80:44</span></span><span class="t-3003-c">-Notation<span class="t-3003">./course1/wly/09/__parent.wly:80:47</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/__parent.wly:80:47</span></span>
-      <span class="t-3003-c">erinnern können: in diesem Zusammenhang heißt das, dass es<span class="t-3003">./course1/wly/09/__parent.wly:81:5</span></span>
-      <span class="t-3003-c">Konstanten
-        <span class="t-3003">./course1/wly/09/__parent.wly:82:5</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/09/__parent.wly:82:16</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/09/__parent.wly:82:19</span></span><span class="t-3003-c">$d$<span class="t-3003">./course1/wly/09/__parent.wly:82:24</span></span><span class="t-3003-c">
-        gibt, so dass
-        <span class="t-3003">./course1/wly/09/__parent.wly:82:27</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/__parent.wly:82:42</span></span><span class="t-3003-c">
-        in maximal<span class="t-3003">./course1/wly/09/__parent.wly:82:45</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/__parent.wly:83:5</span></span><span class="t-3003-c">$c t(|x|) + d$<span class="t-3003">./course1/wly/09/__parent.wly:83:5</span></span><span class="t-3003-c">
-        Schritten terminiert. Die Konstanten
-        <span class="t-3003">./course1/wly/09/__parent.wly:83:19</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/09/__parent.wly:83:57</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/__parent.wly:83:60</span></span>
-      <span class="t-3003-c">und
-        <span class="t-3003">./course1/wly/09/__parent.wly:84:5</span></span><span class="t-3003-c">$d$<span class="t-3003">./course1/wly/09/__parent.wly:84:9</span></span><span class="t-3003-c">
-        dürfen von
-        <span class="t-3003">./course1/wly/09/__parent.wly:84:12</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/__parent.wly:84:24</span></span><span class="t-3003-c">
-        abhängen, aber nicht von der<span class="t-3003">./course1/wly/09/__parent.wly:84:27</span></span>
-      <span class="t-3003-c">Eingabe
-        <span class="t-3003">./course1/wly/09/__parent.wly:85:5</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/__parent.wly:85:13</span></span><span class="t-3003-c">
-        oder der Länge
-        <span class="t-3003">./course1/wly/09/__parent.wly:85:16</span></span><span class="nowrap"><span class="t-3003-c">$|x|$<span class="t-3003">./course1/wly/09/__parent.wly:85:32</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:85:37</span></span></span><span class="t-3003-c">
-        Wir haben in
-        <span class="t-3003">./course1/wly/09/__parent.wly:85:37</span></span><a
+      Falls Sie sich nicht mehr genau an die
+      <span class="nowrap">$O$-Notation</span>
+      erinnern können: in diesem Zusammenhang heißt das,
+      dass es Konstanten $c$ und $d$ gibt, so dass $M$ in
+      maximal $c t(|x|) + d$ Schritten terminiert. Die
+      Konstanten $c$ und $d$ dürfen von $M$ abhängen, aber
+      nicht von der Eingabe $x$ oder der Länge
+      <span class="nowrap">$|x|$.</span>
+      Wir
+      haben in
+      <a
         href="./8-3.html"
         class=""
-      >Kapitel 8.3</a><span class="t-3003-c">
-        gezeigt, wie man eine
-        <span class="t-3003">./course1/wly/09/__parent.wly:86:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/__parent.wly:86:45</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/__parent.wly:86:48</span></span>
-      <span class="t-3003-c">-Band-Turingmaschine
-        <span class="t-3003">./course1/wly/09/__parent.wly:87:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/__parent.wly:87:26</span></span><span class="t-3003-c">
-        durch eine<span class="t-3003">./course1/wly/09/__parent.wly:87:29</span></span>
-      <span class="t-3003-c">Ein-Band-Turingmaschine
-        <span class="t-3003">./course1/wly/09/__parent.wly:88:5</span></span><span class="nowrap"><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/__parent.wly:88:29</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:88:33</span></span></span><span class="t-3003-c">
-        Der Aufwand war quadratisch:<span class="t-3003">./course1/wly/09/__parent.wly:88:33</span></span>
-      <span class="t-3003-c">wenn
-        <span class="t-3003">./course1/wly/09/__parent.wly:89:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/__parent.wly:89:10</span></span><span class="t-3003-c">
-        innerhalb von
-        <span class="t-3003">./course1/wly/09/__parent.wly:89:13</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/__parent.wly:89:28</span></span><span class="t-3003-c">
-        Schritten terminiert, so<span class="t-3003">./course1/wly/09/__parent.wly:89:31</span></span>
-      <span class="t-3003-c">terminiert
-        <span class="t-3003">./course1/wly/09/__parent.wly:90:5</span></span><span class="t-3003-c">$M'$<span class="t-3003">./course1/wly/09/__parent.wly:90:16</span></span><span class="t-3003-c">
-        innerhalb von
-        <span class="t-3003">./course1/wly/09/__parent.wly:90:20</span></span><span class="t-3003-c">$c t^2$<span class="t-3003">./course1/wly/09/__parent.wly:90:35</span></span><span class="t-3003-c">
-        Schritten, wobei
-        <span class="t-3003">./course1/wly/09/__parent.wly:90:42</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/09/__parent.wly:90:60</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/__parent.wly:90:63</span></span>
-      <span class="t-3003-c">eine Konstante ist, die von
-        <span class="t-3003">./course1/wly/09/__parent.wly:91:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/__parent.wly:91:33</span></span><span class="t-3003-c">
-        abhängt. Mit unser neuen<span class="t-3003">./course1/wly/09/__parent.wly:91:36</span></span>
-      <span class="t-3003-c">Notation können wir das sehr konzis schreiben:<span class="t-3003">./course1/wly/09/__parent.wly:92:5</span></span>
+      >Kapitel 8.3</a>
+      gezeigt, wie man
+      eine $k$ -Band-Turingmaschine $M$ durch eine
+      Ein-Band-Turingmaschine
+      <span class="nowrap">$M'$.</span>
+      Der Aufwand war
+      quadratisch: wenn $M$ innerhalb von $t$ Schritten
+      terminiert, so terminiert $M'$ innerhalb von $c t^2$
+      Schritten, wobei $c$ eine Konstante ist, die von $M$
+      abhängt. Mit unser neuen Notation können wir das sehr
+      konzis schreiben:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 9.2
-            <span class="t-3003">./course1/wly/09/__parent.wly:94:5</span></span><span class="nowrap"><span class="t-3003-c">(<span class="t-3003">./course1/wly/09/__parent.wly:94:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/__parent.wly:95:11</span></span><span class="t-3003-c">-Band<span class="t-3003">./course1/wly/09/__parent.wly:95:14</span></span></span><span class="t-3003-c">
-            zu
-            <span class="t-3003">./course1/wly/09/__parent.wly:95:14</span></span><span class="nowrap"><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/09/__parent.wly:95:23</span></span><span class="t-3003-c">-Band).<span class="t-3003">./course1/wly/09/__parent.wly:95:26</span></span></span></b><span class="t-3003-c">
-          Sei
-          <span class="t-3003">./course1/wly/09/__parent.wly:95:34</span></span><span class="nowrap"><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/__parent.wly:95:39</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:95:61</span></span></span><span class="t-3003-c">
-          Dann<span class="t-3003">./course1/wly/09/__parent.wly:95:61</span></span>
-        <span class="t-3003-c">gilt
-          <span class="t-3003">./course1/wly/09/__parent.wly:96:9</span></span><span class="nowrap"><span class="t-3003-c">$\TIME_k(t) \subseteq \TIME_1(t^2)$<span class="t-3003">./course1/wly/09/__parent.wly:96:14</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:96:49</span></span></span>
+        <b>Theorem 9.2
+          <span class="nowrap">($k$-Band</span>
+          zu
+          <span class="nowrap">$1$-Band).</span></b>
+        Sei
+        <span class="nowrap">$t: \N \rightarrow \N$.</span>
+        Dann gilt
+        <span class="nowrap">$\TIME_k(t) \subseteq \TIME_1(t^2)$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Der quadratische Overhead wird tatsächlich störend, wenn<span class="t-3003">./course1/wly/09/__parent.wly:98:5</span></span>
-      <span class="t-3003-c">man Zeit als Resource untersucht. Daher gibt es eine<span class="t-3003">./course1/wly/09/__parent.wly:99:5</span></span>
-      <span class="t-3003-c">bessere Simulation; die benötigt allerdings zwei Bänder<span class="t-3003">./course1/wly/09/__parent.wly:100:5</span></span>
-      <span class="t-3003-c">(Oder drei? Weiß ich gerade nicht exakt) und die<span class="t-3003">./course1/wly/09/__parent.wly:101:5</span></span>
-      <span class="t-3003-c">Konstruktion ist deutlich komplizierter. Daher vorerst ohne<span class="t-3003">./course1/wly/09/__parent.wly:102:5</span></span>
-      <span class="t-3003-c">Beweis:<span class="t-3003">./course1/wly/09/__parent.wly:103:5</span></span>
+      Der quadratische Overhead wird tatsächlich störend,
+      wenn man Zeit als Resource untersucht. Daher gibt es
+      eine bessere Simulation; die benötigt allerdings zwei
+      Bänder (Oder drei? Weiß ich gerade nicht exakt) und
+      die Konstruktion ist deutlich komplizierter. Daher
+      vorerst ohne Beweis:
     </p>
     <div
       id="_55_h.a.i_"
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Theorem 9.3
-            <span class="t-3003">./course1/wly/09/__parent.wly:105:5</span></span><span class="nowrap"><span class="t-3003-c">(<span class="t-3003">./course1/wly/09/__parent.wly:105:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/__parent.wly:107:11</span></span><span class="t-3003-c">-Band<span class="t-3003">./course1/wly/09/__parent.wly:107:14</span></span></span><span class="t-3003-c">
-            zu
-            <span class="t-3003">./course1/wly/09/__parent.wly:107:14</span></span><span class="nowrap"><span class="t-3003-c">$2$<span class="t-3003">./course1/wly/09/__parent.wly:107:23</span></span><span class="t-3003-c">-Band;<span class="t-3003">./course1/wly/09/__parent.wly:107:26</span></span></span><span class="t-3003-c">
-            ohne Beweis).<span class="t-3003">./course1/wly/09/__parent.wly:107:26</span></span></b><span class="t-3003-c">
-          Sei<span class="t-3003">./course1/wly/09/__parent.wly:107:47</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/__parent.wly:108:9</span></span><span class="nowrap"><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course1/wly/09/__parent.wly:108:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:108:31</span></span></span><span class="t-3003-c">
-          Dann gilt<span class="t-3003">./course1/wly/09/__parent.wly:108:31</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/__parent.wly:109:9</span></span><span class="nowrap"><span class="t-3003-c">$\TIME_k(t) \subseteq \TIME_2(t \log t)$<span class="t-3003">./course1/wly/09/__parent.wly:109:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:109:49</span></span></span>
+        <b>Theorem 9.3
+          <span class="nowrap">($k$-Band</span>
+          zu
+          <span class="nowrap">$2$-Band;</span>
+          ohne Beweis).</b>
+        Sei
+        <span class="nowrap">$t: \N \rightarrow \N$.</span>
+        Dann gilt
+        <span class="nowrap">$\TIME_k(t) \subseteq \TIME_2(t \log t)$.</span>
       </p>
     </div>
     <h3 class="main-column subtopic-announcement">
-      <span class="t-3003-c">Die Klasse P und der Begriff der Effizienz<span class="t-3003">./course1/wly/09/__parent.wly:112:9</span></span>
+      Die Klasse P und der Begriff der Effizienz
     </h3>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 9.4 (Die Komplexitätsklasse P).<span class="t-3003">./course1/wly/09/__parent.wly:114:5</span></span></b><span class="t-3003-c">
-          Wir definieren<span class="t-3003">./course1/wly/09/__parent.wly:115:38</span></span>
+        <b>Definition 9.4 (Die Komplexitätsklasse P).</b>
+        Wir definieren
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \textnormal{P} := \bigcup_{k=1}^{\infty} \TIME(n^k) \ ,
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/__parent.wly:117:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">also die Klasse aller Probleme (formal: Sprachen), die man<span class="t-3003">./course1/wly/09/__parent.wly:121:9</span></span>
-        <span class="t-3003-c">in
-          <span class="t-3003">./course1/wly/09/__parent.wly:122:9</span></span><i><span class="t-3003-c">polynomieller Zeit<span class="t-3003">./course1/wly/09/__parent.wly:122:13</span></span></i><span class="t-3003-c">
-          entscheiden kann.<span class="t-3003">./course1/wly/09/__parent.wly:122:32</span></span>
+        also die Klasse aller Probleme (formal: Sprachen),
+        die man in
+        <i>polynomieller Zeit</i>
+        entscheiden kann.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wenn wir in der Komplexitätstheorie davon sprechen, dass<span class="t-3003">./course1/wly/09/__parent.wly:124:5</span></span>
-      <span class="t-3003-c">ein Algorithmus effizient ist, dann meinen wir: seine<span class="t-3003">./course1/wly/09/__parent.wly:125:5</span></span>
-      <span class="t-3003-c">Laufzeit ist polynomiell, also
-        <span class="t-3003">./course1/wly/09/__parent.wly:126:5</span></span><span class="t-3003-c">$O(|x|^k)$<span class="t-3003">./course1/wly/09/__parent.wly:126:36</span></span><span class="t-3003-c">
-        für ein<span class="t-3003">./course1/wly/09/__parent.wly:126:46</span></span>
-      <span class="t-3003-c">beliebiges aber fixes
-        <span class="t-3003">./course1/wly/09/__parent.wly:127:5</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/__parent.wly:127:27</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:127:30</span></span></span><span class="t-3003-c">
-        Wenn wir zeigen wollen, dass<span class="t-3003">./course1/wly/09/__parent.wly:127:30</span></span>
-      <span class="t-3003-c">ein Problem (bzw. eine Sprache) in P ist, dann bauen wir<span class="t-3003">./course1/wly/09/__parent.wly:128:5</span></span>
-      <span class="t-3003-c">üblicherweise keine Turingmaschine, sondern beschreiben<span class="t-3003">./course1/wly/09/__parent.wly:129:5</span></span>
-      <span class="t-3003-c">(oder implementieren) einen
-        <span class="t-3003">./course1/wly/09/__parent.wly:130:5</span></span><span class="nowrap"><i><span class="t-3003-c">Algorithmus<span class="t-3003">./course1/wly/09/__parent.wly:130:34</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:130:46</span></span></span><span class="t-3003-c">
-        denn wir wissen<span class="t-3003">./course1/wly/09/__parent.wly:130:46</span></span>
-      <span class="t-3003-c">ja mittlerweile (bzw. vertrauen darauf), dass man diesen<span class="t-3003">./course1/wly/09/__parent.wly:131:5</span></span>
-      <span class="t-3003-c">Algorithmus dann effizient auf einer<span class="t-3003">./course1/wly/09/__parent.wly:132:5</span></span>
-      <span class="t-3003-c">Mehrband-Turingmaschine implementieren kann. Wir sind also<span class="t-3003">./course1/wly/09/__parent.wly:133:5</span></span>
-      <span class="t-3003-c">bildlich gesprochen wieder in<span class="t-3003">./course1/wly/09/__parent.wly:134:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/__parent.wly:135:5</span></span><a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-1"><span class="t-3003-c">TI-1<span class="t-3003">./course1/wly/09/__parent.wly:135:6</span></span></a><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/__parent.wly:135:79</span></span>
-      <span class="t-3003-c">und können sagen: ein Problem ist in
-        <span class="t-3003">./course1/wly/09/__parent.wly:136:5</span></span><span class="nowrap"><span class="t-3003-c">$P$<span class="t-3003">./course1/wly/09/__parent.wly:136:42</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:136:45</span></span></span><span class="t-3003-c">
-        wenn es dafür<span class="t-3003">./course1/wly/09/__parent.wly:136:45</span></span>
-      <span class="t-3003-c">einen effizienten Algorithmus gibt. Hier ist eine kleine<span class="t-3003">./course1/wly/09/__parent.wly:137:5</span></span>
-      <span class="t-3003-c">Liste von Problemen in P:<span class="t-3003">./course1/wly/09/__parent.wly:138:5</span></span>
+      Wenn wir in der Komplexitätstheorie davon sprechen,
+      dass ein Algorithmus effizient ist, dann meinen wir:
+      seine Laufzeit ist polynomiell, also $O(|x|^k)$ für
+      ein beliebiges aber fixes
+      <span class="nowrap">$k$.</span>
+      Wenn wir zeigen
+      wollen, dass ein Problem (bzw. eine Sprache) in P ist,
+      dann bauen wir üblicherweise keine Turingmaschine,
+      sondern beschreiben (oder implementieren) einen
+      <span class="nowrap"><i>Algorithmus</i>,</span>
+      denn wir wissen ja mittlerweile (bzw.
+      vertrauen darauf), dass man diesen Algorithmus dann
+      effizient auf einer Mehrband-Turingmaschine
+      implementieren kann. Wir sind also bildlich gesprochen
+      wieder in
+      <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-1">TI-1</a>
+      und können sagen: ein Problem ist in
+      <span class="nowrap">$P$,</span>
+      wenn es
+      dafür einen effizienten Algorithmus gibt. Hier ist
+      eine kleine Liste von Problemen in P:
     </p>
     <div class="main-column">
       <ol>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Undirected Graph Reachability<span class="t-3003">./course1/wly/09/__parent.wly:142:14</span></span></span><span class="t-3003-c">: Gegeben ein Graph<span class="t-3003">./course1/wly/09/__parent.wly:142:48</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:143:13</span></span><span class="t-3003-c">$(V,E)$<span class="t-3003">./course1/wly/09/__parent.wly:143:13</span></span><span class="t-3003-c">
-              und zwei Knoten
-              <span class="t-3003">./course1/wly/09/__parent.wly:143:20</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/09/__parent.wly:143:37</span></span><span class="t-3003-c">
-              und
-              <span class="t-3003">./course1/wly/09/__parent.wly:143:40</span></span><span class="nowrap"><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/__parent.wly:143:45</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:143:48</span></span></span><span class="t-3003-c">
-              Gibt es einen Pfad<span class="t-3003">./course1/wly/09/__parent.wly:143:48</span></span>
-            <span class="t-3003-c">von
-              <span class="t-3003">./course1/wly/09/__parent.wly:144:13</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/09/__parent.wly:144:17</span></span><span class="t-3003-c">
-              nach
-              <span class="t-3003">./course1/wly/09/__parent.wly:144:20</span></span><span class="nowrap"><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/__parent.wly:144:26</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/09/__parent.wly:144:29</span></span></span><span class="t-3003-c">
-              Algorithmus: Tiefensuche oder<span class="t-3003">./course1/wly/09/__parent.wly:144:29</span></span>
-            <span class="t-3003-c">Breitensuche. Beachten Sie: um das als "Sprache" zu<span class="t-3003">./course1/wly/09/__parent.wly:145:13</span></span>
-            <span class="t-3003-c">betrachten, müssen wir eine Codierung für Graphen<span class="t-3003">./course1/wly/09/__parent.wly:146:13</span></span>
-            <span class="t-3003-c">festlegen. Das ist wohl kein Problem: wir brauchen<span class="t-3003">./course1/wly/09/__parent.wly:147:13</span></span>
-            <span class="t-3003-c">Klammern, Kommas und ein Alphabet, um unsere Knoten<span class="t-3003">./course1/wly/09/__parent.wly:148:13</span></span>
-            <span class="t-3003-c">bezeichnen zu können.<span class="t-3003">./course1/wly/09/__parent.wly:149:13</span></span>
+            <span class="sc">Undirected Graph Reachability</span>: Gegeben ein
+            Graph $(V,E)$ und zwei Knoten $s$ und
+            <span class="nowrap">$t$.</span>
+            Gibt es
+            einen Pfad von $s$ nach
+            <span class="nowrap">$t$?</span>
+            Algorithmus: Tiefensuche
+            oder Breitensuche. Beachten Sie: um das als "Sprache"
+            zu betrachten, müssen wir eine Codierung für Graphen
+            festlegen. Das ist wohl kein Problem: wir brauchen
+            Klammern, Kommas und ein Alphabet, um unsere Knoten
+            bezeichnen zu können.
           </p>
         </li>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Acyclicity<span class="t-3003">./course1/wly/09/__parent.wly:152:14</span></span></span><span class="t-3003-c">: Gegeben ein gerichteter Graph
-              <span class="t-3003">./course1/wly/09/__parent.wly:152:29</span></span><span class="nowrap"><span class="t-3003-c">$(V,E)$<span class="t-3003">./course1/wly/09/__parent.wly:152:61</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:152:68</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:152:68</span></span>
-            <span class="t-3003-c">ist er azyklisch?<span class="t-3003">./course1/wly/09/__parent.wly:153:13</span></span>
+            <span class="sc">Acyclicity</span>: Gegeben ein gerichteter Graph
+            <span class="nowrap">$(V,E)$,</span>
+            ist er azyklisch?
           </p>
         </li>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Perfect Square<span class="t-3003">./course1/wly/09/__parent.wly:156:14</span></span></span><span class="t-3003-c">: Gegeben ein Binärzahl<span class="t-3003">./course1/wly/09/__parent.wly:156:33</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:157:13</span></span><span class="nowrap"><span class="t-3003-c">$x \in \{0,1\}^*$<span class="t-3003">./course1/wly/09/__parent.wly:157:13</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/09/__parent.wly:157:30</span></span></span><span class="t-3003-c">
-              ist sie eine Quadratzahl? Algorithmus:<span class="t-3003">./course1/wly/09/__parent.wly:157:30</span></span>
-            <span class="t-3003-c">sei
-              <span class="t-3003">./course1/wly/09/__parent.wly:158:13</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/09/__parent.wly:158:17</span></span><span class="t-3003-c">
-              die von
-              <span class="t-3003">./course1/wly/09/__parent.wly:158:20</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/__parent.wly:158:29</span></span><span class="t-3003-c">
-              beschriebene natürliche Zahl. Es gilt<span class="t-3003">./course1/wly/09/__parent.wly:158:32</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:159:13</span></span><span class="nowrap"><span class="t-3003-c">$0 \leq X \leq 2^{|x|} - 1$<span class="t-3003">./course1/wly/09/__parent.wly:159:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:159:40</span></span></span><span class="t-3003-c">
-              Mit binärer Suche finden wir<span class="t-3003">./course1/wly/09/__parent.wly:159:40</span></span>
-            <span class="t-3003-c">das größte
-              <span class="t-3003">./course1/wly/09/__parent.wly:160:13</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/__parent.wly:160:24</span></span><span class="t-3003-c">
-              mit
-              <span class="t-3003">./course1/wly/09/__parent.wly:160:27</span></span><span class="nowrap"><span class="t-3003-c">$k^2 \leq X$<span class="t-3003">./course1/wly/09/__parent.wly:160:32</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:160:44</span></span></span><span class="t-3003-c">
-              Die Berechnung von
-              <span class="t-3003">./course1/wly/09/__parent.wly:160:44</span></span><span class="t-3003-c">$k^2$<span class="t-3003">./course1/wly/09/__parent.wly:160:65</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:160:70</span></span>
-            <span class="t-3003-c">hat quadratische Laufzeit in der Anzahl der Bits von
-              <span class="t-3003">./course1/wly/09/__parent.wly:161:13</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/__parent.wly:161:66</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/09/__parent.wly:161:69</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:161:69</span></span>
-            <span class="t-3003-c">diese ist höchstens
-              <span class="t-3003">./course1/wly/09/__parent.wly:162:13</span></span><span class="nowrap"><span class="t-3003-c">$|x|$<span class="t-3003">./course1/wly/09/__parent.wly:162:33</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/09/__parent.wly:162:38</span></span></span><span class="t-3003-c">
-              die binäre Suche tätigt<span class="t-3003">./course1/wly/09/__parent.wly:162:38</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:163:13</span></span><span class="t-3003-c">$\log N \leq |x|$<span class="t-3003">./course1/wly/09/__parent.wly:163:13</span></span><span class="t-3003-c">
-              Durchläufe. Die Gesamtlaufzeit ist also<span class="t-3003">./course1/wly/09/__parent.wly:163:30</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:164:13</span></span><span class="t-3003-c">$O(|x|^3)$<span class="t-3003">./course1/wly/09/__parent.wly:164:13</span></span><span class="t-3003-c">
-              .<span class="t-3003">./course1/wly/09/__parent.wly:164:23</span></span>
+            <span class="sc">Perfect Square</span>: Gegeben ein Binärzahl
+            <span class="nowrap">$x \in \{0,1\}^*$;</span>
+            ist sie eine Quadratzahl?
+            Algorithmus: sei $X$ die von $x$ beschriebene
+            natürliche Zahl. Es gilt
+            <span class="nowrap">$0 \leq X \leq 2^{|x|} - 1$.</span>
+            Mit binärer Suche finden wir das größte $k$ mit
+            <span class="nowrap">$k^2 \leq X$.</span>
+            Die Berechnung von $k^2$ hat
+            quadratische Laufzeit in der Anzahl der Bits von
+            <span class="nowrap">$k$;</span>
+            diese ist höchstens
+            <span class="nowrap">$|x|$;</span>
+            die binäre Suche tätigt
+            $\log N \leq |x|$ Durchläufe. Die Gesamtlaufzeit ist
+            also $O(|x|^3)$ .
           </p>
         </li>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Unary Primes<span class="t-3003">./course1/wly/09/__parent.wly:167:14</span></span></span><span class="t-3003-c">: Gegeben eine natürliche Zahl in unärer<span class="t-3003">./course1/wly/09/__parent.wly:167:31</span></span>
-            <span class="t-3003-c">Codierung, also
-              <span class="t-3003">./course1/wly/09/__parent.wly:168:13</span></span><span class="t-3003-c">$1^{n}$<span class="t-3003">./course1/wly/09/__parent.wly:168:29</span></span><span class="t-3003-c">
-              mit Eingabealphabet<span class="t-3003">./course1/wly/09/__parent.wly:168:36</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:169:13</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma = \{1\}$<span class="t-3003">./course1/wly/09/__parent.wly:169:13</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/09/__parent.wly:169:29</span></span></span><span class="t-3003-c">
-              ist
-              <span class="t-3003">./course1/wly/09/__parent.wly:169:29</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/09/__parent.wly:169:35</span></span><span class="t-3003-c">
-              eine Primzahl? Algorithmus: wir<span class="t-3003">./course1/wly/09/__parent.wly:169:38</span></span>
-            <span class="t-3003-c">prüfen für jedes
-              <span class="t-3003">./course1/wly/09/__parent.wly:170:13</span></span><span class="nowrap"><span class="t-3003-c">$2 \leq k \leq n-1$<span class="t-3003">./course1/wly/09/__parent.wly:170:30</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:170:49</span></span></span><span class="t-3003-c">
-              ob es
-              <span class="t-3003">./course1/wly/09/__parent.wly:170:49</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/09/__parent.wly:170:57</span></span><span class="t-3003-c">
-              teilt.<span class="t-3003">./course1/wly/09/__parent.wly:170:60</span></span>
-            <span class="t-3003-c">(Wie programmiert man Teilbarkeit auf einer Turingmaschine?<span class="t-3003">./course1/wly/09/__parent.wly:171:13</span></span>
-            <span class="t-3003-c">Sie könnten zum Beispiel
-              <span class="t-3003">./course1/wly/09/__parent.wly:172:13</span></span><span class="t-3003-c">$1^k$<span class="t-3003">./course1/wly/09/__parent.wly:172:38</span></span><span class="t-3003-c">
-              auf das zweite Band<span class="t-3003">./course1/wly/09/__parent.wly:172:43</span></span>
-            <span class="t-3003-c">schreiben und dann beide Bänder durchgehen, das zweite<span class="t-3003">./course1/wly/09/__parent.wly:173:13</span></span>
-            <span class="t-3003-c">mehrmals, und schauen, ob es "aufgeht"; das geht in Zeit<span class="t-3003">./course1/wly/09/__parent.wly:174:13</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:175:13</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/09/__parent.wly:175:13</span></span><span class="t-3003-c">).<span class="t-3003">./course1/wly/09/__parent.wly:175:16</span></span></span><span class="t-3003-c">
-              Die Gesamtlaufzeit ist also
-              <span class="t-3003">./course1/wly/09/__parent.wly:175:16</span></span><span class="nowrap"><span class="t-3003-c">$n^2$<span class="t-3003">./course1/wly/09/__parent.wly:175:47</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:175:52</span></span></span>
+            <span class="sc">Unary Primes</span>: Gegeben eine natürliche Zahl in
+            unärer Codierung, also $1^{n}$ mit Eingabealphabet
+            <span class="nowrap">$\Sigma = \{1\}$;</span>
+            ist $n$ eine Primzahl? Algorithmus:
+            wir prüfen für jedes
+            <span class="nowrap">$2 \leq k \leq n-1$,</span>
+            ob es $n$
+            teilt. (Wie programmiert man Teilbarkeit auf einer
+            Turingmaschine? Sie könnten zum Beispiel $1^k$ auf
+            das zweite Band schreiben und dann beide Bänder
+            durchgehen, das zweite mehrmals, und schauen, ob es
+            "aufgeht"; das geht in Zeit
+            <span class="nowrap">$n$).</span>
+            Die Gesamtlaufzeit
+            ist also
+            <span class="nowrap">$n^2$.</span>
           </p>
         </li>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Primes<span class="t-3003">./course1/wly/09/__parent.wly:178:14</span></span></span><span class="t-3003-c">: Gegeben eine binär codierte Zahl<span class="t-3003">./course1/wly/09/__parent.wly:178:25</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:179:13</span></span><span class="nowrap"><span class="t-3003-c">$x \in \{0,1\}^n$<span class="t-3003">./course1/wly/09/__parent.wly:179:13</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:179:30</span></span></span><span class="t-3003-c">
-              ist sie eine Primzahl? Algorithmus: der<span class="t-3003">./course1/wly/09/__parent.wly:179:30</span></span>
-            <span class="t-3003-c">obige Algorithmus, alle potenziellen Teiler auszuprobieren,<span class="t-3003">./course1/wly/09/__parent.wly:180:13</span></span>
-            <span class="t-3003-c">benötigt
-              <span class="t-3003">./course1/wly/09/__parent.wly:181:13</span></span><span class="t-3003-c">$X^2$<span class="t-3003">./course1/wly/09/__parent.wly:181:22</span></span><span class="t-3003-c">
-              Schritte, wobei
-              <span class="t-3003">./course1/wly/09/__parent.wly:181:27</span></span><span class="t-3003-c">$X \in \N$<span class="t-3003">./course1/wly/09/__parent.wly:181:44</span></span><span class="t-3003-c">
-              die von
-              <span class="t-3003">./course1/wly/09/__parent.wly:181:54</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/__parent.wly:181:63</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:181:66</span></span>
-            <span class="t-3003-c">codierte Zahl ist. Da
-              <span class="t-3003">./course1/wly/09/__parent.wly:182:13</span></span><span class="t-3003-c">$X \leq 2^n - 1$<span class="t-3003">./course1/wly/09/__parent.wly:182:35</span></span><span class="t-3003-c">
-              ist dies nicht mehr<span class="t-3003">./course1/wly/09/__parent.wly:182:51</span></span>
-            <span class="t-3003-c">polynomiell in der Eingabelänge
-              <span class="t-3003">./course1/wly/09/__parent.wly:183:13</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/09/__parent.wly:183:45</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:183:48</span></span></span><span class="t-3003-c">
-              Wir brauchen also<span class="t-3003">./course1/wly/09/__parent.wly:183:48</span></span>
-            <span class="t-3003-c">einen Algorithmus, der polynomiell in der Bitgröße von
-              <span class="t-3003">./course1/wly/09/__parent.wly:184:13</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/09/__parent.wly:184:68</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:184:71</span></span>
-            <span class="t-3003-c">ist, also in
-              <span class="t-3003">./course1/wly/09/__parent.wly:185:13</span></span><span class="nowrap"><span class="t-3003-c">$n = |x|$<span class="t-3003">./course1/wly/09/__parent.wly:185:26</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:185:35</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:185:35</span></span><i><span class="t-3003-c">Randomisierte<span class="t-3003">./course1/wly/09/__parent.wly:185:38</span></span></i><span class="t-3003-c">
-              Algorithmen dieser<span class="t-3003">./course1/wly/09/__parent.wly:185:52</span></span>
-            <span class="t-3003-c">Art kennt man schon seit den 1970er Jahren, z.B. den<span class="t-3003">./course1/wly/09/__parent.wly:186:13</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:187:13</span></span><a href="https://de.wikipedia.org/wiki/Miller-Rabin-Test"><span class="t-3003-c">Miller-Rabin-Test<span class="t-3003">./course1/wly/09/__parent.wly:187:14</span></span></a><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:187:81</span></span>
-            <span class="t-3003-c">Ein deterministischer polynomieller Algorithmus ist zum<span class="t-3003">./course1/wly/09/__parent.wly:188:13</span></span>
-            <span class="t-3003-c">Beispiel der 2002 veröffentlichte
-              <span class="t-3003">./course1/wly/09/__parent.wly:189:13</span></span><a href="https://en.wikipedia.org/wiki/AKS_primality_test"><span class="t-3003-c">Agrawal–Kayal–Saxena<span class="t-3003">./course1/wly/09/__parent.wly:189:48</span></span>
-              <span class="t-3003-c">primality<span class="t-3003">./course1/wly/09/__parent.wly:190:13</span></span>
-              <span class="t-3003-c">test<span class="t-3003">./course1/wly/09/__parent.wly:191:13</span></span></a><span class="t-3003-c">;<span class="t-3003">./course1/wly/09/__parent.wly:191:68</span></span>
-            <span class="t-3003-c">die Laufzeit dieses Algorithmus ist polynomiell, allerdings<span class="t-3003">./course1/wly/09/__parent.wly:192:13</span></span>
-            <span class="t-3003-c">ist
-              <span class="t-3003">./course1/wly/09/__parent.wly:193:13</span></span><span class="t-3003-c">$O(n^6)$<span class="t-3003">./course1/wly/09/__parent.wly:193:17</span></span><span class="t-3003-c">
-              die beste derzeit bekannte Schranke.<span class="t-3003">./course1/wly/09/__parent.wly:193:25</span></span>
+            <span class="sc">Primes</span>: Gegeben eine binär codierte Zahl
+            <span class="nowrap">$x \in \{0,1\}^n$,</span>
+            ist sie eine Primzahl?
+            Algorithmus: der obige Algorithmus, alle potenziellen
+            Teiler auszuprobieren, benötigt $X^2$ Schritte, wobei
+            $X \in \N$ die von $x$ codierte Zahl ist. Da
+            $X \leq 2^n - 1$ ist dies nicht mehr polynomiell in
+            der Eingabelänge
+            <span class="nowrap">$n$.</span>
+            Wir brauchen also einen
+            Algorithmus, der polynomiell in der Bitgröße von $X$
+            ist, also in
+            <span class="nowrap">$n = |x|$.</span>
+            <i>Randomisierte</i>
+            Algorithmen
+            dieser Art kennt man schon seit den 1970er Jahren,
+            z.B. den
+            <a href="https://de.wikipedia.org/wiki/Miller-Rabin-Test">Miller-Rabin-Test</a>.
+            Ein deterministischer polynomieller Algorithmus ist
+            zum Beispiel der 2002 veröffentlichte
+            <a href="https://en.wikipedia.org/wiki/AKS_primality_test">Agrawal–Kayal–Saxena primality
+              test</a>;
+            die Laufzeit dieses Algorithmus ist polynomiell,
+            allerdings ist $O(n^6)$ die beste derzeit bekannte
+            Schranke.
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">In vielen Kontexten wollen wir keine Ja/Nein-Antwort,<span class="t-3003">./course1/wly/09/__parent.wly:195:5</span></span>
-      <span class="t-3003-c">sondern ein konkretes Objekt als Antwort. Wir nennen diese<span class="t-3003">./course1/wly/09/__parent.wly:196:5</span></span>
-      <span class="t-3003-c">Probleme
-        <span class="t-3003">./course1/wly/09/__parent.wly:197:5</span></span><i><span class="t-3003-c">Funktionsprobleme<span class="t-3003">./course1/wly/09/__parent.wly:197:15</span></span></i><span class="t-3003-c">
-        im Gegensatz zu den<span class="t-3003">./course1/wly/09/__parent.wly:197:33</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/__parent.wly:198:5</span></span><span class="nowrap"><i><span class="t-3003-c">Entscheidungsproblemen<span class="t-3003">./course1/wly/09/__parent.wly:198:6</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:198:29</span></span></span><span class="t-3003-c">
-        Hier müssen wir auf die<span class="t-3003">./course1/wly/09/__parent.wly:198:29</span></span>
-      <span class="t-3003-c">Definition zurückgreifen, was es heißt, dass eine<span class="t-3003">./course1/wly/09/__parent.wly:199:5</span></span>
-      <span class="t-3003-c">Turingmaschine eine Funktion<span class="t-3003">./course1/wly/09/__parent.wly:200:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/__parent.wly:201:5</span></span><span class="t-3003-c">$f: \Sigma_1^* \rightarrow \Sigma_2^*$<span class="t-3003">./course1/wly/09/__parent.wly:201:5</span></span><span class="t-3003-c">
-        berechnet. Die<span class="t-3003">./course1/wly/09/__parent.wly:201:43</span></span>
-      <span class="t-3003-c">entsprechende Komplexitätsklasse aller Funktionen, die man<span class="t-3003">./course1/wly/09/__parent.wly:202:5</span></span>
-      <span class="t-3003-c">in polynomieller Zeit berechnen kann, nennt man FP.<span class="t-3003">./course1/wly/09/__parent.wly:203:5</span></span>
-      <span class="t-3003-c">Folgende Probleme sind in FP:<span class="t-3003">./course1/wly/09/__parent.wly:204:5</span></span>
+      In vielen Kontexten wollen wir keine Ja/Nein-Antwort,
+      sondern ein konkretes Objekt als Antwort. Wir nennen
+      diese Probleme
+      <i>Funktionsprobleme</i>
+      im Gegensatz zu den
+      <span class="nowrap"><i>Entscheidungsproblemen</i>.</span>
+      Hier müssen wir auf die
+      Definition zurückgreifen, was es heißt, dass eine
+      Turingmaschine eine Funktion
+      $f: \Sigma_1^* \rightarrow \Sigma_2^*$ berechnet. Die
+      entsprechende Komplexitätsklasse aller Funktionen, die
+      man in polynomieller Zeit berechnen kann, nennt man
+      FP. Folgende Probleme sind in FP:
     </p>
     <div class="main-column">
       <ol>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Multiplication<span class="t-3003">./course1/wly/09/__parent.wly:208:14</span></span></span><span class="t-3003-c">: gegeben zwei Zahlen<span class="t-3003">./course1/wly/09/__parent.wly:208:33</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:209:13</span></span><span class="t-3003-c">$x, y \in \{0,1\}^n$<span class="t-3003">./course1/wly/09/__parent.wly:209:13</span></span><span class="t-3003-c">
-              in binärer Codierung, berechne ihr<span class="t-3003">./course1/wly/09/__parent.wly:209:33</span></span>
-            <span class="t-3003-c">Produkt. Algorithmus: sowohl die Schulmethode als auch<span class="t-3003">./course1/wly/09/__parent.wly:210:13</span></span>
-            <span class="t-3003-c">Karatsubas Algorithmus haben polynomielle Laufzeit.<span class="t-3003">./course1/wly/09/__parent.wly:211:13</span></span>
+            <span class="sc">Multiplication</span>: gegeben zwei Zahlen
+            $x, y \in \{0,1\}^n$ in binärer Codierung, berechne
+            ihr Produkt. Algorithmus: sowohl die Schulmethode als
+            auch Karatsubas Algorithmus haben polynomielle
+            Laufzeit.
           </p>
         </li>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Maximum Flow<span class="t-3003">./course1/wly/09/__parent.wly:214:14</span></span></span><span class="t-3003-c">: gegeben ein Flussnetzwerk (vgl.<span class="t-3003">./course1/wly/09/__parent.wly:214:31</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:215:13</span></span><a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-1/lecture-notes/08-00-max-flow.html"><span class="t-3003-c">Kapitel 8 aus<span class="t-3003">./course1/wly/09/__parent.wly:215:14</span></span>
-              <span class="t-3003-c">TI-1<span class="t-3003">./course1/wly/09/__parent.wly:216:13</span></span></a><span class="t-3003-c">),<span class="t-3003">./course1/wly/09/__parent.wly:216:120</span></span>
-            <span class="t-3003-c">berechne einen MaxFluss.<span class="t-3003">./course1/wly/09/__parent.wly:217:13</span></span>
+            <span class="sc">Maximum Flow</span>: gegeben ein Flussnetzwerk (vgl.
+            <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-1/lecture-notes/08-00-max-flow.html">Kapitel 8 aus
+              TI-1</a>),
+            berechne einen MaxFluss.
           </p>
         </li>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Linear Equations<span class="t-3003">./course1/wly/09/__parent.wly:220:14</span></span></span><span class="t-3003-c">: gegeben ein lineares<span class="t-3003">./course1/wly/09/__parent.wly:220:35</span></span>
-            <span class="t-3003-c">Gleichungssystem, also eine Matrix
-              <span class="t-3003">./course1/wly/09/__parent.wly:221:13</span></span><span class="t-3003-c">$A \in \Q^{m \times n}$<span class="t-3003">./course1/wly/09/__parent.wly:221:48</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:221:71</span></span>
-            <span class="t-3003-c">und einen Vektor
-              <span class="t-3003">./course1/wly/09/__parent.wly:222:13</span></span><span class="nowrap"><span class="t-3003-c">$b \in \Q^{m}$<span class="t-3003">./course1/wly/09/__parent.wly:222:30</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:222:44</span></span></span><span class="t-3003-c">
-              finde ein
-              <span class="t-3003">./course1/wly/09/__parent.wly:222:44</span></span><span class="t-3003-c">$x \in \Q^n$<span class="t-3003">./course1/wly/09/__parent.wly:222:56</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:222:68</span></span>
-            <span class="t-3003-c">mit
-              <span class="t-3003">./course1/wly/09/__parent.wly:223:13</span></span><span class="nowrap"><span class="t-3003-c">$Ax = b$<span class="t-3003">./course1/wly/09/__parent.wly:223:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:223:25</span></span></span><span class="t-3003-c">
-              Algorithmus: Gaußsche Eliminierung; obwohl<span class="t-3003">./course1/wly/09/__parent.wly:223:25</span></span>
-            <span class="t-3003-c">Sie hier aufpassen müssen, dass die Bit-Darstellung Ihrer<span class="t-3003">./course1/wly/09/__parent.wly:224:13</span></span>
-            <span class="t-3003-c">Zwischenergebnisse nicht zu groß wird.<span class="t-3003">./course1/wly/09/__parent.wly:225:13</span></span>
+            <span class="sc">Linear Equations</span>: gegeben ein lineares
+            Gleichungssystem, also eine Matrix
+            $A \in \Q^{m \times n}$ und einen Vektor
+            <span class="nowrap">$b \in \Q^{m}$,</span>
+            finde ein $x \in \Q^n$ mit
+            <span class="nowrap">$Ax = b$.</span>
+            Algorithmus: Gaußsche Eliminierung; obwohl Sie hier
+            aufpassen müssen, dass die Bit-Darstellung Ihrer
+            Zwischenergebnisse nicht zu groß wird.
           </p>
         </li>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Linear Programming<span class="t-3003">./course1/wly/09/__parent.wly:228:14</span></span></span><span class="t-3003-c">: gegeben ein lineares<span class="t-3003">./course1/wly/09/__parent.wly:228:37</span></span>
-            <span class="t-3003-c">Ungleichungssystem, also eine Matrix<span class="t-3003">./course1/wly/09/__parent.wly:229:13</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:230:13</span></span><span class="t-3003-c">$A \in \Q^{m \times n}$<span class="t-3003">./course1/wly/09/__parent.wly:230:13</span></span><span class="t-3003-c">
-              und einen Vektor
-              <span class="t-3003">./course1/wly/09/__parent.wly:230:36</span></span><span class="nowrap"><span class="t-3003-c">$b \in \Q^{m}$<span class="t-3003">./course1/wly/09/__parent.wly:230:54</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:230:68</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:230:68</span></span>
-            <span class="t-3003-c">finde ein
-              <span class="t-3003">./course1/wly/09/__parent.wly:231:13</span></span><span class="t-3003-c">$x \in \Q^n$<span class="t-3003">./course1/wly/09/__parent.wly:231:23</span></span><span class="t-3003-c">
-              mit
-              <span class="t-3003">./course1/wly/09/__parent.wly:231:35</span></span><span class="t-3003-c">$Ax \leq b$<span class="t-3003">./course1/wly/09/__parent.wly:231:40</span></span><span class="t-3003-c">
-              (für
-              <span class="t-3003">./course1/wly/09/__parent.wly:231:51</span></span><span class="t-3003-c">$y,b \in \Q^m$<span class="t-3003">./course1/wly/09/__parent.wly:231:57</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:231:71</span></span>
-            <span class="t-3003-c">bedeutet die Schreibweise
-              <span class="t-3003">./course1/wly/09/__parent.wly:232:13</span></span><span class="nowrap"><span class="t-3003-c">$y \leq b$<span class="t-3003">./course1/wly/09/__parent.wly:232:39</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:232:49</span></span></span><span class="t-3003-c">
-              dass
-              <span class="t-3003">./course1/wly/09/__parent.wly:232:49</span></span><span class="t-3003-c">$y_i \leq b_i$<span class="t-3003">./course1/wly/09/__parent.wly:232:56</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:232:70</span></span>
-            <span class="t-3003-c">für alle
-              <span class="t-3003">./course1/wly/09/__parent.wly:233:13</span></span><span class="t-3003-c">$i \in [m]$<span class="t-3003">./course1/wly/09/__parent.wly:233:22</span></span><span class="t-3003-c">
-              gilt). Algorithmus: der bekannteste<span class="t-3003">./course1/wly/09/__parent.wly:233:33</span></span>
-            <span class="t-3003-c">Algorithmus für
-              <span class="t-3003">./course1/wly/09/__parent.wly:234:13</span></span><span class="sc"><span class="t-3003-c">Linear Programming<span class="t-3003">./course1/wly/09/__parent.wly:234:30</span></span></span><span class="t-3003-c">
-              ist der<span class="t-3003">./course1/wly/09/__parent.wly:234:53</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:235:13</span></span><a href="https://de.wikipedia.org/wiki/Simplex-Verfahren"><span class="t-3003-c">Simplex-Algorithmus<span class="t-3003">./course1/wly/09/__parent.wly:235:14</span></span></a><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:235:83</span></span>
-            <span class="t-3003-c">Allerdings ist seine Worst-Case-Laufzeit nicht polynomiell.<span class="t-3003">./course1/wly/09/__parent.wly:236:13</span></span>
-            <span class="t-3003-c">Erst 1979 wurde mit Leonid Khachiyans<span class="t-3003">./course1/wly/09/__parent.wly:237:13</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:238:13</span></span><a href="https://de.wikipedia.org/wiki/Ellipsoidmethode"><span class="t-3003-c">Ellipsoid-Algorithmus<span class="t-3003">./course1/wly/09/__parent.wly:238:14</span></span></a><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:238:84</span></span>
-            <span class="t-3003-c">ein Algorithmus mit polynomieller Worst-Case-Laufzeit<span class="t-3003">./course1/wly/09/__parent.wly:239:13</span></span>
-            <span class="t-3003-c">gefunden.<span class="t-3003">./course1/wly/09/__parent.wly:240:13</span></span>
+            <span class="sc">Linear Programming</span>: gegeben ein lineares
+            Ungleichungssystem, also eine Matrix
+            $A \in \Q^{m \times n}$ und einen Vektor
+            <span class="nowrap">$b \in \Q^{m}$,</span>
+            finde ein $x \in \Q^n$ mit $Ax \leq b$
+            (für $y,b \in \Q^m$ bedeutet die Schreibweise
+            <span class="nowrap">$y \leq b$,</span>
+            dass $y_i \leq b_i$ für alle $i \in [m]$
+            gilt). Algorithmus: der bekannteste Algorithmus für
+            <span class="sc">Linear Programming</span>
+            ist der
+            <a href="https://de.wikipedia.org/wiki/Simplex-Verfahren">Simplex-Algorithmus</a>.
+            Allerdings ist seine Worst-Case-Laufzeit nicht
+            polynomiell. Erst 1979 wurde mit Leonid Khachiyans
+            <a href="https://de.wikipedia.org/wiki/Ellipsoidmethode">Ellipsoid-Algorithmus</a>
+            ein Algorithmus mit polynomieller Worst-Case-Laufzeit
+            gefunden.
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Und zum Schluss eine Liste von Problemen (Funktions- und<span class="t-3003">./course1/wly/09/__parent.wly:242:5</span></span>
-      <span class="t-3003-c">Entscheidungsprobleme), von denen nicht bekannt ist (Stand<span class="t-3003">./course1/wly/09/__parent.wly:243:5</span></span>
-      <span class="t-3003-c">Juni 2025), ob sie in P sind oder nicht.<span class="t-3003">./course1/wly/09/__parent.wly:244:5</span></span>
+      Und zum Schluss eine Liste von Problemen (Funktions-
+      und Entscheidungsprobleme), von denen nicht bekannt
+      ist (Stand Juni 2025), ob sie in P sind oder nicht.
     </p>
     <div class="main-column">
       <ol>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Graph 3-Colorability<span class="t-3003">./course1/wly/09/__parent.wly:248:14</span></span></span><span class="t-3003-c">: Gegeben ein Graph
-              <span class="t-3003">./course1/wly/09/__parent.wly:248:39</span></span><span class="nowrap"><span class="t-3003-c">$G = (V,E)$<span class="t-3003">./course1/wly/09/__parent.wly:248:59</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:248:70</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:248:70</span></span>
-            <span class="t-3003-c">Gibt es eine "Färbung"
-              <span class="t-3003">./course1/wly/09/__parent.wly:249:13</span></span><span class="t-3003-c">$c: V \rightarrow \{1,2,3\}$<span class="t-3003">./course1/wly/09/__parent.wly:249:36</span></span><span class="t-3003-c">
-              mit<span class="t-3003">./course1/wly/09/__parent.wly:249:64</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:250:13</span></span><span class="t-3003-c">$c(u) \ne c(v)$<span class="t-3003">./course1/wly/09/__parent.wly:250:13</span></span><span class="t-3003-c">
-              für alle
-              <span class="t-3003">./course1/wly/09/__parent.wly:250:28</span></span><span class="nowrap"><span class="t-3003-c">$\{u,v\} \in E$<span class="t-3003">./course1/wly/09/__parent.wly:250:38</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/09/__parent.wly:250:53</span></span></span>
+            <span class="sc">Graph 3-Colorability</span>: Gegeben ein Graph
+            <span class="nowrap">$G = (V,E)$.</span>
+            Gibt es eine "Färbung"
+            $c: V \rightarrow \{1,2,3\}$ mit $c(u) \ne c(v)$ für
+            alle
+            <span class="nowrap">$\{u,v\} \in E$?</span>
           </p>
         </li>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">CNF-Satisfiability<span class="t-3003">./course1/wly/09/__parent.wly:253:14</span></span></span><span class="t-3003-c">: Gegeben eine Boolesche Formel in<span class="t-3003">./course1/wly/09/__parent.wly:253:37</span></span>
-            <span class="t-3003-c">konjunktiver Normalform, also beispielsweise<span class="t-3003">./course1/wly/09/__parent.wly:254:13</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:255:13</span></span><span class="nowrap"><span class="t-3003-c">$(x \vee \bar{y}) \wedge (\bar{x} \vee y \vee z) \wedge (x
-                \vee \bar{z})$<span class="t-3003">./course1/wly/09/__parent.wly:255:13</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:256:27</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:256:27</span></span>
-            <span class="t-3003-c">gibt es eine Belegung ihrer Variablen, so dass die Formel<span class="t-3003">./course1/wly/09/__parent.wly:257:13</span></span>
-            <span class="t-3003-c">zu
-              <span class="t-3003">./course1/wly/09/__parent.wly:258:13</span></span><code><span class="t-3003-c">True<span class="t-3003">./course1/wly/09/__parent.wly:258:17</span></span></code><span class="t-3003-c">
-              auswertet?<span class="t-3003">./course1/wly/09/__parent.wly:258:22</span></span>
+            <span class="sc">CNF-Satisfiability</span>: Gegeben eine Boolesche
+            Formel in konjunktiver Normalform, also beispielsweise
+            <span class="nowrap">$(x \vee \bar{y}) \wedge (\bar{x} \vee y \vee z)
+              \wedge (x \vee \bar{z})$,</span>
+            gibt es eine Belegung ihrer Variablen, so dass die
+            Formel zu
+            <code>True</code>
+            auswertet?
           </p>
         </li>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Hamilton Cycle<span class="t-3003">./course1/wly/09/__parent.wly:261:14</span></span></span><span class="t-3003-c">: Gegeben ein Graph
-              <span class="t-3003">./course1/wly/09/__parent.wly:261:33</span></span><span class="nowrap"><span class="t-3003-c">$G=(V,E)$<span class="t-3003">./course1/wly/09/__parent.wly:261:53</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:261:62</span></span></span><span class="t-3003-c">
-              gibt es<span class="t-3003">./course1/wly/09/__parent.wly:261:62</span></span>
-            <span class="t-3003-c">einen Kreis der Länge
-              <span class="t-3003">./course1/wly/09/__parent.wly:262:13</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/09/__parent.wly:262:35</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/09/__parent.wly:262:38</span></span></span><span class="t-3003-c">
-              Gibt es also einen<span class="t-3003">./course1/wly/09/__parent.wly:262:38</span></span>
-            <span class="t-3003-c">geschlossenen Kantenzug, der jeden Knoten genau einmal<span class="t-3003">./course1/wly/09/__parent.wly:263:13</span></span>
-            <span class="t-3003-c">besucht (wobei der Endknoten gleich der Startknoten ist)?<span class="t-3003">./course1/wly/09/__parent.wly:264:13</span></span>
+            <span class="sc">Hamilton Cycle</span>: Gegeben ein Graph
+            <span class="nowrap">$G=(V,E)$,</span>
+            gibt es einen Kreis der Länge
+            <span class="nowrap">$n$?</span>
+            Gibt es also einen
+            geschlossenen Kantenzug, der jeden Knoten genau einmal
+            besucht (wobei der Endknoten gleich der Startknoten
+            ist)?
           </p>
         </li>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Graph Isomorphism<span class="t-3003">./course1/wly/09/__parent.wly:267:14</span></span></span><span class="t-3003-c">: Gegeben zwei Graphen<span class="t-3003">./course1/wly/09/__parent.wly:267:36</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:268:13</span></span><span class="t-3003-c">$G_1 = (V_1, E_1)$<span class="t-3003">./course1/wly/09/__parent.wly:268:13</span></span><span class="t-3003-c">
-              und
-              <span class="t-3003">./course1/wly/09/__parent.wly:268:31</span></span><span class="nowrap"><span class="t-3003-c">$G_2 = (V_2, E_2)$<span class="t-3003">./course1/wly/09/__parent.wly:268:36</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:268:54</span></span></span><span class="t-3003-c">
-              sind sie<span class="t-3003">./course1/wly/09/__parent.wly:268:54</span></span>
-            <span class="t-3003-c">isomorph? Das heißt, gibt es eine bijektive Funktion<span class="t-3003">./course1/wly/09/__parent.wly:269:13</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:270:13</span></span><span class="t-3003-c">$f: V_1 \rightarrow V_2$<span class="t-3003">./course1/wly/09/__parent.wly:270:13</span></span><span class="t-3003-c">
-              mit<span class="t-3003">./course1/wly/09/__parent.wly:270:37</span></span>
+            <span class="sc">Graph Isomorphism</span>: Gegeben zwei Graphen
+            $G_1 = (V_1, E_1)$ und
+            <span class="nowrap">$G_2 = (V_2, E_2)$,</span>
+            sind sie
+            isomorph? Das heißt, gibt es eine bijektive Funktion
+            $f: V_1 \rightarrow V_2$ mit
           </p>
           <div class="math-block">
             $$
             \begin{align*}
             \{u,v\} \in E_1 \Longleftrightarrow \{f(u), f(v)\} \in E_2 \ ?
             \end{align*}
-            $$<span class="t-3003">./course1/wly/09/__parent.wly:272:13</span>
+            $$
           </div>
           <p>
-            <span class="t-3003-c">In Worten: kann ich von
-              <span class="t-3003">./course1/wly/09/__parent.wly:276:13</span></span><span class="t-3003-c">$G_1$<span class="t-3003">./course1/wly/09/__parent.wly:276:37</span></span><span class="t-3003-c">
-              zu
-              <span class="t-3003">./course1/wly/09/__parent.wly:276:42</span></span><span class="t-3003-c">$G_2$<span class="t-3003">./course1/wly/09/__parent.wly:276:46</span></span><span class="t-3003-c">
-              gelangen, indem ich<span class="t-3003">./course1/wly/09/__parent.wly:276:51</span></span>
-            <span class="t-3003-c">die Knoten einfach umbenenne?<span class="t-3003">./course1/wly/09/__parent.wly:277:13</span></span>
+            In Worten: kann ich von $G_1$ zu $G_2$ gelangen,
+            indem ich die Knoten einfach umbenenne?
           </p>
         </li>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Factoring<span class="t-3003">./course1/wly/09/__parent.wly:280:14</span></span></span><span class="t-3003-c">: Gegeben eine natürliche Zahl in<span class="t-3003">./course1/wly/09/__parent.wly:280:28</span></span>
-            <span class="t-3003-c">Binärcodierung
-              <span class="t-3003">./course1/wly/09/__parent.wly:281:13</span></span><span class="nowrap"><span class="t-3003-c">$x \in \{0,1\}^n$<span class="t-3003">./course1/wly/09/__parent.wly:281:28</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/__parent.wly:281:45</span></span></span><span class="t-3003-c">
-              finde ihre<span class="t-3003">./course1/wly/09/__parent.wly:281:45</span></span>
-            <span class="t-3003-c">Primfaktorzerlegung. Beachten Sie, dass die oben erwähnten<span class="t-3003">./course1/wly/09/__parent.wly:282:13</span></span>
-            <span class="t-3003-c">Algorithmen für<span class="t-3003">./course1/wly/09/__parent.wly:283:13</span></span><span class="sc"><span class="t-3003-c">Primes<span class="t-3003">./course1/wly/09/__parent.wly:283:29</span></span></span><span class="t-3003-c">, also Miller-Rabin-Test und<span class="t-3003">./course1/wly/09/__parent.wly:283:40</span></span>
-            <span class="t-3003-c">Agrawal–Kayal–Saxena-Test, im Falle einer Antwort
-              <span class="t-3003">./course1/wly/09/__parent.wly:284:13</span></span><i><span class="t-3003-c">Nein,<span class="t-3003">./course1/wly/09/__parent.wly:284:64</span></span>
-              <span class="t-3003-c">ist keine Primzahl<span class="t-3003">./course1/wly/09/__parent.wly:285:13</span></span></i><span class="t-3003-c">
-              uns nicht eine Faktorisierung der Zahl<span class="t-3003">./course1/wly/09/__parent.wly:285:32</span></span>
-            <span class="t-3003-c">ausgeben, sondern eben nur ein
-              <span class="t-3003">./course1/wly/09/__parent.wly:286:13</span></span><span class="nowrap"><i><span class="t-3003-c">Nein<span class="t-3003">./course1/wly/09/__parent.wly:286:45</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/__parent.wly:286:50</span></span></span>
+            <span class="sc">Factoring</span>: Gegeben eine natürliche Zahl in
+            Binärcodierung
+            <span class="nowrap">$x \in \{0,1\}^n$,</span>
+            finde ihre
+            Primfaktorzerlegung. Beachten Sie, dass die oben
+            erwähnten Algorithmen für<span class="sc">Primes</span>, also
+            Miller-Rabin-Test und Agrawal–Kayal–Saxena-Test, im
+            Falle einer Antwort
+            <i>Nein, ist keine Primzahl</i>
+            uns
+            nicht eine Faktorisierung der Zahl ausgeben, sondern
+            eben nur ein
+            <span class="nowrap"><i>Nein</i>.</span>
           </p>
         </li>
         <li>
           <p>
-            <span class="sc"><span class="t-3003-c">Go<span class="t-3003">./course1/wly/09/__parent.wly:289:14</span></span></span><span class="t-3003-c">: gegeben eine Spielposition auf einem<span class="t-3003">./course1/wly/09/__parent.wly:289:21</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:290:13</span></span><span class="nowrap"><span class="t-3003-c">$n \times n$<span class="t-3003">./course1/wly/09/__parent.wly:290:13</span></span><span class="t-3003-c">-Gobrett<span class="t-3003">./course1/wly/09/__parent.wly:290:25</span></span></span><span class="t-3003-c">
-              (siehe<span class="t-3003">./course1/wly/09/__parent.wly:290:25</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/09/__parent.wly:291:13</span></span><a href="https://de.wikipedia.org/wiki/Go_(Spiel)"><span class="t-3003-c">Go<span class="t-3003">./course1/wly/09/__parent.wly:291:14</span></span></a><span class="t-3003-c">), kann Weiß<span class="t-3003">./course1/wly/09/__parent.wly:291:59</span></span>
-            <span class="t-3003-c">einen Sieg erzwingen?<span class="t-3003">./course1/wly/09/__parent.wly:292:13</span></span>
+            <span class="sc">Go</span>: gegeben eine Spielposition auf einem
+            <span class="nowrap">$n \times n$-Gobrett</span>
+            (siehe
+            <a href="https://de.wikipedia.org/wiki/Go_(Spiel)">Go</a>), kann
+            Weiß einen Sieg erzwingen?
           </p>
         </li>
       </ol>

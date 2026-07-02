@@ -53,20 +53,17 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">8.6&ensp;Unentscheidbarkeit<span class="t-3003">./course1/wly/08/06-undecidability.wly:2:11</span></span>
+        8.6&ensp;Unentscheidbarkeit
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Im vorherigen Teilkapitel haben wir die
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:5:5</span></span><i><span class="t-3003-c">universelle<span class="t-3003">./course1/wly/08/06-undecidability.wly:5:46</span></span>
-        <span class="t-3003-c">Turingmaschine<span class="t-3003">./course1/wly/08/06-undecidability.wly:6:5</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:6:20</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/06-undecidability.wly:6:21</span></span><span class="t-3003-c">
-        konstruiert, die eine andere<span class="t-3003">./course1/wly/08/06-undecidability.wly:6:24</span></span>
-      <span class="t-3003-c">Turingmaschine, deren Codierung und Inputwort sie als Input<span class="t-3003">./course1/wly/08/06-undecidability.wly:7:5</span></span>
-      <span class="t-3003-c">gegeben hat, simulieren kann. Technisch gesprochen:
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:8:5</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/06-undecidability.wly:8:57</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:8:60</span></span>
-      <span class="t-3003-c">akzeptiert die Sprache<span class="t-3003">./course1/wly/08/06-undecidability.wly:9:5</span></span>
+      Im vorherigen Teilkapitel haben wir die
+      <i>universelle
+        Turingmaschine</i>
+      $U$ konstruiert, die eine andere
+      Turingmaschine, deren Codierung und Inputwort sie als
+      Input gegeben hat, simulieren kann. Technisch
+      gesprochen: $U$ akzeptiert die Sprache
     </p>
     <div
       id="_51_h.a.i_"
@@ -77,235 +74,141 @@
       \{ c w \ | \ c = \enc(M) \textnormal{ und $M$ akzeptiert $w$} \} \ .
       \tag{11}
       \end{align}
-      $$<span class="t-3003">./course1/wly/08/06-undecidability.wly:11:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Allerdings: wenn
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:16:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/06-undecidability.wly:16:22</span></span><span class="t-3003-c">
-        auf
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:16:25</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/08/06-undecidability.wly:16:30</span></span><span class="t-3003-c">
-        nicht terminiert, dann<span class="t-3003">./course1/wly/08/06-undecidability.wly:16:33</span></span>
-      <span class="t-3003-c">terminiert
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:17:5</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/06-undecidability.wly:17:16</span></span><span class="t-3003-c">
-        auf
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:17:19</span></span><span class="t-3003-c">$\enc(M)x$<span class="t-3003">./course1/wly/08/06-undecidability.wly:17:24</span></span><span class="t-3003-c">
-        auch nicht.
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:17:34</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/06-undecidability.wly:17:47</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:17:50</span></span><i><span class="t-3003-c">akzeptiert<span class="t-3003">./course1/wly/08/06-undecidability.wly:17:52</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:17:63</span></span>
-      <span class="t-3003-c">die Sprache also,
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:18:5</span></span><i><span class="t-3003-c">entscheidet<span class="t-3003">./course1/wly/08/06-undecidability.wly:18:24</span></span></i><span class="t-3003-c">
-        sie aber nicht. Wäre es<span class="t-3003">./course1/wly/08/06-undecidability.wly:18:36</span></span>
-      <span class="t-3003-c">nicht schön, eine Turingmaschine zu haben, die diese<span class="t-3003">./course1/wly/08/06-undecidability.wly:19:5</span></span>
-      <span class="t-3003-c">Sprache entscheidet? Dann könnten wir jede Turingmaschine<span class="t-3003">./course1/wly/08/06-undecidability.wly:20:5</span></span>
-      <span class="t-3003-c">simulieren und gleichzeitig Endlosschleifen und eventuell<span class="t-3003">./course1/wly/08/06-undecidability.wly:21:5</span></span>
-      <span class="t-3003-c">ganz allgemein "Programmierfehler" vorhersagen und<span class="t-3003">./course1/wly/08/06-undecidability.wly:22:5</span></span>
-      <span class="t-3003-c">abfangen. Wir werden zeigen, dass dies leider
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:23:5</span></span><i><span class="t-3003-c">nicht<span class="t-3003">./course1/wly/08/06-undecidability.wly:23:52</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:23:58</span></span>
-      <span class="t-3003-c">möglich ist. In der Literatur ist dies als die<span class="t-3003">./course1/wly/08/06-undecidability.wly:24:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:25:5</span></span><i><span class="t-3003-c">Unentscheidbarkeit des Halteproblems<span class="t-3003">./course1/wly/08/06-undecidability.wly:25:6</span></span></i><span class="t-3003-c">
-        (englisch<span class="t-3003">./course1/wly/08/06-undecidability.wly:25:43</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:26:5</span></span><i><span class="t-3003-c">undecidability of the Halting problem<span class="t-3003">./course1/wly/08/06-undecidability.wly:26:6</span></span></i><span class="t-3003-c">
-        bekannt). Als<span class="t-3003">./course1/wly/08/06-undecidability.wly:26:44</span></span>
-      <span class="t-3003-c">vorbereitenden Schritt schauen wir uns kurz die<span class="t-3003">./course1/wly/08/06-undecidability.wly:27:5</span></span>
-      <span class="t-3003-c">Codierungsfunktion nochmal genauer an. Wir bezeichnen mit<span class="t-3003">./course1/wly/08/06-undecidability.wly:28:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:29:5</span></span><span class="t-3003-c">$\tm_{\Sigma}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:29:5</span></span><span class="t-3003-c">
-        die Menge aller Turingmaschinen mit<span class="t-3003">./course1/wly/08/06-undecidability.wly:29:19</span></span>
-      <span class="t-3003-c">Inputalphabet
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:30:5</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/06-undecidability.wly:30:19</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/06-undecidability.wly:30:27</span></span></span><span class="t-3003-c">
-        Wir hatten die Codierungsfunktion<span class="t-3003">./course1/wly/08/06-undecidability.wly:30:27</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:31:5</span></span><span class="t-3003-c">$\enc: \tm_{\Sigma} \rightarrow \Lambda^*$<span class="t-3003">./course1/wly/08/06-undecidability.wly:31:5</span></span><span class="t-3003-c">
-        definiert, für<span class="t-3003">./course1/wly/08/06-undecidability.wly:31:47</span></span>
-      <span class="t-3003-c">das Codierungsalphabet
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:32:5</span></span><span class="nowrap"><span class="t-3003-c">$\Lambda := \writelambda$<span class="t-3003">./course1/wly/08/06-undecidability.wly:32:28</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/06-undecidability.wly:32:53</span></span></span><span class="t-3003-c">
-        In<span class="t-3003">./course1/wly/08/06-undecidability.wly:32:53</span></span>
-      <span class="t-3003-c">diesem Teilkapitel wird es nötig sein, die Turingmaschine<span class="t-3003">./course1/wly/08/06-undecidability.wly:33:5</span></span>
-      <span class="t-3003-c">über dem Alphabet
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:34:5</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/06-undecidability.wly:34:23</span></span><span class="t-3003-c">
-        selbst zu codieren. Dies ist<span class="t-3003">./course1/wly/08/06-undecidability.wly:34:31</span></span>
-      <span class="t-3003-c">nicht besonders schwierig, solange
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:35:5</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/06-undecidability.wly:35:40</span></span><span class="t-3003-c">
-        mindestens<span class="t-3003">./course1/wly/08/06-undecidability.wly:35:48</span></span>
-      <span class="t-3003-c">zwei Zeichen hat. Wenn z.B.
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:36:5</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/06-undecidability.wly:36:33</span></span><span class="t-3003-c">
-        die Zeichen
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:36:41</span></span><span class="t-3003-c">$0$<span class="t-3003">./course1/wly/08/06-undecidability.wly:36:54</span></span><span class="t-3003-c">
-        und<span class="t-3003">./course1/wly/08/06-undecidability.wly:36:57</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:37:5</span></span><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/08/06-undecidability.wly:37:5</span></span><span class="t-3003-c">
-        enthält, dann können wir alle Zeichen in
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:37:8</span></span><span class="t-3003-c">$\Lambda$<span class="t-3003">./course1/wly/08/06-undecidability.wly:37:50</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:37:59</span></span>
-      <span class="t-3003-c">wiederum als Strings in
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:38:5</span></span><span class="t-3003-c">$\Sigma^*$<span class="t-3003">./course1/wly/08/06-undecidability.wly:38:29</span></span><span class="t-3003-c">
-        codieren. Wir müssen<span class="t-3003">./course1/wly/08/06-undecidability.wly:38:39</span></span>
-      <span class="t-3003-c">hier nur vorsichtig sein, dass der Code
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:39:5</span></span><i><span class="t-3003-c">präfixfrei<span class="t-3003">./course1/wly/08/06-undecidability.wly:39:46</span></span></i><span class="t-3003-c">
-        ist.<span class="t-3003">./course1/wly/08/06-undecidability.wly:39:57</span></span>
-      <span class="t-3003-c">Wenn wir zum Beispiel naiv
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:40:5</span></span><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/08/06-undecidability.wly:40:32</span></span><span class="t-3003-c">
-        als
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:40:35</span></span><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/08/06-undecidability.wly:40:40</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:40:43</span></span><span class="t-3003-c">$0$<span class="t-3003">./course1/wly/08/06-undecidability.wly:40:48</span></span><span class="t-3003-c">
-        als
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:40:51</span></span><span class="t-3003-c">$0$<span class="t-3003">./course1/wly/08/06-undecidability.wly:40:56</span></span><span class="t-3003-c">
-        und<span class="t-3003">./course1/wly/08/06-undecidability.wly:40:59</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:41:5</span></span><span class="t-3003-c">$\texttt{#}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:41:5</span></span><span class="t-3003-c">
-        als
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:41:17</span></span><span class="t-3003-c">$01$<span class="t-3003">./course1/wly/08/06-undecidability.wly:41:22</span></span><span class="t-3003-c">
-        codieren, dann wissen wir nicht<span class="t-3003">./course1/wly/08/06-undecidability.wly:41:26</span></span>
-      <span class="t-3003-c">mehr, was mit dem Codewort
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:42:5</span></span><span class="t-3003-c">$01$<span class="t-3003">./course1/wly/08/06-undecidability.wly:42:32</span></span><span class="t-3003-c">
-        gemeint ist. Am<span class="t-3003">./course1/wly/08/06-undecidability.wly:42:36</span></span>
-      <span class="t-3003-c">einfachsten geht das mit einem
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:43:5</span></span><span class="nowrap"><i><span class="t-3003-c">Blockcode<span class="t-3003">./course1/wly/08/06-undecidability.wly:43:37</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/06-undecidability.wly:43:47</span></span></span><span class="t-3003-c">
-        in dem alle<span class="t-3003">./course1/wly/08/06-undecidability.wly:43:47</span></span>
-      <span class="t-3003-c">Codewörter die gleiche Länge
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:44:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/08/06-undecidability.wly:44:34</span></span><span class="t-3003-c">
-        haben, also<span class="t-3003">./course1/wly/08/06-undecidability.wly:44:37</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:45:5</span></span><span class="nowrap"><span class="t-3003-c">$\Lambda \rightarrow \{0,1\}^k$<span class="t-3003">./course1/wly/08/06-undecidability.wly:45:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/06-undecidability.wly:45:36</span></span></span><span class="t-3003-c">
-        Mit<span class="t-3003">./course1/wly/08/06-undecidability.wly:45:36</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:46:5</span></span><span class="t-3003-c">$k = \ceil{\log_2 |\Lambda|}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:46:5</span></span><span class="t-3003-c">
-        ist das kein Problem. Unsere<span class="t-3003">./course1/wly/08/06-undecidability.wly:46:34</span></span>
-      <span class="t-3003-c">"neue" Codierungsfunktion
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:47:5</span></span><span class="t-3003-c">$\enc$<span class="t-3003">./course1/wly/08/06-undecidability.wly:47:31</span></span><span class="t-3003-c">
-        ist nun also<span class="t-3003">./course1/wly/08/06-undecidability.wly:47:37</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:48:5</span></span><span class="nowrap"><span class="t-3003-c">$\enc: \tm_{\Sigma} \rightarrow \Sigma^*$<span class="t-3003">./course1/wly/08/06-undecidability.wly:48:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/06-undecidability.wly:48:46</span></span></span><span class="t-3003-c">
-        Wir definieren<span class="t-3003">./course1/wly/08/06-undecidability.wly:48:46</span></span>
-      <span class="t-3003-c">nun die Haltesprache
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:49:5</span></span><span class="nowrap"><span class="t-3003-c">$\halt \in \Sigma^*$<span class="t-3003">./course1/wly/08/06-undecidability.wly:49:26</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/08/06-undecidability.wly:49:46</span></span></span>
+      Allerdings: wenn $M$ auf $x$ nicht terminiert, dann
+      terminiert $U$ auf $\enc(M)x$ auch nicht. $U$
+      <i>akzeptiert</i>
+      die Sprache also,
+      <i>entscheidet</i>
+      sie aber
+      nicht. Wäre es nicht schön, eine Turingmaschine zu
+      haben, die diese Sprache entscheidet? Dann könnten wir
+      jede Turingmaschine simulieren und gleichzeitig
+      Endlosschleifen und eventuell ganz allgemein
+      "Programmierfehler" vorhersagen und abfangen. Wir
+      werden zeigen, dass dies leider
+      <i>nicht</i>
+      möglich ist.
+      In der Literatur ist dies als die
+      <i>Unentscheidbarkeit
+        des Halteproblems</i>
+      (englisch
+      <i>undecidability of the
+        Halting problem</i>
+      bekannt). Als vorbereitenden Schritt
+      schauen wir uns kurz die Codierungsfunktion nochmal
+      genauer an. Wir bezeichnen mit $\tm_{\Sigma}$ die
+      Menge aller Turingmaschinen mit Inputalphabet
+      <span class="nowrap">$\Sigma$.</span>
+      Wir hatten die Codierungsfunktion
+      $\enc: \tm_{\Sigma} \rightarrow \Lambda^*$ definiert,
+      für das Codierungsalphabet
+      <span class="nowrap">$\Lambda := \writelambda$.</span>
+      In diesem Teilkapitel wird es nötig sein, die
+      Turingmaschine über dem Alphabet $\Sigma$ selbst zu
+      codieren. Dies ist nicht besonders schwierig, solange
+      $\Sigma$ mindestens zwei Zeichen hat. Wenn z.B.
+      $\Sigma$ die Zeichen $0$ und $1$ enthält, dann können
+      wir alle Zeichen in $\Lambda$ wiederum als Strings in
+      $\Sigma^*$ codieren. Wir müssen hier nur vorsichtig
+      sein, dass der Code
+      <i>präfixfrei</i>
+      ist. Wenn wir zum
+      Beispiel naiv $1$ als $1$ und $0$ als $0$ und
+      $\texttt{#}$ als $01$ codieren, dann wissen wir nicht
+      mehr, was mit dem Codewort $01$ gemeint ist. Am
+      einfachsten geht das mit einem
+      <span class="nowrap"><i>Blockcode</i>,</span>
+      in dem
+      alle Codewörter die gleiche Länge $k$ haben, also
+      <span class="nowrap">$\Lambda \rightarrow \{0,1\}^k$.</span>
+      Mit
+      $k = \ceil{\log_2 |\Lambda|}$ ist das kein Problem.
+      Unsere "neue" Codierungsfunktion $\enc$ ist nun also
+      <span class="nowrap">$\enc: \tm_{\Sigma} \rightarrow \Sigma^*$.</span>
+      Wir
+      definieren nun die Haltesprache
+      <span class="nowrap">$\halt \in \Sigma^*$:</span>
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \halt := \{ \enc(M) w \ | \ w \in \Sigma^* \textnormal{ und } M \textnormal{ akzeptiert } w\} \ .
       \end{align*}
-      $$<span class="t-3003">./course1/wly/08/06-undecidability.wly:51:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Da
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:55:5</span></span><span class="t-3003-c">$\enc$<span class="t-3003">./course1/wly/08/06-undecidability.wly:55:8</span></span><span class="t-3003-c">
-        präfixfrei ist, können wir erkennen, wo<span class="t-3003">./course1/wly/08/06-undecidability.wly:55:14</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:56:5</span></span><span class="t-3003-c">$\enc(\texttt{;})$<span class="t-3003">./course1/wly/08/06-undecidability.wly:56:5</span></span><span class="t-3003-c">
-        steht, wo also
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:56:23</span></span><span class="t-3003-c">$\enc(M)$<span class="t-3003">./course1/wly/08/06-undecidability.wly:56:39</span></span><span class="t-3003-c">
-        aufhört und
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:56:48</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/08/06-undecidability.wly:56:61</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:56:64</span></span>
-      <span class="t-3003-c">beginnt. Wir können die universelle Turingmaschine
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:57:5</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/06-undecidability.wly:57:56</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:57:59</span></span>
-      <span class="t-3003-c">leicht abwandeln, dass sie
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:58:5</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:58:32</span></span><span class="t-3003-c">
-        akzeptiert; wir müssen<span class="t-3003">./course1/wly/08/06-undecidability.wly:58:39</span></span>
-      <span class="t-3003-c">nur einen Decodierungsschritt vorausschicken, der die neue<span class="t-3003">./course1/wly/08/06-undecidability.wly:59:5</span></span>
-      <span class="t-3003-c">Codierung
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:60:5</span></span><span class="t-3003-c">$\enc(M) \in \Sigma^*$<span class="t-3003">./course1/wly/08/06-undecidability.wly:60:15</span></span><span class="t-3003-c">
-        in unsere "alte" in<span class="t-3003">./course1/wly/08/06-undecidability.wly:60:37</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:61:5</span></span><span class="t-3003-c">$\Lambda^*$<span class="t-3003">./course1/wly/08/06-undecidability.wly:61:5</span></span><span class="t-3003-c">
-        übersetzt. Wir zeigen nun, dass
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:61:16</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:61:49</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:61:56</span></span>
-      <span class="t-3003-c">unentscheidbar ist, dass es also keine Möglichkeit gibt,<span class="t-3003">./course1/wly/08/06-undecidability.wly:62:5</span></span>
-      <span class="t-3003-c">das Nichtterminieren einer Maschine
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:63:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/06-undecidability.wly:63:41</span></span><span class="t-3003-c">
-        auf Eingabe
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:63:44</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/08/06-undecidability.wly:63:57</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:63:60</span></span>
-      <span class="t-3003-c">vorauszusehen und abzufangen.<span class="t-3003">./course1/wly/08/06-undecidability.wly:64:5</span></span>
+      Da $\enc$ präfixfrei ist, können wir erkennen, wo
+      $\enc(\texttt{;})$ steht, wo also $\enc(M)$ aufhört
+      und $w$ beginnt. Wir können die universelle
+      Turingmaschine $U$ leicht abwandeln, dass sie $\halt$
+      akzeptiert; wir müssen nur einen Decodierungsschritt
+      vorausschicken, der die neue Codierung
+      $\enc(M) \in \Sigma^*$ in unsere "alte" in $\Lambda^*$
+      übersetzt. Wir zeigen nun, dass $\halt$
+      unentscheidbar ist, dass es also keine Möglichkeit
+      gibt, das Nichtterminieren einer Maschine $M$ auf
+      Eingabe $x$ vorauszusehen und abzufangen.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 8.6.1 (Unentscheidbarkeit des Halteproblems).<span class="t-3003">./course1/wly/08/06-undecidability.wly:66:5</span></span></b><span class="t-3003-c">
-          Die Sprache<span class="t-3003">./course1/wly/08/06-undecidability.wly:67:50</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:68:9</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:68:9</span></span><span class="t-3003-c">
-          ist unentscheidbar.<span class="t-3003">./course1/wly/08/06-undecidability.wly:68:16</span></span>
+        <b>Theorem 8.6.1 (Unentscheidbarkeit des Halteproblems).</b>
+        Die Sprache
+        $\halt$ ist unentscheidbar.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Ich gebe erst einmal einen kurzen und knappen<span class="t-3003">./course1/wly/08/06-undecidability.wly:70:5</span></span>
-      <span class="t-3003-c">Widerspruchsbeweis. Falls das ihnen zu schnell ging, lesen<span class="t-3003">./course1/wly/08/06-undecidability.wly:71:5</span></span>
-      <span class="t-3003-c">Sie den zweiten Beweis, in dem ich mir mehr Zeit nehme.<span class="t-3003">./course1/wly/08/06-undecidability.wly:72:5</span></span>
+      Ich gebe erst einmal einen kurzen und knappen
+      Widerspruchsbeweis. Falls das ihnen zu schnell ging,
+      lesen Sie den zweiten Beweis, in dem ich mir mehr Zeit
+      nehme.
     </p>
     <div class="well highlight out">
       <p>
-        <b><span class="t-3003-c">Kurzer Beweis per Wiederspruch.<span class="t-3003">./course1/wly/08/06-undecidability.wly:75:10</span></span></b><span class="t-3003-c">
-          Nehmen wir an, es gäbe<span class="t-3003">./course1/wly/08/06-undecidability.wly:75:42</span></span>
-        <span class="t-3003-c">eine Maschine
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:76:9</span></span><span class="nowrap"><span class="t-3003-c">$H$<span class="t-3003">./course1/wly/08/06-undecidability.wly:76:23</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/06-undecidability.wly:76:26</span></span></span><span class="t-3003-c">
-          die
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:76:26</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:76:32</span></span><span class="t-3003-c">
-          entscheidet. Dann wäre auch<span class="t-3003">./course1/wly/08/06-undecidability.wly:76:39</span></span>
-        <span class="t-3003-c">die Sprache<span class="t-3003">./course1/wly/08/06-undecidability.wly:77:9</span></span>
+        <b>Kurzer Beweis per Wiederspruch.</b>
+        Nehmen wir an, es
+        gäbe eine Maschine
+        <span class="nowrap">$H$,</span>
+        die $\halt$ entscheidet. Dann
+        wäre auch die Sprache
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \diag := \{\enc(M) \ | \ \textnormal{$M$ akzeptiert $\enc(M)$} \}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/08/06-undecidability.wly:79:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">entscheidbar. Warum? Wir können einfach schauen, ob das<span class="t-3003">./course1/wly/08/06-undecidability.wly:83:9</span></span>
-        <span class="t-3003-c">Eingabewort
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:84:9</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/08/06-undecidability.wly:84:21</span></span><span class="t-3003-c">
-          die Form
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:84:24</span></span><span class="t-3003-c">$\enc(M)$<span class="t-3003">./course1/wly/08/06-undecidability.wly:84:34</span></span><span class="t-3003-c">
-          hat und in diesem Fall<span class="t-3003">./course1/wly/08/06-undecidability.wly:84:43</span></span>
-        <span class="t-3003-c">das Wort
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:85:9</span></span><span class="t-3003-c">$\enc(M) \enc(M)$<span class="t-3003">./course1/wly/08/06-undecidability.wly:85:18</span></span><span class="t-3003-c">
-          der Maschine
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:85:35</span></span><span class="t-3003-c">$H$<span class="t-3003">./course1/wly/08/06-undecidability.wly:85:49</span></span><span class="t-3003-c">
-          übergeben. Die<span class="t-3003">./course1/wly/08/06-undecidability.wly:85:52</span></span>
-        <span class="t-3003-c">Sprache
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:86:9</span></span><span class="t-3003-c">$\diag$<span class="t-3003">./course1/wly/08/06-undecidability.wly:86:17</span></span><span class="t-3003-c">
-          ist, salopp ausgedrückt, die Menge aller<span class="t-3003">./course1/wly/08/06-undecidability.wly:86:24</span></span>
-        <span class="t-3003-c">Turingmaschinen, die ihre eigene Codierung als Inputwort<span class="t-3003">./course1/wly/08/06-undecidability.wly:87:9</span></span>
-        <span class="t-3003-c">akzeptieren. Ebenso wäre auch<span class="t-3003">./course1/wly/08/06-undecidability.wly:88:9</span></span>
+        entscheidbar. Warum? Wir können einfach schauen, ob
+        das Eingabewort $c$ die Form $\enc(M)$ hat und in
+        diesem Fall das Wort $\enc(M) \enc(M)$ der Maschine
+        $H$ übergeben. Die Sprache $\diag$ ist, salopp
+        ausgedrückt, die Menge aller Turingmaschinen, die ihre
+        eigene Codierung als Inputwort akzeptieren. Ebenso
+        wäre auch
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \negdiag := \{\enc(M) \ | \ \textnormal{$M$ akzeptiert $\enc(M)$ nicht}\}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/08/06-undecidability.wly:90:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">entscheidbar; wir müssen ja nur
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:94:9</span></span><span class="t-3003-c">$\diag$<span class="t-3003">./course1/wly/08/06-undecidability.wly:94:41</span></span><span class="t-3003-c">
-          entscheiden und<span class="t-3003">./course1/wly/08/06-undecidability.wly:94:48</span></span>
-        <span class="t-3003-c">dann das Ergebnis negieren.
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:95:9</span></span><span class="t-3003-c">$\negdiag$<span class="t-3003">./course1/wly/08/06-undecidability.wly:95:37</span></span><span class="t-3003-c">
-          ist sozusagen die<span class="t-3003">./course1/wly/08/06-undecidability.wly:95:47</span></span>
-        <span class="t-3003-c">Menge aller Turingmaschinen, die
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:96:9</span></span><i><span class="t-3003-c">nicht<span class="t-3003">./course1/wly/08/06-undecidability.wly:96:43</span></span></i><span class="t-3003-c">
-          ihre eigene<span class="t-3003">./course1/wly/08/06-undecidability.wly:96:49</span></span>
-        <span class="t-3003-c">Codierung als Inputwort akzeptieren. Da
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:97:9</span></span><span class="t-3003-c">$\negdiag$<span class="t-3003">./course1/wly/08/06-undecidability.wly:97:49</span></span><span class="t-3003-c">
-          nach<span class="t-3003">./course1/wly/08/06-undecidability.wly:97:59</span></span>
-        <span class="t-3003-c">Annahme entscheidbar ist, gibt es eine Maschine
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:98:9</span></span><span class="nowrap"><span class="t-3003-c">$D$<span class="t-3003">./course1/wly/08/06-undecidability.wly:98:57</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/06-undecidability.wly:98:60</span></span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/08/06-undecidability.wly:98:60</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:99:9</span></span><span class="t-3003-c">$\negdiag$<span class="t-3003">./course1/wly/08/06-undecidability.wly:99:9</span></span><span class="t-3003-c">
-          entscheidet. Wir fragen uns jetzt: gehört<span class="t-3003">./course1/wly/08/06-undecidability.wly:99:19</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:100:9</span></span><span class="t-3003-c">$\enc(D)$<span class="t-3003">./course1/wly/08/06-undecidability.wly:100:9</span></span><span class="t-3003-c">
-          selbst zu
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:100:18</span></span><span class="nowrap"><span class="t-3003-c">$\negdiag$<span class="t-3003">./course1/wly/08/06-undecidability.wly:100:29</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/08/06-undecidability.wly:100:39</span></span></span>
+        entscheidbar; wir müssen ja nur $\diag$ entscheiden
+        und dann das Ergebnis negieren. $\negdiag$ ist
+        sozusagen die Menge aller Turingmaschinen, die
+        <i>nicht</i>
+        ihre eigene Codierung als Inputwort akzeptieren. Da
+        $\negdiag$ nach Annahme entscheidbar ist, gibt es
+        eine Maschine
+        <span class="nowrap">$D$,</span>
+        die $\negdiag$ entscheidet. Wir
+        fragen uns jetzt: gehört $\enc(D)$ selbst zu
+        <span class="nowrap">$\negdiag$?</span>
       </p>
       <div class="math-block">
         $$
@@ -316,280 +219,204 @@
         \\
         &amp;\Longleftrightarrow \enc(D) \not \in \negdiag \tag{nach Annahme $L(D) = \negdiag$}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/08/06-undecidability.wly:102:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Also<span class="t-3003">./course1/wly/08/06-undecidability.wly:110:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:111:9</span></span><span class="nowrap"><span class="t-3003-c">$\enc(D) \in \negdiag \Longleftrightarrow \enc(M) \not \in
-            \negdiag$<span class="t-3003">./course1/wly/08/06-undecidability.wly:111:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/06-undecidability.wly:112:18</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:112:18</span></span>
-        <span class="t-3003-c">ein Widerspruch. Unsere Annahme, dass
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:113:9</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:113:47</span></span><span class="t-3003-c">
-          entscheidbar<span class="t-3003">./course1/wly/08/06-undecidability.wly:113:54</span></span>
-        <span class="t-3003-c">sei, ist also falsch.<span class="t-3003">./course1/wly/08/06-undecidability.wly:114:9</span></span>
+        Also
+        <span class="nowrap">$\enc(D) \in \negdiag \Longleftrightarrow \enc(M)
+          \not \in \negdiag$,</span>
+        ein Widerspruch. Unsere Annahme, dass $\halt$
+        entscheidbar sei, ist also falsch.
       </p>
     </div>
     <div class="well highlight out">
       <p>
-        <b><span class="t-3003-c">Ausführlicher Beweis.<span class="t-3003">./course1/wly/08/06-undecidability.wly:117:10</span></span></b><span class="t-3003-c">
-          Ich finde Beweise durch<span class="t-3003">./course1/wly/08/06-undecidability.wly:117:32</span></span>
-        <span class="t-3003-c">Widerspruch immer etwas unintuitiv, weil man die ganze Zeit<span class="t-3003">./course1/wly/08/06-undecidability.wly:118:9</span></span>
-        <span class="t-3003-c">im Konjunktiv argumentieren muss. Daher hier ein Beweis<span class="t-3003">./course1/wly/08/06-undecidability.wly:119:9</span></span>
-        <span class="t-3003-c">ohne Widerspruch. Wir zeigen, dass
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:120:9</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:120:44</span></span><span class="t-3003-c">
-          unentscheidbar<span class="t-3003">./course1/wly/08/06-undecidability.wly:120:51</span></span>
-        <span class="t-3003-c">ist, indem wir für eine beliebige Turingmaschine
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:121:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/06-undecidability.wly:121:58</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:121:61</span></span>
-        <span class="t-3003-c">zeigen, dass sie
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:122:9</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:122:26</span></span><span class="t-3003-c">
-          nicht entscheidet, indem wir<span class="t-3003">./course1/wly/08/06-undecidability.wly:122:33</span></span>
-        <span class="t-3003-c">nämlich ein Eingabewort
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:123:9</span></span><span class="t-3003-c">$z \in \Sigma^*$<span class="t-3003">./course1/wly/08/06-undecidability.wly:123:33</span></span><span class="t-3003-c">
-          konstruieren, auf<span class="t-3003">./course1/wly/08/06-undecidability.wly:123:49</span></span>
-        <span class="t-3003-c">dem
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:124:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/06-undecidability.wly:124:13</span></span><span class="t-3003-c">
-          scheitert, also entweder<span class="t-3003">./course1/wly/08/06-undecidability.wly:124:16</span></span>
+        <b>Ausführlicher Beweis.</b>
+        Ich finde Beweise durch
+        Widerspruch immer etwas unintuitiv, weil man die ganze
+        Zeit im Konjunktiv argumentieren muss. Daher hier ein
+        Beweis ohne Widerspruch. Wir zeigen, dass $\halt$
+        unentscheidbar ist, indem wir für eine beliebige
+        Turingmaschine $M$ zeigen, dass sie $\halt$ nicht
+        entscheidet, indem wir nämlich ein Eingabewort
+        $z \in \Sigma^*$ konstruieren, auf dem $M$ scheitert,
+        also entweder
       </p>
       <ol>
         <li>
           <p>
-            <span class="t-3003-c">$f_H(z) = \texttt{accept}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:129:17</span></span><span class="t-3003-c">
-              aber
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:129:43</span></span><span class="nowrap"><span class="t-3003-c">$z \not \in \halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:129:49</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/06-undecidability.wly:129:67</span></span></span><span class="t-3003-c">
-              oder<span class="t-3003">./course1/wly/08/06-undecidability.wly:129:67</span></span>
+            $f_H(z) = \texttt{accept}$ aber
+            <span class="nowrap">$z \not \in \halt$,</span>
+            oder
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">$f_H(z) = \texttt{reject}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:133:17</span></span><span class="t-3003-c">
-              aber
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:133:43</span></span><span class="t-3003-c">$z \in \halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:133:49</span></span><span class="t-3003-c">
-              , oder<span class="t-3003">./course1/wly/08/06-undecidability.wly:133:62</span></span>
+            $f_H(z) = \texttt{reject}$ aber $z \in \halt$ , oder
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><span class="t-3003-c">$f_H(z) = \texttt{undefined}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:137:17</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/06-undecidability.wly:137:46</span></span></span><span class="t-3003-c">
-              d.h.
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:137:46</span></span><span class="t-3003-c">$H$<span class="t-3003">./course1/wly/08/06-undecidability.wly:137:53</span></span><span class="t-3003-c">
-              terminiert auf<span class="t-3003">./course1/wly/08/06-undecidability.wly:137:56</span></span>
-            <span class="t-3003-c">Eingabewort
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:138:17</span></span><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/08/06-undecidability.wly:138:29</span></span><span class="t-3003-c">
-              nicht.<span class="t-3003">./course1/wly/08/06-undecidability.wly:138:32</span></span>
+            <span class="nowrap">$f_H(z) = \texttt{undefined}$,</span>
+            d.h. $H$ terminiert
+            auf Eingabewort $z$ nicht.
           </p>
         </li>
       </ol>
       <p>
-        <span class="t-3003-c">Wir setzen nun
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:140:9</span></span><span class="t-3003-c">$y := \enc(D)$<span class="t-3003">./course1/wly/08/06-undecidability.wly:140:24</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:140:38</span></span><span class="nowrap"><span class="t-3003-c">$z := yy$<span class="t-3003">./course1/wly/08/06-undecidability.wly:140:43</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/06-undecidability.wly:140:52</span></span></span><span class="t-3003-c">
-          wobei
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:140:52</span></span><span class="t-3003-c">$D$<span class="t-3003">./course1/wly/08/06-undecidability.wly:140:60</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:140:63</span></span>
-        <span class="t-3003-c">eine neue Turingmaschine ist, die wir auf Basis von
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:141:9</span></span><span class="t-3003-c">$H$<span class="t-3003">./course1/wly/08/06-undecidability.wly:141:61</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:141:64</span></span>
-        <span class="t-3003-c">konstruieren werden. Also noch einmal. Für eine beliebige,<span class="t-3003">./course1/wly/08/06-undecidability.wly:142:9</span></span>
-        <span class="t-3003-c">uns gegebene Turingmaschine
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:143:9</span></span><span class="nowrap"><span class="t-3003-c">$H$<span class="t-3003">./course1/wly/08/06-undecidability.wly:143:37</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/06-undecidability.wly:143:40</span></span></span><span class="t-3003-c">
-          werden wir eine neue<span class="t-3003">./course1/wly/08/06-undecidability.wly:143:40</span></span>
-        <span class="t-3003-c">Turingmaschine
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:144:9</span></span><span class="t-3003-c">$D$<span class="t-3003">./course1/wly/08/06-undecidability.wly:144:24</span></span><span class="t-3003-c">
-          bauen und sie codieren als<span class="t-3003">./course1/wly/08/06-undecidability.wly:144:27</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:145:9</span></span><span class="nowrap"><span class="t-3003-c">$y := \enc(D)$<span class="t-3003">./course1/wly/08/06-undecidability.wly:145:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/06-undecidability.wly:145:23</span></span></span><span class="t-3003-c">
-          so dass entweder<span class="t-3003">./course1/wly/08/06-undecidability.wly:145:23</span></span>
+        Wir setzen nun $y := \enc(D)$ und
+        <span class="nowrap">$z := yy$,</span>
+        wobei $D$
+        eine neue Turingmaschine ist, die wir auf Basis von
+        $H$ konstruieren werden. Also noch einmal. Für eine
+        beliebige, uns gegebene Turingmaschine
+        <span class="nowrap">$H$,</span>
+        werden
+        wir eine neue Turingmaschine $D$ bauen und sie
+        codieren als
+        <span class="nowrap">$y := \enc(D)$,</span>
+        so dass entweder
       </p>
       <ol>
         <li>
           <p>
-            <span class="t-3003-c">$f_H(yy) = \texttt{accept}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:150:17</span></span><span class="t-3003-c">
-              aber
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:150:44</span></span><span class="nowrap"><span class="t-3003-c">$yy \not \in \halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:150:50</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/06-undecidability.wly:150:69</span></span></span><span class="t-3003-c">
-              oder<span class="t-3003">./course1/wly/08/06-undecidability.wly:150:69</span></span>
+            $f_H(yy) = \texttt{accept}$ aber
+            <span class="nowrap">$yy \not \in \halt$,</span>
+            oder
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">$f_H(yy) = \texttt{reject}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:154:17</span></span><span class="t-3003-c">
-              aber
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:154:44</span></span><span class="nowrap"><span class="t-3003-c">$yy \in \halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:154:50</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/06-undecidability.wly:154:64</span></span></span><span class="t-3003-c">
-              oder<span class="t-3003">./course1/wly/08/06-undecidability.wly:154:64</span></span>
+            $f_H(yy) = \texttt{reject}$ aber
+            <span class="nowrap">$yy \in \halt$,</span>
+            oder
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><span class="t-3003-c">$f_H(yy) = \texttt{undefined}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:158:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/06-undecidability.wly:158:47</span></span></span>
+            <span class="nowrap">$f_H(yy) = \texttt{undefined}$.</span>
           </p>
         </li>
       </ol>
       <p>
-        <span class="t-3003-c">Wenn uns dies gelingt, so haben wir gezeigt, dass
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:160:9</span></span><span class="t-3003-c">$H$<span class="t-3003">./course1/wly/08/06-undecidability.wly:160:59</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:160:62</span></span>
-        <span class="t-3003-c">nicht die Sprache
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:161:9</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:161:27</span></span><span class="t-3003-c">
-          entscheidet: im Fall 3<span class="t-3003">./course1/wly/08/06-undecidability.wly:161:34</span></span>
-        <span class="t-3003-c">terminiert
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:162:9</span></span><span class="t-3003-c">$H$<span class="t-3003">./course1/wly/08/06-undecidability.wly:162:20</span></span><span class="t-3003-c">
-          ja nicht einmal; in Fall 1 und 2 liefert
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:162:23</span></span><span class="t-3003-c">$H$<span class="t-3003">./course1/wly/08/06-undecidability.wly:162:65</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:162:68</span></span>
-        <span class="t-3003-c">zwar eine Antwort, aber die falsche. Der Code für
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:163:9</span></span><span class="t-3003-c">$D$<span class="t-3003">./course1/wly/08/06-undecidability.wly:163:59</span></span><span class="t-3003-c">
-          ist<span class="t-3003">./course1/wly/08/06-undecidability.wly:163:62</span></span>
-        <span class="t-3003-c">sehr einfach:<span class="t-3003">./course1/wly/08/06-undecidability.wly:164:9</span></span>
+        Wenn uns dies gelingt, so haben wir gezeigt, dass $H$
+        nicht die Sprache $\halt$ entscheidet: im Fall 3
+        terminiert $H$ ja nicht einmal; in Fall 1 und 2
+        liefert $H$ zwar eine Antwort, aber die falsche. Der
+        Code für $D$ ist sehr einfach:
       </p>
 <pre class="listing">
-<span class="listing-bol"></span><span class="t-3003-c">def D(x):<span class="t-3003">./course1/wly/08/06-undecidability.wly:167:9</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    if H(xx) == accept then<span class="t-3003">./course1/wly/08/06-undecidability.wly:168:9</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    reject<span class="t-3003">./course1/wly/08/06-undecidability.wly:169:9</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    else<span class="t-3003">./course1/wly/08/06-undecidability.wly:170:9</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    accept<span class="t-3003">./course1/wly/08/06-undecidability.wly:171:9</span></span>
+<span class="listing-bol"></span>def D(x):
+<span class="listing-bol"></span>    if H(xx) == accept then
+<span class="listing-bol"></span>    reject
+<span class="listing-bol"></span>    else
+<span class="listing-bol"></span>    accept
 </pre>
       <p>
-        <span class="t-3003-c">Zur Erinnerung:
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:174:9</span></span><span class="nowrap"><span class="t-3003-c">$y := \enc(D)$<span class="t-3003">./course1/wly/08/06-undecidability.wly:174:25</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/06-undecidability.wly:174:39</span></span></span><span class="t-3003-c">
-          Wir unterscheiden drei<span class="t-3003">./course1/wly/08/06-undecidability.wly:174:39</span></span>
-        <span class="t-3003-c">Fälle.<span class="t-3003">./course1/wly/08/06-undecidability.wly:175:9</span></span>
+        Zur Erinnerung:
+        <span class="nowrap">$y := \enc(D)$.</span>
+        Wir unterscheiden
+        drei Fälle.
       </p>
       <ul>
         <li>
           <p>
-            <span class="nowrap"><span class="t-3003-c">$H(yy) = \texttt{reject}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:180:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/06-undecidability.wly:180:42</span></span></span><span class="t-3003-c">
-              Dann geht der Aufruf von
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:180:42</span></span><span class="t-3003-c">$D(y)$<span class="t-3003">./course1/wly/08/06-undecidability.wly:180:69</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:180:75</span></span>
-            <span class="t-3003-c">also in den
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:181:17</span></span><span class="nowrap"><code><span class="t-3003-c">else<span class="t-3003">./course1/wly/08/06-undecidability.wly:181:30</span></span></code><span class="t-3003-c">-Teil<span class="t-3003">./course1/wly/08/06-undecidability.wly:181:35</span></span></span><span class="t-3003-c">
-              in den Zeilen 4-5 und<span class="t-3003">./course1/wly/08/06-undecidability.wly:181:35</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:182:17</span></span><span class="nowrap"><span class="t-3003-c">$D(y) = \texttt{accept}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:182:17</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/06-undecidability.wly:182:41</span></span></span><span class="t-3003-c">
-              somit
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:182:41</span></span><span class="t-3003-c">$yy = \enc(D)y \in \halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:182:49</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:182:74</span></span>
-            <span class="t-3003-c">Wir befinden uns in Fall 1:
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:183:17</span></span><span class="t-3003-c">$y y \in \halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:183:45</span></span><span class="t-3003-c">
-              aber<span class="t-3003">./course1/wly/08/06-undecidability.wly:183:60</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:184:17</span></span><span class="nowrap"><span class="t-3003-c">$H(yy)= \texttt{reject}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:184:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/06-undecidability.wly:184:41</span></span></span><span class="t-3003-c">
-              Die Maschine
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:184:41</span></span><span class="t-3003-c">$H$<span class="t-3003">./course1/wly/08/06-undecidability.wly:184:56</span></span><span class="t-3003-c">
-              hat eine<span class="t-3003">./course1/wly/08/06-undecidability.wly:184:59</span></span>
-            <span class="t-3003-c">falsche Antwort für
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:185:17</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:185:37</span></span><span class="t-3003-c">
-              geliefert.<span class="t-3003">./course1/wly/08/06-undecidability.wly:185:44</span></span>
+            <span class="nowrap">$H(yy) = \texttt{reject}$.</span>
+            Dann geht der Aufruf von
+            $D(y)$ also in den
+            <span class="nowrap"><code>else</code>-Teil</span>
+            in den Zeilen 4-5 und
+            <span class="nowrap">$D(y) = \texttt{accept}$,</span>
+            somit
+            $yy = \enc(D)y \in \halt$ Wir befinden uns in Fall 1:
+            $y y \in \halt$ aber
+            <span class="nowrap">$H(yy)= \texttt{reject}$.</span>
+            Die
+            Maschine $H$ hat eine falsche Antwort für $\halt$
+            geliefert.
           </p>
         </li>
         <li>
           <p>
-            <span class="nowrap"><span class="t-3003-c">$H(yy) = \texttt{accept}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:189:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/06-undecidability.wly:189:42</span></span></span><span class="t-3003-c">
-              Dann geht der Aufruf von
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:189:42</span></span><span class="t-3003-c">$D(y)$<span class="t-3003">./course1/wly/08/06-undecidability.wly:189:69</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:189:75</span></span>
-            <span class="t-3003-c">in Zeile 3, und
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:190:17</span></span><span class="nowrap"><span class="t-3003-c">$D(y) = \texttt{reject}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:190:33</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/06-undecidability.wly:190:57</span></span></span><span class="t-3003-c">
-              somit<span class="t-3003">./course1/wly/08/06-undecidability.wly:190:57</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:191:17</span></span><span class="nowrap"><span class="t-3003-c">$yy = \enc(D) y \not \in \halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:191:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/06-undecidability.wly:191:48</span></span></span><span class="t-3003-c">
-              Wir befinden uns in Fall<span class="t-3003">./course1/wly/08/06-undecidability.wly:191:48</span></span>
-            <span class="t-3003-c">2:
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:192:17</span></span><span class="t-3003-c">$yy \not \in \halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:192:20</span></span><span class="t-3003-c">
-              und
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:192:39</span></span><span class="nowrap"><span class="t-3003-c">$H(yy) = \texttt{accept}$<span class="t-3003">./course1/wly/08/06-undecidability.wly:192:44</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/06-undecidability.wly:192:69</span></span></span><span class="t-3003-c">
-              Die<span class="t-3003">./course1/wly/08/06-undecidability.wly:192:69</span></span>
-            <span class="t-3003-c">Maschine
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:193:17</span></span><span class="t-3003-c">$H$<span class="t-3003">./course1/wly/08/06-undecidability.wly:193:26</span></span><span class="t-3003-c">
-              hat abermals eine falsche Antwort geliefert.<span class="t-3003">./course1/wly/08/06-undecidability.wly:193:29</span></span>
+            <span class="nowrap">$H(yy) = \texttt{accept}$.</span>
+            Dann geht der Aufruf von
+            $D(y)$ in Zeile 3, und
+            <span class="nowrap">$D(y) = \texttt{reject}$,</span>
+            somit
+            <span class="nowrap">$yy = \enc(D) y \not \in \halt$.</span>
+            Wir befinden
+            uns in Fall 2: $yy \not \in \halt$ und
+            <span class="nowrap">$H(yy) = \texttt{accept}$.</span>
+            Die Maschine $H$ hat
+            abermals eine falsche Antwort geliefert.
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">$H(yy)$<span class="t-3003">./course1/wly/08/06-undecidability.wly:196:17</span></span><span class="t-3003-c">
-              terminiert nicht. Dann befinden wir uns in Fall 3:<span class="t-3003">./course1/wly/08/06-undecidability.wly:196:24</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:197:17</span></span><span class="t-3003-c">$H$<span class="t-3003">./course1/wly/08/06-undecidability.wly:197:17</span></span><span class="t-3003-c">
-              kann
-              <span class="t-3003">./course1/wly/08/06-undecidability.wly:197:20</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:197:26</span></span><span class="t-3003-c">
-              nicht entscheiden, denn Mindestbedingung<span class="t-3003">./course1/wly/08/06-undecidability.wly:197:33</span></span>
-            <span class="t-3003-c">hierfür wäre ja, auf jedem Eingabewort zu terminieren.<span class="t-3003">./course1/wly/08/06-undecidability.wly:198:17</span></span>
+            $H(yy)$ terminiert nicht. Dann befinden wir uns in
+            Fall 3: $H$ kann $\halt$ nicht entscheiden, denn
+            Mindestbedingung hierfür wäre ja, auf jedem
+            Eingabewort zu terminieren.
           </p>
         </li>
       </ul>
       <p>
-        <span class="t-3003-c">In jedem Fall sehen wir, dass
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:200:9</span></span><span class="t-3003-c">$H$<span class="t-3003">./course1/wly/08/06-undecidability.wly:200:39</span></span><span class="t-3003-c">
-          auf dem Eingabewort
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:200:42</span></span><span class="t-3003-c">$yy$<span class="t-3003">./course1/wly/08/06-undecidability.wly:200:63</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:200:67</span></span>
-        <span class="t-3003-c">einen Fehler macht und somit
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:201:9</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:201:38</span></span><span class="t-3003-c">
-          nicht entscheidet. Da<span class="t-3003">./course1/wly/08/06-undecidability.wly:201:45</span></span>
-        <span class="t-3003-c">das für
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:202:9</span></span><i><span class="t-3003-c">jede<span class="t-3003">./course1/wly/08/06-undecidability.wly:202:18</span></span></i><span class="t-3003-c">
-          Turingmaschine geht, schließen wir: keine<span class="t-3003">./course1/wly/08/06-undecidability.wly:202:23</span></span>
-        <span class="t-3003-c">Turingmaschine kann die Sprache
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:203:9</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:203:41</span></span><span class="t-3003-c">
-          entscheiden; sie<span class="t-3003">./course1/wly/08/06-undecidability.wly:203:48</span></span>
-        <span class="t-3003-c">ist unentscheidbar.<span class="t-3003">./course1/wly/08/06-undecidability.wly:204:9</span></span>
+        In jedem Fall sehen wir, dass $H$ auf dem Eingabewort
+        $yy$ einen Fehler macht und somit $\halt$ nicht
+        entscheidet. Da das für
+        <i>jede</i>
+        Turingmaschine geht,
+        schließen wir: keine Turingmaschine kann die Sprache
+        $\halt$ entscheiden; sie ist unentscheidbar.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Ein Student hat am 26. Juni 2024 angemerkt, dass die<span class="t-3003">./course1/wly/08/06-undecidability.wly:206:5</span></span>
-      <span class="t-3003-c">Sprache<span class="t-3003">./course1/wly/08/06-undecidability.wly:207:5</span></span>
+      Ein Student hat am 26. Juni 2024 angemerkt, dass die
+      Sprache
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \negdiag = \{\enc(M) \ | \ \textnormal{$M$ akzeptiert $\enc(M)$ nicht}\}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/08/06-undecidability.wly:209:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">ja eine extrem konstruierte, nicht wirklich relevante<span class="t-3003">./course1/wly/08/06-undecidability.wly:213:5</span></span>
-      <span class="t-3003-c">Sprache sei (da hatte er Recht). Insofern sei es auch nicht<span class="t-3003">./course1/wly/08/06-undecidability.wly:214:5</span></span>
-      <span class="t-3003-c">relevant, dass
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:215:5</span></span><span class="t-3003-c">$\negdiag$<span class="t-3003">./course1/wly/08/06-undecidability.wly:215:20</span></span><span class="t-3003-c">
-        unentscheidbar ist. Das ist<span class="t-3003">./course1/wly/08/06-undecidability.wly:215:30</span></span>
-      <span class="t-3003-c">allerdings auch nicht, was uns interessiert: unser Ziel<span class="t-3003">./course1/wly/08/06-undecidability.wly:216:5</span></span>
-      <span class="t-3003-c">war, zu zeigen, dass
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:217:5</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:217:26</span></span><span class="t-3003-c">
-        unentscheidbar ist, und die<span class="t-3003">./course1/wly/08/06-undecidability.wly:217:33</span></span>
-      <span class="t-3003-c">Unentscheidbarkeit von
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:218:5</span></span><span class="t-3003-c">$\negdiag$<span class="t-3003">./course1/wly/08/06-undecidability.wly:218:28</span></span><span class="t-3003-c">
-        war ein Schritt auf<span class="t-3003">./course1/wly/08/06-undecidability.wly:218:38</span></span>
-      <span class="t-3003-c">diesem Weg. Dass
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:219:5</span></span><span class="t-3003-c">$\halt$<span class="t-3003">./course1/wly/08/06-undecidability.wly:219:22</span></span><span class="t-3003-c">
-        unentscheidbar ist, ist in der<span class="t-3003">./course1/wly/08/06-undecidability.wly:219:29</span></span>
-      <span class="t-3003-c">Tat relevant, denn daraus folgt (nicht direkt, aber mit ein<span class="t-3003">./course1/wly/08/06-undecidability.wly:220:5</span></span>
-      <span class="t-3003-c">paar technischen Tricks), dass im Prinzip
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:221:5</span></span><i><span class="t-3003-c">jede<span class="t-3003">./course1/wly/08/06-undecidability.wly:221:48</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/06-undecidability.wly:221:53</span></span>
-      <span class="t-3003-c">nichttriviale Frage über das Verhalten eines Programmcodes<span class="t-3003">./course1/wly/08/06-undecidability.wly:222:5</span></span>
-      <span class="t-3003-c">unentscheidbar ist. Also sind auch Fragen wie "Kann das<span class="t-3003">./course1/wly/08/06-undecidability.wly:223:5</span></span>
-      <span class="t-3003-c">Programm abstürzen?" oder "Kann ein unautorisierter Nutzer<span class="t-3003">./course1/wly/08/06-undecidability.wly:224:5</span></span>
-      <span class="t-3003-c">Zugang zu XYZ erhalten?" unentscheidbar.<span class="t-3003">./course1/wly/08/06-undecidability.wly:225:5</span></span>
+      ja eine extrem konstruierte, nicht wirklich relevante
+      Sprache sei (da hatte er Recht). Insofern sei es auch
+      nicht relevant, dass $\negdiag$ unentscheidbar ist.
+      Das ist allerdings auch nicht, was uns interessiert:
+      unser Ziel war, zu zeigen, dass $\halt$
+      unentscheidbar ist, und die Unentscheidbarkeit von
+      $\negdiag$ war ein Schritt auf diesem Weg. Dass
+      $\halt$ unentscheidbar ist, ist in der Tat relevant,
+      denn daraus folgt (nicht direkt, aber mit ein paar
+      technischen Tricks), dass im Prinzip
+      <i>jede</i>
+      nichttriviale Frage über das Verhalten eines
+      Programmcodes unentscheidbar ist. Also sind auch
+      Fragen wie "Kann das Programm abstürzen?" oder "Kann
+      ein unautorisierter Nutzer Zugang zu XYZ erhalten?"
+      unentscheidbar.
     </p>
     <div class="alert-info well out main-column">
       <p>
-        <span class="t-3003-c">ℹ️ Das Wort
-          <span class="t-3003">./course1/wly/08/06-undecidability.wly:229:9</span></span><i><span class="t-3003-c">Unentscheidbarkeit<span class="t-3003">./course1/wly/08/06-undecidability.wly:229:21</span></span></i><span class="t-3003-c">
-          verwenden wir hier in<span class="t-3003">./course1/wly/08/06-undecidability.wly:229:40</span></span>
-        <span class="t-3003-c">seiner technischen Bedeutung, die wir definiert haben: es<span class="t-3003">./course1/wly/08/06-undecidability.wly:230:9</span></span>
-        <span class="t-3003-c">gibt keine Turingmaschine, die das Problem entscheidet,<span class="t-3003">./course1/wly/08/06-undecidability.wly:231:9</span></span>
-        <span class="t-3003-c">also auf jeder Eingabeinstanz terminiert und die richtige<span class="t-3003">./course1/wly/08/06-undecidability.wly:232:9</span></span>
-        <span class="t-3003-c">Antwort liefert. Es gibt also in der Tat Raum für<span class="t-3003">./course1/wly/08/06-undecidability.wly:233:9</span></span>
-        <span class="t-3003-c">Algorithmen, die Software untersuchen und diese<span class="t-3003">./course1/wly/08/06-undecidability.wly:234:9</span></span>
-        <span class="t-3003-c">gegebenenfalls verifizieren oder Fehler / Sicherheitslücken<span class="t-3003">./course1/wly/08/06-undecidability.wly:235:9</span></span>
-        <span class="t-3003-c">finden. Dies ist im Prinzip das sehr real existierende<span class="t-3003">./course1/wly/08/06-undecidability.wly:236:9</span></span>
-        <span class="t-3003-c">Forschungsfeld der Programmverifikation. Die<span class="t-3003">./course1/wly/08/06-undecidability.wly:237:9</span></span>
-        <span class="t-3003-c">Unentscheidbarkeit des Halteproblems impliziert nicht, dass<span class="t-3003">./course1/wly/08/06-undecidability.wly:238:9</span></span>
-        <span class="t-3003-c">man auf dem Feld der Programmverifikation keine<span class="t-3003">./course1/wly/08/06-undecidability.wly:239:9</span></span>
-        <span class="t-3003-c">Fortschritte erzielen kann; sie impliziert nur, dass es<span class="t-3003">./course1/wly/08/06-undecidability.wly:240:9</span></span>
-        <span class="t-3003-c">keinen ultimaten Programmverifikator bzw. Bugfinder gibt.<span class="t-3003">./course1/wly/08/06-undecidability.wly:241:9</span></span>
+        ℹ️ Das Wort
+        <i>Unentscheidbarkeit</i>
+        verwenden wir hier in
+        seiner technischen Bedeutung, die wir definiert haben:
+        es gibt keine Turingmaschine, die das Problem
+        entscheidet, also auf jeder Eingabeinstanz terminiert
+        und die richtige Antwort liefert. Es gibt also in der
+        Tat Raum für Algorithmen, die Software untersuchen und
+        diese gegebenenfalls verifizieren oder Fehler /
+        Sicherheitslücken finden. Dies ist im Prinzip das sehr
+        real existierende Forschungsfeld der
+        Programmverifikation. Die Unentscheidbarkeit des
+        Halteproblems impliziert nicht, dass man auf dem Feld
+        der Programmverifikation keine Fortschritte erzielen
+        kann; sie impliziert nur, dass es keinen ultimaten
+        Programmverifikator bzw. Bugfinder gibt.
       </p>
     </div>
     <div id="end-of-page-elt">

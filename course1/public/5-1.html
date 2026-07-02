@@ -53,32 +53,29 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">5.1&ensp;Reguläre Grammatiken<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:2:11</span></span>
+        5.1&ensp;Reguläre Grammatiken
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Reguläre Grammatiken sind eine Untermenge der<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:4:5</span></span>
-      <span class="t-3003-c">kontextfreien Grammatiken. Sie sind einerseits mächtig<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:5:5</span></span>
-      <span class="t-3003-c">genug, um viele Dinge modellieren zu können (zum Beispiel<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:6:5</span></span>
-      <span class="t-3003-c">syntaktisch korrekte Emailadressen), andererseits<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:7:5</span></span>
-      <span class="t-3003-c">restriktiv genug, um algorithmisch gut bearbeitbar zu sein.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:8:5</span></span>
-      <span class="t-3003-c">Insbesondere ist das Parsen von regulären Grammatiken immer<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:9:5</span></span>
-      <span class="t-3003-c">in linearer Zeit möglich.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:10:5</span></span>
+      Reguläre Grammatiken sind eine Untermenge der
+      kontextfreien Grammatiken. Sie sind einerseits mächtig
+      genug, um viele Dinge modellieren zu können (zum
+      Beispiel syntaktisch korrekte Emailadressen),
+      andererseits restriktiv genug, um algorithmisch gut
+      bearbeitbar zu sein. Insbesondere ist das Parsen von
+      regulären Grammatiken immer in linearer Zeit möglich.
     </p>
     <div
       id="_16_h.a.i_"
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Definition 5.1.1<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:12:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:12:5</span></span>
-        <span class="t-3003-c">Eine kontextfreie Sprache
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:14:9</span></span><span class="t-3003-c">$G = (\Sigma, N, P, S)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:14:35</span></span><span class="t-3003-c">
-          heißt<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:14:58</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:15:9</span></span><span class="nowrap"><i><span class="t-3003-c">regulär<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:15:10</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:15:18</span></span></span><span class="t-3003-c">
-          wenn jede Produktion eine der folgenden vier<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:15:18</span></span>
-        <span class="t-3003-c">Formen hat:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:16:9</span></span>
+        <b>Definition 5.1.1</b>
+        Eine kontextfreie Sprache $G = (\Sigma, N, P, S)$
+        heißt
+        <span class="nowrap"><i>regulär</i>,</span>
+        wenn jede Produktion eine der
+        folgenden vier Formen hat:
       </p>
       <div class="math-block">
         $$
@@ -88,31 +85,23 @@
         X &amp; \rightarrow Y \\
         X &amp; \rightarrow \epsilon
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:18:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Eine Sprache
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:25:9</span></span><span class="t-3003-c">$L \subseteq \Sigma^*$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:25:22</span></span><span class="t-3003-c">
-          heißt
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:25:44</span></span><span class="nowrap"><i><span class="t-3003-c">regulär<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:25:52</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:25:60</span></span></span><span class="t-3003-c">
-          wenn<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:25:60</span></span>
-        <span class="t-3003-c">es eine reguläre Grammatik
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:26:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:26:36</span></span><span class="t-3003-c">
-          gibt, die sie erzeugt, also<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:26:39</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:27:9</span></span><span class="nowrap"><span class="t-3003-c">$L(G) = L$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:27:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:27:19</span></span></span>
+        Eine Sprache $L \subseteq \Sigma^*$ heißt
+        <span class="nowrap"><i>regulär</i>,</span>
+        wenn es eine reguläre Grammatik $G$ gibt, die sie
+        erzeugt, also
+        <span class="nowrap">$L(G) = L$.</span>
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beispiel 5.1.2<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:29:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:29:5</span></span>
-        <span class="t-3003-c">Die folgende Grammatik über dem Alphabet
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:30:9</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma = \{1\}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:30:50</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:30:66</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:30:66</span></span>
-        <span class="t-3003-c">den nichtterminalen Symbolen
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:31:9</span></span><span class="t-3003-c">$\{E,O\}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:31:38</span></span><span class="t-3003-c">
-          und den Regeln<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:31:47</span></span>
+        <b>Beispiel 5.1.2</b>
+        Die folgende Grammatik über dem Alphabet
+        <span class="nowrap">$\Sigma = \{1\}$,</span>
+        den nichtterminalen Symbolen
+        $\{E,O\}$ und den Regeln
       </p>
       <div class="math-block">
         $$
@@ -120,13 +109,12 @@
         E&amp;
         \rightarrow 1O \ | \ \epsilon \\ O&amp;\rightarrow 1E
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:33:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">erzeugt die Sprache<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:38:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:39:9</span></span><span class="nowrap"><span class="t-3003-c">$\{\epsilon, 11, 1111, 111111, \dots \}= \{1^n | n
-            \textnormal{ ist gerade}\}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:39:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:40:36</span></span></span>
+        erzeugt die Sprache
+        <span class="nowrap">$\{\epsilon, 11, 1111, 111111, \dots \}= \{1^n | n
+          \textnormal{ ist gerade}\}$.</span>
       </p>
     </div>
     <div
@@ -134,10 +122,9 @@
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Beispiel 5.1.3<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:42:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:42:5</span></span>
-        <span class="t-3003-c">Die folgende Grammatik haben wir bereits im letzten<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:44:9</span></span>
-        <span class="t-3003-c">Abschnitt kennengelernt. Sie ist nicht regulär:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:45:9</span></span>
+        <b>Beispiel 5.1.3</b>
+        Die folgende Grammatik haben wir bereits im letzten
+        Abschnitt kennengelernt. Sie ist nicht regulär:
       </p>
       <div class="math-block">
         $$
@@ -146,18 +133,14 @@
         B \\ A&amp;\rightarrow \epsilon \ | \ a A \\ B&amp;\rightarrow \epsilon \
         | \ b B \ . \\
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:47:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Sie ist nicht regulär, weil die erste Regel<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:53:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:54:9</span></span><span class="t-3003-c">$S \rightarrow AB$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:54:9</span></span><span class="t-3003-c">
-          gegen die Definition regulärer<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:54:27</span></span>
-        <span class="t-3003-c">Grammatiken verstößt. Allerdings können wir leicht eine<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:55:9</span></span>
-        <span class="t-3003-c">reguläre Grammatik
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:56:9</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:56:28</span></span><span class="t-3003-c">
-          angeben, die die gleiche Sprache<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:56:32</span></span>
-        <span class="t-3003-c">erzeugt:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:57:9</span></span>
+        Sie ist nicht regulär, weil die erste Regel
+        $S \rightarrow AB$ gegen die Definition regulärer
+        Grammatiken verstößt. Allerdings können wir leicht
+        eine reguläre Grammatik $G'$ angeben, die die gleiche
+        Sprache erzeugt:
       </p>
       <div class="math-block">
         $$
@@ -165,11 +148,11 @@
         S&amp;\rightarrow \epsilon \ |\ a S \ | \ b T \\ T&amp;
         \rightarrow \epsilon \ | \ b T \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:59:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Hier ist beispielsweise eine Ableitung des Wortes
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:64:9</span></span><span class="nowrap"><span class="t-3003-c">$aabbb$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:64:59</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:64:66</span></span></span>
+        Hier ist beispielsweise eine Ableitung des Wortes
+        <span class="nowrap">$aabbb$:</span>
       </p>
       <div class="math-block">
         $$
@@ -178,76 +161,58 @@
         \Rightarrow aS \Rightarrow aaS \Rightarrow aabT \Rightarrow aabbT
         \Rightarrow aabbbT \Rightarrow aabbb
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:66:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Wir sehen, dass wir eine Folge von
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:72:9</span></span><span class="nowrap"><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:72:44</span></span><span class="t-3003-c">'s<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:72:47</span></span></span><span class="t-3003-c">
-          erzeugen können,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:72:47</span></span>
-        <span class="t-3003-c">bei der ersten Produktion eines
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:73:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:73:41</span></span><span class="t-3003-c">
-          auf das Nichtterminal<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:73:44</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:74:9</span></span><span class="t-3003-c">$B$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:74:9</span></span><span class="t-3003-c">
-          wechseln, welches dann ausschließlich weitere
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:74:12</span></span><span class="nowrap"><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:74:59</span></span><span class="t-3003-c">'s<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:74:62</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:74:62</span></span>
-        <span class="t-3003-c">erzeugen kann.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:75:9</span></span>
+        Wir sehen, dass wir eine Folge von
+        <span class="nowrap">$a$'s</span>
+        erzeugen
+        können, bei der ersten Produktion eines $b$ auf das
+        Nichtterminal $B$ wechseln, welches dann
+        ausschließlich weitere
+        <span class="nowrap">$b$'s</span>
+        erzeugen kann.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir sehen: jede Wortform in der Ableitung besteht aus<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:77:5</span></span>
-      <span class="t-3003-c">einer Folge von Terminalen, eventuell ganz am Schluss<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:78:5</span></span>
-      <span class="t-3003-c">gefolgt von einem Nichtterminal. Halten wir diese erste<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:79:5</span></span>
-      <span class="t-3003-c">Beobachtung formal fest.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:80:5</span></span>
+      Wir sehen: jede Wortform in der Ableitung besteht aus
+      einer Folge von Terminalen, eventuell ganz am Schluss
+      gefolgt von einem Nichtterminal. Halten wir diese
+      erste Beobachtung formal fest.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beobachtung 5.1.4<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:82:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:82:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:83:9</span></span><span class="t-3003-c">$G = (\Sigma, N, P, S)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:83:13</span></span><span class="t-3003-c">
-          eine reguläre Grammatik und<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:83:36</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:84:9</span></span><span class="t-3003-c">$S \Rightarrow^* \alpha$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:84:9</span></span><span class="t-3003-c">
-          eine Ableitung einer Wortform<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:84:33</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:85:9</span></span><span class="nowrap"><span class="t-3003-c">$\alpha \in (\Sigma \cup N)^*$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:85:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:85:39</span></span></span><span class="t-3003-c">
-          Dann hat
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:85:39</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:85:50</span></span><span class="t-3003-c">
-          die Form<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:85:58</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:86:9</span></span><span class="t-3003-c">$y X$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:86:9</span></span><span class="t-3003-c">
-          für
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:86:14</span></span><span class="t-3003-c">$y \in \Sigma^*$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:86:19</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:86:35</span></span><span class="nowrap"><span class="t-3003-c">$X \in N \cup \{\epsilon\}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:86:40</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:86:67</span></span></span>
+        <b>Beobachtung 5.1.4</b>
+        Sei $G = (\Sigma, N, P, S)$ eine reguläre Grammatik
+        und $S \Rightarrow^* \alpha$ eine Ableitung einer
+        Wortform
+        <span class="nowrap">$\alpha \in (\Sigma \cup N)^*$.</span>
+        Dann hat
+        $\alpha$ die Form $y X$ für $y \in \Sigma^*$ und
+        <span class="nowrap">$X \in N \cup \{\epsilon\}$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Sie sollen nun an einer Reihe von Übungsaufgaben arbeiten,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:88:5</span></span>
-      <span class="t-3003-c">um ein Gefühl dafür zu bekommen, was reguläre Grammatiken<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:89:5</span></span>
-      <span class="t-3003-c">tun können und was nicht.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:90:5</span></span>
+      Sie sollen nun an einer Reihe von Übungsaufgaben
+      arbeiten, um ein Gefühl dafür zu bekommen, was
+      reguläre Grammatiken tun können und was nicht.
     </p>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.1.1<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:92:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:92:5</span></span>
-        <span class="t-3003-c">Betrachten Sie die Gramatik über
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:93:9</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma = \{0,1\}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:93:42</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:93:60</span></span></span>
+        <b>Übungsaufgabe 5.1.1</b>
+        Betrachten Sie die Gramatik über
+        <span class="nowrap">$\Sigma = \{0,1\}$:</span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         S&amp;\rightarrow 1 S \ | \ 0 S \ | \ 0
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:95:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Leiten Sie das Wort
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:99:9</span></span><span class="t-3003-c">$11010$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:99:29</span></span><span class="t-3003-c">
-          ab. Beschreiben Sie in eigenen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:99:36</span></span>
-        <span class="t-3003-c">Worten die erzeugte Sprache.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:100:9</span></span>
+        Leiten Sie das Wort $11010$ ab. Beschreiben Sie in
+        eigenen Worten die erzeugte Sprache.
       </p>
     </div>
     <div
@@ -255,10 +220,9 @@
       class="well exercise out"
     >
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.1.2<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:102:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:102:5</span></span>
-        <span class="t-3003-c">Betrachten Sie die Grammatik über
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:104:9</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma = \{0,1\}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:104:43</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:104:61</span></span></span>
+        <b>Übungsaufgabe 5.1.2</b>
+        Betrachten Sie die Grammatik über
+        <span class="nowrap">$\Sigma = \{0,1\}$:</span>
       </p>
       <div class="math-block">
         $$
@@ -267,42 +231,37 @@
         C&amp;\rightarrow 0 D \ | 1 D \\ D&amp;\rightarrow 0 E \ | 1 E \\ E&amp;
         \rightarrow \epsilon \
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:106:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">mit Startsymbol
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:112:9</span></span><span class="nowrap"><span class="t-3003-c">$A$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:112:25</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:112:28</span></span></span><span class="t-3003-c">
-          Leiten Sie das Wort
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:112:28</span></span><span class="t-3003-c">$01101001$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:112:50</span></span><span class="t-3003-c">
-          ab und<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:112:60</span></span>
-        <span class="t-3003-c">beschreiben Sie die erzeugte Sprache in eigenen Worten.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:113:9</span></span>
+        mit Startsymbol
+        <span class="nowrap">$A$.</span>
+        Leiten Sie das Wort $01101001$
+        ab und beschreiben Sie die erzeugte Sprache in eigenen
+        Worten.
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.1.3<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:115:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:115:5</span></span>
-        <span class="t-3003-c">Betrachten Sie das Alphabet
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:116:9</span></span><span class="t-3003-c">$\Sigma = \{1\}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:116:37</span></span><span class="t-3003-c">
-          und die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:116:53</span></span>
-        <span class="t-3003-c">Sprache<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:117:9</span></span>
+        <b>Übungsaufgabe 5.1.3</b>
+        Betrachten Sie das Alphabet $\Sigma = \{1\}$ und die
+        Sprache
       </p>
       <div class="math-block">
         $$
         L :=
         \{1^n \ | \ \textnormal{ $n$ ist durch 3 teilbar} \} \ .
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:119:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Schreiben Sie eine reguläre Grammatik für
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:124:9</span></span><span class="nowrap"><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:124:51</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:124:54</span></span></span>
+        Schreiben Sie eine reguläre Grammatik für
+        <span class="nowrap">$L$.</span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.1.4<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:126:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:126:5</span></span>
-        <span class="t-3003-c">Betrachten Sie die Sprache<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:127:9</span></span>
+        <b>Übungsaufgabe 5.1.4</b>
+        Betrachten Sie die Sprache
       </p>
       <div class="math-block">
         $$
@@ -310,104 +269,89 @@
         L := \{x \in \{a,b\}^* \ | \
         \textnormal{in $x$ kommt $b$ mindestens 4 mal vor }\} \
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:129:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">und entwerfen Sie eine reguläre Grammatik für
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:134:9</span></span><span class="nowrap"><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:134:55</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:134:58</span></span></span>
+        und entwerfen Sie eine reguläre Grammatik für
+        <span class="nowrap">$L$.</span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.1.5<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:136:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:136:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:137:9</span></span><span class="t-3003-c">$\Sigma = \{a,b,.\}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:137:13</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:137:33</span></span><span class="t-3003-c">$L \subseteq \Sigma^*$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:137:38</span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:137:60</span></span>
-        <span class="t-3003-c">Sprache aller Strings der Form<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:138:9</span></span>
+        <b>Übungsaufgabe 5.1.5</b>
+        Sei $\Sigma = \{a,b,.\}$ und $L \subseteq \Sigma^*$
+        die Sprache aller Strings der Form
       </p>
       <div class="math-block">
         $$
         x_1 . x_2 . x_3 . \cdots . x_n
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:140:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">wobei
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:144:9</span></span><span class="t-3003-c">$n \geq 2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:144:15</span></span><span class="t-3003-c">
-          und jedes
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:144:25</span></span><span class="nowrap"><span class="t-3003-c">$x_i \in \{a,b\}^+$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:144:36</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:144:55</span></span></span><span class="t-3003-c">
-          also zum<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:144:55</span></span>
-        <span class="t-3003-c">Beispiel
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:145:9</span></span><code><span class="t-3003-c">a.bba.aba<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:145:19</span></span></code><span class="t-3003-c">
-          aber nicht
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:145:29</span></span><code><span class="t-3003-c">aba<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:145:42</span></span></code><span class="t-3003-c">
-          und auch nicht<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:145:46</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:146:9</span></span><code><span class="t-3003-c">a.b..a<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:146:10</span></span></code><span class="t-3003-c">
-          Entwerfen Sie eine reguläre Grammatik für diese<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:146:17</span></span>
-        <span class="t-3003-c">Sprache.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:147:9</span></span>
+        wobei $n \geq 2$ und jedes
+        <span class="nowrap">$x_i \in \{a,b\}^+$,</span>
+        also
+        zum Beispiel
+        <code>a.bba.aba</code>
+        aber nicht
+        <code>aba</code>
+        und auch
+        nicht
+        <code>a.b..a</code>
+        Entwerfen Sie eine reguläre Grammatik
+        für diese Sprache.
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.1.6<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:149:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:149:5</span></span>
-        <span class="t-3003-c">Unsere
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:150:9</span></span><a href="./5-0.html#email-context-free-grammar"><span class="t-3003-c">Grammatik für korrekte<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:150:17</span></span>
-          <span class="t-3003-c">Emailadressen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:151:9</span></span></a><span class="t-3003-c">
-          im letzten<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:151:52</span></span>
-        <span class="t-3003-c">Abschnitt war
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:152:9</span></span><i><span class="t-3003-c">nicht<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:152:24</span></span></i><span class="t-3003-c">
-          regulär. Allerdings können wir eine<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:152:30</span></span>
-        <span class="t-3003-c">reguläre Grammatik angeben, die die gleiche Sprache<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:153:9</span></span>
-        <span class="t-3003-c">erzeugt. Entwerfen Sie eine reguläre Grammatik für die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:154:9</span></span>
-        <span class="t-3003-c">Sprache aller korrekter Emailadressen über dem Alphabet<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:155:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:156:9</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma = \{a,b,.,-,@\}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:156:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:156:33</span></span></span><span class="t-3003-c">
-          Sie dürfen natürlich noch<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:156:33</span></span>
-        <span class="t-3003-c">weitere Buchstaben zulassen, dann schreiben Sie sich aber<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:157:9</span></span>
-        <span class="t-3003-c">schnell zu Tode.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:158:9</span></span>
+        <b>Übungsaufgabe 5.1.6</b>
+        Unsere
+        <a href="#email-context-free-grammar">Grammatik für korrekte
+          Emailadressen</a>
+        im letzten
+        Abschnitt war
+        <i>nicht</i>
+        regulär. Allerdings können wir
+        eine reguläre Grammatik angeben, die die gleiche
+        Sprache erzeugt. Entwerfen Sie eine reguläre Grammatik
+        für die Sprache aller korrekter Emailadressen über dem
+        Alphabet
+        <span class="nowrap">$\Sigma = \{a,b,.,-,@\}$.</span>
+        Sie dürfen
+        natürlich noch weitere Buchstaben zulassen, dann
+        schreiben Sie sich aber schnell zu Tode.
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Erweitert reguläre Grammatiken<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:161:9</span></span>
+      Erweitert reguläre Grammatiken
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">In einer Übungsaufgabe oben wurden Sie aufgefordert, eine<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:163:5</span></span>
-      <span class="t-3003-c">reguläre Grammatik zu schreiben für die Sprache aller
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:164:5</span></span><span class="t-3003-c">$1^n$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:164:59</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:164:64</span></span>
-      <span class="t-3003-c">mit
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:165:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:165:9</span></span><span class="t-3003-c">
-        durch 3 teilbar. Hier ist eine besonders einfache<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:165:12</span></span>
-      <span class="t-3003-c">Lösung:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:166:5</span></span>
+      In einer Übungsaufgabe oben wurden Sie aufgefordert,
+      eine reguläre Grammatik zu schreiben für die Sprache
+      aller $1^n$ mit $n$ durch 3 teilbar. Hier ist eine
+      besonders einfache Lösung:
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       S \rightarrow \epsilon \ | \ 111S
       \end{align*}
-      $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:168:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Sehen Sie, Sie können hier Einsen nur in Dreierblöcken<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:172:5</span></span>
-      <span class="t-3003-c">erzeugen. Leider ist diese Grammatik nicht regulär nach<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:173:5</span></span>
-      <span class="t-3003-c">unserer obigen Definition. Was tun wir, wenn wir nicht<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:174:5</span></span>
-      <span class="t-3003-c">zufrieden sind mit einer Definition? Wir wandeln sie ab.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:175:5</span></span>
+      Sehen Sie, Sie können hier Einsen nur in
+      Dreierblöcken erzeugen. Leider ist diese Grammatik
+      nicht regulär nach unserer obigen Definition. Was tun
+      wir, wenn wir nicht zufrieden sind mit einer
+      Definition? Wir wandeln sie ab.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 5.1.5<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:177:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:177:5</span></span>
-        <span class="t-3003-c">Eine Grammatik
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:178:9</span></span><span class="t-3003-c">$G = (\Sigma, N, P, S)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:178:24</span></span><span class="t-3003-c">
-          heißt
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:178:47</span></span><span class="nowrap"><i><span class="t-3003-c">erweitert<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:178:55</span></span>
-            <span class="t-3003-c">regulär<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:179:9</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:179:17</span></span></span><span class="t-3003-c">
-          wenn jede Produktion eine der folgenden Formen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:179:17</span></span>
-        <span class="t-3003-c">hat:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:180:9</span></span>
+        <b>Definition 5.1.5</b>
+        Eine Grammatik $G = (\Sigma, N, P, S)$ heißt
+        <span class="nowrap"><i>erweitert regulär</i>,</span>
+        wenn jede Produktion eine der
+        folgenden Formen hat:
       </p>
       <div class="math-block">
         $$
@@ -415,52 +359,42 @@
         X&amp;\rightarrow \alpha Y \\ X&amp;\rightarrow
         \alpha \\
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:182:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">hat, wobei
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:187:9</span></span><span class="t-3003-c">$X \in N$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:187:20</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:187:29</span></span><span class="t-3003-c">$\alpha \in \Sigma^*$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:187:34</span></span><span class="t-3003-c">
-          ist. Im<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:187:55</span></span>
-        <span class="t-3003-c">Unterschied zu den eigentlich regulären Grammatiken<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:188:9</span></span>
-        <span class="t-3003-c">erlauben wir also mehrere terminale Symbole auf der rechten<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:189:9</span></span>
-        <span class="t-3003-c">Seite, sofern Sie
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:190:9</span></span><i><span class="t-3003-c">vor<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:190:28</span></span></i><span class="t-3003-c">
-          dem Nichtterminal vorkommen.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:190:32</span></span>
+        hat, wobei $X \in N$ und $\alpha \in \Sigma^*$ ist.
+        Im Unterschied zu den eigentlich regulären Grammatiken
+        erlauben wir also mehrere terminale Symbole auf der
+        rechten Seite, sofern Sie
+        <i>vor</i>
+        dem Nichtterminal
+        vorkommen.
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 5.1.6<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:192:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:192:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:193:9</span></span><span class="t-3003-c">$G = (\Sigma, N, P, S)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:193:13</span></span><span class="t-3003-c">
-          eine erweitert reguläre<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:193:36</span></span>
-        <span class="t-3003-c">Grammatik. Dann existiert eine reguläre Grammatik<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:194:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:195:9</span></span><span class="nowrap"><span class="t-3003-c">$G' = (\Sigma, N', P', S)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:195:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:195:35</span></span></span><span class="t-3003-c">
-          die die gleiche Sprache<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:195:35</span></span>
-        <span class="t-3003-c">erzeugt:
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:196:9</span></span><span class="nowrap"><span class="t-3003-c">$L(G) = L(G')$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:196:18</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:196:32</span></span></span>
+        <b>Theorem 5.1.6</b>
+        Sei $G = (\Sigma, N, P, S)$ eine erweitert reguläre
+        Grammatik. Dann existiert eine reguläre Grammatik
+        <span class="nowrap">$G' = (\Sigma, N', P', S)$,</span>
+        die die gleiche Sprache
+        erzeugt:
+        <span class="nowrap">$L(G) = L(G')$.</span>
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Wir ersetzen einfach jede Regel der Form<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:199:9</span></span>
+        Wir ersetzen einfach jede Regel der Form
       </p>
       <div class="math-block">
         $$
         X \rightarrow a_1 a_2
         \dots a_k Y
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:201:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">durch
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:206:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:206:15</span></span><span class="t-3003-c">
-          reguläre Regeln:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:206:18</span></span>
+        durch $k$ reguläre Regeln:
       </p>
       <div class="math-block">
         $$
@@ -469,48 +403,41 @@
         \rightarrow a_1 X_2 \\ X_2&amp;\rightarrow a_2 X_3 \\ \dots \\ X_k&amp;
         \rightarrow a_k Y
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:208:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">wobei wir darauf achten, dass
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:214:9</span></span><span class="t-3003-c">$X_2, \dots, X_k$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:214:39</span></span><span class="t-3003-c">
-          "frische"<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:214:56</span></span>
-        <span class="t-3003-c">Nichtterminalsymbole sind. Falls
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:215:9</span></span><span class="t-3003-c">$\alpha = \epsilon$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:215:42</span></span><span class="t-3003-c">
-          ist,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:215:61</span></span>
-        <span class="t-3003-c">so ist die Regel bereits in einer in regulären Grammatiken<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:216:9</span></span>
-        <span class="t-3003-c">erlaubten Form:
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:217:9</span></span><span class="t-3003-c">$X \rightarrow Y$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:217:25</span></span><span class="t-3003-c">
-          oder<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:217:42</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:218:9</span></span><span class="nowrap"><span class="t-3003-c">$X \rightarrow \epsilon$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:218:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:218:33</span></span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        wobei wir darauf achten, dass $X_2, \dots, X_k$
+        "frische" Nichtterminalsymbole sind. Falls
+        $\alpha = \epsilon$ ist, so ist die Regel bereits in
+        einer in regulären Grammatiken erlaubten Form:
+        $X \rightarrow Y$ oder
+        <span class="nowrap">$X \rightarrow \epsilon$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir können nun, wenn wir reguläre Grammatik entwerfen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:220:5</span></span>
-      <span class="t-3003-c">wollen, die bequemeren erweitert regulären Sprachen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:221:5</span></span>
-      <span class="t-3003-c">verwenden; wenn wir Dinge über reguläre Grammatik beweisen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:222:5</span></span>
-      <span class="t-3003-c">wollen (oder deren Grenzen studieren wollen), können wir<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:223:5</span></span>
-      <span class="t-3003-c">uns auf die eigentlichen regulären Grammatiken beschränken,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:224:5</span></span>
-      <span class="t-3003-c">da wir wissen, dass beide Definition eh gleich mächtig<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:225:5</span></span>
-      <span class="t-3003-c">sind.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:226:5</span></span>
+      Wir können nun, wenn wir reguläre Grammatik entwerfen
+      wollen, die bequemeren erweitert regulären Sprachen
+      verwenden; wenn wir Dinge über reguläre Grammatik
+      beweisen wollen (oder deren Grenzen studieren wollen),
+      können wir uns auf die eigentlichen regulären
+      Grammatiken beschränken, da wir wissen, dass beide
+      Definition eh gleich mächtig sind.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Reguläre Grammatiken vereinfachen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:229:9</span></span>
+      Reguläre Grammatiken vereinfachen
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Das letzte Theorem erlaubt uns, eine Definition von<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:231:5</span></span>
-      <span class="t-3003-c">regulären Grammatiken zu verwenden, die uns mehr erlaubt.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:232:5</span></span>
-      <span class="t-3003-c">Im Folgenden zeigen wir, wie man die Form der Grammatiken<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:233:5</span></span>
-      <span class="t-3003-c">noch stärker einschränken kann, ohne dass Sie an<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:234:5</span></span>
-      <span class="t-3003-c">Mächtigkeit einbüßen. Per
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:235:5</span></span><a
+      Das letzte Theorem erlaubt uns, eine Definition von
+      regulären Grammatiken zu verwenden, die uns mehr
+      erlaubt. Im Folgenden zeigen wir, wie man die Form der
+      Grammatiken noch stärker einschränken kann, ohne dass
+      Sie an Mächtigkeit einbüßen. Per
+      <a
         href="./5-1.html#_16_h.a.i_"
         class=""
-      >Definition 5.1.1</a><span class="t-3003-c">
-        hat jede<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:235:5</span></span>
-      <span class="t-3003-c">Produktion in einer regulären Grammatik eine der folgenden<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:236:5</span></span>
-      <span class="t-3003-c">vier Formen:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:237:5</span></span>
+      >Definition 5.1.1</a>
+      hat jede Produktion in einer regulären
+      Grammatik eine der folgenden vier Formen:
     </p>
     <div class="math-block main-column">
       $$
@@ -519,65 +446,42 @@
       \quad X&amp;\rightarrow aY \\ 2. \quad X&amp;\rightarrow a \\ 3. \quad X&amp;
       \rightarrow Y \\ 4. \quad X&amp;\rightarrow \epsilon
       \end{align*}
-      $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:239:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir zeigen nun, dass man auf Produktionen der Form 2 und 3<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:245:5</span></span>
-      <span class="t-3003-c">verzichten kann.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:246:5</span></span>
+      Wir zeigen nun, dass man auf Produktionen der Form 2
+      und 3 verzichten kann.
     </p>
     <div
       id="_19_h.a.i_"
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Theorem 5.1.7<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:248:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:248:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:250:9</span></span><span class="t-3003-c">$G = (\Sigma, N, P, S)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:250:13</span></span><span class="t-3003-c">
-          eine reguläre Grammatik. Dann<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:250:36</span></span>
-        <span class="t-3003-c">gibt es eine äquivalente reguläre Grammatik<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:251:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:252:9</span></span><span class="nowrap"><span class="t-3003-c">$G' = (\Sigma, N', P', S)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:252:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:252:35</span></span></span><span class="t-3003-c">
-          die nur Regeln vom Typ 1 und 4<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:252:35</span></span>
-        <span class="t-3003-c">enthält.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:253:9</span></span>
+        <b>Theorem 5.1.7</b>
+        Sei $G = (\Sigma, N, P, S)$ eine reguläre Grammatik.
+        Dann gibt es eine äquivalente reguläre Grammatik
+        <span class="nowrap">$G' = (\Sigma, N', P', S)$,</span>
+        die nur Regeln vom Typ 1
+        und 4 enthält.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Produktionen vom Typ 2, also von der Form
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:256:9</span></span><span class="t-3003-c">$X \rightarrow a$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:256:51</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:256:68</span></span>
-        <span class="t-3003-c">können wir leicht eliminieren, indem wir ein neues<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:257:9</span></span>
-        <span class="t-3003-c">Nichtterminalsymbol
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:258:9</span></span><span class="t-3003-c">$E \not \in \Sigma \cup N$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:258:29</span></span><span class="t-3003-c">
-          einführen,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:258:55</span></span>
-        <span class="t-3003-c">jedes
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:259:9</span></span><span class="t-3003-c">$X \rightarrow a$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:259:15</span></span><span class="t-3003-c">
-          durch
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:259:32</span></span><span class="t-3003-c">$X \rightarrow aE$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:259:39</span></span><span class="t-3003-c">
-          ersetzen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:259:57</span></span>
-        <span class="t-3003-c">und die Produktion
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:260:9</span></span><span class="t-3003-c">$E \rightarrow \epsilon$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:260:28</span></span><span class="t-3003-c">
-          hinzufügen.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:260:52</span></span>
-        <span class="t-3003-c">Produktionen der Form
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:261:9</span></span><span class="t-3003-c">$X \rightarrow Y$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:261:31</span></span><span class="t-3003-c">
-          zu eliminieren ist<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:261:48</span></span>
-        <span class="t-3003-c">etwas komplizierter. Die Idee ist, dass in einer von
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:262:9</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:262:62</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:262:65</span></span>
-        <span class="t-3003-c">ausgehende Ableitung eines Wortes irgendwann zum ersten Mal<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:263:9</span></span>
-        <span class="t-3003-c">eine Wortform
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:264:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:264:23</span></span><span class="t-3003-c">
-          vorkommen muss, die nicht ein<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:264:31</span></span>
-        <span class="t-3003-c">einzelnes Nichtterminalsymbol ist, also<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:265:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:266:9</span></span><span class="t-3003-c">$X \Rightarrow^* Y \Rightarrow \alpha$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:266:9</span></span><span class="t-3003-c">
-          mit<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:266:47</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:267:9</span></span><span class="t-3003-c">$\alpha \not \in N$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:267:9</span></span><span class="t-3003-c">
-          . Wir definieren nun<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:267:28</span></span>
+        Produktionen vom Typ 2, also von der Form
+        $X \rightarrow a$ können wir leicht eliminieren,
+        indem wir ein neues Nichtterminalsymbol
+        $E \not \in \Sigma \cup N$ einführen, jedes
+        $X \rightarrow a$ durch $X \rightarrow aE$ ersetzen
+        und die Produktion $E \rightarrow \epsilon$
+        hinzufügen. Produktionen der Form $X \rightarrow Y$
+        zu eliminieren ist etwas komplizierter. Die Idee ist,
+        dass in einer von $X$ ausgehende Ableitung eines
+        Wortes irgendwann zum ersten Mal eine Wortform
+        $\alpha$ vorkommen muss, die nicht ein einzelnes
+        Nichtterminalsymbol ist, also
+        $X \Rightarrow^* Y \Rightarrow \alpha$ mit
+        $\alpha \not \in N$ . Wir definieren nun
       </p>
       <div class="math-block">
         $$
@@ -585,43 +489,30 @@
         X \rightarrow \alpha \ | \ \alpha \textnormal{ ist kein einzelnes
         Nichtterminal, und es gibt $Y \in N$ mit $X \Rightarrow^* Y$ und
         $Y \rightarrow \alpha$}) \}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:269:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">als neue Menge von Produktionen, die keine Produktionen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:276:9</span></span>
-        <span class="t-3003-c">von der Form
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:277:9</span></span><span class="t-3003-c">$X \rightarrow Y$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:277:22</span></span><span class="t-3003-c">
-          enthalten.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:277:39</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        als neue Menge von Produktionen, die keine
+        Produktionen von der Form $X \rightarrow Y$
+        enthalten.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Im vorhergehenden Beweis haben wir nicht formal gezeigt,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:279:5</span></span>
-      <span class="t-3003-c">dass
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:280:5</span></span><span class="t-3003-c">$L(G')= L(G)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:280:10</span></span><span class="t-3003-c">
-        gilt. Unser Kernargument war das etwas<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:280:23</span></span>
-      <span class="t-3003-c">saloppe "irgendwann muss ja mal eine Produktion kommen, die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:281:5</span></span>
-      <span class="t-3003-c">nicht von der Form
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:282:5</span></span><span class="t-3003-c">$X \rightarrow Y$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:282:24</span></span><span class="t-3003-c">
-        ist". Anstatt den<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:282:41</span></span>
-      <span class="t-3003-c">Beweis formal durchzuführen, stellen wir uns lieber eine<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:283:5</span></span>
-      <span class="t-3003-c">interessantere Frage: wie können wir die neuen Produktionen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:284:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:285:5</span></span><span class="t-3003-c">$P'$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:285:5</span></span><span class="t-3003-c">
-        im konkreten Fall die Mengen berechnen? Dann das<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:285:9</span></span>
-      <span class="t-3003-c">müssen wir ja tun, wenn wir eine solche Transformation<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:286:5</span></span>
-      <span class="t-3003-c">durchführen wollen. Im Prinzip müssen wir alle<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:287:5</span></span>
-      <span class="t-3003-c">Nichtterminale
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:288:5</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:288:20</span></span><span class="t-3003-c">
-        und alle Produktionen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:288:23</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:289:5</span></span><span class="t-3003-c">$Y \rightarrow \alpha$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:289:5</span></span><span class="t-3003-c">
-        mit
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:289:27</span></span><span class="t-3003-c">$\alpha \not \in N$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:289:32</span></span><span class="t-3003-c">
-        durchgehen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:289:51</span></span>
-      <span class="t-3003-c">und überprüfen, ob
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:290:5</span></span><span class="t-3003-c">$X \Rightarrow^* Y$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:290:24</span></span><span class="t-3003-c">
-        gilt. Dies können<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:290:43</span></span>
-      <span class="t-3003-c">wir beispielsweise überprüfen, indem wir die Mengen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:291:5</span></span>
+      Im vorhergehenden Beweis haben wir nicht formal
+      gezeigt, dass $L(G')= L(G)$ gilt. Unser Kernargument
+      war das etwas saloppe "irgendwann muss ja mal eine
+      Produktion kommen, die nicht von der Form
+      $X \rightarrow Y$ ist". Anstatt den Beweis formal
+      durchzuführen, stellen wir uns lieber eine
+      interessantere Frage: wie können wir die neuen
+      Produktionen $P'$ im konkreten Fall die Mengen
+      berechnen? Dann das müssen wir ja tun, wenn wir eine
+      solche Transformation durchführen wollen. Im Prinzip
+      müssen wir alle Nichtterminale $X$ und alle
+      Produktionen $Y \rightarrow \alpha$ mit
+      $\alpha \not \in N$ durchgehen und überprüfen, ob
+      $X \Rightarrow^* Y$ gilt. Dies können wir
+      beispielsweise überprüfen, indem wir die Mengen
     </p>
     <div class="math-block main-column">
       $$
@@ -631,19 +522,13 @@
       \rightarrow X_1 \rightarrow X_2 \cdots X_{l-1} \rightarrow Y
       \textnormal{ und } l \leq k \}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:293:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">definieren, also die Menge derjenigen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:300:5</span></span>
-      <span class="t-3003-c">Nichtterminalsymbole, die sich in bis zu
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:301:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:301:46</span></span><span class="t-3003-c">
-        Schritten von<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:301:49</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:302:5</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:302:5</span></span><span class="t-3003-c">
-        aus ableiten lassen. Wir berechnen die
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:302:8</span></span><span class="t-3003-c">$N_k$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:302:48</span></span><span class="t-3003-c">
-        iterativ<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:302:53</span></span>
-      <span class="t-3003-c">wie folgt:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:303:5</span></span>
+      definieren, also die Menge derjenigen
+      Nichtterminalsymbole, die sich in bis zu $k$
+      Schritten von $X$ aus ableiten lassen. Wir berechnen
+      die $N_k$ iterativ wie folgt:
     </p>
     <div class="math-block main-column">
       $$
@@ -652,101 +537,67 @@
       (X)&amp;:= N_k \cup \{Z \in N \ | \ \textnormal{ es gibt } Y \in
       N_k(X) \textnormal{ mit } Y \rightarrow Z \} \ .
       \end{align*}
-      $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:305:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Die Menge
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:311:5</span></span><span class="t-3003-c">$N_{k+1}(X)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:311:15</span></span><span class="t-3003-c">
-        lässt sich also mit zwei<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:311:27</span></span>
-      <span class="t-3003-c">geschachtelten
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:312:5</span></span><span class="nowrap"><code><span class="t-3003-c">for<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:312:21</span></span></code><span class="t-3003-c">-Schleifen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:312:25</span></span></span><span class="t-3003-c">
-        berechnen: eine über die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:312:25</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:313:5</span></span><span class="t-3003-c">$Y \in N_k$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:313:5</span></span><span class="t-3003-c">
-        und eine über die Produktionen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:313:16</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:314:5</span></span><span class="nowrap"><span class="t-3003-c">$Y \rightarrow Z$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:314:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:314:22</span></span></span><span class="t-3003-c">
-        Um
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:314:22</span></span><span class="t-3003-c">$N_{k+1}(X)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:314:27</span></span><span class="t-3003-c">
-        für
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:314:39</span></span><i><span class="t-3003-c">alle<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:314:45</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:314:50</span></span><span class="t-3003-c">$X \in N$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:314:51</span></span><span class="t-3003-c">
-        zu<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:314:60</span></span>
-      <span class="t-3003-c">berechnen, brauchen wir eine weitere
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:315:5</span></span><span class="nowrap"><code><span class="t-3003-c">for<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:315:43</span></span></code><span class="t-3003-c">-Schleife.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:315:47</span></span></span><span class="t-3003-c">
-        Wir<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:315:47</span></span>
-      <span class="t-3003-c">berechnen nun
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:316:5</span></span><span class="t-3003-c">$N_{\geq k}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:316:19</span></span><span class="t-3003-c">
-        für steigende
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:316:31</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:316:46</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:316:49</span></span></span><span class="t-3003-c">
-        bis keine<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:316:49</span></span>
-      <span class="t-3003-c">weitere Veränderung eintritt.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:317:5</span></span>
+      Die Menge $N_{k+1}(X)$ lässt sich also mit zwei
+      geschachtelten
+      <span class="nowrap"><code>for</code>-Schleifen</span>
+      berechnen: eine über
+      die $Y \in N_k$ und eine über die Produktionen
+      <span class="nowrap">$Y \rightarrow Z$.</span>
+      Um $N_{k+1}(X)$ für
+      <i>alle</i>
+      $X \in N$ zu berechnen, brauchen wir eine weitere
+      <span class="nowrap"><code>for</code>-Schleife.</span>
+      Wir berechnen nun $N_{\geq k}$ für
+      steigende
+      <span class="nowrap">$k$,</span>
+      bis keine weitere Veränderung
+      eintritt.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beobachtung 5.1.8<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:319:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:319:5</span></span>
-        <span class="t-3003-c">Wenn
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:320:9</span></span><span class="nowrap"><span class="t-3003-c">$N_{k+1}(X) = N_k(X)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:320:14</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:320:35</span></span></span><span class="t-3003-c">
-          dann ist<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:320:35</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:321:9</span></span><span class="t-3003-c">$N_k(X) = N_{k+1}(X) = N_{k+2}(X)= \dots$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:321:9</span></span>
+        <b>Beobachtung 5.1.8</b>
+        Wenn
+        <span class="nowrap">$N_{k+1}(X) = N_k(X)$,</span>
+        dann ist
+        $N_k(X) = N_{k+1}(X) = N_{k+2}(X)= \dots$
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Da die Menge
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:323:5</span></span><span class="t-3003-c">$N_k$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:323:18</span></span><span class="t-3003-c">
-        nur wachsen kann, gilt nach höchstens<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:323:23</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:324:5</span></span><span class="t-3003-c">$n = |N|$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:324:5</span></span><span class="t-3003-c">
-        Schritten
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:324:14</span></span><span class="t-3003-c">$N_n(X) = N_{n+1}(X)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:324:25</span></span><span class="t-3003-c">
-        und somit<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:324:46</span></span>
+      Da die Menge $N_k$ nur wachsen kann, gilt nach
+      höchstens $n = |N|$ Schritten $N_n(X) = N_{n+1}(X)$
+      und somit
     </p>
     <div class="math-block main-column">
       $$
       N_n(X) = \{Y
       \in N \ | \ X \Rightarrow^* Y\} \ .
-      $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:326:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Das geht auch aus einer anderen Überlegung hervor: wenn<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:331:5</span></span>
-      <span class="t-3003-c">man überhaupt
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:332:5</span></span><span class="t-3003-c">$X \Rightarrow Y$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:332:19</span></span><span class="t-3003-c">
-        ableiten kann, dann auch<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:332:36</span></span>
-      <span class="t-3003-c">in maximal
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:333:5</span></span><span class="t-3003-c">$|N|$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:333:16</span></span><span class="t-3003-c">
-        Schritten, denn ansonsten kämen ja in der<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:333:21</span></span>
-      <span class="t-3003-c">Ableitung ein Nichtterminal doppelt vor und man könnte<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:334:5</span></span>
-      <span class="t-3003-c">abkürzen.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:335:5</span></span>
+      Das geht auch aus einer anderen Überlegung hervor:
+      wenn man überhaupt $X \Rightarrow Y$ ableiten kann,
+      dann auch in maximal $|N|$ Schritten, denn ansonsten
+      kämen ja in der Ableitung ein Nichtterminal doppelt
+      vor und man könnte abkürzen.
     </p>
     <div
       id="_20_h.a.i_"
       class="well exercise out"
     >
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.1.7<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:337:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:337:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:339:9</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma = \{a,b,c\}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:339:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:339:33</span></span></span><span class="t-3003-c">
-          Die Grammatik mit den Regeln<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:339:33</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:340:9</span></span><span class="t-3003-c">$A \rightarrow \epsilon \ | \ b A \ | \ c A$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:340:9</span></span><span class="t-3003-c">
-          erzeugt die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:340:53</span></span>
-        <span class="t-3003-c">Sprache aller Wörter, die kein
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:341:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:341:40</span></span><span class="t-3003-c">
-          enthalten. Die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:341:43</span></span>
-        <span class="t-3003-c">Grammatik
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:342:9</span></span><span class="t-3003-c">$B \rightarrow \epsilon \ | \ a B \ | \ c B$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:342:19</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:342:63</span></span>
-        <span class="t-3003-c">erzeugt die Wörter, die kein
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:343:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:343:38</span></span><span class="t-3003-c">
-          enthalten. Die Grammatik<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:343:41</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:344:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:344:9</span></span><span class="t-3003-c">
-          mit Startsymbol
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:344:12</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:344:29</span></span><span class="t-3003-c">
-          und den Produktionen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:344:32</span></span>
+        <b>Übungsaufgabe 5.1.7</b>
+        Sei
+        <span class="nowrap">$\Sigma = \{a,b,c\}$.</span>
+        Die Grammatik mit den
+        Regeln $A \rightarrow \epsilon \ | \ b A \ | \ c A$
+        erzeugt die Sprache aller Wörter, die kein $a$
+        enthalten. Die Grammatik
+        $B \rightarrow \epsilon \ | \ a B \ | \ c B$ erzeugt
+        die Wörter, die kein $b$ enthalten. Die Grammatik $G$
+        mit Startsymbol $S$ und den Produktionen
       </p>
       <div class="math-block">
         $$
@@ -755,50 +606,33 @@
         \rightarrow \epsilon \ | \ b A \ | \ c A \\ B&amp;\rightarrow \epsilon
         | \ a B \ | \ c B
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:346:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">erzeugt die Sprache aller Wörter, die kein
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:352:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:352:52</span></span><span class="t-3003-c">
-          oder kein<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:352:55</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:353:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:353:9</span></span><span class="t-3003-c">
-          enthalten. Die Grammatik
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:353:12</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:353:38</span></span><span class="t-3003-c">
-          ist regulär, enthält aber<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:353:41</span></span>
-        <span class="t-3003-c">Produktionen vom Typ 3, zum Beispiel
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:354:9</span></span><span class="nowrap"><span class="t-3003-c">$S \rightarrow A$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:354:46</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:354:63</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:354:63</span></span>
-        <span class="t-3003-c">Schreiben Sie eine äquivalente Grammatik
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:355:9</span></span><span class="nowrap"><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:355:50</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:355:54</span></span></span><span class="t-3003-c">
-          die nur<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:355:54</span></span>
-        <span class="t-3003-c">Produktionen von der Form
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:356:9</span></span><span class="t-3003-c">$X \rightarrow bY$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:356:35</span></span><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:356:53</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:357:9</span></span><span class="t-3003-c">$X \rightarrow \epsilon$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:357:9</span></span><span class="t-3003-c">
-          enthält.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:357:33</span></span>
+        erzeugt die Sprache aller Wörter, die kein $a$ oder
+        kein $b$ enthalten. Die Grammatik $G$ ist regulär,
+        enthält aber Produktionen vom Typ 3, zum Beispiel
+        <span class="nowrap">$S \rightarrow A$.</span>
+        Schreiben Sie eine äquivalente
+        Grammatik
+        <span class="nowrap">$G'$,</span>
+        die nur Produktionen von der Form
+        $X \rightarrow bY$ und $X \rightarrow \epsilon$
+        enthält.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir können zwar auf Produktionen vom Typ 2 und 3<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:359:5</span></span>
-      <span class="t-3003-c">verzichten. Dies hat allerdings seinen Preis, wie die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:360:5</span></span>
-      <span class="t-3003-c">folgende Übungsaufgabe zeigt:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:361:5</span></span>
+      Wir können zwar auf Produktionen vom Typ 2 und 3
+      verzichten. Dies hat allerdings seinen Preis, wie die
+      folgende Übungsaufgabe zeigt:
     </p>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.1.8<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:363:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:363:5</span></span>
-        <span class="t-3003-c">Betrachten Sie die folgende Grammatik über<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:364:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:365:9</span></span><span class="t-3003-c">$\Sigma = \{a_1,a_2,\dots,a_n\}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:365:9</span></span><span class="t-3003-c">
-          mit den<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:365:41</span></span>
-        <span class="t-3003-c">Nichtterminalsymbolen
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:366:9</span></span><span class="t-3003-c">$\{S, A_1, A_2, \dots, A_n\}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:366:31</span></span><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:366:60</span></span>
-        <span class="t-3003-c">den insgesamt
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:367:9</span></span><span class="t-3003-c">$3n-1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:367:23</span></span><span class="t-3003-c">
-          Produktionen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:367:29</span></span>
+        <b>Übungsaufgabe 5.1.8</b>
+        Betrachten Sie die folgende Grammatik über
+        $\Sigma = \{a_1,a_2,\dots,a_n\}$ mit den
+        Nichtterminalsymbolen $\{S, A_1, A_2, \dots, A_n\}$
+        und den insgesamt $3n-1$ Produktionen
       </p>
       <div class="math-block">
         $$
@@ -808,171 +642,123 @@
         a_{i} | A_{i+1}\\ \dots \\ A_{n-1}&amp;\rightarrow a_{n-1} | A_n \\
         A_n&amp;\rightarrow a_n
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:369:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Schreiben Sie eine äquivalente Grammatik ohne Produktionen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:376:9</span></span>
-        <span class="t-3003-c">der Form
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:377:9</span></span><span class="nowrap"><span class="t-3003-c">$X \rightarrow Y$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:377:18</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:377:35</span></span></span><span class="t-3003-c">
-          Wieviele Produktion hat Ihre<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:377:35</span></span>
-        <span class="t-3003-c">neue Grammatik?<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:378:9</span></span>
+        Schreiben Sie eine äquivalente Grammatik ohne
+        Produktionen der Form
+        <span class="nowrap">$X \rightarrow Y$.</span>
+        Wieviele
+        Produktion hat Ihre neue Grammatik?
       </p>
     </div>
     <h2
       id="_21_h.a.i_"
       class="main-column topic-announcement"
     >
-      <span class="t-3003-c">Reguläre Sprachen nach Baukastenprinzip bauen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:382:9</span></span>
+      Reguläre Sprachen nach Baukastenprinzip bauen
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Eine schöne Eigenschaft von regulären Grammatiken ist,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:384:5</span></span>
-      <span class="t-3003-c">dass sie mächtig genug sind, um uns zu erlauben, die nach<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:385:5</span></span>
-      <span class="t-3003-c">dem Baukastenprinzip zu komplizierteren Einheiten<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:386:5</span></span>
-      <span class="t-3003-c">zusammenzufügen. Formate wie beispielsweise Emailadressen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:387:5</span></span>
-      <span class="t-3003-c">sind oft aufgebaut nach Mustern wie<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:388:5</span></span>
+      Eine schöne Eigenschaft von regulären Grammatiken
+      ist, dass sie mächtig genug sind, um uns zu erlauben,
+      die nach dem Baukastenprinzip zu komplizierteren
+      Einheiten zusammenzufügen. Formate wie beispielsweise
+      Emailadressen sind oft aufgebaut nach Mustern wie
     </p>
     <div class="main-column">
       <ul>
         <li>
           <p>
-            <span class="t-3003-c">Ding 1, dann Ding 2, wie beispielsweise
-              <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:392:13</span></span><i><span class="t-3003-c">Username, dann<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:392:54</span></span>
-              <span class="t-3003-c">
-                <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:393:13</span></span><span class="nowrap"><code><span class="t-3003-c">@<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:393:14</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:393:16</span></span></span><span class="t-3003-c">
-                dann Domainname<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:393:16</span></span></i>
+            Ding 1, dann Ding 2, wie beispielsweise
+            <i>Username,
+              dann
+              <span class="nowrap"><code>@</code>,</span>
+              dann Domainname</i>
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Ding, bliebig oft wiederholt, wie beispielsweise
-              <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:396:13</span></span><i><span class="t-3003-c">eine<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:396:63</span></span>
-              <span class="t-3003-c">beliebig lange Folge von Labels, mit
-                <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:397:13</span></span><code><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:397:51</span></span></code><span class="t-3003-c">
-                separiert.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:397:53</span></span></i>
+            Ding, bliebig oft wiederholt, wie beispielsweise
+            <i>eine beliebig lange Folge von Labels, mit
+              <code>.</code>
+              separiert.</i>
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Ding 1 oder Ding 2. Beispielsweise
-              <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:400:13</span></span><span class="nowrap"><i><span class="t-3003-c">Bindestrich oder<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:400:49</span></span>
-                <span class="t-3003-c">alphanumerisches Zeichen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:401:13</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:401:38</span></span></span>
+            Ding 1 oder Ding 2. Beispielsweise
+            <span class="nowrap"><i>Bindestrich oder
+                alphanumerisches Zeichen</i>.</span>
           </p>
         </li>
       </ul>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Lemma 5.1.9<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:403:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:403:5</span></span>
-        <span class="t-3003-c">Seien
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:404:9</span></span><span class="t-3003-c">$L_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:404:15</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:404:20</span></span><span class="t-3003-c">$L_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:404:25</span></span><span class="t-3003-c">
-          zwei reguläre Sprachen. Dann ist<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:404:30</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:405:9</span></span><span class="t-3003-c">$L_1 \cup L_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:405:9</span></span><span class="t-3003-c">
-          auch regulär.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:405:23</span></span>
+        <b>Lemma 5.1.9</b>
+        Seien $L_1$ und $L_2$ zwei reguläre Sprachen. Dann
+        ist $L_1 \cup L_2$ auch regulär.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Unsere Strategie ist, reguläre Grammatiken
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:408:9</span></span><span class="t-3003-c">$G_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:408:52</span></span><span class="t-3003-c">
-          für
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:408:57</span></span><span class="t-3003-c">$L_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:408:62</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:408:67</span></span>
-        <span class="t-3003-c">und
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:409:9</span></span><span class="t-3003-c">$G_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:409:13</span></span><span class="t-3003-c">
-          für
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:409:18</span></span><span class="t-3003-c">$L_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:409:23</span></span><span class="t-3003-c">
-          zu betrachten und daraus eine neue<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:409:28</span></span>
-        <span class="t-3003-c">reguläre Grammatik
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:410:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:410:28</span></span><span class="t-3003-c">
-          für
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:410:31</span></span><span class="t-3003-c">$L_1 \cup L_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:410:36</span></span><span class="t-3003-c">
-          zu bauen. Aus
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:410:50</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:410:65</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:410:68</span></span>
-        <span class="t-3003-c">sollen also genau diejenigen Strings ableitbar sein, die in<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:411:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:412:9</span></span><span class="t-3003-c">$L_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:412:9</span></span><span class="t-3003-c">
-          oder
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:412:14</span></span><span class="t-3003-c">$L_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:412:20</span></span><span class="t-3003-c">
-          enthalten sind. Seien nun<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:412:25</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:413:9</span></span><span class="t-3003-c">$G_1 = (\Sigma_1, N_1, P_1, S_1)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:413:9</span></span><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:413:42</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:414:9</span></span><span class="t-3003-c">$G_2 = (\Sigma_2, N_2, P_2, S_2)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:414:9</span></span><span class="t-3003-c">
-          die beiden regulären<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:414:42</span></span>
-        <span class="t-3003-c">Grammatiken. Wir gehen davon aus, dass<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:415:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:416:9</span></span><span class="nowrap"><span class="t-3003-c">$N_1 \cap N_2 = \emptyset$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:416:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:416:35</span></span></span><span class="t-3003-c">
-          dass es also bei den<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:416:35</span></span>
-        <span class="t-3003-c">nichtterminalen Symbolen keinen Zweifel gibt, zu welcher<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:417:9</span></span>
-        <span class="t-3003-c">Grammatik sie gehören. Falls dies nicht der Fall sein<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:418:9</span></span>
-        <span class="t-3003-c">sollte, können wir zum Beispiel die Symbole in
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:419:9</span></span><span class="t-3003-c">$N_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:419:56</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:419:61</span></span>
-        <span class="t-3003-c">einfach umbenennen. Wir erschaffen nun ein neues<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:420:9</span></span>
-        <span class="t-3003-c">Startsymbol
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:421:9</span></span><span class="t-3003-c">$S \not \in N_1 \cup N_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:421:21</span></span><span class="t-3003-c">
-          und bauen uns eine<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:421:46</span></span>
-        <span class="t-3003-c">neue Grammatik, in dem wir die zwei neuen Regeln<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:422:9</span></span>
+        Unsere Strategie ist, reguläre Grammatiken $G_1$ für
+        $L_1$ und $G_2$ für $L_2$ zu betrachten und daraus
+        eine neue reguläre Grammatik $G$ für $L_1 \cup L_2$
+        zu bauen. Aus $G$ sollen also genau diejenigen
+        Strings ableitbar sein, die in $L_1$ oder $L_2$
+        enthalten sind. Seien nun
+        $G_1 = (\Sigma_1, N_1, P_1, S_1)$ und
+        $G_2 = (\Sigma_2, N_2, P_2, S_2)$ die beiden
+        regulären Grammatiken. Wir gehen davon aus, dass
+        <span class="nowrap">$N_1 \cap N_2 = \emptyset$,</span>
+        dass es also bei den
+        nichtterminalen Symbolen keinen Zweifel gibt, zu
+        welcher Grammatik sie gehören. Falls dies nicht der
+        Fall sein sollte, können wir zum Beispiel die Symbole
+        in $N_2$ einfach umbenennen. Wir erschaffen nun ein
+        neues Startsymbol $S \not \in N_1 \cup N_2$ und bauen
+        uns eine neue Grammatik, in dem wir die zwei neuen
+        Regeln
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         S&amp;\rightarrow S_1 \\ S&amp;\rightarrow S_2
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:424:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">hinzufügen. Formal also<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:428:9</span></span>
+        hinzufügen. Formal also
       </p>
       <div class="math-block">
         $$
         G := (\Sigma_1 \cup
         \Sigma_2, N_1 \cup N_2 \cup \{S\}, P_1 \cup P_2 \cup \{S
         \rightarrow S_1, S \rightarrow S_2\}, S) \ .
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:430:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">In einer Ableitung aus
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:436:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:436:32</span></span><span class="t-3003-c">
-          müssen wir uns also im ersten<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:436:35</span></span>
-        <span class="t-3003-c">Schritt entscheiden, ob wir nach
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:437:9</span></span><span class="t-3003-c">$S_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:437:42</span></span><span class="t-3003-c">
-          oder nach
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:437:47</span></span><span class="t-3003-c">$S_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:437:58</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:437:63</span></span>
-        <span class="t-3003-c">gehen und somit ein Wort in
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:438:9</span></span><span class="t-3003-c">$L_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:438:37</span></span><span class="t-3003-c">
-          oder eines in
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:438:42</span></span><span class="t-3003-c">$L_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:438:57</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:438:62</span></span>
-        <span class="t-3003-c">ableiten wollen.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:439:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        In einer Ableitung aus $G$ müssen wir uns also im
+        ersten Schritt entscheiden, ob wir nach $S_1$ oder
+        nach $S_2$ gehen und somit ein Wort in $L_1$ oder
+        eines in $L_2$ ableiten wollen.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">In einem nächsten Schritt werden wir zeigen, dass<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:441:5</span></span>
-      <span class="t-3003-c">Konstrukte wie
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:442:5</span></span><i><span class="t-3003-c">Ding 1, gefolgt von Ding 2<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:442:21</span></span></i><span class="t-3003-c">
-        mit regulären<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:442:48</span></span>
-      <span class="t-3003-c">Grammatiken realisierbar sind.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:443:5</span></span>
+      In einem nächsten Schritt werden wir zeigen, dass
+      Konstrukte wie
+      <i>Ding 1, gefolgt von Ding 2</i>
+      mit
+      regulären Grammatiken realisierbar sind.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 5.1.10 (Kleenesche Hülle).<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:445:5</span></span></b><span class="t-3003-c">
-          Seien
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:446:30</span></span><span class="t-3003-c">$L_1, L_2 \in \Sigma^*$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:446:37</span></span><span class="t-3003-c">
-          zwei<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:446:60</span></span>
-        <span class="t-3003-c">Sprachen. Die Verknüpfungssprache
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:447:9</span></span><span class="t-3003-c">$L_1 \circ L_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:447:43</span></span><span class="t-3003-c">
-          ist<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:447:58</span></span>
-        <span class="t-3003-c">definiert als<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:448:9</span></span>
+        <b>Definition 5.1.10 (Kleenesche Hülle).</b>
+        Seien $L_1, L_2 \in \Sigma^*$
+        zwei Sprachen. Die Verknüpfungssprache $L_1 \circ L_2$
+        ist definiert als
       </p>
       <div class="math-block">
         $$
@@ -980,92 +766,54 @@
         L_1 \circ L_2 := \{ \alpha \beta \ | \ \alpha \in
         L_1, \beta \in L_2\} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:450:9</span>
+        $$
       </div>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Lemma 5.1.11<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:455:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:455:5</span></span>
-        <span class="t-3003-c">Seien
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:456:9</span></span><span class="t-3003-c">$L_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:456:15</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:456:20</span></span><span class="t-3003-c">$L_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:456:25</span></span><span class="t-3003-c">
-          zwei reguläre Sprachen. Dann ist<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:456:30</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:457:9</span></span><span class="t-3003-c">$L_1 \circ L_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:457:9</span></span><span class="t-3003-c">
-          auch regulär.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:457:24</span></span>
+        <b>Lemma 5.1.11</b>
+        Seien $L_1$ und $L_2$ zwei reguläre Sprachen. Dann
+        ist $L_1 \circ L_2$ auch regulär.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Wir im letzten Beweis nehmen wir uns eine reguläre<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:460:9</span></span>
-        <span class="t-3003-c">Grammatik
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:461:9</span></span><span class="t-3003-c">$G_1 = (\Sigma, N_1, P_1, S_1)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:461:19</span></span><span class="t-3003-c">
-          für
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:461:50</span></span><span class="t-3003-c">$L_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:461:55</span></span><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:461:60</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:462:9</span></span><span class="t-3003-c">$G_2 = (\Sigma, N_2, P_2, S_2)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:462:9</span></span><span class="t-3003-c">
-          für
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:462:40</span></span><span class="nowrap"><span class="t-3003-c">$L_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:462:45</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:462:50</span></span></span><span class="t-3003-c">
-          Ob die beiden<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:462:50</span></span>
-        <span class="t-3003-c">Alphabete die gleichen sind, also beide
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:463:9</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:463:49</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:463:57</span></span></span><span class="t-3003-c">
-          oder<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:463:57</span></span>
-        <span class="t-3003-c">zwei verschiedene, also
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:464:9</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma_1, \Sigma_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:464:33</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:464:53</span></span></span><span class="t-3003-c">
-          ist nicht<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:464:53</span></span>
-        <span class="t-3003-c">entscheidend, da wir im letzteren Fall
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:465:9</span></span><span class="t-3003-c">$L_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:465:48</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:465:53</span></span><span class="t-3003-c">$L_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:465:58</span></span><span class="t-3003-c">
-          als<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:465:63</span></span>
-        <span class="t-3003-c">Sprachen über dem Alphabet<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:466:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:467:9</span></span><span class="t-3003-c">$\Sigma := \Sigma_1 \cup \Sigma_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:467:9</span></span><span class="t-3003-c">
-          betrachten können. Wir<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:467:43</span></span>
-        <span class="t-3003-c">führen nun wiederum ein neues Startsymbol<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:468:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:469:9</span></span><span class="t-3003-c">$S \not \in N_1 \cup n_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:469:9</span></span><span class="t-3003-c">
-          ein und fügen die Regel<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:469:34</span></span>
+        Wir im letzten Beweis nehmen wir uns eine reguläre
+        Grammatik $G_1 = (\Sigma, N_1, P_1, S_1)$ für $L_1$
+        und $G_2 = (\Sigma, N_2, P_2, S_2)$ für
+        <span class="nowrap">$L_2$.</span>
+        Ob die
+        beiden Alphabete die gleichen sind, also beide
+        <span class="nowrap">$\Sigma$,</span>
+        oder zwei verschiedene, also
+        <span class="nowrap">$\Sigma_1, \Sigma_2$,</span>
+        ist nicht entscheidend, da wir
+        im letzteren Fall $L_1$ und $L_2$ als Sprachen über
+        dem Alphabet $\Sigma := \Sigma_1 \cup \Sigma_2$
+        betrachten können. Wir führen nun wiederum ein neues
+        Startsymbol $S \not \in N_1 \cup n_2$ ein und fügen
+        die Regel
       </p>
       <div class="math-block">
         $$
         S \rightarrow S_1 S_2
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:471:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">hinzu. Es sollte nun klar sein, dass wir aus
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:475:9</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:475:54</span></span><span class="t-3003-c">
-          genau die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:475:57</span></span>
-        <span class="t-3003-c">Wörter der Form
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:476:9</span></span><span class="t-3003-c">$\alpha \beta$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:476:25</span></span><span class="t-3003-c">
-          mit<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:476:39</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:477:9</span></span><span class="t-3003-c">$S_1 \Rightarrow^* \alpha$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:477:9</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:477:35</span></span><span class="t-3003-c">$S_2 \Rightarrow^* \beta$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:477:40</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:477:65</span></span>
-        <span class="t-3003-c">ableiten können, also genau die in
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:478:9</span></span><span class="nowrap"><span class="t-3003-c">$L_1 \cup L_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:478:44</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:478:58</span></span></span><span class="t-3003-c">
-          Leider<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:478:58</span></span>
-        <span class="t-3003-c">ist die Regel
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:479:9</span></span><span class="t-3003-c">$S \rightarrow S_1 S_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:479:23</span></span><span class="t-3003-c">
-          nicht regulär, da<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:479:46</span></span>
-        <span class="t-3003-c">auf der rechten Seite zwei nichtterminale Symbole<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:480:9</span></span>
-        <span class="t-3003-c">vorkommen. Wir müssen anders vorgehen. Wir ändern die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:481:9</span></span>
-        <span class="t-3003-c">Regeln von
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:482:9</span></span><span class="t-3003-c">$G_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:482:20</span></span><span class="t-3003-c">
-          so ab, dass immer, wenn in einer<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:482:25</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:483:9</span></span><span class="nowrap"><span class="t-3003-c">$G_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:483:9</span></span><span class="t-3003-c">-Regle<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:483:14</span></span></span><span class="t-3003-c">
-          die Ableitung endet, wir das Zeichen
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:483:14</span></span><span class="t-3003-c">$S_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:483:58</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:483:63</span></span>
-        <span class="t-3003-c">anhängen:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:484:9</span></span>
+        hinzu. Es sollte nun klar sein, dass wir aus $S$
+        genau die Wörter der Form $\alpha \beta$ mit
+        $S_1 \Rightarrow^* \alpha$ und
+        $S_2 \Rightarrow^* \beta$ ableiten können, also genau
+        die in
+        <span class="nowrap">$L_1 \cup L_2$.</span>
+        Leider ist die Regel
+        $S \rightarrow S_1 S_2$ nicht regulär, da auf der
+        rechten Seite zwei nichtterminale Symbole vorkommen.
+        Wir müssen anders vorgehen. Wir ändern die Regeln von
+        $G_1$ so ab, dass immer, wenn in einer
+        <span class="nowrap">$G_1$-Regle</span>
+        die Ableitung endet, wir das Zeichen $S_2$ anhängen:
       </p>
       <div class="math-block">
         $$
@@ -1076,43 +824,35 @@
         \rightarrow Y \\ X \rightarrow \epsilon&amp;Y \rightarrow S_2 \ .
         \end{array}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:486:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Die Menge an Produktionen der Grammatik
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:494:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:494:49</span></span><span class="t-3003-c">
-          besteht dann<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:494:52</span></span>
-        <span class="t-3003-c">aus den nach dieser Tabelle modifizierten Produktionen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:495:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:496:9</span></span><span class="t-3003-c">$P_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:496:9</span></span><span class="t-3003-c">
-          von
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:496:14</span></span><span class="nowrap"><span class="t-3003-c">$G_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:496:19</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:496:24</span></span></span><span class="t-3003-c">
-          zusammen mit den (unmodifizierten) Regeln<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:496:24</span></span>
-        <span class="t-3003-c">von
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:497:9</span></span><span class="nowrap"><span class="t-3003-c">$G_2$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:497:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:497:18</span></span></span><span class="t-3003-c">
-          Das Startsymbol von
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:497:18</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:497:40</span></span><span class="t-3003-c">
-          ist
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:497:43</span></span><span class="nowrap"><span class="t-3003-c">$S_1$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:497:48</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:497:53</span></span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Die Menge an Produktionen der Grammatik $G$ besteht
+        dann aus den nach dieser Tabelle modifizierten
+        Produktionen $P_1$ von
+        <span class="nowrap">$G_1$,</span>
+        zusammen mit den
+        (unmodifizierten) Regeln von
+        <span class="nowrap">$G_2$.</span>
+        Das Startsymbol
+        von $G$ ist
+        <span class="nowrap">$S_1$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">In einem dritten Lemma werden wir zeigen, dass die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:499:5</span></span>
-      <span class="t-3003-c">Konstruktion
-        <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:500:5</span></span><i><span class="t-3003-c">Ding, beliebig oft wiederholt<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:500:19</span></span></i><span class="t-3003-c">
-        mit regulären<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:500:49</span></span>
-      <span class="t-3003-c">Sprachen möglich ist.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:501:5</span></span>
+      In einem dritten Lemma werden wir zeigen, dass die
+      Konstruktion
+      <i>Ding, beliebig oft wiederholt</i>
+      mit
+      regulären Sprachen möglich ist.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 5.1.12<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:503:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:503:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:504:9</span></span><span class="nowrap"><span class="t-3003-c">$L \subseteq \Sigma^*$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:504:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:504:35</span></span></span><span class="t-3003-c">
-          Die Sprache
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:504:35</span></span><span class="t-3003-c">$L^n$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:504:49</span></span><span class="t-3003-c">
-          ist die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:504:54</span></span>
-        <span class="t-3003-c">Menge<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:505:9</span></span>
+        <b>Definition 5.1.12</b>
+        Sei
+        <span class="nowrap">$L \subseteq \Sigma^*$.</span>
+        Die Sprache $L^n$ ist die
+        Menge
       </p>
       <div class="math-block">
         $$
@@ -1120,17 +860,12 @@
         L^n := \{ \alpha_1 \alpha_2 \dots \alpha_n \ | \
         \alpha_i \in L \ \forall 1 \leq i \leq n \} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:507:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Insbesondere ist
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:512:9</span></span><span class="t-3003-c">$L^1 = L$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:512:26</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:512:35</span></span><span class="nowrap"><span class="t-3003-c">$L^0 = \{\epsilon\}$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:512:40</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:512:60</span></span></span><span class="t-3003-c">
-          Die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:512:60</span></span>
-        <span class="t-3003-c">Menge
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:513:9</span></span><span class="t-3003-c">$L^*$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:513:15</span></span><span class="t-3003-c">
-          ist nun<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:513:20</span></span>
+        Insbesondere ist $L^1 = L$ und
+        <span class="nowrap">$L^0 = \{\epsilon\}$.</span>
+        Die Menge $L^*$ ist nun
       </p>
       <div class="math-block">
         $$
@@ -1138,44 +873,30 @@
         L^* := L^0 \cup L^1 \cup L^2 \cup L^3
         \cup \dots
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:515:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">also die Sprache der Wörter der Form<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:520:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:521:9</span></span><span class="nowrap"><span class="t-3003-c">$\alpha_1 \alpha_2 \dots \alpha_n$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:521:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:521:43</span></span></span><span class="t-3003-c">
-          wobei
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:521:43</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:521:51</span></span><span class="t-3003-c">
-          beliebig und<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:521:54</span></span>
-        <span class="t-3003-c">jedes
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:522:9</span></span><span class="t-3003-c">$\alpha_i \in L$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:522:15</span></span><span class="t-3003-c">
-          ist.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:522:31</span></span>
+        also die Sprache der Wörter der Form
+        <span class="nowrap">$\alpha_1 \alpha_2 \dots \alpha_n$,</span>
+        wobei $n$
+        beliebig und jedes $\alpha_i \in L$ ist.
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Lemma 5.1.13<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:524:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:524:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:525:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:525:13</span></span><span class="t-3003-c">
-          eine reguläre Sprache. Dann ist
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:525:16</span></span><span class="t-3003-c">$L^*$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:525:49</span></span><span class="t-3003-c">
-          auch<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:525:54</span></span>
-        <span class="t-3003-c">regulär.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:526:9</span></span>
+        <b>Lemma 5.1.13</b>
+        Sei $L$ eine reguläre Sprache. Dann ist $L^*$ auch
+        regulär.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:529:9</span></span><span class="t-3003-c">$G = (\Sigma, N, P, S)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:529:13</span></span><span class="t-3003-c">
-          eine reguläre Grammatik für<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:529:36</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:530:9</span></span><span class="nowrap"><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:530:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:530:12</span></span></span><span class="t-3003-c">
-          Wir könnten ein neues Startsymbol
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:530:12</span></span><span class="t-3003-c">$S'$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:530:48</span></span><span class="t-3003-c">
-          einführen und<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:530:52</span></span>
+        Sei $G = (\Sigma, N, P, S)$ eine reguläre Grammatik
+        für
+        <span class="nowrap">$L$.</span>
+        Wir könnten ein neues Startsymbol $S'$
+        einführen und
       </p>
       <div class="math-block">
         $$
@@ -1183,17 +904,13 @@
         S'
         &amp;\rightarrow \epsilon \\ S'&amp;\rightarrow SS'
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:532:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">als zwei neue Regeln einführen. Natürlich geht das nicht,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:537:9</span></span>
-        <span class="t-3003-c">denn
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:538:9</span></span><span class="t-3003-c">$S' \rightarrow SS'$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:538:14</span></span><span class="t-3003-c">
-          ist nicht erlaubt in regulären<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:538:34</span></span>
-        <span class="t-3003-c">Grammatiken. Ähnlich wie im vorherigen Beweis fangen wir<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:539:9</span></span>
-        <span class="t-3003-c">das Ende einer
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:540:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:540:24</span></span><span class="t-3003-c">
-          -Ableitung ab:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:540:27</span></span>
+        als zwei neue Regeln einführen. Natürlich geht das
+        nicht, denn $S' \rightarrow SS'$ ist nicht erlaubt in
+        regulären Grammatiken. Ähnlich wie im vorherigen
+        Beweis fangen wir das Ende einer $G$ -Ableitung ab:
       </p>
       <div class="math-block">
         $$
@@ -1204,207 +921,162 @@
         aS \\ X \rightarrow Y&amp;X \rightarrow Y \\ X \rightarrow \epsilon&amp;
         Y \rightarrow S \ . \end{array}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:542:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Um überhaupt eine Ableitung beenden zu können, fügen wir<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:550:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:551:9</span></span><span class="t-3003-c">$S \rightarrow \epsilon$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:551:9</span></span><span class="t-3003-c">
-          noch als Regel hinzu.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:551:33</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Um überhaupt eine Ableitung beenden zu können, fügen
+        wir $S \rightarrow \epsilon$ noch als Regel hinzu.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 5.1.9<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:553:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:553:5</span></span>
-        <span class="t-3003-c">Hier sehen Sie einen URL mit Query-String:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:554:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:555:9</span></span><code><span class="t-3003-c">https://web1.hszg.de/modulkatalog/index.php?activTopic=3&amp;activNav=2&amp;stid=566&amp;frei=1&amp;kennz=suche&amp;activCont=1<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:555:10</span></span></code><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:555:118</span></span>
-        <span class="t-3003-c">Der URL besteht aus mehreren Teilen:<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:556:9</span></span>
+        <b>Übungsaufgabe 5.1.9</b>
+        Hier sehen Sie einen URL mit Query-String:
+        <code>https://web1.hszg.de/modulkatalog/index.php?activTopic=3&amp;activNav=2&amp;stid=566&amp;frei=1&amp;kennz=suche&amp;activCont=1</code>
+        Der URL besteht aus mehreren Teilen:
       </p>
       <ol>
         <li>
           <p>
-            <span class="t-3003-c">Dem Protokoll. Hier ist das
-              <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:560:17</span></span><span class="nowrap"><code><span class="t-3003-c">https<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:560:46</span></span></code><span class="t-3003-c">;<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:560:52</span></span></span><span class="t-3003-c">
-              es kann aber auch<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:560:52</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:561:17</span></span><code><span class="t-3003-c">http<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:561:18</span></span></code><span class="t-3003-c">
-              oder
-              <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:561:23</span></span><code><span class="t-3003-c">ftp<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:561:30</span></span></code><span class="t-3003-c">
-              sein.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:561:34</span></span>
+            Dem Protokoll. Hier ist das
+            <span class="nowrap"><code>https</code>;</span>
+            es kann aber
+            auch
+            <code>http</code>
+            oder
+            <code>ftp</code>
+            sein.
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Dem
-              <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:564:17</span></span><code><span class="t-3003-c">://<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:564:22</span></span></code><span class="t-3003-c">
-              nach dem Protokoll.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:564:26</span></span>
+            Dem
+            <code>://</code>
+            nach dem Protokoll.
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Dem Domainnamen, hier
-              <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:567:17</span></span><span class="nowrap"><code><span class="t-3003-c">web1.hszg.de<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:567:40</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:567:53</span></span></span>
+            Dem Domainnamen, hier
+            <span class="nowrap"><code>web1.hszg.de</code>.</span>
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Optional nun einem Pfad, hier
-              <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:570:17</span></span><span class="nowrap"><code><span class="t-3003-c">/modulkatalog/index.php<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:570:48</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:570:72</span></span></span>
+            Optional nun einem Pfad, hier
+            <span class="nowrap"><code>/modulkatalog/index.php</code>.</span>
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Falls ein Pfad enthalten ist, dann optional ein
-              <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:573:17</span></span><span class="nowrap"><code><span class="t-3003-c">?<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:573:66</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:573:68</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:573:68</span></span>
-            <span class="t-3003-c">gefolgt von einem Query-String; dieser besteht aus beliebig<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:574:17</span></span>
-            <span class="t-3003-c">vielen, aber mindestens einem Paar der Form Key=Value,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:575:17</span></span>
-            <span class="t-3003-c">wobei die Paare mit einem
-              <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:576:17</span></span><code><span class="t-3003-c">&amp;<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:576:44</span></span></code><span class="t-3003-c">
-              separiert sind.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:576:46</span></span>
+            Falls ein Pfad enthalten ist, dann optional ein
+            <span class="nowrap"><code>?</code>,</span>
+            gefolgt von einem Query-String; dieser besteht aus
+            beliebig vielen, aber mindestens einem Paar der Form
+            Key=Value, wobei die Paare mit einem
+            <code>&amp;</code>
+            separiert
+            sind.
           </p>
         </li>
       </ol>
       <p>
-        <span class="t-3003-c">Zeigen Sie, dass die Sprache der syntaktisch korrekten<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:578:9</span></span>
-        <span class="t-3003-c">URLs (in dem gerade beschriebenen Format) regulär ist. Sie<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:579:9</span></span>
-        <span class="t-3003-c">können entweder direkt eine reguläre Grammatik angeben oder<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:580:9</span></span>
-        <span class="t-3003-c">mit dem Baukastenprinzip und den drei letzten Lemmas<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:581:9</span></span>
-        <span class="t-3003-c">argumentieren.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:582:9</span></span>
+        Zeigen Sie, dass die Sprache der syntaktisch
+        korrekten URLs (in dem gerade beschriebenen Format)
+        regulär ist. Sie können entweder direkt eine reguläre
+        Grammatik angeben oder mit dem Baukastenprinzip und
+        den drei letzten Lemmas argumentieren.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir führen ein weiteres Baukastenwerkzeug ein, weil es in<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:584:5</span></span>
-      <span class="t-3003-c">der Praxis recht häufig vorkommt.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:585:5</span></span>
+      Wir führen ein weiteres Baukastenwerkzeug ein, weil
+      es in der Praxis recht häufig vorkommt.
     </p>
     <div
       id="_22_h.a.i_"
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Theorem 5.1.14<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:587:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:587:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:589:9</span></span><span class="t-3003-c">$L \subseteq \Sigma^*$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:589:13</span></span><span class="t-3003-c">
-          eine reguläre Sprache und<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:589:35</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:590:9</span></span><span class="t-3003-c">$c \not \in \Sigma$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:590:9</span></span><span class="t-3003-c">
-          ein neues Terminalsymbol. Die Sprache<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:590:28</span></span>
-        <span class="t-3003-c">aller nichtleeren Folgen von
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:591:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:591:38</span></span><span class="t-3003-c">
-          -Wörten, die durch
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:591:41</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:591:61</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:591:64</span></span>
-        <span class="t-3003-c">separiert sind, also formal<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:592:9</span></span>
+        <b>Theorem 5.1.14</b>
+        Sei $L \subseteq \Sigma^*$ eine reguläre Sprache und
+        $c \not \in \Sigma$ ein neues Terminalsymbol. Die
+        Sprache aller nichtleeren Folgen von $L$ -Wörten, die
+        durch $c$ separiert sind, also formal
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         L' := L \circ ( \{c\} \circ L)^*
         \end{align*}
-        $$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:594:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">ist wiederum regulär.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:598:9</span></span>
+        ist wiederum regulär.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Dies folgt sofort aus den vorherigen Theorem, weil wir nur<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:601:9</span></span>
-        <span class="t-3003-c">Konkatenation
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:602:9</span></span><span class="t-3003-c">$\circ$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:602:23</span></span><span class="t-3003-c">
-          und Kleenesche Hülle
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:602:30</span></span><span class="t-3003-c">$^*$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:602:52</span></span><span class="t-3003-c">
-          verwenden.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:602:56</span></span>
-        <span class="t-3003-c">Dennoch lohne es sich, explizit für
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:603:9</span></span><span class="t-3003-c">$L'$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:603:45</span></span><span class="t-3003-c">
-          eine Grammatik zu<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:603:49</span></span>
-        <span class="t-3003-c">bauen. Es ist auch recht einfach. Sei \(G =<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:604:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:605:9</span></span><span class="t-3003-c">$\Sigma, N, P, S)$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:605:9</span></span><span class="t-3003-c">
-          eine reguläre Grammatik für
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:605:27</span></span><span class="nowrap"><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:605:56</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:605:59</span></span></span><span class="t-3003-c">
-          Die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:605:59</span></span>
-        <span class="t-3003-c">Grammatik
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:606:9</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:606:19</span></span><span class="t-3003-c">
-          für
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:606:23</span></span><span class="t-3003-c">$L'$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:606:28</span></span><span class="t-3003-c">
-          hat die gleichen Nichtterminale<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:606:32</span></span>
-        <span class="t-3003-c">und das gleiche Startsymbol, gibt uns aber zusätzlich die<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:607:9</span></span>
-        <span class="t-3003-c">Möglichkeit, wenn eine
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:608:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:608:32</span></span><span class="t-3003-c">
-          -Ableitung aufhört, dann wieder<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:608:35</span></span>
-        <span class="t-3003-c">ein
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:609:9</span></span><span class="t-3003-c">$cS$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:609:13</span></span><span class="t-3003-c">
-          anzuhängen und wieder mit
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:609:17</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:609:44</span></span><span class="t-3003-c">
-          weiterzumachen.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:609:47</span></span>
-        <span class="t-3003-c">Also: wir beginnen mit
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:610:9</span></span><span class="nowrap"><span class="t-3003-c">$P' := P$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:610:32</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:610:41</span></span></span><span class="t-3003-c">
-          fügen aber noch weitere<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:610:41</span></span>
-        <span class="t-3003-c">Produktionen hinzu. Nämlich: Für jede
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:611:9</span></span><span class="nowrap"><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:611:47</span></span><span class="t-3003-c">-Produktion<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:611:50</span></span></span><span class="t-3003-c">
-          der<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:611:50</span></span>
-        <span class="t-3003-c">Form
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:612:9</span></span><span class="t-3003-c">$Y \rightarrow \epsilon$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:612:14</span></span><span class="t-3003-c">
-          fügen wir
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:612:38</span></span><span class="t-3003-c">$Y \rightarrow cS$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:612:49</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:612:67</span></span>
-        <span class="t-3003-c">hinzu. Für jede
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:613:9</span></span><span class="nowrap"><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:613:25</span></span><span class="t-3003-c">-Produktion<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:613:28</span></span></span><span class="t-3003-c">
-          der Form
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:613:28</span></span><span class="t-3003-c">$Y \rightarrow a$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:613:49</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:613:66</span></span>
-        <span class="t-3003-c">fügen wir
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:614:9</span></span><span class="t-3003-c">$Y \rightarrow acS$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:614:19</span></span><span class="t-3003-c">
-          hinzu. Die neue Grammatik<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:614:38</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:615:9</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:615:9</span></span><span class="t-3003-c">
-          ist eine
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:615:13</span></span><span class="nowrap"><i><span class="t-3003-c">erweitert reguläre Grammatik<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:615:24</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:615:53</span></span></span><span class="t-3003-c">
-          da Regeln<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:615:53</span></span>
-        <span class="t-3003-c">wie
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:616:9</span></span><span class="t-3003-c">$Y \rightarrow acS$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:616:13</span></span><span class="t-3003-c">
-          auf der rechten Seite zwei<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:616:32</span></span>
-        <span class="t-3003-c">Terminalsymbole haben. Wir müssen sie also erst noch in<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:617:9</span></span>
-        <span class="t-3003-c">eine "richtig reguläre" umwandeln. In konkreten Anwendungne<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:618:9</span></span>
-        <span class="t-3003-c">empfiehlt es dazu, die Nichtterminale von
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:619:9</span></span><span class="t-3003-c">$G'$<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:619:51</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/05/01-regular-grammars.wly:619:55</span></span>
-        <span class="t-3003-c">umzubenennen, damit keien Verwechslungsgefahr droht.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:620:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Dies folgt sofort aus den vorherigen Theorem, weil
+        wir nur Konkatenation $\circ$ und Kleenesche Hülle
+        $^*$ verwenden. Dennoch lohne es sich, explizit für
+        $L'$ eine Grammatik zu bauen. Es ist auch recht
+        einfach. Sei \(G = $\Sigma, N, P, S)$ eine reguläre
+        Grammatik für
+        <span class="nowrap">$L$.</span>
+        Die Grammatik $G'$ für $L'$ hat
+        die gleichen Nichtterminale und das gleiche
+        Startsymbol, gibt uns aber zusätzlich die Möglichkeit,
+        wenn eine $G$ -Ableitung aufhört, dann wieder ein $cS$
+        anzuhängen und wieder mit $S$ weiterzumachen. Also:
+        wir beginnen mit
+        <span class="nowrap">$P' := P$,</span>
+        fügen aber noch weitere
+        Produktionen hinzu. Nämlich: Für jede
+        <span class="nowrap">$G$-Produktion</span>
+        der Form $Y \rightarrow \epsilon$ fügen wir
+        $Y \rightarrow cS$ hinzu. Für jede
+        <span class="nowrap">$G$-Produktion</span>
+        der
+        Form $Y \rightarrow a$ fügen wir $Y \rightarrow acS$
+        hinzu. Die neue Grammatik $G'$ ist eine
+        <span class="nowrap"><i>erweitert
+            reguläre Grammatik</i>,</span>
+        da Regeln wie $Y \rightarrow acS$
+        auf der rechten Seite zwei Terminalsymbole haben. Wir
+        müssen sie also erst noch in eine "richtig reguläre"
+        umwandeln. In konkreten Anwendungne empfiehlt es dazu,
+        die Nichtterminale von $G'$ umzubenennen, damit keien
+        Verwechslungsgefahr droht.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir können noch sehr viel mehr Operationen mit regulären<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:622:5</span></span>
-      <span class="t-3003-c">Sprachen machen als Vereinigung, Konkatenation und<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:623:5</span></span>
-      <span class="t-3003-c">Kleenesche Hülle. Beispielsweise Umkehrung und Komplement,<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:624:5</span></span>
-      <span class="t-3003-c">also beispielsweise<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:625:5</span></span>
+      Wir können noch sehr viel mehr Operationen mit
+      regulären Sprachen machen als Vereinigung,
+      Konkatenation und Kleenesche Hülle. Beispielsweise
+      Umkehrung und Komplement, also beispielsweise
     </p>
     <div class="main-column">
       <ul>
         <li>
           <p>
-            <span class="t-3003-c">Alle Emailadressen, von rechts nach links gelesen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:629:13</span></span>
-            <span class="t-3003-c">(Umkehrung);<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:630:13</span></span>
+            Alle Emailadressen, von rechts nach links gelesen
+            (Umkehrung);
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Die Menge aller syntaktisch inkorrekten Emailadressen<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:633:13</span></span>
-            <span class="t-3003-c">(Komplement).<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:634:13</span></span>
+            Die Menge aller syntaktisch inkorrekten Emailadressen
+            (Komplement).
           </p>
         </li>
       </ul>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Mit den Werkzeugen, die wir uns bis jetzt erarbeitet<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:636:5</span></span>
-      <span class="t-3003-c">haben, können wir eine Grammatik für das Komplement nicht<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:637:5</span></span>
-      <span class="t-3003-c">konstruieren. Wir brauchen etwas mehr Maschinerie.<span class="t-3003">./course1/wly/05/01-regular-grammars.wly:638:5</span></span>
+      Mit den Werkzeugen, die wir uns bis jetzt erarbeitet
+      haben, können wir eine Grammatik für das Komplement
+      nicht konstruieren. Wir brauchen etwas mehr
+      Maschinerie.
     </p>
     <div id="end-of-page-elt">
     </div>

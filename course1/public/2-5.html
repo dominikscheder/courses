@@ -53,163 +53,115 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">2.5&ensp;Majority<span class="t-3003">./course1/wly/02/05-majority.wly:2:11</span></span>
+        2.5&ensp;Majority
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Unser Ziel in diesem Teilkapitel ist es, Schaltkreise für<span class="t-3003">./course1/wly/02/05-majority.wly:4:5</span></span>
-      <span class="t-3003-c">die Majority-Funktion zu bauen:<span class="t-3003">./course1/wly/02/05-majority.wly:5:5</span></span>
+      Unser Ziel in diesem Teilkapitel ist es, Schaltkreise
+      für die Majority-Funktion zu bauen:
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:10em"
           src="img/circuits/majority.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/circuits.ipe</span><br><span class="t-3003-i-url">course1/public/img/circuits/majority.svg</span></span>
+        >
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Diese nimmt
-        <span class="t-3003">./course1/wly/02/05-majority.wly:13:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/05-majority.wly:13:17</span></span><span class="t-3003-c">
-        Bits als Input und gibt 1 aus, wenn mehr<span class="t-3003">./course1/wly/02/05-majority.wly:13:20</span></span>
-      <span class="t-3003-c">als
-        <span class="t-3003">./course1/wly/02/05-majority.wly:14:5</span></span><span class="t-3003-c">$n/2$<span class="t-3003">./course1/wly/02/05-majority.wly:14:9</span></span><span class="t-3003-c">
-        davon 1 sind. Für
-        <span class="t-3003">./course1/wly/02/05-majority.wly:14:14</span></span><span class="t-3003-c">$n=3$<span class="t-3003">./course1/wly/02/05-majority.wly:14:33</span></span><span class="t-3003-c">
-        heißt dass, das<span class="t-3003">./course1/wly/02/05-majority.wly:14:38</span></span>
-      <span class="t-3003-c">mindestens zwei Input-Bits 1 sein müssen. Als Formel kann<span class="t-3003">./course1/wly/02/05-majority.wly:15:5</span></span>
-      <span class="t-3003-c">man das so schreiben:<span class="t-3003">./course1/wly/02/05-majority.wly:16:5</span></span>
+      Diese nimmt $n$ Bits als Input und gibt 1 aus, wenn
+      mehr als $n/2$ davon 1 sind. Für $n=3$ heißt dass,
+      das mindestens zwei Input-Bits 1 sein müssen. Als
+      Formel kann man das so schreiben:
     </p>
     <div class="math-block main-column">
       $$
       \maj_3(x,y,z) = (x \wedge y) \vee (x \wedge z) \vee (y \wedge z)
-      $$<span class="t-3003">./course1/wly/02/05-majority.wly:18:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">und als Schaltkreis so:<span class="t-3003">./course1/wly/02/05-majority.wly:22:5</span></span>
+      und als Schaltkreis so:
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:11em"
           src="img/circuits/maj3.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/maj3.svg</span></span>
+        >
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wie können wir das sinnvoll verallgemeinern für größere<span class="t-3003">./course1/wly/02/05-majority.wly:29:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:30:5</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/05-majority.wly:30:5</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/02/05-majority.wly:30:8</span></span></span><span class="t-3003-c">
-        Was geschieht, wenn wir einfach die<span class="t-3003">./course1/wly/02/05-majority.wly:30:8</span></span>
-      <span class="t-3003-c">Wahrheitstabellen-Methode anwenden? Falls
-        <span class="t-3003">./course1/wly/02/05-majority.wly:31:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/05-majority.wly:31:47</span></span><span class="t-3003-c">
-        ungerade<span class="t-3003">./course1/wly/02/05-majority.wly:31:50</span></span>
-      <span class="t-3003-c">ist, dann sieht man leicht, dass die Wahrheitstabelle in<span class="t-3003">./course1/wly/02/05-majority.wly:32:5</span></span>
-      <span class="t-3003-c">genau
-        <span class="t-3003">./course1/wly/02/05-majority.wly:33:5</span></span><span class="t-3003-c">$2^{n-1}$<span class="t-3003">./course1/wly/02/05-majority.wly:33:11</span></span><span class="t-3003-c">
-        vielen Zeilen eine 1 stehen hat und in<span class="t-3003">./course1/wly/02/05-majority.wly:33:20</span></span>
-      <span class="t-3003-c">ebenso vielen eine 0.<span class="t-3003">./course1/wly/02/05-majority.wly:34:5</span></span>
+      Wie können wir das sinnvoll verallgemeinern für
+      größere
+      <span class="nowrap">$n$?</span>
+      Was geschieht, wenn wir einfach die
+      Wahrheitstabellen-Methode anwenden? Falls $n$
+      ungerade ist, dann sieht man leicht, dass die
+      Wahrheitstabelle in genau $2^{n-1}$ vielen Zeilen
+      eine 1 stehen hat und in ebenso vielen eine 0.
     </p>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 2.5.1<span class="t-3003">./course1/wly/02/05-majority.wly:36:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:36:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/02/05-majority.wly:37:9</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/05-majority.wly:37:13</span></span><span class="t-3003-c">
-          eine ungerade Zahl. Zeigen Sie, dass
-          <span class="t-3003">./course1/wly/02/05-majority.wly:37:16</span></span><span class="t-3003-c">$\maj_n$<span class="t-3003">./course1/wly/02/05-majority.wly:37:54</span></span><span class="t-3003-c">
-          für<span class="t-3003">./course1/wly/02/05-majority.wly:37:62</span></span>
-        <span class="t-3003-c">genau die Hälfte aller
-          <span class="t-3003">./course1/wly/02/05-majority.wly:38:9</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/02/05-majority.wly:38:32</span></span><span class="t-3003-c">
-          möglichen Eingaben eine 1<span class="t-3003">./course1/wly/02/05-majority.wly:38:37</span></span>
-        <span class="t-3003-c">ausgibt (und für die andere Hälfte eine 0).<span class="t-3003">./course1/wly/02/05-majority.wly:39:9</span></span>
+        <b>Übungsaufgabe 2.5.1</b>
+        Sei $n$ eine ungerade Zahl. Zeigen Sie, dass $\maj_n$
+        für genau die Hälfte aller $2^n$ möglichen Eingaben
+        eine 1 ausgibt (und für die andere Hälfte eine 0).
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir erhielten also eine DNF mit
-        <span class="t-3003">./course1/wly/02/05-majority.wly:41:5</span></span><span class="t-3003-c">$2^{n-1}$<span class="t-3003">./course1/wly/02/05-majority.wly:41:37</span></span><span class="t-3003-c">
-        vielen<span class="t-3003">./course1/wly/02/05-majority.wly:41:46</span></span>
-      <span class="t-3003-c">AND-Gates. Das ist sehr groß, gemessen daran, dass Zählen<span class="t-3003">./course1/wly/02/05-majority.wly:42:5</span></span>
-      <span class="t-3003-c">und mit
-        <span class="t-3003">./course1/wly/02/05-majority.wly:43:5</span></span><span class="t-3003-c">$n/2$<span class="t-3003">./course1/wly/02/05-majority.wly:43:13</span></span><span class="t-3003-c">
-        vergleichen ja nicht besonders schwierig<span class="t-3003">./course1/wly/02/05-majority.wly:43:18</span></span>
-      <span class="t-3003-c">klingt. Hier ist eine kleine Verbesserung, demonstriert am<span class="t-3003">./course1/wly/02/05-majority.wly:44:5</span></span>
-      <span class="t-3003-c">Beispiel
-        <span class="t-3003">./course1/wly/02/05-majority.wly:45:5</span></span><span class="nowrap"><span class="t-3003-c">$n=7$<span class="t-3003">./course1/wly/02/05-majority.wly:45:14</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:45:19</span></span></span><span class="t-3003-c">
-        Wenn wir für
-        <span class="t-3003">./course1/wly/02/05-majority.wly:45:19</span></span><span class="t-3003-c">$n=7$<span class="t-3003">./course1/wly/02/05-majority.wly:45:34</span></span><span class="t-3003-c">
-        mit Hilfe einer<span class="t-3003">./course1/wly/02/05-majority.wly:45:39</span></span>
-      <span class="t-3003-c">Wahrheitstabelle eine DNF konstruieren, erhalten wir ja<span class="t-3003">./course1/wly/02/05-majority.wly:46:5</span></span>
-      <span class="t-3003-c">unter Anderem den Term<span class="t-3003">./course1/wly/02/05-majority.wly:47:5</span></span>
+      Wir erhielten also eine DNF mit $2^{n-1}$ vielen
+      AND-Gates. Das ist sehr groß, gemessen daran, dass
+      Zählen und mit $n/2$ vergleichen ja nicht besonders
+      schwierig klingt. Hier ist eine kleine Verbesserung,
+      demonstriert am Beispiel
+      <span class="nowrap">$n=7$.</span>
+      Wenn wir für $n=7$
+      mit Hilfe einer Wahrheitstabelle eine DNF
+      konstruieren, erhalten wir ja unter Anderem den Term
     </p>
     <div class="math-block main-column">
       $$
       T := x_1 \bar{x}_2 x_3 x_4 \bar{x}_5 x_6 x_7 \ ,
-      $$<span class="t-3003">./course1/wly/02/05-majority.wly:49:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">da der Input
-        <span class="t-3003">./course1/wly/02/05-majority.wly:53:5</span></span><span class="t-3003-c">$\maj_7(1011011) = 1$<span class="t-3003">./course1/wly/02/05-majority.wly:53:18</span></span><span class="t-3003-c">
-        ist. Schauen wir uns<span class="t-3003">./course1/wly/02/05-majority.wly:53:39</span></span>
-      <span class="t-3003-c">nun den Term
-        <span class="t-3003">./course1/wly/02/05-majority.wly:54:5</span></span><span class="t-3003-c">$T'$<span class="t-3003">./course1/wly/02/05-majority.wly:54:18</span></span><span class="t-3003-c">
-        an, den wir erhalten, wenn wir alle<span class="t-3003">./course1/wly/02/05-majority.wly:54:22</span></span>
-      <span class="t-3003-c">negativen Literale aus
-        <span class="t-3003">./course1/wly/02/05-majority.wly:55:5</span></span><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/02/05-majority.wly:55:28</span></span><span class="t-3003-c">
-        löschen:<span class="t-3003">./course1/wly/02/05-majority.wly:55:31</span></span>
+      da der Input $\maj_7(1011011) = 1$ ist. Schauen wir
+      uns nun den Term $T'$ an, den wir erhalten, wenn wir
+      alle negativen Literale aus $T$ löschen:
     </p>
     <div class="math-block main-column">
       $$
       T' := x_1 x_3 x_4 x_6 x_7 \ .
-      $$<span class="t-3003">./course1/wly/02/05-majority.wly:57:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wenn dieser Term 1 wird, dann sind<span class="t-3003">./course1/wly/02/05-majority.wly:61:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:62:5</span></span><span class="t-3003-c">$x_1 = x_3 = x_4 = x_6 = x_7$<span class="t-3003">./course1/wly/02/05-majority.wly:62:5</span></span><span class="t-3003-c">
-        sein, also insgesamt fünf<span class="t-3003">./course1/wly/02/05-majority.wly:62:34</span></span>
-      <span class="t-3003-c">Input-Bits 1, und
-        <span class="t-3003">./course1/wly/02/05-majority.wly:63:5</span></span><span class="t-3003-c">$\maj_7$<span class="t-3003">./course1/wly/02/05-majority.wly:63:23</span></span><span class="t-3003-c">
-        gibt 1 aus. Hier ist also eine<span class="t-3003">./course1/wly/02/05-majority.wly:63:31</span></span>
-      <span class="t-3003-c">Vereinfachung: wir folgen der Wahrheitstabellen-Methode,<span class="t-3003">./course1/wly/02/05-majority.wly:64:5</span></span>
-      <span class="t-3003-c">lassen aber alle negativen Literale weg. Das Ergebnis ist<span class="t-3003">./course1/wly/02/05-majority.wly:65:5</span></span>
-      <span class="t-3003-c">etwas kleiner und immer noch korrekt. Schauen Sie sich nun<span class="t-3003">./course1/wly/02/05-majority.wly:66:5</span></span>
-      <span class="t-3003-c">den Term<span class="t-3003">./course1/wly/02/05-majority.wly:67:5</span></span>
+      Wenn dieser Term 1 wird, dann sind
+      $x_1 = x_3 = x_4 = x_6 = x_7$ sein, also insgesamt
+      fünf Input-Bits 1, und $\maj_7$ gibt 1 aus. Hier ist
+      also eine Vereinfachung: wir folgen der
+      Wahrheitstabellen-Methode, lassen aber alle negativen
+      Literale weg. Das Ergebnis ist etwas kleiner und immer
+      noch korrekt. Schauen Sie sich nun den Term
     </p>
     <div class="math-block main-column">
       $$
       x_1 \bar{x}_2 \bar{x}_3 x_4 \bar{x}_5 x_6 x_7
-      $$<span class="t-3003">./course1/wly/02/05-majority.wly:69:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">an. Auch dieser kommt in der Wahrheitstabelle vor, da<span class="t-3003">./course1/wly/02/05-majority.wly:73:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:74:5</span></span><span class="t-3003-c">$\maj_7(1001011)=1$<span class="t-3003">./course1/wly/02/05-majority.wly:74:5</span></span><span class="t-3003-c">
-        gilt. In unserer neuen Konstruktion<span class="t-3003">./course1/wly/02/05-majority.wly:74:24</span></span>
-      <span class="t-3003-c">wird dieser zu
-        <span class="t-3003">./course1/wly/02/05-majority.wly:75:5</span></span><span class="t-3003-c">$x_1 x_4 x_6 x_7$<span class="t-3003">./course1/wly/02/05-majority.wly:75:20</span></span><span class="t-3003-c">
-        vereinfacht. Nun schauen<span class="t-3003">./course1/wly/02/05-majority.wly:75:37</span></span>
-      <span class="t-3003-c">Sie: wenn
-        <span class="t-3003">./course1/wly/02/05-majority.wly:76:5</span></span><span class="t-3003-c">$T'$<span class="t-3003">./course1/wly/02/05-majority.wly:76:15</span></span><span class="t-3003-c">
-        den Wert 1 ausgibt, dann gibt<span class="t-3003">./course1/wly/02/05-majority.wly:76:19</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:77:5</span></span><span class="t-3003-c">$x_1 x_4 x_6 x_7$<span class="t-3003">./course1/wly/02/05-majority.wly:77:5</span></span><span class="t-3003-c">
-        auf jeden Fall 1 aus, und
-        <span class="t-3003">./course1/wly/02/05-majority.wly:77:22</span></span><span class="t-3003-c">$\maj_7$<span class="t-3003">./course1/wly/02/05-majority.wly:77:49</span></span><span class="t-3003-c">
-        wird<span class="t-3003">./course1/wly/02/05-majority.wly:77:57</span></span>
-      <span class="t-3003-c">1;
-        <span class="t-3003">./course1/wly/02/05-majority.wly:78:5</span></span><span class="t-3003-c">$T'$<span class="t-3003">./course1/wly/02/05-majority.wly:78:8</span></span><span class="t-3003-c">
-        ist also redundant. Irgendwie ist das ja auch<span class="t-3003">./course1/wly/02/05-majority.wly:78:12</span></span>
-      <span class="t-3003-c">klar: zu verlangen, dass die fünf Variablen<span class="t-3003">./course1/wly/02/05-majority.wly:79:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:80:5</span></span><span class="t-3003-c">$x_1, x_3, x_4 x_6, x_7$<span class="t-3003">./course1/wly/02/05-majority.wly:80:5</span></span><span class="t-3003-c">
-        alle mit 1 abstimmen, ist zwar<span class="t-3003">./course1/wly/02/05-majority.wly:80:29</span></span>
-      <span class="t-3003-c">hinreichend, aber eben schon mehr als nötig. Es reicht<span class="t-3003">./course1/wly/02/05-majority.wly:81:5</span></span>
-      <span class="t-3003-c">also, sich auf alle Terme mit genau 4 Variablen zu<span class="t-3003">./course1/wly/02/05-majority.wly:82:5</span></span>
-      <span class="t-3003-c">beschränken. Im allgemeinen sei
-        <span class="t-3003">./course1/wly/02/05-majority.wly:83:5</span></span><span class="nowrap"><span class="t-3003-c">$k = \ceil{\frac{k+1}{2}}$<span class="t-3003">./course1/wly/02/05-majority.wly:83:37</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:83:63</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:83:63</span></span>
-      <span class="t-3003-c">Dann gilt<span class="t-3003">./course1/wly/02/05-majority.wly:84:5</span></span>
+      an. Auch dieser kommt in der Wahrheitstabelle vor, da
+      $\maj_7(1001011)=1$ gilt. In unserer neuen
+      Konstruktion wird dieser zu $x_1 x_4 x_6 x_7$
+      vereinfacht. Nun schauen Sie: wenn $T'$ den Wert 1
+      ausgibt, dann gibt $x_1 x_4 x_6 x_7$ auf jeden Fall 1
+      aus, und $\maj_7$ wird 1; $T'$ ist also redundant.
+      Irgendwie ist das ja auch klar: zu verlangen, dass die
+      fünf Variablen $x_1, x_3, x_4 x_6, x_7$ alle mit 1
+      abstimmen, ist zwar hinreichend, aber eben schon mehr
+      als nötig. Es reicht also, sich auf alle Terme mit
+      genau 4 Variablen zu beschränken. Im allgemeinen sei
+      <span class="nowrap">$k = \ceil{\frac{k+1}{2}}$.</span>
+      Dann gilt
     </p>
     <div class="math-block main-column">
       $$
@@ -217,40 +169,32 @@
       \maj_n (x_1,\dots,x_n) = \bigvee_{\substack{I \subseteq [n] \\ |I| = k}} \bigwedge_{i \in I} x_i
       .
       \end{align}
-      $$<span class="t-3003">./course1/wly/02/05-majority.wly:86:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Diese Konstruktion hat nun
-        <span class="t-3003">./course1/wly/02/05-majority.wly:91:5</span></span><span class="t-3003-c">${n \choose k}$<span class="t-3003">./course1/wly/02/05-majority.wly:91:32</span></span><span class="t-3003-c">
-        Terme, von<span class="t-3003">./course1/wly/02/05-majority.wly:91:47</span></span>
-      <span class="t-3003-c">denen jeder aus
-        <span class="t-3003">./course1/wly/02/05-majority.wly:92:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/05-majority.wly:92:21</span></span><span class="t-3003-c">
-        Variablen besteht. Ist das nun gut<span class="t-3003">./course1/wly/02/05-majority.wly:92:24</span></span>
-      <span class="t-3003-c">oder schlecht?<span class="t-3003">./course1/wly/02/05-majority.wly:93:5</span></span>
+      Diese Konstruktion hat nun ${n \choose k}$ Terme, von
+      denen jeder aus $k$ Variablen besteht. Ist das nun
+      gut oder schlecht?
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Lemma 2.5.1<span class="t-3003">./course1/wly/02/05-majority.wly:95:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:95:5</span></span>
-        <span class="t-3003-c">Es gilt<span class="t-3003">./course1/wly/02/05-majority.wly:96:9</span></span>
+        <b>Lemma 2.5.1</b>
+        Es gilt
       </p>
       <div class="math-block">
         $$
         {n \choose {\ceil{n/2}}} \geq \frac{2^n}{n+1} \ .
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:98:9</span>
+        $$
       </div>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course1/wly/02/05-majority.wly:103:9</span></span><span class="nowrap"><span class="t-3003-c">$k \in \{1,\dots,n\}$<span class="t-3003">./course1/wly/02/05-majority.wly:103:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:103:34</span></span></span><span class="t-3003-c">
-          Vergleichen wir
-          <span class="t-3003">./course1/wly/02/05-majority.wly:103:34</span></span><span class="t-3003-c">${n \choose k}$<span class="t-3003">./course1/wly/02/05-majority.wly:103:52</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:103:67</span></span>
-        <span class="t-3003-c">mit
-          <span class="t-3003">./course1/wly/02/05-majority.wly:104:9</span></span><span class="nowrap"><span class="t-3003-c">${n \choose k-1}$<span class="t-3003">./course1/wly/02/05-majority.wly:104:13</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/02/05-majority.wly:104:30</span></span></span>
+        Sei
+        <span class="nowrap">$k \in \{1,\dots,n\}$.</span>
+        Vergleichen wir
+        ${n \choose k}$ mit
+        <span class="nowrap">${n \choose k-1}$:</span>
       </p>
       <div class="math-block">
         $$
@@ -258,10 +202,10 @@
         \frac{{n \choose k}}{{n \choose k-1}} &amp; =
         \frac{ \frac{n!}{k! (n-k)!}}{\frac{n!}{ (k-1)! (n-k+1)!}} = \frac{n-k+1}{k}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:106:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">und somit<span class="t-3003">./course1/wly/02/05-majority.wly:111:9</span></span>
+        und somit
       </p>
       <div class="math-block">
         $$
@@ -272,107 +216,76 @@
         k &amp; \leq \frac{n+1}{2} \quad \Longleftrightarrow \\
         k &amp; \leq \floor{ \frac{n+1}{2}} = \ceil{\frac{n}{2}} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:113:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Aus der letzten Zeile folgt nun, dass
-          <span class="t-3003">./course1/wly/02/05-majority.wly:121:9</span></span><span class="t-3003-c">${n \choose k}$<span class="t-3003">./course1/wly/02/05-majority.wly:121:47</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:121:62</span></span>
-        <span class="t-3003-c">durch
-          <span class="t-3003">./course1/wly/02/05-majority.wly:122:9</span></span><span class="t-3003-c">$k := \ceil{\frac{n}{2}}$<span class="t-3003">./course1/wly/02/05-majority.wly:122:15</span></span><span class="t-3003-c">
-          maximiert wird, also<span class="t-3003">./course1/wly/02/05-majority.wly:122:40</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:123:9</span></span><span class="t-3003-c">${n \choose k} \leq {n \choose \ceil{\frac{n}{2}}}$<span class="t-3003">./course1/wly/02/05-majority.wly:123:9</span></span><span class="t-3003-c">
-          gilt.<span class="t-3003">./course1/wly/02/05-majority.wly:123:60</span></span>
-        <span class="t-3003-c">Als nächstes müssen wir uns die Definition von<span class="t-3003">./course1/wly/02/05-majority.wly:124:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:125:9</span></span><span class="t-3003-c">${n \choose k}$<span class="t-3003">./course1/wly/02/05-majority.wly:125:9</span></span><span class="t-3003-c">
-          ins Gedächtnis rufen. Nein,<span class="t-3003">./course1/wly/02/05-majority.wly:125:24</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:126:9</span></span><span class="t-3003-c">$\frac{n!}{k!(n-k)!}$<span class="t-3003">./course1/wly/02/05-majority.wly:126:9</span></span><span class="t-3003-c">
-          ist nicht die Definition, sondern<span class="t-3003">./course1/wly/02/05-majority.wly:126:30</span></span>
-        <span class="t-3003-c">eine Formel dafür. Die Definition ist:
-          <span class="t-3003">./course1/wly/02/05-majority.wly:127:9</span></span><span class="t-3003-c">${n \choose k}$<span class="t-3003">./course1/wly/02/05-majority.wly:127:48</span></span><span class="t-3003-c">
-          ist<span class="t-3003">./course1/wly/02/05-majority.wly:127:63</span></span>
-        <span class="t-3003-c">die Menge der Teilmengen von
-          <span class="t-3003">./course1/wly/02/05-majority.wly:128:9</span></span><span class="nowrap"><span class="t-3003-c">$\{1,\dots,n\}$<span class="t-3003">./course1/wly/02/05-majority.wly:128:38</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:128:53</span></span></span><span class="t-3003-c">
-          die Größe
-          <span class="t-3003">./course1/wly/02/05-majority.wly:128:53</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/05-majority.wly:128:65</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:128:68</span></span>
-        <span class="t-3003-c">haben. Wieviele Teilmenge (jeglicher Größe) gibt es<span class="t-3003">./course1/wly/02/05-majority.wly:129:9</span></span>
-        <span class="t-3003-c">insgesamt? Genau
-          <span class="t-3003">./course1/wly/02/05-majority.wly:130:9</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/02/05-majority.wly:130:26</span></span><span class="t-3003-c">
-          viele: Sie müssen für jede Zahl<span class="t-3003">./course1/wly/02/05-majority.wly:130:31</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:131:9</span></span><span class="t-3003-c">$i \in \{1,\dots,n\}$<span class="t-3003">./course1/wly/02/05-majority.wly:131:9</span></span><span class="t-3003-c">
-          die Entscheidung treffen, ob
-          <span class="t-3003">./course1/wly/02/05-majority.wly:131:30</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/02/05-majority.wly:131:60</span></span><span class="t-3003-c">
-          in<span class="t-3003">./course1/wly/02/05-majority.wly:131:63</span></span>
-        <span class="t-3003-c">die Menge soll oder nicht, haben also insgesamt
-          <span class="t-3003">./course1/wly/02/05-majority.wly:132:9</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/02/05-majority.wly:132:57</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:132:62</span></span>
-        <span class="t-3003-c">Wahlmöglichkeiten. Daher gilt:<span class="t-3003">./course1/wly/02/05-majority.wly:133:9</span></span>
+        Aus der letzten Zeile folgt nun, dass ${n \choose k}$
+        durch $k := \ceil{\frac{n}{2}}$ maximiert wird, also
+        ${n \choose k} \leq {n \choose \ceil{\frac{n}{2}}}$
+        gilt. Als nächstes müssen wir uns die Definition von
+        ${n \choose k}$ ins Gedächtnis rufen. Nein,
+        $\frac{n!}{k!(n-k)!}$ ist nicht die Definition,
+        sondern eine Formel dafür. Die Definition ist:
+        ${n \choose k}$ ist die Menge der Teilmengen von
+        <span class="nowrap">$\{1,\dots,n\}$,</span>
+        die Größe $k$ haben. Wieviele
+        Teilmenge (jeglicher Größe) gibt es insgesamt? Genau
+        $2^n$ viele: Sie müssen für jede Zahl
+        $i \in \{1,\dots,n\}$ die Entscheidung treffen, ob $i$
+        in die Menge soll oder nicht, haben also insgesamt
+        $2^n$ Wahlmöglichkeiten. Daher gilt:
       </p>
       <div class="math-block">
         $$
         \sum_{k=0}^n {n \choose k} = 2^n \ .
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:135:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Intuitiv gesprochen heißt das: diese Summe hat
-          <span class="t-3003">./course1/wly/02/05-majority.wly:139:9</span></span><span class="t-3003-c">$n+1$<span class="t-3003">./course1/wly/02/05-majority.wly:139:56</span></span><span class="t-3003-c">
-          Terme<span class="t-3003">./course1/wly/02/05-majority.wly:139:61</span></span>
-        <span class="t-3003-c">(
-          <span class="t-3003">./course1/wly/02/05-majority.wly:140:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/05-majority.wly:140:11</span></span><span class="t-3003-c">
-          wandert von 0 bis
-          <span class="t-3003">./course1/wly/02/05-majority.wly:140:14</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/05-majority.wly:140:33</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:140:36</span></span></span><span class="t-3003-c">
-          also muss der größte Term<span class="t-3003">./course1/wly/02/05-majority.wly:140:36</span></span>
-        <span class="t-3003-c">mindestens ein
-          <span class="t-3003">./course1/wly/02/05-majority.wly:141:9</span></span><span class="nowrap"><span class="t-3003-c">$(n+1)$<span class="t-3003">./course1/wly/02/05-majority.wly:141:24</span></span><span class="t-3003-c">-tel<span class="t-3003">./course1/wly/02/05-majority.wly:141:31</span></span></span><span class="t-3003-c">
-          des Gesamtbetrages sein.<span class="t-3003">./course1/wly/02/05-majority.wly:141:31</span></span>
-        <span class="t-3003-c">Formal:<span class="t-3003">./course1/wly/02/05-majority.wly:142:9</span></span>
+        Intuitiv gesprochen heißt das: diese Summe hat $n+1$
+        Terme ( $k$ wandert von 0 bis
+        <span class="nowrap">$n$,</span>
+        also muss der
+        größte Term mindestens ein
+        <span class="nowrap">$(n+1)$-tel</span>
+        des
+        Gesamtbetrages sein. Formal:
       </p>
       <div class="math-block">
         $$
         2^n = \sum_{k=0}^n {n \choose k} \leq \sum_{k=0}^n {n \choose \ceil{\frac{n}{2}}}
         = (n+1) \cdot {n \choose \ceil{\frac{n}{2}}}
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:144:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">und somit<span class="t-3003">./course1/wly/02/05-majority.wly:149:9</span></span>
+        und somit
       </p>
       <div class="math-block">
         $$
         {n \choose \ceil{\frac{n}{2}}} \geq \frac{2^n} {n+1} \ ,
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:151:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">wie behauptet.<span class="t-3003">./course1/wly/02/05-majority.wly:155:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        wie behauptet.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Unsere neue, bessere Konstruktion benötigt also immer noch<span class="t-3003">./course1/wly/02/05-majority.wly:157:5</span></span>
-      <span class="t-3003-c">mindestens
-        <span class="t-3003">./course1/wly/02/05-majority.wly:158:5</span></span><span class="t-3003-c">$\frac{2^n}{n+1}$<span class="t-3003">./course1/wly/02/05-majority.wly:158:16</span></span><span class="t-3003-c">
-        Terme, was bereits für<span class="t-3003">./course1/wly/02/05-majority.wly:158:33</span></span>
-      <span class="t-3003-c">moderate Werte wie
-        <span class="t-3003">./course1/wly/02/05-majority.wly:159:5</span></span><span class="t-3003-c">$n=30$<span class="t-3003">./course1/wly/02/05-majority.wly:159:24</span></span><span class="t-3003-c">
-        nicht vertretbar ist.<span class="t-3003">./course1/wly/02/05-majority.wly:159:30</span></span>
+      Unsere neue, bessere Konstruktion benötigt also immer
+      noch mindestens $\frac{2^n}{n+1}$ Terme, was bereits
+      für moderate Werte wie $n=30$ nicht vertretbar ist.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Majority Top-Down mit
-        <span class="t-3003">./course1/wly/02/05-majority.wly:162:9</span></span><span class="nowrap"><code><span class="t-3003-c">if-then-else<span class="t-3003">./course1/wly/02/05-majority.wly:162:32</span></span></code><span class="t-3003-c">-Gates<span class="t-3003">./course1/wly/02/05-majority.wly:162:45</span></span></span>
+      Majority Top-Down mit
+      <span class="nowrap"><code>if-then-else</code>-Gates</span>
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Wenden wir nun statt Wahrheitstabelle die Top-Down-Methode<span class="t-3003">./course1/wly/02/05-majority.wly:164:5</span></span>
-      <span class="t-3003-c">an, modifiziert für monotone Funktionen wie in den<span class="t-3003">./course1/wly/02/05-majority.wly:165:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:166:5</span></span><a href="./2-4.html"><span class="t-3003-c">Lösungen zu den Übungsaufgaben<span class="t-3003">./course1/wly/02/05-majority.wly:166:6</span></span></a><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:166:58</span></span>
-      <span class="t-3003-c">dargestellt. Insbesondere definieren wir<span class="t-3003">./course1/wly/02/05-majority.wly:167:5</span></span>
-      <span class="t-3003-c">Verallgemeinerungen von
-        <span class="t-3003">./course1/wly/02/05-majority.wly:168:5</span></span><span class="t-3003-c">$\maj_n$<span class="t-3003">./course1/wly/02/05-majority.wly:168:29</span></span><span class="t-3003-c">
-        wie folgt:<span class="t-3003">./course1/wly/02/05-majority.wly:168:37</span></span>
+      Wenden wir nun statt Wahrheitstabelle die
+      Top-Down-Methode an, modifiziert für monotone
+      Funktionen wie in den
+      <a href="./2-4.html">Lösungen zu den
+        Übungsaufgaben</a>
+      dargestellt.
+      Insbesondere definieren wir Verallgemeinerungen von
+      $\maj_n$ wie folgt:
     </p>
     <div class="math-block main-column">
       $$
@@ -383,20 +296,14 @@
       0 &amp; \textnormal{ sonst.}
       \end{cases}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/02/05-majority.wly:170:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Die Funktion
-        <span class="t-3003">./course1/wly/02/05-majority.wly:178:5</span></span><span class="t-3003-c">$\maj_n$<span class="t-3003">./course1/wly/02/05-majority.wly:178:18</span></span><span class="t-3003-c">
-        ist also ein Speziallfall<span class="t-3003">./course1/wly/02/05-majority.wly:178:26</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:179:5</span></span><span class="t-3003-c">$\theta^n_k$<span class="t-3003">./course1/wly/02/05-majority.wly:179:5</span></span><span class="t-3003-c">
-        für
-        <span class="t-3003">./course1/wly/02/05-majority.wly:179:17</span></span><span class="nowrap"><span class="t-3003-c">$k = \ceil{\frac{n+1}{2}}$<span class="t-3003">./course1/wly/02/05-majority.wly:179:22</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:179:48</span></span></span><span class="t-3003-c">
-        Wir können<span class="t-3003">./course1/wly/02/05-majority.wly:179:48</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:180:5</span></span><span class="t-3003-c">$\theta^n_k$<span class="t-3003">./course1/wly/02/05-majority.wly:180:5</span></span><span class="t-3003-c">
-        rekursiv zerlegen wie folgt:<span class="t-3003">./course1/wly/02/05-majority.wly:180:17</span></span>
+      Die Funktion $\maj_n$ ist also ein Speziallfall
+      $\theta^n_k$ für
+      <span class="nowrap">$k = \ceil{\frac{n+1}{2}}$.</span>
+      Wir
+      können $\theta^n_k$ rekursiv zerlegen wie folgt:
     </p>
     <div class="math-block main-column">
       $$
@@ -404,48 +311,32 @@
       (x_n \wedge \theta^{n-1}_{k-1} (x_1,\dots,x_{n-1}))
       \vee
       \theta^{n-1}_{k} (x_1,\dots,x_{n-1}) \
-      $$<span class="t-3003">./course1/wly/02/05-majority.wly:182:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">und somit
-        <span class="t-3003">./course1/wly/02/05-majority.wly:189:5</span></span><span class="t-3003-c">$\theta^n_k$<span class="t-3003">./course1/wly/02/05-majority.wly:189:15</span></span><span class="t-3003-c">
-        aus
-        <span class="t-3003">./course1/wly/02/05-majority.wly:189:27</span></span><span class="t-3003-c">$\theta^{n-1}_{k-1}$<span class="t-3003">./course1/wly/02/05-majority.wly:189:32</span></span><span class="t-3003-c">
-        und<span class="t-3003">./course1/wly/02/05-majority.wly:189:52</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:190:5</span></span><span class="t-3003-c">$\theta^{n-1}_k$<span class="t-3003">./course1/wly/02/05-majority.wly:190:5</span></span><span class="t-3003-c">
-        berechnen. Rekursiv fortgefühtr sieht das<span class="t-3003">./course1/wly/02/05-majority.wly:190:21</span></span>
-      <span class="t-3003-c">dann so aus:<span class="t-3003">./course1/wly/02/05-majority.wly:191:5</span></span>
+      und somit $\theta^n_k$ aus $\theta^{n-1}_{k-1}$ und
+      $\theta^{n-1}_k$ berechnen. Rekursiv fortgefühtr
+      sieht das dann so aus:
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:15em"
           src="img/circuits/majority-theta-recursive.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/majority-theta-recursive.svg</span></span>
+        >
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Die Konstruktion endet mit
-        <span class="t-3003">./course1/wly/02/05-majority.wly:198:5</span></span><span class="nowrap"><span class="t-3003-c">$\theta^m_0$<span class="t-3003">./course1/wly/02/05-majority.wly:198:32</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:198:44</span></span></span><span class="t-3003-c">
-        was immer
-        <span class="t-3003">./course1/wly/02/05-majority.wly:198:44</span></span><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/02/05-majority.wly:198:56</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:198:59</span></span>
-      <span class="t-3003-c">ausgibt, und mit
-        <span class="t-3003">./course1/wly/02/05-majority.wly:199:5</span></span><span class="nowrap"><span class="t-3003-c">$\theta^m_{m}$<span class="t-3003">./course1/wly/02/05-majority.wly:199:22</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:199:36</span></span></span><span class="t-3003-c">
-        was<span class="t-3003">./course1/wly/02/05-majority.wly:199:36</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:200:5</span></span><span class="t-3003-c">$x_1 \wedge \dots \wedge x_m$<span class="t-3003">./course1/wly/02/05-majority.wly:200:5</span></span><span class="t-3003-c">
-        ist. Die Konstruktion ist<span class="t-3003">./course1/wly/02/05-majority.wly:200:34</span></span>
-      <span class="t-3003-c">leider auch nicht effizient; wenn man mit
-        <span class="t-3003">./course1/wly/02/05-majority.wly:201:5</span></span><span class="t-3003-c">$C^n_k$<span class="t-3003">./course1/wly/02/05-majority.wly:201:47</span></span><span class="t-3003-c">
-        die<span class="t-3003">./course1/wly/02/05-majority.wly:201:54</span></span>
-      <span class="t-3003-c">Anzahl der
-        <span class="t-3003">./course1/wly/02/05-majority.wly:202:5</span></span><span class="t-3003-c">$\theta^m_m$<span class="t-3003">./course1/wly/02/05-majority.wly:202:16</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/02/05-majority.wly:202:28</span></span><span class="t-3003-c">$\theta^m_0$<span class="t-3003">./course1/wly/02/05-majority.wly:202:33</span></span><span class="t-3003-c">
-        in diesem Baum<span class="t-3003">./course1/wly/02/05-majority.wly:202:45</span></span>
-      <span class="t-3003-c">zählt, dann sieht man, dass<span class="t-3003">./course1/wly/02/05-majority.wly:203:5</span></span>
+      Die Konstruktion endet mit
+      <span class="nowrap">$\theta^m_0$,</span>
+      was immer $1$
+      ausgibt, und mit
+      <span class="nowrap">$\theta^m_{m}$,</span>
+      was
+      $x_1 \wedge \dots \wedge x_m$ ist. Die Konstruktion
+      ist leider auch nicht effizient; wenn man mit $C^n_k$
+      die Anzahl der $\theta^m_m$ und $\theta^m_0$ in
+      diesem Baum zählt, dann sieht man, dass
     </p>
     <div class="math-block main-column">
       $$
@@ -454,277 +345,214 @@
       C^n_n &amp; = 1 \\
       C^n_0 &amp; = 1
       \end{align*}
-      $$<span class="t-3003">./course1/wly/02/05-majority.wly:205:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">gilt; sie erfüllt also die gleiche Rekursionsgleichung wie<span class="t-3003">./course1/wly/02/05-majority.wly:211:5</span></span>
-      <span class="t-3003-c">der Binomialkoeffizient
-        <span class="t-3003">./course1/wly/02/05-majority.wly:212:5</span></span><span class="nowrap"><span class="t-3003-c">${n \choose k}$<span class="t-3003">./course1/wly/02/05-majority.wly:212:29</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:212:44</span></span></span><span class="t-3003-c">
-        also gilt<span class="t-3003">./course1/wly/02/05-majority.wly:212:44</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:213:5</span></span><span class="nowrap"><span class="t-3003-c">$C^n_k = {n \choose k}$<span class="t-3003">./course1/wly/02/05-majority.wly:213:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:213:28</span></span></span><span class="t-3003-c">
-        Die Konstruktion ist asymptotisch<span class="t-3003">./course1/wly/02/05-majority.wly:213:28</span></span>
-      <span class="t-3003-c">auch nicht besser als die, aus der Wahrheitstabelle direkt<span class="t-3003">./course1/wly/02/05-majority.wly:214:5</span></span>
-      <span class="t-3003-c">eine monotone DNF zu basteln. Allerdings können wir die<span class="t-3003">./course1/wly/02/05-majority.wly:215:5</span></span>
-      <span class="t-3003-c">obige Konstruktion offensichtlich effizienter machen, indem<span class="t-3003">./course1/wly/02/05-majority.wly:216:5</span></span>
-      <span class="t-3003-c">wir mehrfach verwendete Zwischenergebnisse wie<span class="t-3003">./course1/wly/02/05-majority.wly:217:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:218:5</span></span><span class="t-3003-c">$\theta^{n-1}_{k-1}$<span class="t-3003">./course1/wly/02/05-majority.wly:218:5</span></span><span class="t-3003-c">
-        nicht doppelt berechnen, also statt<span class="t-3003">./course1/wly/02/05-majority.wly:218:25</span></span>
-      <span class="t-3003-c">dem obigen Baum einen Schaltkreis nach folgendem<span class="t-3003">./course1/wly/02/05-majority.wly:219:5</span></span>
-      <span class="t-3003-c">Pyramidenschema bauen:<span class="t-3003">./course1/wly/02/05-majority.wly:220:5</span></span>
+      gilt; sie erfüllt also die gleiche
+      Rekursionsgleichung wie der Binomialkoeffizient
+      <span class="nowrap">${n \choose k}$,</span>
+      also gilt
+      <span class="nowrap">$C^n_k = {n \choose k}$.</span>
+      Die Konstruktion ist asymptotisch auch nicht besser
+      als die, aus der Wahrheitstabelle direkt eine monotone
+      DNF zu basteln. Allerdings können wir die obige
+      Konstruktion offensichtlich effizienter machen, indem
+      wir mehrfach verwendete Zwischenergebnisse wie
+      $\theta^{n-1}_{k-1}$ nicht doppelt berechnen, also
+      statt dem obigen Baum einen Schaltkreis nach folgendem
+      Pyramidenschema bauen:
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:18em"
           src="img/circuits/majority-theta-dp.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/circuits.ipe</span><br><span class="t-3003-i-url">course1/public/img/circuits/majority-theta-dp.svg</span></span>
+        >
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Um eine Analogie mit der Programmierpraxis zu bemühen: der<span class="t-3003">./course1/wly/02/05-majority.wly:228:5</span></span>
-      <span class="t-3003-c">Unterschied zwischen den beiden Konstruktionen für<span class="t-3003">./course1/wly/02/05-majority.wly:229:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:230:5</span></span><span class="t-3003-c">$\theta^n_k$<span class="t-3003">./course1/wly/02/05-majority.wly:230:5</span></span><span class="t-3003-c">
-        per Baum versus per Pyramidenschema<span class="t-3003">./course1/wly/02/05-majority.wly:230:17</span></span>
-      <span class="t-3003-c">entspricht dem Unterschied zwischen dem rekursiven Code für<span class="t-3003">./course1/wly/02/05-majority.wly:231:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:232:5</span></span><span class="nowrap"><span class="t-3003-c">${n \choose k}$<span class="t-3003">./course1/wly/02/05-majority.wly:232:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:232:20</span></span></span>
+      Um eine Analogie mit der Programmierpraxis zu
+      bemühen: der Unterschied zwischen den beiden
+      Konstruktionen für $\theta^n_k$ per Baum versus per
+      Pyramidenschema entspricht dem Unterschied zwischen
+      dem rekursiven Code für
+      <span class="nowrap">${n \choose k}$,</span>
     </p>
     <div class="main-column">
 <pre>
-<span class="t-3003-c">def binomial(n,k):<span class="t-3003">./course1/wly/02/05-majority.wly:235:5</span></span>
-<span class="t-3003-c">    if k == 0 or k == n:<span class="t-3003">./course1/wly/02/05-majority.wly:236:5</span></span>
-<span class="t-3003-c">        return 1<span class="t-3003">./course1/wly/02/05-majority.wly:237:5</span></span>
-<span class="t-3003-c">    else:<span class="t-3003">./course1/wly/02/05-majority.wly:238:5</span></span>
-<span class="t-3003-c">        return binomial(n-1,k-1) + binomial(n-1,k)<span class="t-3003">./course1/wly/02/05-majority.wly:239:5</span></span>
+def binomial(n,k):
+    if k == 0 or k == n:
+        return 1
+    else:
+        return binomial(n-1,k-1) + binomial(n-1,k)
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">der exponentielle Laufzeit aufweist, und der effizienten<span class="t-3003">./course1/wly/02/05-majority.wly:242:5</span></span>
-      <span class="t-3003-c">Implementierung mittels
-        <span class="t-3003">./course1/wly/02/05-majority.wly:243:5</span></span><span class="nowrap"><i><span class="t-3003-c">Dynamic Programming<span class="t-3003">./course1/wly/02/05-majority.wly:243:30</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:243:50</span></span></span><span class="t-3003-c">
-        bei welchem<span class="t-3003">./course1/wly/02/05-majority.wly:243:50</span></span>
-      <span class="t-3003-c">wir uns die Zwischenergebnisse merken. Um Größe und Tiefe<span class="t-3003">./course1/wly/02/05-majority.wly:244:5</span></span>
-      <span class="t-3003-c">des Schaltkreises zu analysieren, machen wir eine grobe<span class="t-3003">./course1/wly/02/05-majority.wly:245:5</span></span>
-      <span class="t-3003-c">Abschätzung. Für jedes
-        <span class="t-3003">./course1/wly/02/05-majority.wly:246:5</span></span><span class="nowrap"><span class="t-3003-c">$\theta^m_l$<span class="t-3003">./course1/wly/02/05-majority.wly:246:28</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:246:40</span></span></span><span class="t-3003-c">
-        das in unserer<span class="t-3003">./course1/wly/02/05-majority.wly:246:40</span></span>
-      <span class="t-3003-c">Pyramide vorkommt, brauchen wir 2 Gates;
-        <span class="t-3003">./course1/wly/02/05-majority.wly:247:5</span></span><span class="t-3003-c">$m$<span class="t-3003">./course1/wly/02/05-majority.wly:247:46</span></span><span class="t-3003-c">
-        kann die<span class="t-3003">./course1/wly/02/05-majority.wly:247:49</span></span>
-      <span class="t-3003-c">Werte
-        <span class="t-3003">./course1/wly/02/05-majority.wly:248:5</span></span><span class="t-3003-c">$0, \dots, n$<span class="t-3003">./course1/wly/02/05-majority.wly:248:11</span></span><span class="t-3003-c">
-        annehmen und
-        <span class="t-3003">./course1/wly/02/05-majority.wly:248:24</span></span><span class="t-3003-c">$l$<span class="t-3003">./course1/wly/02/05-majority.wly:248:38</span></span><span class="t-3003-c">
-        die Werte
-        <span class="t-3003">./course1/wly/02/05-majority.wly:248:41</span></span><span class="nowrap"><span class="t-3003-c">$0,\dots,k$<span class="t-3003">./course1/wly/02/05-majority.wly:248:52</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:248:63</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:248:63</span></span>
-      <span class="t-3003-c">also bekommen wir insgesamt höchstens
-        <span class="t-3003">./course1/wly/02/05-majority.wly:249:5</span></span><span class="t-3003-c">$(n+1)(k+1)$<span class="t-3003">./course1/wly/02/05-majority.wly:249:43</span></span><span class="t-3003-c">
-        graue<span class="t-3003">./course1/wly/02/05-majority.wly:249:55</span></span>
-      <span class="t-3003-c">Kästchen und
-        <span class="t-3003">./course1/wly/02/05-majority.wly:250:5</span></span><span class="t-3003-c">$O(n^2)$<span class="t-3003">./course1/wly/02/05-majority.wly:250:18</span></span><span class="t-3003-c">
-        Gates. Die Tiefe ist
-        <span class="t-3003">./course1/wly/02/05-majority.wly:250:26</span></span><span class="nowrap"><span class="t-3003-c">$O(n)$<span class="t-3003">./course1/wly/02/05-majority.wly:250:48</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:250:54</span></span></span><span class="t-3003-c">
-        da in<span class="t-3003">./course1/wly/02/05-majority.wly:250:54</span></span>
-      <span class="t-3003-c">jedem Schritt von grauem Kasten zu dem nächsttieferen der<span class="t-3003">./course1/wly/02/05-majority.wly:251:5</span></span>
-      <span class="t-3003-c">Wert von
-        <span class="t-3003">./course1/wly/02/05-majority.wly:252:5</span></span><span class="t-3003-c">$m$<span class="t-3003">./course1/wly/02/05-majority.wly:252:14</span></span><span class="t-3003-c">
-        abnimmt. Insgesamt also haben wir gezeigt:<span class="t-3003">./course1/wly/02/05-majority.wly:252:17</span></span>
+      der exponentielle Laufzeit aufweist, und der
+      effizienten Implementierung mittels
+      <span class="nowrap"><i>Dynamic
+          Programming</i>,</span>
+      bei welchem wir uns die
+      Zwischenergebnisse merken. Um Größe und Tiefe des
+      Schaltkreises zu analysieren, machen wir eine grobe
+      Abschätzung. Für jedes
+      <span class="nowrap">$\theta^m_l$,</span>
+      das in unserer
+      Pyramide vorkommt, brauchen wir 2 Gates; $m$ kann die
+      Werte $0, \dots, n$ annehmen und $l$ die Werte
+      <span class="nowrap">$0,\dots,k$,</span>
+      also bekommen wir insgesamt höchstens
+      $(n+1)(k+1)$ graue Kästchen und $O(n^2)$ Gates. Die
+      Tiefe ist
+      <span class="nowrap">$O(n)$,</span>
+      da in jedem Schritt von grauem
+      Kasten zu dem nächsttieferen der Wert von $m$
+      abnimmt. Insgesamt also haben wir gezeigt:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 2.5.2<span class="t-3003">./course1/wly/02/05-majority.wly:254:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:254:5</span></span>
-        <span class="t-3003-c">Die Funktion
-          <span class="t-3003">./course1/wly/02/05-majority.wly:255:9</span></span><span class="t-3003-c">$\maj_n (x_1,\dots,x_n)$<span class="t-3003">./course1/wly/02/05-majority.wly:255:22</span></span><span class="t-3003-c">
-          kann mit einem<span class="t-3003">./course1/wly/02/05-majority.wly:255:46</span></span>
-        <span class="t-3003-c">Schaltkreis der Größe
-          <span class="t-3003">./course1/wly/02/05-majority.wly:256:9</span></span><span class="nowrap"><span class="t-3003-c">$O(n^2)$<span class="t-3003">./course1/wly/02/05-majority.wly:256:31</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:256:39</span></span></span><span class="t-3003-c">
-          Tiefe
-          <span class="t-3003">./course1/wly/02/05-majority.wly:256:39</span></span><span class="t-3003-c">$O(n)$<span class="t-3003">./course1/wly/02/05-majority.wly:256:47</span></span><span class="t-3003-c">
-          und Fan-in 2<span class="t-3003">./course1/wly/02/05-majority.wly:256:53</span></span>
-        <span class="t-3003-c">berechnet werden.<span class="t-3003">./course1/wly/02/05-majority.wly:257:9</span></span>
+        <b>Theorem 2.5.2</b>
+        Die Funktion $\maj_n (x_1,\dots,x_n)$ kann mit einem
+        Schaltkreis der Größe
+        <span class="nowrap">$O(n^2)$,</span>
+        Tiefe $O(n)$ und
+        Fan-in 2 berechnet werden.
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Majority durch Zählen<span class="t-3003">./course1/wly/02/05-majority.wly:260:9</span></span>
+      Majority durch Zählen
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">$\maj_n(x_1,\dots,x_n)$<span class="t-3003">./course1/wly/02/05-majority.wly:262:5</span></span><span class="t-3003-c">
-        zu bestimmen sollte doch einfach<span class="t-3003">./course1/wly/02/05-majority.wly:262:28</span></span>
-      <span class="t-3003-c">sein: wir zählen die Anzahl der 1en und vergleichen sie mit<span class="t-3003">./course1/wly/02/05-majority.wly:263:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:264:5</span></span><span class="nowrap"><span class="t-3003-c">$\ceil{n}{2}$<span class="t-3003">./course1/wly/02/05-majority.wly:264:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:264:18</span></span></span><span class="t-3003-c">
-        Wie aber sollen wir zählen? Ganz einfach:<span class="t-3003">./course1/wly/02/05-majority.wly:264:18</span></span>
-      <span class="t-3003-c">mit einem Binäraddierer! Sei
-        <span class="t-3003">./course1/wly/02/05-majority.wly:265:5</span></span><span class="t-3003-c">$d = \ceil{\log_2(n+1)}$<span class="t-3003">./course1/wly/02/05-majority.wly:265:34</span></span><span class="t-3003-c">
-        die<span class="t-3003">./course1/wly/02/05-majority.wly:265:58</span></span>
-      <span class="t-3003-c">Anzahl der Bits in der Binärdarstellung von
-        <span class="t-3003">./course1/wly/02/05-majority.wly:266:5</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/05-majority.wly:266:49</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:266:52</span></span></span><span class="t-3003-c">
-        Wir<span class="t-3003">./course1/wly/02/05-majority.wly:266:52</span></span>
-      <span class="t-3003-c">interpretieren jede Input-Variable
-        <span class="t-3003">./course1/wly/02/05-majority.wly:267:5</span></span><span class="t-3003-c">$x_i$<span class="t-3003">./course1/wly/02/05-majority.wly:267:40</span></span><span class="t-3003-c">
-        als
-        <span class="t-3003">./course1/wly/02/05-majority.wly:267:45</span></span><span class="nowrap"><span class="t-3003-c">$d$<span class="t-3003">./course1/wly/02/05-majority.wly:267:50</span></span><span class="t-3003-c">-stellige<span class="t-3003">./course1/wly/02/05-majority.wly:267:53</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:267:53</span></span>
-      <span class="t-3003-c">Binärzahl, wobei
-        <span class="t-3003">./course1/wly/02/05-majority.wly:268:5</span></span><span class="t-3003-c">$x_i = 1$<span class="t-3003">./course1/wly/02/05-majority.wly:268:22</span></span><span class="t-3003-c">
-        der Zahl
-        <span class="t-3003">./course1/wly/02/05-majority.wly:268:31</span></span><span class="nowrap"><span class="t-3003-c">$000\dots 001$<span class="t-3003">./course1/wly/02/05-majority.wly:268:41</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:268:55</span></span></span><span class="t-3003-c">
-        also 1<span class="t-3003">./course1/wly/02/05-majority.wly:268:55</span></span>
-      <span class="t-3003-c">entspricht, und
-        <span class="t-3003">./course1/wly/02/05-majority.wly:269:5</span></span><span class="t-3003-c">$x_i = 0$<span class="t-3003">./course1/wly/02/05-majority.wly:269:21</span></span><span class="t-3003-c">
-        der Zahl
-        <span class="t-3003">./course1/wly/02/05-majority.wly:269:30</span></span><span class="nowrap"><span class="t-3003-c">$000\dots 0$<span class="t-3003">./course1/wly/02/05-majority.wly:269:40</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:269:52</span></span></span><span class="t-3003-c">
-        also 0,<span class="t-3003">./course1/wly/02/05-majority.wly:269:52</span></span>
-      <span class="t-3003-c">und addieren die dann auf:<span class="t-3003">./course1/wly/02/05-majority.wly:270:5</span></span>
+      $\maj_n(x_1,\dots,x_n)$ zu bestimmen sollte doch
+      einfach sein: wir zählen die Anzahl der 1en und
+      vergleichen sie mit
+      <span class="nowrap">$\ceil{n}{2}$.</span>
+      Wie aber sollen
+      wir zählen? Ganz einfach: mit einem Binäraddierer! Sei
+      $d = \ceil{\log_2(n+1)}$ die Anzahl der Bits in der
+      Binärdarstellung von
+      <span class="nowrap">$n$.</span>
+      Wir interpretieren jede
+      Input-Variable $x_i$ als
+      <span class="nowrap">$d$-stellige</span>
+      Binärzahl,
+      wobei $x_i = 1$ der Zahl
+      <span class="nowrap">$000\dots 001$,</span>
+      also 1
+      entspricht, und $x_i = 0$ der Zahl
+      <span class="nowrap">$000\dots 0$,</span>
+      also
+      0, und addieren die dann auf:
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:12em"
           src="img/circuits/majority-by-adding.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/circuits.ipe</span><br><span class="t-3003-i-url">course1/public/img/circuits/majority-by-adding.svg</span></span>
+        >
       </figure>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 2.5.2<span class="t-3003">./course1/wly/02/05-majority.wly:278:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:278:5</span></span>
-        <span class="t-3003-c">Bestimmen Sie asymptotisch die Größe und die Tiefe dieses<span class="t-3003">./course1/wly/02/05-majority.wly:279:9</span></span>
-        <span class="t-3003-c">Schaltkreises. Achten Sie besonders bei der Berechnung der<span class="t-3003">./course1/wly/02/05-majority.wly:280:9</span></span>
-        <span class="t-3003-c">Größe darauf, dass die untersten Add-Gadgets ja 1-stellige<span class="t-3003">./course1/wly/02/05-majority.wly:281:9</span></span>
-        <span class="t-3003-c">oder dann 2-stellige Zahlen addieren müssen und erst die<span class="t-3003">./course1/wly/02/05-majority.wly:282:9</span></span>
-        <span class="t-3003-c">weniger obersten Gadgets Zahlen mit
-          <span class="t-3003">./course1/wly/02/05-majority.wly:283:9</span></span><span class="t-3003-c">$\Theta(\log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:283:45</span></span><span class="t-3003-c">
-          Bits<span class="t-3003">./course1/wly/02/05-majority.wly:283:61</span></span>
-        <span class="t-3003-c">als Input bekommen.<span class="t-3003">./course1/wly/02/05-majority.wly:284:9</span></span>
+        <b>Übungsaufgabe 2.5.2</b>
+        Bestimmen Sie asymptotisch die Größe und die Tiefe
+        dieses Schaltkreises. Achten Sie besonders bei der
+        Berechnung der Größe darauf, dass die untersten
+        Add-Gadgets ja 1-stellige oder dann 2-stellige Zahlen
+        addieren müssen und erst die weniger obersten Gadgets
+        Zahlen mit $\Theta(\log n)$ Bits als Input bekommen.
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">$O(\log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:287:9</span></span><span class="t-3003-c">
-        Tiefe mit 2-for-3-Addierern.<span class="t-3003">./course1/wly/02/05-majority.wly:287:20</span></span>
+      $O(\log n)$ Tiefe mit 2-for-3-Addierern.
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Die vorherige Konstruktion mit den Addierern war schon<span class="t-3003">./course1/wly/02/05-majority.wly:289:5</span></span>
-      <span class="t-3003-c">deutlich effizienter als unsere pyramidenartige<span class="t-3003">./course1/wly/02/05-majority.wly:290:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:291:5</span></span><span class="t-3003-c">$\theta^m_l$<span class="t-3003">./course1/wly/02/05-majority.wly:291:5</span></span><span class="t-3003-c">
-        -Konstruktion, allerdings wurde das Ziel,<span class="t-3003">./course1/wly/02/05-majority.wly:291:17</span></span>
-      <span class="t-3003-c">eine Tiefe von
-        <span class="t-3003">./course1/wly/02/05-majority.wly:292:5</span></span><span class="t-3003-c">$O (\log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:292:20</span></span><span class="t-3003-c">
-        zu erreichen, wieder verfehlt,<span class="t-3003">./course1/wly/02/05-majority.wly:292:32</span></span>
-      <span class="t-3003-c">wenn auch knapp. Die Idee, die eine Tiefe von
-        <span class="t-3003">./course1/wly/02/05-majority.wly:293:5</span></span><span class="t-3003-c">$O (\log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:293:51</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:293:63</span></span>
-      <span class="t-3003-c">erreichen wird, ist ebenso einfach wie genial.<span class="t-3003">./course1/wly/02/05-majority.wly:294:5</span></span>
+      Die vorherige Konstruktion mit den Addierern war
+      schon deutlich effizienter als unsere pyramidenartige
+      $\theta^m_l$ -Konstruktion, allerdings wurde das
+      Ziel, eine Tiefe von $O (\log n)$ zu erreichen,
+      wieder verfehlt, wenn auch knapp. Die Idee, die eine
+      Tiefe von $O (\log n)$ erreichen wird, ist ebenso
+      einfach wie genial.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Lemma 2.5.3 (2-for-3 Adder)<span class="t-3003">./course1/wly/02/05-majority.wly:296:5</span></span></b><span class="t-3003-c">
-          Es gibt einen Schaltkreis mit
-          <span class="t-3003">./course1/wly/02/05-majority.wly:297:26</span></span><span class="t-3003-c">$O(n)$<span class="t-3003">./course1/wly/02/05-majority.wly:297:57</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:297:63</span></span>
-        <span class="t-3003-c">Gates, Tiefe 2 und Fan-In 2, der als Input drei<span class="t-3003">./course1/wly/02/05-majority.wly:298:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:299:9</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/05-majority.wly:299:9</span></span><span class="t-3003-c">-stellige<span class="t-3003">./course1/wly/02/05-majority.wly:299:12</span></span></span><span class="t-3003-c">
-          Binärzahlen
-          <span class="t-3003">./course1/wly/02/05-majority.wly:299:12</span></span><span class="t-3003-c">$x,y,z$<span class="t-3003">./course1/wly/02/05-majority.wly:299:34</span></span><span class="t-3003-c">
-          nimmt und zwei<span class="t-3003">./course1/wly/02/05-majority.wly:299:41</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:300:9</span></span><span class="nowrap"><span class="t-3003-c">$n+1$<span class="t-3003">./course1/wly/02/05-majority.wly:300:9</span></span><span class="t-3003-c">-stellige<span class="t-3003">./course1/wly/02/05-majority.wly:300:14</span></span></span><span class="t-3003-c">
-          Binärzahlen
-          <span class="t-3003">./course1/wly/02/05-majority.wly:300:14</span></span><span class="t-3003-c">$u, v$<span class="t-3003">./course1/wly/02/05-majority.wly:300:36</span></span><span class="t-3003-c">
-          ausgibt, so dass<span class="t-3003">./course1/wly/02/05-majority.wly:300:42</span></span>
+        <b>Lemma 2.5.3 (2-for-3 Adder)</b>
+        Es gibt einen Schaltkreis mit $O(n)$
+        Gates, Tiefe 2 und Fan-In 2, der als Input drei
+        <span class="nowrap">$n$-stellige</span>
+        Binärzahlen $x,y,z$ nimmt und zwei
+        <span class="nowrap">$n+1$-stellige</span>
+        Binärzahlen $u, v$ ausgibt, so dass
       </p>
       <div class="math-block">
         $$
         x + y + z = u + v
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:302:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">gilt.<span class="t-3003">./course1/wly/02/05-majority.wly:306:9</span></span>
+        gilt.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Ich demonstriere das Prinzip erst einmal mit drei Zahlen<span class="t-3003">./course1/wly/02/05-majority.wly:309:9</span></span>
-        <span class="t-3003-c">in Basis 10:<span class="t-3003">./course1/wly/02/05-majority.wly:310:9</span></span>
+        Ich demonstriere das Prinzip erst einmal mit drei
+        Zahlen in Basis 10:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/circuits/2-for-3-adder-example.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/circuits.ipe</span><br><span class="t-3003-i-url">course1/public/img/circuits/2-for-3-adder-example.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Wir addieren also pro Stelle drei (einstellige) Zahlen,<span class="t-3003">./course1/wly/02/05-majority.wly:318:9</span></span>
-        <span class="t-3003-c">führen den Übertrag (das Carry) aber nicht der weiter links<span class="t-3003">./course1/wly/02/05-majority.wly:319:9</span></span>
-        <span class="t-3003-c">stehenden Stelle zu, sondern sammeln alle Überträge und<span class="t-3003">./course1/wly/02/05-majority.wly:320:9</span></span>
-        <span class="t-3003-c">bilden daraus die
-          <span class="t-3003">./course1/wly/02/05-majority.wly:321:9</span></span><span class="t-3003-c">$n+1$<span class="t-3003">./course1/wly/02/05-majority.wly:321:27</span></span><span class="t-3003-c">
-          -stellige Zahl
-          <span class="t-3003">./course1/wly/02/05-majority.wly:321:32</span></span><span class="nowrap"><span class="t-3003-c">$u$<span class="t-3003">./course1/wly/02/05-majority.wly:321:48</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:321:51</span></span></span><span class="t-3003-c">
-          Für<span class="t-3003">./course1/wly/02/05-majority.wly:321:51</span></span>
-        <span class="t-3003-c">Binärzahlen ist das natürlich noch einfacher:<span class="t-3003">./course1/wly/02/05-majority.wly:322:9</span></span>
+        Wir addieren also pro Stelle drei (einstellige)
+        Zahlen, führen den Übertrag (das Carry) aber nicht der
+        weiter links stehenden Stelle zu, sondern sammeln alle
+        Überträge und bilden daraus die $n+1$ -stellige Zahl
+        <span class="nowrap">$u$.</span>
+        Für Binärzahlen ist das natürlich noch
+        einfacher:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:15em"
             src="img/circuits/2-for-3-adder-binary.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/circuits.ipe</span><br><span class="t-3003-i-url">course1/public/img/circuits/2-for-3-adder-binary.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Dieser Schaltkreis hat insgesamt
-          <span class="t-3003">./course1/wly/02/05-majority.wly:330:9</span></span><span class="t-3003-c">$O(n)$<span class="t-3003">./course1/wly/02/05-majority.wly:330:42</span></span><span class="t-3003-c">
-          Gates und Tiefe 2<span class="t-3003">./course1/wly/02/05-majority.wly:330:48</span></span>
-        <span class="t-3003-c">(wobei wir die NOT-Gates im
-          <span class="t-3003">./course1/wly/02/05-majority.wly:331:9</span></span><span class="nowrap"><span class="t-3003-c">$\oplus$<span class="t-3003">./course1/wly/02/05-majority.wly:331:37</span></span><span class="t-3003-c">-Gate<span class="t-3003">./course1/wly/02/05-majority.wly:331:45</span></span></span><span class="t-3003-c">
-          nicht<span class="t-3003">./course1/wly/02/05-majority.wly:331:45</span></span>
-        <span class="t-3003-c">mitzählen).<span class="t-3003">./course1/wly/02/05-majority.wly:332:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Dieser Schaltkreis hat insgesamt $O(n)$ Gates und
+        Tiefe 2 (wobei wir die NOT-Gates im
+        <span class="nowrap">$\oplus$-Gate</span>
+        nicht mitzählen).<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir interpretieren nun die
-        <span class="t-3003">./course1/wly/02/05-majority.wly:334:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/05-majority.wly:334:32</span></span><span class="t-3003-c">
-        Inputs
-        <span class="t-3003">./course1/wly/02/05-majority.wly:334:35</span></span><span class="t-3003-c">$x_1,\dots,x_n$<span class="t-3003">./course1/wly/02/05-majority.wly:334:43</span></span><span class="t-3003-c">
-        von<span class="t-3003">./course1/wly/02/05-majority.wly:334:58</span></span>
-      <span class="t-3003-c">Majoroty als einstellige Binärzahlen, sortieren sie in<span class="t-3003">./course1/wly/02/05-majority.wly:335:5</span></span>
-      <span class="t-3003-c">Dreiergruppen und machen per 2-for-3-Addierer daraus<span class="t-3003">./course1/wly/02/05-majority.wly:336:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:337:5</span></span><span class="t-3003-c">$\ceil{\frac{2n}{3}}$<span class="t-3003">./course1/wly/02/05-majority.wly:337:5</span></span><span class="t-3003-c">
-        Zahlen. Dann machen wir (mit den<span class="t-3003">./course1/wly/02/05-majority.wly:337:26</span></span>
-      <span class="t-3003-c">mittlerweile 2-stelligen Zahlen) weiter und bekommen circa<span class="t-3003">./course1/wly/02/05-majority.wly:338:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:339:5</span></span><span class="t-3003-c">$\ceil{\frac{4n}{9}}$<span class="t-3003">./course1/wly/02/05-majority.wly:339:5</span></span><span class="t-3003-c">
-        Zahlen. Auf jeder Ebene schrumpft<span class="t-3003">./course1/wly/02/05-majority.wly:339:26</span></span>
-      <span class="t-3003-c">die Anzahl der Zahlen um einen Faktor von
-        <span class="t-3003">./course1/wly/02/05-majority.wly:340:5</span></span><span class="nowrap"><span class="t-3003-c">$\frac{2}{3}$<span class="t-3003">./course1/wly/02/05-majority.wly:340:47</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/02/05-majority.wly:340:60</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:340:60</span></span>
-      <span class="t-3003-c">nach
-        <span class="t-3003">./course1/wly/02/05-majority.wly:341:5</span></span><span class="t-3003-c">$\log_{3/2} n$<span class="t-3003">./course1/wly/02/05-majority.wly:341:10</span></span><span class="t-3003-c">
-        Ebenen haben wir schließlich noch zwei<span class="t-3003">./course1/wly/02/05-majority.wly:341:24</span></span>
-      <span class="t-3003-c">mittlerweile
-        <span class="t-3003">./course1/wly/02/05-majority.wly:342:5</span></span><span class="nowrap"><span class="t-3003-c">(<span class="t-3003">./course1/wly/02/05-majority.wly:342:5</span></span><span class="t-3003-c">$\log n$<span class="t-3003">./course1/wly/02/05-majority.wly:342:19</span></span></span><span class="t-3003-c">
-        )-stellige Zahlen, die wir mit<span class="t-3003">./course1/wly/02/05-majority.wly:342:27</span></span>
-      <span class="t-3003-c">einem "normalen" Binäraddierer addieren. Das Ergebnis<span class="t-3003">./course1/wly/02/05-majority.wly:343:5</span></span>
-      <span class="t-3003-c">vergleichen wir mit dem
-        <span class="t-3003">./course1/wly/02/05-majority.wly:344:5</span></span><span class="nowrap"><span class="t-3003-c">$\geq$<span class="t-3003">./course1/wly/02/05-majority.wly:344:29</span></span><span class="t-3003-c">-Schaltkreis<span class="t-3003">./course1/wly/02/05-majority.wly:344:35</span></span></span><span class="t-3003-c">
-        mit<span class="t-3003">./course1/wly/02/05-majority.wly:344:35</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:345:5</span></span><span class="nowrap"><span class="t-3003-c">$\frac{k+1}{2}$<span class="t-3003">./course1/wly/02/05-majority.wly:345:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:345:20</span></span></span><span class="t-3003-c">
-        Was ist die Tiefe des<span class="t-3003">./course1/wly/02/05-majority.wly:345:20</span></span>
-      <span class="t-3003-c">Gesamtschaltkreises? Es ist<span class="t-3003">./course1/wly/02/05-majority.wly:346:5</span></span>
+      Wir interpretieren nun die $n$ Inputs $x_1,\dots,x_n$
+      von Majoroty als einstellige Binärzahlen, sortieren
+      sie in Dreiergruppen und machen per 2-for-3-Addierer
+      daraus $\ceil{\frac{2n}{3}}$ Zahlen. Dann machen wir
+      (mit den mittlerweile 2-stelligen Zahlen) weiter und
+      bekommen circa $\ceil{\frac{4n}{9}}$ Zahlen. Auf
+      jeder Ebene schrumpft die Anzahl der Zahlen um einen
+      Faktor von
+      <span class="nowrap">$\frac{2}{3}$;</span>
+      nach $\log_{3/2} n$ Ebenen
+      haben wir schließlich noch zwei mittlerweile
+      <span class="nowrap">($\log n$</span>
+      )-stellige Zahlen, die wir mit einem "normalen"
+      Binäraddierer addieren. Das Ergebnis vergleichen wir
+      mit dem
+      <span class="nowrap">$\geq$-Schaltkreis</span>
+      mit
+      <span class="nowrap">$\frac{k+1}{2}$.</span>
+      Was
+      ist die Tiefe des Gesamtschaltkreises? Es ist
     </p>
     <div class="math-block main-column">
       $$
@@ -734,120 +562,83 @@
        +\,\,\up{1.2}&amp; \depth(\textnormal{$\geq$-Schaltkreis für ($\log n$)-stellige Zahlen} \\
        =\,\,\up{1.2}&amp; O(\log n) + O(\log \log n) + O(\log \log n) = O(\log n) \ .
       \end{align*}
-      $$<span class="t-3003">./course1/wly/02/05-majority.wly:348:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Die Größe des Schaltkreises wird dominiert von den<span class="t-3003">./course1/wly/02/05-majority.wly:355:5</span></span>
-      <span class="t-3003-c">2-for-3-Addierern. Wir haben
-        <span class="t-3003">./course1/wly/02/05-majority.wly:356:5</span></span><span class="t-3003-c">$O(n)$<span class="t-3003">./course1/wly/02/05-majority.wly:356:34</span></span><span class="t-3003-c">
-        viele davon,<span class="t-3003">./course1/wly/02/05-majority.wly:356:40</span></span>
-      <span class="t-3003-c">allerdings hat jeder bis zu
-        <span class="t-3003">./course1/wly/02/05-majority.wly:357:5</span></span><span class="t-3003-c">$O(\log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:357:33</span></span><span class="t-3003-c">
-        viele Gates, da<span class="t-3003">./course1/wly/02/05-majority.wly:357:44</span></span>
-      <span class="t-3003-c">wir ja
-        <span class="t-3003">./course1/wly/02/05-majority.wly:358:5</span></span><span class="nowrap"><span class="t-3003-c">(<span class="t-3003">./course1/wly/02/05-majority.wly:358:5</span></span><span class="t-3003-c">$\log n$<span class="t-3003">./course1/wly/02/05-majority.wly:358:13</span></span><span class="t-3003-c">)-stellige<span class="t-3003">./course1/wly/02/05-majority.wly:358:21</span></span></span><span class="t-3003-c">
-        Zahlen addieren müssen; wir<span class="t-3003">./course1/wly/02/05-majority.wly:358:21</span></span>
-      <span class="t-3003-c">haben insgesamt also
-        <span class="t-3003">./course1/wly/02/05-majority.wly:359:5</span></span><span class="t-3003-c">$O (n \log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:359:26</span></span><span class="t-3003-c">
-        viele Gates.<span class="t-3003">./course1/wly/02/05-majority.wly:359:40</span></span>
+      Die Größe des Schaltkreises wird dominiert von den
+      2-for-3-Addierern. Wir haben $O(n)$ viele davon,
+      allerdings hat jeder bis zu $O(\log n)$ viele Gates,
+      da wir ja
+      <span class="nowrap">($\log n$)-stellige</span>
+      Zahlen addieren müssen;
+      wir haben insgesamt also $O (n \log n)$ viele Gates.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 2.5.4<span class="t-3003">./course1/wly/02/05-majority.wly:361:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:361:5</span></span>
-        <span class="t-3003-c">Die Konstruktion mit 2-for-3-Addierern gibt uns einen<span class="t-3003">./course1/wly/02/05-majority.wly:362:9</span></span>
-        <span class="t-3003-c">Schaltkreis für Majority mit Fan-in 2, Tiefe
-          <span class="t-3003">./course1/wly/02/05-majority.wly:363:9</span></span><span class="t-3003-c">$O(\log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:363:54</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:363:65</span></span>
-        <span class="t-3003-c">und Größe
-          <span class="t-3003">./course1/wly/02/05-majority.wly:364:9</span></span><span class="t-3003-c">$O (n \log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:364:19</span></span>
+        <b>Theorem 2.5.4</b>
+        Die Konstruktion mit 2-for-3-Addierern gibt uns einen
+        Schaltkreis für Majority mit Fan-in 2, Tiefe
+        $O(\log n)$ und Größe $O (n \log n)$
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 2.5.3<span class="t-3003">./course1/wly/02/05-majority.wly:366:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:366:5</span></span>
-        <span class="t-3003-c">Führen Sie eine genauere Abschätzung der Größe durch.<span class="t-3003">./course1/wly/02/05-majority.wly:367:9</span></span>
-        <span class="t-3003-c">Untersuchen Sie insbesondere:<span class="t-3003">./course1/wly/02/05-majority.wly:368:9</span></span>
+        <b>Übungsaufgabe 2.5.3</b>
+        Führen Sie eine genauere Abschätzung der Größe durch.
+        Untersuchen Sie insbesondere:
       </p>
       <ol>
         <li>
           <p>
-            <span class="t-3003-c">Wieviele 2-for-3-Addierer haben Sie in Ebene
-              <span class="t-3003">./course1/wly/02/05-majority.wly:372:17</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/02/05-majority.wly:372:62</span></span><span class="t-3003-c">
-              des<span class="t-3003">./course1/wly/02/05-majority.wly:372:65</span></span>
-            <span class="t-3003-c">Baumes?<span class="t-3003">./course1/wly/02/05-majority.wly:373:17</span></span>
+            Wieviele 2-for-3-Addierer haben Sie in Ebene $i$ des
+            Baumes?
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Wieviel Bits haben die Zahlen auf Ebene
-              <span class="t-3003">./course1/wly/02/05-majority.wly:376:17</span></span><span class="nowrap"><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/02/05-majority.wly:376:57</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:376:60</span></span></span><span class="t-3003-c">
-              und wie groß<span class="t-3003">./course1/wly/02/05-majority.wly:376:60</span></span>
-            <span class="t-3003-c">muss daher der 2-for-3-Addierer sein?<span class="t-3003">./course1/wly/02/05-majority.wly:377:17</span></span>
+            Wieviel Bits haben die Zahlen auf Ebene
+            <span class="nowrap">$i$,</span>
+            und wie
+            groß muss daher der 2-for-3-Addierer sein?
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Was ergibt sich insgesamt in Summe?<span class="t-3003">./course1/wly/02/05-majority.wly:380:17</span></span>
+            Was ergibt sich insgesamt in Summe?
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir haben nun also fast alle unserer Ziele erreicht.<span class="t-3003">./course1/wly/02/05-majority.wly:382:5</span></span>
-      <span class="t-3003-c">Allerdings hat die Konstruktion mit 2-for-3-Addierern einen<span class="t-3003">./course1/wly/02/05-majority.wly:383:5</span></span>
-      <span class="t-3003-c">Schönheitsfehler: sie ist nicht monoton. Warum sollten wir<span class="t-3003">./course1/wly/02/05-majority.wly:384:5</span></span>
-      <span class="t-3003-c">das wollen? Nun ja, Majority ist eine monotone Funktion,<span class="t-3003">./course1/wly/02/05-majority.wly:385:5</span></span>
-      <span class="t-3003-c">also ist es ja irgendwie verständlich, dass wir auch einen<span class="t-3003">./course1/wly/02/05-majority.wly:386:5</span></span>
-      <span class="t-3003-c">monotonen Schaltkreis wollen. Unser Pyramidenschema, in dem<span class="t-3003">./course1/wly/02/05-majority.wly:387:5</span></span>
-      <span class="t-3003-c">wir alle
-        <span class="t-3003">./course1/wly/02/05-majority.wly:388:5</span></span><span class="t-3003-c">$\theta^m_k$<span class="t-3003">./course1/wly/02/05-majority.wly:388:14</span></span><span class="t-3003-c">
-        berechnen, ist monoton, hat<span class="t-3003">./course1/wly/02/05-majority.wly:388:26</span></span>
-      <span class="t-3003-c">allerdings leider Tiefe
-        <span class="t-3003">./course1/wly/02/05-majority.wly:389:5</span></span><span class="nowrap"><span class="t-3003-c">$\Omega(n)$<span class="t-3003">./course1/wly/02/05-majority.wly:389:29</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:389:40</span></span></span>
+      Wir haben nun also fast alle unserer Ziele erreicht.
+      Allerdings hat die Konstruktion mit 2-for-3-Addierern
+      einen Schönheitsfehler: sie ist nicht monoton. Warum
+      sollten wir das wollen? Nun ja, Majority ist eine
+      monotone Funktion, also ist es ja irgendwie
+      verständlich, dass wir auch einen monotonen
+      Schaltkreis wollen. Unser Pyramidenschema, in dem wir
+      alle $\theta^m_k$ berechnen, ist monoton, hat
+      allerdings leider Tiefe
+      <span class="nowrap">$\Omega(n)$.</span>
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Monoton und polylogarithmische Tiefe durch Halbierung und<span class="t-3003">./course1/wly/02/05-majority.wly:392:9</span></span>
-      <span class="t-3003-c">Aufzählung.<span class="t-3003">./course1/wly/02/05-majority.wly:393:9</span></span>
+      Monoton und polylogarithmische Tiefe durch Halbierung
+      und Aufzählung.
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Die Idee ist, dass wir, anstatt
-        <span class="t-3003">./course1/wly/02/05-majority.wly:395:5</span></span><span class="t-3003-c">$\theta^n_k$<span class="t-3003">./course1/wly/02/05-majority.wly:395:37</span></span><span class="t-3003-c">
-        aus
-        <span class="t-3003">./course1/wly/02/05-majority.wly:395:49</span></span><span class="nowrap"><span class="t-3003-c">$x_n$<span class="t-3003">./course1/wly/02/05-majority.wly:395:54</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:395:59</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:395:59</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:396:5</span></span><span class="t-3003-c">$\theta^{n-1}_{k-1}$<span class="t-3003">./course1/wly/02/05-majority.wly:396:5</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/02/05-majority.wly:396:25</span></span><span class="t-3003-c">$\theta^{n-1}_{k}$<span class="t-3003">./course1/wly/02/05-majority.wly:396:30</span></span><span class="t-3003-c">
-        zu berechnen,<span class="t-3003">./course1/wly/02/05-majority.wly:396:48</span></span>
-      <span class="t-3003-c">versuchen, irgendwie von
-        <span class="t-3003">./course1/wly/02/05-majority.wly:397:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/05-majority.wly:397:30</span></span><span class="t-3003-c">
-        auf
-        <span class="t-3003">./course1/wly/02/05-majority.wly:397:33</span></span><span class="t-3003-c">$n/2$<span class="t-3003">./course1/wly/02/05-majority.wly:397:38</span></span><span class="t-3003-c">
-        runterzukommen.<span class="t-3003">./course1/wly/02/05-majority.wly:397:43</span></span>
-      <span class="t-3003-c">Dann könnten wir rekursiv weitermachen und müssten uns nur<span class="t-3003">./course1/wly/02/05-majority.wly:398:5</span></span>
-      <span class="t-3003-c">durch logarithmisch viele Werte von
-        <span class="t-3003">./course1/wly/02/05-majority.wly:399:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/05-majority.wly:399:41</span></span><span class="t-3003-c">
-        wühlen. Wir sehen,<span class="t-3003">./course1/wly/02/05-majority.wly:399:44</span></span>
-      <span class="t-3003-c">dass wir
-        <span class="t-3003">./course1/wly/02/05-majority.wly:400:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/05-majority.wly:400:14</span></span><span class="t-3003-c">
-        auf
-        <span class="t-3003">./course1/wly/02/05-majority.wly:400:17</span></span><span class="t-3003-c">$k+1$<span class="t-3003">./course1/wly/02/05-majority.wly:400:22</span></span><span class="t-3003-c">
-        Weisen als Summe zweier<span class="t-3003">./course1/wly/02/05-majority.wly:400:27</span></span>
-      <span class="t-3003-c">nichtnegativer Zahlen
-        <span class="t-3003">./course1/wly/02/05-majority.wly:401:5</span></span><span class="t-3003-c">$a+b = k$<span class="t-3003">./course1/wly/02/05-majority.wly:401:27</span></span><span class="t-3003-c">
-        schreiben können. Des<span class="t-3003">./course1/wly/02/05-majority.wly:401:36</span></span>
-      <span class="t-3003-c">weiteren zerlegen wir
-        <span class="t-3003">./course1/wly/02/05-majority.wly:402:5</span></span><span class="t-3003-c">$\mathbf{x} \in \{0,1\}^n$<span class="t-3003">./course1/wly/02/05-majority.wly:402:27</span></span><span class="t-3003-c">
-        in<span class="t-3003">./course1/wly/02/05-majority.wly:402:53</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:403:5</span></span><span class="t-3003-c">$\mathbf{y} = (x_1, \dots, x_{n/2})$<span class="t-3003">./course1/wly/02/05-majority.wly:403:5</span></span><span class="t-3003-c">
-        und<span class="t-3003">./course1/wly/02/05-majority.wly:403:41</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:404:5</span></span><span class="t-3003-c">$\mathbf{z} = (x_{n/2+1}, \dots, x_n)$<span class="t-3003">./course1/wly/02/05-majority.wly:404:5</span></span><span class="t-3003-c">
-        und sehen, dass<span class="t-3003">./course1/wly/02/05-majority.wly:404:43</span></span>
+      Die Idee ist, dass wir, anstatt $\theta^n_k$ aus
+      <span class="nowrap">$x_n$,</span>
+      $\theta^{n-1}_{k-1}$ und $\theta^{n-1}_{k}$ zu
+      berechnen, versuchen, irgendwie von $n$ auf $n/2$
+      runterzukommen. Dann könnten wir rekursiv weitermachen
+      und müssten uns nur durch logarithmisch viele Werte
+      von $n$ wühlen. Wir sehen, dass wir $k$ auf $k+1$
+      Weisen als Summe zweier nichtnegativer Zahlen
+      $a+b = k$ schreiben können. Des weiteren zerlegen wir
+      $\mathbf{x} \in \{0,1\}^n$ in
+      $\mathbf{y} = (x_1, \dots, x_{n/2})$ und
+      $\mathbf{z} = (x_{n/2+1}, \dots, x_n)$ und sehen,
+      dass
     </p>
     <div class="math-block main-column">
       $$
@@ -856,10 +647,10 @@
       \sum_i y_i&amp;\geq a \wedge \sum_j z_j \geq b
       \textnormal{ für Werte $a,b \geq 0$ mit $a + b = k$}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/02/05-majority.wly:406:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">und somit<span class="t-3003">./course1/wly/02/05-majority.wly:412:5</span></span>
+      und somit
     </p>
     <div class="math-block main-column">
       $$
@@ -868,205 +659,152 @@
       ( \theta^{n/2}_a (\mathbf{y}) \wedge
       \theta^{n/2}_{k-a} (\mathbf{z}) )
       \end{align*}
-      $$<span class="t-3003">./course1/wly/02/05-majority.wly:414:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wenn wir diese Konstruktion rekursiv fortsetzen, erhalten<span class="t-3003">./course1/wly/02/05-majority.wly:420:5</span></span>
-      <span class="t-3003-c">wir
-        <span class="t-3003">./course1/wly/02/05-majority.wly:421:5</span></span><span class="t-3003-c">$\log n$<span class="t-3003">./course1/wly/02/05-majority.wly:421:9</span></span><span class="t-3003-c">
-        Ebenen und somit auf den ersten Blick<span class="t-3003">./course1/wly/02/05-majority.wly:421:17</span></span>
-      <span class="t-3003-c">logarithmische Tiefe. Auf den zweiten Blick erkennen wir,<span class="t-3003">./course1/wly/02/05-majority.wly:422:5</span></span>
-      <span class="t-3003-c">dass wir etwas geschummelt haben: die
-        <span class="t-3003">./course1/wly/02/05-majority.wly:423:5</span></span><span class="nowrap"><span class="t-3003-c">$\bigvee$<span class="t-3003">./course1/wly/02/05-majority.wly:423:43</span></span><span class="t-3003-c">-Gates<span class="t-3003">./course1/wly/02/05-majority.wly:423:52</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:423:52</span></span>
-      <span class="t-3003-c">haben sehr großen Fan-in, nämlich bis zu
-        <span class="t-3003">./course1/wly/02/05-majority.wly:424:5</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/05-majority.wly:424:46</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:424:49</span></span></span><span class="t-3003-c">
-        Um Fan-in 2<span class="t-3003">./course1/wly/02/05-majority.wly:424:49</span></span>
-      <span class="t-3003-c">zu erreichen, müssen wir jedes
-        <span class="t-3003">./course1/wly/02/05-majority.wly:425:5</span></span><span class="nowrap"><span class="t-3003-c">$\bigvee$<span class="t-3003">./course1/wly/02/05-majority.wly:425:36</span></span><span class="t-3003-c">-Gate<span class="t-3003">./course1/wly/02/05-majority.wly:425:45</span></span></span><span class="t-3003-c">
-        durch einen<span class="t-3003">./course1/wly/02/05-majority.wly:425:45</span></span>
-      <span class="t-3003-c">Binärbaum aus normalen
-        <span class="t-3003">./course1/wly/02/05-majority.wly:426:5</span></span><span class="nowrap"><span class="t-3003-c">$\vee$<span class="t-3003">./course1/wly/02/05-majority.wly:426:28</span></span><span class="t-3003-c">-Gates<span class="t-3003">./course1/wly/02/05-majority.wly:426:34</span></span></span><span class="t-3003-c">
-        von Fan-in 2 ersetzen.<span class="t-3003">./course1/wly/02/05-majority.wly:426:34</span></span>
-      <span class="t-3003-c">Dies gibt uns zusätzlich Tiefe
-        <span class="t-3003">./course1/wly/02/05-majority.wly:427:5</span></span><span class="t-3003-c">$O(\log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:427:36</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:427:47</span></span><span class="nowrap"><i><span class="t-3003-c">pro<span class="t-3003">./course1/wly/02/05-majority.wly:427:49</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:428:5</span></span><span class="nowrap"><span class="t-3003-c">$\bigvee$<span class="t-3003">./course1/wly/02/05-majority.wly:428:5</span></span><span class="t-3003-c">-Gate<span class="t-3003">./course1/wly/02/05-majority.wly:428:14</span></span></span></i><span class="t-3003-c">;<span class="t-3003">./course1/wly/02/05-majority.wly:428:20</span></span></span><span class="t-3003-c">
-        wir erhalten also insgesamt eine Tiefe<span class="t-3003">./course1/wly/02/05-majority.wly:428:20</span></span>
-      <span class="t-3003-c">von
-        <span class="t-3003">./course1/wly/02/05-majority.wly:429:5</span></span><span class="nowrap"><span class="t-3003-c">$O(\log^2 n)$<span class="t-3003">./course1/wly/02/05-majority.wly:429:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:429:22</span></span></span>
+      Wenn wir diese Konstruktion rekursiv fortsetzen,
+      erhalten wir $\log n$ Ebenen und somit auf den ersten
+      Blick logarithmische Tiefe. Auf den zweiten Blick
+      erkennen wir, dass wir etwas geschummelt haben: die
+      <span class="nowrap">$\bigvee$-Gates</span>
+      haben sehr großen Fan-in, nämlich bis
+      zu
+      <span class="nowrap">$n$.</span>
+      Um Fan-in 2 zu erreichen, müssen wir jedes
+      <span class="nowrap">$\bigvee$-Gate</span>
+      durch einen Binärbaum aus normalen
+      <span class="nowrap">$\vee$-Gates</span>
+      von Fan-in 2 ersetzen. Dies gibt uns
+      zusätzlich Tiefe $O(\log n)$
+      <span class="nowrap"><i>pro
+          <span class="nowrap">$\bigvee$-Gate</span></i>;</span>
+      wir erhalten also insgesamt eine Tiefe von
+      <span class="nowrap">$O(\log^2 n)$.</span>
     </p>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 2.5.4<span class="t-3003">./course1/wly/02/05-majority.wly:431:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:431:5</span></span>
-        <span class="t-3003-c">dass polynomiell viele (in diesem Falle:
-          <span class="t-3003">./course1/wly/02/05-majority.wly:432:9</span></span><span class="t-3003-c">$O(n^2)$<span class="t-3003">./course1/wly/02/05-majority.wly:432:50</span></span><span class="t-3003-c">
-          viele)<span class="t-3003">./course1/wly/02/05-majority.wly:432:58</span></span>
-        <span class="t-3003-c">Gates ausreichen. Zeigen Sie, wie die gerade skizzierte<span class="t-3003">./course1/wly/02/05-majority.wly:433:9</span></span>
-        <span class="t-3003-c">Konstruktion so ausgeführt werden kann,<span class="t-3003">./course1/wly/02/05-majority.wly:434:9</span></span>
+        <b>Übungsaufgabe 2.5.4</b>
+        dass polynomiell viele (in diesem Falle: $O(n^2)$
+        viele) Gates ausreichen. Zeigen Sie, wie die gerade
+        skizzierte Konstruktion so ausgeführt werden kann,
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Monoton und logarithmische Tiefe: Valiants probabilitische<span class="t-3003">./course1/wly/02/05-majority.wly:437:9</span></span>
-      <span class="t-3003-c">Konstruktion<span class="t-3003">./course1/wly/02/05-majority.wly:438:9</span></span>
+      Monoton und logarithmische Tiefe: Valiants
+      probabilitische Konstruktion
     </h2>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 2.5.5<span class="t-3003">./course1/wly/02/05-majority.wly:440:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:440:5</span></span>
-        <span class="t-3003-c">Es gibt einen monotonen Schaltkreis mit Fan-in 2, Tiefe<span class="t-3003">./course1/wly/02/05-majority.wly:441:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:442:9</span></span><span class="t-3003-c">$O(\log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:442:9</span></span><span class="t-3003-c">
-          und Größe
-          <span class="t-3003">./course1/wly/02/05-majority.wly:442:20</span></span><span class="nowrap"><span class="t-3003-c">$\poly(n)$<span class="t-3003">./course1/wly/02/05-majority.wly:442:31</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:442:41</span></span></span><span class="t-3003-c">
-          der
-          <span class="t-3003">./course1/wly/02/05-majority.wly:442:41</span></span><span class="t-3003-c">$\maj_n$<span class="t-3003">./course1/wly/02/05-majority.wly:442:47</span></span><span class="t-3003-c">
-          berechnet.<span class="t-3003">./course1/wly/02/05-majority.wly:442:55</span></span>
+        <b>Theorem 2.5.5</b>
+        Es gibt einen monotonen Schaltkreis mit Fan-in 2,
+        Tiefe $O(\log n)$ und Größe
+        <span class="nowrap">$\poly(n)$,</span>
+        der $\maj_n$
+        berechnet.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Die Beweismethode, die wir verwenden, ist womöglich neu<span class="t-3003">./course1/wly/02/05-majority.wly:445:9</span></span>
-        <span class="t-3003-c">für Sie. Wir verwenden bei der Konstruktion des<span class="t-3003">./course1/wly/02/05-majority.wly:446:9</span></span>
-        <span class="t-3003-c">Schaltkreises
-          <span class="t-3003">./course1/wly/02/05-majority.wly:447:9</span></span><span class="nowrap"><i><span class="t-3003-c">Zufall<span class="t-3003">./course1/wly/02/05-majority.wly:447:24</span></span></i><span class="t-3003-c">;<span class="t-3003">./course1/wly/02/05-majority.wly:447:31</span></span></span><span class="t-3003-c">
-          am Ende werden wir zeigen, dass<span class="t-3003">./course1/wly/02/05-majority.wly:447:31</span></span>
-        <span class="t-3003-c">dieser zufällige Schaltkreis mit hoher Wahrscheinlichkeit<span class="t-3003">./course1/wly/02/05-majority.wly:448:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:449:9</span></span><span class="t-3003-c">$\maj_n$<span class="t-3003">./course1/wly/02/05-majority.wly:449:9</span></span><span class="t-3003-c">
-          auf allen möglichen
-          <span class="t-3003">./course1/wly/02/05-majority.wly:449:17</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/02/05-majority.wly:449:38</span></span><span class="t-3003-c">
-          Inputs korrekt<span class="t-3003">./course1/wly/02/05-majority.wly:449:43</span></span>
-        <span class="t-3003-c">berechnen, und folgern daraus, das etwas, was mit hoher<span class="t-3003">./course1/wly/02/05-majority.wly:450:9</span></span>
-        <span class="t-3003-c">Wahrscheinlichkeit eintritt, auch existieren muss. Die<span class="t-3003">./course1/wly/02/05-majority.wly:451:9</span></span>
-        <span class="t-3003-c">Existenz folgt also schlussendlich aus einer<span class="t-3003">./course1/wly/02/05-majority.wly:452:9</span></span>
-        <span class="t-3003-c">Wahrscheinlichkeitsrechnung. Das heißt auch, dass ich Ihnen<span class="t-3003">./course1/wly/02/05-majority.wly:453:9</span></span>
-        <span class="t-3003-c">für konkretes
-          <span class="t-3003">./course1/wly/02/05-majority.wly:454:9</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/05-majority.wly:454:23</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:454:26</span></span></span><span class="t-3003-c">
-          sagen wir
-          <span class="t-3003">./course1/wly/02/05-majority.wly:454:26</span></span><span class="nowrap"><span class="t-3003-c">$n = 99$<span class="t-3003">./course1/wly/02/05-majority.wly:454:38</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:454:46</span></span></span><span class="t-3003-c">
-          nicht hinschreiben<span class="t-3003">./course1/wly/02/05-majority.wly:454:46</span></span>
-        <span class="t-3003-c">könnte, wie ein korrekter Schaltkreis aussähe; ich könnte<span class="t-3003">./course1/wly/02/05-majority.wly:455:9</span></span>
-        <span class="t-3003-c">die randomisierte Konstruktion durchführen und Ihnen<span class="t-3003">./course1/wly/02/05-majority.wly:456:9</span></span>
-        <span class="t-3003-c">erklären, das der resultierende Schaltkreis<span class="t-3003">./course1/wly/02/05-majority.wly:457:9</span></span>
-        <span class="t-3003-c">höchstwahrscheinlich korrekt ist. Während des ganzen<span class="t-3003">./course1/wly/02/05-majority.wly:458:9</span></span>
-        <span class="t-3003-c">Beweises müssen Sie sich vor Augen halten, dass wir bei der<span class="t-3003">./course1/wly/02/05-majority.wly:459:9</span></span>
-        <span class="t-3003-c">Konstruktion des Schaltkreises
-          <span class="t-3003">./course1/wly/02/05-majority.wly:460:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/02/05-majority.wly:460:40</span></span><span class="t-3003-c">
-          Zufall verwenden; wir<span class="t-3003">./course1/wly/02/05-majority.wly:460:43</span></span>
-        <span class="t-3003-c">nehmen nicht an, dass die Inputs
-          <span class="t-3003">./course1/wly/02/05-majority.wly:461:9</span></span><span class="t-3003-c">$x \in \{0,1\}^n$<span class="t-3003">./course1/wly/02/05-majority.wly:461:42</span></span><span class="t-3003-c">
-          in<span class="t-3003">./course1/wly/02/05-majority.wly:461:59</span></span>
-        <span class="t-3003-c">irgendeiner Weise zufällig sind. Wir verwenden also<span class="t-3003">./course1/wly/02/05-majority.wly:462:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:463:9</span></span><span class="nowrap"><i><span class="t-3003-c">Wahrscheinlichkeitsverteilungen über Schaltkreisen<span class="t-3003">./course1/wly/02/05-majority.wly:463:10</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:463:61</span></span></span><span class="t-3003-c">
-          nicht<span class="t-3003">./course1/wly/02/05-majority.wly:463:61</span></span>
-        <span class="t-3003-c">von über Inputs. Zuerst definieren wir die
-          <span class="t-3003">./course1/wly/02/05-majority.wly:464:9</span></span><i><span class="t-3003-c">Signalstärke<span class="t-3003">./course1/wly/02/05-majority.wly:464:53</span></span></i><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:464:66</span></span>
-        <span class="t-3003-c">von Verteilungen über Schaltkreise.<span class="t-3003">./course1/wly/02/05-majority.wly:465:9</span></span>
+        Die Beweismethode, die wir verwenden, ist womöglich
+        neu für Sie. Wir verwenden bei der Konstruktion des
+        Schaltkreises
+        <span class="nowrap"><i>Zufall</i>;</span>
+        am Ende werden wir zeigen,
+        dass dieser zufällige Schaltkreis mit hoher
+        Wahrscheinlichkeit $\maj_n$ auf allen möglichen $2^n$
+        Inputs korrekt berechnen, und folgern daraus, das
+        etwas, was mit hoher Wahrscheinlichkeit eintritt, auch
+        existieren muss. Die Existenz folgt also
+        schlussendlich aus einer Wahrscheinlichkeitsrechnung.
+        Das heißt auch, dass ich Ihnen für konkretes
+        <span class="nowrap">$n$,</span>
+        sagen wir
+        <span class="nowrap">$n = 99$,</span>
+        nicht hinschreiben könnte, wie
+        ein korrekter Schaltkreis aussähe; ich könnte die
+        randomisierte Konstruktion durchführen und Ihnen
+        erklären, das der resultierende Schaltkreis
+        höchstwahrscheinlich korrekt ist. Während des ganzen
+        Beweises müssen Sie sich vor Augen halten, dass wir
+        bei der Konstruktion des Schaltkreises $C$ Zufall
+        verwenden; wir nehmen nicht an, dass die Inputs
+        $x \in \{0,1\}^n$ in irgendeiner Weise zufällig sind.
+        Wir verwenden also
+        <span class="nowrap"><i>Wahrscheinlichkeitsverteilungen
+            über Schaltkreisen</i>,</span>
+        nicht von über Inputs. Zuerst
+        definieren wir die
+        <i>Signalstärke</i>
+        von Verteilungen
+        über Schaltkreise.
       </p>
       <div class="well statement">
         <p>
-          <b><span class="t-3003-c">Definition 2.5.6 (Signalstärke)<span class="t-3003">./course1/wly/02/05-majority.wly:467:9</span></span></b><span class="t-3003-c">
-            Sei
-            <span class="t-3003">./course1/wly/02/05-majority.wly:468:29</span></span><span class="t-3003-c">$\mathcal{C}$<span class="t-3003">./course1/wly/02/05-majority.wly:468:34</span></span><span class="t-3003-c">
-            eine Verteilung über<span class="t-3003">./course1/wly/02/05-majority.wly:468:47</span></span>
-          <span class="t-3003-c">Schaltkreise mit Input-Variablen
-            <span class="t-3003">./course1/wly/02/05-majority.wly:469:13</span></span><span class="nowrap"><span class="t-3003-c">$x_1,\dots,x_n$<span class="t-3003">./course1/wly/02/05-majority.wly:469:46</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:469:61</span></span></span><span class="t-3003-c">
-            Wir<span class="t-3003">./course1/wly/02/05-majority.wly:469:61</span></span>
-          <span class="t-3003-c">sagen, dass
-            <span class="t-3003">./course1/wly/02/05-majority.wly:470:13</span></span><span class="t-3003-c">$\mathcal{C}$<span class="t-3003">./course1/wly/02/05-majority.wly:470:25</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:470:38</span></span><i><span class="t-3003-c">Signalstärke mindestens<span class="t-3003">./course1/wly/02/05-majority.wly:470:40</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/02/05-majority.wly:471:13</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/02/05-majority.wly:471:13</span></span></i><span class="t-3003-c">
-            hat, wenn<span class="t-3003">./course1/wly/02/05-majority.wly:471:22</span></span>
+          <b>Definition 2.5.6 (Signalstärke)</b>
+          Sei $\mathcal{C}$ eine Verteilung
+          über Schaltkreise mit Input-Variablen
+          <span class="nowrap">$x_1,\dots,x_n$.</span>
+          Wir sagen, dass $\mathcal{C}$
+          <i>Signalstärke
+            mindestens $\delta$</i>
+          hat, wenn
         </p>
         <div class="math-block">
           $$
           \forall x \in \{0,1\}: \quad \Pr_{C \in \mathcal{C}} [C(x) = \maj_n(x)]
           \geq \frac{1 + \delta}{2}
-          $$<span class="t-3003">./course1/wly/02/05-majority.wly:473:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">gilt.<span class="t-3003">./course1/wly/02/05-majority.wly:478:13</span></span>
+          gilt.
         </p>
       </div>
       <p>
-        <span class="t-3003-c">In Worten, wenn der zufällig ausgewählte Schaltkreis
-          <span class="t-3003">./course1/wly/02/05-majority.wly:480:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/02/05-majority.wly:480:62</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:480:65</span></span>
-        <span class="t-3003-c">den Wert
-          <span class="t-3003">./course1/wly/02/05-majority.wly:481:9</span></span><span class="t-3003-c">$\maj_n(x)$<span class="t-3003">./course1/wly/02/05-majority.wly:481:18</span></span><span class="t-3003-c">
-          besser als ein Münzwurf vorhersagt,<span class="t-3003">./course1/wly/02/05-majority.wly:481:29</span></span>
-        <span class="t-3003-c">und zwar um
-          <span class="t-3003">./course1/wly/02/05-majority.wly:482:9</span></span><span class="t-3003-c">$\delta/2$<span class="t-3003">./course1/wly/02/05-majority.wly:482:21</span></span><span class="t-3003-c">
-          besser. Wir können einen ganz<span class="t-3003">./course1/wly/02/05-majority.wly:482:31</span></span>
-        <span class="t-3003-c">einfachen (zufälligen Schaltkreis) bauen, der ein schwache<span class="t-3003">./course1/wly/02/05-majority.wly:483:9</span></span>
-        <span class="t-3003-c">aber positive Signalstärke hat.<span class="t-3003">./course1/wly/02/05-majority.wly:484:9</span></span>
+        In Worten, wenn der zufällig ausgewählte Schaltkreis
+        $C$ den Wert $\maj_n(x)$ besser als ein Münzwurf
+        vorhersagt, und zwar um $\delta/2$ besser. Wir können
+        einen ganz einfachen (zufälligen Schaltkreis) bauen,
+        der ein schwache aber positive Signalstärke hat.
       </p>
       <div class="well statement">
         <p>
-          <b><span class="t-3003-c">Lemma 2.5.7<span class="t-3003">./course1/wly/02/05-majority.wly:486:9</span></span></b><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:486:9</span></span>
-          <span class="t-3003-c">Es gibt eine Wahrscheinlichkeitsverteilung
-            <span class="t-3003">./course1/wly/02/05-majority.wly:487:13</span></span><span class="t-3003-c">$\mathcal{C}_0$<span class="t-3003">./course1/wly/02/05-majority.wly:487:56</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:487:71</span></span>
-          <span class="t-3003-c">über monotone Schaltkreise der Größe 1, die Signalstärke<span class="t-3003">./course1/wly/02/05-majority.wly:488:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:489:13</span></span><span class="t-3003-c">$\frac{1}{n}$<span class="t-3003">./course1/wly/02/05-majority.wly:489:13</span></span><span class="t-3003-c">
-            hat. Genauer gesagt gilt für jeden Input<span class="t-3003">./course1/wly/02/05-majority.wly:489:26</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:490:13</span></span><span class="nowrap"><span class="t-3003-c">$x \in \{0,1\}^n$<span class="t-3003">./course1/wly/02/05-majority.wly:490:13</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/02/05-majority.wly:490:30</span></span></span><span class="t-3003-c">
-            ein nach dieser Verteilung zufällig<span class="t-3003">./course1/wly/02/05-majority.wly:490:30</span></span>
-          <span class="t-3003-c">ausgewählter Schaltkreis
-            <span class="t-3003">./course1/wly/02/05-majority.wly:491:13</span></span><span class="t-3003-c">$C \sim \mathcal{C}_0$<span class="t-3003">./course1/wly/02/05-majority.wly:491:38</span></span><span class="t-3003-c">
-            ist mit<span class="t-3003">./course1/wly/02/05-majority.wly:491:60</span></span>
-          <span class="t-3003-c">Wahrscheinlichkeit mindestens
-            <span class="t-3003">./course1/wly/02/05-majority.wly:492:13</span></span><span class="t-3003-c">$\frac{1}{2} + \frac{1}{2n}$<span class="t-3003">./course1/wly/02/05-majority.wly:492:43</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:492:71</span></span>
-          <span class="t-3003-c">korrekt ist. Formal ausgedrückt:<span class="t-3003">./course1/wly/02/05-majority.wly:493:13</span></span>
+          <b>Lemma 2.5.7</b>
+          Es gibt eine Wahrscheinlichkeitsverteilung
+          $\mathcal{C}_0$ über monotone Schaltkreise der Größe
+          1, die Signalstärke $\frac{1}{n}$ hat. Genauer gesagt
+          gilt für jeden Input
+          <span class="nowrap">$x \in \{0,1\}^n$:</span>
+          ein nach
+          dieser Verteilung zufällig ausgewählter Schaltkreis
+          $C \sim \mathcal{C}_0$ ist mit Wahrscheinlichkeit
+          mindestens $\frac{1}{2} + \frac{1}{2n}$ korrekt ist.
+          Formal ausgedrückt:
         </p>
         <div class="math-block">
           $$
           \forall \x \in \cube^n: \quad
           \Pr_{C \sim \mathcal{C}_0} [C(\x) = \maj_n(\x)] = \frac{1}{2} + \frac{1}{2n} \ .
-          $$<span class="t-3003">./course1/wly/02/05-majority.wly:495:13</span>
+          $$
         </div>
       </div>
       <div class="well highlight">
         <p>
           <b>Beweis</b>
-          
-          <span class="t-3003-c">Der Schaltkreis bzw. die Wahrscheinlichkeitsverteilung ist<span class="t-3003">./course1/wly/02/05-majority.wly:501:13</span></span>
-          <span class="t-3003-c">extrem einfach. Wir wählen zufällig einen Index<span class="t-3003">./course1/wly/02/05-majority.wly:502:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:503:13</span></span><span class="t-3003-c">$I \in \{1,\dots,n\}$<span class="t-3003">./course1/wly/02/05-majority.wly:503:13</span></span><span class="t-3003-c">
-            und geben
-            <span class="t-3003">./course1/wly/02/05-majority.wly:503:34</span></span><span class="t-3003-c">$x_I$<span class="t-3003">./course1/wly/02/05-majority.wly:503:45</span></span><span class="t-3003-c">
-            als unseren<span class="t-3003">./course1/wly/02/05-majority.wly:503:50</span></span>
-          <span class="t-3003-c">Schaltkreis
-            <span class="t-3003">./course1/wly/02/05-majority.wly:504:13</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/02/05-majority.wly:504:25</span></span><span class="t-3003-c">
-            (bestehend aus einem einzigen Input-Gate,<span class="t-3003">./course1/wly/02/05-majority.wly:504:28</span></span>
-          <span class="t-3003-c">das gleichzeitig das Output-Gate ist) aus. Dieser<span class="t-3003">./course1/wly/02/05-majority.wly:505:13</span></span>
-          <span class="t-3003-c">Schaltkreis ist natürlich monoton. Beachten Sie, dass ich<span class="t-3003">./course1/wly/02/05-majority.wly:506:13</span></span>
-          <span class="t-3003-c">den Index groß geschrieben mit
-            <span class="t-3003">./course1/wly/02/05-majority.wly:507:13</span></span><span class="t-3003-c">$I$<span class="t-3003">./course1/wly/02/05-majority.wly:507:44</span></span><span class="t-3003-c">
-            bezeichne, nicht
-            <span class="t-3003">./course1/wly/02/05-majority.wly:507:47</span></span><span class="nowrap"><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/02/05-majority.wly:507:65</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/02/05-majority.wly:507:68</span></span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:507:68</span></span>
-          <span class="t-3003-c">das ist Konvention, weil
-            <span class="t-3003">./course1/wly/02/05-majority.wly:508:13</span></span><span class="t-3003-c">$I$<span class="t-3003">./course1/wly/02/05-majority.wly:508:38</span></span><span class="t-3003-c">
-            eine Zufallsvariable ist. Sei<span class="t-3003">./course1/wly/02/05-majority.wly:508:41</span></span>
-          <span class="t-3003-c">nun ein festes
-            <span class="t-3003">./course1/wly/02/05-majority.wly:509:13</span></span><span class="t-3003-c">$\x \in \{0,1\}$<span class="t-3003">./course1/wly/02/05-majority.wly:509:28</span></span><span class="t-3003-c">
-            gegeben. Mit welcher<span class="t-3003">./course1/wly/02/05-majority.wly:509:44</span></span>
-          <span class="t-3003-c">Wahrscheinlichkeit ist unser (recht primitiver) Schaltkreis<span class="t-3003">./course1/wly/02/05-majority.wly:510:13</span></span>
-          <span class="t-3003-c">korrekt?<span class="t-3003">./course1/wly/02/05-majority.wly:511:13</span></span>
+          Der Schaltkreis bzw. die
+          Wahrscheinlichkeitsverteilung ist extrem einfach. Wir
+          wählen zufällig einen Index $I \in \{1,\dots,n\}$ und
+          geben $x_I$ als unseren Schaltkreis $C$ (bestehend
+          aus einem einzigen Input-Gate, das gleichzeitig das
+          Output-Gate ist) aus. Dieser Schaltkreis ist natürlich
+          monoton. Beachten Sie, dass ich den Index groß
+          geschrieben mit $I$ bezeichne, nicht
+          <span class="nowrap">$i$;</span>
+          das ist
+          Konvention, weil $I$ eine Zufallsvariable ist. Sei
+          nun ein festes $\x \in \{0,1\}$ gegeben. Mit welcher
+          Wahrscheinlichkeit ist unser (recht primitiver)
+          Schaltkreis korrekt?
         </p>
         <div class="math-block">
           $$
@@ -1074,24 +812,16 @@
           C(\x)&amp;= \maj_n (\x) \quad \Longleftrightarrow \\
           x_I&amp;= \maj_n (\x) \ .
           \end{align*}
-          $$<span class="t-3003">./course1/wly/02/05-majority.wly:513:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">Wir unterscheiden nun zwei Fälle. Wenn
-            <span class="t-3003">./course1/wly/02/05-majority.wly:518:13</span></span><span class="t-3003-c">$\maj_n(\x) = 1$<span class="t-3003">./course1/wly/02/05-majority.wly:518:52</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:518:68</span></span>
-          <span class="t-3003-c">ist, dann gibt es mindestens
-            <span class="t-3003">./course1/wly/02/05-majority.wly:519:13</span></span><span class="t-3003-c">$k+1$<span class="t-3003">./course1/wly/02/05-majority.wly:519:42</span></span><span class="t-3003-c">
-            Indizes
-            <span class="t-3003">./course1/wly/02/05-majority.wly:519:47</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/02/05-majority.wly:519:56</span></span><span class="t-3003-c">
-            mit<span class="t-3003">./course1/wly/02/05-majority.wly:519:59</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:520:13</span></span><span class="nowrap"><span class="t-3003-c">$x_i = 1$<span class="t-3003">./course1/wly/02/05-majority.wly:520:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:520:22</span></span></span><span class="t-3003-c">
-            Wenn wir mit
-            <span class="t-3003">./course1/wly/02/05-majority.wly:520:22</span></span><span class="t-3003-c">$I$<span class="t-3003">./course1/wly/02/05-majority.wly:520:37</span></span><span class="t-3003-c">
-            einen solchen ausgewählt<span class="t-3003">./course1/wly/02/05-majority.wly:520:40</span></span>
-          <span class="t-3003-c">haben, dann sind wir erfolgreich. Die Wahrscheinlichkeit<span class="t-3003">./course1/wly/02/05-majority.wly:521:13</span></span>
-          <span class="t-3003-c">hierfür ist<span class="t-3003">./course1/wly/02/05-majority.wly:522:13</span></span>
+          Wir unterscheiden nun zwei Fälle. Wenn
+          $\maj_n(\x) = 1$ ist, dann gibt es mindestens $k+1$
+          Indizes $i$ mit
+          <span class="nowrap">$x_i = 1$.</span>
+          Wenn wir mit $I$ einen
+          solchen ausgewählt haben, dann sind wir erfolgreich.
+          Die Wahrscheinlichkeit hierfür ist
         </p>
         <div class="math-block">
           $$
@@ -1102,115 +832,79 @@
           &amp;= \frac{k+1}{2k+1} = \frac{k + \frac{1}{2} + \frac{1}{2}}{2k+1} \\
           &amp;= \frac{1}{2} + \frac{1}{2n} \ .
           \end{align*}
-          $$<span class="t-3003">./course1/wly/02/05-majority.wly:524:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">Wenn nun
-            <span class="t-3003">./course1/wly/02/05-majority.wly:532:13</span></span><span class="t-3003-c">$\maj_n(\x) = 0$<span class="t-3003">./course1/wly/02/05-majority.wly:532:22</span></span><span class="t-3003-c">
-            ist, dann gibt es mindestens<span class="t-3003">./course1/wly/02/05-majority.wly:532:38</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:533:13</span></span><span class="t-3003-c">$k+1$<span class="t-3003">./course1/wly/02/05-majority.wly:533:13</span></span><span class="t-3003-c">
-            Stellen
-            <span class="t-3003">./course1/wly/02/05-majority.wly:533:18</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/02/05-majority.wly:533:27</span></span><span class="t-3003-c">
-            mit
-            <span class="t-3003">./course1/wly/02/05-majority.wly:533:30</span></span><span class="nowrap"><span class="t-3003-c">$x_i = 0$<span class="t-3003">./course1/wly/02/05-majority.wly:533:35</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:533:44</span></span></span><span class="t-3003-c">
-            und somit ist
-            <span class="t-3003">./course1/wly/02/05-majority.wly:533:44</span></span><span class="t-3003-c">$C(\x)$<span class="t-3003">./course1/wly/02/05-majority.wly:533:60</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:533:67</span></span>
-          <span class="t-3003-c">auch wieder mit Wahrscheinlichkeit mindestens<span class="t-3003">./course1/wly/02/05-majority.wly:534:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:535:13</span></span><span class="t-3003-c">$\frac{k+1}{n+1}$<span class="t-3003">./course1/wly/02/05-majority.wly:535:13</span></span><span class="t-3003-c">
-            korrekt.<span class="t-3003">./course1/wly/02/05-majority.wly:535:30</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+          Wenn nun $\maj_n(\x) = 0$ ist, dann gibt es
+          mindestens $k+1$ Stellen $i$ mit
+          <span class="nowrap">$x_i = 0$,</span>
+          und somit
+          ist $C(\x)$ auch wieder mit Wahrscheinlichkeit
+          mindestens $\frac{k+1}{n+1}$ korrekt.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
-        <span class="t-3003-c">Um eine Analogie aus dem Alltag zu bemühen: wenn Sie für<span class="t-3003">./course1/wly/02/05-majority.wly:537:9</span></span>
-        <span class="t-3003-c">eine Wahlprognose
-          <span class="t-3003">./course1/wly/02/05-majority.wly:538:9</span></span><i><span class="t-3003-c">einen<span class="t-3003">./course1/wly/02/05-majority.wly:538:28</span></span></i><span class="t-3003-c">
-          zufällig ausgewählten Bürger<span class="t-3003">./course1/wly/02/05-majority.wly:538:34</span></span>
-        <span class="t-3003-c">befragen, so ist das Ergebnis zwar nicht wirklich<span class="t-3003">./course1/wly/02/05-majority.wly:539:9</span></span>
-        <span class="t-3003-c">repräsentativ, aber immerhin leicht besser, als wenn Sie<span class="t-3003">./course1/wly/02/05-majority.wly:540:9</span></span>
-        <span class="t-3003-c">einfach raten würden. Unser zufälliger Schaltkreis sendet<span class="t-3003">./course1/wly/02/05-majority.wly:541:9</span></span>
-        <span class="t-3003-c">uns also ein schwaches aber positives Signal in die<span class="t-3003">./course1/wly/02/05-majority.wly:542:9</span></span>
-        <span class="t-3003-c">richtige Richtung. Die Signalstärke ist
-          <span class="t-3003">./course1/wly/02/05-majority.wly:543:9</span></span><span class="nowrap"><span class="t-3003-c">$\frac{1}{n}$<span class="t-3003">./course1/wly/02/05-majority.wly:543:49</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:543:62</span></span></span><span class="t-3003-c">
-          Die<span class="t-3003">./course1/wly/02/05-majority.wly:543:62</span></span>
-        <span class="t-3003-c">zweite Zutat ist nun ein "Signalverstäker". Angenommen,<span class="t-3003">./course1/wly/02/05-majority.wly:544:9</span></span>
-        <span class="t-3003-c">eine Verteilung
-          <span class="t-3003">./course1/wly/02/05-majority.wly:545:9</span></span><span class="t-3003-c">$\mathcal{C}$<span class="t-3003">./course1/wly/02/05-majority.wly:545:25</span></span><span class="t-3003-c">
-          hat Signalstärke
-          <span class="t-3003">./course1/wly/02/05-majority.wly:545:38</span></span><span class="nowrap"><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/02/05-majority.wly:545:56</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:545:64</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:545:64</span></span>
-        <span class="t-3003-c">also<span class="t-3003">./course1/wly/02/05-majority.wly:546:9</span></span>
+        Um eine Analogie aus dem Alltag zu bemühen: wenn Sie
+        für eine Wahlprognose
+        <i>einen</i>
+        zufällig ausgewählten
+        Bürger befragen, so ist das Ergebnis zwar nicht
+        wirklich repräsentativ, aber immerhin leicht besser,
+        als wenn Sie einfach raten würden. Unser zufälliger
+        Schaltkreis sendet uns also ein schwaches aber
+        positives Signal in die richtige Richtung. Die
+        Signalstärke ist
+        <span class="nowrap">$\frac{1}{n}$.</span>
+        Die zweite Zutat ist
+        nun ein "Signalverstäker". Angenommen, eine Verteilung
+        $\mathcal{C}$ hat Signalstärke
+        <span class="nowrap">$\delta$,</span>
+        also
       </p>
       <div class="math-block">
         $$
         \forall \x \in \{0,1\}^n : \quad
         \Pr_{C \sim \mathcal{C}} [C(\x) = \maj_n(\x)] \geq \frac{1+\delta}{2} \ .
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:548:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Dann können wir
-          <span class="t-3003">./course1/wly/02/05-majority.wly:553:9</span></span><i><span class="t-3003-c">drei<span class="t-3003">./course1/wly/02/05-majority.wly:553:26</span></span></i><span class="t-3003-c">
-          Schaltkreise<span class="t-3003">./course1/wly/02/05-majority.wly:553:31</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:554:9</span></span><span class="t-3003-c">$C_1, C_2, C_3 \sim \mathcal{C}$<span class="t-3003">./course1/wly/02/05-majority.wly:554:9</span></span><span class="t-3003-c">
-          unabhängig voneinander<span class="t-3003">./course1/wly/02/05-majority.wly:554:41</span></span>
-        <span class="t-3003-c">samplen und einen neuen Schaltkreis bauen:<span class="t-3003">./course1/wly/02/05-majority.wly:555:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:556:9</span></span><span class="nowrap"><span class="t-3003-c">$C'(\x) := \maj_3 (C_1(\x), C_2(\x), C_3(\x))$<span class="t-3003">./course1/wly/02/05-majority.wly:556:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:556:55</span></span></span><span class="t-3003-c">
-          Dies gibt<span class="t-3003">./course1/wly/02/05-majority.wly:556:55</span></span>
-        <span class="t-3003-c">uns wiederum eine Verteilung über Schaltkreise, die wir<span class="t-3003">./course1/wly/02/05-majority.wly:557:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:558:9</span></span><span class="t-3003-c">$\mathcal{C}^{\otimes 3}$<span class="t-3003">./course1/wly/02/05-majority.wly:558:9</span></span><span class="t-3003-c">
-          nennen. Diese hat eine höhere<span class="t-3003">./course1/wly/02/05-majority.wly:558:34</span></span>
-        <span class="t-3003-c">Signalstärke:<span class="t-3003">./course1/wly/02/05-majority.wly:559:9</span></span>
+        Dann können wir
+        <i>drei</i>
+        Schaltkreise
+        $C_1, C_2, C_3 \sim \mathcal{C}$ unabhängig
+        voneinander samplen und einen neuen Schaltkreis bauen:
+        <span class="nowrap">$C'(\x) := \maj_3 (C_1(\x), C_2(\x), C_3(\x))$.</span>
+        Dies
+        gibt uns wiederum eine Verteilung über Schaltkreise,
+        die wir $\mathcal{C}^{\otimes 3}$ nennen. Diese hat
+        eine höhere Signalstärke:
       </p>
       <div class="well statement">
         <p>
-          <b><span class="t-3003-c">Lemma 2.5.8<span class="t-3003">./course1/wly/02/05-majority.wly:561:9</span></span></b><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:561:9</span></span>
-          <span class="t-3003-c">Falls
-            <span class="t-3003">./course1/wly/02/05-majority.wly:562:13</span></span><span class="t-3003-c">$\mathcal{C}$<span class="t-3003">./course1/wly/02/05-majority.wly:562:19</span></span><span class="t-3003-c">
-            eine Verteilung über Schaltkreise der<span class="t-3003">./course1/wly/02/05-majority.wly:562:32</span></span>
-          <span class="t-3003-c">Tiefe
-            <span class="t-3003">./course1/wly/02/05-majority.wly:563:13</span></span><span class="t-3003-c">$d$<span class="t-3003">./course1/wly/02/05-majority.wly:563:19</span></span><span class="t-3003-c">
-            und Größe
-            <span class="t-3003">./course1/wly/02/05-majority.wly:563:22</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/02/05-majority.wly:563:33</span></span><span class="t-3003-c">
-            ist und
-            <span class="t-3003">./course1/wly/02/05-majority.wly:563:36</span></span><span class="t-3003-c">$\mathcal{C}$<span class="t-3003">./course1/wly/02/05-majority.wly:563:45</span></span><span class="t-3003-c">
-            Signalstärke<span class="t-3003">./course1/wly/02/05-majority.wly:563:58</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:564:13</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/02/05-majority.wly:564:13</span></span><span class="t-3003-c">
-            hat, dann gilt:<span class="t-3003">./course1/wly/02/05-majority.wly:564:21</span></span>
+          <b>Lemma 2.5.8</b>
+          Falls $\mathcal{C}$ eine Verteilung über Schaltkreise
+          der Tiefe $d$ und Größe $s$ ist und $\mathcal{C}$
+          Signalstärke $\delta$ hat, dann gilt:
         </p>
         <ol>
           <li>
             <p>
-              <span class="t-3003-c">alle Schaltkreise in
-                <span class="t-3003">./course1/wly/02/05-majority.wly:568:21</span></span><span class="t-3003-c">$\mathcal{C}^{\otimes 3}$<span class="t-3003">./course1/wly/02/05-majority.wly:568:42</span></span><span class="t-3003-c">
-                haben Tiefe<span class="t-3003">./course1/wly/02/05-majority.wly:568:67</span></span>
-              <span class="t-3003-c">
-                <span class="t-3003">./course1/wly/02/05-majority.wly:569:21</span></span><span class="nowrap"><span class="t-3003-c">$d+2$<span class="t-3003">./course1/wly/02/05-majority.wly:569:21</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/02/05-majority.wly:569:26</span></span></span>
+              alle Schaltkreise in $\mathcal{C}^{\otimes 3}$ haben
+              Tiefe
+              <span class="nowrap">$d+2$;</span>
             </p>
           </li>
           <li>
             <p>
-              <span class="t-3003-c">alle Schaltkreise in
-                <span class="t-3003">./course1/wly/02/05-majority.wly:572:21</span></span><span class="t-3003-c">$\mathcal{C}^{\otimes 3}$<span class="t-3003">./course1/wly/02/05-majority.wly:572:42</span></span><span class="t-3003-c">
-                haben Größe<span class="t-3003">./course1/wly/02/05-majority.wly:572:67</span></span>
-              <span class="t-3003-c">
-                <span class="t-3003">./course1/wly/02/05-majority.wly:573:21</span></span><span class="nowrap"><span class="t-3003-c">$3s+4$<span class="t-3003">./course1/wly/02/05-majority.wly:573:21</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/02/05-majority.wly:573:27</span></span></span>
+              alle Schaltkreise in $\mathcal{C}^{\otimes 3}$ haben
+              Größe
+              <span class="nowrap">$3s+4$;</span>
             </p>
           </li>
           <li>
             <p>
-              <span class="t-3003-c">die Signalstärke von
-                <span class="t-3003">./course1/wly/02/05-majority.wly:576:21</span></span><span class="t-3003-c">$\mathcal{C}^{\otimes 3}$<span class="t-3003">./course1/wly/02/05-majority.wly:576:42</span></span><span class="t-3003-c">
-                ist<span class="t-3003">./course1/wly/02/05-majority.wly:576:67</span></span>
-              <span class="t-3003-c">
-                <span class="t-3003">./course1/wly/02/05-majority.wly:577:21</span></span><span class="t-3003-c">$\frac{3}{2} \delta - \frac{1}{2}\delta^3$<span class="t-3003">./course1/wly/02/05-majority.wly:577:21</span></span><span class="t-3003-c">
-                .<span class="t-3003">./course1/wly/02/05-majority.wly:577:63</span></span>
+              die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist
+              $\frac{3}{2} \delta - \frac{1}{2}\delta^3$ .
             </p>
           </li>
         </ol>
@@ -1218,42 +912,27 @@
       <div class="well highlight">
         <p>
           <b>Beweis</b>
-          
-          <span class="t-3003-c">Wir betrachten ein festes
-            <span class="t-3003">./course1/wly/02/05-majority.wly:580:13</span></span><span class="t-3003-c">$\x \in \cube^n$<span class="t-3003">./course1/wly/02/05-majority.wly:580:39</span></span><span class="t-3003-c">
-            mit<span class="t-3003">./course1/wly/02/05-majority.wly:580:55</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:581:13</span></span><span class="nowrap"><span class="t-3003-c">$\maj_n(\x) = 1$<span class="t-3003">./course1/wly/02/05-majority.wly:581:13</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/02/05-majority.wly:581:29</span></span></span><span class="t-3003-c">
-            der Fall
-            <span class="t-3003">./course1/wly/02/05-majority.wly:581:29</span></span><span class="t-3003-c">$\maj_n(\x) = 0$<span class="t-3003">./course1/wly/02/05-majority.wly:581:40</span></span><span class="t-3003-c">
-            ist analog.<span class="t-3003">./course1/wly/02/05-majority.wly:581:56</span></span>
-          <span class="t-3003-c">Wir definieren nun
-            <span class="t-3003">./course1/wly/02/05-majority.wly:582:13</span></span><span class="nowrap"><span class="t-3003-c">$U := C_1(\x)$<span class="t-3003">./course1/wly/02/05-majority.wly:582:32</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:582:46</span></span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:582:46</span></span><span class="t-3003-c">$V := C_2(\x)$<span class="t-3003">./course1/wly/02/05-majority.wly:582:48</span></span><span class="t-3003-c">
-            und<span class="t-3003">./course1/wly/02/05-majority.wly:582:62</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:583:13</span></span><span class="nowrap"><span class="t-3003-c">$W := C_3(\x)$<span class="t-3003">./course1/wly/02/05-majority.wly:583:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:583:27</span></span></span><span class="t-3003-c">
-            Da
-            <span class="t-3003">./course1/wly/02/05-majority.wly:583:27</span></span><span class="t-3003-c">$C_1, C_2, C_3 \sim \mathcal{C}$<span class="t-3003">./course1/wly/02/05-majority.wly:583:32</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:583:64</span></span>
-          <span class="t-3003-c">zufällige Schaltkreise sind, sind
-            <span class="t-3003">./course1/wly/02/05-majority.wly:584:13</span></span><span class="t-3003-c">$U, V, W$<span class="t-3003">./course1/wly/02/05-majority.wly:584:47</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:584:56</span></span>
-          <span class="t-3003-c">Zufallsvariable über
-            <span class="t-3003">./course1/wly/02/05-majority.wly:585:13</span></span><span class="nowrap"><span class="t-3003-c">$\cube$<span class="t-3003">./course1/wly/02/05-majority.wly:585:34</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:585:41</span></span></span><span class="t-3003-c">
-            und zwar
-            <span class="t-3003">./course1/wly/02/05-majority.wly:585:41</span></span><span class="nowrap"><i><span class="t-3003-c">unabhängig<span class="t-3003">./course1/wly/02/05-majority.wly:585:53</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:585:64</span></span></span><span class="t-3003-c">
-            weil<span class="t-3003">./course1/wly/02/05-majority.wly:585:64</span></span>
-          <span class="t-3003-c">wir
-            <span class="t-3003">./course1/wly/02/05-majority.wly:586:13</span></span><span class="t-3003-c">$C_1, C_2, C-3$<span class="t-3003">./course1/wly/02/05-majority.wly:586:17</span></span><span class="t-3003-c">
-            auch unabhängig gesampelt haben. Wir<span class="t-3003">./course1/wly/02/05-majority.wly:586:32</span></span>
-          <span class="t-3003-c">wissen:<span class="t-3003">./course1/wly/02/05-majority.wly:587:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:588:13</span></span><span class="nowrap"><span class="t-3003-c">$\Pr[U=1] = \Pr[V=1] = \Pr[W=1] \geq \frac{1+\delta}{2} =:
-              p$<span class="t-3003">./course1/wly/02/05-majority.wly:588:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:589:15</span></span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:589:15</span></span>
-          <span class="t-3003-c">Was ist nun
-            <span class="t-3003">./course1/wly/02/05-majority.wly:590:13</span></span><span class="nowrap"><span class="t-3003-c">$\Pr[\maj_3(U,V,W) = 1]$<span class="t-3003">./course1/wly/02/05-majority.wly:590:25</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/02/05-majority.wly:590:49</span></span></span>
+          Wir betrachten ein festes $\x \in \cube^n$ mit
+          <span class="nowrap">$\maj_n(\x) = 1$;</span>
+          der Fall $\maj_n(\x) = 0$ ist
+          analog. Wir definieren nun
+          <span class="nowrap">$U := C_1(\x)$,</span>
+          $V := C_2(\x)$ und
+          <span class="nowrap">$W := C_3(\x)$.</span>
+          Da
+          $C_1, C_2, C_3 \sim \mathcal{C}$ zufällige
+          Schaltkreise sind, sind $U, V, W$ Zufallsvariable
+          über
+          <span class="nowrap">$\cube$,</span>
+          und zwar
+          <span class="nowrap"><i>unabhängig</i>,</span>
+          weil wir
+          $C_1, C_2, C-3$ auch unabhängig gesampelt haben. Wir
+          wissen:
+          <span class="nowrap">$\Pr[U=1] = \Pr[V=1] = \Pr[W=1] \geq
+            \frac{1+\delta}{2} =: p$.</span>
+          Was ist nun
+          <span class="nowrap">$\Pr[\maj_3(U,V,W) = 1]$?</span>
         </p>
         <div class="math-block">
           $$
@@ -1265,141 +944,91 @@
           &amp;= \frac{1}{8} (4 + 6 \delta - 2 \delta^3) \\
           &amp;= \frac{1}{2} \left( 1 + \frac{3}{2} \delta - \frac{1}{2}\delta^3 \right) \ .
           \end{align*}
-          $$<span class="t-3003">./course1/wly/02/05-majority.wly:592:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">Die Signalstärke von
-            <span class="t-3003">./course1/wly/02/05-majority.wly:601:13</span></span><span class="t-3003-c">$\mathcal{C}^{\otimes 3}$<span class="t-3003">./course1/wly/02/05-majority.wly:601:34</span></span><span class="t-3003-c">
-            ist also<span class="t-3003">./course1/wly/02/05-majority.wly:601:59</span></span>
-          <span class="t-3003-c">mindestens
-            <span class="t-3003">./course1/wly/02/05-majority.wly:602:13</span></span><span class="nowrap"><span class="t-3003-c">$\frac{3}{2} \delta - \frac{1}{2} \delta^3$<span class="t-3003">./course1/wly/02/05-majority.wly:602:24</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:602:67</span></span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+          Die Signalstärke von $\mathcal{C}^{\otimes 3}$ ist
+          also mindestens
+          <span class="nowrap">$\frac{3}{2} \delta - \frac{1}{2} \delta^3$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
-        <span class="t-3003-c">Wir beginnen nun mit der Verteilung
-          <span class="t-3003">./course1/wly/02/05-majority.wly:604:9</span></span><span class="t-3003-c">$\mathcal{C}_0$<span class="t-3003">./course1/wly/02/05-majority.wly:604:45</span></span><span class="t-3003-c">
-          über<span class="t-3003">./course1/wly/02/05-majority.wly:604:60</span></span>
-        <span class="t-3003-c">Schaltkreise der Größe 1 und definieren<span class="t-3003">./course1/wly/02/05-majority.wly:605:9</span></span>
+        Wir beginnen nun mit der Verteilung $\mathcal{C}_0$
+        über Schaltkreise der Größe 1 und definieren
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \mathcal{C}_{i+1} := (\mathcal{C}_i)^{\oplus 3} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:607:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Zur Wiederholung: um
-          <span class="t-3003">./course1/wly/02/05-majority.wly:611:9</span></span><span class="t-3003-c">$C \sim \mathcal{C}_{i+1}$<span class="t-3003">./course1/wly/02/05-majority.wly:611:30</span></span><span class="t-3003-c">
-          zu<span class="t-3003">./course1/wly/02/05-majority.wly:611:56</span></span>
-        <span class="t-3003-c">sampeln, sampeln wir unabhängig drei Schaltkreise<span class="t-3003">./course1/wly/02/05-majority.wly:612:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:613:9</span></span><span class="t-3003-c">$\sim \mathcal{C}_i$<span class="t-3003">./course1/wly/02/05-majority.wly:613:9</span></span><span class="t-3003-c">
-          und verknüpfen deren Output-Gates mit<span class="t-3003">./course1/wly/02/05-majority.wly:613:29</span></span>
-        <span class="t-3003-c">einem
-          <span class="t-3003">./course1/wly/02/05-majority.wly:614:9</span></span><span class="nowrap"><span class="t-3003-c">$\maj_3$<span class="t-3003">./course1/wly/02/05-majority.wly:614:15</span></span><span class="t-3003-c">-Gadget.<span class="t-3003">./course1/wly/02/05-majority.wly:614:23</span></span></span><span class="t-3003-c">
-          Wenn
-          <span class="t-3003">./course1/wly/02/05-majority.wly:614:23</span></span><span class="t-3003-c">$\mathcal{C}_i$<span class="t-3003">./course1/wly/02/05-majority.wly:614:37</span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/02/05-majority.wly:614:52</span></span>
-        <span class="t-3003-c">Signalstärke
-          <span class="t-3003">./course1/wly/02/05-majority.wly:615:9</span></span><span class="t-3003-c">$\delta_i$<span class="t-3003">./course1/wly/02/05-majority.wly:615:22</span></span><span class="t-3003-c">
-          hat, dann hat
-          <span class="t-3003">./course1/wly/02/05-majority.wly:615:32</span></span><span class="t-3003-c">$\mathcal{C}_{i+1}$<span class="t-3003">./course1/wly/02/05-majority.wly:615:47</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:615:66</span></span>
-        <span class="t-3003-c">Signalstärke<span class="t-3003">./course1/wly/02/05-majority.wly:616:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:617:9</span></span><span class="nowrap"><span class="t-3003-c">$\frac{3}{2} \delta_i - \frac{1}{2} \delta_i^3$<span class="t-3003">./course1/wly/02/05-majority.wly:617:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:617:56</span></span></span><span class="t-3003-c">
-          Wenn<span class="t-3003">./course1/wly/02/05-majority.wly:617:56</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:618:9</span></span><span class="t-3003-c">$\delta_i \leq 1/2$<span class="t-3003">./course1/wly/02/05-majority.wly:618:9</span></span><span class="t-3003-c">
-          sein sollte, dann ist das mindestens<span class="t-3003">./course1/wly/02/05-majority.wly:618:28</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:619:9</span></span><span class="nowrap"><span class="t-3003-c">$\frac{5}{4} \delta_i$<span class="t-3003">./course1/wly/02/05-majority.wly:619:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:619:31</span></span></span><span class="t-3003-c">
-          Daraus folgt, dass nach höchstens<span class="t-3003">./course1/wly/02/05-majority.wly:619:31</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:620:9</span></span><span class="t-3003-c">$i^* := \log_{5/4} n$<span class="t-3003">./course1/wly/02/05-majority.wly:620:9</span></span><span class="t-3003-c">
-          Rekursionsstufen eine Signalstärke<span class="t-3003">./course1/wly/02/05-majority.wly:620:30</span></span>
-        <span class="t-3003-c">von mindestens
-          <span class="t-3003">./course1/wly/02/05-majority.wly:621:9</span></span><span class="t-3003-c">$1/2$<span class="t-3003">./course1/wly/02/05-majority.wly:621:24</span></span><span class="t-3003-c">
-          erreicht ist:
-          <span class="t-3003">./course1/wly/02/05-majority.wly:621:29</span></span><span class="t-3003-c">$\mathcal{C}_{i^*}$<span class="t-3003">./course1/wly/02/05-majority.wly:621:44</span></span><span class="t-3003-c">
-          hat<span class="t-3003">./course1/wly/02/05-majority.wly:621:63</span></span>
-        <span class="t-3003-c">Signalstärke mindestens
-          <span class="t-3003">./course1/wly/02/05-majority.wly:622:9</span></span><span class="nowrap"><span class="t-3003-c">$1/2$<span class="t-3003">./course1/wly/02/05-majority.wly:622:33</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:622:38</span></span></span><span class="t-3003-c">
-          Wenn wir jetzt die<span class="t-3003">./course1/wly/02/05-majority.wly:622:38</span></span>
-        <span class="t-3003-c">rekursive Konstruktion fortsetzen, steigt die Signalstärke<span class="t-3003">./course1/wly/02/05-majority.wly:623:9</span></span>
-        <span class="t-3003-c">weiter an und konvergiert gegen
-          <span class="t-3003">./course1/wly/02/05-majority.wly:624:9</span></span><span class="nowrap"><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/02/05-majority.wly:624:41</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/02/05-majority.wly:624:44</span></span></span>
+        Zur Wiederholung: um $C \sim \mathcal{C}_{i+1}$ zu
+        sampeln, sampeln wir unabhängig drei Schaltkreise
+        $\sim \mathcal{C}_i$ und verknüpfen deren
+        Output-Gates mit einem
+        <span class="nowrap">$\maj_3$-Gadget.</span>
+        Wenn
+        $\mathcal{C}_i$ die Signalstärke $\delta_i$ hat, dann
+        hat $\mathcal{C}_{i+1}$ Signalstärke
+        <span class="nowrap">$\frac{3}{2} \delta_i - \frac{1}{2} \delta_i^3$.</span>
+        Wenn
+        $\delta_i \leq 1/2$ sein sollte, dann ist das
+        mindestens
+        <span class="nowrap">$\frac{5}{4} \delta_i$.</span>
+        Daraus folgt, dass
+        nach höchstens $i^* := \log_{5/4} n$ Rekursionsstufen
+        eine Signalstärke von mindestens $1/2$ erreicht ist:
+        $\mathcal{C}_{i^*}$ hat Signalstärke mindestens
+        <span class="nowrap">$1/2$.</span>
+        Wenn wir jetzt die rekursive Konstruktion fortsetzen,
+        steigt die Signalstärke weiter an und konvergiert
+        gegen
+        <span class="nowrap">$1$:</span>
       </p>
       <p>
-        <span class="nowrap"><span class="t-3003-c">$\lim_{i \rightarrow \infty} \delta_i = 1$<span class="t-3003">./course1/wly/02/05-majority.wly:626:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:626:51</span></span></span><span class="t-3003-c">
-          Die Frage ist<span class="t-3003">./course1/wly/02/05-majority.wly:626:51</span></span>
-        <span class="t-3003-c">nur, wie schnell konvergiert es? Da wir nun nicht mehr an<span class="t-3003">./course1/wly/02/05-majority.wly:627:9</span></span>
-        <span class="t-3003-c">Wahrscheinlichkeiten interessiert sind, die knapp über<span class="t-3003">./course1/wly/02/05-majority.wly:628:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:629:9</span></span><span class="t-3003-c">$1/2$<span class="t-3003">./course1/wly/02/05-majority.wly:629:9</span></span><span class="t-3003-c">
-          liegen, sondern an solchen, die knapp unter
-          <span class="t-3003">./course1/wly/02/05-majority.wly:629:14</span></span><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/02/05-majority.wly:629:59</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:629:62</span></span>
-        <span class="t-3003-c">liegen, führen wir einen Parameterwechsel durch: eine<span class="t-3003">./course1/wly/02/05-majority.wly:630:9</span></span>
-        <span class="t-3003-c">Verteilung
-          <span class="t-3003">./course1/wly/02/05-majority.wly:631:9</span></span><span class="t-3003-c">$\mathcal{C}$<span class="t-3003">./course1/wly/02/05-majority.wly:631:20</span></span><span class="t-3003-c">
-          von Schaltkreisen mit Inputs<span class="t-3003">./course1/wly/02/05-majority.wly:631:33</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:632:9</span></span><span class="t-3003-c">$x_1,\dots,x_n$<span class="t-3003">./course1/wly/02/05-majority.wly:632:9</span></span><span class="t-3003-c">
-          hat
-          <span class="t-3003">./course1/wly/02/05-majority.wly:632:24</span></span><span class="nowrap"><i><span class="t-3003-c">Fehlerwahrscheinlichkeit
-              <span class="t-3003">./course1/wly/02/05-majority.wly:632:30</span></span><span class="t-3003-c">$\epsilon$<span class="t-3003">./course1/wly/02/05-majority.wly:632:55</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:632:66</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:632:66</span></span>
-        <span class="t-3003-c">wenn<span class="t-3003">./course1/wly/02/05-majority.wly:633:9</span></span>
+        <span class="nowrap">$\lim_{i \rightarrow \infty} \delta_i = 1$.</span>
+        Die Frage
+        ist nur, wie schnell konvergiert es? Da wir nun nicht
+        mehr an Wahrscheinlichkeiten interessiert sind, die
+        knapp über $1/2$ liegen, sondern an solchen, die
+        knapp unter $1$ liegen, führen wir einen
+        Parameterwechsel durch: eine Verteilung $\mathcal{C}$
+        von Schaltkreisen mit Inputs $x_1,\dots,x_n$ hat
+        <span class="nowrap"><i>Fehlerwahrscheinlichkeit $\epsilon$</i>,</span>
+        wenn
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \forall \x \in \cube^n: \Pr_{C \sim \mathcal{C}}[ C(\x) = \maj_n(\x)] \geq 1 - \epsilon \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:635:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Eine Signalstärke von
-          <span class="t-3003">./course1/wly/02/05-majority.wly:639:9</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/02/05-majority.wly:639:31</span></span><span class="t-3003-c">
-          entspricht einer<span class="t-3003">./course1/wly/02/05-majority.wly:639:39</span></span>
-        <span class="t-3003-c">Fehlerwahrscheinlichkeit von
-          <span class="t-3003">./course1/wly/02/05-majority.wly:640:9</span></span><span class="nowrap"><span class="t-3003-c">$\frac{1-\delta}{2}$<span class="t-3003">./course1/wly/02/05-majority.wly:640:38</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:640:58</span></span></span><span class="t-3003-c">
-          Die<span class="t-3003">./course1/wly/02/05-majority.wly:640:58</span></span>
-        <span class="t-3003-c">Verteilung
-          <span class="t-3003">./course1/wly/02/05-majority.wly:641:9</span></span><span class="t-3003-c">$\mathcal{C}_{i^*}$<span class="t-3003">./course1/wly/02/05-majority.wly:641:20</span></span><span class="t-3003-c">
-          hat also eine<span class="t-3003">./course1/wly/02/05-majority.wly:641:39</span></span>
-        <span class="t-3003-c">Fehlerwahrscheinlichkeit von höchstens<span class="t-3003">./course1/wly/02/05-majority.wly:642:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:643:9</span></span><span class="nowrap"><span class="t-3003-c">$\frac{1 - 1/2}{2} = 1/4$<span class="t-3003">./course1/wly/02/05-majority.wly:643:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:643:34</span></span></span><span class="t-3003-c">
-          Das obige Lemma, nun aus der<span class="t-3003">./course1/wly/02/05-majority.wly:643:34</span></span>
-        <span class="t-3003-c">Sicht der Fehlerwahrscheinlichkeit, liest sich so:<span class="t-3003">./course1/wly/02/05-majority.wly:644:9</span></span>
+        Eine Signalstärke von $\delta$ entspricht einer
+        Fehlerwahrscheinlichkeit von
+        <span class="nowrap">$\frac{1-\delta}{2}$.</span>
+        Die Verteilung $\mathcal{C}_{i^*}$ hat also eine
+        Fehlerwahrscheinlichkeit von höchstens
+        <span class="nowrap">$\frac{1 - 1/2}{2} = 1/4$.</span>
+        Das obige Lemma, nun aus
+        der Sicht der Fehlerwahrscheinlichkeit, liest sich so:
       </p>
       <div class="well remark">
         <p>
           <b>Behauptung</b>
-          
-          <span class="t-3003-c">Wenn
-            <span class="t-3003">./course1/wly/02/05-majority.wly:648:13</span></span><span class="t-3003-c">$\mathcal{C}$<span class="t-3003">./course1/wly/02/05-majority.wly:648:18</span></span><span class="t-3003-c">
-            Fehlerwahrscheinlichkeit
-            <span class="t-3003">./course1/wly/02/05-majority.wly:648:31</span></span><span class="t-3003-c">$\epsilon$<span class="t-3003">./course1/wly/02/05-majority.wly:648:57</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:648:67</span></span>
-          <span class="t-3003-c">hat, dann hat
-            <span class="t-3003">./course1/wly/02/05-majority.wly:649:13</span></span><span class="t-3003-c">$\mathcal{C}^{\otimes 3}$<span class="t-3003">./course1/wly/02/05-majority.wly:649:27</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:649:52</span></span>
-          <span class="t-3003-c">Fehlerwahrscheinlichkeit
-            <span class="t-3003">./course1/wly/02/05-majority.wly:650:13</span></span><span class="t-3003-c">$3 \epsilon^2$<span class="t-3003">./course1/wly/02/05-majority.wly:650:38</span></span>
+          Wenn $\mathcal{C}$ Fehlerwahrscheinlichkeit $\epsilon$
+          hat, dann hat $\mathcal{C}^{\otimes 3}$
+          Fehlerwahrscheinlichkeit $3 \epsilon^2$
         </p>
       </div>
       <div class="well highlight">
         <p>
           <b>Beweis</b>
-          
-          <span class="t-3003-c">Wie im Beweis vom Lemma setzen wir<span class="t-3003">./course1/wly/02/05-majority.wly:653:13</span></span>
-          <span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:654:13</span></span><span class="t-3003-c">$p := \frac{1+p}{2} = 1-\epsilon$<span class="t-3003">./course1/wly/02/05-majority.wly:654:13</span></span><span class="t-3003-c">
-            und erhalten<span class="t-3003">./course1/wly/02/05-majority.wly:654:46</span></span>
+          Wie im Beweis vom Lemma setzen wir
+          $p := \frac{1+p}{2} = 1-\epsilon$ und erhalten
         </p>
         <div class="math-block">
           $$
@@ -1407,54 +1036,32 @@
           \Pr[\maj_3(U,V,W) = 1]&amp;= p^3 + 3 p^2 (1-p) =
           (1 - \epsilon^3) + 3 (1- \epsilon)^2 \epsilon = 1 - 3 \epsilon^2 \ .
           \end{align*}
-          $$<span class="t-3003">./course1/wly/02/05-majority.wly:656:13</span>
+          $$
         </div>
         <p>
-          <span class="t-3003-c">Somit hat
-            <span class="t-3003">./course1/wly/02/05-majority.wly:661:13</span></span><span class="t-3003-c">$\mathcal{C}^{\otimes 3}$<span class="t-3003">./course1/wly/02/05-majority.wly:661:23</span></span><span class="t-3003-c">
-            <span class="t-3003">./course1/wly/02/05-majority.wly:661:48</span></span>
-          <span class="t-3003-c">Fehlerwahrscheinlichkeit
-            <span class="t-3003">./course1/wly/02/05-majority.wly:662:13</span></span><span class="nowrap"><span class="t-3003-c">$3 \epsilon^2$<span class="t-3003">./course1/wly/02/05-majority.wly:662:38</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:662:52</span></span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+          Somit hat $\mathcal{C}^{\otimes 3}$
+          Fehlerwahrscheinlichkeit
+          <span class="nowrap">$3 \epsilon^2$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
         </p>
       </div>
       <p>
-        <span class="t-3003-c">Für
-          <span class="t-3003">./course1/wly/02/05-majority.wly:664:9</span></span><span class="t-3003-c">$i^* := \log_{5/4} n$<span class="t-3003">./course1/wly/02/05-majority.wly:664:13</span></span><span class="t-3003-c">
-          hat
-          <span class="t-3003">./course1/wly/02/05-majority.wly:664:34</span></span><span class="t-3003-c">$\mathcal{C}_{i^*}$<span class="t-3003">./course1/wly/02/05-majority.wly:664:39</span></span><span class="t-3003-c">
-          eine<span class="t-3003">./course1/wly/02/05-majority.wly:664:58</span></span>
-        <span class="t-3003-c">Fehlerwahrscheinlichkeit von höchstens
-          <span class="t-3003">./course1/wly/02/05-majority.wly:665:9</span></span><span class="nowrap"><span class="t-3003-c">$1/4$<span class="t-3003">./course1/wly/02/05-majority.wly:665:48</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:665:53</span></span></span><span class="t-3003-c">
-          Für
-          <span class="t-3003">./course1/wly/02/05-majority.wly:665:53</span></span><span class="t-3003-c">$i^* + 1$<span class="t-3003">./course1/wly/02/05-majority.wly:665:59</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:665:68</span></span>
-        <span class="t-3003-c">wird das zu
-          <span class="t-3003">./course1/wly/02/05-majority.wly:666:9</span></span><span class="t-3003-c">$3 \pfrac{1}{4}^2 = \frac{3}{16}$<span class="t-3003">./course1/wly/02/05-majority.wly:666:21</span></span><span class="t-3003-c">
-          und für<span class="t-3003">./course1/wly/02/05-majority.wly:666:54</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:667:9</span></span><span class="t-3003-c">$i^* + 2$<span class="t-3003">./course1/wly/02/05-majority.wly:667:9</span></span><span class="t-3003-c">
-          zu<span class="t-3003">./course1/wly/02/05-majority.wly:667:18</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:668:9</span></span><span class="nowrap"><span class="t-3003-c">$3 \pfrac{3}{16}^2 = \frac{27}{256} \leq \frac{1}{9}$<span class="t-3003">./course1/wly/02/05-majority.wly:668:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:668:62</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:668:62</span></span>
-        <span class="t-3003-c">Wenn nun
-          <span class="t-3003">./course1/wly/02/05-majority.wly:669:9</span></span><span class="t-3003-c">$\epsilon \leq \frac{1}{9}$<span class="t-3003">./course1/wly/02/05-majority.wly:669:18</span></span><span class="t-3003-c">
-          ist, dann gilt<span class="t-3003">./course1/wly/02/05-majority.wly:669:45</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:670:9</span></span><span class="nowrap"><span class="t-3003-c">$3 \epsilon^2 \leq \epsilon^{3/2}$<span class="t-3003">./course1/wly/02/05-majority.wly:670:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:670:43</span></span></span><span class="t-3003-c">
-          Wir definieren<span class="t-3003">./course1/wly/02/05-majority.wly:670:43</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:671:9</span></span><span class="nowrap"><span class="t-3003-c">$\epsilon_i := \frac{1 - \delta_i}{2}$<span class="t-3003">./course1/wly/02/05-majority.wly:671:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:671:47</span></span></span><span class="t-3003-c">
-          also die<span class="t-3003">./course1/wly/02/05-majority.wly:671:47</span></span>
-        <span class="t-3003-c">Fehlerwahrscheinlichkeit von
-          <span class="t-3003">./course1/wly/02/05-majority.wly:672:9</span></span><span class="nowrap"><span class="t-3003-c">$\mathcal{C}_i$<span class="t-3003">./course1/wly/02/05-majority.wly:672:38</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:672:53</span></span></span><span class="t-3003-c">
-          Es gilt also<span class="t-3003">./course1/wly/02/05-majority.wly:672:53</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:673:9</span></span><span class="t-3003-c">$\epsilon_{i+1} \leq (\epsilon_i)^{3/2}$<span class="t-3003">./course1/wly/02/05-majority.wly:673:9</span></span><span class="t-3003-c">
-          für alle<span class="t-3003">./course1/wly/02/05-majority.wly:673:49</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:674:9</span></span><span class="t-3003-c">$i \geq i^*+2$<span class="t-3003">./course1/wly/02/05-majority.wly:674:9</span></span><span class="t-3003-c">
-          und somit<span class="t-3003">./course1/wly/02/05-majority.wly:674:23</span></span>
+        Für $i^* := \log_{5/4} n$ hat $\mathcal{C}_{i^*}$
+        eine Fehlerwahrscheinlichkeit von höchstens
+        <span class="nowrap">$1/4$.</span>
+        Für $i^* + 1$ wird das zu
+        $3 \pfrac{1}{4}^2 = \frac{3}{16}$ und für $i^* + 2$
+        zu
+        <span class="nowrap">$3 \pfrac{3}{16}^2 = \frac{27}{256} \leq \frac{1}{9}$.</span>
+        Wenn nun $\epsilon \leq \frac{1}{9}$ ist, dann gilt
+        <span class="nowrap">$3 \epsilon^2 \leq \epsilon^{3/2}$.</span>
+        Wir definieren
+        <span class="nowrap">$\epsilon_i := \frac{1 - \delta_i}{2}$,</span>
+        also die
+        Fehlerwahrscheinlichkeit von
+        <span class="nowrap">$\mathcal{C}_i$.</span>
+        Es gilt
+        also $\epsilon_{i+1} \leq (\epsilon_i)^{3/2}$ für
+        alle $i \geq i^*+2$ und somit
       </p>
       <div class="math-block">
         $$
@@ -1462,45 +1069,38 @@
         \epsilon_{i^*+2 + j} \leq \left(\epsilon_{i^*}\right)^{\pfrac{3}{2}^j} \leq
         \pfrac{1}{4}^{\pfrac{3}{2}^j} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:676:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Qualitativ sehen wir: solange
-          <span class="t-3003">./course1/wly/02/05-majority.wly:681:9</span></span><span class="t-3003-c">$\delta_i \leq 1/2$<span class="t-3003">./course1/wly/02/05-majority.wly:681:39</span></span><span class="t-3003-c">
-          gilt,<span class="t-3003">./course1/wly/02/05-majority.wly:681:58</span></span>
-        <span class="t-3003-c">wächst die Signalstärke exponentiell an. Dieses<span class="t-3003">./course1/wly/02/05-majority.wly:682:9</span></span>
-        <span class="t-3003-c">exponentielle Wachstum kann natürlich nicht beliebig<span class="t-3003">./course1/wly/02/05-majority.wly:683:9</span></span>
-        <span class="t-3003-c">weitergehen. Jenseits
-          <span class="t-3003">./course1/wly/02/05-majority.wly:684:9</span></span><span class="t-3003-c">$\delta_i \leq 1/2$<span class="t-3003">./course1/wly/02/05-majority.wly:684:31</span></span><span class="t-3003-c">
-          hört das auf,<span class="t-3003">./course1/wly/02/05-majority.wly:684:50</span></span>
-        <span class="t-3003-c">dafür
-          <span class="t-3003">./course1/wly/02/05-majority.wly:685:9</span></span><i><span class="t-3003-c">fällt<span class="t-3003">./course1/wly/02/05-majority.wly:685:16</span></span></i><span class="t-3003-c">
-          nun die Fehlerwahrscheinlichkeit
-          <span class="t-3003">./course1/wly/02/05-majority.wly:685:22</span></span><span class="nowrap"><i><span class="t-3003-c">doppelt<span class="t-3003">./course1/wly/02/05-majority.wly:685:57</span></span>
-            <span class="t-3003-c">exponentiell<span class="t-3003">./course1/wly/02/05-majority.wly:686:9</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:686:22</span></span></span><span class="t-3003-c">
-          Für
-          <span class="t-3003">./course1/wly/02/05-majority.wly:686:22</span></span><span class="t-3003-c">$j^* := \log_{3/2} n$<span class="t-3003">./course1/wly/02/05-majority.wly:686:28</span></span><span class="t-3003-c">
-          gilt dann<span class="t-3003">./course1/wly/02/05-majority.wly:686:49</span></span>
+        Qualitativ sehen wir: solange $\delta_i \leq 1/2$
+        gilt, wächst die Signalstärke exponentiell an. Dieses
+        exponentielle Wachstum kann natürlich nicht beliebig
+        weitergehen. Jenseits $\delta_i \leq 1/2$ hört das
+        auf, dafür
+        <i>fällt</i>
+        nun die Fehlerwahrscheinlichkeit
+        <span class="nowrap"><i>doppelt exponentiell</i>.</span>
+        Für $j^* := \log_{3/2} n$
+        gilt dann
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \epsilon_{i^* + 2 + j^*} \leq \pfrac{1}{4}^{n} \lt 2^{-n} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:688:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">In Bildern:<span class="t-3003">./course1/wly/02/05-majority.wly:692:9</span></span>
+        In Bildern:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:18em"
             src="img/circuits/majority-probability-labeled.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/circuits.ipe</span><br><span class="t-3003-i-url">course1/public/img/circuits/majority-probability-labeled.svg</span></span>
+          >
           <figcaption>
-            <span class="t-3003-c">Graph der Funktion
-              <span class="t-3003">./course1/wly/02/05-majority.wly:700:17</span></span><span class="t-3003-c">$p \mapsto p^3 + 3 p^2 (1-p)$<span class="t-3003">./course1/wly/02/05-majority.wly:700:36</span></span>
+            Graph der Funktion $p \mapsto p^3 + 3 p^2 (1-p)$
           </figcaption>
         </figure>
       </div>
@@ -1510,14 +1110,10 @@
           <img
             style="height:18em"
             src="img/circuits/majority-probability-close-to-half-labeled.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/circuits.ipe</span><br><span class="t-3003-i-url">course1/public/img/circuits/majority-probability-close-to-half-labeled.svg</span></span>
+          >
           <figcaption>
-            <span class="t-3003-c">Signalstärke
-              <span class="t-3003">./course1/wly/02/05-majority.wly:709:17</span></span><span class="t-3003-c">$\delta$<span class="t-3003">./course1/wly/02/05-majority.wly:709:30</span></span><span class="t-3003-c">
-              wächst für
-              <span class="t-3003">./course1/wly/02/05-majority.wly:709:38</span></span><span class="t-3003-c">$p \in [1/2, 3/4]$<span class="t-3003">./course1/wly/02/05-majority.wly:709:50</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/02/05-majority.wly:709:68</span></span>
-            <span class="t-3003-c">exponentiell.<span class="t-3003">./course1/wly/02/05-majority.wly:710:17</span></span>
+            Signalstärke $\delta$ wächst für $p \in [1/2, 3/4]$
+            exponentiell.
           </figcaption>
         </figure>
       </div>
@@ -1527,62 +1123,34 @@
           <img
             style="height:18em;"
             src="img/circuits/majority-probability-close-to-one-labeled.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/circuits.ipe</span><br><span class="t-3003-i-url">course1/public/img/circuits/majority-probability-close-to-one-labeled.svg</span></span>
+          >
           <figcaption>
-            <span class="t-3003-c">Fehlerwahrscheinlichkeit
-              <span class="t-3003">./course1/wly/02/05-majority.wly:720:17</span></span><span class="t-3003-c">$\epsilon$<span class="t-3003">./course1/wly/02/05-majority.wly:720:42</span></span><span class="t-3003-c">
-              fällt für<span class="t-3003">./course1/wly/02/05-majority.wly:720:52</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/02/05-majority.wly:721:17</span></span><span class="t-3003-c">$p \in [3/4, 1/2]$<span class="t-3003">./course1/wly/02/05-majority.wly:721:17</span></span><span class="t-3003-c">
-              doppelt exponentiell.<span class="t-3003">./course1/wly/02/05-majority.wly:721:35</span></span>
+            Fehlerwahrscheinlichkeit $\epsilon$ fällt für
+            $p \in [3/4, 1/2]$ doppelt exponentiell.
           </figcaption>
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Wir setzen nun<span class="t-3003">./course1/wly/02/05-majority.wly:723:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:724:9</span></span><span class="t-3003-c">$k := i^* + 2 + j^* = \log_{5/4} n + 2 + \log_{3/2} n =
-          O(\log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:724:9</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:725:19</span></span>
-        <span class="t-3003-c">und sehen, dass
-          <span class="t-3003">./course1/wly/02/05-majority.wly:726:9</span></span><span class="t-3003-c">$\mathcal{C}_k$<span class="t-3003">./course1/wly/02/05-majority.wly:726:25</span></span><span class="t-3003-c">
-          eine Verteilung über<span class="t-3003">./course1/wly/02/05-majority.wly:726:40</span></span>
-        <span class="t-3003-c">Schaltkreise mit Tiefe
-          <span class="t-3003">./course1/wly/02/05-majority.wly:727:9</span></span><span class="t-3003-c">$O(\log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:727:32</span></span><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/02/05-majority.wly:727:43</span></span>
-        <span class="t-3003-c">Fehlerwahrscheinlichkeit kleiner als
-          <span class="t-3003">./course1/wly/02/05-majority.wly:728:9</span></span><span class="t-3003-c">$2^{-n}$<span class="t-3003">./course1/wly/02/05-majority.wly:728:46</span></span><span class="t-3003-c">
-          ist. Was nun<span class="t-3003">./course1/wly/02/05-majority.wly:728:54</span></span>
-        <span class="t-3003-c">kommt, ist ein absolutes Standardargument in<span class="t-3003">./course1/wly/02/05-majority.wly:729:9</span></span>
-        <span class="t-3003-c">probabilitischen Beweisen: ein Union Bound. Das geht<span class="t-3003">./course1/wly/02/05-majority.wly:730:9</span></span>
-        <span class="t-3003-c">ungefähr so: wenn für jedes feste
-          <span class="t-3003">./course1/wly/02/05-majority.wly:731:9</span></span><span class="t-3003-c">$\b \in \cube^n$<span class="t-3003">./course1/wly/02/05-majority.wly:731:43</span></span><span class="t-3003-c">
-          ein<span class="t-3003">./course1/wly/02/05-majority.wly:731:59</span></span>
-        <span class="t-3003-c">Schaltkreis
-          <span class="t-3003">./course1/wly/02/05-majority.wly:732:9</span></span><span class="t-3003-c">$C \mathcal{C}_k$<span class="t-3003">./course1/wly/02/05-majority.wly:732:21</span></span><span class="t-3003-c">
-          mit Wahrscheinlichkeit<span class="t-3003">./course1/wly/02/05-majority.wly:732:38</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:733:9</span></span><span class="t-3003-c">$\epsilon_k$<span class="t-3003">./course1/wly/02/05-majority.wly:733:9</span></span><span class="t-3003-c">
-          irrt, dann ist die Wahrscheinlichkeit, dass<span class="t-3003">./course1/wly/02/05-majority.wly:733:21</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:734:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/02/05-majority.wly:734:9</span></span><span class="t-3003-c">
-          sich für irgendein
-          <span class="t-3003">./course1/wly/02/05-majority.wly:734:12</span></span><span class="t-3003-c">$\x \in \cube^n$<span class="t-3003">./course1/wly/02/05-majority.wly:734:32</span></span><span class="t-3003-c">
-          irrt, höchstens<span class="t-3003">./course1/wly/02/05-majority.wly:734:48</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:735:9</span></span><span class="nowrap"><span class="t-3003-c">$2^n \epsilon_k$<span class="t-3003">./course1/wly/02/05-majority.wly:735:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:735:25</span></span></span><span class="t-3003-c">
-          Formal: für jedes
-          <span class="t-3003">./course1/wly/02/05-majority.wly:735:25</span></span><span class="t-3003-c">$\b \in \cube^n$<span class="t-3003">./course1/wly/02/05-majority.wly:735:45</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:735:61</span></span>
-        <span class="t-3003-c">definieren wir
-          <span class="t-3003">./course1/wly/02/05-majority.wly:736:9</span></span><span class="t-3003-c">$E_{\b}$<span class="t-3003">./course1/wly/02/05-majority.wly:736:24</span></span><span class="t-3003-c">
-          als die Menge der Schaltkreise mit<span class="t-3003">./course1/wly/02/05-majority.wly:736:32</span></span>
-        <span class="t-3003-c">Input-Variablen
-          <span class="t-3003">./course1/wly/02/05-majority.wly:737:9</span></span><span class="nowrap"><span class="t-3003-c">$x_1,\dots,x_n$<span class="t-3003">./course1/wly/02/05-majority.wly:737:25</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:737:40</span></span></span><span class="t-3003-c">
-          die sich auf
-          <span class="t-3003">./course1/wly/02/05-majority.wly:737:40</span></span><span class="t-3003-c">$\b$<span class="t-3003">./course1/wly/02/05-majority.wly:737:55</span></span><span class="t-3003-c">
-          irren,<span class="t-3003">./course1/wly/02/05-majority.wly:737:59</span></span>
-        <span class="t-3003-c">also<span class="t-3003">./course1/wly/02/05-majority.wly:738:9</span></span>
+        Wir setzen nun
+        $k := i^* + 2 + j^* = \log_{5/4} n + 2 + \log_{3/2} n
+        = O(\log n)$
+        und sehen, dass $\mathcal{C}_k$ eine Verteilung über
+        Schaltkreise mit Tiefe $O(\log n)$ und
+        Fehlerwahrscheinlichkeit kleiner als $2^{-n}$ ist.
+        Was nun kommt, ist ein absolutes Standardargument in
+        probabilitischen Beweisen: ein Union Bound. Das geht
+        ungefähr so: wenn für jedes feste $\b \in \cube^n$
+        ein Schaltkreis $C \mathcal{C}_k$ mit
+        Wahrscheinlichkeit $\epsilon_k$ irrt, dann ist die
+        Wahrscheinlichkeit, dass $C$ sich für irgendein
+        $\x \in \cube^n$ irrt, höchstens
+        <span class="nowrap">$2^n \epsilon_k$.</span>
+        Formal: für jedes $\b \in \cube^n$ definieren wir
+        $E_{\b}$ als die Menge der Schaltkreise mit
+        Input-Variablen
+        <span class="nowrap">$x_1,\dots,x_n$,</span>
+        die sich auf $\b$
+        irren, also
       </p>
       <div class="math-block">
         $$
@@ -1590,66 +1158,51 @@
         E_{\b} := \{\textnormal{Schaltkreise } C \textnormal{ über } x_1, \dots, x_n \ | \ C(\b) \ne
         \maj_n(\b) \} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:740:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Die Verteilung
-          <span class="t-3003">./course1/wly/02/05-majority.wly:745:9</span></span><span class="t-3003-c">$\mathcal{C}_k$<span class="t-3003">./course1/wly/02/05-majority.wly:745:24</span></span><span class="t-3003-c">
-          existiert ja im<span class="t-3003">./course1/wly/02/05-majority.wly:745:39</span></span>
-        <span class="t-3003-c">Wahrscheinlichkeitsraum aller Boolescher Schaltkreise mit<span class="t-3003">./course1/wly/02/05-majority.wly:746:9</span></span>
-        <span class="t-3003-c">Inputs
-          <span class="t-3003">./course1/wly/02/05-majority.wly:747:9</span></span><span class="nowrap"><span class="t-3003-c">$x_1,\dots, x_n$<span class="t-3003">./course1/wly/02/05-majority.wly:747:16</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:747:32</span></span></span><span class="t-3003-c">
-          Die Menge
-          <span class="t-3003">./course1/wly/02/05-majority.wly:747:32</span></span><span class="t-3003-c">$E_{\b}$<span class="t-3003">./course1/wly/02/05-majority.wly:747:44</span></span><span class="t-3003-c">
-          ist somit ein<span class="t-3003">./course1/wly/02/05-majority.wly:747:52</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:748:9</span></span><i><span class="t-3003-c">Ereignis<span class="t-3003">./course1/wly/02/05-majority.wly:748:10</span></span></i><span class="t-3003-c">
-          in diesem Raum. Ein extrem unwahrscheinliches<span class="t-3003">./course1/wly/02/05-majority.wly:748:19</span></span>
-        <span class="t-3003-c">Ereignis:<span class="t-3003">./course1/wly/02/05-majority.wly:749:9</span></span>
+        Die Verteilung $\mathcal{C}_k$ existiert ja im
+        Wahrscheinlichkeitsraum aller Boolescher Schaltkreise
+        mit Inputs
+        <span class="nowrap">$x_1,\dots, x_n$.</span>
+        Die Menge $E_{\b}$ ist
+        somit ein
+        <i>Ereignis</i>
+        in diesem Raum. Ein extrem
+        unwahrscheinliches Ereignis:
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \forall \b \in \cube^n: \Pr_{C \sim \mathcal{C}_k} [ C \in E_{\b} ] = \epsilon_k \lt 2^{n-} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:751:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Oder kompakt ausgedrückt:<span class="t-3003">./course1/wly/02/05-majority.wly:755:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:756:9</span></span><span class="nowrap"><span class="t-3003-c">$\Pr_{\mathcal{C}_k} [E_{\b}] \lt 2^n$<span class="t-3003">./course1/wly/02/05-majority.wly:756:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:756:47</span></span></span><span class="t-3003-c">
-          Wir haben nun ein<span class="t-3003">./course1/wly/02/05-majority.wly:756:47</span></span>
-        <span class="t-3003-c">Ereignis
-          <span class="t-3003">./course1/wly/02/05-majority.wly:757:9</span></span><span class="t-3003-c">$E_{\b}$<span class="t-3003">./course1/wly/02/05-majority.wly:757:18</span></span><span class="t-3003-c">
-          für jedes
-          <span class="t-3003">./course1/wly/02/05-majority.wly:757:26</span></span><span class="t-3003-c">$\b \in \cube^n$<span class="t-3003">./course1/wly/02/05-majority.wly:757:37</span></span><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/02/05-majority.wly:757:53</span></span>
-        <span class="t-3003-c">definieren<span class="t-3003">./course1/wly/02/05-majority.wly:758:9</span></span>
+        Oder kompakt ausgedrückt:
+        <span class="nowrap">$\Pr_{\mathcal{C}_k} [E_{\b}] \lt 2^n$.</span>
+        Wir haben nun
+        ein Ereignis $E_{\b}$ für jedes $\b \in \cube^n$ und
+        definieren
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         E := \bigcup_{\b \in \cube^n} E_{\b} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:760:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Was ist
-          <span class="t-3003">./course1/wly/02/05-majority.wly:764:9</span></span><span class="nowrap"><span class="t-3003-c">$E$<span class="t-3003">./course1/wly/02/05-majority.wly:764:17</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/02/05-majority.wly:764:20</span></span></span><span class="t-3003-c">
-          Es ist die Menge der Schaltkreise, die sich<span class="t-3003">./course1/wly/02/05-majority.wly:764:20</span></span>
-        <span class="t-3003-c">auf mindestens einem
-          <span class="t-3003">./course1/wly/02/05-majority.wly:765:9</span></span><span class="t-3003-c">$\b \in \cube^n$<span class="t-3003">./course1/wly/02/05-majority.wly:765:30</span></span><span class="t-3003-c">
-          irren. Was ist das<span class="t-3003">./course1/wly/02/05-majority.wly:765:46</span></span>
-        <span class="t-3003-c">Komplement
-          <span class="t-3003">./course1/wly/02/05-majority.wly:766:9</span></span><span class="nowrap"><span class="t-3003-c">$\bar{E}$<span class="t-3003">./course1/wly/02/05-majority.wly:766:20</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/02/05-majority.wly:766:29</span></span></span><span class="t-3003-c">
-          Das ist die Menge der Schaltkreise,<span class="t-3003">./course1/wly/02/05-majority.wly:766:29</span></span>
-        <span class="t-3003-c">die sich auf keinem
-          <span class="t-3003">./course1/wly/02/05-majority.wly:767:9</span></span><span class="t-3003-c">$\b \in \cube^n$<span class="t-3003">./course1/wly/02/05-majority.wly:767:29</span></span><span class="t-3003-c">
-          irren, also die Menge<span class="t-3003">./course1/wly/02/05-majority.wly:767:45</span></span>
-        <span class="t-3003-c">der Schaltkreise, die
-          <span class="t-3003">./course1/wly/02/05-majority.wly:768:9</span></span><span class="t-3003-c">$\maj_n$<span class="t-3003">./course1/wly/02/05-majority.wly:768:31</span></span><span class="t-3003-c">
-          korrekt berechnen. Es gilt<span class="t-3003">./course1/wly/02/05-majority.wly:768:39</span></span>
-        <span class="t-3003-c">nun<span class="t-3003">./course1/wly/02/05-majority.wly:769:9</span></span>
+        Was ist
+        <span class="nowrap">$E$?</span>
+        Es ist die Menge der Schaltkreise, die
+        sich auf mindestens einem $\b \in \cube^n$ irren. Was
+        ist das Komplement
+        <span class="nowrap">$\bar{E}$?</span>
+        Das ist die Menge der
+        Schaltkreise, die sich auf keinem $\b \in \cube^n$
+        irren, also die Menge der Schaltkreise, die $\maj_n$
+        korrekt berechnen. Es gilt nun
       </p>
       <div class="math-block">
         $$
@@ -1659,90 +1212,58 @@
         &amp;= \sum_{b \in \cube^n} \epsilon_k\\
         &amp;\lt \sum_{b \in \cube^n} 2^{-n} = 2^n 2^{-n} = 1 \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:771:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Also
-          <span class="t-3003">./course1/wly/02/05-majority.wly:778:9</span></span><span class="t-3003-c">$\Pr_{\mathcal{C}_k}[E] \lt 1$<span class="t-3003">./course1/wly/02/05-majority.wly:778:14</span></span><span class="t-3003-c">
-          und somit<span class="t-3003">./course1/wly/02/05-majority.wly:778:44</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:779:9</span></span><span class="nowrap"><span class="t-3003-c">$\Pr_{\mathcal{C}_k}[\bar{E}] \gt 0$<span class="t-3003">./course1/wly/02/05-majority.wly:779:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/05-majority.wly:779:45</span></span></span><span class="t-3003-c">
-          Das bedeutet, dass<span class="t-3003">./course1/wly/02/05-majority.wly:779:45</span></span>
-        <span class="t-3003-c">ein zufälliger Schaltkreis
-          <span class="t-3003">./course1/wly/02/05-majority.wly:780:9</span></span><span class="t-3003-c">$C \sim \mathcal{C}_K$<span class="t-3003">./course1/wly/02/05-majority.wly:780:36</span></span><span class="t-3003-c">
-          mit<span class="t-3003">./course1/wly/02/05-majority.wly:780:58</span></span>
-        <span class="t-3003-c">positiver Wahrscheinlichkeit die Funktion
-          <span class="t-3003">./course1/wly/02/05-majority.wly:781:9</span></span><span class="t-3003-c">$\maj_n$<span class="t-3003">./course1/wly/02/05-majority.wly:781:51</span></span><span class="t-3003-c">
-          korrekt<span class="t-3003">./course1/wly/02/05-majority.wly:781:59</span></span>
-        <span class="t-3003-c">berechnet. Jeder Schaltkreis, der unter
-          <span class="t-3003">./course1/wly/02/05-majority.wly:782:9</span></span><span class="t-3003-c">$\mathcal{C}_k$<span class="t-3003">./course1/wly/02/05-majority.wly:782:49</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:782:64</span></span>
-        <span class="t-3003-c">gesampelt werden kann, hat Tiefe
-          <span class="t-3003">./course1/wly/02/05-majority.wly:783:9</span></span><span class="nowrap"><span class="t-3003-c">$O(\log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:783:42</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:783:53</span></span></span><span class="t-3003-c">
-          Fan-in 2 und<span class="t-3003">./course1/wly/02/05-majority.wly:783:53</span></span>
-        <span class="t-3003-c">ist monoton, und somit schließen wir: es gibt einen<span class="t-3003">./course1/wly/02/05-majority.wly:784:9</span></span>
-        <span class="t-3003-c">monotonen Schaltkreis
-          <span class="t-3003">./course1/wly/02/05-majority.wly:785:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/02/05-majority.wly:785:31</span></span><span class="t-3003-c">
-          mit Fan-in 2 und Tiefe<span class="t-3003">./course1/wly/02/05-majority.wly:785:34</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:786:9</span></span><span class="nowrap"><span class="t-3003-c">$O(\log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:786:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:786:20</span></span></span><span class="t-3003-c">
-          der
-          <span class="t-3003">./course1/wly/02/05-majority.wly:786:20</span></span><span class="t-3003-c">$\maj_n$<span class="t-3003">./course1/wly/02/05-majority.wly:786:26</span></span><span class="t-3003-c">
-          berechnet. Es bleibt die Frage,<span class="t-3003">./course1/wly/02/05-majority.wly:786:34</span></span>
-        <span class="t-3003-c">wie groß dieser Schaltkreis
-          <span class="t-3003">./course1/wly/02/05-majority.wly:787:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/02/05-majority.wly:787:38</span></span><span class="t-3003-c">
-          ist. Seien wir hier<span class="t-3003">./course1/wly/02/05-majority.wly:787:41</span></span>
-        <span class="t-3003-c">bequem: ein Schaltkreis mit Fan-in 2 und einem Output-Gate<span class="t-3003">./course1/wly/02/05-majority.wly:788:9</span></span>
-        <span class="t-3003-c">hat höchstens
-          <span class="t-3003">./course1/wly/02/05-majority.wly:789:9</span></span><span class="t-3003-c">$2^i$<span class="t-3003">./course1/wly/02/05-majority.wly:789:23</span></span><span class="t-3003-c">
-          Gates, die Abstand
-          <span class="t-3003">./course1/wly/02/05-majority.wly:789:28</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/02/05-majority.wly:789:48</span></span><span class="t-3003-c">
-          vom Output-Gate<span class="t-3003">./course1/wly/02/05-majority.wly:789:51</span></span>
-        <span class="t-3003-c">haben. Somit hat ein Schaltkreis mit Fan-in 2 und Tiefe
-          <span class="t-3003">./course1/wly/02/05-majority.wly:790:9</span></span><span class="t-3003-c">$d$<span class="t-3003">./course1/wly/02/05-majority.wly:790:65</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:790:68</span></span>
-        <span class="t-3003-c">höchstens<span class="t-3003">./course1/wly/02/05-majority.wly:791:9</span></span>
+        Also $\Pr_{\mathcal{C}_k}[E] \lt 1$ und somit
+        <span class="nowrap">$\Pr_{\mathcal{C}_k}[\bar{E}] \gt 0$.</span>
+        Das bedeutet,
+        dass ein zufälliger Schaltkreis $C \sim \mathcal{C}_K$
+        mit positiver Wahrscheinlichkeit die Funktion $\maj_n$
+        korrekt berechnet. Jeder Schaltkreis, der unter
+        $\mathcal{C}_k$ gesampelt werden kann, hat Tiefe
+        <span class="nowrap">$O(\log n)$,</span>
+        Fan-in 2 und ist monoton, und somit
+        schließen wir: es gibt einen monotonen Schaltkreis $C$
+        mit Fan-in 2 und Tiefe
+        <span class="nowrap">$O(\log n)$,</span>
+        der $\maj_n$
+        berechnet. Es bleibt die Frage, wie groß dieser
+        Schaltkreis  $C$ ist. Seien wir hier bequem: ein
+        Schaltkreis mit Fan-in 2 und einem Output-Gate hat
+        höchstens $2^i$ Gates, die Abstand $i$ vom
+        Output-Gate haben. Somit hat ein Schaltkreis mit
+        Fan-in 2 und Tiefe $d$ höchstens
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         1 + 2 + 4 + \dots + 2^d = 2^{d+1}-1
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/05-majority.wly:793:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Gates. Ein Schaltkreis mit Fan-in 2 und Tiefe
-          <span class="t-3003">./course1/wly/02/05-majority.wly:797:9</span></span><span class="t-3003-c">$c \log_2 n$<span class="t-3003">./course1/wly/02/05-majority.wly:797:55</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:797:67</span></span>
-        <span class="t-3003-c">hat also insgesamt höchstens<span class="t-3003">./course1/wly/02/05-majority.wly:798:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:799:9</span></span><span class="t-3003-c">$2^{c \log n + 1 } - 1 = O(n^c) = O(\poly(n))$<span class="t-3003">./course1/wly/02/05-majority.wly:799:9</span></span><span class="t-3003-c">
-          Gates.<span class="t-3003">./course1/wly/02/05-majority.wly:799:55</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Gates. Ein Schaltkreis mit Fan-in 2 und Tiefe
+        $c \log_2 n$ hat also insgesamt höchstens
+        $2^{c \log n + 1 } - 1 = O(n^c) = O(\poly(n))$ Gates.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 2.5.5<span class="t-3003">./course1/wly/02/05-majority.wly:801:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:801:5</span></span>
-        <span class="t-3003-c">Präzisieren Sie die Größe von Valiants Schaltkreis und<span class="t-3003">./course1/wly/02/05-majority.wly:802:9</span></span>
-        <span class="t-3003-c">bestimmen ein
-          <span class="t-3003">./course1/wly/02/05-majority.wly:803:9</span></span><span class="nowrap"><span class="t-3003-c">$c \in \R$<span class="t-3003">./course1/wly/02/05-majority.wly:803:23</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/05-majority.wly:803:33</span></span></span><span class="t-3003-c">
-          so dass er die Größe<span class="t-3003">./course1/wly/02/05-majority.wly:803:33</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/05-majority.wly:804:9</span></span><span class="t-3003-c">$\Theta(n^c)$<span class="t-3003">./course1/wly/02/05-majority.wly:804:9</span></span><span class="t-3003-c">
-          hat.<span class="t-3003">./course1/wly/02/05-majority.wly:804:22</span></span>
+        <b>Übungsaufgabe 2.5.5</b>
+        Präzisieren Sie die Größe von Valiants Schaltkreis
+        und bestimmen ein
+        <span class="nowrap">$c \in \R$,</span>
+        so dass er die Größe
+        $\Theta(n^c)$ hat.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir könnten nun noch ehrgeiziger sein und einen monotonen<span class="t-3003">./course1/wly/02/05-majority.wly:806:5</span></span>
-      <span class="t-3003-c">Schaltkreis mit Fan-in 2, Tiefe
-        <span class="t-3003">./course1/wly/02/05-majority.wly:807:5</span></span><span class="t-3003-c">$O(\log n)$<span class="t-3003">./course1/wly/02/05-majority.wly:807:37</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/02/05-majority.wly:807:48</span></span><i><span class="t-3003-c">linearer<span class="t-3003">./course1/wly/02/05-majority.wly:807:54</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/05-majority.wly:807:63</span></span>
-      <span class="t-3003-c">Größe
-        <span class="t-3003">./course1/wly/02/05-majority.wly:808:5</span></span><span class="t-3003-c">$O(n)$<span class="t-3003">./course1/wly/02/05-majority.wly:808:11</span></span><span class="t-3003-c">
-        anstreben.<span class="t-3003">./course1/wly/02/05-majority.wly:808:17</span></span>
+      Wir könnten nun noch ehrgeiziger sein und einen
+      monotonen Schaltkreis mit Fan-in 2, Tiefe $O(\log n)$
+      und
+      <i>linearer</i>
+      Größe $O(n)$ anstreben.
     </p>
     <div id="end-of-page-elt">
     </div>

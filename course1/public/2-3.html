@@ -53,27 +53,27 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">2.3&ensp;Binär-Addierer<span class="t-3003">./course1/wly/02/03-binary-adder.wly:2:11</span></span>
+        2.3&ensp;Binär-Addierer
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Ein Schaltkreis für binäre Addition<span class="t-3003">./course1/wly/02/03-binary-adder.wly:5:9</span></span>
+      Ein Schaltkreis für binäre Addition
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Schaltkreise, der zwei Binärzahlen addieren können, finden<span class="t-3003">./course1/wly/02/03-binary-adder.wly:7:5</span></span>
-      <span class="t-3003-c">Sie heutzutage wahrscheinlich in jedem besseren<span class="t-3003">./course1/wly/02/03-binary-adder.wly:8:5</span></span>
-      <span class="t-3003-c">Haushaltsgerät (und wenn Sie ein gegen Covid-19 geimpfter<span class="t-3003">./course1/wly/02/03-binary-adder.wly:9:5</span></span>
-      <span class="t-3003-c">Verschwörungstheoretiker sind, dann höchstwahrscheinlich<span class="t-3003">./course1/wly/02/03-binary-adder.wly:10:5</span></span>
-      <span class="t-3003-c">auch in Ihrem Blut). Grund genug, sich diese genauer<span class="t-3003">./course1/wly/02/03-binary-adder.wly:11:5</span></span>
-      <span class="t-3003-c">anzuschauen. Genau wie bei der Addition von Dezimalzahlen<span class="t-3003">./course1/wly/02/03-binary-adder.wly:12:5</span></span>
-      <span class="t-3003-c">gibt es pro Stelle ein Ergebnis und einen Übertrag<span class="t-3003">./course1/wly/02/03-binary-adder.wly:13:5</span></span>
-      <span class="t-3003-c">(Englisch
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:14:5</span></span><span class="nowrap"><i><span class="t-3003-c">carry<span class="t-3003">./course1/wly/02/03-binary-adder.wly:14:16</span></span></i><span class="t-3003-c">);<span class="t-3003">./course1/wly/02/03-binary-adder.wly:14:22</span></span></span><span class="t-3003-c">
-        beispielsweise ergibt "sechs plus acht<span class="t-3003">./course1/wly/02/03-binary-adder.wly:14:22</span></span>
-      <span class="t-3003-c">plus sieben = eins, zwei gemerkt", und die 2 muss dann zu<span class="t-3003">./course1/wly/02/03-binary-adder.wly:15:5</span></span>
-      <span class="t-3003-c">den links daneben stehenden Ziffern addiert werden. Binär<span class="t-3003">./course1/wly/02/03-binary-adder.wly:16:5</span></span>
-      <span class="t-3003-c">ist alles viel einfacher, weil man sich nur 0 oder 1 merken<span class="t-3003">./course1/wly/02/03-binary-adder.wly:17:5</span></span>
-      <span class="t-3003-c">muss.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:18:5</span></span>
+      Schaltkreise, der zwei Binärzahlen addieren können,
+      finden Sie heutzutage wahrscheinlich in jedem besseren
+      Haushaltsgerät (und wenn Sie ein gegen Covid-19
+      geimpfter Verschwörungstheoretiker sind, dann
+      höchstwahrscheinlich auch in Ihrem Blut). Grund genug,
+      sich diese genauer anzuschauen. Genau wie bei der
+      Addition von Dezimalzahlen gibt es pro Stelle ein
+      Ergebnis und einen Übertrag (Englisch
+      <span class="nowrap"><i>carry</i>);</span>
+      beispielsweise ergibt "sechs plus acht plus sieben =
+      eins, zwei gemerkt", und die 2 muss dann zu den links
+      daneben stehenden Ziffern addiert werden. Binär ist
+      alles viel einfacher, weil man sich nur 0 oder 1
+      merken muss.
     </p>
     <div class="math-block main-column">
       $$
@@ -84,28 +84,25 @@
       1&amp;0&amp;1&amp;0 \\
       1&amp;1&amp;0&amp;1
       \end{array}
-      $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:20:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Das Carry wird dann der eins weiter links stehenden Stelle<span class="t-3003">./course1/wly/02/03-binary-adder.wly:30:5</span></span>
-      <span class="t-3003-c">zur Addition weitergegeben. Aber halt! Das heißt doch, dass<span class="t-3003">./course1/wly/02/03-binary-adder.wly:31:5</span></span>
-      <span class="t-3003-c">wir in der nächsten Stelle
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:32:5</span></span><i><span class="t-3003-c">drei<span class="t-3003">./course1/wly/02/03-binary-adder.wly:32:33</span></span></i><span class="t-3003-c">
-        Bits addieren müssen: das<span class="t-3003">./course1/wly/02/03-binary-adder.wly:32:38</span></span>
-      <span class="t-3003-c">von
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:33:5</span></span><span class="nowrap"><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:33:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:33:12</span></span></span><span class="t-3003-c">
-        das von
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:33:12</span></span><span class="nowrap"><span class="t-3003-c">$y$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:33:22</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:33:25</span></span></span><span class="t-3003-c">
-        und das eingehende Carry
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:33:25</span></span><span class="nowrap"><span class="t-3003-c">$\cin$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:33:52</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:33:58</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:33:58</span></span>
-      <span class="t-3003-c">Daraus berechnet sich das Output-Bit
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:34:5</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:34:42</span></span><span class="t-3003-c">
-        und das<span class="t-3003">./course1/wly/02/03-binary-adder.wly:34:45</span></span>
-      <span class="t-3003-c">ausgehende Carry
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:35:5</span></span><span class="nowrap"><span class="t-3003-c">$\cout$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:35:22</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:35:29</span></span></span><span class="t-3003-c">
-        das nach links weitergegeben<span class="t-3003">./course1/wly/02/03-binary-adder.wly:35:29</span></span>
-      <span class="t-3003-c">wird. Unsere Tabelle ist also etwas größer:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:36:5</span></span>
+      Das Carry wird dann der eins weiter links stehenden
+      Stelle zur Addition weitergegeben. Aber halt! Das
+      heißt doch, dass wir in der nächsten Stelle
+      <i>drei</i>
+      Bits addieren müssen: das von
+      <span class="nowrap">$x$,</span>
+      das von
+      <span class="nowrap">$y$,</span>
+      und
+      das eingehende Carry
+      <span class="nowrap">$\cin$.</span>
+      Daraus berechnet sich
+      das Output-Bit $s$ und das ausgehende Carry
+      <span class="nowrap">$\cout$,</span>
+      das nach links weitergegeben wird. Unsere Tabelle ist
+      also etwas größer:
     </p>
     <div class="math-block main-column">
       $$
@@ -120,11 +117,11 @@
       1&amp;1&amp;0&amp;0&amp;1 \\
       1&amp;1&amp;1&amp;1&amp;1 \\
       \end{array}
-      $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:38:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Glücklicherweise muss man sich diese Tabelle nicht merken,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:52:5</span></span>
-      <span class="t-3003-c">es gilt nämlich<span class="t-3003">./course1/wly/02/03-binary-adder.wly:53:5</span></span>
+      Glücklicherweise muss man sich diese Tabelle nicht
+      merken, es gilt nämlich
     </p>
     <div class="math-block main-column">
       $$
@@ -132,172 +129,112 @@
       s&amp;= x \oplus y \oplus \cin \\
       \cout&amp;= {\rm Maj} (x, y, \cin) \ .
       \end{align*}
-      $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:55:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Die Funktion Maj haben wir schon oben kennengelernt; sie<span class="t-3003">./course1/wly/02/03-binary-adder.wly:60:5</span></span>
-      <span class="t-3003-c">gibt 1 aus, wenn mindestens zwei ihrer drei Input-Bits 1<span class="t-3003">./course1/wly/02/03-binary-adder.wly:61:5</span></span>
-      <span class="t-3003-c">sind. Wir kürzen Sie im folgenden mit
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:62:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:62:43</span></span><span class="t-3003-c">
-        ab. Hier ist nun<span class="t-3003">./course1/wly/02/03-binary-adder.wly:62:46</span></span>
-      <span class="t-3003-c">unser
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:63:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:63:11</span></span><span class="t-3003-c">
-        -Bit-Addierer:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:63:14</span></span>
+      Die Funktion Maj haben wir schon oben kennengelernt;
+      sie gibt 1 aus, wenn mindestens zwei ihrer drei
+      Input-Bits 1 sind. Wir kürzen Sie im folgenden mit $M$
+      ab. Hier ist nun unser $n$ -Bit-Addierer:
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:10em"
           src="img/circuits/adder-ripple.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/adder-ripple.svg</span></span>
+        >
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir numerieren unsere Variablen von
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:70:5</span></span><span class="nowrap"><span class="t-3003-c">$0, \dots,n-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:70:41</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:70:55</span></span></span><span class="t-3003-c">
-        damit<span class="t-3003">./course1/wly/02/03-binary-adder.wly:70:55</span></span>
-      <span class="t-3003-c">wir die repräsentierte natürliche Zahl bequem als<span class="t-3003">./course1/wly/02/03-binary-adder.wly:71:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:72:5</span></span><span class="t-3003-c">$\sum_{i=0}^n x_i 2^i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:72:5</span></span><span class="t-3003-c">
-        schreiben können. Beachten Sie auch<span class="t-3003">./course1/wly/02/03-binary-adder.wly:72:27</span></span>
-      <span class="t-3003-c">die unvermittelt rechts stehende 0. Streng genommen lässt<span class="t-3003">./course1/wly/02/03-binary-adder.wly:73:5</span></span>
-      <span class="t-3003-c">unsere Definition von Schaltkreisen so etwas nicht zu;<span class="t-3003">./course1/wly/02/03-binary-adder.wly:74:5</span></span>
-      <span class="t-3003-c">allerdings ist es recht einfach, die Definition<span class="t-3003">./course1/wly/02/03-binary-adder.wly:75:5</span></span>
-      <span class="t-3003-c">entsprechend zu verallgemeinern, oder aber den obigen<span class="t-3003">./course1/wly/02/03-binary-adder.wly:76:5</span></span>
-      <span class="t-3003-c">Schaltkreis zu vereinfachen:
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:77:5</span></span><span class="t-3003-c">$M(x,y,0)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:77:34</span></span><span class="t-3003-c">
-        würde dann zum<span class="t-3003">./course1/wly/02/03-binary-adder.wly:77:44</span></span>
-      <span class="t-3003-c">Beispiel einfach zu
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:78:5</span></span><span class="t-3003-c">$x \wedge y$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:78:25</span></span><span class="t-3003-c">
-        werden). Wie groß ist<span class="t-3003">./course1/wly/02/03-binary-adder.wly:78:37</span></span>
-      <span class="t-3003-c">dieser Schaltkreis? Wenn wir jedes
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:79:5</span></span><span class="nowrap"><span class="t-3003-c">$\oplus$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:79:41</span></span><span class="t-3003-c">-<span class="t-3003">./course1/wly/02/03-binary-adder.wly:79:49</span></span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:79:49</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:79:55</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:79:58</span></span>
-      <span class="t-3003-c">-Gate als
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:80:5</span></span><span class="nowrap"><i><span class="t-3003-c">ein<span class="t-3003">./course1/wly/02/03-binary-adder.wly:80:16</span></span></i><span class="t-3003-c">Gate<span class="t-3003">./course1/wly/02/03-binary-adder.wly:80:20</span></span></span><span class="t-3003-c">
-        zählen, so haben wir insgesamt
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:80:20</span></span><span class="t-3003-c">$2n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:80:56</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:80:60</span></span>
-      <span class="t-3003-c">innere Gates und
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:81:5</span></span><span class="t-3003-c">$2n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:81:22</span></span><span class="t-3003-c">
-        Input-Gates. Wenn wir darauf<span class="t-3003">./course1/wly/02/03-binary-adder.wly:81:26</span></span>
-      <span class="t-3003-c">bestehen,
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:82:5</span></span><span class="nowrap"><span class="t-3003-c">$\oplus$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:82:15</span></span><span class="t-3003-c">-<span class="t-3003">./course1/wly/02/03-binary-adder.wly:82:23</span></span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:82:23</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:82:29</span></span><span class="t-3003-c">-Gates<span class="t-3003">./course1/wly/02/03-binary-adder.wly:82:32</span></span></span><span class="t-3003-c">
-        aus AND/OR/NOT zu<span class="t-3003">./course1/wly/02/03-binary-adder.wly:82:32</span></span>
-      <span class="t-3003-c">basteln, haben wir mehr, allerdings in jedem Fall
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:83:5</span></span><span class="t-3003-c">$O(n)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:83:55</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:83:61</span></span>
-      <span class="t-3003-c">viele.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:84:5</span></span>
+      Wir numerieren unsere Variablen von
+      <span class="nowrap">$0, \dots,n-1$,</span>
+      damit wir die repräsentierte natürliche Zahl bequem
+      als $\sum_{i=0}^n x_i 2^i$ schreiben können. Beachten
+      Sie auch die unvermittelt rechts stehende 0. Streng
+      genommen lässt unsere Definition von Schaltkreisen so
+      etwas nicht zu; allerdings ist es recht einfach, die
+      Definition entsprechend zu verallgemeinern, oder aber
+      den obigen Schaltkreis zu vereinfachen: $M(x,y,0)$
+      würde dann zum Beispiel einfach zu $x \wedge y$
+      werden). Wie groß ist dieser Schaltkreis? Wenn wir
+      jedes
+      <span class="nowrap">$\oplus$-</span>
+      und $M$ -Gate als
+      <span class="nowrap"><i>ein</i>Gate</span>
+      zählen,
+      so haben wir insgesamt $2n$ innere Gates und $2n$
+      Input-Gates. Wenn wir darauf bestehen,
+      <span class="nowrap">$\oplus$-</span>
+      und
+      <span class="nowrap">$M$-Gates</span>
+      aus AND/OR/NOT zu basteln, haben wir mehr,
+      allerdings in jedem Fall $O(n)$ viele.
     </p>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 2.3.1<span class="t-3003">./course1/wly/02/03-binary-adder.wly:86:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:86:5</span></span>
-        <span class="t-3003-c">Bauen Sie einen Schaltkreis oneBitAdder:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:87:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:88:9</span></span><span class="t-3003-c">$\{0,1\}^3 \rightarrow \{0,1\}^2$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:88:9</span></span><span class="t-3003-c">
-          für folgende<span class="t-3003">./course1/wly/02/03-binary-adder.wly:88:42</span></span>
-        <span class="t-3003-c">Funktionalität:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:89:9</span></span>
+        <b>Übungsaufgabe 2.3.1</b>
+        Bauen Sie einen Schaltkreis oneBitAdder:
+        $\{0,1\}^3 \rightarrow \{0,1\}^2$ für folgende
+        Funktionalität:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/circuits/onebitadder.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/onebitadder.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Versuchen Sie, so wenig Gates wie möglich zu verwenden.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:96:9</span></span>
-        <span class="t-3003-c">Entscheiden Sie sich im Voraus, ob Sie beliebigen Fan-in<span class="t-3003">./course1/wly/02/03-binary-adder.wly:97:9</span></span>
-        <span class="t-3003-c">erlauben wollen oder auf Fan-in 2 bestehen.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:98:9</span></span>
+        Versuchen Sie, so wenig Gates wie möglich zu
+        verwenden. Entscheiden Sie sich im Voraus, ob Sie
+        beliebigen Fan-in erlauben wollen oder auf Fan-in 2
+        bestehen.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Eine Größe von
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:100:5</span></span><span class="t-3003-c">$O(n)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:100:20</span></span><span class="t-3003-c">
-        ist gut; besseres können wir nicht<span class="t-3003">./course1/wly/02/03-binary-adder.wly:100:26</span></span>
-      <span class="t-3003-c">wirklich erwarten, schließlich muss der Schaltkreis ja<span class="t-3003">./course1/wly/02/03-binary-adder.wly:101:5</span></span>
-      <span class="t-3003-c">allein schon
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:102:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:102:18</span></span><span class="t-3003-c">
-        Input-Gates haben. Wie steht es mit der<span class="t-3003">./course1/wly/02/03-binary-adder.wly:102:21</span></span>
-      <span class="t-3003-c">Tiefe? Wenn wir jedes
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:103:5</span></span><span class="t-3003-c">$\oplus$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:103:27</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:103:35</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:103:40</span></span><span class="t-3003-c">
-        als Gate<span class="t-3003">./course1/wly/02/03-binary-adder.wly:103:43</span></span>
-      <span class="t-3003-c">betrachten, dann hat der Pfad von
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:104:5</span></span><span class="t-3003-c">$x_0$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:104:39</span></span><span class="t-3003-c">
-        zu
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:104:44</span></span><span class="t-3003-c">$s_n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:104:48</span></span><span class="t-3003-c">
-        die Länge<span class="t-3003">./course1/wly/02/03-binary-adder.wly:104:53</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:105:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:105:5</span></span><span class="t-3003-c">
-        (beachten Sie: das ganz links stehende
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:105:8</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:105:48</span></span><span class="t-3003-c">
-        ist streng<span class="t-3003">./course1/wly/02/03-binary-adder.wly:105:51</span></span>
-      <span class="t-3003-c">genommen bereits das Output-Gate; die ausgehende Kante<span class="t-3003">./course1/wly/02/03-binary-adder.wly:106:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:107:5</span></span><span class="t-3003-c">$s_n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:107:5</span></span><span class="t-3003-c">
-        ist also vielmehr ein Output-Label als eine<span class="t-3003">./course1/wly/02/03-binary-adder.wly:107:10</span></span>
-      <span class="t-3003-c">ausgehende Kante und daher bei der Tiefenbestimmung nicht<span class="t-3003">./course1/wly/02/03-binary-adder.wly:108:5</span></span>
-      <span class="t-3003-c">mitgezählt). Der Addier-Schaltkreis hat also Tiefe
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:109:5</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:109:56</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:109:59</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:109:59</span></span>
-      <span class="t-3003-c">Eine Tiefe von
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:110:5</span></span><span class="t-3003-c">$\Omega(n)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:110:20</span></span><span class="t-3003-c">
-        ist in der Regel nicht gut.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:110:31</span></span>
-      <span class="t-3003-c">Idealerweise streben wir eine Tiefe von
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:111:5</span></span><span class="t-3003-c">$\log n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:111:45</span></span><span class="t-3003-c">
-        an (oder<span class="t-3003">./course1/wly/02/03-binary-adder.wly:111:53</span></span>
-      <span class="t-3003-c">wenn wir besonders ambitionert sind und beliebig großen<span class="t-3003">./course1/wly/02/03-binary-adder.wly:112:5</span></span>
-      <span class="t-3003-c">Fan-in zulassen, sogar konstante Tiefe
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:113:5</span></span><span class="t-3003-c">$O(1)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:113:44</span></span><span class="t-3003-c">
-        ).<span class="t-3003">./course1/wly/02/03-binary-adder.wly:113:50</span></span>
+      Eine Größe von $O(n)$ ist gut; besseres können wir
+      nicht wirklich erwarten, schließlich muss der
+      Schaltkreis ja allein schon $n$ Input-Gates haben.
+      Wie steht es mit der Tiefe? Wenn wir jedes $\oplus$
+      und $M$ als Gate betrachten, dann hat der Pfad von
+      $x_0$ zu $s_n$ die Länge $n$ (beachten Sie: das ganz
+      links stehende $M$ ist streng genommen bereits das
+      Output-Gate; die ausgehende Kante $s_n$ ist also
+      vielmehr ein Output-Label als eine ausgehende Kante
+      und daher bei der Tiefenbestimmung nicht mitgezählt).
+      Der Addier-Schaltkreis hat also Tiefe
+      <span class="nowrap">$n$.</span>
+      Eine Tiefe
+      von $\Omega(n)$ ist in der Regel nicht gut.
+      Idealerweise streben wir eine Tiefe von $\log n$ an
+      (oder wenn wir besonders ambitionert sind und beliebig
+      großen Fan-in zulassen, sogar konstante Tiefe $O(1)$
+      ).
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Carry Look-Ahead<span class="t-3003">./course1/wly/02/03-binary-adder.wly:116:9</span></span>
+      Carry Look-Ahead
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Tiefenmässig hat uns der obige Addierer nicht befriedigt.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:118:5</span></span>
-      <span class="t-3003-c">Das Problem ist, dass das Carry im schlimmsten Fall von<span class="t-3003">./course1/wly/02/03-binary-adder.wly:119:5</span></span>
-      <span class="t-3003-c">ganz rechts nach ganz links durchrasseln muss, zum Beispiel<span class="t-3003">./course1/wly/02/03-binary-adder.wly:120:5</span></span>
-      <span class="t-3003-c">wenn man
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:121:5</span></span><span class="t-3003-c">$11111111 + 00000001$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:121:14</span></span><span class="t-3003-c">
-        berechnet. So einen<span class="t-3003">./course1/wly/02/03-binary-adder.wly:121:35</span></span>
-      <span class="t-3003-c">Addierer nennt
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:122:5</span></span><span class="nowrap"><span class="t-3003-c">man<span class="t-3003">./course1/wly/02/03-binary-adder.wly:122:5</span></span><i><span class="t-3003-c">ripple-carry adder<span class="t-3003">./course1/wly/02/03-binary-adder.wly:122:24</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:122:43</span></span></span><span class="t-3003-c">
-        Geringere Tiefe<span class="t-3003">./course1/wly/02/03-binary-adder.wly:122:43</span></span>
-      <span class="t-3003-c">erreicht man mit
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:123:5</span></span><span class="nowrap"><i><span class="t-3003-c">Carry Lookahead<span class="t-3003">./course1/wly/02/03-binary-adder.wly:123:23</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:123:39</span></span></span><span class="t-3003-c">
-        Hier versuchen wir, im<span class="t-3003">./course1/wly/02/03-binary-adder.wly:123:39</span></span>
-      <span class="t-3003-c">Voraus bereits das Carry auf Position
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:124:5</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:124:43</span></span><span class="t-3003-c">
-        zu berechnen,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:124:46</span></span>
-      <span class="t-3003-c">ohne erst das auf Position
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:125:5</span></span><span class="t-3003-c">$i-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:125:33</span></span><span class="t-3003-c">
-        abzuwarten. Es lohnt,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:125:38</span></span>
-      <span class="t-3003-c">ein paar Dinge formaler zu definieren:
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:126:5</span></span><span class="t-3003-c">$c_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:126:44</span></span><span class="t-3003-c">
-        ist das<span class="t-3003">./course1/wly/02/03-binary-adder.wly:126:49</span></span>
-      <span class="t-3003-c">Carry, das von Position
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:127:5</span></span><span class="t-3003-c">$i-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:127:29</span></span><span class="t-3003-c">
-        an Position
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:127:34</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:127:47</span></span><span class="t-3003-c">
-        übergeben<span class="t-3003">./course1/wly/02/03-binary-adder.wly:127:50</span></span>
-      <span class="t-3003-c">wird;
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:128:5</span></span><span class="t-3003-c">$s_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:128:11</span></span><span class="t-3003-c">
-        ist das
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:128:16</span></span><span class="nowrap"><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:128:25</span></span><span class="t-3003-c">-te<span class="t-3003">./course1/wly/02/03-binary-adder.wly:128:28</span></span></span><span class="t-3003-c">
-        Bit der Summe (von rechts nach<span class="t-3003">./course1/wly/02/03-binary-adder.wly:128:28</span></span>
-      <span class="t-3003-c">links zählend, bei 0 beginnend). Es gilt also
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:129:5</span></span><span class="t-3003-c">$c_0 = 0$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:129:51</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:129:60</span></span>
-      <span class="t-3003-c">und<span class="t-3003">./course1/wly/02/03-binary-adder.wly:130:5</span></span>
+      Tiefenmässig hat uns der obige Addierer nicht
+      befriedigt. Das Problem ist, dass das Carry im
+      schlimmsten Fall von ganz rechts nach ganz links
+      durchrasseln muss, zum Beispiel wenn man
+      $11111111 + 00000001$ berechnet. So einen Addierer
+      nennt
+      <span class="nowrap">man<i>ripple-carry adder</i>.</span>
+      Geringere Tiefe
+      erreicht man mit
+      <span class="nowrap"><i>Carry Lookahead</i>.</span>
+      Hier versuchen
+      wir, im Voraus bereits das Carry auf Position $i$ zu
+      berechnen, ohne erst das auf Position  $i-1$
+      abzuwarten. Es lohnt, ein paar Dinge formaler zu
+      definieren: $c_i$ ist das Carry, das von Position
+      $i-1$ an Position $i$ übergeben wird; $s_i$ ist das
+      <span class="nowrap">$i$-te</span>
+      Bit der Summe (von rechts nach links zählend,
+      bei 0 beginnend). Es gilt also $c_0 = 0$ und
     </p>
     <div class="math-block main-column">
       $$
@@ -305,55 +242,42 @@
       s_i&amp;= x_i \oplus y_i \oplus c_i \\
       c_{i+1}&amp;= M(x_i, y_i, c_i) \ ,
       \end{align*}
-      $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:132:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">und das Ergebnis ist dann<span class="t-3003">./course1/wly/02/03-binary-adder.wly:137:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:138:5</span></span><span class="nowrap"><span class="t-3003-c">$c_{n} s_{n-1} s_{n-2} \dots, s_2 s_1 s_0$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:138:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:138:47</span></span></span><span class="t-3003-c">
-        Bauen wir uns<span class="t-3003">./course1/wly/02/03-binary-adder.wly:138:47</span></span>
-      <span class="t-3003-c">doch mal einen Schaltkreis, der
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:139:5</span></span><span class="t-3003-c">$c_{k+1}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:139:37</span></span><span class="t-3003-c">
-        berechnet; wir<span class="t-3003">./course1/wly/02/03-binary-adder.wly:139:46</span></span>
-      <span class="t-3003-c">können zum Beispiel den obigen Ripple-Carry-Adder nehmen<span class="t-3003">./course1/wly/02/03-binary-adder.wly:140:5</span></span>
-      <span class="t-3003-c">und alles löschen, was nicht zur Berechnung von
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:141:5</span></span><span class="t-3003-c">$c_{k+1}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:141:53</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:141:62</span></span>
-      <span class="t-3003-c">beiträgt:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:142:5</span></span>
+      und das Ergebnis ist dann
+      <span class="nowrap">$c_{n} s_{n-1} s_{n-2} \dots, s_2 s_1 s_0$.</span>
+      Bauen wir
+      uns doch mal einen Schaltkreis, der $c_{k+1}$
+      berechnet; wir können zum Beispiel den obigen
+      Ripple-Carry-Adder nehmen und alles löschen, was nicht
+      zur Berechnung von $c_{k+1}$ beiträgt:
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:6em"
           src="img/circuits/adder-ripple-only-carry.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/adder-ripple-only-carry.svg</span></span>
+        >
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Betrachten Sie
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:149:5</span></span><span class="nowrap"><span class="t-3003-c">$(x_i,y_i)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:149:20</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:149:31</span></span></span><span class="t-3003-c">
-        Wenn dies
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:149:31</span></span><span class="t-3003-c">$(1,1)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:149:43</span></span><span class="t-3003-c">
-        ist, so ist<span class="t-3003">./course1/wly/02/03-binary-adder.wly:149:50</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:150:5</span></span><span class="nowrap"><span class="t-3003-c">$c_{i+1}=1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:150:5</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/02/03-binary-adder.wly:150:16</span></span></span><span class="t-3003-c">
-        wenn
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:150:16</span></span><span class="nowrap"><span class="t-3003-c">$(x_i,y_i) = (0,0)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:150:23</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:150:42</span></span></span><span class="t-3003-c">
-        so ist
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:150:42</span></span><span class="nowrap"><span class="t-3003-c">$c_{i+1}=0$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:150:51</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:150:62</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:150:62</span></span>
-      <span class="t-3003-c">In beiden Fällen spielt alles, was vor
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:151:5</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:151:44</span></span><span class="t-3003-c">
-        kommt (rechts<span class="t-3003">./course1/wly/02/03-binary-adder.wly:151:47</span></span>
-      <span class="t-3003-c">davon) spielt keine Rolle. Wenn nun
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:152:5</span></span><span class="t-3003-c">$x_i \ne y_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:152:41</span></span><span class="t-3003-c">
-        ist,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:152:54</span></span>
-      <span class="t-3003-c">dann schaltet das
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:153:5</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:153:23</span></span><span class="t-3003-c">-Gate<span class="t-3003">./course1/wly/02/03-binary-adder.wly:153:26</span></span></span><span class="t-3003-c">
-        einfach
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:153:26</span></span><span class="t-3003-c">$c_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:153:40</span></span><span class="t-3003-c">
-        unverändert<span class="t-3003">./course1/wly/02/03-binary-adder.wly:153:45</span></span>
-      <span class="t-3003-c">durch. Dies motiviert die folgenden Definitionen:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:154:5</span></span>
+      Betrachten Sie
+      <span class="nowrap">$(x_i,y_i)$.</span>
+      Wenn dies $(1,1)$ ist, so
+      ist
+      <span class="nowrap">$c_{i+1}=1$;</span>
+      wenn
+      <span class="nowrap">$(x_i,y_i) = (0,0)$,</span>
+      so ist
+      <span class="nowrap">$c_{i+1}=0$.</span>
+      In beiden Fällen spielt alles, was vor
+      $i$ kommt (rechts davon) spielt keine Rolle. Wenn nun
+      $x_i \ne y_i$ ist, dann schaltet das
+      <span class="nowrap">$M$-Gate</span>
+      einfach
+      $c_i$ unverändert durch. Dies motiviert die folgenden
+      Definitionen:
     </p>
     <div class="math-block main-column">
       $$
@@ -361,215 +285,124 @@
       g_i&amp;:= x_i \wedge y_i \tag{carry-generate} \\
       p_i&amp;:= x_i \vee y_i \tag{carry-propagate}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:156:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Jetzt können wir
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:161:5</span></span><span class="t-3003-c">$c_{k+1}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:161:22</span></span><span class="t-3003-c">
-        wie folgt berechnen: an Stelle<span class="t-3003">./course1/wly/02/03-binary-adder.wly:161:31</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:162:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:162:5</span></span><span class="t-3003-c">
-        wird ein Carry ausgegeben, wenn es eine Stelle<span class="t-3003">./course1/wly/02/03-binary-adder.wly:162:8</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:163:5</span></span><span class="t-3003-c">$i \leq k$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:163:5</span></span><span class="t-3003-c">
-        gibt, wo
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:163:15</span></span><span class="t-3003-c">$x_i = y_i=1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:163:25</span></span><span class="t-3003-c">
-        gilt, das Carry also<span class="t-3003">./course1/wly/02/03-binary-adder.wly:163:38</span></span>
-      <span class="t-3003-c">erzeugt wird (carry generate), und dann für alle<span class="t-3003">./course1/wly/02/03-binary-adder.wly:164:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:165:5</span></span><span class="t-3003-c">$j = \{i+1,\dots,k\}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:165:5</span></span><span class="t-3003-c">
-        das Carry zumindest weitergereicht<span class="t-3003">./course1/wly/02/03-binary-adder.wly:165:26</span></span>
-      <span class="t-3003-c">wird, also
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:166:5</span></span><span class="t-3003-c">$x_j \vee y_j = 1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:166:16</span></span><span class="t-3003-c">
-        gilt (carry propagate):<span class="t-3003">./course1/wly/02/03-binary-adder.wly:166:34</span></span>
+      Jetzt können wir $c_{k+1}$ wie folgt berechnen: an
+      Stelle $k$ wird ein Carry ausgegeben, wenn es eine
+      Stelle $i \leq k$ gibt, wo $x_i = y_i=1$ gilt, das
+      Carry also erzeugt wird (carry generate), und dann für
+      alle $j = \{i+1,\dots,k\}$ das Carry zumindest
+      weitergereicht wird, also $x_j \vee y_j = 1$ gilt
+      (carry propagate):
     </p>
     <div class="math-block main-column">
       $$
       c_{k+1} := g_k \vee (g_{k-1} \wedge p_k) \vee (g_{k-2} \wedge p_{k-1} \wedge p_{k}) \vee \dots
       \vee
       (g_0 \wedge p_1 \wedge \dots \wedge p_k) \ .
-      $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:168:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Und voilà: dies ist ein Schaltkreis für
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:174:5</span></span><span class="t-3003-c">$c_{k+1}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:174:45</span></span><span class="t-3003-c">
-        und hat<span class="t-3003">./course1/wly/02/03-binary-adder.wly:174:54</span></span>
-      <span class="t-3003-c">Tiefe 2 (wenn wir
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:175:5</span></span><span class="t-3003-c">$g_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:175:23</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:175:28</span></span><span class="t-3003-c">$p_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:175:33</span></span><span class="t-3003-c">
-        als Inputgates<span class="t-3003">./course1/wly/02/03-binary-adder.wly:175:38</span></span>
-      <span class="t-3003-c">betrachten). Wie groß ist er? Er hat
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:176:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:176:42</span></span><span class="t-3003-c">
-        OR-gates und<span class="t-3003">./course1/wly/02/03-binary-adder.wly:176:45</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:177:5</span></span><span class="t-3003-c">$1 + 2 + \dots + k$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:177:5</span></span><span class="t-3003-c">
-        AND-gates, insgesamt also
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:177:24</span></span><span class="t-3003-c">$\Theta(k^2)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:177:51</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:177:64</span></span>
-      <span class="t-3003-c">Gates. Wir konstruieren nun für jedes
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:178:5</span></span><span class="t-3003-c">$c_1,\dots, c_n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:178:43</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:178:59</span></span>
-      <span class="t-3003-c">einen Schaltkreis und setzen dann einen Schaltkreis für<span class="t-3003">./course1/wly/02/03-binary-adder.wly:179:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:180:5</span></span><span class="t-3003-c">$s_k = x_k \oplus y_k \oplus c_k$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:180:5</span></span><span class="t-3003-c">
-        oben drauf. Insgesamt<span class="t-3003">./course1/wly/02/03-binary-adder.wly:180:38</span></span>
-      <span class="t-3003-c">haben wir Tiefe
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:181:5</span></span><span class="nowrap"><span class="t-3003-c">$O(1)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:181:21</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:181:27</span></span></span><span class="t-3003-c">
-        wenn wir beliebigen Fan-in<span class="t-3003">./course1/wly/02/03-binary-adder.wly:181:27</span></span>
-      <span class="t-3003-c">zulassen; wenn wir Fan-in 2 wollen, bekommen wir Tiefe<span class="t-3003">./course1/wly/02/03-binary-adder.wly:182:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:183:5</span></span><span class="nowrap"><span class="t-3003-c">$O(\log n)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:183:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:183:16</span></span></span><span class="t-3003-c">
-        Die Anzahl der Gates ist in jedem Fall<span class="t-3003">./course1/wly/02/03-binary-adder.wly:183:16</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:184:5</span></span><span class="nowrap"><span class="t-3003-c">$\Theta(n^3)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:184:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:184:18</span></span></span><span class="t-3003-c">
-        genauer gesagt etwa
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:184:18</span></span><span class="nowrap"><span class="t-3003-c">${n \choose 3}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:184:40</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:184:55</span></span></span><span class="t-3003-c">
-        Dies<span class="t-3003">./course1/wly/02/03-binary-adder.wly:184:55</span></span>
-      <span class="t-3003-c">scheint recht verschwenderisch. Für
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:185:5</span></span><span class="t-3003-c">$n=64$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:185:41</span></span><span class="t-3003-c">
-        wie bei<span class="t-3003">./course1/wly/02/03-binary-adder.wly:185:47</span></span>
-      <span class="t-3003-c">zeitgenössischen Rechnern ergibt dies 41664. Das ist nicht<span class="t-3003">./course1/wly/02/03-binary-adder.wly:186:5</span></span>
-      <span class="t-3003-c">unerträglich groß, aber auch nicht besonders handlich.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:187:5</span></span>
+      Und voilà: dies ist ein Schaltkreis für $c_{k+1}$ und
+      hat Tiefe 2 (wenn wir $g_i$ und $p_i$ als Inputgates
+      betrachten). Wie groß ist er? Er hat $k$ OR-gates und
+      $1 + 2 + \dots + k$ AND-gates, insgesamt also
+      $\Theta(k^2)$ Gates. Wir konstruieren nun für jedes
+      $c_1,\dots, c_n$ einen Schaltkreis und setzen dann
+      einen Schaltkreis für
+      $s_k = x_k \oplus y_k \oplus c_k$ oben drauf.
+      Insgesamt haben wir Tiefe
+      <span class="nowrap">$O(1)$,</span>
+      wenn wir beliebigen
+      Fan-in zulassen; wenn wir Fan-in 2 wollen, bekommen
+      wir Tiefe
+      <span class="nowrap">$O(\log n)$.</span>
+      Die Anzahl der Gates ist in
+      jedem Fall
+      <span class="nowrap">$\Theta(n^3)$,</span>
+      genauer gesagt etwa
+      <span class="nowrap">${n \choose 3}$.</span>
+      Dies scheint recht verschwenderisch.
+      Für $n=64$ wie bei zeitgenössischen Rechnern ergibt
+      dies 41664. Das ist nicht unerträglich groß, aber auch
+      nicht besonders handlich.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Carry-Lookahead mit
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:190:9</span></span><span class="t-3003-c">$O(n)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:190:29</span></span><span class="t-3003-c">
-        Gates und
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:190:35</span></span><span class="t-3003-c">$O(\log n)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:190:46</span></span><span class="t-3003-c">
-        Tiefe<span class="t-3003">./course1/wly/02/03-binary-adder.wly:190:57</span></span>
+      Carry-Lookahead mit $O(n)$ Gates und $O(\log n)$
+      Tiefe
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Effizientere Lösungen beginnen oft mit einer guten<span class="t-3003">./course1/wly/02/03-binary-adder.wly:192:5</span></span>
-      <span class="t-3003-c">Definition. In diesem Falle ist das die Verallgemeinerung<span class="t-3003">./course1/wly/02/03-binary-adder.wly:193:5</span></span>
-      <span class="t-3003-c">von
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:194:5</span></span><i><span class="t-3003-c">Carry Generate
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:194:10</span></span><span class="t-3003-c">$g_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:194:25</span></span></i><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:194:31</span></span><i><span class="t-3003-c">Carry Propagate
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:194:37</span></span><span class="t-3003-c">$p_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:194:53</span></span></i><span class="t-3003-c">
-        von<span class="t-3003">./course1/wly/02/03-binary-adder.wly:194:59</span></span>
-      <span class="t-3003-c">Indizes auf Intervalle. Für ein Interval<span class="t-3003">./course1/wly/02/03-binary-adder.wly:195:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:196:5</span></span><span class="t-3003-c">$[a,b] := \{a, a+1, \dots, b\}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:196:5</span></span><span class="t-3003-c">
-        definieren wir Funktionen<span class="t-3003">./course1/wly/02/03-binary-adder.wly:196:36</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:197:5</span></span><span class="t-3003-c">$g_{[a,b]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:197:5</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:197:16</span></span><span class="t-3003-c">$p_{[a,b]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:197:21</span></span><span class="t-3003-c">
-        in den Variablen<span class="t-3003">./course1/wly/02/03-binary-adder.wly:197:32</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:198:5</span></span><span class="t-3003-c">$x_{a},\dots,x_{b}, y_a, \dots, y_b$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:198:5</span></span><span class="t-3003-c">
-        wie folgt:
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:198:41</span></span><span class="t-3003-c">$g_{[a,b]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:198:53</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:198:64</span></span>
-      <span class="t-3003-c">soll 1 sein , wenn an Stelle
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:199:5</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:199:34</span></span><span class="t-3003-c">
-        ein Carry nach
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:199:37</span></span><span class="t-3003-c">$b+1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:199:53</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:199:58</span></span>
-      <span class="t-3003-c">geschickt wird, selbst wenn von
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:200:5</span></span><span class="t-3003-c">$a-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:200:37</span></span><span class="t-3003-c">
-        nach
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:200:42</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:200:48</span></span><span class="t-3003-c">
-        kein Carry<span class="t-3003">./course1/wly/02/03-binary-adder.wly:200:51</span></span>
-      <span class="t-3003-c">reinkommt; wenn also
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:201:5</span></span><span class="t-3003-c">$c_{b+1}=1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:201:26</span></span><span class="t-3003-c">
-        ist, selbst wenn
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:201:37</span></span><span class="t-3003-c">$c_{a}=0$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:201:55</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:201:64</span></span>
-      <span class="t-3003-c">ist;
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:202:5</span></span><span class="t-3003-c">$p_{[a,b]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:202:10</span></span><span class="t-3003-c">
-        soll 1 sein, wenn an Stelle
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:202:21</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:202:50</span></span><span class="t-3003-c">
-        ein Carry<span class="t-3003">./course1/wly/02/03-binary-adder.wly:202:53</span></span>
-      <span class="t-3003-c">nach
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:203:5</span></span><span class="t-3003-c">$b+1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:203:10</span></span><span class="t-3003-c">
-        rausgeschickt wird, falls eines von
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:203:15</span></span><span class="t-3003-c">$a-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:203:52</span></span><span class="t-3003-c">
-        nach<span class="t-3003">./course1/wly/02/03-binary-adder.wly:203:57</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:204:5</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:204:5</span></span><span class="t-3003-c">
-        reingeschickt wird.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:204:8</span></span>
+      Effizientere Lösungen beginnen oft mit einer guten
+      Definition. In diesem Falle ist das die
+      Verallgemeinerung von
+      <i>Carry Generate $g_i$</i>
+      und
+      <i>Carry Propagate $p_i$</i>
+      von Indizes auf Intervalle.
+      Für ein Interval $[a,b] := \{a, a+1, \dots, b\}$
+      definieren wir Funktionen $g_{[a,b]}$ und $p_{[a,b]}$
+      in den Variablen $x_{a},\dots,x_{b}, y_a, \dots, y_b$
+      wie folgt: $g_{[a,b]}$ soll 1 sein , wenn an Stelle
+      $b$ ein Carry nach $b+1$ geschickt wird, selbst wenn
+      von $a-1$ nach $a$ kein Carry reinkommt; wenn also
+      $c_{b+1}=1$ ist, selbst wenn $c_{a}=0$ ist;
+      $p_{[a,b]}$ soll 1 sein, wenn an Stelle $b$ ein Carry
+      nach $b+1$ rausgeschickt wird, falls eines von $a-1$
+      nach $a$ reingeschickt wird.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 2.3.1 (Carry propagate / generate für Intervalle)<span class="t-3003">./course1/wly/02/03-binary-adder.wly:206:5</span></span></b><span class="t-3003-c">
-          Sei<span class="t-3003">./course1/wly/02/03-binary-adder.wly:207:54</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:208:9</span></span><span class="t-3003-c">$I = \{a,a+1, \dots, b\}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:208:9</span></span><span class="t-3003-c">
-          ein Intervall natürlicher<span class="t-3003">./course1/wly/02/03-binary-adder.wly:208:34</span></span>
-        <span class="t-3003-c">Zahlen. Die Werte
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:209:9</span></span><span class="t-3003-c">$p_I$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:209:27</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:209:32</span></span><span class="t-3003-c">$g_I$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:209:37</span></span><span class="t-3003-c">
-          sind wie folgt<span class="t-3003">./course1/wly/02/03-binary-adder.wly:209:42</span></span>
-        <span class="t-3003-c">definiert:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:210:9</span></span>
+        <b>Definition 2.3.1 (Carry propagate / generate für Intervalle)</b>
+        Sei
+        $I = \{a,a+1, \dots, b\}$ ein Intervall natürlicher
+        Zahlen. Die Werte $p_I$ und $g_I$ sind wie folgt
+        definiert:
       </p>
       <ul>
         <li>
           <p>
-            <span class="t-3003-c">Wenn für alle
-              <span class="t-3003">./course1/wly/02/03-binary-adder.wly:214:17</span></span><span class="t-3003-c">$i \in I$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:214:31</span></span><span class="t-3003-c">
-              das Paar
-              <span class="t-3003">./course1/wly/02/03-binary-adder.wly:214:40</span></span><span class="t-3003-c">$x_i, y_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:214:50</span></span><span class="t-3003-c">
-              den Wert<span class="t-3003">./course1/wly/02/03-binary-adder.wly:214:60</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/02/03-binary-adder.wly:215:17</span></span><span class="t-3003-c">$(0,1)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:215:17</span></span><span class="t-3003-c">
-              oder
-              <span class="t-3003">./course1/wly/02/03-binary-adder.wly:215:24</span></span><span class="t-3003-c">$(1,0)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:215:30</span></span><span class="t-3003-c">
-              hat, dann ist
-              <span class="t-3003">./course1/wly/02/03-binary-adder.wly:215:37</span></span><span class="t-3003-c">$p_I = 1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:215:52</span></span><span class="t-3003-c">
-              und
-              <span class="t-3003">./course1/wly/02/03-binary-adder.wly:215:61</span></span><span class="nowrap"><span class="t-3003-c">$g_I = 0$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:215:66</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:215:75</span></span></span>
+            Wenn für alle $i \in I$ das Paar $x_i, y_i$ den Wert
+            $(0,1)$ oder $(1,0)$ hat, dann ist $p_I = 1$ und
+            <span class="nowrap">$g_I = 0$.</span>
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Ansonsten sei<span class="t-3003">./course1/wly/02/03-binary-adder.wly:218:17</span></span>
-            <span class="t-3003-c">
-              <span class="t-3003">./course1/wly/02/03-binary-adder.wly:219:17</span></span><span class="nowrap"><span class="t-3003-c">$i^* := \max \{i \in I \ | \ (x_i, y_i) \in \{(0,0),
-                (1,1)\} \}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:219:17</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:220:28</span></span></span>
+            Ansonsten sei
+            <span class="nowrap">$i^* := \max \{i \in I \ | \ (x_i, y_i) \in \{(0,0),
+              (1,1)\} \}$.</span>
           </p>
           <ul>
             <li>
               <p>
-                <span class="t-3003-c">Falls
-                  <span class="t-3003">./course1/wly/02/03-binary-adder.wly:224:25</span></span><span class="nowrap"><span class="t-3003-c">$(x_{i^*}, y_{i^*}) = (1,1)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:224:31</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:224:59</span></span></span><span class="t-3003-c">
-                  dann sind<span class="t-3003">./course1/wly/02/03-binary-adder.wly:224:59</span></span>
-                <span class="t-3003-c">
-                  <span class="t-3003">./course1/wly/02/03-binary-adder.wly:225:25</span></span><span class="nowrap"><span class="t-3003-c">$p_I = g_I = 1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:225:25</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:225:40</span></span></span>
+                Falls
+                <span class="nowrap">$(x_{i^*}, y_{i^*}) = (1,1)$,</span>
+                dann sind
+                <span class="nowrap">$p_I = g_I = 1$.</span>
               </p>
             </li>
             <li>
               <p>
-                <span class="t-3003-c">Falls
-                  <span class="t-3003">./course1/wly/02/03-binary-adder.wly:228:25</span></span><span class="nowrap"><span class="t-3003-c">$(x_{i^*}, y_{i^*}) = (0,0)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:228:31</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:228:59</span></span></span><span class="t-3003-c">
-                  dann sind<span class="t-3003">./course1/wly/02/03-binary-adder.wly:228:59</span></span>
-                <span class="t-3003-c">
-                  <span class="t-3003">./course1/wly/02/03-binary-adder.wly:229:25</span></span><span class="nowrap"><span class="t-3003-c">$p_I = g_I = 0$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:229:25</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:229:40</span></span></span>
+                Falls
+                <span class="nowrap">$(x_{i^*}, y_{i^*}) = (0,0)$,</span>
+                dann sind
+                <span class="nowrap">$p_I = g_I = 0$.</span>
               </p>
             </li>
           </ul>
         </li>
       </ul>
       <p>
-        <span class="t-3003-c">Insbesondere für ein-elementige Intervalle
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:231:9</span></span><span class="t-3003-c">$I = [a,a]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:231:52</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:231:63</span></span>
-        <span class="t-3003-c">gilt
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:232:9</span></span><span class="t-3003-c">$p_{[a]} = p_a = x_a \vee y_a$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:232:14</span></span><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/02/03-binary-adder.wly:232:44</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:233:9</span></span><span class="nowrap"><span class="t-3003-c">$g_{[a]} = g_a = x_a \wedge y_a$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:233:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:233:41</span></span></span>
+        Insbesondere für ein-elementige Intervalle $I = [a,a]$
+        gilt $p_{[a]} = p_a = x_a \vee y_a$ und
+        <span class="nowrap">$g_{[a]} = g_a = x_a \wedge y_a$.</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Hier sind Boolesche Formeln (in DNF) für
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:235:5</span></span><span class="t-3003-c">$p_{[a,b]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:235:46</span></span><span class="t-3003-c">
-        und<span class="t-3003">./course1/wly/02/03-binary-adder.wly:235:57</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:236:5</span></span><span class="nowrap"><span class="t-3003-c">$g_{[a,b]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:236:5</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:236:16</span></span></span>
+      Hier sind Boolesche Formeln (in DNF) für $p_{[a,b]}$
+      und
+      <span class="nowrap">$g_{[a,b]}$:</span>
     </p>
     <div class="math-block main-column">
       $$
@@ -580,57 +413,46 @@
       \vee \dots \vee (g_{a+1} \wedge p_{a+2} \wedge \dots \wedge p_b)
       \vee (p_a \wedge p_{a+1} \wedge \dots \wedge p_b) \ ,
       \end{align*}
-      $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:238:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">und hier ein Bild zur Illustration:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:246:5</span></span>
+      und hier ein Bild zur Illustration:
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:11em"
           src="img/circuits/carry-generate-interval.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/carry-generate-interval.svg</span></span><br><img
+        ><br><img
           style="height:11em"
           src="img/circuits/carry-propagate-interval.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/carry-propagate-interval.svg</span></span>
+        >
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Im Extremfall
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:257:5</span></span><span class="t-3003-c">$a=b$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:257:19</span></span><span class="t-3003-c">
-        gilt<span class="t-3003">./course1/wly/02/03-binary-adder.wly:257:24</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:258:5</span></span><span class="nowrap"><span class="t-3003-c">$g_{[a,a]} = g_a, p_{[a,a]} = p_a$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:258:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:258:39</span></span></span><span class="t-3003-c">
-        also wie die "alten"<span class="t-3003">./course1/wly/02/03-binary-adder.wly:258:39</span></span>
-      <span class="t-3003-c">individuellen
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:259:5</span></span><span class="nowrap"><span class="t-3003-c">$p_a, g_a$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:259:19</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:259:29</span></span></span><span class="t-3003-c">
-        Diese Definition
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:259:29</span></span><span class="t-3003-c">$g_{[a,b]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:259:48</span></span><span class="t-3003-c">
-        ist<span class="t-3003">./course1/wly/02/03-binary-adder.wly:259:59</span></span>
-      <span class="t-3003-c">nützlich, da erstens<span class="t-3003">./course1/wly/02/03-binary-adder.wly:260:5</span></span>
+      Im Extremfall $a=b$ gilt
+      <span class="nowrap">$g_{[a,a]} = g_a, p_{[a,a]} = p_a$,</span>
+      also wie die
+      "alten" individuellen
+      <span class="nowrap">$p_a, g_a$.</span>
+      Diese Definition
+      $g_{[a,b]}$ ist nützlich, da erstens
     </p>
     <div class="math-block main-column">
       $$
       c_{k+1} = g_{[0, k]}
-      $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:262:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">gilt, wir also die Carrys direkt ablesen, zweitens wir die<span class="t-3003">./course1/wly/02/03-binary-adder.wly:266:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:267:5</span></span><span class="t-3003-c">$g_{[a,b]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:267:5</span></span><span class="t-3003-c">
-        bequem rekursiv berechnen können:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:267:16</span></span>
+      gilt, wir also die Carrys direkt ablesen, zweitens
+      wir die $g_{[a,b]}$ bequem rekursiv berechnen können:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beobachtung 2.3.2<span class="t-3003">./course1/wly/02/03-binary-adder.wly:269:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:269:5</span></span>
-        <span class="t-3003-c">Wenn wir
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:270:9</span></span><span class="t-3003-c">$[a,b] = [a,i] \cup [i+1,b]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:270:18</span></span><span class="t-3003-c">
-          schreiben für<span class="t-3003">./course1/wly/02/03-binary-adder.wly:270:46</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:271:9</span></span><span class="nowrap"><span class="t-3003-c">$a \lt i \lt b$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:271:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:271:24</span></span></span><span class="t-3003-c">
-          dann gilt<span class="t-3003">./course1/wly/02/03-binary-adder.wly:271:24</span></span>
+        <b>Beobachtung 2.3.2</b>
+        Wenn wir $[a,b] = [a,i] \cup [i+1,b]$ schreiben für
+        <span class="nowrap">$a \lt i \lt b$,</span>
+        dann gilt
       </p>
       <div class="math-block">
         $$
@@ -638,145 +460,102 @@
         p_{[a,b]}&amp;= g_{[i+1,b]} \vee (p_{[a,i]} \wedge p_{[i+1,b]}) \ , \\
         g_{[a,b]}&amp;= g_{[i+1,b]} \vee (g_{[a,i]} \wedge p_{[i+1,b]}) \ . \\
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:273:9</span>
+        $$
       </div>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Überzeugen Sie sich von der Richtigkeit entweder durch<span class="t-3003">./course1/wly/02/03-binary-adder.wly:278:5</span></span>
-      <span class="t-3003-c">Nachdenken (z.B. "damit im Interval
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:279:5</span></span><span class="t-3003-c">$[a,b]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:279:41</span></span><span class="t-3003-c">
-        ein Carry<span class="t-3003">./course1/wly/02/03-binary-adder.wly:279:48</span></span>
-      <span class="t-3003-c">erzeugt wird, muss es entweder im höheren Interval erzeugt<span class="t-3003">./course1/wly/02/03-binary-adder.wly:280:5</span></span>
-      <span class="t-3003-c">werden, oder im niedrigeren, und dann im höheren<span class="t-3003">./course1/wly/02/03-binary-adder.wly:281:5</span></span>
-      <span class="t-3003-c">weitergegeben werden") oder indem Sie explizit die<span class="t-3003">./course1/wly/02/03-binary-adder.wly:282:5</span></span>
-      <span class="t-3003-c">Definitionsformel von
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:283:5</span></span><span class="t-3003-c">$g_{[a,b]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:283:27</span></span><span class="t-3003-c">
-        nehmen und in der<span class="t-3003">./course1/wly/02/03-binary-adder.wly:283:38</span></span>
-      <span class="t-3003-c">unteren Hälfte "ausklammern". Die Idee ist jetzt, dass wir<span class="t-3003">./course1/wly/02/03-binary-adder.wly:284:5</span></span>
-      <span class="t-3003-c">mit Hilfe dieser Formel die Funktionen
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:285:5</span></span><span class="t-3003-c">$p_I, g_I$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:285:44</span></span><span class="t-3003-c">
-        für alle<span class="t-3003">./course1/wly/02/03-binary-adder.wly:285:54</span></span>
-      <span class="t-3003-c">Intervalle
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:286:5</span></span><span class="t-3003-c">$I \subseteq [0,\dots,n-1]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:286:16</span></span><span class="t-3003-c">
-        berechnen und dann<span class="t-3003">./course1/wly/02/03-binary-adder.wly:286:43</span></span>
-      <span class="t-3003-c">mittels
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:287:5</span></span><span class="t-3003-c">$s_i = x_i \oplus y_i \oplus c_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:287:13</span></span><span class="t-3003-c">
-        unmittelbar die<span class="t-3003">./course1/wly/02/03-binary-adder.wly:287:46</span></span>
-      <span class="t-3003-c">Binärdarstellung der Summe
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:288:5</span></span><span class="t-3003-c">$x+y$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:288:32</span></span><span class="t-3003-c">
-        ausgeben können. Das<span class="t-3003">./course1/wly/02/03-binary-adder.wly:288:37</span></span>
-      <span class="t-3003-c">Problem: es gibt zu viele Intervalle, nämlich<span class="t-3003">./course1/wly/02/03-binary-adder.wly:289:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:290:5</span></span><span class="t-3003-c">$1 + 2 + \dots + n = {n+1 \choose 2} = \Theta(n^2)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:290:5</span></span><span class="t-3003-c">
-        viele.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:290:56</span></span>
-      <span class="t-3003-c">Der Trick: wir beschränken uns auf besonders schöne<span class="t-3003">./course1/wly/02/03-binary-adder.wly:291:5</span></span>
-      <span class="t-3003-c">Intervalle,
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:292:5</span></span><span class="nowrap"><span class="t-3003-c">nämlich<span class="t-3003">./course1/wly/02/03-binary-adder.wly:292:5</span></span><i><span class="t-3003-c">Binärintervalle<span class="t-3003">./course1/wly/02/03-binary-adder.wly:292:25</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:292:41</span></span></span>
+      Überzeugen Sie sich von der Richtigkeit entweder
+      durch Nachdenken (z.B. "damit im Interval $[a,b]$ ein
+      Carry erzeugt wird, muss es entweder im höheren
+      Interval erzeugt werden, oder im niedrigeren, und dann
+      im höheren weitergegeben werden") oder indem Sie
+      explizit die Definitionsformel von $g_{[a,b]}$ nehmen
+      und in der unteren Hälfte "ausklammern". Die Idee ist
+      jetzt, dass wir mit Hilfe dieser Formel die Funktionen
+      $p_I, g_I$ für alle Intervalle
+      $I \subseteq [0,\dots,n-1]$ berechnen und dann
+      mittels $s_i = x_i \oplus y_i \oplus c_i$ unmittelbar
+      die Binärdarstellung der Summe $x+y$ ausgeben können.
+      Das Problem: es gibt zu viele Intervalle, nämlich
+      $1 + 2 + \dots + n = {n+1 \choose 2} = \Theta(n^2)$
+      viele. Der Trick: wir beschränken uns auf besonders
+      schöne Intervalle,
+      <span class="nowrap">nämlich<i>Binärintervalle</i>.</span>
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Definition 2.3.3<span class="t-3003">./course1/wly/02/03-binary-adder.wly:294:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:294:5</span></span>
-        <span class="t-3003-c">Ein Binärintervall ist eine Menge natürlicher Zahlen der<span class="t-3003">./course1/wly/02/03-binary-adder.wly:295:9</span></span>
-        <span class="t-3003-c">Form<span class="t-3003">./course1/wly/02/03-binary-adder.wly:296:9</span></span>
+        <b>Definition 2.3.3</b>
+        Ein Binärintervall ist eine Menge natürlicher Zahlen
+        der Form
       </p>
       <div class="math-block">
         $$
         \{ c \cdot 2^d, c \cdot 2^d + 1, \dots, c \cdot 2^{d} + 2^{d} - 1\}
-        $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:298:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Es wird eventuell klarer, wenn wir uns die<span class="t-3003">./course1/wly/02/03-binary-adder.wly:302:9</span></span>
-        <span class="t-3003-c">Binärdarstellung anschauen:
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:303:9</span></span><span class="t-3003-c">$[a,b]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:303:37</span></span><span class="t-3003-c">
-          ist ein<span class="t-3003">./course1/wly/02/03-binary-adder.wly:303:44</span></span>
-        <span class="t-3003-c">Binärintervall, wenn
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:304:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:304:30</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:304:33</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:304:38</span></span><span class="t-3003-c">
-          folgende Binärdarstellung<span class="t-3003">./course1/wly/02/03-binary-adder.wly:304:41</span></span>
-        <span class="t-3003-c">haben:
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:305:9</span></span><span class="t-3003-c">$a = (c00\dots 0)_2$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:305:16</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:305:36</span></span><span class="nowrap"><span class="t-3003-c">$b = (c 11 \dots 1)_2$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:305:41</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:305:63</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:305:63</span></span>
-        <span class="t-3003-c">wobei
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:306:9</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:306:15</span></span><span class="t-3003-c">
-          selbst aus mehreren Bits bestehen kann.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:306:18</span></span>
+        Es wird eventuell klarer, wenn wir uns die
+        Binärdarstellung anschauen: $[a,b]$ ist ein
+        Binärintervall, wenn $a$ und $b$ folgende
+        Binärdarstellung haben: $a = (c00\dots 0)_2$ und
+        <span class="nowrap">$b = (c 11 \dots 1)_2$,</span>
+        wobei $c$ selbst aus mehreren
+        Bits bestehen kann.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Beispielsweise ist
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:308:5</span></span><span class="t-3003-c">$12,13,14,15$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:308:24</span></span><span class="t-3003-c">
-        ein Binärintervall mit<span class="t-3003">./course1/wly/02/03-binary-adder.wly:308:37</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:309:5</span></span><span class="t-3003-c">$c=3$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:309:5</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:309:10</span></span><span class="nowrap"><span class="t-3003-c">$d=2$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:309:15</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/02/03-binary-adder.wly:309:20</span></span></span><span class="t-3003-c">
-        in der Binärdarstellung ist das<span class="t-3003">./course1/wly/02/03-binary-adder.wly:309:20</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:310:5</span></span><span class="nowrap"><span class="t-3003-c">$1100, 1101, 1110, 1111$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:310:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:310:29</span></span></span><span class="t-3003-c">
-        Wir können es also auch mit in<span class="t-3003">./course1/wly/02/03-binary-adder.wly:310:29</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:311:5</span></span><i><span class="t-3003-c">Sternchennotation<span class="t-3003">./course1/wly/02/03-binary-adder.wly:311:6</span></span></i><span class="t-3003-c">
-        mit
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:311:24</span></span><span class="nowrap"><span class="t-3003-c">[11<span class="t-3003">./course1/wly/02/03-binary-adder.wly:311:24</span></span><b></b><span class="t-3003-c">]<span class="t-3003">./course1/wly/02/03-binary-adder.wly:311:34</span></span></span><span class="t-3003-c">
-        notieren.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:311:34</span></span>
+      Beispielsweise ist $12,13,14,15$ ein Binärintervall
+      mit $c=3$ und
+      <span class="nowrap">$d=2$;</span>
+      in der Binärdarstellung ist das
+      <span class="nowrap">$1100, 1101, 1110, 1111$.</span>
+      Wir können es also auch mit
+      in
+      <i>Sternchennotation</i>
+      mit
+      <span class="nowrap">[11<b></b>]</span>
+      notieren.
     </p>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 2.3.2<span class="t-3003">./course1/wly/02/03-binary-adder.wly:313:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:313:5</span></span>
-        <span class="t-3003-c">Seit
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:314:9</span></span><span class="nowrap"><span class="t-3003-c">$n = 2^d-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:314:14</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:314:25</span></span></span><span class="t-3003-c">
-          Wie viele Binärintervalle gibt es in<span class="t-3003">./course1/wly/02/03-binary-adder.wly:314:25</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:315:9</span></span><span class="nowrap"><span class="t-3003-c">$\{0,\dots,n-1\}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:315:9</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/02/03-binary-adder.wly:315:26</span></span></span>
+        <b>Übungsaufgabe 2.3.2</b>
+        Seit
+        <span class="nowrap">$n = 2^d-1$.</span>
+        Wie viele Binärintervalle gibt es
+        in
+        <span class="nowrap">$\{0,\dots,n-1\}$?</span>
       </p>
     </div>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Lemma 2.3.4<span class="t-3003">./course1/wly/02/03-binary-adder.wly:317:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:317:5</span></span>
-        <span class="t-3003-c">Es gibt einen Schaltkreis mit Input-Gates<span class="t-3003">./course1/wly/02/03-binary-adder.wly:318:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:319:9</span></span><span class="t-3003-c">$x_0,\dots,x_{n-1}, y_0, \dots, y_{n-1}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:319:9</span></span><span class="t-3003-c">
-          mit Größe<span class="t-3003">./course1/wly/02/03-binary-adder.wly:319:49</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:320:9</span></span><span class="t-3003-c">$6n - 4 \in O(n)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:320:9</span></span><span class="t-3003-c">
-          und Tiefe<span class="t-3003">./course1/wly/02/03-binary-adder.wly:320:26</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:321:9</span></span><span class="t-3003-c">$2\, \ceil{\log_2 n} + 1 \ \in O(\log n)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:321:9</span></span><span class="t-3003-c">
-          und Output-Gates<span class="t-3003">./course1/wly/02/03-binary-adder.wly:321:50</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:322:9</span></span><span class="t-3003-c">$p_{I}, g_I$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:322:9</span></span><span class="t-3003-c">
-          für jedes Binärinterval
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:322:21</span></span><span class="nowrap"><span class="t-3003-c">$I$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:322:46</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:322:49</span></span></span>
+        <b>Lemma 2.3.4</b>
+        Es gibt einen Schaltkreis mit Input-Gates
+        $x_0,\dots,x_{n-1}, y_0, \dots, y_{n-1}$ mit Größe
+        $6n - 4 \in O(n)$ und Tiefe
+        $2\, \ceil{\log_2 n} + 1 \ \in O(\log n)$ und
+        Output-Gates $p_{I}, g_I$ für jedes Binärinterval
+        <span class="nowrap">$I$.</span>
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Ein Binärintervall, zum Beispiel
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:325:9</span></span><span class="t-3003-c">$[32,47]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:325:42</span></span><span class="t-3003-c">
-          können wir als<span class="t-3003">./course1/wly/02/03-binary-adder.wly:325:51</span></span>
-        <span class="t-3003-c">Vereinigung von zwei kleineren Binärintervallen schreiben,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:326:9</span></span>
-        <span class="t-3003-c">hier
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:327:9</span></span><span class="nowrap"><span class="t-3003-c">$[32,47] = [32,39] \cup [40,47]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:327:14</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:327:46</span></span></span><span class="t-3003-c">
-          In unserer<span class="t-3003">./course1/wly/02/03-binary-adder.wly:327:46</span></span>
-        <span class="t-3003-c">Sternchen-Notation:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:328:9</span></span>
+        Ein Binärintervall, zum Beispiel $[32,47]$ können wir
+        als Vereinigung von zwei kleineren Binärintervallen
+        schreiben, hier
+        <span class="nowrap">$[32,47] = [32,39] \cup [40,47]$.</span>
+        In
+        unserer Sternchen-Notation:
       </p>
       <div class="math-block">
         $$
         [10****] = [100***] \cup [101***]
-        $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:330:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Ganz allgemein gilt
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:334:9</span></span><span class="t-3003-c">$[c*^{k+1}] = [c0*^k] \cup [c1*^k]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:334:29</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:334:64</span></span>
-        <span class="t-3003-c">und somit, mit Hilfe von Beobachtung 1.10:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:335:9</span></span>
+        Ganz allgemein gilt
+        $[c*^{k+1}] = [c0*^k] \cup [c1*^k]$ und somit, mit
+        Hilfe von Beobachtung 1.10:
       </p>
       <div class="math-block">
         $$
@@ -784,179 +563,127 @@
         p_{[c*^{k+1}]}&amp;= g_{[c1*^k]} \vee (p_{c0*^k} \wedge p_{c1*^k})\\
         g_{[c*^{k+1}]}&amp;= g_{[c1*^k]} \vee (g_{c0*^k} \wedge p_{c1*^k}) \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:337:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Wir basteln uns also am Besten ein
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:342:9</span></span><span class="nowrap"><span class="t-3003-c">"<span class="t-3003">./course1/wly/02/03-binary-adder.wly:342:9</span></span><span class="t-3003-c">$pg$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:342:45</span></span><span class="t-3003-c">-Gate"<span class="t-3003">./course1/wly/02/03-binary-adder.wly:342:49</span></span></span><span class="t-3003-c">
-          mit vier<span class="t-3003">./course1/wly/02/03-binary-adder.wly:342:49</span></span>
-        <span class="t-3003-c">Inputs und zwei Outputs:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:343:9</span></span>
+        Wir basteln uns also am Besten ein
+        <span class="nowrap">"$pg$-Gate"</span>
+        mit
+        vier Inputs und zwei Outputs:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/circuits/pg-gate.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/pg-gate.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Mit Hilfe dieses Gates können wir
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:350:9</span></span><span class="t-3003-c">$p_{c0*^k}, g_{c0*^k}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:350:43</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:350:65</span></span>
-        <span class="t-3003-c">und
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:351:9</span></span><span class="t-3003-c">$p_{c1*^k}, g_{c1*^k}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:351:13</span></span><span class="t-3003-c">
-          zu
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:351:35</span></span><span class="t-3003-c">$p_{c*^{k+1}}, g_{c*^{k+1}}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:351:39</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:351:67</span></span>
-        <span class="t-3003-c">kombinieren. Wir fangen nun mit Binärintervallen der Größe<span class="t-3003">./course1/wly/02/03-binary-adder.wly:352:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:353:9</span></span><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:353:9</span></span><span class="t-3003-c">
-          an und arbeiten uns hoch. Der Übersichtlichkeit halber<span class="t-3003">./course1/wly/02/03-binary-adder.wly:353:12</span></span>
-        <span class="t-3003-c">schreiben wir
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:354:9</span></span><span class="t-3003-c">$pg_I$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:354:23</span></span><span class="t-3003-c">
-          für das Paar
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:354:29</span></span><span class="nowrap"><span class="t-3003-c">$(p_I, g_I)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:354:43</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:354:55</span></span></span><span class="t-3003-c">
-          Für
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:354:55</span></span><span class="t-3003-c">$n=16$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:354:61</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:354:67</span></span>
-        <span class="t-3003-c">schaut das so aus:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:355:9</span></span>
+        Mit Hilfe dieses Gates können wir
+        $p_{c0*^k}, g_{c0*^k}$ und $p_{c1*^k}, g_{c1*^k}$ zu
+        $p_{c*^{k+1}}, g_{c*^{k+1}}$ kombinieren. Wir fangen
+        nun mit Binärintervallen der Größe $1$ an und
+        arbeiten uns hoch. Der Übersichtlichkeit halber
+        schreiben wir $pg_I$ für das Paar
+        <span class="nowrap">$(p_I, g_I)$.</span>
+        Für
+        $n=16$ schaut das so aus:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:18em"
             src="img/circuits/pg-all-gates.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/pg-all-gates.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Jede Kante steht hier für zwei gebündelte Kanten, nämlich<span class="t-3003">./course1/wly/02/03-binary-adder.wly:362:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:363:9</span></span><span class="t-3003-c">$p_I$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:363:9</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:363:14</span></span><span class="nowrap"><span class="t-3003-c">$g_I$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:363:19</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:363:24</span></span></span><span class="t-3003-c">
-          Und dies ist unser Schaltkreis. Beachten<span class="t-3003">./course1/wly/02/03-binary-adder.wly:363:24</span></span>
-        <span class="t-3003-c">Sie, dass die untersten
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:364:9</span></span><span class="t-3003-c">$pg_{i}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:364:33</span></span><span class="t-3003-c">
-          keine Input-Gates sind,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:364:41</span></span>
-        <span class="t-3003-c">sondern wiederum aus
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:365:9</span></span><span class="t-3003-c">$x_i, y_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:365:30</span></span><span class="t-3003-c">
-          berechnet werden mittels<span class="t-3003">./course1/wly/02/03-binary-adder.wly:365:40</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:366:9</span></span><span class="t-3003-c">$p_i = x_i \vee y_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:366:9</span></span><span class="t-3003-c">
-          bzw.
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:366:29</span></span><span class="nowrap"><span class="t-3003-c">$g_i = x_i \wedge y_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:366:35</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:366:57</span></span></span><span class="t-3003-c">
-          Der<span class="t-3003">./course1/wly/02/03-binary-adder.wly:366:57</span></span>
-        <span class="t-3003-c">Schaltkreis hat also
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:367:9</span></span><span class="t-3003-c">$2n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:367:30</span></span><span class="t-3003-c">
-          Input-Gates und pro<span class="t-3003">./course1/wly/02/03-binary-adder.wly:367:34</span></span>
-        <span class="t-3003-c">Binärinterval
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:368:9</span></span><span class="t-3003-c">$I$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:368:23</span></span><span class="t-3003-c">
-          zwei Output-Gates:
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:368:26</span></span><span class="nowrap"><span class="t-3003-c">$p_I, g_I$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:368:46</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:368:56</span></span></span><span class="t-3003-c">
-          Jedes
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:368:56</span></span><span class="t-3003-c">$pg$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:368:64</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:368:68</span></span>
-        <span class="t-3003-c">im obigen Bild ist also gleichzeitig ein Output-Gate (auch<span class="t-3003">./course1/wly/02/03-binary-adder.wly:369:9</span></span>
-        <span class="t-3003-c">wenn es für weiter oben "wiederverwendet" wird; nirgendwo<span class="t-3003">./course1/wly/02/03-binary-adder.wly:370:9</span></span>
-        <span class="t-3003-c">steht geschrieben, dass ein Output-Gate keine ausgehenden<span class="t-3003">./course1/wly/02/03-binary-adder.wly:371:9</span></span>
-        <span class="t-3003-c">Kanten haben darf). Sie sehen, dass maximal<span class="t-3003">./course1/wly/02/03-binary-adder.wly:372:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:373:9</span></span><span class="t-3003-c">$\ceil{\log_2 n}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:373:9</span></span><span class="t-3003-c">
-          viele
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:373:26</span></span><span class="nowrap"><span class="t-3003-c">$pg$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:373:33</span></span><span class="t-3003-c">-Gates<span class="t-3003">./course1/wly/02/03-binary-adder.wly:373:37</span></span></span><span class="t-3003-c">
-          hintereinander kommen.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:373:37</span></span>
-        <span class="t-3003-c">Die
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:374:9</span></span><span class="nowrap"><span class="t-3003-c">$pg$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:374:13</span></span><span class="t-3003-c">-Gate-Tiefe<span class="t-3003">./course1/wly/02/03-binary-adder.wly:374:17</span></span></span><span class="t-3003-c">
-          ist also
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:374:17</span></span><span class="nowrap"><span class="t-3003-c">$\ceil{\log_2 n}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:374:38</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:374:55</span></span></span><span class="t-3003-c">
-          Jedes<span class="t-3003">./course1/wly/02/03-binary-adder.wly:374:55</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:375:9</span></span><span class="nowrap"><span class="t-3003-c">$pg$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:375:9</span></span><span class="t-3003-c">-Gate<span class="t-3003">./course1/wly/02/03-binary-adder.wly:375:13</span></span></span><span class="t-3003-c">
-          hat an sich Tiefe 2 (siehe oben), und mit den<span class="t-3003">./course1/wly/02/03-binary-adder.wly:375:13</span></span>
-        <span class="t-3003-c">untersten
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:376:9</span></span><span class="t-3003-c">$pg_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:376:19</span></span><span class="t-3003-c">
-          kommt noch einmal eine Schicht dazu. Die<span class="t-3003">./course1/wly/02/03-binary-adder.wly:376:25</span></span>
-        <span class="t-3003-c">Gesamttiefe des oben abgebildeten Schaltkreises ist also<span class="t-3003">./course1/wly/02/03-binary-adder.wly:377:9</span></span>
+        Jede Kante steht hier für zwei gebündelte Kanten,
+        nämlich $p_I$ und
+        <span class="nowrap">$g_I$.</span>
+        Und dies ist unser
+        Schaltkreis. Beachten Sie, dass die untersten $pg_{i}$
+        keine Input-Gates sind, sondern wiederum aus
+        $x_i, y_i$ berechnet werden mittels
+        $p_i = x_i \vee y_i$ bzw.
+        <span class="nowrap">$g_i = x_i \wedge y_i$.</span>
+        Der
+        Schaltkreis hat also $2n$ Input-Gates und pro
+        Binärinterval $I$ zwei Output-Gates:
+        <span class="nowrap">$p_I, g_I$.</span>
+        Jedes $pg$ im obigen Bild ist also gleichzeitig ein
+        Output-Gate (auch wenn es für weiter oben
+        "wiederverwendet" wird; nirgendwo steht geschrieben,
+        dass ein Output-Gate keine ausgehenden Kanten haben
+        darf). Sie sehen, dass maximal $\ceil{\log_2 n}$
+        viele
+        <span class="nowrap">$pg$-Gates</span>
+        hintereinander kommen. Die
+        <span class="nowrap">$pg$-Gate-Tiefe</span>
+        ist also
+        <span class="nowrap">$\ceil{\log_2 n}$.</span>
+        Jedes
+        <span class="nowrap">$pg$-Gate</span>
+        hat an sich Tiefe 2 (siehe oben), und mit
+        den untersten $pg_i$ kommt noch einmal eine Schicht
+        dazu. Die Gesamttiefe des oben abgebildeten
+        Schaltkreises ist also
       </p>
       <div class="math-block">
         $$
         2\, \ceil{\log_2 n} + 1 \ .
-        $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:379:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Um die Größe zu bestimmen, beachten Sie, dass der<span class="t-3003">./course1/wly/02/03-binary-adder.wly:383:9</span></span>
-        <span class="t-3003-c">Schaltkreis wie ein Binärbaum aus
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:384:9</span></span><span class="nowrap"><span class="t-3003-c">$pg$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:384:43</span></span><span class="t-3003-c">-Gates<span class="t-3003">./course1/wly/02/03-binary-adder.wly:384:47</span></span></span><span class="t-3003-c">
-          aussieht. Für<span class="t-3003">./course1/wly/02/03-binary-adder.wly:384:47</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:385:9</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:385:9</span></span><span class="t-3003-c">
-          -stellige Zahlen gibt es also
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:385:12</span></span><span class="t-3003-c">$n-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:385:43</span></span><span class="t-3003-c">
-          viele
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:385:48</span></span><span class="nowrap"><span class="t-3003-c">$pg$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:385:55</span></span><span class="t-3003-c">-Gates,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:385:59</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:385:59</span></span>
-        <span class="t-3003-c">von denen jedes vier "normale" Gates hat. Pro unterstem<span class="t-3003">./course1/wly/02/03-binary-adder.wly:386:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:387:9</span></span><span class="t-3003-c">$pg_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:387:9</span></span><span class="t-3003-c">
-          kommen noch einmal zwei hinzu: ein
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:387:15</span></span><span class="nowrap"><span class="t-3003-c">$\wedge$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:387:51</span></span><span class="t-3003-c">-Gate<span class="t-3003">./course1/wly/02/03-binary-adder.wly:387:59</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:387:59</span></span>
-        <span class="t-3003-c">für
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:388:9</span></span><span class="t-3003-c">$g_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:388:13</span></span><span class="t-3003-c">
-          und ein
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:388:18</span></span><span class="t-3003-c">$\vee$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:388:27</span></span><span class="t-3003-c">
-          -Gate für
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:388:33</span></span><span class="nowrap"><span class="t-3003-c">$p_i$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:388:44</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:388:49</span></span></span><span class="t-3003-c">
-          Insgesamt also<span class="t-3003">./course1/wly/02/03-binary-adder.wly:388:49</span></span>
+        Um die Größe zu bestimmen, beachten Sie, dass der
+        Schaltkreis wie ein Binärbaum aus
+        <span class="nowrap">$pg$-Gates</span>
+        aussieht. Für $n$ -stellige Zahlen gibt es also $n-1$
+        viele
+        <span class="nowrap">$pg$-Gates,</span>
+        von denen jedes vier "normale"
+        Gates hat. Pro unterstem $pg_i$ kommen noch einmal
+        zwei hinzu: ein
+        <span class="nowrap">$\wedge$-Gate</span>
+        für $g_i$ und ein $\vee$
+        -Gate für
+        <span class="nowrap">$p_i$.</span>
+        Insgesamt also
       </p>
       <div class="math-block">
         $$
         4 (n-1) + 2n = 6n - 4 \ ,
-        $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:390:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">wie behauptet.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:394:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        wie behauptet.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Eine anschließende Bemerkung: der Schaltkreis besteht<span class="t-3003">./course1/wly/02/03-binary-adder.wly:396:5</span></span>
-      <span class="t-3003-c">ausschließlich aus AND- und OR-Gates; er enthält keine<span class="t-3003">./course1/wly/02/03-binary-adder.wly:397:5</span></span>
-      <span class="t-3003-c">NOT-Gates und ist somit ein
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:398:5</span></span><i><span class="t-3003-c">monotoner Schaltkreis.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:398:34</span></span></i>
+      Eine anschließende Bemerkung: der Schaltkreis besteht
+      ausschließlich aus AND- und OR-Gates; er enthält keine
+      NOT-Gates und ist somit ein
+      <i>monotoner Schaltkreis.</i>
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Lemma 2.3.5<span class="t-3003">./course1/wly/02/03-binary-adder.wly:400:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:400:5</span></span>
-        <span class="t-3003-c">Es gibt einen Schaltkreis der Größe
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:401:9</span></span><span class="t-3003-c">$2n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:401:45</span></span><span class="t-3003-c">
-          und Tiefe<span class="t-3003">./course1/wly/02/03-binary-adder.wly:401:49</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:402:9</span></span><span class="nowrap"><span class="t-3003-c">$2 \ceil{\log_2 n} - 2 = O(\log n)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:402:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:402:44</span></span></span><span class="t-3003-c">
-          der die
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:402:44</span></span><span class="t-3003-c">$p_I, g_I$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:402:54</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:402:64</span></span>
-        <span class="t-3003-c">für Binärintervalle als Inputs nimmt und daraus
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:403:9</span></span><span class="t-3003-c">$g_{[0,k]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:403:57</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:403:68</span></span>
-        <span class="t-3003-c">berechnet für jedes
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:404:9</span></span><span class="nowrap"><span class="t-3003-c">$k=0,\dots,n-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:404:29</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:404:44</span></span></span><span class="t-3003-c">
-          also insgesamt
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:404:44</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:404:61</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:404:64</span></span>
-        <span class="t-3003-c">Output-Gates.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:405:9</span></span>
+        <b>Lemma 2.3.5</b>
+        Es gibt einen Schaltkreis der Größe $2n$ und Tiefe
+        <span class="nowrap">$2 \ceil{\log_2 n} - 2 = O(\log n)$,</span>
+        der die
+        $p_I, g_I$ für Binärintervalle als Inputs nimmt und
+        daraus $g_{[0,k]}$ berechnet für jedes
+        <span class="nowrap">$k=0,\dots,n-1$,</span>
+        also insgesamt $n$ Output-Gates.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Die Idee ist, dass wir jedes
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:408:9</span></span><span class="t-3003-c">$[0,k]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:408:38</span></span><span class="t-3003-c">
-          als Vereinigung von<span class="t-3003">./course1/wly/02/03-binary-adder.wly:408:45</span></span>
-        <span class="t-3003-c">wenigen Binärintervallen schreiben können, zum Beispiel<span class="t-3003">./course1/wly/02/03-binary-adder.wly:409:9</span></span>
+        Die Idee ist, dass wir jedes $[0,k]$ als Vereinigung
+        von wenigen Binärintervallen schreiben können, zum
+        Beispiel
       </p>
       <div class="math-block">
         $$
@@ -964,120 +691,69 @@
         [0,9]&amp;= [0,7] \cup [8,9] \ , \\
         [0,12]&amp;= [0,7] \cup [8,11] \cup [12] \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:411:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Wie kann man das formalisieren?
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:416:9</span></span><b><span class="t-3003-c">1. Fall.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:416:42</span></span></b><span class="t-3003-c">
-          Wenn
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:416:51</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:416:57</span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/02/03-binary-adder.wly:416:60</span></span>
-        <span class="t-3003-c">Form
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:417:9</span></span><span class="t-3003-c">$k = 2^d-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:417:14</span></span><span class="t-3003-c">
-          hat, dann ist
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:417:25</span></span><span class="t-3003-c">$[0,k]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:417:40</span></span><span class="t-3003-c">
-          bereits ein<span class="t-3003">./course1/wly/02/03-binary-adder.wly:417:47</span></span>
-        <span class="t-3003-c">Binärintervall; dies passiert, wenn die Binärdarstellung<span class="t-3003">./course1/wly/02/03-binary-adder.wly:418:9</span></span>
-        <span class="t-3003-c">von
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:419:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:419:13</span></span><span class="t-3003-c">
-          die Form
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:419:16</span></span><span class="t-3003-c">$k = (1^b)_2$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:419:26</span></span><span class="t-3003-c">
-          hat (wobei
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:419:39</span></span><span class="t-3003-c">$b=0$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:419:51</span></span><span class="t-3003-c">
-          sein kann,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:419:56</span></span>
-        <span class="t-3003-c">in welchem Fall
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:420:9</span></span><span class="t-3003-c">$k=0$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:420:25</span></span><span class="t-3003-c">
-          ist).
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:420:30</span></span><b><span class="t-3003-c">2. Fall.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:420:38</span></span></b><span class="t-3003-c">
-          Wenn
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:420:47</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:420:53</span></span><span class="t-3003-c">
-          nicht die<span class="t-3003">./course1/wly/02/03-binary-adder.wly:420:56</span></span>
-        <span class="t-3003-c">Form
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:421:9</span></span><span class="t-3003-c">$k = 2^d-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:421:14</span></span><span class="t-3003-c">
-          hat, dann hat die Binärdarstellung von
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:421:25</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:421:65</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:421:68</span></span>
-        <span class="t-3003-c">nicht die Form
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:422:9</span></span><span class="nowrap"><span class="t-3003-c">$1^b$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:422:24</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/02/03-binary-adder.wly:422:29</span></span></span><span class="t-3003-c">
-          sie enthält also auch nicht-führende<span class="t-3003">./course1/wly/02/03-binary-adder.wly:422:29</span></span>
-        <span class="t-3003-c">Nullen (beachten Sie, dass
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:423:9</span></span><span class="t-3003-c">$(0111)_2$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:423:36</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:423:46</span></span><span class="t-3003-c">$(111)_2$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:423:51</span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/02/03-binary-adder.wly:423:60</span></span>
-        <span class="t-3003-c">gleiche natürliche Zahl darstellen, nämlich 7). Die Zahl<span class="t-3003">./course1/wly/02/03-binary-adder.wly:424:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:425:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:425:9</span></span><span class="t-3003-c">
-          hat also die Form
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:425:12</span></span><span class="t-3003-c">$k = (\alpha 1 0^a 1^b)_2$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:425:31</span></span><span class="t-3003-c">
-          für<span class="t-3003">./course1/wly/02/03-binary-adder.wly:425:57</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:426:9</span></span><span class="t-3003-c">$a \geq 1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:426:9</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:426:19</span></span><span class="nowrap"><span class="t-3003-c">$b \geq 0$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:426:24</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:426:34</span></span></span><span class="t-3003-c">
-          Definieren wir<span class="t-3003">./course1/wly/02/03-binary-adder.wly:426:34</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:427:9</span></span><span class="nowrap"><span class="t-3003-c">$l := (\alpha 0 1^a 1^b)_2$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:427:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:427:36</span></span></span><span class="t-3003-c">
-          Dann gilt<span class="t-3003">./course1/wly/02/03-binary-adder.wly:427:36</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:428:9</span></span><span class="nowrap"><span class="t-3003-c">$l+1 = (\alpha 1 0^a 0^b)_2$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:428:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:428:37</span></span></span><span class="t-3003-c">
-          Es gilt also<span class="t-3003">./course1/wly/02/03-binary-adder.wly:428:37</span></span>
+        Wie kann man das formalisieren?
+        <b>1. Fall.</b>
+        Wenn $k$
+        die Form $k = 2^d-1$ hat, dann ist $[0,k]$ bereits
+        ein Binärintervall; dies passiert, wenn die
+        Binärdarstellung von $k$ die Form $k = (1^b)_2$ hat
+        (wobei $b=0$ sein kann, in welchem Fall $k=0$ ist).
+        <b>2. Fall.</b>
+        Wenn $k$ nicht die Form $k = 2^d-1$ hat,
+        dann hat die Binärdarstellung von $k$ nicht die Form
+        <span class="nowrap">$1^b$;</span>
+        sie enthält also auch nicht-führende Nullen
+        (beachten Sie, dass $(0111)_2$ und $(111)_2$ die
+        gleiche natürliche Zahl darstellen, nämlich 7). Die
+        Zahl $k$ hat also die Form $k = (\alpha 1 0^a 1^b)_2$
+        für $a \geq 1$ und
+        <span class="nowrap">$b \geq 0$.</span>
+        Definieren wir
+        <span class="nowrap">$l := (\alpha 0 1^a 1^b)_2$.</span>
+        Dann gilt
+        <span class="nowrap">$l+1 = (\alpha 1 0^a 0^b)_2$.</span>
+        Es gilt also
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         [l+1, k] = [(\alpha 1 0^a 0^b)_2, (\alpha 1 0^a 1^b)_2] = [\alpha 1 0^a *^b] \ ,
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:430:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">es handelt sich bei
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:434:9</span></span><span class="t-3003-c">$[l+1,k]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:434:29</span></span><span class="t-3003-c">
-          also um ein Binärintervall.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:434:38</span></span>
-        <span class="t-3003-c">Eine äquivalente Definition von
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:435:9</span></span><span class="t-3003-c">$l$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:435:41</span></span><span class="t-3003-c">
-          wäre: das kleinste
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:435:44</span></span><span class="nowrap"><span class="t-3003-c">$l$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:435:64</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:435:67</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:435:67</span></span>
-        <span class="t-3003-c">so dass
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:436:9</span></span><span class="t-3003-c">$[l+1,k]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:436:17</span></span><span class="t-3003-c">
-          ein Binärintervall ist. Wir zerlegen nun<span class="t-3003">./course1/wly/02/03-binary-adder.wly:436:26</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:437:9</span></span><span class="t-3003-c">$[0,k] = [0,l] \cup [k+1,l]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:437:9</span></span><span class="t-3003-c">
-          und berechnen
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:437:37</span></span><span class="t-3003-c">$pg_{[0,k]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:437:52</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:437:64</span></span>
-        <span class="t-3003-c">so:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:438:9</span></span>
+        es handelt sich bei $[l+1,k]$ also um ein
+        Binärintervall. Eine äquivalente Definition von $l$
+        wäre: das kleinste
+        <span class="nowrap">$l$,</span>
+        so dass $[l+1,k]$ ein
+        Binärintervall ist. Wir zerlegen nun
+        $[0,k] = [0,l] \cup [k+1,l]$ und berechnen
+        $pg_{[0,k]}$ so:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:5em"
             src="img/circuits/pg0k.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/pg0k.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Der Wert
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:445:9</span></span><span class="t-3003-c">$pg_{[l+1,k]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:445:18</span></span><span class="t-3003-c">
-          ist bereits ein Binärintervall,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:445:32</span></span>
-        <span class="t-3003-c">kann also direkt aus dem vorherigen Schaltkreis abgelesen<span class="t-3003">./course1/wly/02/03-binary-adder.wly:446:9</span></span>
-        <span class="t-3003-c">werden; der andere Input,
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:447:9</span></span><span class="nowrap"><span class="t-3003-c">$pg_{[0,l]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:447:35</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:447:47</span></span></span><span class="t-3003-c">
-          muss rekursiv<span class="t-3003">./course1/wly/02/03-binary-adder.wly:447:47</span></span>
-        <span class="t-3003-c">berechnet werden. Beachten Sie, dass<span class="t-3003">./course1/wly/02/03-binary-adder.wly:448:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:449:9</span></span><span class="t-3003-c">$l = (\alpha 0 1^a 1^b)_2)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:449:9</span></span><span class="t-3003-c">
-          gilt, die Anzahl der<span class="t-3003">./course1/wly/02/03-binary-adder.wly:449:36</span></span>
-        <span class="t-3003-c">schließenden 1en in der Binärdarstellung also von
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:450:9</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:450:59</span></span><span class="t-3003-c">
-          auf<span class="t-3003">./course1/wly/02/03-binary-adder.wly:450:62</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:451:9</span></span><span class="t-3003-c">$a+b \geq b+1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:451:9</span></span><span class="t-3003-c">
-          gewachsen ist. Hier ist ein Beispiel für<span class="t-3003">./course1/wly/02/03-binary-adder.wly:451:23</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:452:9</span></span><span class="nowrap"><span class="t-3003-c">$n = 32, k = 28$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:452:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:452:25</span></span></span><span class="t-3003-c">
-          in Dezimal- und Binärdarstellung:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:452:25</span></span>
+        Der Wert $pg_{[l+1,k]}$ ist bereits ein
+        Binärintervall, kann also direkt aus dem vorherigen
+        Schaltkreis abgelesen werden; der andere Input,
+        <span class="nowrap">$pg_{[0,l]}$,</span>
+        muss rekursiv berechnet werden.
+        Beachten Sie, dass $l = (\alpha 0 1^a 1^b)_2)$ gilt,
+        die Anzahl der schließenden 1en in der
+        Binärdarstellung also von $b$ auf $a+b \geq b+1$
+        gewachsen ist. Hier ist ein Beispiel für
+        <span class="nowrap">$n = 32, k = 28$,</span>
+        in Dezimal- und Binärdarstellung:
       </p>
       <div class="math-block">
         $$
@@ -1085,242 +761,166 @@
         [0,28]&amp;= [0,15] \cup [16,23] \cup [24,27] \cup [28] \\
         [00000, 11100]&amp;= [00000,01111] \cup [10000,10111] \cup [11000, 11011] \cup [11100] \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:454:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Beachten wir die Folge
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:459:9</span></span><span class="nowrap"><span class="t-3003-c">$28, 27, 23, 15$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:459:32</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:459:48</span></span></span><span class="t-3003-c">
-          also immer die<span class="t-3003">./course1/wly/02/03-binary-adder.wly:459:48</span></span>
-        <span class="t-3003-c">Endpunkte der betreffenden Intervalle; wir haben gesehen,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:460:9</span></span>
-        <span class="t-3003-c">dass die Anzahl der schließenden 1en von Element zu Element<span class="t-3003">./course1/wly/02/03-binary-adder.wly:461:9</span></span>
-        <span class="t-3003-c">in dieser Folge strikt zunimmt (im Allgemeinen folgt auf<span class="t-3003">./course1/wly/02/03-binary-adder.wly:462:9</span></span>
-        <span class="t-3003-c">Element
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:463:9</span></span><span class="t-3003-c">$k=(\alpha 1 0^a 1^b)_2)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:463:17</span></span><span class="t-3003-c">
-          das Element<span class="t-3003">./course1/wly/02/03-binary-adder.wly:463:42</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:464:9</span></span><span class="nowrap"><span class="t-3003-c">$l := (\alpha 0 1^a 1^b)_2$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:464:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:464:36</span></span></span><span class="t-3003-c">
-          Die Anzahl schließender 1en<span class="t-3003">./course1/wly/02/03-binary-adder.wly:464:36</span></span>
-        <span class="t-3003-c">ist mindestens 0 (trivialierweise) und höchstens
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:465:9</span></span><span class="nowrap"><span class="t-3003-c">$d$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:465:58</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/02/03-binary-adder.wly:465:61</span></span></span><span class="t-3003-c">
-          ein<span class="t-3003">./course1/wly/02/03-binary-adder.wly:465:61</span></span>
-        <span class="t-3003-c">genauerer Blick zeigt, dass sie sogar höchstens
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:466:9</span></span><span class="t-3003-c">$d-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:466:57</span></span><span class="t-3003-c">
-          ist:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:466:62</span></span>
-        <span class="t-3003-c">wäre sie genau
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:467:9</span></span><span class="nowrap"><span class="t-3003-c">$d$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:467:24</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:467:27</span></span></span><span class="t-3003-c">
-          dann hätten wir es mit der Zahl<span class="t-3003">./course1/wly/02/03-binary-adder.wly:467:27</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:468:9</span></span><span class="t-3003-c">$(1^d)_2 = 2^d-1 \geq n-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:468:9</span></span><span class="t-3003-c">
-          zu tun; da aber die Folge der<span class="t-3003">./course1/wly/02/03-binary-adder.wly:468:35</span></span>
-        <span class="t-3003-c">Zahlen
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:469:9</span></span><span class="nowrap"><i><span class="t-3003-c">abnimmt<span class="t-3003">./course1/wly/02/03-binary-adder.wly:469:17</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:469:25</span></span></span><span class="t-3003-c">
-          müsste bereits
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:469:25</span></span><span class="t-3003-c">$k = 2^d-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:469:42</span></span><span class="t-3003-c">
-          gelten, und<span class="t-3003">./course1/wly/02/03-binary-adder.wly:469:53</span></span>
-        <span class="t-3003-c">wir wären in Fall 1, bzw. bereits fertig, weil
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:470:9</span></span><span class="t-3003-c">$[0,k]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:470:56</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:470:63</span></span>
-        <span class="t-3003-c">bereits in Binärintervall wäre. Der Wert von
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:471:9</span></span><span class="nowrap"><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:471:54</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:471:57</span></span></span><span class="t-3003-c">
-          der<span class="t-3003">./course1/wly/02/03-binary-adder.wly:471:57</span></span>
-        <span class="t-3003-c">Anzahl schließender 1en, kann also höchstens
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:472:9</span></span><span class="t-3003-c">$d-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:472:54</span></span><span class="t-3003-c">
-          mal<span class="t-3003">./course1/wly/02/03-binary-adder.wly:472:59</span></span>
-        <span class="t-3003-c">zunehmen, und somit brauchen wir höchstens
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:473:9</span></span><span class="t-3003-c">$d-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:473:52</span></span><span class="t-3003-c">
-          viele<span class="t-3003">./course1/wly/02/03-binary-adder.wly:473:57</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:474:9</span></span><span class="nowrap"><span class="t-3003-c">$pg$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:474:9</span></span><span class="t-3003-c">-Gates.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:474:13</span></span></span><span class="t-3003-c">
-          Das Maximum wird erreicht, wenn<span class="t-3003">./course1/wly/02/03-binary-adder.wly:474:13</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:475:9</span></span><span class="nowrap"><span class="t-3003-c">$k = (1...10)_2$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:475:9</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:475:25</span></span></span>
+        Beachten wir die Folge
+        <span class="nowrap">$28, 27, 23, 15$,</span>
+        also immer
+        die Endpunkte der betreffenden Intervalle; wir haben
+        gesehen, dass die Anzahl der schließenden 1en von
+        Element zu Element in dieser Folge strikt zunimmt (im
+        Allgemeinen folgt auf Element
+        $k=(\alpha 1 0^a 1^b)_2)$ das Element
+        <span class="nowrap">$l := (\alpha 0 1^a 1^b)_2$.</span>
+        Die Anzahl schließender
+        1en ist mindestens 0 (trivialierweise) und höchstens
+        <span class="nowrap">$d$;</span>
+        ein genauerer Blick zeigt, dass sie sogar
+        höchstens $d-1$ ist: wäre sie genau
+        <span class="nowrap">$d$,</span>
+        dann hätten
+        wir es mit der Zahl $(1^d)_2 = 2^d-1 \geq n-1$ zu
+        tun; da aber die Folge der Zahlen
+        <span class="nowrap"><i>abnimmt</i>,</span>
+        müsste
+        bereits $k = 2^d-1$ gelten, und wir wären in Fall 1,
+        bzw. bereits fertig, weil $[0,k]$ bereits in
+        Binärintervall wäre. Der Wert von
+        <span class="nowrap">$b$,</span>
+        der Anzahl
+        schließender 1en, kann also höchstens $d-1$ mal
+        zunehmen, und somit brauchen wir höchstens $d-1$
+        viele
+        <span class="nowrap">$pg$-Gates.</span>
+        Das Maximum wird erreicht, wenn
+        <span class="nowrap">$k = (1...10)_2$:</span>
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:18em"
             src="img/circuits/pg-0-30.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/pg-0-30.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <b><span class="t-3003-c">Tiefe.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:482:10</span></span></b><span class="t-3003-c">
-          Jedes
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:482:17</span></span><span class="nowrap"><span class="t-3003-c">$pg$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:482:24</span></span><span class="t-3003-c">-Gate<span class="t-3003">./course1/wly/02/03-binary-adder.wly:482:28</span></span></span><span class="t-3003-c">
-          hat Tiefe 2, und somit erreichen<span class="t-3003">./course1/wly/02/03-binary-adder.wly:482:28</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:483:9</span></span><span class="t-3003-c">$d-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:483:9</span></span><span class="t-3003-c">
-          solche Gates hintereinander zusammen eine Tiefe von<span class="t-3003">./course1/wly/02/03-binary-adder.wly:483:14</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:484:9</span></span><span class="nowrap"><span class="t-3003-c">$2 (d-1) = 2 \ceil{\log_2 n} - 2$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:484:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:484:42</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:484:42</span></span><b><span class="t-3003-c">Größe.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:484:45</span></span></b><span class="t-3003-c">
-          Zählen wir die<span class="t-3003">./course1/wly/02/03-binary-adder.wly:484:52</span></span>
-        <span class="t-3003-c">Anzahl von
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:485:9</span></span><span class="nowrap"><span class="t-3003-c">$pg$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:485:20</span></span><span class="t-3003-c">-Gates<span class="t-3003">./course1/wly/02/03-binary-adder.wly:485:24</span></span></span><span class="t-3003-c">
-          in unserem Schaltkreis. Wir haben<span class="t-3003">./course1/wly/02/03-binary-adder.wly:485:24</span></span>
-        <span class="t-3003-c">bereits gesehen, dass die Berechnung von
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:486:9</span></span><span class="t-3003-c">$g_{[0,k]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:486:50</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:486:61</span></span>
-        <span class="t-3003-c">höchstens
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:487:9</span></span><span class="t-3003-c">$d-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:487:19</span></span><span class="t-3003-c">
-          viele
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:487:24</span></span><span class="nowrap"><span class="t-3003-c">$pg$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:487:31</span></span><span class="t-3003-c">-Gates<span class="t-3003">./course1/wly/02/03-binary-adder.wly:487:35</span></span></span><span class="t-3003-c">
-          braucht. Es scheint also,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:487:35</span></span>
-        <span class="t-3003-c">als bräuchten wir für alle
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:488:9</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:488:36</span></span><span class="t-3003-c">
-          Werte von
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:488:39</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:488:50</span></span><span class="t-3003-c">
-          insgesamt<span class="t-3003">./course1/wly/02/03-binary-adder.wly:488:53</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:489:9</span></span><span class="t-3003-c">$(d-1)n = \Theta(n \log n)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:489:9</span></span><span class="t-3003-c">
-          viele. Wir könnten vielleicht<span class="t-3003">./course1/wly/02/03-binary-adder.wly:489:36</span></span>
-        <span class="t-3003-c">noch eine genauere Schranke beweisen, weil nicht jedes
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:490:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:490:64</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:490:67</span></span>
-        <span class="t-3003-c">den Wert
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:491:9</span></span><span class="t-3003-c">$d-1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:491:18</span></span><span class="t-3003-c">
-          erreicht, allerdings würde auch eine<span class="t-3003">./course1/wly/02/03-binary-adder.wly:491:23</span></span>
-        <span class="t-3003-c">genauere Rechnung
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:492:9</span></span><span class="nowrap"><span class="t-3003-c">$\Theta(n \log n)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:492:27</span></span><span class="t-3003-c">)<span class="t-3003">./course1/wly/02/03-binary-adder.wly:492:45</span></span></span><span class="t-3003-c">
-          ergeben; das ist<span class="t-3003">./course1/wly/02/03-binary-adder.wly:492:45</span></span>
-        <span class="t-3003-c">nicht schlecht, allerdings asymptotisch deutlich schlechter<span class="t-3003">./course1/wly/02/03-binary-adder.wly:493:9</span></span>
-        <span class="t-3003-c">als der Ripple-Through-Addierer, und eben auch nicht das,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:494:9</span></span>
-        <span class="t-3003-c">was wir im Lemma behaupten. Nein, es ist in der Tat viel<span class="t-3003">./course1/wly/02/03-binary-adder.wly:495:9</span></span>
-        <span class="t-3003-c">einfacher. Schauen Sie, wir berechnen oben zum Beispiel<span class="t-3003">./course1/wly/02/03-binary-adder.wly:496:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:497:9</span></span><span class="t-3003-c">$pg_{[0,29]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:497:9</span></span><span class="t-3003-c">
-          , in dem wir
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:497:22</span></span><span class="t-3003-c">$pg_{[28,29]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:497:36</span></span><span class="t-3003-c">
-          (was bereits als<span class="t-3003">./course1/wly/02/03-binary-adder.wly:497:50</span></span>
-        <span class="t-3003-c">Input bereitgestellt wird, weil
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:498:9</span></span><span class="t-3003-c">$[28,29]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:498:41</span></span><span class="t-3003-c">
-          ein<span class="t-3003">./course1/wly/02/03-binary-adder.wly:498:50</span></span>
-        <span class="t-3003-c">Binärintervall ist) mit
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:499:9</span></span><span class="t-3003-c">$pg_{[0,27]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:499:33</span></span><span class="t-3003-c">
-          kombinieren. Nun<span class="t-3003">./course1/wly/02/03-binary-adder.wly:499:46</span></span>
-        <span class="t-3003-c">muss aber
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:500:9</span></span><span class="t-3003-c">$k=29$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:500:19</span></span><span class="t-3003-c">
-          nicht für
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:500:25</span></span><span class="t-3003-c">$pg_{[0,27]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:500:36</span></span><span class="t-3003-c">
-          "bezahlen", weil<span class="t-3003">./course1/wly/02/03-binary-adder.wly:500:49</span></span>
-        <span class="t-3003-c">wir es für
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:501:9</span></span><span class="t-3003-c">$k = 27$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:501:20</span></span><span class="t-3003-c">
-          eh berechnen müssen! In anderen<span class="t-3003">./course1/wly/02/03-binary-adder.wly:501:28</span></span>
-        <span class="t-3003-c">Worten, jedes
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:502:9</span></span><span class="t-3003-c">$pg_{[0, l]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:502:23</span></span><span class="t-3003-c">
-          ist ja nicht nur<span class="t-3003">./course1/wly/02/03-binary-adder.wly:502:36</span></span>
-        <span class="t-3003-c">Zwischenergebnis, sondern selbst Output-Gate, und somit ist<span class="t-3003">./course1/wly/02/03-binary-adder.wly:503:9</span></span>
-        <span class="t-3003-c">die Anzahl der
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:504:9</span></span><span class="nowrap"><span class="t-3003-c">$pg$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:504:25</span></span><span class="t-3003-c">-Gates<span class="t-3003">./course1/wly/02/03-binary-adder.wly:504:29</span></span></span><span class="t-3003-c">
-          gleich der Anzahl der<span class="t-3003">./course1/wly/02/03-binary-adder.wly:504:29</span></span>
-        <span class="t-3003-c">Output-Gates, nämlich genau
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:505:9</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:505:37</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:505:40</span></span></span><span class="t-3003-c">
-          Sogar weniger, weil wir<span class="t-3003">./course1/wly/02/03-binary-adder.wly:505:40</span></span>
-        <span class="t-3003-c">gar kein Gate brauchen, wenn
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:506:9</span></span><span class="t-3003-c">$[0,k]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:506:38</span></span><span class="t-3003-c">
-          bereits ein<span class="t-3003">./course1/wly/02/03-binary-adder.wly:506:45</span></span>
-        <span class="t-3003-c">Binärinterval ist. Hier ist die Konstruktion für
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:507:9</span></span><span class="nowrap"><span class="t-3003-c">$n=16$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:507:58</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:507:64</span></span></span>
+        <b>Tiefe.</b>
+        Jedes
+        <span class="nowrap">$pg$-Gate</span>
+        hat Tiefe 2, und somit
+        erreichen $d-1$ solche Gates hintereinander zusammen
+        eine Tiefe von
+        <span class="nowrap">$2 (d-1) = 2 \ceil{\log_2 n} - 2$.</span>
+        <b>Größe.</b>
+        Zählen wir die Anzahl von
+        <span class="nowrap">$pg$-Gates</span>
+        in
+        unserem Schaltkreis. Wir haben bereits gesehen, dass
+        die Berechnung von $g_{[0,k]}$ höchstens $d-1$ viele
+        <span class="nowrap">$pg$-Gates</span>
+        braucht. Es scheint also, als bräuchten
+        wir für alle $n$ Werte von $k$ insgesamt
+        $(d-1)n = \Theta(n \log n)$ viele. Wir könnten
+        vielleicht noch eine genauere Schranke beweisen, weil
+        nicht jedes $k$ den Wert $d-1$ erreicht, allerdings
+        würde auch eine genauere Rechnung
+        <span class="nowrap">$\Theta(n \log n)$)</span>
+        ergeben; das ist nicht schlecht, allerdings
+        asymptotisch deutlich schlechter als der
+        Ripple-Through-Addierer, und eben auch nicht das, was
+        wir im Lemma behaupten. Nein, es ist in der Tat viel
+        einfacher. Schauen Sie, wir berechnen oben zum
+        Beispiel $pg_{[0,29]}$ , in dem wir $pg_{[28,29]}$
+        (was bereits als Input bereitgestellt wird, weil
+        $[28,29]$ ein Binärintervall ist) mit $pg_{[0,27]}$
+        kombinieren. Nun muss aber $k=29$ nicht für
+        $pg_{[0,27]}$ "bezahlen", weil wir es für $k = 27$ eh
+        berechnen müssen! In anderen Worten, jedes
+        $pg_{[0, l]}$ ist ja nicht nur Zwischenergebnis,
+        sondern selbst Output-Gate, und somit ist die Anzahl
+        der
+        <span class="nowrap">$pg$-Gates</span>
+        gleich der Anzahl der Output-Gates,
+        nämlich genau
+        <span class="nowrap">$n$.</span>
+        Sogar weniger, weil wir gar kein
+        Gate brauchen, wenn $[0,k]$ bereits ein Binärinterval
+        ist. Hier ist die Konstruktion für
+        <span class="nowrap">$n=16$:</span>
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:20em"
             src="img/circuits/pg-prefices-16.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/pg-prefices-16.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Wir benötigen also (weniger als)
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:514:9</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:514:42</span></span><span class="t-3003-c">
-          viele
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:514:45</span></span><span class="t-3003-c">$pg$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:514:52</span></span><span class="t-3003-c">
-          -Gates;<span class="t-3003">./course1/wly/02/03-binary-adder.wly:514:56</span></span>
-        <span class="t-3003-c">jedes davon besteht wiederum aus 4 Basis-Gates<span class="t-3003">./course1/wly/02/03-binary-adder.wly:515:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:516:9</span></span><span class="nowrap"><span class="t-3003-c">$\wedge, \vee$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:516:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:516:23</span></span></span><span class="t-3003-c">
-          und somit brauchen wir maximal
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:516:23</span></span><span class="t-3003-c">$4n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:516:56</span></span><span class="t-3003-c">
-          Gates.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:516:60</span></span>
-        <span class="t-3003-c">Wenn wir ganz genau hinsehen, können wir es mit
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:517:9</span></span><span class="t-3003-c">$2n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:517:57</span></span><span class="t-3003-c">
-          Gates<span class="t-3003">./course1/wly/02/03-binary-adder.wly:517:61</span></span>
-        <span class="t-3003-c">schaffen: da
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:518:9</span></span><span class="nowrap"><span class="t-3003-c">$c_{k+1} = g_{[0,k]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:518:22</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:518:43</span></span></span><span class="t-3003-c">
-          brauchen wir ja<span class="t-3003">./course1/wly/02/03-binary-adder.wly:518:43</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:519:9</span></span><span class="t-3003-c">$p_{[0,k]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:519:9</span></span><span class="t-3003-c">
-          gar nicht. Auch, um
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:519:20</span></span><span class="t-3003-c">$g_{[0,k]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:519:41</span></span><span class="t-3003-c">
-          aus<span class="t-3003">./course1/wly/02/03-binary-adder.wly:519:52</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:520:9</span></span><span class="t-3003-c">$pg_{[0,l]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:520:9</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:520:21</span></span><span class="t-3003-c">$pg_{[l+1,k]}]$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:520:26</span></span><span class="t-3003-c">
-          zu berechnen, brauchen<span class="t-3003">./course1/wly/02/03-binary-adder.wly:520:41</span></span>
-        <span class="t-3003-c">wir
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:521:9</span></span><span class="t-3003-c">$p_{[0,l]}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:521:13</span></span><span class="t-3003-c">
-          nicht:<span class="t-3003">./course1/wly/02/03-binary-adder.wly:521:24</span></span>
+        Wir benötigen also (weniger als) $n$ viele $pg$
+        -Gates; jedes davon besteht wiederum aus 4 Basis-Gates
+        <span class="nowrap">$\wedge, \vee$,</span>
+        und somit brauchen wir maximal $4n$
+        Gates. Wenn wir ganz genau hinsehen, können wir es mit
+        $2n$ Gates schaffen: da
+        <span class="nowrap">$c_{k+1} = g_{[0,k]}$,</span>
+        brauchen wir ja $p_{[0,k]}$ gar nicht. Auch, um
+        $g_{[0,k]}$ aus $pg_{[0,l]}$ und $pg_{[l+1,k]}]$ zu
+        berechnen, brauchen wir $p_{[0,l]}$ nicht:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:15em"
             src="img/circuits/pg-gadget-no-need-p.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/pg-gadget-no-need-p.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Es reichen also in der Tat
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:528:9</span></span><span class="t-3003-c">$2n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:528:36</span></span><span class="t-3003-c">
-          Basis-Gates aus.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:528:40</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Es reichen also in der Tat $2n$ Basis-Gates aus.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir kombinieren wir nun die beiden Lemmas und erhalten<span class="t-3003">./course1/wly/02/03-binary-adder.wly:530:5</span></span>
-      <span class="t-3003-c">einen Schaltkreis der Tiefe
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:531:5</span></span><span class="t-3003-c">$4 \ceil { \log_2 n } - 1$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:531:33</span></span><span class="t-3003-c">
-        und<span class="t-3003">./course1/wly/02/03-binary-adder.wly:531:59</span></span>
-      <span class="t-3003-c">Größe
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:532:5</span></span><span class="nowrap"><span class="t-3003-c">$8n - 4$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:532:11</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/03-binary-adder.wly:532:19</span></span></span><span class="t-3003-c">
-        mit
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:532:19</span></span><span class="t-3003-c">$x_0, y_0, \dots, x_{n-1}, y_{n-1}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:532:25</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:532:60</span></span>
-      <span class="t-3003-c">als Inputvariablen und Carrys
-        <span class="t-3003">./course1/wly/02/03-binary-adder.wly:533:5</span></span><span class="t-3003-c">$c_1, \dots, c_n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:533:35</span></span><span class="t-3003-c">
-        als<span class="t-3003">./course1/wly/02/03-binary-adder.wly:533:52</span></span>
-      <span class="t-3003-c">Output-Variablen. Jetzt können wir schließlich<span class="t-3003">./course1/wly/02/03-binary-adder.wly:534:5</span></span>
+      Wir kombinieren wir nun die beiden Lemmas und
+      erhalten einen Schaltkreis der Tiefe
+      $4 \ceil { \log_2 n } - 1$ und Größe
+      <span class="nowrap">$8n - 4$,</span>
+      mit
+      $x_0, y_0, \dots, x_{n-1}, y_{n-1}$ als
+      Inputvariablen und Carrys $c_1, \dots, c_n$ als
+      Output-Variablen. Jetzt können wir schließlich
     </p>
     <div class="math-block main-column">
       $$
       s_i = x_i \oplus y_i \oplus c_i
-      $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:536:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">berechnen. Dafür brauchen wir noch einen XOR-Schaltkreis<span class="t-3003">./course1/wly/02/03-binary-adder.wly:540:5</span></span>
-      <span class="t-3003-c">mit 3 Input-Gates. Meine Konstruktion hierfür hat 12 Gates<span class="t-3003">./course1/wly/02/03-binary-adder.wly:541:5</span></span>
-      <span class="t-3003-c">(davon 3 NOT-Gates) und Tiefe 4 (wenn wir die NOT-Gates<span class="t-3003">./course1/wly/02/03-binary-adder.wly:542:5</span></span>
-      <span class="t-3003-c">nicht mitzählen.) Insgesamt gibt das also<span class="t-3003">./course1/wly/02/03-binary-adder.wly:543:5</span></span>
+      berechnen. Dafür brauchen wir noch einen
+      XOR-Schaltkreis mit 3 Input-Gates. Meine Konstruktion
+      hierfür hat 12 Gates (davon 3 NOT-Gates) und Tiefe 4
+      (wenn wir die NOT-Gates nicht mitzählen.) Insgesamt
+      gibt das also
     </p>
     <div class="math-block main-column">
       $$
       12 n + 8n - 4 = 20n - 4
-      $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:545:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Gates und Tiefe<span class="t-3003">./course1/wly/02/03-binary-adder.wly:549:5</span></span>
+      Gates und Tiefe
     </p>
     <div class="math-block main-column">
       $$
       4 \ceil { \log_2 n } + 3\ .
-      $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:551:5</span>
+      $$
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 2.3.3<span class="t-3003">./course1/wly/02/03-binary-adder.wly:555:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:555:5</span></span>
-        <span class="t-3003-c">Bauen Sie einen Schaltkreis für die Boolesche Funktion<span class="t-3003">./course1/wly/02/03-binary-adder.wly:556:9</span></span>
-        <span class="t-3003-c">"less-than":<span class="t-3003">./course1/wly/02/03-binary-adder.wly:557:9</span></span>
+        <b>Übungsaufgabe 2.3.3</b>
+        Bauen Sie einen Schaltkreis für die Boolesche
+        Funktion "less-than":
       </p>
       <div class="math-block">
         $$
@@ -1332,21 +932,14 @@
         0&amp;\textnormal{ sonst.}
         \end{cases}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:559:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">der also
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:568:9</span></span><span class="t-3003-c">$\mathbf{x}, \mathbf{y}$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:568:18</span></span><span class="t-3003-c">
-          als
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:568:42</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:568:47</span></span><span class="t-3003-c">
-          -stellige<span class="t-3003">./course1/wly/02/03-binary-adder.wly:568:50</span></span>
-        <span class="t-3003-c">Binärzahlen interpretiert und ausgibt, ob die erste kleiner<span class="t-3003">./course1/wly/02/03-binary-adder.wly:569:9</span></span>
-        <span class="t-3003-c">ist als die zweite. Ihr Schaltkreis sollte im Idealfall<span class="t-3003">./course1/wly/02/03-binary-adder.wly:570:9</span></span>
-        <span class="t-3003-c">Größe
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:571:9</span></span><span class="t-3003-c">$O(n)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:571:15</span></span><span class="t-3003-c">
-          und Tiefe
-          <span class="t-3003">./course1/wly/02/03-binary-adder.wly:571:21</span></span><span class="t-3003-c">$O(\log_2 n)$<span class="t-3003">./course1/wly/02/03-binary-adder.wly:571:32</span></span><span class="t-3003-c">
-          und Fan-in 2 haben.<span class="t-3003">./course1/wly/02/03-binary-adder.wly:571:45</span></span>
+        der also $\mathbf{x}, \mathbf{y}$ als $n$ -stellige
+        Binärzahlen interpretiert und ausgibt, ob die erste
+        kleiner ist als die zweite. Ihr Schaltkreis sollte im
+        Idealfall Größe $O(n)$ und Tiefe $O(\log_2 n)$ und
+        Fan-in 2 haben.
       </p>
     </div>
     <div id="end-of-page-elt">

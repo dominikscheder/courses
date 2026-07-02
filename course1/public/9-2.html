@@ -53,38 +53,17 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">9.2&ensp;Turing-Maschinen zu Schaltkreisen!<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:2:11</span></span>
+        9.2&ensp;Turing-Maschinen zu Schaltkreisen!
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Sei
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:4:5</span></span><span class="t-3003-c">$L \subseteq \{0,1\}^*$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:4:9</span></span><span class="t-3003-c">
-        eine Sprache und
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:4:32</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:4:50</span></span><span class="t-3003-c">
-        eine<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:4:53</span></span>
-      <span class="t-3003-c">Turing-Maschine, die
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:5:5</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:5:26</span></span><span class="t-3003-c">
-        in Zeit
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:5:29</span></span><span class="t-3003-c">$t(n)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:5:38</span></span><span class="t-3003-c">
-        entscheidet. Das<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:5:44</span></span>
-      <span class="t-3003-c">heißt, für jedes
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:6:5</span></span><span class="t-3003-c">$x \in \{0,1\}^*$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:6:22</span></span><span class="t-3003-c">
-        erreicht
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:6:39</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:6:49</span></span><span class="t-3003-c">
-        nach<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:6:52</span></span>
-      <span class="t-3003-c">maximal
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:7:5</span></span><span class="t-3003-c">$t(|x|)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:7:13</span></span><span class="t-3003-c">
-        Schritten einen Endzustand, und<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:7:21</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:8:5</span></span><span class="t-3003-c">$M(x) = \texttt{accept}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:8:5</span></span><span class="t-3003-c">
-        genau dann, wenn
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:8:29</span></span><span class="t-3003-c">$x \in L$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:8:47</span></span><span class="t-3003-c">
-        ist.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:8:56</span></span>
-      <span class="t-3003-c">Für jedes
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:9:5</span></span><span class="t-3003-c">$n \in \N$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:9:15</span></span><span class="t-3003-c">
-        sei
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:9:25</span></span><span class="t-3003-c">$f_{L,n}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:9:30</span></span><span class="t-3003-c">
-        die Boolesche Funktion<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:9:39</span></span>
+      Sei $L \subseteq \{0,1\}^*$ eine Sprache und $M$ eine
+      Turing-Maschine, die $L$ in Zeit $t(n)$ entscheidet.
+      Das heißt, für jedes $x \in \{0,1\}^*$ erreicht $M$
+      nach maximal $t(|x|)$ Schritten einen Endzustand, und
+      $M(x) = \texttt{accept}$ genau dann, wenn $x \in L$
+      ist. Für jedes $n \in \N$ sei $f_{L,n}$ die Boolesche
+      Funktion
     </p>
     <div class="math-block main-column">
       $$
@@ -92,238 +71,138 @@
       f_{L,n} : \{0,1\}^n&amp;\rightarrow \{0,1\} \\
       x&amp;\mapsto [M(x) = \texttt{accept}]
       \end{align*}
-      $$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:11:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Also
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:16:5</span></span><span class="t-3003-c">$f(x)=1$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:16:10</span></span><span class="t-3003-c">
-        falls
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:16:18</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:16:25</span></span><span class="t-3003-c">
-        die Eingabe
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:16:28</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:16:41</span></span><span class="t-3003-c">
-        akzeptiert und<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:16:44</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:17:5</span></span><span class="t-3003-c">$f(x)=0$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:17:5</span></span><span class="t-3003-c">
-        falls
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:17:13</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:17:20</span></span><span class="t-3003-c">
-        die Eingabe ablehnt (falls
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:17:23</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:17:51</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:17:54</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:17:59</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:17:62</span></span>
-      <span class="t-3003-c">aus dem Kontext hervorgehen, schreiben wir einfach
-        <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:18:5</span></span><span class="nowrap"><span class="t-3003-c">$f$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:18:56</span></span><span class="t-3003-c">).<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:18:59</span></span></span>
+      Also $f(x)=1$ falls $M$ die Eingabe $x$ akzeptiert
+      und $f(x)=0$ falls $M$ die Eingabe ablehnt (falls $L$
+      und $n$ aus dem Kontext hervorgehen, schreiben wir
+      einfach
+      <span class="nowrap">$f$).</span>
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Theorem 9.2.1<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:20:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:20:5</span></span>
-        <span class="t-3003-c">Wenn
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:21:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:21:14</span></span><span class="t-3003-c">
-          in Zeit
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:21:17</span></span><span class="t-3003-c">$t(n)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:21:26</span></span><span class="t-3003-c">
-          entscheidbar ist und
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:21:32</span></span><span class="t-3003-c">$t(n) \geq n$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:21:54</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:21:67</span></span>
-        <span class="t-3003-c">gilt, dann gibt es einen Booleschen Schaltkreis
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:22:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:22:57</span></span><span class="t-3003-c">
-          mit<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:22:60</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:23:9</span></span><span class="t-3003-c">$O(t(n)^2)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:23:9</span></span><span class="t-3003-c">
-          Gates, der
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:23:20</span></span><span class="t-3003-c">$f_{L,n}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:23:32</span></span><span class="t-3003-c">
-          berechnet.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:23:41</span></span>
+        <b>Theorem 9.2.1</b>
+        Wenn $L$ in Zeit $t(n)$ entscheidbar ist und
+        $t(n) \geq n$ gilt, dann gibt es einen Booleschen
+        Schaltkreis $C$ mit $O(t(n)^2)$ Gates, der $f_{L,n}$
+        berechnet.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweisidee.</b>
-        
-        <span class="t-3003-c">Die
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:27:9</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:27:13</span></span><span class="t-3003-c">-Band-Turingmaschine<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:27:16</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:27:16</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:27:37</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:27:40</span></span></span><span class="t-3003-c">
-          die
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:27:40</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:27:46</span></span><span class="t-3003-c">
-          entscheidet,<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:27:49</span></span>
-        <span class="t-3003-c">macht auf Eingabe
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:28:9</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:28:27</span></span><span class="t-3003-c">
-          höchstens
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:28:30</span></span><span class="t-3003-c">$T = t(|x|)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:28:41</span></span><span class="t-3003-c">
-          Schritte. Es<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:28:53</span></span>
-        <span class="t-3003-c">gibt also einen Bereich von insgesamt
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:29:9</span></span><span class="t-3003-c">$2Tk$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:29:47</span></span><span class="t-3003-c">
-          Zellen
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:29:52</span></span><span class="nowrap"><span class="t-3003-c">(<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:29:52</span></span><span class="t-3003-c">$2t$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:29:61</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:29:65</span></span>
-        <span class="t-3003-c">pro Band), den sie nie verlässt. Das heißt, jede<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:30:9</span></span>
-        <span class="t-3003-c">Konfiguration besteht aus
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:31:9</span></span><span class="t-3003-c">$O(t)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:31:35</span></span><span class="t-3003-c">
-          Zeichen. Die Funktion<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:31:41</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:32:9</span></span><span class="nowrap"><span class="t-3003-c">$\hat{\delta}_M$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:32:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:32:25</span></span></span><span class="t-3003-c">
-          die für jede Konfiguration
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:32:25</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:32:54</span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:32:57</span></span>
-        <span class="t-3003-c">Nachfolgekonfiguration
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:33:9</span></span><span class="t-3003-c">$C' := \hat{\delta}_M(C)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:33:32</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:33:57</span></span>
-        <span class="t-3003-c">berechnet, ist sehr lokal und sehr einfach; die
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:34:9</span></span><span class="nowrap"><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:34:57</span></span><span class="t-3003-c">-te<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:34:60</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:34:60</span></span>
-        <span class="t-3003-c">Stelle von Konfiguration
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:35:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:35:34</span></span><span class="t-3003-c">
-          hat nur auf die Stellen
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:35:37</span></span><span class="nowrap"><span class="t-3003-c">$i-2$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:35:62</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:35:67</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:35:67</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:36:9</span></span><span class="nowrap"><span class="t-3003-c">$i-1$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:36:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:36:14</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:36:14</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:36:16</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:36:19</span></span><span class="t-3003-c">$i+1$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:36:24</span></span><span class="t-3003-c">
-          von
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:36:29</span></span><span class="t-3003-c">$C'$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:36:34</span></span><span class="t-3003-c">
-          Einfluss. Somit können wir<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:36:38</span></span>
-        <span class="t-3003-c">bei geeigneter binärer Codierung einen effizienten<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:37:9</span></span>
-        <span class="t-3003-c">Schaltkreis bauen, der
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:38:9</span></span><span class="t-3003-c">$\hat{\delta}_{M}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:38:32</span></span><span class="t-3003-c">
-          berechnet. Da<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:38:50</span></span>
-        <span class="t-3003-c">wir wissen, dass
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:39:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:39:26</span></span><span class="t-3003-c">
-          höchstens
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:39:29</span></span><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:39:40</span></span><span class="t-3003-c">
-          Schritte macht, wissen<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:39:43</span></span>
-        <span class="t-3003-c">wir, dass
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:40:9</span></span><span class="t-3003-c">$\hat{\delta}^*(x) = \hat{\delta}^{(T)}(x)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:40:19</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:40:62</span></span>
-        <span class="t-3003-c">gilt; wir können nun einfach
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:41:9</span></span><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:41:38</span></span><span class="t-3003-c">
-          Schaltkreise<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:41:41</span></span>
-        <span class="t-3003-c">hintereinanderschalten, um
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:42:9</span></span><span class="t-3003-c">$\hat{\delta}^*(x)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:42:36</span></span><span class="t-3003-c">
-          und somit<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:42:55</span></span>
-        <span class="t-3003-c">die Endkonfiguration zu berechnen; mit einem weiteren<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:43:9</span></span>
-        <span class="t-3003-c">einfachen Schaltkreis können wir nun den erreichten<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:44:9</span></span>
-        <span class="t-3003-c">Endzustand auslesen und entsprechen 0 oder 1 ausgeben.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:45:9</span></span>
+        Die
+        <span class="nowrap">$k$-Band-Turingmaschine</span>
+        <span class="nowrap">$M$,</span>
+        die $L$ entscheidet,
+        macht auf Eingabe $x$ höchstens $T = t(|x|)$
+        Schritte. Es gibt also einen Bereich von insgesamt
+        $2Tk$ Zellen
+        <span class="nowrap">($2t$</span>
+        pro Band), den sie nie verlässt.
+        Das heißt, jede Konfiguration besteht aus $O(t)$
+        Zeichen. Die Funktion
+        <span class="nowrap">$\hat{\delta}_M$,</span>
+        die für jede
+        Konfiguration $C$ die Nachfolgekonfiguration
+        $C' := \hat{\delta}_M(C)$ berechnet, ist sehr lokal
+        und sehr einfach; die
+        <span class="nowrap">$i$-te</span>
+        Stelle von Konfiguration
+        $C$ hat nur auf die Stellen
+        <span class="nowrap">$i-2$,</span>
+        <span class="nowrap">$i-1$,</span>
+        $i$ und
+        $i+1$ von $C'$ Einfluss. Somit können wir bei
+        geeigneter binärer Codierung einen effizienten
+        Schaltkreis bauen, der $\hat{\delta}_{M}$ berechnet.
+        Da wir wissen, dass $M$ höchstens $T$ Schritte macht,
+        wissen wir, dass
+        $\hat{\delta}^*(x) = \hat{\delta}^{(T)}(x)$ gilt; wir
+        können nun einfach $T$ Schaltkreise
+        hintereinanderschalten, um $\hat{\delta}^*(x)$ und
+        somit die Endkonfiguration zu berechnen; mit einem
+        weiteren einfachen Schaltkreis können wir nun den
+        erreichten Endzustand auslesen und entsprechen 0 oder
+        1 ausgeben.
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Wir zeigen den Beweis schematisch anhand von
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:48:9</span></span><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:48:54</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:48:57</span></span>
-        <span class="t-3003-c">-Band-Turingmaschinen. Für
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:49:9</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:49:36</span></span><span class="t-3003-c">
-          -Bandmaschinen geht es fast<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:49:39</span></span>
-        <span class="t-3003-c">genau so. Erinnern Sie sich an die Definition der<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:50:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:51:9</span></span><a href="./8-1.html#_45_h.a.i_"><i><span class="t-3003-c">Konfiguration<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:51:11</span></span></i></a><span class="t-3003-c">
-          einer<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:51:50</span></span>
-        <span class="t-3003-c">Turing-Maschine. Formal war das ein Wort<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:52:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:53:9</span></span><span class="nowrap"><span class="t-3003-c">$C \in \Gamma^* \times Q \times \Gamma^*$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:53:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:53:50</span></span></span><span class="t-3003-c">
-          Ich zeige hier<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:53:50</span></span>
-        <span class="t-3003-c">schematisch, wie aus einer Konfiguration per
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:54:9</span></span><span class="t-3003-c">$\hat{\delta}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:54:54</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:54:68</span></span>
-        <span class="t-3003-c">die Folgekonfiguration wird:<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:55:9</span></span>
+        Wir zeigen den Beweis schematisch anhand von $1$
+        -Band-Turingmaschinen. Für $k$ -Bandmaschinen geht es
+        fast genau so. Erinnern Sie sich an die Definition der
+        <a href="./8-1.html#_45_h.a.i_"><i>Konfiguration</i></a>
+        einer
+        Turing-Maschine. Formal war das ein Wort
+        <span class="nowrap">$C \in \Gamma^* \times Q \times \Gamma^*$.</span>
+        Ich zeige
+        hier schematisch, wie aus einer Konfiguration per
+        $\hat{\delta}$ die Folgekonfiguration wird:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/09-complexity-theory/to-circuits/to-circuits-01-01.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/09-complexity-theory/to-circuits/to-circuits-01-01.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Wenn also das Kopfsymbol an Stelle
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:62:9</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:62:44</span></span><span class="t-3003-c">
-          der Konfiguration<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:62:47</span></span>
-        <span class="t-3003-c">steht, dann können sich in der Folgekonfiguration nur die<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:63:9</span></span>
-        <span class="t-3003-c">Stellen
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:64:9</span></span><span class="nowrap"><span class="t-3003-c">$i-1$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:64:17</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:64:22</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:64:22</span></span><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:64:24</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:64:27</span></span><span class="t-3003-c">$i+1$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:64:32</span></span><span class="t-3003-c">
-          ändern. Allerdings hat bei<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:64:37</span></span>
-        <span class="t-3003-c">einer Linksbewegung das gelesene Zeichen (an Stelle
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:65:9</span></span><span class="nowrap"><span class="t-3003-c">$i+1$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:65:61</span></span><span class="t-3003-c">)<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:65:66</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:65:66</span></span>
-        <span class="t-3003-c">auch Einfluss auf den zukünftigen Inhalt von Zelle
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:66:9</span></span><span class="nowrap"><span class="t-3003-c">$i-1$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:66:60</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:66:65</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:66:65</span></span>
-        <span class="t-3003-c">Zelle
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:67:9</span></span><span class="t-3003-c">$j$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:67:15</span></span><span class="t-3003-c">
-          kann also Zellen
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:67:18</span></span><span class="t-3003-c">$j-2, j-1, j, j+1$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:67:36</span></span><span class="t-3003-c">
-          im nächsten<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:67:54</span></span>
-        <span class="t-3003-c">Schritt beeinflussen. Lege wir zuerst eine globale<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:68:9</span></span>
-        <span class="t-3003-c">Indizierung der Stellen der Konfiguration fest. Der<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:69:9</span></span>
-        <span class="t-3003-c">Schreib-Lese-Kopf startet an Zelle
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:70:9</span></span><span class="t-3003-c">$0$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:70:44</span></span><span class="t-3003-c">
-          des Bandes; das<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:70:47</span></span>
-        <span class="t-3003-c">Eingabewort belegt also die Zellen
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:71:9</span></span><span class="nowrap"><span class="t-3003-c">$0, 1, \dots, n-1$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:71:44</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:71:62</span></span></span><span class="t-3003-c">
-          Da<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:71:62</span></span>
-        <span class="t-3003-c">die Turingmaschine maximal
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:72:9</span></span><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:72:36</span></span><span class="t-3003-c">
-          Schritte läuft, ist der<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:72:39</span></span>
-        <span class="t-3003-c">Kopf immer auf einer Zelle in
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:73:9</span></span><span class="nowrap"><span class="t-3003-c">$\{-T, \dots, T\}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:73:39</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:73:57</span></span></span><span class="t-3003-c">
-          Wir<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:73:57</span></span>
-        <span class="t-3003-c">können also jede Konfiguration mit
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:74:9</span></span><span class="t-3003-c">$2T+1$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:74:44</span></span><span class="t-3003-c">
-          Zeichen<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:74:50</span></span>
-        <span class="t-3003-c">darstellen - nein, mit
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:75:9</span></span><span class="t-3003-c">$S := 2T+2$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:75:32</span></span><span class="t-3003-c">
-          Zeichen, da der Kopf<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:75:43</span></span>
-        <span class="t-3003-c">selbst ja auch eine Stelle der Konfiguration belegt. Somit<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:76:9</span></span>
-        <span class="t-3003-c">ist also
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:77:9</span></span><span class="nowrap"><span class="t-3003-c">$C \in (Q \cup \Gamma)^{s}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:77:18</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:77:45</span></span></span><span class="t-3003-c">
-          Unbenutzte Zellen<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:77:45</span></span>
-        <span class="t-3003-c">links und rechts füllen wir mit
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:78:9</span></span><span class="t-3003-c">$\Box$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:78:41</span></span><span class="t-3003-c">
-          auf, so dass immer<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:78:47</span></span>
-        <span class="t-3003-c">eine Länge von
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:79:9</span></span><span class="t-3003-c">$s$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:79:24</span></span><span class="t-3003-c">
-          benutzt wird. Sei<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:79:27</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:80:9</span></span><span class="t-3003-c">$C^{(t)} = \hat{\delta}^{(t)}(\qstart, x)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:80:9</span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:80:51</span></span>
-        <span class="t-3003-c">Konfiguration nach
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:81:9</span></span><span class="t-3003-c">$t$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:81:28</span></span><span class="t-3003-c">
-          Schritten. Sei
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:81:31</span></span><span class="t-3003-c">$C^{(t)}_i$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:81:47</span></span><span class="t-3003-c">
-          das<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:81:58</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:82:9</span></span><span class="nowrap"><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:82:9</span></span><span class="t-3003-c">-te<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:82:12</span></span></span><span class="t-3003-c">
-          Zeichen darin. Den Wert von
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:82:12</span></span><span class="t-3003-c">$C^{(t+1)}_i$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:82:44</span></span><span class="t-3003-c">
-          können<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:82:57</span></span>
-        <span class="t-3003-c">wir bestimmen allein mit Kenntnis von
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:83:9</span></span><span class="nowrap"><span class="t-3003-c">$C^{(t)}_{i-1}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:83:47</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:83:62</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:83:62</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:84:9</span></span><span class="nowrap"><span class="t-3003-c">$C^{(t)}_{i}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:84:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:84:22</span></span></span>
+        Wenn also das Kopfsymbol an Stelle $i$ der
+        Konfiguration steht, dann können sich in der
+        Folgekonfiguration nur die Stellen
+        <span class="nowrap">$i-1$,</span>
+        $i$ und
+        $i+1$ ändern. Allerdings hat bei einer Linksbewegung
+        das gelesene Zeichen (an Stelle
+        <span class="nowrap">$i+1$)</span>
+        auch Einfluss
+        auf den zukünftigen Inhalt von Zelle
+        <span class="nowrap">$i-1$;</span>
+        Zelle $j$
+        kann also Zellen $j-2, j-1, j, j+1$ im nächsten
+        Schritt beeinflussen. Lege wir zuerst eine globale
+        Indizierung der Stellen der Konfiguration fest. Der
+        Schreib-Lese-Kopf startet an Zelle $0$ des Bandes;
+        das Eingabewort belegt also die Zellen
+        <span class="nowrap">$0, 1, \dots, n-1$.</span>
+        Da die Turingmaschine maximal $T$
+        Schritte läuft, ist der Kopf immer auf einer Zelle in
+        <span class="nowrap">$\{-T, \dots, T\}$.</span>
+        Wir können also jede
+        Konfiguration mit $2T+1$ Zeichen darstellen - nein,
+        mit $S := 2T+2$ Zeichen, da der Kopf selbst ja auch
+        eine Stelle der Konfiguration belegt. Somit ist also
+        <span class="nowrap">$C \in (Q \cup \Gamma)^{s}$.</span>
+        Unbenutzte Zellen links
+        und rechts füllen wir mit $\Box$ auf, so dass immer
+        eine Länge von $s$ benutzt wird. Sei
+        $C^{(t)} = \hat{\delta}^{(t)}(\qstart, x)$ die
+        Konfiguration nach $t$ Schritten. Sei $C^{(t)}_i$ das
+        <span class="nowrap">$i$-te</span>
+        Zeichen darin. Den Wert von $C^{(t+1)}_i$
+        können wir bestimmen allein mit Kenntnis von
+        <span class="nowrap">$C^{(t)}_{i-1}$,</span>
+        <span class="nowrap">$C^{(t)}_{i}$,</span>
       </p>
       <p>
-        <span class="t-3003-c">$C^{(t)}_{i+1}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:86:9</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:86:24</span></span><span class="nowrap"><span class="t-3003-c">$C^{(t)}_{i+2}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:86:29</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:86:44</span></span></span><span class="t-3003-c">
-          Es gibt also eine<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:86:44</span></span>
-        <span class="t-3003-c">Funktion<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:87:9</span></span>
+        $C^{(t)}_{i+1}$ und
+        <span class="nowrap">$C^{(t)}_{i+2}$.</span>
+        Es gibt also
+        eine Funktion
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \tilde{\delta} : (Q \cup \Gamma)^4 \rightarrow (Q \cup \Gamma)
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:89:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">die dies beschreibt, also mit<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:93:9</span></span>
+        die dies beschreibt, also mit
       </p>
       <div class="math-block">
         $$
@@ -331,13 +210,11 @@
         C^{(t+1)}_i&amp;= \tilde{\delta}
         \left(C^{(t)}_{i-1}, C^{(t)}_{i}, C^{(t)}_{i+1},C^{(t)}_{i+2}\right) \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:95:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Im Detail ist die Arbeitsweise von
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:100:9</span></span><span class="t-3003-c">$\tilde{\delta}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:100:44</span></span><span class="t-3003-c">
-          wie<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:100:60</span></span>
-        <span class="t-3003-c">folgt:<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:101:9</span></span>
+        Im Detail ist die Arbeitsweise von $\tilde{\delta}$
+        wie folgt:
       </p>
       <div class="math-block">
         $$
@@ -361,157 +238,105 @@
         z&amp;\textnormal{ falls $\delta(q,y) = (*, z, L)$} \\
         \end{cases}
         \end{align*}
-        $$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:103:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">Wenn wir
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:124:9</span></span><span class="t-3003-c">$Q \cup \Gamma$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:124:18</span></span><span class="t-3003-c">
-          binär codieren mit<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:124:33</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:125:9</span></span><span class="t-3003-c">$l := \ceil{\log_2 |Q \cup \Gamma|}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:125:9</span></span><span class="t-3003-c">
-          Bits, so wird<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:125:45</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:126:9</span></span><span class="t-3003-c">$\tilde{\delta}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:126:9</span></span><span class="t-3003-c">
-          zu einer Booleschen Funktion<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:126:25</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:127:9</span></span><span class="nowrap"><span class="t-3003-c">$\tilde{\delta} : \{0,1\}^{4l} \rightarrow \{0,1\}^l$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:127:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:127:62</span></span></span><span class="t-3003-c">
-          Wir<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:127:62</span></span>
-        <span class="t-3003-c">können dafür einen Schaltkreis der Größe<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:128:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:129:9</span></span><span class="t-3003-c">$O(2^l) = O(|\Gamma \cup Q|^4)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:129:9</span></span><span class="t-3003-c">
-          bauen: per<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:129:40</span></span>
-        <span class="t-3003-c">Wahrheitstabelle wird er etwas größer; mit der<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:130:9</span></span>
-        <span class="t-3003-c">Lupanov-Schranke (<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:131:9</span></span><a
+        Wenn wir $Q \cup \Gamma$ binär codieren mit
+        $l := \ceil{\log_2 |Q \cup \Gamma|}$ Bits, so wird
+        $\tilde{\delta}$ zu einer Booleschen Funktion
+        <span class="nowrap">$\tilde{\delta} : \{0,1\}^{4l} \rightarrow \{0,1\}^l$.</span>
+        Wir können dafür einen Schaltkreis der Größe
+        $O(2^l) = O(|\Gamma \cup Q|^4)$ bauen: per
+        Wahrheitstabelle wird er etwas größer; mit der
+        Lupanov-Schranke (<a
           href="./2-6.html#_6_h.a.i_"
           class=""
-        >Theorem 2.6.2</a><span class="t-3003-c">) kriegen Sie<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:131:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:132:9</span></span><span class="nowrap"><span class="t-3003-c">$O(2^l)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:132:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:132:17</span></span></span><span class="t-3003-c">
-          Wir haben nun also einen Schaltkreis
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:132:17</span></span><span class="nowrap"><span class="t-3003-c">$\Delta$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:132:56</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:132:64</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:132:64</span></span>
-        <span class="t-3003-c">der
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:133:9</span></span><span class="t-3003-c">$\tilde{\delta}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:133:13</span></span><span class="t-3003-c">
-          berechnet. Seine Größe ist<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:133:29</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:134:9</span></span><span class="nowrap"><span class="t-3003-c">$O(|\Gamma \cup Q|^4)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:134:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:134:31</span></span></span><span class="t-3003-c">
-          Da wir
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:134:31</span></span><span class="t-3003-c">$|Q|$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:134:40</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:134:45</span></span><span class="t-3003-c">$|\Gamma|$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:134:50</span></span><span class="t-3003-c">
-          als<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:134:60</span></span>
-        <span class="t-3003-c">konstant betrachten, da es nicht von der Eingabegröße<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:135:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:136:9</span></span><span class="t-3003-c">$n=|x|$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:136:9</span></span><span class="t-3003-c">
-          abhängt, können wir sogar behaupten: die Größe von<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:136:16</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:137:9</span></span><span class="t-3003-c">$\Delta$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:137:9</span></span><span class="t-3003-c">
-          ist
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:137:17</span></span><span class="nowrap"><span class="t-3003-c">$O(1)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:137:22</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:137:28</span></span></span><span class="t-3003-c">
-          Wir schalten jetzt
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:137:28</span></span><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:137:49</span></span><span class="t-3003-c">
-          Kopien von<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:137:52</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:138:9</span></span><span class="t-3003-c">$\Delta$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:138:9</span></span><span class="t-3003-c">
-          parallel, um<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:138:17</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:139:9</span></span><span class="t-3003-c">$\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:139:9</span></span><span class="t-3003-c">
-          zu<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:139:60</span></span>
-        <span class="t-3003-c">berechnen, also aus einer gegebenen Konfiguration die<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:140:9</span></span>
-        <span class="t-3003-c">Folgekonfiguration:<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:141:9</span></span>
+        >Theorem 2.6.2</a>) kriegen
+        Sie
+        <span class="nowrap">$O(2^l)$.</span>
+        Wir haben nun also einen Schaltkreis
+        <span class="nowrap">$\Delta$,</span>
+        der $\tilde{\delta}$ berechnet. Seine Größe
+        ist
+        <span class="nowrap">$O(|\Gamma \cup Q|^4)$.</span>
+        Da wir $|Q|$ und
+        $|\Gamma|$ als konstant betrachten, da es nicht von
+        der Eingabegröße $n=|x|$ abhängt, können wir sogar
+        behaupten: die Größe von $\Delta$ ist
+        <span class="nowrap">$O(1)$.</span>
+        Wir
+        schalten jetzt $S$ Kopien von $\Delta$ parallel, um
+        $\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$
+        zu berechnen, also aus einer gegebenen Konfiguration
+        die Folgekonfiguration:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/09-complexity-theory/to-circuits/to-circuits-02-01.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/09-complexity-theory/to-circuits/to-circuits-02-01.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Jeder Pfeil steht hierbei für
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:148:9</span></span><span class="t-3003-c">$l$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:148:39</span></span><span class="t-3003-c">
-          Boolesche Kabel. Dies<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:148:42</span></span>
-        <span class="t-3003-c">ergibt
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:149:9</span></span><i><span class="t-3003-c">einen<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:149:17</span></span></i><span class="t-3003-c">
-          Schaltkreis
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:149:23</span></span><span class="nowrap"><span class="t-3003-c">$\Delta^S$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:149:36</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:149:46</span></span></span><span class="t-3003-c">
-          der<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:149:46</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:150:9</span></span><span class="t-3003-c">$\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:150:9</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:150:60</span></span>
-        <span class="t-3003-c">berechnet (bzw. die Boolesche Codierung dieser Funktion)<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:151:9</span></span>
-        <span class="t-3003-c">und Größe
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:152:9</span></span><span class="t-3003-c">$O(S) = O(t(n))$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:152:19</span></span><span class="t-3003-c">
-          hat:<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:152:35</span></span>
+        Jeder Pfeil steht hierbei für $l$ Boolesche Kabel.
+        Dies ergibt
+        <i>einen</i>
+        Schaltkreis
+        <span class="nowrap">$\Delta^S$,</span>
+        der
+        $\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$
+        berechnet (bzw. die Boolesche Codierung dieser
+        Funktion) und Größe $O(S) = O(t(n))$ hat:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/09-complexity-theory/to-circuits/to-circuits-03-01.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/09-complexity-theory/to-circuits/to-circuits-03-01.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Die Inputs, die Zellen außerhalb des Bereichs lesen,<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:159:9</span></span>
-        <span class="t-3003-c">setzen wir einfach auf
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:160:9</span></span><span class="t-3003-c">$\Box$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:160:32</span></span><span class="t-3003-c">
-          (Blank) bzw. dessen binäre<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:160:38</span></span>
-        <span class="t-3003-c">Codierung, weil wir ja wissen, dass der Schreib-Lese-Kopf<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:161:9</span></span>
-        <span class="t-3003-c">niemals dorthin gelangen wird. Jetzt schalten wir
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:162:9</span></span><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:162:59</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:162:62</span></span>
-        <span class="t-3003-c">Kopien von
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:163:9</span></span><span class="t-3003-c">$\Delta^{S}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:163:20</span></span><span class="t-3003-c">
-          hintereinander, um aus der<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:163:32</span></span>
-        <span class="t-3003-c">Startkonfiguration
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:164:9</span></span><span class="t-3003-c">$C^{(0)}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:164:28</span></span><span class="t-3003-c">
-          die Endkonfiguration
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:164:37</span></span><span class="t-3003-c">$C^{(T)}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:164:59</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:164:68</span></span>
-        <span class="t-3003-c">zu berechnen:<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:165:9</span></span>
+        Die Inputs, die Zellen außerhalb des Bereichs lesen,
+        setzen wir einfach auf $\Box$ (Blank) bzw. dessen
+        binäre Codierung, weil wir ja wissen, dass der
+        Schreib-Lese-Kopf niemals dorthin gelangen wird. Jetzt
+        schalten wir $T$ Kopien von $\Delta^{S}$
+        hintereinander, um aus der Startkonfiguration
+        $C^{(0)}$ die Endkonfiguration $C^{(T)}$ zu
+        berechnen:
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:30em"
             src="img/09-complexity-theory/to-circuits/to-circuits-04-01.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/09-complexity-theory/to-circuits/to-circuits-04-01.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Ganz zum Schluss bauen wir uns noch einen Schaltkreis, der<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:172:9</span></span>
-        <span class="t-3003-c">an jede Stelle von
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:173:9</span></span><span class="t-3003-c">$C{^(T)}$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:173:28</span></span><span class="t-3003-c">
-          schaut und, falls dort der<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:173:37</span></span>
-        <span class="t-3003-c">Endzustand steht, liest, ob das
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:174:9</span></span><code><span class="t-3003-c">accept<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:174:42</span></span></code><span class="t-3003-c">
-          oder
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:174:49</span></span><code><span class="t-3003-c">reject<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:174:56</span></span></code><span class="t-3003-c">
-          ist<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:174:63</span></span>
-        <span class="t-3003-c">und je nachdem
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:175:9</span></span><span class="t-3003-c">$1$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:175:24</span></span><span class="t-3003-c">
-          oder
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:175:27</span></span><span class="t-3003-c">$0$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:175:33</span></span><span class="t-3003-c">
-          ausgibt.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:175:36</span></span>
+        Ganz zum Schluss bauen wir uns noch einen
+        Schaltkreis, der an jede Stelle von $C{^(T)}$ schaut
+        und, falls dort der Endzustand steht, liest, ob das
+        <code>accept</code>
+        oder
+        <code>reject</code>
+        ist und je nachdem $1$ oder $0$
+        ausgibt.
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:13em"
             src="img/09-complexity-theory/to-circuits/to-circuits-05-01.svg"
-          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/09-complexity-theory/to-circuits/to-circuits-05-01.svg</span></span>
+          >
         </figure>
       </div>
       <p>
-        <span class="t-3003-c">Dieser endgültige Schaltkreis besteht im Wesentlichen aus<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:182:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:183:9</span></span><span class="t-3003-c">$T$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:183:9</span></span><span class="t-3003-c">
-          Kopien von
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:183:12</span></span><span class="t-3003-c">$\Delta^S$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:183:24</span></span><span class="t-3003-c">
-          und hat somit Größe
-          <span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:183:34</span></span><span class="nowrap"><span class="t-3003-c">$O(t(n)^2)$<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:183:55</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/02-Turing-machines-and-circuits.wly:183:66</span></span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Dieser endgültige Schaltkreis besteht im Wesentlichen
+        aus $T$ Kopien von $\Delta^S$ und hat somit Größe
+        <span class="nowrap">$O(t(n)^2)$.</span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div id="end-of-page-elt">

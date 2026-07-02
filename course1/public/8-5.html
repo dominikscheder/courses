@@ -53,65 +53,51 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">8.5&ensp;Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:2:11</span></span>
+        8.5&ensp;Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Im letzten Teilkapitel haben wir gesehen, wie wir jede<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:5:5</span></span>
-      <span class="t-3003-c">Turingmaschine
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:6:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:6:20</span></span><span class="t-3003-c">
-        mit Eingabealphabet
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:6:23</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:6:44</span></span><span class="t-3003-c">
-        codieren<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:6:52</span></span>
-      <span class="t-3003-c">können als<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:7:5</span></span>
+      Im letzten Teilkapitel haben wir gesehen, wie wir
+      jede Turingmaschine $M$ mit Eingabealphabet $\Sigma$
+      codieren können als
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \enc(M) \in \Lambda^* \ ,
       \end{align*}
-      $$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:9:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">also als String über dem Codierungsalphabet<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:13:5</span></span>
+      also als String über dem Codierungsalphabet
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       \Lambda := \writelambda
       \end{align*}
-      $$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:15:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Diese Codierungsschema enthält implizit<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:19:5</span></span>
-      <span class="t-3003-c">Codierungsfunktionen
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:20:5</span></span><span class="t-3003-c">$\enc_Q : Q \rightarrow \{0,1\}^+$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:20:26</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:20:60</span></span>
-      <span class="t-3003-c">und<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:21:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:22:5</span></span><span class="nowrap"><span class="t-3003-c">$\enc_\Gamma: \Gamma \rightarrow \Sigma \cup \{0,1\}^+$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:22:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:22:60</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:22:60</span></span>
-      <span class="t-3003-c">die wir verwenden, um die Zustände und Arbeitszeichen von<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:23:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:24:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:24:5</span></span><span class="t-3003-c">
-        in
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:24:8</span></span><span class="t-3003-c">$\Lambda$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:24:12</span></span><span class="t-3003-c">
-        -Zeichen zu übersetzen. Für eine<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:24:21</span></span>
-      <span class="t-3003-c">Konfiguration<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:25:5</span></span>
+      Diese Codierungsschema enthält implizit
+      Codierungsfunktionen
+      $\enc_Q : Q \rightarrow \{0,1\}^+$ und
+      <span class="nowrap">$\enc_\Gamma: \Gamma \rightarrow \Sigma \cup
+        \{0,1\}^+$,</span>
+      die wir verwenden, um die Zustände und Arbeitszeichen
+      von $M$ in $\Lambda$ -Zeichen zu übersetzen. Für eine
+      Konfiguration
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       C = u_1 \dots u_m q v_1 \dots v_n
       \end{align*}
-      $$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:27:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">der Maschine
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:31:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:31:18</span></span><span class="t-3003-c">
-        definieren wir die Codierung von
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:31:21</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:31:55</span></span><span class="t-3003-c">
-        als<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:31:58</span></span>
+      der Maschine $M$ definieren wir die Codierung von $C$
+      als
     </p>
     <div class="math-block main-column">
       $$
@@ -121,156 +107,90 @@
       \enc_Q(q) \texttt{#} \enc_\Gamma(v_1)\texttt{#} \dots \texttt{#}
       \enc_\Gamma(v_n) \in \Lambda^* \ .
       \end{align*}
-      $$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:33:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Das ist alles nicht besonders tiefgründig und dient allein<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:40:5</span></span>
-      <span class="t-3003-c">dazu, sicherzustellen, dass wir die Konfigurationen von
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:41:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:41:61</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:41:64</span></span>
-      <span class="t-3003-c">darstellen können in dem Alphabet
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:42:5</span></span><span class="nowrap"><span class="t-3003-c">$\Lambda$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:42:39</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:42:48</span></span></span><span class="t-3003-c">
-        das<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:42:48</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:43:5</span></span><i><span class="t-3003-c">unabhängig<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:43:6</span></span></i><span class="t-3003-c">
-        von
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:43:17</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:43:22</span></span><span class="t-3003-c">
-        ist. Dass wir also
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:43:25</span></span><i><span class="t-3003-c">jede<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:43:46</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:43:51</span></span>
-      <span class="t-3003-c">Turingmaschine
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:44:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:44:20</span></span><span class="t-3003-c">
-        mit Eingabealphabet
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:44:23</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:44:44</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:44:52</span></span><i><span class="t-3003-c">jede<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:44:58</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:44:63</span></span>
-      <span class="t-3003-c">ihrer Konfigurationen als Strings über
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:45:5</span></span><i><span class="t-3003-c">einem<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:45:45</span></span></i><span class="t-3003-c">
-        festen<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:45:51</span></span>
-      <span class="t-3003-c">Alphabet
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:46:5</span></span><span class="t-3003-c">$\Lambda$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:46:14</span></span><span class="t-3003-c">
-        darstellen können. Eine Turingmaschine<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:46:23</span></span>
-      <span class="t-3003-c">simulieren heißt nun, einen String
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:47:5</span></span><span class="t-3003-c">$\enc(M)\texttt{;}w$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:47:40</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:47:60</span></span>
-      <span class="t-3003-c">mit
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:48:5</span></span><span class="t-3003-c">$w \in \Sigma^*$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:48:9</span></span><span class="t-3003-c">
-        zu lesen und daraus den String<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:48:25</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:49:5</span></span><span class="t-3003-c">$\enc(\hat{\delta}^*_M (w))$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:49:5</span></span><span class="t-3003-c">
-        zu berechnen, also das<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:49:33</span></span>
-      <span class="t-3003-c">Ergebnis
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:50:5</span></span><span class="nowrap"><span class="t-3003-c">$\hat{\delta}^*_M(w)$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:50:14</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:50:35</span></span></span><span class="t-3003-c">
-        passend codiert über dem<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:50:35</span></span>
-      <span class="t-3003-c">Alphabet
-        <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:51:5</span></span><span class="nowrap"><span class="t-3003-c">$\Lambda$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:51:14</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:51:23</span></span></span><span class="t-3003-c">
-        Das zentrale Ergebnis dieses<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:51:23</span></span>
-      <span class="t-3003-c">Teilkapitels ist, dass wir diese Simulation selbst mit<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:52:5</span></span>
-      <span class="t-3003-c">einer Turingmaschine implementieren können.<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:53:5</span></span>
+      Das ist alles nicht besonders tiefgründig und dient
+      allein dazu, sicherzustellen, dass wir die
+      Konfigurationen von $M$ darstellen können in dem
+      Alphabet
+      <span class="nowrap">$\Lambda$,</span>
+      das
+      <i>unabhängig</i>
+      von $M$ ist.
+      Dass wir also
+      <i>jede</i>
+      Turingmaschine $M$ mit
+      Eingabealphabet $\Sigma$ und
+      <i>jede</i>
+      ihrer
+      Konfigurationen als Strings über
+      <i>einem</i>
+      festen
+      Alphabet $\Lambda$ darstellen können. Eine
+      Turingmaschine simulieren heißt nun, einen String
+      $\enc(M)\texttt{;}w$ mit $w \in \Sigma^*$ zu lesen
+      und daraus den String $\enc(\hat{\delta}^*_M (w))$ zu
+      berechnen, also das Ergebnis
+      <span class="nowrap">$\hat{\delta}^*_M(w)$,</span>
+      passend codiert über dem Alphabet
+      <span class="nowrap">$\Lambda$.</span>
+      Das
+      zentrale Ergebnis dieses Teilkapitels ist, dass wir
+      diese Simulation selbst mit einer Turingmaschine
+      implementieren können.
     </p>
     <div
       id="_49_h.a.i_"
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Theorem 8.5.1 (Universelle Turingmaschine).<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:55:5</span></span></b><span class="t-3003-c">
-          Zu jedem endlichen<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:57:40</span></span>
-        <span class="t-3003-c">Eingabealphabet
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:58:9</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:58:25</span></span><span class="t-3003-c">
-          sei
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:58:33</span></span><span class="t-3003-c">$\Lambda := \writelambda$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:58:38</span></span><span class="t-3003-c">
-          das<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:58:63</span></span>
-        <span class="t-3003-c">Codierungsalphabet. Es gibt es eine Turingmaschine<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:59:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:60:9</span></span><span class="t-3003-c">$U = U_{\Sigma}$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:60:9</span></span><span class="t-3003-c">
-          mit Eingabealphabet
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:60:25</span></span><span class="nowrap"><span class="t-3003-c">$\Lambda$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:60:46</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:60:55</span></span></span><span class="t-3003-c">
-          so dass<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:60:55</span></span>
-        <span class="t-3003-c">für alle
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:61:9</span></span><span class="t-3003-c">$c \in \Lambda^*$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:61:18</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:61:35</span></span><span class="t-3003-c">$w \in \Sigma^*$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:61:40</span></span><span class="t-3003-c">
-          die<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:61:56</span></span>
-        <span class="t-3003-c">Turingmaschine
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:62:9</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:62:24</span></span><span class="t-3003-c">
-          mit Eingabewort
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:62:27</span></span><span class="t-3003-c">$x \in \Lambda^*$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:62:44</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:62:61</span></span>
-        <span class="t-3003-c">folgendes tut:<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:63:9</span></span>
+        <b>Theorem 8.5.1 (Universelle Turingmaschine).</b>
+        Zu jedem endlichen
+        Eingabealphabet $\Sigma$ sei $\Lambda := \writelambda$
+        das Codierungsalphabet. Es gibt es eine Turingmaschine
+        $U = U_{\Sigma}$ mit Eingabealphabet
+        <span class="nowrap">$\Lambda$,</span>
+        so
+        dass für alle $c \in \Lambda^*$ und $w \in \Sigma^*$
+        die Turingmaschine $U$ mit Eingabewort
+        $x \in \Lambda^*$ folgendes tut:
       </p>
       <ul>
         <li>
           <p>
-            <span class="t-3003-c">Falls
-              <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:67:17</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:67:23</span></span><span class="t-3003-c">
-              nicht die Form
-              <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:67:26</span></span><span class="t-3003-c">$\enc(M) w$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:67:42</span></span><span class="t-3003-c">
-              mit
-              <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:67:53</span></span><span class="t-3003-c">$w \in \Sigma^*$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:67:58</span></span><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:67:74</span></span>
-            <span class="t-3003-c">hat, lehnt sie ab;<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:68:17</span></span>
+            Falls $x$ nicht die Form $\enc(M) w$ mit
+            $w \in \Sigma^*$ hat, lehnt sie ab;
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Ansonsten, falls also
-              <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:71:17</span></span><span class="t-3003-c">$x = \enc(M)w$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:71:39</span></span><span class="t-3003-c">
-              für eine<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:71:53</span></span>
-            <span class="t-3003-c">Turingmaschine
-              <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:72:17</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:72:32</span></span><span class="t-3003-c">
-              und ein Wort
-              <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:72:35</span></span><span class="t-3003-c">$w \in \Sigma^*$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:72:49</span></span><span class="t-3003-c">
-              ist:<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:72:65</span></span>
+            Ansonsten, falls also $x = \enc(M)w$ für eine
+            Turingmaschine $M$ und ein Wort $w \in \Sigma^*$ ist:
           </p>
           <ul>
             <li>
               <p>
-                <span class="t-3003-c">Falls
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:76:25</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:76:31</span></span><span class="t-3003-c">
-                  mit Eingabewort
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:76:34</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:76:51</span></span><span class="t-3003-c">
-                  nicht terminiert, dann<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:76:54</span></span>
-                <span class="t-3003-c">terminiert
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:77:25</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:77:36</span></span><span class="t-3003-c">
-                  mit Eingabewort
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:77:39</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:77:56</span></span><span class="t-3003-c">
-                  auch nicht.<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:77:59</span></span>
+                Falls $M$ mit Eingabewort $w$ nicht terminiert, dann
+                terminiert $U$ mit Eingabewort $x$ auch nicht.
               </p>
             </li>
             <li>
               <p>
-                <span class="t-3003-c">Falls
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:80:25</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:80:31</span></span><span class="t-3003-c">
-                  mit Eingabewort
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:80:34</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:80:51</span></span><span class="t-3003-c">
-                  eine Endkonfiguration<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:80:54</span></span>
-                <span class="t-3003-c">
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:81:25</span></span><span class="t-3003-c">$C = uqv$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:81:25</span></span><span class="t-3003-c">
-                  erreicht, dann erreicht
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:81:34</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:81:59</span></span><span class="t-3003-c">
-                  mit Eingabewort
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:81:62</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:81:79</span></span><span class="t-3003-c">
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:81:82</span></span>
-                <span class="t-3003-c">die Endkonfiguration
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:82:25</span></span><span class="nowrap"><span class="t-3003-c">$q\ \enc(C)$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:82:46</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:82:58</span></span></span><span class="t-3003-c">
-                  Das heißt insbesondere,<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:82:58</span></span>
-                <span class="t-3003-c">dass
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:83:25</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:83:30</span></span><span class="t-3003-c">
-                  genau dann akzeptiert, wenn
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:83:33</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:83:62</span></span><span class="t-3003-c">
-                  akzeptiert, und<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:83:65</span></span>
-                <span class="t-3003-c">genau dann ablehnt, wenn
-                  <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:84:25</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:84:50</span></span><span class="t-3003-c">
-                  ablehnt.<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:84:53</span></span>
+                Falls $M$ mit Eingabewort $w$ eine Endkonfiguration
+                $C = uqv$ erreicht, dann erreicht $U$ mit Eingabewort
+                $x$ die Endkonfiguration
+                <span class="nowrap">$q\ \enc(C)$.</span>
+                Das heißt
+                insbesondere, dass $U$ genau dann akzeptiert, wenn $M$
+                akzeptiert, und genau dann ablehnt, wenn $M$ ablehnt.
               </p>
             </li>
           </ul>
         </li>
       </ul>
       <p>
-        <span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:86:9</span></span><span class="t-3003-c">
-          akzeptiert also die Sprache<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:86:12</span></span>
+        $U$ akzeptiert also die Sprache
       </p>
       <div class="math-block">
         $$
@@ -278,118 +198,55 @@
         \{ c w \ | \ w \in \Sigma^* \textnormal{ und } c = \enc(M) \textnormal{
         und $M$ akzeptiert $w$} \} \ .
         \end{align*}
-        $$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:88:9</span>
+        $$
       </div>
     </div>
     <div class="alert-info well out main-column">
       <p>
-        <b><span class="t-3003-c">Ein technischer aber letztendlich irrelevanter Punkt:<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:95:10</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:95:64</span></span>
-        <span class="t-3003-c">die Mengen
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:96:9</span></span><span class="t-3003-c">$Q$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:96:20</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:96:23</span></span><span class="t-3003-c">$\Gamma$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:96:28</span></span><span class="t-3003-c">
-          der Turingmaschine
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:96:36</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:96:56</span></span><span class="t-3003-c">
-          können<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:96:59</span></span>
-        <span class="t-3003-c">ja beliebige (endliche) Mengen sein, und weder
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:97:9</span></span><span class="t-3003-c">$\Lambda$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:97:56</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:97:65</span></span>
-        <span class="t-3003-c">noch die Turingmaschine
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:98:9</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:98:33</span></span><span class="t-3003-c">
-          haben "Kenntnis" von ihnen.<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:98:36</span></span>
-        <span class="t-3003-c">Wir nehmen aber aus Gründen der Einfachheit an, dass
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:99:9</span></span><span class="t-3003-c">$Q$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:99:62</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:99:65</span></span>
-        <span class="t-3003-c">immer die Zustände
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:100:9</span></span><span class="t-3003-c">$\qaccept$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:100:28</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:100:38</span></span><span class="t-3003-c">$\qreject$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:100:43</span></span><span class="t-3003-c">
-          enthält und<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:100:53</span></span>
-        <span class="t-3003-c">auch
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:101:9</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:101:14</span></span><span class="t-3003-c">
-          diese Zustände verwendet. Daraus ergibt sich,<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:101:17</span></span>
-        <span class="t-3003-c">dass für eine Endkonfiguration
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:102:9</span></span><span class="t-3003-c">$uqv$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:102:40</span></span><span class="t-3003-c">
-          von
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:102:45</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:102:50</span></span><span class="t-3003-c">
-          zwar<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:102:53</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:103:9</span></span><span class="t-3003-c">$q \in \{\qaccept, \qreject\}$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:103:9</span></span><span class="t-3003-c">
-          gilt, allerdings<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:103:39</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:104:9</span></span><span class="nowrap"><span class="t-3003-c">$\enc(q) \in \{0,1\}^+$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:104:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:104:32</span></span></span><span class="t-3003-c">
-          da wir diese
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:104:32</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:104:47</span></span><span class="t-3003-c">
-          -Zustände binär<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:104:50</span></span>
-        <span class="t-3003-c">codieren. Somit ist<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:105:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:106:9</span></span><span class="t-3003-c">$q\ \enc(uqv) \in \{\qaccept, \qreject\} \times \Lambda^*$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:106:9</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:106:67</span></span>
-        <span class="t-3003-c">eine Endkonfiguration von
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:107:9</span></span><span class="nowrap"><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:107:35</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:107:38</span></span></span><span class="t-3003-c">
-          Des weiteren gehen wir<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:107:38</span></span>
-        <span class="t-3003-c">davon aus, dass das Blank-Symbol
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:108:9</span></span><span class="t-3003-c">$\Box$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:108:42</span></span><span class="t-3003-c">
-          für alle<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:108:48</span></span>
-        <span class="t-3003-c">Turingmaschinen
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:109:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:109:25</span></span><span class="t-3003-c">
-          mit Eingabealphabet
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:109:28</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:109:49</span></span><span class="t-3003-c">
-          das<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:109:57</span></span>
-        <span class="t-3003-c">gleiche ist. Auch
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:110:9</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:110:27</span></span><span class="t-3003-c">
-          verwendet es. Wenn wir allerdings
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:110:30</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:110:65</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:110:68</span></span>
-        <span class="t-3003-c">codieren, so wird auch
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:111:9</span></span><span class="t-3003-c">$\Box$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:111:32</span></span><span class="t-3003-c">
-          als<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:111:38</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:112:9</span></span><span class="t-3003-c">$\enc(\Box) \in \{0,1\}^+$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:112:9</span></span><span class="t-3003-c">
-          codiert, wie jedes<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:112:35</span></span>
-        <span class="t-3003-c">Arbeitssymbol
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:113:9</span></span><span class="t-3003-c">$z \in \Gamma \setminus \Sigma$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:113:23</span></span><span class="t-3003-c">
-          von
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:113:54</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:113:59</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:113:62</span></span>
-        <span class="t-3003-c">binär codiert wird. Das heißt insbesondere, dass für eine<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:114:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:115:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:115:9</span></span><span class="t-3003-c">
-          -Konfiguration
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:115:12</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:115:28</span></span><span class="t-3003-c">
-          die Codierung
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:115:31</span></span><span class="t-3003-c">$\enc(C)$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:115:46</span></span><span class="t-3003-c">
-          kein
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:115:55</span></span><span class="t-3003-c">$\Box$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:115:61</span></span><span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:115:67</span></span>
-        <span class="t-3003-c">enthält (selbst wenn
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:116:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:116:30</span></span><span class="t-3003-c">
-          als Konfiguration von
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:116:33</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:116:56</span></span><span class="t-3003-c">
-          dies<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:116:59</span></span>
-        <span class="t-3003-c">tut), und in der Tat ist ja
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:117:9</span></span><span class="nowrap"><span class="t-3003-c">$\enc(C) \in \Lambda^*$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:117:37</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:117:60</span></span></span><span class="t-3003-c">
-          und<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:117:60</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:118:9</span></span><span class="t-3003-c">$\Lambda$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:118:9</span></span><span class="t-3003-c">
-          ist das Eingabealphabet von
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:118:18</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:118:47</span></span><span class="t-3003-c">
-          mit<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:118:50</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:119:9</span></span><span class="nowrap"><span class="t-3003-c">$\Box \not \in \Lambda$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:119:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:119:32</span></span></span>
+        <b>Ein technischer aber letztendlich irrelevanter
+          Punkt:</b>
+        die Mengen $Q$ und $\Gamma$ der
+        Turingmaschine $M$ können ja beliebige (endliche)
+        Mengen sein, und weder $\Lambda$ noch die
+        Turingmaschine $U$ haben "Kenntnis" von ihnen. Wir
+        nehmen aber aus Gründen der Einfachheit an, dass $Q$
+        immer die Zustände $\qaccept$ und $\qreject$ enthält
+        und auch $U$ diese Zustände verwendet. Daraus ergibt
+        sich, dass für eine Endkonfiguration $uqv$ von $M$
+        zwar $q \in \{\qaccept, \qreject\}$ gilt, allerdings
+        <span class="nowrap">$\enc(q) \in \{0,1\}^+$,</span>
+        da wir diese $M$ -Zustände
+        binär codieren. Somit ist
+        $q\ \enc(uqv) \in \{\qaccept, \qreject\} \times
+        \Lambda^*$
+        eine Endkonfiguration von
+        <span class="nowrap">$U$.</span>
+        Des weiteren gehen wir
+        davon aus, dass das Blank-Symbol $\Box$ für alle
+        Turingmaschinen $M$ mit Eingabealphabet $\Sigma$ das
+        gleiche ist. Auch $U$ verwendet es. Wenn wir
+        allerdings $M$ codieren, so wird auch $\Box$ als
+        $\enc(\Box) \in \{0,1\}^+$ codiert, wie jedes
+        Arbeitssymbol $z \in \Gamma \setminus \Sigma$ von $M$
+        binär codiert wird. Das heißt insbesondere, dass für
+        eine $M$ -Konfiguration $C$ die Codierung $\enc(C)$
+        kein $\Box$ enthält (selbst wenn $C$ als
+        Konfiguration von $M$ dies tut), und in der Tat ist
+        ja
+        <span class="nowrap">$\enc(C) \in \Lambda^*$,</span>
+        und $\Lambda$ ist das
+        Eingabealphabet von $U$ mit
+        <span class="nowrap">$\Box \not \in \Lambda$.</span>
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        
-        <span class="t-3003-c">Den Beweis in allen Details zu führen hieße, die Maschine<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:122:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/08/05-Turing-universal.wly:123:9</span></span><span class="t-3003-c">$U$<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:123:9</span></span><span class="t-3003-c">
-          konkret als Turingmaschine zu implementieren. Wir tun<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:123:12</span></span>
-        <span class="t-3003-c">dies nicht. Wir beschränken uns auf eine<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:124:9</span></span>
-        <span class="t-3003-c">High-Level-Beschreibung ihrer Arbeitsweise.<span class="t-3003">./course1/wly/08/05-Turing-universal.wly:125:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        Den Beweis in allen Details zu führen hieße, die
+        Maschine $U$ konkret als Turingmaschine zu
+        implementieren. Wir tun dies nicht. Wir beschränken
+        uns auf eine High-Level-Beschreibung ihrer
+        Arbeitsweise.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div class="pseudowell">
@@ -400,355 +257,355 @@
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-01-01.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-01-01.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-01-02.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-01-02.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-01-03.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-01-03.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-01-04.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-01-04.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-02-01.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-02-01.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-01.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-01.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-02.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-02.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-03.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-03.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-04.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-04.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-05.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-05.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-06.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-06.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-07.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-07.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-08.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-08.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-09.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-09.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-10.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-10.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-11.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-11.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-12.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-12.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-13.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-13.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-14.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-14.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-15.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-15.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-16.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-16.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-17.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-17.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-18.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-18.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-19.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-19.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-20.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-20.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-21.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-21.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-22.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-22.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-23.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-23.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-24.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-24.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-25.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-25.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-26.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-26.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-27.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-27.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-28.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-28.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-29.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-29.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-30.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-30.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-31.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-31.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-32.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-32.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-33.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-33.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-34.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-34.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-35.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-35.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-36.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-36.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-37.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-37.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-38.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-38.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-39.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-39.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-40.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-40.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-41.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-41.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-42.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-42.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-43.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-43.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-44.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-44.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-45.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-45.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-46.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-46.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-47.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-47.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-48.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-48.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-49.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-49.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-50.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-50.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-51.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-51.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-52.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-52.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-53.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-53.svg</span></span>
+              >
             </div>
             <div class="carousel__item">
               <img
                 style="height:22em"
                 src="img/turing-machines/universal/universal-03-54.svg"
-              ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/turing-machines/universal/universal-03-54.svg</span></span>
+              >
             </div>
           </div>
         </div>

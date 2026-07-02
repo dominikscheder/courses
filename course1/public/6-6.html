@@ -53,35 +53,32 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">6.6&ensp;Einen Parser in Java implementieren<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:2:11</span></span>
+        6.6&ensp;Einen Parser in Java implementieren
       </p>
     </div>
     <div class="well alert-info out main-column">
       <p>
-        <span class="t-3003-c">Den vollständigen Quelltext, den wir in der Vorlesung<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:6:9</span></span>
-        <span class="t-3003-c">geschrieben haben, finden Sie in der Datei<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:7:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:8:9</span></span><a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/code/parsing/arithmetic-in-class/ArithmeticGrammar.java"><span class="t-3003-c">ArithmeticGrammar.java<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:8:10</span></span></a><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:8:157</span></span>
+        Den vollständigen Quelltext, den wir in der Vorlesung
+        geschrieben haben, finden Sie in der Datei
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/code/parsing/arithmetic-in-class/ArithmeticGrammar.java">ArithmeticGrammar.java</a>.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Ich möchte nun eine kontextfreie Grammatik für<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:10:5</span></span>
-      <span class="t-3003-c">arithmetische Ausdrücke der Form
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:11:5</span></span><code><span class="t-3003-c">((31+402)*83)<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:11:39</span></span></code><span class="t-3003-c">
-        entwerfen.<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:11:53</span></span>
-      <span class="t-3003-c">Der Einfachheit halber bestehe ich auf strenger Klammerung,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:12:5</span></span>
-      <span class="t-3003-c">so wäre
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:13:5</span></span><code><span class="t-3003-c">(2*(1+2+3))<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:13:14</span></span></code><span class="t-3003-c">
-        zum Beispiel nicht erlaubt. Unsere<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:13:26</span></span>
-      <span class="t-3003-c">Grammatik soll allgemeine Dezimalzahlen darstellen können.<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:14:5</span></span>
-      <span class="t-3003-c">Das Alphabet ist somit<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:15:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:16:5</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma =
-          \{\texttt{0},\texttt{1},\texttt{2},\texttt{3},\texttt{4},
-          \texttt{5},\texttt{6},\texttt{7},\texttt{8},\texttt{9},
-          \texttt{+},\texttt{*},\texttt{(},\texttt{)}\}$<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:16:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:19:51</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:19:51</span></span>
-      <span class="t-3003-c">Die Produktionsregeln sind:<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:20:5</span></span>
+      Ich möchte nun eine kontextfreie Grammatik für
+      arithmetische Ausdrücke der Form
+      <code>((31+402)*83)</code>
+      entwerfen. Der Einfachheit halber bestehe ich auf
+      strenger Klammerung, so wäre
+      <code>(2*(1+2+3))</code>
+      zum
+      Beispiel nicht erlaubt. Unsere Grammatik soll
+      allgemeine Dezimalzahlen darstellen können. Das
+      Alphabet ist somit
+      <span class="nowrap">$\Sigma =
+        \{\texttt{0},\texttt{1},\texttt{2},\texttt{3},\texttt{4},
+        \texttt{5},\texttt{6},\texttt{7},\texttt{8},\texttt{9},
+        \texttt{+},\texttt{*},\texttt{(},\texttt{)}\}$.</span>
+      Die Produktionsregeln sind:
     </p>
     <div class="math-block main-column">
       $$
@@ -94,165 +91,146 @@
       D&amp;\rightarrow \texttt{0}\ | \ \texttt{1}\ | \ \texttt{2}\ | \ \texttt{3}\ | \ \texttt{4}\ | \
       \texttt{5}\ | \ \texttt{6}\ | \ \texttt{7}\ | \ \texttt{8}\ | \ \texttt{9}
       \end{align*}
-      $$<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:22:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Die Nichtterminale sind also
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:32:5</span></span><span class="t-3003-c">$E$<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:32:34</span></span><span class="t-3003-c">
-        (Expression),
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:32:37</span></span><span class="t-3003-c">$N$<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:32:52</span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:32:55</span></span>
-      <span class="t-3003-c">(Number) und
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:33:5</span></span><span class="t-3003-c">$D$<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:33:18</span></span><span class="t-3003-c">
-        (Digit). Wir haben auch den einzelnen<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:33:21</span></span>
-      <span class="t-3003-c">Produktionen Namen gegeben, bis auf die der Form<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:34:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:35:5</span></span><span class="nowrap"><span class="t-3003-c">$D \rightarrow i$<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:35:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:35:22</span></span></span><span class="t-3003-c">
-        Was soll nun unser Parser tun? Er soll,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:35:22</span></span>
-      <span class="t-3003-c">gegeben ein Eingabewort
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:36:5</span></span><span class="nowrap"><span class="t-3003-c">$w \in L$<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:36:29</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:36:38</span></span></span><span class="t-3003-c">
-        den
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:36:38</span></span><i><span class="t-3003-c">Ableitungsbaum<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:36:45</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:36:60</span></span>
-      <span class="t-3003-c">konstruieren, für
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:37:5</span></span><code><span class="t-3003-c">((31+402)*83)<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:37:24</span></span></code><span class="t-3003-c">
-        also<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:37:38</span></span>
+      Die Nichtterminale sind also $E$ (Expression), $N$
+      (Number) und $D$ (Digit). Wir haben auch den
+      einzelnen Produktionen Namen gegeben, bis auf die der
+      Form
+      <span class="nowrap">$D \rightarrow i$.</span>
+      Was soll nun unser Parser
+      tun? Er soll, gegeben ein Eingabewort
+      <span class="nowrap">$w \in L$,</span>
+      den
+      <i>Ableitungsbaum</i>
+      konstruieren, für
+      <code>((31+402)*83)</code>
+      also
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:20em"
           src="img/context-free/arithmetic-syntax-tree.svg"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/context-free/arithmetic-syntax-tree.svg</span></span>
+        >
       </figure>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wie wir diesen Baum in Java repräsentieren, darüber<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:44:5</span></span>
-      <span class="t-3003-c">sprechen wir in einer Minute. Zuerst aber: wir wollen mit<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:45:5</span></span>
-      <span class="t-3003-c">diesem Baum etwas Sinnvolles tun. Zum Beispiel
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:46:5</span></span><span class="nowrap"><i><span class="t-3003-c">auswerten<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:46:53</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:46:63</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:46:63</span></span>
-      <span class="t-3003-c">so dass am Ende eine Zahl rauskommt, im obigen Beispiel<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:47:5</span></span>
-      <span class="t-3003-c">also
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:48:5</span></span><span class="nowrap"><span class="t-3003-c">$(31 + 402) \cdot 83 = 35939$<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:48:10</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:48:39</span></span></span><span class="t-3003-c">
-        Oder den Ausdruck<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:48:39</span></span>
-      <span class="t-3003-c">umformen von Infix-Notation zu Präfixnotation,
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:49:5</span></span><span class="nowrap"><span class="t-3003-c">also<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:49:5</span></span><code><span class="t-3003-c">(* (+<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:49:57</span></span>
-          <span class="t-3003-c">31 402) 83)<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:50:5</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:50:17</span></span></span><span class="t-3003-c">
-        All dies wird sehr einfach sein, sobald wir<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:50:17</span></span>
-      <span class="t-3003-c">den Ableitungsbaum als Datenstruktur vorliegen haben.<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:51:5</span></span>
+      Wie wir diesen Baum in Java repräsentieren, darüber
+      sprechen wir in einer Minute. Zuerst aber: wir wollen
+      mit diesem Baum etwas Sinnvolles tun. Zum Beispiel
+      <span class="nowrap"><i>auswerten</i>,</span>
+      so dass am Ende eine Zahl rauskommt, im
+      obigen Beispiel also
+      <span class="nowrap">$(31 + 402) \cdot 83 = 35939$.</span>
+      Oder den Ausdruck umformen von Infix-Notation zu
+      Präfixnotation,
+      <span class="nowrap">also<code>(* (+ 31 402) 83)</code>.</span>
+      All dies wird
+      sehr einfach sein, sobald wir den Ableitungsbaum als
+      Datenstruktur vorliegen haben.
     </p>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Eine Datenstruktur für Ableitungsbäume<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:54:9</span></span>
+      Eine Datenstruktur für Ableitungsbäume
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Für meine Implementierung in Java erschaffe ich für jedes<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:56:5</span></span>
-      <span class="t-3003-c">Nichtterminal
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:57:5</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:57:19</span></span><span class="t-3003-c">
-        ein Interface und für jede<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:57:22</span></span>
-      <span class="t-3003-c">Produktionsregel
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:58:5</span></span><span class="t-3003-c">$X \rightarrow \alpha$<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:58:22</span></span><span class="t-3003-c">
-        eine Klasse, die<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:58:44</span></span>
-      <span class="t-3003-c">das Interface
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:59:5</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:59:19</span></span><span class="t-3003-c">
-        implementiert und
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:59:22</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:59:41</span></span><span class="t-3003-c">
-        als<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:59:49</span></span>
-      <span class="t-3003-c">Klassenvariable enthält.<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:60:5</span></span>
+      Für meine Implementierung in Java erschaffe ich für
+      jedes Nichtterminal $X$ ein Interface und für jede
+      Produktionsregel $X \rightarrow \alpha$ eine Klasse,
+      die das Interface $X$ implementiert und $\alpha$ als
+      Klassenvariable enthält.
     </p>
     <div class="main-column">
       <ul>
         <li>
           <p>
-            <code><span class="t-3003-c">interface Expression<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:64:14</span></span></code><span class="t-3003-c">
-              wird implementiert von<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:64:35</span></span>
+            <code>interface Expression</code>
+            wird implementiert von
           </p>
           <ul>
             <li>
               <p>
-                <span class="nowrap"><code><span class="t-3003-c">class Sum<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:68:22</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:68:32</span></span></span><span class="t-3003-c">
-                  die als Klassenvariable
-                  <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:68:32</span></span><code><span class="t-3003-c">Exrepssion e1, e2<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:68:59</span></span></code><span class="t-3003-c">
-                  <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:68:77</span></span>
-                <span class="t-3003-c">enthält,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:69:21</span></span>
+                <span class="nowrap"><code>class Sum</code>,</span>
+                die als Klassenvariable
+                <code>Exrepssion e1,
+                  e2</code>
+                enthält,
               </p>
             </li>
             <li>
               <p>
-                <span class="nowrap"><code><span class="t-3003-c">class Product<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:72:22</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:72:36</span></span></span><span class="t-3003-c">
-                  die als Klassenvariable
-                  <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:72:36</span></span><code><span class="t-3003-c">Exrepssion e1,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:72:63</span></span>
-                  <span class="t-3003-c">e2<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:73:21</span></span></code><span class="t-3003-c">
-                  enthält,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:73:24</span></span>
+                <span class="nowrap"><code>class Product</code>,</span>
+                die als Klassenvariable
+                <code>Exrepssion
+                  e1, e2</code>
+                enthält,
               </p>
             </li>
             <li>
               <p>
-                <span class="nowrap"><code><span class="t-3003-c">class JustNumber<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:76:22</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:76:39</span></span></span><span class="t-3003-c">
-                  die als Klassenvariable nur eine<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:76:39</span></span>
-                <span class="t-3003-c">
-                  <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:77:21</span></span><span class="nowrap"><code><span class="t-3003-c">Number number<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:77:22</span></span></code><span class="t-3003-c">enthält;<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:77:36</span></span></span>
+                <span class="nowrap"><code>class JustNumber</code>,</span>
+                die als Klassenvariable nur eine
+                <span class="nowrap"><code>Number number</code>enthält;</span>
               </p>
             </li>
           </ul>
         </li>
         <li>
           <p>
-            <code><span class="t-3003-c">interface Number<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:80:14</span></span></code><span class="t-3003-c">
-              wird implementiert von<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:80:31</span></span>
+            <code>interface Number</code>
+            wird implementiert von
           </p>
           <ul>
             <li>
               <p>
-                <span class="nowrap"><code><span class="t-3003-c">class MultiDigitNumber<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:84:22</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:84:45</span></span></span><span class="t-3003-c">
-                  die als Klassenvariable<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:84:45</span></span>
-                <span class="t-3003-c">
-                  <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:85:21</span></span><span class="nowrap"><span class="t-3003-c">eine<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:85:21</span></span><code><span class="t-3003-c">Number<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:85:26</span></span></code></span><span class="t-3003-c">
-                  und eine
-                  <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:85:33</span></span><code><span class="t-3003-c">Digit<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:85:44</span></span></code><span class="t-3003-c">
-                  erhält und<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:85:50</span></span>
+                <span class="nowrap"><code>class MultiDigitNumber</code>,</span>
+                die als Klassenvariable
+                <span class="nowrap">eine<code>Number</code></span>
+                und eine
+                <code>Digit</code>
+                erhält und
               </p>
             </li>
             <li>
               <p>
-                <span class="nowrap"><code><span class="t-3003-c">class SingleDigitNumber<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:88:22</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:88:46</span></span></span><span class="t-3003-c">
-                  die als Klassenvariable ein<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:88:46</span></span>
-                <span class="t-3003-c">
-                  <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:89:21</span></span><span class="nowrap"><code><span class="t-3003-c">Digit<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:89:22</span></span></code><span class="t-3003-c">enthält;<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:89:28</span></span></span>
+                <span class="nowrap"><code>class SingleDigitNumber</code>,</span>
+                die als Klassenvariable
+                ein
+                <span class="nowrap"><code>Digit</code>enthält;</span>
               </p>
             </li>
           </ul>
         </li>
         <li>
           <p>
-            <code><span class="t-3003-c">interface Digit<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:92:14</span></span></code><span class="t-3003-c">
-              wird implementiert
-              <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:92:30</span></span><span class="nowrap"><span class="t-3003-c">von<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:92:30</span></span><code><span class="t-3003-c">class<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:92:54</span></span>
-                <span class="t-3003-c">DigitOne<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:93:13</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:93:22</span></span></span><span class="nowrap"><code><span class="t-3003-c">class DigitTwo<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:93:24</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:93:39</span></span></span><span class="nowrap"><code><span class="t-3003-c">class DigitThree<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:93:41</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:93:58</span></span></span><span class="nowrap"><code><span class="t-3003-c">class<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:93:60</span></span>
-                <span class="t-3003-c">DigitFour<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:94:13</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:94:23</span></span></span><span class="nowrap"><code><span class="t-3003-c">class DigitFive<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:94:25</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:94:41</span></span></span><span class="nowrap"><code><span class="t-3003-c">class DigitSix<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:94:43</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:94:58</span></span></span><span class="nowrap"><code><span class="t-3003-c">class<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:94:60</span></span>
-                <span class="t-3003-c">DigitSeven<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:95:13</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:95:24</span></span></span><code><span class="t-3003-c">class DigitEight<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:95:26</span></span></code><span class="t-3003-c">
-              <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:95:43</span></span><span class="nowrap"><span class="t-3003-c">und<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:95:43</span></span><code><span class="t-3003-c">class DigitNine<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:95:48</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:95:64</span></span></span>
+            <code>interface Digit</code>
+            wird implementiert
+            <span class="nowrap">von<code>class
+                DigitOne</code>,</span><span class="nowrap"><code>class DigitTwo</code>,</span><span class="nowrap"><code>class DigitThree</code>,</span><span class="nowrap"><code>class
+                DigitFour</code>,</span><span class="nowrap"><code>class DigitFive</code>,</span><span class="nowrap"><code>class DigitSix</code>,</span><span class="nowrap"><code>class
+                DigitSeven</code>,</span><code>class DigitEight</code>
+            <span class="nowrap">und<code>class DigitNine</code>.</span>
           </p>
         </li>
       </ul>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">In unserem Anwendungsfall hat jedes Interface eine<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:97:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:98:5</span></span><span class="nowrap"><span class="t-3003-c">Methode<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:98:5</span></span><code><span class="t-3003-c">public int toInt()<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:98:13</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:98:32</span></span></span><span class="t-3003-c">
-        Interface
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:98:32</span></span><code><span class="t-3003-c">Expression<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:98:45</span></span></code><span class="t-3003-c">
-        hat<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:98:56</span></span>
-      <span class="t-3003-c">zusätzlich noch die Methode
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:99:5</span></span><span class="nowrap"><code><span class="t-3003-c">String toPrefixNotation()<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:99:34</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:99:60</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:99:60</span></span>
-      <span class="t-3003-c">Ich schreibe auch ein Über-Interface
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:100:5</span></span><span class="nowrap"><code><span class="t-3003-c">ParseObject<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:100:43</span></span></code><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:100:55</span></span></span><span class="t-3003-c">
-        das<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:100:55</span></span>
-      <span class="t-3003-c">alle Interfaces zusammenfasst. Um uns das Debugging zu<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:101:5</span></span>
-      <span class="t-3003-c">erleichtern, überschreibe ich in jeder Klasse die<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:102:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:103:5</span></span><span class="nowrap"><span class="t-3003-c">Methode<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:103:5</span></span><code><span class="t-3003-c">public String toString()<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:103:13</span></span></code><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/06-Parser-in-Java.wly:103:38</span></span></span>
+      In unserem Anwendungsfall hat jedes Interface eine
+      <span class="nowrap">Methode<code>public int toInt()</code>.</span>
+      Interface
+      <code>Expression</code>
+      hat zusätzlich noch die Methode
+      <span class="nowrap"><code>String
+          toPrefixNotation()</code>.</span>
+      Ich schreibe auch ein
+      Über-Interface
+      <span class="nowrap"><code>ParseObject</code>,</span>
+      das alle Interfaces
+      zusammenfasst. Um uns das Debugging zu erleichtern,
+      überschreibe ich in jeder Klasse die
+      <span class="nowrap">Methode<code>public
+          String toString()</code>.</span>
     </p>
     <div id="end-of-page-elt">
     </div>

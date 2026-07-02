@@ -1,6 +1,24 @@
 # Installation
 
-## 1. [Gleam Install](https://gleam.run/getting-started/installing)
+## 1. [Install Gleam](https://gleam.run/getting-started/installing)
+
+## 2. (Or:) Upgrade/Update Gleam
+
+Run:
+
+```shell
+brew upgrade gleam
+```
+
+once for the whole machine, and then
+
+```shell
+gleam update
+gleam clean
+gleam build
+```
+
+in each separate gleam repo. (Project.)
 
 ## 2. Clone repos
 
@@ -18,6 +36,7 @@ Copy the Github folder structure: put one repo in a folder `vistuleB/wly` and th
 ## 3. 'wly' test
 
 1. `cd vistuleB/wly/desugaring`
+2. `gleam clean`, `gleam build`
 2. `gleam run -m desugarers`
 
 Various output should come out like this:
@@ -26,29 +45,29 @@ Various output should come out like this:
 
 ## 4. "raw HTML" test
 
-1. goto `dominikscheder/TI-2` folder
-2. `gleam run` or `gleam run --verbose`
+1. goto `dominikscheder/courses` folder
+2. `gleam run -- --which course1 --verbose`
 
 Various messages from the desugaring engine (situated in `wly` repo) should print out and the `public/` folder should have its .html repopulated.
 
-To check, open `public/index.html` inside a browser.
+To check, open `course1/public/index.html` inside a browser.
 
 ## 5. localhost test
 
 1. `npm install`
-2. `npm run dev`
-3. try `http://localhost:3003/` in the browser
+2. `COURSE=course1 npm run dev`
+3. clicking on the localhost link should take you to your default browser
 
 ## 6. Source location
 
-Author source is contained in `wly/` folder.
+Author source is contained in `course1/wly/` and `course2/wly` folders.
 
 In VSCode, download the [Writerly](https://marketplace.visualstudio.com/items?itemName=TabbyNotes.writerly-vscode-extension) extension for syntax highlighting.
 
 ## 7. Go-to-source tooltips (`--local` mode)
 
 1. Run the local server (see "localhost test")
-2. `gleam run -- --local`
+2. `gleam run -- --which course1 --local`
 
 Note: Go-to-source tooltips will only work if `code` has been bound to open the default code editor (e.g., VSCode) in the terminal.
 

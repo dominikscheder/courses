@@ -464,11 +464,12 @@ pub fn pipeline(
       dl.substitute_counters(),
       dl.handles_generate_v_definitions_from_t_definitions(),
       dl.handles_add_ids(),
-      dl.handles_generate_dictionary_and_id_list("path"),
+      dl.handles_generate_dictionary("path"),
       dl.handles_substitute_inside_math(["Math", "MathBlock"]),
       dl.handles_substitute(#("path", "a", "a", [], [], ["a"])),
-      dl.table_marker(),
       dl.unwrap("GrandWrapper"),
+    ],
+    [
       dl.tokenize_href_surroundings(),
       dl.rearrange_links_4_pre_tokenized_src__batch([
         #("Theorem <a href=1>_1_</a>", "<a href=1>Theorem _1_</a>"),

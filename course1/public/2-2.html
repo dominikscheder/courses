@@ -53,29 +53,33 @@
     </div>
     <div class="main-column page-title">
       <p>
-        2.2&ensp;Wahrheitstabellen, CNF, DNF
+        <span class="t-3003-c">2.2&ensp;Wahrheitstabellen, CNF, DNF<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:2:11</span></span>
       </p>
     </div>
     <p class="main-column">
-      Wir haben gesehen, dass jeder Schaltkreis eine Boolesche
-      Funktion berechnet. In diesem Abschnitt wollen wir zeigen,
-      dass es umgekehrt auch gilt: zu jeder Booleschen Funktion
-      gibt es einen Schaltkreis (ja: viele Schaltkreise), die sie
-      berechnen. Wir werden insgesamt drei Konstruktionen sehen.
-      Als erstes lassen Sie uns überlegen, wie man eine Boolesche
-      Funktion im Allgemeinen aufschreibt/codiert. Beschränken
-      wir uns erst einmal auf Boolesche Funktionen mit
-      <i>einem</i>
-      Ausgabewert, also
-      <span class="nowrap">$f : \{0,1\}^{n} \to \{0,1\}$.</span>
-      Dies ist
-      ein endliches Objekt, wir können es also codieren, indem
-      wir für jeden Eingabewert $(x_1, \ldots, x_n)$ den
-      Ausgabewert angeben. Dies nennt man eine
-      <i>Wahrheitstabelle</i>
-      (englisch
-      <span class="nowrap"><i>truth table</i>).</span>
-      Hier sehen Sie ein Beispiel:
+      <span class="t-3003-c">Wir haben gesehen, dass jeder Schaltkreis eine Boolesche<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:5:5</span></span>
+      <span class="t-3003-c">Funktion berechnet. In diesem Abschnitt wollen wir zeigen,<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:6:5</span></span>
+      <span class="t-3003-c">dass es umgekehrt auch gilt: zu jeder Booleschen Funktion<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:7:5</span></span>
+      <span class="t-3003-c">gibt es einen Schaltkreis (ja: viele Schaltkreise), die sie<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:8:5</span></span>
+      <span class="t-3003-c">berechnen. Wir werden insgesamt drei Konstruktionen sehen.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:9:5</span></span>
+      <span class="t-3003-c">Als erstes lassen Sie uns überlegen, wie man eine Boolesche<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:10:5</span></span>
+      <span class="t-3003-c">Funktion im Allgemeinen aufschreibt/codiert. Beschränken<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:11:5</span></span>
+      <span class="t-3003-c">wir uns erst einmal auf Boolesche Funktionen mit
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:12:5</span></span><i><span class="t-3003-c">einem<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:12:55</span></span></i><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:12:61</span></span>
+      <span class="t-3003-c">Ausgabewert, also
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:13:5</span></span><span class="nowrap"><span class="t-3003-c">$f : \{0,1\}^{n} \to \{0,1\}$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:13:23</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:13:52</span></span></span><span class="t-3003-c">
+        Dies ist<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:13:52</span></span>
+      <span class="t-3003-c">ein endliches Objekt, wir können es also codieren, indem<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:14:5</span></span>
+      <span class="t-3003-c">wir für jeden Eingabewert
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:15:5</span></span><span class="t-3003-c">$(x_1, \ldots, x_n)$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:15:31</span></span><span class="t-3003-c">
+        den<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:15:51</span></span>
+      <span class="t-3003-c">Ausgabewert angeben. Dies nennt man eine
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:16:5</span></span><i><span class="t-3003-c">Wahrheitstabelle<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:16:47</span></span></i><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:16:64</span></span>
+      <span class="t-3003-c">(englisch
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:17:5</span></span><span class="nowrap"><i><span class="t-3003-c">truth table<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:17:16</span></span></i><span class="t-3003-c">).<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:17:28</span></span></span><span class="t-3003-c">
+        Hier sehen Sie ein Beispiel:<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:17:28</span></span>
     </p>
     <div class="math-block main-column">
       $$
@@ -90,19 +94,21 @@
       1 &amp; 1 &amp; 0 &amp; 0 \\
       1 &amp; 1 &amp; 1 &amp; 1 \\
       \end{array}
-      $$
+      $$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:19:5</span>
     </div>
     <p class="main-column">
-      Wie können wir von so einer Tabelle ausgehend einen
-      Schaltkreis bauen, der diese Funktion berechnet? Ich stelle
-      Ihnen drei Herangehensweisen vor.
+      <span class="t-3003-c">Wie können wir von so einer Tabelle ausgehend einen<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:33:5</span></span>
+      <span class="t-3003-c">Schaltkreis bauen, der diese Funktion berechnet? Ich stelle<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:34:5</span></span>
+      <span class="t-3003-c">Ihnen drei Herangehensweisen vor.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:35:5</span></span>
     </p>
     <h2 class="main-column topic-announcement">
-      Rekursiv, top-down
+      <span class="t-3003-c">Rekursiv, top-down<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:38:9</span></span>
     </h2>
     <p class="main-column">
-      Wir teilen die Tabelle in die obere Hälfte (wo $x = 0$
-      gilt) und die untere Hälfte:
+      <span class="t-3003-c">Wir teilen die Tabelle in die obere Hälfte (wo
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:40:5</span></span><span class="t-3003-c">$x = 0$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:40:52</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:40:59</span></span>
+      <span class="t-3003-c">gilt) und die untere Hälfte:<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:41:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
@@ -125,93 +131,136 @@
       \end{array}
       }
       \end{align*}
-      $$
+      $$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:43:5</span>
     </div>
     <p class="main-column">
-      Die obere, roten Hälfte kommt Ihnen vielleicht bekannt
-      vor: es ist genau die Wahrheitstabelle von
-      <span class="nowrap">$y \vee z$.</span>
-      Der
-      Wert von $x$ ist im roten Teil ja immer
-      <span class="nowrap">$0$,</span>
-      also ist die
-      obere Hälfte im Prinzip eine Funktion mit zwei Variablen:
-      $y$ und
-      <span class="nowrap">$z$;</span>
-      wir sagen also mal, die obere Hälfte "ist"
-      <span style="color:red">$y \vee z$</span>. Die untere Hälfte besteht auch aus drei Einsen und einer
-      Null, allerdings ist die Null mittendrin. Überprüfen Sie
-      es, wenn ich Ihnen sage, dass die untere Hälfte
-      <span style="color:blue">$\bar{y} \vee z$
-      </span>ist (ich schreibe im Fließtext übrigens gerne $\bar{y}$
-      statt
-      <span class="nowrap">$\neg y$,</span>
-      weil das mir lesbarer erscheint).
-      Insgesamt also: f =
-      <code>if</code>
-      $x$
-      <code>then</code>
-      $\bar{y} \vee z$
-      <code>else</code>
-      $y \vee z$ Jetzt können wir das mit unserem
-      if-then-else-Schaltkreis kombinieren.
+      <span class="t-3003-c">Die obere, roten Hälfte kommt Ihnen vielleicht bekannt<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:63:5</span></span>
+      <span class="t-3003-c">vor: es ist genau die Wahrheitstabelle von
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:64:5</span></span><span class="nowrap"><span class="t-3003-c">$y \vee z$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:64:48</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:64:58</span></span></span><span class="t-3003-c">
+        Der<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:64:58</span></span>
+      <span class="t-3003-c">Wert von
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:65:5</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:65:14</span></span><span class="t-3003-c">
+        ist im roten Teil ja immer
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:65:17</span></span><span class="nowrap"><span class="t-3003-c">$0$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:65:45</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:65:48</span></span></span><span class="t-3003-c">
+        also ist die<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:65:48</span></span>
+      <span class="t-3003-c">obere Hälfte im Prinzip eine Funktion mit zwei Variablen:<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:66:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:67:5</span></span><span class="t-3003-c">$y$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:67:5</span></span><span class="t-3003-c">
+        und
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:67:8</span></span><span class="nowrap"><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:67:13</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:67:16</span></span></span><span class="t-3003-c">
+        wir sagen also mal, die obere Hälfte "ist"
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:67:16</span></span><span style="color:red"><span class="t-3003-c">$y \vee z$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:70:9</span></span></span><span class="t-3003-c">. Die untere Hälfte besteht auch aus drei Einsen und einer<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:71:5</span></span>
+      <span class="t-3003-c">Null, allerdings ist die Null mittendrin. Überprüfen Sie<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:72:5</span></span>
+      <span class="t-3003-c">es, wenn ich Ihnen sage, dass die untere Hälfte
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:73:5</span></span><span style="color:blue"><span class="t-3003-c">$\bar{y} \vee z$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:76:9</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:76:25</span></span></span><span class="t-3003-c">ist (ich schreibe im Fließtext übrigens gerne
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:77:5</span></span><span class="t-3003-c">$\bar{y}$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:77:51</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:77:60</span></span>
+      <span class="t-3003-c">statt
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:78:5</span></span><span class="nowrap"><span class="t-3003-c">$\neg y$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:78:11</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:78:19</span></span></span><span class="t-3003-c">
+        weil das mir lesbarer erscheint).<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:78:19</span></span>
+      <span class="t-3003-c">Insgesamt also: f =
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:79:5</span></span><code><span class="t-3003-c">if<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:79:26</span></span></code><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:79:29</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:79:30</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:79:33</span></span><code><span class="t-3003-c">then<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:79:35</span></span></code><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:79:40</span></span><span class="t-3003-c">$\bar{y} \vee z$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:79:41</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:79:57</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:80:5</span></span><code><span class="t-3003-c">else<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:80:6</span></span></code><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:80:11</span></span><span class="t-3003-c">$y \vee z$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:80:12</span></span><span class="t-3003-c">
+        Jetzt können wir das mit unserem<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:80:22</span></span>
+      <span class="t-3003-c">if-then-else-Schaltkreis kombinieren.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:81:5</span></span>
     </p>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 2.2.1</b>
-        Führen Sie die Konstruktion zu Ende, indem Sie
-        $\bar{y} \vee z$ und $y \vee z$ mit dem
-        if-then-else-Schaltkreis kombinieren.
+        <b><span class="t-3003-c">Übungsaufgabe 2.2.1<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:83:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:83:5</span></span>
+        <span class="t-3003-c">Führen Sie die Konstruktion zu Ende, indem Sie<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:84:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:85:9</span></span><span class="t-3003-c">$\bar{y} \vee z$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:85:9</span></span><span class="t-3003-c">
+          und
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:85:25</span></span><span class="t-3003-c">$y \vee z$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:85:30</span></span><span class="t-3003-c">
+          mit dem<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:85:40</span></span>
+        <span class="t-3003-c">if-then-else-Schaltkreis kombinieren.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:86:9</span></span>
       </p>
     </div>
     <p class="main-column">
-      Können wir das mit beliebigen Funktionen machen? Ja klar!
-      Wir gehen wie folgt vor:
+      <span class="t-3003-c">Können wir das mit beliebigen Funktionen machen? Ja klar!<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:88:5</span></span>
+      <span class="t-3003-c">Wir gehen wie folgt vor:<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:89:5</span></span>
     </p>
     <div class="main-column">
       <ol>
         <li>
           <p>
-            Teile die Tabelle in die oberen $2^{n-1}$ Zeilen (für die
-            $x_1 = 0$ gilt) und die unteren $2^{n-1}$ Zeilen (für die
-            $x_1 = 1$ gilt) auf.
+            <span class="t-3003-c">Teile die Tabelle in die oberen
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:93:13</span></span><span class="t-3003-c">$2^{n-1}$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:93:45</span></span><span class="t-3003-c">
+              Zeilen (für die<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:93:54</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:94:13</span></span><span class="t-3003-c">$x_1 = 0$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:94:13</span></span><span class="t-3003-c">
+              gilt) und die unteren
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:94:22</span></span><span class="t-3003-c">$2^{n-1}$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:94:45</span></span><span class="t-3003-c">
+              Zeilen (für die<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:94:54</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:95:13</span></span><span class="t-3003-c">$x_1 = 1$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:95:13</span></span><span class="t-3003-c">
+              gilt) auf.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:95:22</span></span>
           </p>
         </li>
         <li>
           <p>
-            Jede Hälfte kann als Boolesche Funktion mit $n-1$
-            Variablen betrachtet werden. Bauen Sie rekursiv
-            Schaltkreise $C_0$ für die obere und $C_1$ für die untere
-            Hälfte, beide mit Input-Variablen
-            <span class="nowrap">$x_2,\dots,x_n$.</span>
+            <span class="t-3003-c">Jede Hälfte kann als Boolesche Funktion mit
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:98:13</span></span><span class="t-3003-c">$n-1$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:98:57</span></span><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:98:62</span></span>
+            <span class="t-3003-c">Variablen betrachtet werden. Bauen Sie rekursiv<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:99:13</span></span>
+            <span class="t-3003-c">Schaltkreise
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:100:13</span></span><span class="t-3003-c">$C_0$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:100:26</span></span><span class="t-3003-c">
+              für die obere und
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:100:31</span></span><span class="t-3003-c">$C_1$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:100:50</span></span><span class="t-3003-c">
+              für die untere<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:100:55</span></span>
+            <span class="t-3003-c">Hälfte, beide mit Input-Variablen
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:101:13</span></span><span class="nowrap"><span class="t-3003-c">$x_2,\dots,x_n$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:101:47</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:101:62</span></span></span>
           </p>
         </li>
         <li>
           <p>
-            Kombinieren Sie diese via
-            <code>if</code>
-            $x_1$
-            <code>then</code>
-            $C_1$
-            <code>else</code>
-            <span class="nowrap">$C_0$,</span>
-            zu einem Schaltkreis für $f$ mit insgesamt $n$
-            Input-Variablen.
+            <span class="t-3003-c">Kombinieren Sie diese via
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:104:13</span></span><code><span class="t-3003-c">if<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:104:40</span></span></code><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:104:43</span></span><span class="t-3003-c">$x_1$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:104:44</span></span><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:104:49</span></span><code><span class="t-3003-c">then<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:104:51</span></span></code><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:104:56</span></span><span class="t-3003-c">$C_1$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:104:57</span></span><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:104:62</span></span><code><span class="t-3003-c">else<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:104:64</span></span></code><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:104:69</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:105:13</span></span><span class="nowrap"><span class="t-3003-c">$C_0$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:105:13</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:105:18</span></span></span><span class="t-3003-c">
+              zu einem Schaltkreis für
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:105:18</span></span><span class="t-3003-c">$f$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:105:45</span></span><span class="t-3003-c">
+              mit insgesamt
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:105:48</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:105:63</span></span><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:105:66</span></span>
+            <span class="t-3003-c">Input-Variablen.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:106:13</span></span>
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
-      An dieser Stelle zahlt es sich aus, eine formale Notation
-      einzuführen:
+      <span class="t-3003-c">An dieser Stelle zahlt es sich aus, eine formale Notation<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:108:5</span></span>
+      <span class="t-3003-c">einzuführen:<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:109:5</span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Definition 2.2.1</b>
-        Sei $f: \{0,1\}^n \rightarrow \{0,1\}$ eine Boolesche
-        Funktion, $i \in \{1,\dots,n\}$ ein Index und
-        $b \in \{0,1\}$ ein Wert. Dann ist $f|_{x_i=b}$ eine neue
-        Funktion, und zwar
+        <b><span class="t-3003-c">Definition 2.2.1<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:111:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:111:5</span></span>
+        <span class="t-3003-c">Sei
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:112:9</span></span><span class="t-3003-c">$f: \{0,1\}^n \rightarrow \{0,1\}$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:112:13</span></span><span class="t-3003-c">
+          eine Boolesche<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:112:47</span></span>
+        <span class="t-3003-c">Funktion,
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:113:9</span></span><span class="t-3003-c">$i \in \{1,\dots,n\}$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:113:19</span></span><span class="t-3003-c">
+          ein Index und<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:113:40</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:114:9</span></span><span class="t-3003-c">$b \in \{0,1\}$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:114:9</span></span><span class="t-3003-c">
+          ein Wert. Dann ist
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:114:24</span></span><span class="t-3003-c">$f|_{x_i=b}$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:114:44</span></span><span class="t-3003-c">
+          eine neue<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:114:56</span></span>
+        <span class="t-3003-c">Funktion, und zwar<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:115:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -219,26 +268,33 @@
         f|_{x_i=b} &amp;: \{0,1\}^{n-1} \rightarrow \{0,1\} \\
         (x_1,\dots,x_{i-1}, x_{i+1}, \dots, x_n) &amp;\mapsto f(x_1,\dots,x_{i-1}, b, x_{i+1}, \dots, x_{n}).
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:117:9</span>
       </div>
       <p>
-        In Worten: wir fixieren den
-        <span class="nowrap">$i$-ten</span>
-        Input auf den Wert $b$
-        und erhalten eine Funktion in den restlichen $n-1$
-        Variablen.
+        <span class="t-3003-c">In Worten: wir fixieren den
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:122:9</span></span><span class="nowrap"><span class="t-3003-c">$i$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:122:37</span></span><span class="t-3003-c">-ten<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:122:40</span></span></span><span class="t-3003-c">
+          Input auf den Wert
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:122:40</span></span><span class="t-3003-c">$b$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:122:64</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:122:67</span></span>
+        <span class="t-3003-c">und erhalten eine Funktion in den restlichen
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:123:9</span></span><span class="t-3003-c">$n-1$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:123:54</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:123:59</span></span>
+        <span class="t-3003-c">Variablen.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:124:9</span></span>
       </p>
     </div>
     <p class="main-column">
-      Das Ergebnis ist im Allgemeinen sehr groß, aber was
-      erwarten Sie bei einer Tabelle mit $2^n$ Zeilen?
+      <span class="t-3003-c">Das Ergebnis ist im Allgemeinen sehr groß, aber was<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:126:5</span></span>
+      <span class="t-3003-c">erwarten Sie bei einer Tabelle mit
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:127:5</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:127:40</span></span><span class="t-3003-c">
+        Zeilen?<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:127:45</span></span>
     </p>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 2.2.2</b>
-        Führen Sie das rekursive Verfahren durch, um für die
-        folgende Funktion auf 4 Variablen einen Schaltkreis zu
-        bauen:
+        <b><span class="t-3003-c">Übungsaufgabe 2.2.2<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:129:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:129:5</span></span>
+        <span class="t-3003-c">Führen Sie das rekursive Verfahren durch, um für die<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:130:9</span></span>
+        <span class="t-3003-c">folgende Funktion auf 4 Variablen einen Schaltkreis zu<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:131:9</span></span>
+        <span class="t-3003-c">bauen:<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:132:9</span></span>
       </p>
       <div class="math-block">
         $$
@@ -261,36 +317,40 @@
         1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
         1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \\
         \end{array}
-        $$
+        $$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:134:9</span>
       </div>
     </div>
     <h2 class="main-column topic-announcement">
-      Bottom-Up, als DNF
+      <span class="t-3003-c">Bottom-Up, als DNF<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:157:9</span></span>
     </h2>
     <p class="main-column">
-      Wenn Sie Rekursionshasser sind und generell lieber in
-      <code>for</code>
-      -Schleifen denken, dann wird die nächste Konstruktion
-      mehr nach Ihrem Geschmack sein. Im Prinzip werden wir alle
-      Kombinationen der Variablen auflisten, für die die Funktion
-      1 ausgibt. Stellen Sie sich vor, wir haben drei Variable
-      $x,y,z$ und einen AND-Ausdruck, der jede Variable oder
-      deren Negation enthält, also zum Beispiel
+      <span class="t-3003-c">Wenn Sie Rekursionshasser sind und generell lieber in<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:159:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:160:5</span></span><code><span class="t-3003-c">for<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:160:6</span></span></code><span class="t-3003-c">
+        -Schleifen denken, dann wird die nächste Konstruktion<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:160:10</span></span>
+      <span class="t-3003-c">mehr nach Ihrem Geschmack sein. Im Prinzip werden wir alle<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:161:5</span></span>
+      <span class="t-3003-c">Kombinationen der Variablen auflisten, für die die Funktion<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:162:5</span></span>
+      <span class="t-3003-c">1 ausgibt. Stellen Sie sich vor, wir haben drei Variable<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:163:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:164:5</span></span><span class="t-3003-c">$x,y,z$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:164:5</span></span><span class="t-3003-c">
+        und einen AND-Ausdruck, der jede Variable oder<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:164:12</span></span>
+      <span class="t-3003-c">deren Negation enthält, also zum Beispiel<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:165:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       x \wedge \bar{y} \wedge z \ .
-      $$
+      $$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:167:5</span>
     </div>
     <p class="main-column">
-      Von den 8 möglichen Input-Tupeln gibt es nur eins, für das
-      dieser Ausdruck eine 1 ausgibt, in diesem Falle
-      <span class="nowrap">$(1,0,1)$.</span>
-      Wir werden nun also für jede 1-Zeile unserer
-      Wahrheitstabelle einen solchen Ausdruck hinschreiben und
-      diese dann in einem großen OR zusammenführen. Einen
-      Ausdruck, der aus einem AND von Variablen oder deren
-      Negation besteht, nennt man auch einen Term.
+      <span class="t-3003-c">Von den 8 möglichen Input-Tupeln gibt es nur eins, für das<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:171:5</span></span>
+      <span class="t-3003-c">dieser Ausdruck eine 1 ausgibt, in diesem Falle
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:172:5</span></span><span class="nowrap"><span class="t-3003-c">$(1,0,1)$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:172:53</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:172:62</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:172:62</span></span>
+      <span class="t-3003-c">Wir werden nun also für jede 1-Zeile unserer<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:173:5</span></span>
+      <span class="t-3003-c">Wahrheitstabelle einen solchen Ausdruck hinschreiben und<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:174:5</span></span>
+      <span class="t-3003-c">diese dann in einem großen OR zusammenführen. Einen<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:175:5</span></span>
+      <span class="t-3003-c">Ausdruck, der aus einem AND von Variablen oder deren<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:176:5</span></span>
+      <span class="t-3003-c">Negation besteht, nennt man auch einen Term.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:177:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
@@ -305,28 +365,28 @@
       1 &amp; 1 &amp; 0 &amp; 0 &amp; \\
       1 &amp; 1 &amp; 1 &amp; 1 &amp; x \wedge y \wedge z \\
       \end{array}
-      $$
+      $$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:179:5</span>
     </div>
     <p class="main-column">
-      Mit einem großen OR zusammengeführt ergibt das dann
+      <span class="t-3003-c">Mit einem großen OR zusammengeführt ergibt das dann<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:193:5</span></span>
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:10em"
           src="img/circuits/dnf-example.svg"
-        >
+        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/dnf-example.svg</span></span>
       </figure>
     </div>
     <p class="main-column">
-      In diesem Schaltkreis habe ich die Input-Knoten mehrfach
-      aufgeführt und die NOT-Gates nicht explizit aufgeführt,
-      damit kein "Kabelsalat" entsteht. Beachten Sie auch, das
-      jedes Gate (außer den Input-Gates) genau
-      <i>eine</i>
-      ausgehende
-      Kante hat. Konkret bedeutet dies, dass man diesen
-      Schaltkreis als logische Formel hinschreiben kann:
+      <span class="t-3003-c">In diesem Schaltkreis habe ich die Input-Knoten mehrfach<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:200:5</span></span>
+      <span class="t-3003-c">aufgeführt und die NOT-Gates nicht explizit aufgeführt,<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:201:5</span></span>
+      <span class="t-3003-c">damit kein "Kabelsalat" entsteht. Beachten Sie auch, das<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:202:5</span></span>
+      <span class="t-3003-c">jedes Gate (außer den Input-Gates) genau
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:203:5</span></span><i><span class="t-3003-c">eine<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:203:47</span></span></i><span class="t-3003-c">
+        ausgehende<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:203:52</span></span>
+      <span class="t-3003-c">Kante hat. Konkret bedeutet dies, dass man diesen<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:204:5</span></span>
+      <span class="t-3003-c">Schaltkreis als logische Formel hinschreiben kann:<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:205:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
@@ -336,66 +396,79 @@
       \vee (x \wedge \bar{y} \wedge \bar{z})
       \vee (x \wedge \bar{y} \wedge z)
       \vee (x \wedge y \wedge z)
-      $$
+      $$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:207:5</span>
     </div>
     <div class="well statement out">
       <p>
-        <b>Definition 2.2.2</b>
-        Ein
-        <i>Literal</i>
-        ist eine Variable $x$ oder deren Negation
-        <span class="nowrap">$\bar{x}$.</span>
-        Ein
-        <i>Term</i>
-        ist ein AND (auch: Konjunktion) von
-        Literalen (beispielsweise
-        <span class="nowrap">$\bar{x} \wedge \bar{y} \wedge z)$.</span>
-        Eine Formel in
-        <i>disjunktiver Normalform</i>
-        (DNF) ist ein OR von Termen.
-        Alternativ: eine DNF ist ein Schaltkreis der Tiefe 2 (wobei
-        NOT-Gates nicht mitzählen), dessen Output-Gate ein OR-Gate
-        ist.
+        <b><span class="t-3003-c">Definition 2.2.2<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:216:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:216:5</span></span>
+        <span class="t-3003-c">Ein
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:217:9</span></span><i><span class="t-3003-c">Literal<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:217:14</span></span></i><span class="t-3003-c">
+          ist eine Variable
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:217:22</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:217:41</span></span><span class="t-3003-c">
+          oder deren Negation<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:217:44</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:218:9</span></span><span class="nowrap"><span class="t-3003-c">$\bar{x}$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:218:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:218:18</span></span></span><span class="t-3003-c">
+          Ein
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:218:18</span></span><i><span class="t-3003-c">Term<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:218:25</span></span></i><span class="t-3003-c">
+          ist ein AND (auch: Konjunktion) von<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:218:30</span></span>
+        <span class="t-3003-c">Literalen (beispielsweise<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:219:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:220:9</span></span><span class="nowrap"><span class="t-3003-c">$\bar{x} \wedge \bar{y} \wedge z)$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:220:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:220:43</span></span></span><span class="t-3003-c">
+          Eine Formel in<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:220:43</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:221:9</span></span><i><span class="t-3003-c">disjunktiver Normalform<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:221:10</span></span></i><span class="t-3003-c">
+          (DNF) ist ein OR von Termen.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:221:34</span></span>
+        <span class="t-3003-c">Alternativ: eine DNF ist ein Schaltkreis der Tiefe 2 (wobei<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:222:9</span></span>
+        <span class="t-3003-c">NOT-Gates nicht mitzählen), dessen Output-Gate ein OR-Gate<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:223:9</span></span>
+        <span class="t-3003-c">ist.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:224:9</span></span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 2.2.3</b>
-        Was, wenn einige der "mittleren" Gates (auf Tiefe 1) keine
-        AND-Gates sind, sondern auch OR-Gates? Dann wäre dies nach
-        der ersten Definition
-        <i>keine</i>
-        DNF-Formel, nach der zweiten
-        aber schon. Zeigen Sie, wie man OR-Gates auf Ebene 1
-        entfernen kann! Als konkretes Beispiel:
+        <b><span class="t-3003-c">Übungsaufgabe 2.2.3<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:226:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:226:5</span></span>
+        <span class="t-3003-c">Was, wenn einige der "mittleren" Gates (auf Tiefe 1) keine<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:227:9</span></span>
+        <span class="t-3003-c">AND-Gates sind, sondern auch OR-Gates? Dann wäre dies nach<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:228:9</span></span>
+        <span class="t-3003-c">der ersten Definition
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:229:9</span></span><i><span class="t-3003-c">keine<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:229:32</span></span></i><span class="t-3003-c">
+          DNF-Formel, nach der zweiten<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:229:38</span></span>
+        <span class="t-3003-c">aber schon. Zeigen Sie, wie man OR-Gates auf Ebene 1<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:230:9</span></span>
+        <span class="t-3003-c">entfernen kann! Als konkretes Beispiel:<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:231:9</span></span>
       </p>
       <div class="figure__container">
         <figure>
           <img
             style="height:10em"
             src="img/circuits/dnf-dirty.svg"
-          >
+          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/dnf-dirty.svg</span></span>
         </figure>
       </div>
     </div>
     <h2 class="main-column topic-announcement">
-      Bottom-Up, als CNF
+      <span class="t-3003-c">Bottom-Up, als CNF<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:239:9</span></span>
     </h2>
     <p class="main-column">
-      Zu der eben demonstrierten Konstruktion gibt es noch eine
-      weitere, dazu duale Konstruktion. Bildlich gesprochen
-      listet DNF-Konstruktion alle Möglichkeiten auf, wie man
-      eine 1 erhalten kann. Dual dazu können wir alle
-      Möglichkeiten auflisten, wie man eine 0 erhalten kann;
-      tritt
-      <i>keine</i>
-      davon ein, muss wohl eine 1 herauskommen. Wir
-      gehen also in der Wahrheitstabelle alle Zeilen mit Wert 0
-      durch und schreiben einen Ausdruck, der genau diese Zeile
-      verbietet. So kann man den Ausdruck
-      $(\bar{x} \vee \bar{y} \vee z)$ verstehen als " $(x,y,z)$
-      darf nicht $(1,1,0)$ sein." An dem obigen Beispiel ergibt
-      dies:
+      <span class="t-3003-c">Zu der eben demonstrierten Konstruktion gibt es noch eine<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:241:5</span></span>
+      <span class="t-3003-c">weitere, dazu duale Konstruktion. Bildlich gesprochen<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:242:5</span></span>
+      <span class="t-3003-c">listet DNF-Konstruktion alle Möglichkeiten auf, wie man<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:243:5</span></span>
+      <span class="t-3003-c">eine 1 erhalten kann. Dual dazu können wir alle<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:244:5</span></span>
+      <span class="t-3003-c">Möglichkeiten auflisten, wie man eine 0 erhalten kann;<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:245:5</span></span>
+      <span class="t-3003-c">tritt
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:246:5</span></span><i><span class="t-3003-c">keine<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:246:12</span></span></i><span class="t-3003-c">
+        davon ein, muss wohl eine 1 herauskommen. Wir<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:246:18</span></span>
+      <span class="t-3003-c">gehen also in der Wahrheitstabelle alle Zeilen mit Wert 0<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:247:5</span></span>
+      <span class="t-3003-c">durch und schreiben einen Ausdruck, der genau diese Zeile<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:248:5</span></span>
+      <span class="t-3003-c">verbietet. So kann man den Ausdruck<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:249:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:250:5</span></span><span class="t-3003-c">$(\bar{x} \vee \bar{y} \vee z)$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:250:5</span></span><span class="t-3003-c">
+        verstehen als "
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:250:36</span></span><span class="t-3003-c">$(x,y,z)$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:250:53</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:250:62</span></span>
+      <span class="t-3003-c">darf nicht
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:251:5</span></span><span class="t-3003-c">$(1,1,0)$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:251:16</span></span><span class="t-3003-c">
+        sein." An dem obigen Beispiel ergibt<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:251:25</span></span>
+      <span class="t-3003-c">dies:<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:252:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
@@ -410,125 +483,144 @@
       1 &amp; 1 &amp; 0 &amp; 0 &amp; \bar{x} \vee \bar{y} \vee z \\
       1 &amp; 1 &amp; 1 &amp; 1 &amp; \\
       \end{array}
-      $$
+      $$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:254:5</span>
     </div>
     <p class="main-column">
-      Einen Ausdruck der Form
-      <span class="nowrap">$\bar{x} \vee \bar{y} \vee z$,</span>
-      also ein OR von Literaten, nennt man auch eine
-      <span class="nowrap"><i>Klausel</i>.</span>
-      Eine Klausel mit $n$ (hier:
-      <span class="nowrap">$n=3$)</span>
-      Literaten verbietet
-      genau ein Tupel von Wahrheitswerten. Wenn wir also alle
-      Verbote mit AND verknüpfen, erhalten wir
+      <span class="t-3003-c">Einen Ausdruck der Form
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:268:5</span></span><span class="nowrap"><span class="t-3003-c">$\bar{x} \vee \bar{y} \vee z$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:268:29</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:268:58</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:268:58</span></span>
+      <span class="t-3003-c">also ein OR von Literaten, nennt man auch eine
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:269:5</span></span><span class="nowrap"><i><span class="t-3003-c">Klausel<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:269:53</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:269:61</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:269:61</span></span>
+      <span class="t-3003-c">Eine Klausel mit
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:270:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:270:22</span></span><span class="t-3003-c">
+        (hier:
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:270:25</span></span><span class="nowrap"><span class="t-3003-c">$n=3$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:270:33</span></span><span class="t-3003-c">)<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:270:38</span></span></span><span class="t-3003-c">
+        Literaten verbietet<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:270:38</span></span>
+      <span class="t-3003-c">genau ein Tupel von Wahrheitswerten. Wenn wir also alle<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:271:5</span></span>
+      <span class="t-3003-c">Verbote mit AND verknüpfen, erhalten wir<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:272:5</span></span>
     </p>
     <div class="pseudowell">
       <figure>
         <img
           style="height:10em"
           src="img/circuits/cnf-example.svg"
-        >
+        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/circuits/cnf-example.svg</span></span>
       </figure>
     </div>
     <div class="well statement out">
       <p>
-        <b>Definition 2.2.3</b>
-        Eine Formel in
-        <i>konjunktiver Normalform</i>
-        (CNF) ist ein AND
-        von Klauseln. Alternativ: eine CNF-Formel ist ein
-        Schaltkreis der Tiefe 2 (wobei NOT-Gates nicht mitzählen),
-        dessen Output-Gate ein AND-Gate ist.
+        <b><span class="t-3003-c">Definition 2.2.3<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:279:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:279:5</span></span>
+        <span class="t-3003-c">Eine Formel in
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:280:9</span></span><i><span class="t-3003-c">konjunktiver Normalform<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:280:25</span></span></i><span class="t-3003-c">
+          (CNF) ist ein AND<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:280:49</span></span>
+        <span class="t-3003-c">von Klauseln. Alternativ: eine CNF-Formel ist ein<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:281:9</span></span>
+        <span class="t-3003-c">Schaltkreis der Tiefe 2 (wobei NOT-Gates nicht mitzählen),<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:282:9</span></span>
+        <span class="t-3003-c">dessen Output-Gate ein AND-Gate ist.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:283:9</span></span>
       </p>
     </div>
     <p class="main-column">
-      In diesem konkreten Beispiel ist die CNF viel kürzer als
-      die DNF (das ist Zufall; ich habe meine Tabelle mit
-      Zufallswerten erzeugt). Allerdings können wir, ausgehend
-      von der "rohen" DNF (oder CNF), diese noch nachträglich
-      bearbeiten und kleiner machen. Zum Beispiel können wir
-      "nebeneinanderstehende" Terme zu einem einzigen
-      zusammenziehen, z.B. :
+      <span class="t-3003-c">In diesem konkreten Beispiel ist die CNF viel kürzer als<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:285:5</span></span>
+      <span class="t-3003-c">die DNF (das ist Zufall; ich habe meine Tabelle mit<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:286:5</span></span>
+      <span class="t-3003-c">Zufallswerten erzeugt). Allerdings können wir, ausgehend<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:287:5</span></span>
+      <span class="t-3003-c">von der "rohen" DNF (oder CNF), diese noch nachträglich<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:288:5</span></span>
+      <span class="t-3003-c">bearbeiten und kleiner machen. Zum Beispiel können wir<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:289:5</span></span>
+      <span class="t-3003-c">"nebeneinanderstehende" Terme zu einem einzigen<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:290:5</span></span>
+      <span class="t-3003-c">zusammenziehen, z.B. :<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:291:5</span></span>
     </p>
     <div class="math-block main-column">
       $$
       (\bar{x} \wedge y \wedge \bar{z}) \vee (\bar{x} \wedge y \wedge z) \equiv \bar{x} \wedge y \ .
-      $$
+      $$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:293:5</span>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 2.2.4</b>
-        Minimieren Sie die obige DNF (die mit den 6 Termen), indem
-        Sie gewisse Paare von Termen zu einem kürzeren
-        zusammenfassen.
+        <b><span class="t-3003-c">Übungsaufgabe 2.2.4<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:297:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:297:5</span></span>
+        <span class="t-3003-c">Minimieren Sie die obige DNF (die mit den 6 Termen), indem<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:298:9</span></span>
+        <span class="t-3003-c">Sie gewisse Paare von Termen zu einem kürzeren<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:299:9</span></span>
+        <span class="t-3003-c">zusammenfassen.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:300:9</span></span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 2.2.5</b>
-        Zeigen Sie, dass es zu jeder Booleschen Funktion
-        $f: \{0,1\}^n \rightarrow \{0,1\}$ eine äquivalente
-        DNF-Formel mit höchstens $2^{n-1}$ Termen gibt.
+        <b><span class="t-3003-c">Übungsaufgabe 2.2.5<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:302:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:302:5</span></span>
+        <span class="t-3003-c">Zeigen Sie, dass es zu jeder Booleschen Funktion<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:303:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:304:9</span></span><span class="t-3003-c">$f: \{0,1\}^n \rightarrow \{0,1\}$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:304:9</span></span><span class="t-3003-c">
+          eine äquivalente<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:304:43</span></span>
+        <span class="t-3003-c">DNF-Formel mit höchstens
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:305:9</span></span><span class="t-3003-c">$2^{n-1}$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:305:34</span></span><span class="t-3003-c">
+          Termen gibt.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:305:43</span></span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 2.2.6</b>
-        Zeigen Sie, dass jede DNF-Formel für die Boolesche
-        Funktion $x_1 \oplus \dots \oplus x_n$ genau $2^{n-1}$
-        Terme besitzen muss.
+        <b><span class="t-3003-c">Übungsaufgabe 2.2.6<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:307:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:307:5</span></span>
+        <span class="t-3003-c">Zeigen Sie, dass jede DNF-Formel für die Boolesche<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:308:9</span></span>
+        <span class="t-3003-c">Funktion
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:309:9</span></span><span class="t-3003-c">$x_1 \oplus \dots \oplus x_n$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:309:18</span></span><span class="t-3003-c">
+          genau
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:309:47</span></span><span class="t-3003-c">$2^{n-1}$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:309:54</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:309:63</span></span>
+        <span class="t-3003-c">Terme besitzen muss.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:310:9</span></span>
       </p>
     </div>
     <p class="main-column">
-      Sie haben eventuell von Methoden zur Minimierung von DNFs
-      bzw. CNFs oder Schaltkreisen im Allgemeinen gehört, z.B.
-      Karnaugh-Diagramme. Dies sind
-      <span class="nowrap"><i>Heuristiken</i>,</span>
-      die hilfreich
-      sind, aber nicht garantieren können, eine optimale Lösung
-      zu finden (es sind also keine
-      <i>Algorithmen</i>
-      in dem Sinne).
-      Die genaue Komplexität dieser Optimierungsprobleme ist in
-      der Tat Gegenstand aktiver Forschung,
+      <span class="t-3003-c">Sie haben eventuell von Methoden zur Minimierung von DNFs<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:312:5</span></span>
+      <span class="t-3003-c">bzw. CNFs oder Schaltkreisen im Allgemeinen gehört, z.B.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:313:5</span></span>
+      <span class="t-3003-c">Karnaugh-Diagramme. Dies sind
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:314:5</span></span><span class="nowrap"><i><span class="t-3003-c">Heuristiken<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:314:36</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:314:48</span></span></span><span class="t-3003-c">
+        die hilfreich<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:314:48</span></span>
+      <span class="t-3003-c">sind, aber nicht garantieren können, eine optimale Lösung<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:315:5</span></span>
+      <span class="t-3003-c">zu finden (es sind also keine
+        <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:316:5</span></span><i><span class="t-3003-c">Algorithmen<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:316:36</span></span></i><span class="t-3003-c">
+        in dem Sinne).<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:316:48</span></span>
+      <span class="t-3003-c">Die genaue Komplexität dieser Optimierungsprobleme ist in<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:317:5</span></span>
+      <span class="t-3003-c">der Tat Gegenstand aktiver Forschung,<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:318:5</span></span>
     </p>
     <div class="main-column">
       <ol>
         <li>
           <p>
-            Wenn die Funktion (1) bereits als
-            <i>Boolesche Formel</i>
-            vorliegt (also Schaltkreise, in denen außer den
-            Eingabe-Gates alle Gates nur eine ausgehende Kante haben),
-            so ist das Minimierungsproblem $Sigma_2^{P}$ -vollständig,
-            siehe
-            <a href="http://users.cms.caltech.edu/~umans/papers/BU07.pdf">Buchfuhrer, David; Umans, Christopher (January
-              2011), The complexity of Boolean formula minimization (JCSS
-              2011)</a>.
+            <span class="t-3003-c">Wenn die Funktion (1) bereits als
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:322:13</span></span><i><span class="t-3003-c">Boolesche Formel<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:322:48</span></span></i><span class="t-3003-c">
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:322:65</span></span>
+            <span class="t-3003-c">vorliegt (also Schaltkreise, in denen außer den<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:323:13</span></span>
+            <span class="t-3003-c">Eingabe-Gates alle Gates nur eine ausgehende Kante haben),<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:324:13</span></span>
+            <span class="t-3003-c">so ist das Minimierungsproblem
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:325:13</span></span><span class="t-3003-c">$Sigma_2^{P}$<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:325:44</span></span><span class="t-3003-c">
+              -vollständig,<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:325:57</span></span>
+            <span class="t-3003-c">siehe
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:326:13</span></span><a href="http://users.cms.caltech.edu/~umans/papers/BU07.pdf"><span class="t-3003-c">Buchfuhrer, David; Umans, Christopher (January<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:326:20</span></span>
+              <span class="t-3003-c">2011), The complexity of Boolean formula minimization (JCSS<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:327:13</span></span>
+              <span class="t-3003-c">2011)<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:328:13</span></span></a><span class="t-3003-c">.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:328:72</span></span>
           </p>
         </li>
         <li>
           <p>
-            Wenn die Funktion (2) als Tabelle gegeben ist, dann ist
-            die genaue Komplexität nicht genau bekannt. Es hat in den
-            letzten Jahren Fortschritte gegeben (die nahelegen, dass
-            das Problem tatsächlich schwierig ist), z.B.
-            <a href="https://drops.dagstuhl.de/opus/volltexte/2020/12574/pdf/LIPIcs-CCC-2020-22.pdf">Ilango, Loff,
-              and Oliveira. NP-Hardness of Circuit Minimization for
-              Multi-Output Functions, (CCC
-              2020).</a>
+            <span class="t-3003-c">Wenn die Funktion (2) als Tabelle gegeben ist, dann ist<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:331:13</span></span>
+            <span class="t-3003-c">die genaue Komplexität nicht genau bekannt. Es hat in den<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:332:13</span></span>
+            <span class="t-3003-c">letzten Jahren Fortschritte gegeben (die nahelegen, dass<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:333:13</span></span>
+            <span class="t-3003-c">das Problem tatsächlich schwierig ist), z.B.
+              <span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:334:13</span></span><a href="https://drops.dagstuhl.de/opus/volltexte/2020/12574/pdf/LIPIcs-CCC-2020-22.pdf"><span class="t-3003-c">Ilango, Loff,<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:334:59</span></span>
+              <span class="t-3003-c">and Oliveira. NP-Hardness of Circuit Minimization for<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:335:13</span></span>
+              <span class="t-3003-c">Multi-Output Functions, (CCC<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:336:13</span></span>
+              <span class="t-3003-c">2020).<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:337:13</span></span></a>
           </p>
         </li>
       </ol>
     </div>
     <p class="main-column">
-      Beachten Sie, dass (2) algorithmisch einfacher ist: durch
-      die "verschwenderische" Darstellung der Funktion als
-      Tabelle ist bereits der Input sehr groß ( Bits), sodass ein
-      Algorithmus, der hier versucht, zu minimieren, bereits ein
-      großes "Zeitbudget" hat. Dennoch ist das Problem
-      höchstwahrscheinlich schwierig.
+      <span class="t-3003-c">Beachten Sie, dass (2) algorithmisch einfacher ist: durch<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:339:5</span></span>
+      <span class="t-3003-c">die "verschwenderische" Darstellung der Funktion als<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:340:5</span></span>
+      <span class="t-3003-c">Tabelle ist bereits der Input sehr groß ( Bits), sodass ein<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:341:5</span></span>
+      <span class="t-3003-c">Algorithmus, der hier versucht, zu minimieren, bereits ein<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:342:5</span></span>
+      <span class="t-3003-c">großes "Zeitbudget" hat. Dennoch ist das Problem<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:343:5</span></span>
+      <span class="t-3003-c">höchstwahrscheinlich schwierig.<span class="t-3003">./course1/wly/02/02-Wahrheitstabellen-CNF-DNF.wly:344:5</span></span>
     </p>
     <div id="end-of-page-elt">
     </div>

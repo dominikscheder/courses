@@ -53,7 +53,7 @@
     </div>
     <div class="main-column page-title">
       <p>
-        9.4&ensp;Viele Beispiele aus NP
+        <span class="t-3003-c">9.4&ensp;Viele Beispiele aus NP<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:2:11</span></span>
       </p>
     </div>
     <div
@@ -61,18 +61,21 @@
       class="well statement out"
     >
       <p>
-        <b>Problem 9.4.1</b>
-        (<span class="sc">3-Colorability</span>). Gegeben ein Graph
-        <span class="nowrap">$G= (V,E)$,</span>
-        gibt
-        es eine Färbung $c : V \rightarrow \{1,2,3\}$ mit
+        <b><span class="t-3003-c">Problem 9.4.1<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:4:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:4:5</span></span>
+        <span class="t-3003-c">(<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:6:9</span></span><span class="sc"><span class="t-3003-c">3-Colorability<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:6:11</span></span></span><span class="t-3003-c">). Gegeben ein Graph
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:6:30</span></span><span class="nowrap"><span class="t-3003-c">$G= (V,E)$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:6:51</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:6:61</span></span></span><span class="t-3003-c">
+          gibt<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:6:61</span></span>
+        <span class="t-3003-c">es eine Färbung
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:7:9</span></span><span class="t-3003-c">$c : V \rightarrow \{1,2,3\}$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:7:25</span></span><span class="t-3003-c">
+          mit<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:7:54</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \forall\ \{u,v\} \in E: \ c(u) \ne c(v) \ ?
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:9:9</span>
       </div>
     </div>
     <div class="pseudowell">
@@ -82,9 +85,9 @@
         <div class="group_scaler">
           <div class="figure__container">
             <figure>
-              <img src="img/09-complexity-theory/np-examples/peterson-3-colorable.svg">
+              <img src="img/09-complexity-theory/np-examples/peterson-3-colorable.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/09-complexity-theory/np-examples/peterson-3-colorable.svg</span></span>
               <figcaption>
-                Der Peterson-Graph ist 3-färbbar.
+                <span class="t-3003-c">Der Peterson-Graph ist 3-färbbar.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:18:17</span></span>
               </figcaption>
             </figure>
           </div>
@@ -92,9 +95,9 @@
           </div>
           <div class="figure__container">
             <figure>
-              <img src="img/09-complexity-theory/np-examples/not-3-colorable.svg">
+              <img src="img/09-complexity-theory/np-examples/not-3-colorable.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/09-complexity-theory/np-examples/not-3-colorable.svg</span></span>
               <figcaption>
-                Dieser Graph ist nicht 3-färbbar
+                <span class="t-3003-c">Dieser Graph ist nicht 3-färbbar<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:27:17</span></span>
               </figcaption>
             </figure>
           </div>
@@ -102,242 +105,319 @@
       </div>
     </div>
     <p class="main-column">
-      Wir müssen nun eine Zertifikatmaschine mit polynomieller
-      Laufzeit angeben. Um uns nicht in technischen Details zu
-      verlieren, werden wir einfach einen Algorithmus angeben,
-      der zwei Inputs entgegennimmt: den Graphen $G$ (im
-      Turingmaschinenkontext also das Eingabewort
-      <span class="nowrap">$x$)</span>
-      und ein
-      <span class="nowrap"><i>Zertifikat</i>.</span>
-      Hier ist unser Code:
+      <span class="t-3003-c">Wir müssen nun eine Zertifikatmaschine mit polynomieller<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:29:5</span></span>
+      <span class="t-3003-c">Laufzeit angeben. Um uns nicht in technischen Details zu<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:30:5</span></span>
+      <span class="t-3003-c">verlieren, werden wir einfach einen Algorithmus angeben,<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:31:5</span></span>
+      <span class="t-3003-c">der zwei Inputs entgegennimmt: den Graphen
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:32:5</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:32:48</span></span><span class="t-3003-c">
+        (im<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:32:51</span></span>
+      <span class="t-3003-c">Turingmaschinenkontext also das Eingabewort
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:33:5</span></span><span class="nowrap"><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:33:49</span></span><span class="t-3003-c">)<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:33:52</span></span></span><span class="t-3003-c">
+        und ein<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:33:52</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:34:5</span></span><span class="nowrap"><i><span class="t-3003-c">Zertifikat<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:34:6</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:34:17</span></span></span><span class="t-3003-c">
+        Hier ist unser Code:<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:34:17</span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Beobachtung 9.4.2</b>
-        <span class="sc">3-Colorability</span>
-        ist in NP.
+        <b><span class="t-3003-c">Beobachtung 9.4.2<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:36:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:36:5</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:37:9</span></span><span class="sc"><span class="t-3003-c">3-Colorability<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:37:10</span></span></span><span class="t-3003-c">
+          ist in NP.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:37:29</span></span>
       </p>
     </div>
     <div class="well highlight out">
       <p>
         <b>Beweis</b>
-        Wir müssen nun eine Zertifikatmaschine mit polynomieller
-        Laufzeit angeben. Um uns nicht in technischen Details zu
-        verlieren, werden wir einfach einen Algorithmus angeben,
-        der zwei Inputs entgegennimmt: den Graphen $G$ (im
-        Turingmaschinenkontext also das Eingabewort
-        <span class="nowrap">$x$)</span>
-        und ein
-        <span class="nowrap"><i>Zertifikat</i>.</span>
-        Hier ist unser Code:
+        
+        <span class="t-3003-c">Wir müssen nun eine Zertifikatmaschine mit polynomieller<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:58:9</span></span>
+        <span class="t-3003-c">Laufzeit angeben. Um uns nicht in technischen Details zu<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:59:9</span></span>
+        <span class="t-3003-c">verlieren, werden wir einfach einen Algorithmus angeben,<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:60:9</span></span>
+        <span class="t-3003-c">der zwei Inputs entgegennimmt: den Graphen
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:61:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:61:52</span></span><span class="t-3003-c">
+          (im<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:61:55</span></span>
+        <span class="t-3003-c">Turingmaschinenkontext also das Eingabewort
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:62:9</span></span><span class="nowrap"><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:62:53</span></span><span class="t-3003-c">)<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:62:56</span></span></span><span class="t-3003-c">
+          und ein<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:62:56</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:63:9</span></span><span class="nowrap"><i><span class="t-3003-c">Zertifikat<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:63:10</span></span></i><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:63:21</span></span></span><span class="t-3003-c">
+          Hier ist unser Code:<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:63:21</span></span>
       </p>
 <pre class="listing">
-<span class="listing-bol"></span>def is_3_coloring(graph, c):
-<span class="listing-bol"></span>    (V,E) = graph
-<span class="listing-bol"></span>    for (u,v) in E:
-<span class="listing-bol"></span>    if c[u] == c[v]:
-<span class="listing-bol"></span>    return False
-<span class="listing-bol"></span>    if c[u] not in [1,2,3] or c[v] not in [1,2,3]:
-<span class="listing-bol"></span>        return False
-<span class="listing-bol"></span>    return True
+<span class="listing-bol"></span><span class="t-3003-c">def is_3_coloring(graph, c):<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:66:9</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">    (V,E) = graph<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:67:9</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">    for (u,v) in E:<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:68:9</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">    if c[u] == c[v]:<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:69:9</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">    return False<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:70:9</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">    if c[u] not in [1,2,3] or c[v] not in [1,2,3]:<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:71:9</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">        return False<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:72:9</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">    return True<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:73:9</span></span>
 </pre>
       <p>
-        Falls nun $G$
-        <span class="nowrap">$3$-färbbar</span>
-        ist, wenn es also eine solche
-        Färbung $c: V \rightarrow \{1,2,3\}$ gibt, dann wird
-        obiger Algorithmus
-        <code>is_3_coloring(graph,c)</code>
-        auch
-        <code>True</code>
-        ausgeben. Falls er für ein $c$
-        <code>True</code>
-        ausgibt, dann ist $c$
-        tatsächlich eine gültige 3-Färbung und $G$ ist $3$
-        -färbbar.<span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+        <span class="t-3003-c">Falls nun
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:76:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:76:19</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:76:22</span></span><span class="nowrap"><span class="t-3003-c">$3$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:76:23</span></span><span class="t-3003-c">-färbbar<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:76:26</span></span></span><span class="t-3003-c">
+          ist, wenn es also eine solche<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:76:26</span></span>
+        <span class="t-3003-c">Färbung
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:77:9</span></span><span class="t-3003-c">$c: V \rightarrow \{1,2,3\}$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:77:17</span></span><span class="t-3003-c">
+          gibt, dann wird<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:77:45</span></span>
+        <span class="t-3003-c">obiger Algorithmus
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:78:9</span></span><code><span class="t-3003-c">is_3_coloring(graph,c)<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:78:29</span></span></code><span class="t-3003-c">
+          auch
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:78:52</span></span><code><span class="t-3003-c">True<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:78:59</span></span></code><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:78:64</span></span>
+        <span class="t-3003-c">ausgeben. Falls er für ein
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:79:9</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:79:36</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:79:39</span></span><code><span class="t-3003-c">True<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:79:41</span></span></code><span class="t-3003-c">
+          ausgibt, dann ist
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:79:46</span></span><span class="t-3003-c">$c$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:79:65</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:79:68</span></span>
+        <span class="t-3003-c">tatsächlich eine gültige 3-Färbung und
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:80:9</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:80:48</span></span><span class="t-3003-c">
+          ist
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:80:51</span></span><span class="t-3003-c">$3$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:80:56</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:80:59</span></span>
+        <span class="t-3003-c">-färbbar.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:81:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <p class="main-column">
-      Das obige Beispiel verdeutlicht die Essenz der Klasse NP:
-      es ist nicht klar, wie wir einen effizienten Algorithmus
-      für
-      <span class="sc">3-Colorability</span>schreiben können; aber
-      <span class="nowrap"><i>überprüfen</i>,</span>
-      ob eine gegebene Färbung eine 3-Färbung von
-      $G$ ist, das ist einfach.
+      <span class="t-3003-c">Das obige Beispiel verdeutlicht die Essenz der Klasse NP:<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:83:5</span></span>
+      <span class="t-3003-c">es ist nicht klar, wie wir einen effizienten Algorithmus<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:84:5</span></span>
+      <span class="t-3003-c">für
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:85:5</span></span><span class="sc"><span class="t-3003-c">3-Colorability<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:85:10</span></span></span><span class="t-3003-c">schreiben können; aber<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:85:29</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:86:5</span></span><span class="nowrap"><i><span class="t-3003-c">überprüfen<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:86:6</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:86:17</span></span></span><span class="t-3003-c">
+        ob eine gegebene Färbung eine 3-Färbung von<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:86:17</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:87:5</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:87:5</span></span><span class="t-3003-c">
+        ist, das ist einfach.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:87:8</span></span>
     </p>
     <div
       id="_58_h.a.i_"
       class="well exercise out"
     >
       <p>
-        <b>Übungsaufgabe 9.4.1</b>
-        (<span class="sc">CNF-Satisfiability</span>). Gegeben eine Formel $F$ in
-        konjunktiver Normalform. Gibt es eine Belegung der
-        Variablen, so dass $F$ zu
-        <code>True</code>
-        wird?
+        <b><span class="t-3003-c">Übungsaufgabe 9.4.1<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:89:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:89:5</span></span>
+        <span class="t-3003-c">(<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:91:9</span></span><span class="sc"><span class="t-3003-c">CNF-Satisfiability<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:91:11</span></span></span><span class="t-3003-c">). Gegeben eine Formel
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:91:34</span></span><span class="t-3003-c">$F$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:91:57</span></span><span class="t-3003-c">
+          in<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:91:60</span></span>
+        <span class="t-3003-c">konjunktiver Normalform. Gibt es eine Belegung der<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:92:9</span></span>
+        <span class="t-3003-c">Variablen, so dass
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:93:9</span></span><span class="t-3003-c">$F$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:93:28</span></span><span class="t-3003-c">
+          zu
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:93:31</span></span><code><span class="t-3003-c">True<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:93:36</span></span></code><span class="t-3003-c">
+          wird?<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:93:41</span></span>
       </p>
     </div>
     <p class="main-column">
-      Auch hier können wir eine einfache Prüf-Funktion
-      schreiben, die eine Formel $F$ und eine Belegung $\alpha$
-      entgegennimmt, dann jede Klausel auswertet und schaut, ob
-      immer
-      <code>True</code>
-      rauskommt. Somit gilt:
-      auch<span class="sc">CNF-Satisfiability</span>
-      ist in NP.
+      <span class="t-3003-c">Auch hier können wir eine einfache Prüf-Funktion<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:95:5</span></span>
+      <span class="t-3003-c">schreiben, die eine Formel
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:96:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:96:32</span></span><span class="t-3003-c">
+        und eine Belegung
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:96:35</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:96:54</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:96:62</span></span>
+      <span class="t-3003-c">entgegennimmt, dann jede Klausel auswertet und schaut, ob<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:97:5</span></span>
+      <span class="t-3003-c">immer
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:98:5</span></span><code><span class="t-3003-c">True<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:98:12</span></span></code><span class="t-3003-c">
+        rauskommt. Somit gilt:<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:98:17</span></span>
+      <span class="t-3003-c">auch<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:99:5</span></span><span class="sc"><span class="t-3003-c">CNF-Satisfiability<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:99:10</span></span></span><span class="t-3003-c">
+        ist in NP.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:99:33</span></span>
     </p>
     <div
       id="_59_h.a.i_"
       class="well statement out"
     >
       <p>
-        <b>Problem 9.4.3</b>
-        (<span class="sc">Subset Sum</span>). Gegeben eine Liste
-        $p_1, \dots, p_n \in \N$ von "Preisen" und ein "Guthaben"
-        <span class="nowrap">$g \in \N$,</span>
-        gibt es eine Menge $I \subseteq [n]$ mit
+        <b><span class="t-3003-c">Problem 9.4.3<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:101:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:101:5</span></span>
+        <span class="t-3003-c">(<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:103:9</span></span><span class="sc"><span class="t-3003-c">Subset Sum<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:103:11</span></span></span><span class="t-3003-c">). Gegeben eine Liste<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:103:26</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:104:9</span></span><span class="t-3003-c">$p_1, \dots, p_n \in \N$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:104:9</span></span><span class="t-3003-c">
+          von "Preisen" und ein "Guthaben"<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:104:33</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:105:9</span></span><span class="nowrap"><span class="t-3003-c">$g \in \N$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:105:9</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:105:19</span></span></span><span class="t-3003-c">
+          gibt es eine Menge
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:105:19</span></span><span class="t-3003-c">$I \subseteq [n]$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:105:40</span></span><span class="t-3003-c">
+          mit<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:105:57</span></span>
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \sum_{i \in I} p_i = g \ ?
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:107:9</span>
       </div>
     </div>
     <p class="main-column">
-      Dies ist ebenfalls in NP.
+      <span class="t-3003-c">Dies ist ebenfalls in NP.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:111:5</span></span>
     </p>
     <h2 class="main-column topic-announcement">
-      Finden versus Entscheiden
+      <span class="t-3003-c">Finden versus Entscheiden<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:114:9</span></span>
     </h2>
     <p class="main-column">
-      Sei $G = (V,E)$ ein Graph. Eine Menge $I \subseteq V$
-      heißt
-      <span class="nowrap"><i>unabhängig</i>,</span>
-      wenn es keine Kante $\{u,v\} \in E$
-      gibt mit
-      <span class="nowrap">$u,v \in I$.</span>
+      <span class="t-3003-c">Sei
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:116:5</span></span><span class="t-3003-c">$G = (V,E)$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:116:9</span></span><span class="t-3003-c">
+        ein Graph. Eine Menge
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:116:20</span></span><span class="t-3003-c">$I \subseteq V$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:116:43</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:116:58</span></span>
+      <span class="t-3003-c">heißt
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:117:5</span></span><span class="nowrap"><i><span class="t-3003-c">unabhängig<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:117:12</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:117:23</span></span></span><span class="t-3003-c">
+        wenn es keine Kante
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:117:23</span></span><span class="t-3003-c">$\{u,v\} \in E$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:117:45</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:117:60</span></span>
+      <span class="t-3003-c">gibt mit
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:118:5</span></span><span class="nowrap"><span class="t-3003-c">$u,v \in I$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:118:14</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:118:25</span></span></span>
     </p>
     <div class="well statement out">
       <p>
-        <b>Problem 9.4.4</b>
-        Gegeben ein Graph $G=(V,E)$ und eine Zahl $k$ . Finde eine
-        unabhängige Menge in $I$ in $G$ mit
-        <span class="nowrap">$|I| \geq k$,</span>
-        falls es
-        eine solche gibt.
+        <b><span class="t-3003-c">Problem 9.4.4<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:120:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:120:5</span></span>
+        <span class="t-3003-c">Gegeben ein Graph
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:121:9</span></span><span class="t-3003-c">$G=(V,E)$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:121:27</span></span><span class="t-3003-c">
+          und eine Zahl
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:121:36</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:121:51</span></span><span class="t-3003-c">
+          . Finde eine<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:121:54</span></span>
+        <span class="t-3003-c">unabhängige Menge in
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:122:9</span></span><span class="t-3003-c">$I$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:122:30</span></span><span class="t-3003-c">
+          in
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:122:33</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:122:37</span></span><span class="t-3003-c">
+          mit
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:122:40</span></span><span class="nowrap"><span class="t-3003-c">$|I| \geq k$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:122:45</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:122:57</span></span></span><span class="t-3003-c">
+          falls es<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:122:57</span></span>
+        <span class="t-3003-c">eine solche gibt.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:123:9</span></span>
       </p>
     </div>
     <p class="main-column">
-      Ist dies in NP? Schon syntaktisch nicht! Es ist ja gar
-      kein Entscheidungsproblem. Wir können aber eine
-      Entscheidungsvariante definieren:
+      <span class="t-3003-c">Ist dies in NP? Schon syntaktisch nicht! Es ist ja gar<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:125:5</span></span>
+      <span class="t-3003-c">kein Entscheidungsproblem. Wir können aber eine<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:126:5</span></span>
+      <span class="t-3003-c">Entscheidungsvariante definieren:<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:127:5</span></span>
     </p>
     <div
       class="numbered-title well statement out"
       id="_60_h.a.i_"
     >
       <p>
-        <b>Problem 9.4.5</b>
-        (<span class="sc">Independent Set</span>) Gegeben ein Graph $G=(V,E)$ und
-        eine Zahl
-        <span class="nowrap">$k$.</span>
-        Gibt es eine unabhängige Menge in $I$ in $G$
-        mit
-        <span class="nowrap">$|I| \geq k$?</span>
+        <b><span class="t-3003-c">Problem 9.4.5<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:129:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:129:5</span></span>
+        <span class="t-3003-c">(<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:132:9</span></span><span class="sc"><span class="t-3003-c">Independent Set<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:132:11</span></span></span><span class="t-3003-c">) Gegeben ein Graph
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:132:31</span></span><span class="t-3003-c">$G=(V,E)$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:132:51</span></span><span class="t-3003-c">
+          und<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:132:60</span></span>
+        <span class="t-3003-c">eine Zahl
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:133:9</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:133:19</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:133:22</span></span></span><span class="t-3003-c">
+          Gibt es eine unabhängige Menge in
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:133:22</span></span><span class="t-3003-c">$I$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:133:58</span></span><span class="t-3003-c">
+          in
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:133:61</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:133:65</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:133:68</span></span>
+        <span class="t-3003-c">mit
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:134:9</span></span><span class="nowrap"><span class="t-3003-c">$|I| \geq k$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:134:13</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:134:25</span></span></span>
       </p>
     </div>
     <p class="main-column">
-      Das Entscheidungsproblem
-      <span class="sc">Independent Set</span>ist
-      offensichtlich in NP. Als Zertifikat kommt z.B. einfach die
-      Menge $I$ in Frage. Für alle Entscheidungsprobleme, die
-      wir oben als Beispiele aufgelistet haben, kann man ganz
-      natürlich das zugehörige Suchproblem definieren: gegeben
-      ein Graph, finde eine 3-Färbung (falls es sie gibt);
-      gegeben eine CNF-Formel, finde eine erfüllende Belegung
-      (falls es sie gibt); gegeben ein Instanz von
-      <span class="sc">Subset
-        Sum</span>, finde eine Menge $I$ mit
-      <span class="nowrap">$\sum_{i \in I} p_i = g$.</span>
+      <span class="t-3003-c">Das Entscheidungsproblem
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:136:5</span></span><span class="sc"><span class="t-3003-c">Independent Set<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:136:31</span></span></span><span class="t-3003-c">ist<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:136:51</span></span>
+      <span class="t-3003-c">offensichtlich in NP. Als Zertifikat kommt z.B. einfach die<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:137:5</span></span>
+      <span class="t-3003-c">Menge
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:138:5</span></span><span class="t-3003-c">$I$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:138:11</span></span><span class="t-3003-c">
+        in Frage. Für alle Entscheidungsprobleme, die<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:138:14</span></span>
+      <span class="t-3003-c">wir oben als Beispiele aufgelistet haben, kann man ganz<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:139:5</span></span>
+      <span class="t-3003-c">natürlich das zugehörige Suchproblem definieren: gegeben<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:140:5</span></span>
+      <span class="t-3003-c">ein Graph, finde eine 3-Färbung (falls es sie gibt);<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:141:5</span></span>
+      <span class="t-3003-c">gegeben eine CNF-Formel, finde eine erfüllende Belegung<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:142:5</span></span>
+      <span class="t-3003-c">(falls es sie gibt); gegeben ein Instanz von
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:143:5</span></span><span class="sc"><span class="t-3003-c">Subset<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:143:51</span></span>
+        <span class="t-3003-c">Sum<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:144:5</span></span></span><span class="t-3003-c">, finde eine Menge
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:144:13</span></span><span class="t-3003-c">$I$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:144:32</span></span><span class="t-3003-c">
+        mit<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:144:35</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:145:5</span></span><span class="nowrap"><span class="t-3003-c">$\sum_{i \in I} p_i = g$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:145:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:145:29</span></span></span>
     </p>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 9.4.2</b>
-        Zeigen Sie für folgende Probleme, dass wir, falls wir
-        einen effizienten Algorithmus dafür haben, dann auch einen
-        effizienten Algorithmus schreiben können, der das
-        entsprechende Objekt findet, falls es denn existiert!
+        <b><span class="t-3003-c">Übungsaufgabe 9.4.2<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:147:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:147:5</span></span>
+        <span class="t-3003-c">Zeigen Sie für folgende Probleme, dass wir, falls wir<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:148:9</span></span>
+        <span class="t-3003-c">einen effizienten Algorithmus dafür haben, dann auch einen<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:149:9</span></span>
+        <span class="t-3003-c">effizienten Algorithmus schreiben können, der das<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:150:9</span></span>
+        <span class="t-3003-c">entsprechende Objekt findet, falls es denn existiert!<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:151:9</span></span>
       </p>
       <ul>
         <li>
           <p>
-            <span class="sc">Subset Sum</span>
-            (das ist einfach),
+            <span class="sc"><span class="t-3003-c">Subset Sum<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:155:18</span></span></span><span class="t-3003-c">
+              (das ist einfach),<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:155:33</span></span>
           </p>
         </li>
         <li>
           <p>
-            <span class="sc">Independent Set</span>
-            (das ist auch recht einfach),
+            <span class="sc"><span class="t-3003-c">Independent Set<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:158:18</span></span></span><span class="t-3003-c">
+              (das ist auch recht einfach),<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:158:38</span></span>
           </p>
         </li>
         <li>
           <p>
-            <span class="sc">CNF-Satisfiability</span>
-            (auch),
+            <span class="sc"><span class="t-3003-c">CNF-Satisfiability<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:161:18</span></span></span><span class="t-3003-c">
+              (auch),<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:161:41</span></span>
           </p>
         </li>
         <li>
           <p>
-            <span class="sc">3-Colorability</span>
-            (das ist trickreicher).
+            <span class="sc"><span class="t-3003-c">3-Colorability<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:164:18</span></span></span><span class="t-3003-c">
+              (das ist trickreicher).<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:164:37</span></span>
           </p>
         </li>
       </ul>
     </div>
     <p class="main-column">
-      Dies geht nicht immer! Erinnern Sie sich an
-      <span class="sc">Primes</span>.
-      Der Agrawal–Kayal–Saxena-Algorithmus lässt uns entscheiden,
-      ob eine gegebene Zahl $n$ prim ist; also auch, ob $n$
-      zusammengesetzt ist; allerdings geht daraus kein
-      Algorithmus hervor, der einen Faktor auch findet. Wo wir
-      gerade beim Faktorisieren sind: das Problem
-      <i>gegeben eine
-        Zahl
-        <span class="nowrap">$X \in \N$,</span>
-        zerlege sie in ihre Primfaktoren</i>
-      ist ja
-      kein Entscheidungsproblem. Können wir ein "entsprechendes"
-      Entscheidungsproblem formulieren? Es sollte gelten: wenn
-      wir das Entscheidungsproblem lösen können, dann auch das
-      Suchproblem. Wie wir gesehen haben, ist
-      <span class="sc">Primes</span>
-      bzw.<span class="sc">NonPrimes</span>nicht das entsprechende
-      Entscheidungsproblem, weil es uns nicht erlaubt, den Faktor
-      auch zu finden.
+      <span class="t-3003-c">Dies geht nicht immer! Erinnern Sie sich an
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:166:5</span></span><span class="sc"><span class="t-3003-c">Primes<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:166:50</span></span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:166:61</span></span>
+      <span class="t-3003-c">Der Agrawal–Kayal–Saxena-Algorithmus lässt uns entscheiden,<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:167:5</span></span>
+      <span class="t-3003-c">ob eine gegebene Zahl
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:168:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:168:27</span></span><span class="t-3003-c">
+        prim ist; also auch, ob
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:168:30</span></span><span class="t-3003-c">$n$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:168:55</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:168:58</span></span>
+      <span class="t-3003-c">zusammengesetzt ist; allerdings geht daraus kein<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:169:5</span></span>
+      <span class="t-3003-c">Algorithmus hervor, der einen Faktor auch findet. Wo wir<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:170:5</span></span>
+      <span class="t-3003-c">gerade beim Faktorisieren sind: das Problem
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:171:5</span></span><i><span class="t-3003-c">gegeben eine<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:171:50</span></span>
+        <span class="t-3003-c">Zahl
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:172:5</span></span><span class="nowrap"><span class="t-3003-c">$X \in \N$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:172:10</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:172:20</span></span></span><span class="t-3003-c">
+          zerlege sie in ihre Primfaktoren<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:172:20</span></span></i><span class="t-3003-c">
+        ist ja<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:172:55</span></span>
+      <span class="t-3003-c">kein Entscheidungsproblem. Können wir ein "entsprechendes"<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:173:5</span></span>
+      <span class="t-3003-c">Entscheidungsproblem formulieren? Es sollte gelten: wenn<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:174:5</span></span>
+      <span class="t-3003-c">wir das Entscheidungsproblem lösen können, dann auch das<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:175:5</span></span>
+      <span class="t-3003-c">Suchproblem. Wie wir gesehen haben, ist
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:176:5</span></span><span class="sc"><span class="t-3003-c">Primes<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:176:46</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:176:57</span></span>
+      <span class="t-3003-c">bzw.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:177:5</span></span><span class="sc"><span class="t-3003-c">NonPrimes<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:177:10</span></span></span><span class="t-3003-c">nicht das entsprechende<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:177:24</span></span>
+      <span class="t-3003-c">Entscheidungsproblem, weil es uns nicht erlaubt, den Faktor<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:178:5</span></span>
+      <span class="t-3003-c">auch zu finden.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:179:5</span></span>
     </p>
     <div
       id="_61_h.a.i_"
       class="well statement out"
     >
       <p>
-        <b>Problem 9.4.6</b>
-        (<span class="sc">Small Factor</span>) Gegeben eine Zahl
-        <span class="nowrap">$X \in \N$,</span>
-        binär
-        codiert als
-        <span class="nowrap">$x \in \{0,1\}^n$,</span>
-        und eine Zahl
-        <span class="nowrap">$K \in \N$:</span>
-        gibt es einen echten Teiler $Z$ von $\N$ mit
-        <span class="nowrap">$Z \leq K$?</span>
+        <b><span class="t-3003-c">Problem 9.4.6<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:181:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:181:5</span></span>
+        <span class="t-3003-c">(<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:183:9</span></span><span class="sc"><span class="t-3003-c">Small Factor<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:183:11</span></span></span><span class="t-3003-c">) Gegeben eine Zahl
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:183:28</span></span><span class="nowrap"><span class="t-3003-c">$X \in \N$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:183:48</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:183:58</span></span></span><span class="t-3003-c">
+          binär<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:183:58</span></span>
+        <span class="t-3003-c">codiert als
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:184:9</span></span><span class="nowrap"><span class="t-3003-c">$x \in \{0,1\}^n$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:184:21</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:184:38</span></span></span><span class="t-3003-c">
+          und eine Zahl
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:184:38</span></span><span class="nowrap"><span class="t-3003-c">$K \in \N$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:184:54</span></span><span class="t-3003-c">:<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:184:64</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:184:64</span></span>
+        <span class="t-3003-c">gibt es einen echten Teiler
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:185:9</span></span><span class="t-3003-c">$Z$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:185:37</span></span><span class="t-3003-c">
+          von
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:185:40</span></span><span class="t-3003-c">$\N$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:185:45</span></span><span class="t-3003-c">
+          mit
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:185:49</span></span><span class="nowrap"><span class="t-3003-c">$Z \leq K$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:185:54</span></span><span class="t-3003-c">?<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:185:64</span></span></span>
       </p>
     </div>
     <div
@@ -345,44 +425,60 @@
       class="well exercise out"
     >
       <p>
-        <b>Übungsaufgabe 9.4.3</b>
-        Zeigen Sie: wenn man
-        <span class="sc">Small Factor</span>
-        effizient lösen
-        kann, dann kann man auch die Primzahlfaktorisierung von $X$
-        effizient finden.
-        <b>Hinweis:</b>
-        <i>Effizient</i>
-        heißt in diesem
-        Zusammenhang
-        <i>polynomiell in der Anzahl der Bits.</i>
-        Der
-        Algorithmus
-        <span class="nowrap"><i>probiere alle kleineren Zahlen aus</i>,</span>
-        ob sie
-        $X$ teilen, ist
-        <i>nicht</i>
-        effizient!
+        <b><span class="t-3003-c">Übungsaufgabe 9.4.3<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:187:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:187:5</span></span>
+        <span class="t-3003-c">Zeigen Sie: wenn man
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:189:9</span></span><span class="sc"><span class="t-3003-c">Small Factor<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:189:31</span></span></span><span class="t-3003-c">
+          effizient lösen<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:189:48</span></span>
+        <span class="t-3003-c">kann, dann kann man auch die Primzahlfaktorisierung von
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:190:9</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:190:65</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:190:68</span></span>
+        <span class="t-3003-c">effizient finden.
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:191:9</span></span><b><span class="t-3003-c">Hinweis:<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:191:28</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:191:37</span></span><i><span class="t-3003-c">Effizient<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:191:39</span></span></i><span class="t-3003-c">
+          heißt in diesem<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:191:49</span></span>
+        <span class="t-3003-c">Zusammenhang
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:192:9</span></span><i><span class="t-3003-c">polynomiell in der Anzahl der Bits.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:192:23</span></span></i><span class="t-3003-c">
+          Der<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:192:59</span></span>
+        <span class="t-3003-c">Algorithmus
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:193:9</span></span><span class="nowrap"><i><span class="t-3003-c">probiere alle kleineren Zahlen aus<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:193:22</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:193:57</span></span></span><span class="t-3003-c">
+          ob sie<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:193:57</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:194:9</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:194:9</span></span><span class="t-3003-c">
+          teilen, ist
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:194:12</span></span><i><span class="t-3003-c">nicht<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:194:26</span></span></i><span class="t-3003-c">
+          effizient!<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:194:32</span></span>
       </p>
     </div>
     <p class="main-column">
-      Das Entscheidungsproblem
-      <span class="sc">Small Factor</span>
-      ist
-      offensichtlich in NP: das Zertifikat $z$ ist jener Faktor
-      (so er denn existiert), und die Zertifikatmaschine $M$
-      muss nun $z$ mit $K$ multiplizieren und schauen, ob auch
-      $X$ herauskommt. Nicht so offensichtlich jedoch ist
-      folgendes:
+      <span class="t-3003-c">Das Entscheidungsproblem
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:196:5</span></span><span class="sc"><span class="t-3003-c">Small Factor<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:196:31</span></span></span><span class="t-3003-c">
+        ist<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:196:48</span></span>
+      <span class="t-3003-c">offensichtlich in NP: das Zertifikat
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:197:5</span></span><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:197:42</span></span><span class="t-3003-c">
+        ist jener Faktor<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:197:45</span></span>
+      <span class="t-3003-c">(so er denn existiert), und die Zertifikatmaschine
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:198:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:198:56</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:198:59</span></span>
+      <span class="t-3003-c">muss nun
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:199:5</span></span><span class="t-3003-c">$z$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:199:14</span></span><span class="t-3003-c">
+        mit
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:199:17</span></span><span class="t-3003-c">$K$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:199:22</span></span><span class="t-3003-c">
+        multiplizieren und schauen, ob auch<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:199:25</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:200:5</span></span><span class="t-3003-c">$X$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:200:5</span></span><span class="t-3003-c">
+        herauskommt. Nicht so offensichtlich jedoch ist<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:200:8</span></span>
+      <span class="t-3003-c">folgendes:<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:201:5</span></span>
     </p>
     <div class="well exercise out">
       <p>
-        <b>Übungsaufgabe 9.4.4</b>
-        Sei
-        <span class="sc">No Small Factor</span>
-        das Komplement von
-        <span class="sc">Small
-          Factor</span>, also
+        <b><span class="t-3003-c">Übungsaufgabe 9.4.4<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:203:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:203:5</span></span>
+        <span class="t-3003-c">Sei
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:204:9</span></span><span class="sc"><span class="t-3003-c">No Small Factor<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:204:14</span></span></span><span class="t-3003-c">
+          das Komplement von
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:204:34</span></span><span class="sc"><span class="t-3003-c">Small<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:204:55</span></span>
+          <span class="t-3003-c">Factor<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:205:9</span></span></span><span class="t-3003-c">, also<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:205:20</span></span>
       </p>
       <div class="math-block">
         $$
@@ -390,17 +486,25 @@
         \{ x\texttt{;}k \ | \ x, k \in \{0,1\}^*
         \textnormal{ und $(x)_2$ hat keinen echten Teiler $Z \leq (k)_2$} \} \ ,
         \end{align*}
-        $$
+        $$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:207:9</span>
       </div>
       <p>
-        wobei $(x)_2$ und $(k)_2$ die von $x$ und $k$ codierten
-        natürlichen Zahlen sind.
+        <span class="t-3003-c">wobei
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:212:9</span></span><span class="t-3003-c">$(x)_2$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:212:15</span></span><span class="t-3003-c">
+          und
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:212:22</span></span><span class="t-3003-c">$(k)_2$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:212:27</span></span><span class="t-3003-c">
+          die von
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:212:34</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:212:43</span></span><span class="t-3003-c">
+          und
+          <span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:212:46</span></span><span class="t-3003-c">$k$<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:212:51</span></span><span class="t-3003-c">
+          codierten<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:212:54</span></span>
+        <span class="t-3003-c">natürlichen Zahlen sind.<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:213:9</span></span>
       </p>
     </div>
     <p class="main-column">
-      Diese Übungsaufgabe ist quasi eine Warnung: was denn eine
-      Zertifikatmaschine auf ihrem zweiten Band erwartet, das
-      geht nicht immer aus der Problemstellung hervor!
+      <span class="t-3003-c">Diese Übungsaufgabe ist quasi eine Warnung: was denn eine<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:215:5</span></span>
+      <span class="t-3003-c">Zertifikatmaschine auf ihrem zweiten Band erwartet, das<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:216:5</span></span>
+      <span class="t-3003-c">geht nicht immer aus der Problemstellung hervor!<span class="t-3003">./course1/wly/09/04-NP-many-examples.wly:217:5</span></span>
     </p>
     <div id="end-of-page-elt">
     </div>

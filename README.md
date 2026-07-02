@@ -64,7 +64,7 @@ Various output should come out like this:
 1. goto `dominikscheder/courses` folder
 2. `gleam run -- --which course1 --verbose`
 
-Various messages from the desugaring engine (situated in `wly` repo) should print out and the `public/` folder should have its .html repopulated.
+Various messages from the desugaring engine (situated in `wly` repo) should print out and the `course1/public/` folder should have its .html repopulated.
 
 To check, open `course1/public/index.html` inside a browser.
 
@@ -89,11 +89,11 @@ Note: Go-to-source tooltips will only work if `code` has been bound to open the 
 
 ⚠️ Do not forget to an ordinary `gleam run` before publishing the `public/` folder again—you don't want to publish the go-to-source tooltips!
 
-## 8. Source Formatter
+## 9. Source Formatter
 
 Run `gleam run -- --fmt` for default 55 to reformat at char per line formatting or `gleam run -- --fmt <X>` to format line length to X chars per line.
 
-## 9. VSCode Settings
+## 10. VSCode Settings
 
 Without getting into the details, do this inside the
 project's home directory:
@@ -108,24 +108,24 @@ After doing this, running `Cmd + Shift + B` from inside
 VSCode will run the same exact `gleam run` command that
 last run in the terminal (same arguments). Try it!
 
-## 10. Non-Manual File Renaming
+## 11. Non-Manual File Renaming
 
 Type `Cmd + R` when the cursor is on a filename to rename it inside
 all your files and on the filesystem at once. (It works!)
 
-## 11. Non-Manual File Moving
+## 12. Non-Manual File Moving
 
 Type `Cmd + R` when the cursor is on the directory part of a filepath
 to move that file to a different existing directory. This will move
 the file on disk and all .wly references.
 
-## 12. Offline MathJax
+## 13. Offline MathJax
 
 Use the `--offline-mathjax` flag to use the local copy of MathJax installed inside the repo.
 
 WARNING: Don't publish an `--offline-mathjax` build. It will break the page the for readers!
 
-## 13. Adding a file shared by several courses
+## 14. Adding a file shared by several courses
 
 As an example, say we would like to share `mathjax_setup.js` between `course1`
 and `course2`. We would follow these steps:

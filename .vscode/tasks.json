@@ -2,80 +2,24 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "gleam run today's special",
+      "label": "gleam run -- --last-command",
       "type": "shell",
       "command": "gleam",
       "group": {
         "kind": "build",
         "glob": "**/*.wly",
+        "isDefault": true
       },
-      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared"
+      },
       "problemMatcher": [],
       "runOptions": {
         "reevaluateOnRerun": true,
-        "instanceLimit": 1,
+        "instanceLimit": 1
       },
-      "options": {
-        "cwd": "${workspaceFolder}",
-      },
-      "args": ["run", "--", "--only", "01"],
-    },
-    {
-      "label": "gleam run -m <file>",
-      "type": "shell",
-      "command": "gleam",
-      "group": {
-        "kind": "build",
-        "glob": "**/*.gleam",
-      },
-      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
-      "problemMatcher": [],
-      "runOptions": {
-        "reevaluateOnRerun": true,
-        "instanceLimit": 1,
-      },
-      "options": {
-        "cwd": "${workspaceFolder}",
-      },
-      "args": ["run", "-m", "${fileBasenameNoExtension}"],
-    },
-    {
-      "label": "gleam run",
-      "type": "shell",
-      "command": "gleam",
-      "group": {
-        "kind": "build",
-        "glob": "**/*.wly",
-      },
-      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
-      "problemMatcher": [],
-      "runOptions": {
-        "reevaluateOnRerun": true,
-        "instanceLimit": 1,
-      },
-      "options": {
-        "cwd": "${workspaceFolder}",
-      },
-      "args": ["run", "--"],
-    },
-    {
-      "label": "gleam run -- --local",
-      "type": "shell",
-      "command": "gleam",
-      "group": {
-        "kind": "build",
-        "glob": "**/*.wly",
-      },
-      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
-      "problemMatcher": [],
-      "runOptions": {
-        "reevaluateOnRerun": true,
-        "instanceLimit": 1,
-      },
-      "options": {
-        "cwd": "${workspaceFolder}",
-      },
-      "args": ["run", "--", "--local"],
-    },
-  ],
+      "args": ["run", "--", "--last-command"]
+    }
+  ]
 }

@@ -1,3 +1,4 @@
 {
-    "writerly.enableUnusedHandleWarnings": true
+    "writerly.enableUnusedHandleWarnings": true,
+    "writerly.templateFilesDirectory": "image templates"
 }

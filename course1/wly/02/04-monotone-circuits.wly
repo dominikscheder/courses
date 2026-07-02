@@ -404,8 +404,13 @@
             Wir haben also erfolgreich einen Schaltkreis für
             $f: \{0,1\}^n \rightarrow \{0,1\}$ konstruiert. Unser
             Induktionsbeweis von Theorem 2 ist nun abgeschlossen.
-            after-sub-proof##<<
 
+    |> span
+        style=scroll-margin-top:20px
+        !! the following both work, choose 1:
+        handle=after-sub-proof
+        !! after-sub-proof##<<
+    
     Diesen "hellblauen" Beweis haben wir ja bereits in der
     Vorlesung geführt. Ich habe ihn hier wiederholt und in
     größerem Detail besprochen, um auf verschiedene formale

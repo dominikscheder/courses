@@ -58,38 +58,47 @@ Note: Go-to-source tooltips will only work if `code` has been bound to open the 
 
 Run `gleam run -- --fmt` for default 55 to reformat at char per line formatting or `gleam run -- --fmt <X>` to format line length to X chars per line.
 
-## 9. `--last-command` (VSCode build task integration)
+## 9. VSCode Settings
 
-The `--last-command` flag reruns the exact same arguments as the previous successful run,
-reading them from a local `.last-command` file written automatically at the end of each run.
-
-This is useful when combined with a VSCode build task that fires on every `.wly` file save.
-Create `.vscode/tasks.json` in the project root (you can copy `sample_tasks_dot_json.json`
-from this repo as a starting point):
+Without getting into the details, do this inside the
+project's home directory:
 
 ```sh
 mkdir .vscode
 cp sample_tasks_dot_json.json .vscode/tasks.json
+cp sample_settings_dot_json.json .vscode/settings.json
 ```
 
-The task runs `gleam run -- --last-command`, which picks up whatever flags you last used
-(e.g. `--which course1 --offline-mathjax`). The first time you run with `--last-command` you
-must have run the renderer at least once without it so that a `.last-command` file exists.
+After doing this, running `Cmd + Shift + B` from inside
+VSCode will run the same exact `gleam run` command that
+last run in the terminal (same arguments). Try it!
 
-The `.last-command` file is local; add it to `.gitignore` if you do not want it committed.
+## 10. Non-Manual File Renaming
 
-## 10. Add a shared asset to a course
+Type `Cmd + R` when the cursor is on a filename to rename it inside
+all your files and on the filesystem at once. (It works!)
 
-As an example, say we would like to add `mathjax_setup.js` to course `course1`. We would follow these steps
+## 11. Non-Manual File Moving
 
-1. `cd` into project root
-2. `ln -s ../../shared/mathjax_setup.js course1/public/mathjax_setup.js`
+Type `Cmd + R` when the cursor is on the directory part of a filepath
+to move that file to a different existing directory. This will move
+the file on disk and all .wly references.
 
-## 11. Option for offline MathJax
+## 12. Offline MathJax
 
 Use the `--offline-mathjax` flag to use the local copy of MathJax installed inside the repo.
 
 WARNING: Don't publish an `--offline-mathjax` build. It will break the page the for readers!
+
+## 13. Adding a file shared by several courses
+
+As an example, say we would like to share `mathjax_setup.js` between `course1`
+and `course2`. We would follow these steps:
+
+1. `cd` into project root
+2. put desired `mathjax_setup.js` in `shared/`
+3. `ln -s shared/mathjax_setup.js course1/public/mathjax_setup.js`
+4. `ln -s shared/mathjax_setup.js course2/public/mathjax_setup.js`
 
 # Cheat Sheet
 
@@ -137,6 +146,6 @@ Steps:
 1. `cd ~/github.com/vistuleB`
 2. `git clone git@github.com:vistuleB/ti2_html.git`
 3. `cd ti2_html`
-4. replace contents of `./public/pages` with the TI-1 `.html` source files (it currently contains TI-2 source files)
+4. replace contents of `public/pages/` with desired .html files to parse
 5. `rm -rf wly_content/*` (get rid of old TI-2 .wly output) inside `ti2_html` directory
 6. `gleam run -- --parse-html public/pages` & then work through errors (it will crash as soon as it finds an unmatched tag e.g., you have to fix unmatched tags manually; it might be picky about the .html structure in some other ways; if the same pattern is repeatedly causing a crash then one can augment the function named `bad_html_pre_processor` found in `github.com/vistuleB/wly/vxml/vxml.gleam` to pre-process that pattern away)

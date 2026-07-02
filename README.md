@@ -87,11 +87,11 @@ In VSCode, download the [Writerly](https://marketplace.visualstudio.com/items?it
 
 Note: Go-to-source tooltips will only work if `code` has been bound to open the default code editor (e.g., VSCode) in the terminal.
 
-⚠️ Do not forget to an ordinary `gleam run` before publishing the `public/` folder again—you don't want to publish the go-to-source tooltips!
+⚠️ Do not forget to an ordinary `gleam run` before publishing the `public/` folder again—you don't want to publish the go-to-source tooltips! ️️⚠️
 
 ## 9. Source Formatter
 
-Run `gleam run -- --fmt` for default 55 to reformat at char per line formatting or `gleam run -- --fmt <X>` to format line length to X chars per line.
+Run `gleam run -- --which course1 --fmt` for default 55 to reformat at char per line formatting or `gleam run -- --which course1 --fmt <X>` to format line length to X chars per line.
 
 ## 10. VSCode Settings
 

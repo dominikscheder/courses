@@ -465,8 +465,7 @@ pub fn pipeline(
       dl.handles_generate_v_definitions_from_t_definitions(),
       dl.handles_add_ids(),
       dl.handles_generate_dictionary("path"),
-      dl.handles_substitute_inside_math(["Math", "MathBlock"]),
-      dl.handles_substitute(#("path", "a", "a", [], [], ["a"])),
+      dl.handles_substitute(#("path", "a", "a", [], [], ["a"], ["Math", "MathBlock"])),
       // consumes the 'used' column that handles_substitute leaves on the
       // GrandWrapper dictionary; must sit between the two
       dl.handles_warn_unused(["MathBlock"]),

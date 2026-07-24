@@ -467,6 +467,9 @@ pub fn pipeline(
       dl.handles_generate_dictionary("path"),
       dl.handles_substitute_inside_math(["Math", "MathBlock"]),
       dl.handles_substitute(#("path", "a", "a", [], [], ["a"])),
+      // consumes the 'used' column that handles_substitute leaves on the
+      // GrandWrapper dictionary; must sit between the two
+      dl.handles_warn_unused(["MathBlock"]),
       dl.unwrap("GrandWrapper"),
     ],
     [

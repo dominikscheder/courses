@@ -1,1 +1,1 @@
-shared/mathjax_setup.js
+../../shared/mathjax_setup.js

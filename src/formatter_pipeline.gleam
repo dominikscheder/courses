@@ -1,8 +1,8 @@
 import gleam/string
-import desugarer_library as dl
-import infrastructure.{type Pipeline} as infra
+import desugaring/desugarers as dl
+import desugaring/core.{type Pipeline} as infra
 import gleam/list
-import prefabricated_pipelines as pp
+import desugaring/pipelines as pp
 
 const minimum_line_wrap_length = 40
 
@@ -98,11 +98,11 @@ pub fn formatter_pipeline(
       dl.attribute_drop_prefixes(#("src", ["./", "/"])),
       dl.delete("QED"),
     ],
-    pp.create_mathblock_elements([infra.DoubleDollar, infra.BackslashSquareBracket, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar),
+    pp.create_mathblock_elements([infra.DoubleDollar, infra.BackslashSquareBracket, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar, ["WriterlyBlankLine"]),
     [
       dl.concatenate_consecutive_lines_if(ends_with_dollar_starts_with_punctuation),
     ],
-    pp.create_math_elements([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar, infra.BackslashParenthesis),
+    pp.create_math_elements([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar, infra.BackslashParenthesis, ["WriterlyBlankLine"]),
     [
       dl.trim_spaces_around_newlines__outside(["pre", "Math", "MathBlock", "WriterlyCodeBlock", "WriterlyComment"]),
       dl.trim_ending_spaces_except_last_line(),

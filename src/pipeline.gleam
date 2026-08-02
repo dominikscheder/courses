@@ -1,11 +1,11 @@
-import blame as bl
-import desugarer_library as dl
+import vxml/blame as bl
+import desugaring/desugarers as dl
 import desugaring as ds
 import gleam/list
 import gleam/string
-import group_replacement_splitting as grs
-import infrastructure.{type Pipeline} as infra
-import prefabricated_pipelines as pp
+import desugaring/group_replacement_splitting as grs
+import desugaring/core.{type Pipeline} as infra
+import desugaring/pipelines as pp
 import vxml
 
 const our_blame = bl.Des([], "pipeline", 9)
@@ -371,11 +371,13 @@ pub fn pipeline(
     pp.create_mathblock_elements(
       [infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar],
       infra.DoubleDollar,
+      ["WriterlyBlankLine"],
     ),
     pp.create_math_elements(
       [infra.BackslashParenthesis, infra.SingleDollar],
       infra.SingleDollar,
       infra.BackslashParenthesis,
+      ["WriterlyBlankLine"],
     ),
     [
       dl.regex_split_and_replace__outside(escaped_dollar_to_span_rr_splitter, [
@@ -432,20 +434,23 @@ pub fn pipeline(
         infra.GoBack,
       )),
     ],
-    pp.annotated_backtick_splitting("span", "class", ["MathBlock", "Math"]),
-    pp.markdown_link_splitting(["MathBlock", "Math"]),
-    pp.barbaric_symmetric_delim_splitting("`", "`", "code", [
+    pp.annotated_backtick_splitting("span", "class", ["WriterlyBlankLine"], [
+      "MathBlock",
+      "Math",
+    ]),
+    pp.markdown_link_splitting(["WriterlyBlankLine"], ["MathBlock", "Math"]),
+    pp.barbaric_symmetric_delim_splitting("`", "`", "code", ["WriterlyBlankLine"], [
       "MathBlock",
       "Math",
       "pre",
     ]),
-    pp.barbaric_symmetric_delim_splitting("_", "_", "i", [
+    pp.barbaric_symmetric_delim_splitting("_", "_", "i", ["WriterlyBlankLine"], [
       "MathBlock",
       "Math",
       "pre",
       "code",
     ]),
-    pp.barbaric_symmetric_delim_splitting("\\*", "*", "b", [
+    pp.barbaric_symmetric_delim_splitting("\\*", "*", "b", ["WriterlyBlankLine"], [
       "MathBlock",
       "Math",
       "pre",

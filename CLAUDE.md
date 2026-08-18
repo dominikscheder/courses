@@ -23,7 +23,7 @@ Language: **Gleam**. Entry point: `src/main.gleam`.
 The Writerly/desugaring library lives at `../wly/` (sibling to this repo). It is imported as a
 local Gleam dependency in `gleam.toml`:
 ```toml
-vxml = { "path" = "../../vistuleB/wly/vxml" }
+vxml = ">= 1.0.3 and < 2.0.0"
 writerly = { "path" = "../../vistuleB/wly/writerly" }
 desugaring = { "path" = "../../vistuleB/wly/desugaring" }
 ```

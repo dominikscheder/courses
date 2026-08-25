@@ -98,6 +98,11 @@ pub fn main() {
       on.Return(Nil)
     }
 
+    ["--track-help"] -> {
+      ds.track_cli_usage("\n'gleam run -- --track' command line options:")
+      on.Return(Nil)
+    }
+
     _ -> on.Stay(Nil)
   })
 

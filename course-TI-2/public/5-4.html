@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <title>Kapitel 5.4: Theoretische Informatik 2 - Bachelor-Studium Informatik | TU Chemnitz</title>
+  <meta name="description" content="Theoretische Informatik 2 for Bachelor-Studium Informatik - by Dominik Scheder, TU Chemnitz">
+  <meta name="author" content="Dominik Scheder">
+  <meta name="publisher" content="TU Chemnitz">
+  <meta name="subject" content="Theoretische Informatik 2">
+  <meta name="program" content="Bachelor-Studium Informatik">
+  <meta name="institution" content="TU Chemnitz">
+  <meta property="og:title" content="Kapitel 5.4: Theoretische Informatik 2 - Bachelor-Studium Informatik | TU Chemnitz">
+  <meta property="og:description" content="Theoretische Informatik 2 for Bachelor-Studium Informatik - by Dominik Scheder, TU Chemnitz">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Bachelor-Studium Informatik | TU Chemnitz">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kapitel 5.4: Theoretische Informatik 2 - Bachelor-Studium Informatik | TU Chemnitz">
+  <meta property="twitter:description" content="Theoretische Informatik 2 for Bachelor-Studium Informatik - by Dominik Scheder, TU Chemnitz">
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <script type="text/javascript" src="mathjax_setup.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./5-3.html"
+        >&lt;&lt; Kapitel 5.3<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Nichtdeterministische Endliche Automaten</span></a><a
+          id="next-page"
+          href="./5-5.html"
+          class="menu-row-right"
+        >Kapitel 5.5 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        <span class="t-3003-c">5.4&ensp;Untere Schranken für DEAs und NEAs<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:2:11</span></span>
+      </p>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Wir betrachten das Alphabet<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:4:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:5:5</span></span><span class="t-3003-c">$\Sigma_k = \{1,\dots, k\}$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:5:5</span></span><span class="t-3003-c">
+        und die Sprache<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:5:32</span></span>
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      L_k &amp; := \{ w \in \Sigma_k^* \ | \
+      \exists x \in \Sigma: \textnormal{ $x$ kommt nicht in $w$ vor } \}\\
+      &amp; = \bigcup_{x \in \Sigma} \left( \Sigma \setminus \{x\}\right)^* \\
+      &amp; = \{ w \in \Sigma_k^* \ | \ \char(w) \subsetneq \Sigma\} \ ,
+      \end{align*}
+      $$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:7:5</span>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">wobei
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:14:5</span></span><span class="t-3003-c">$\char(w)$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:14:11</span></span><span class="t-3003-c">
+        die Menge aller Zeichen ist, die in<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:14:21</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:15:5</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:15:5</span></span><span class="t-3003-c">
+        vorkommt. Also:<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:15:8</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:16:5</span></span><span class="nowrap"><span class="t-3003-c">$\char(w_1, \dots, w_n) = \{w_1, \dots, w_n\}$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:16:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:16:51</span></span></span><span class="t-3003-c">
+        Die<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:16:51</span></span>
+      <span class="t-3003-c">Sprache
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:17:5</span></span><span class="t-3003-c">$L_k$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:17:13</span></span><span class="t-3003-c">
+        ist regulär:<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:17:18</span></span>
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      S &amp; \rightarrow A_1 \ | \ A_2 \ | \ \dots  \ | \ A_k  \\
+      A_1 &amp; \rightarrow 2 \ | \ 3 \ | \ 4 \ | \ \dots \ | \ k \\
+      A_2 &amp; \rightarrow 1 \ | \ 3 \ | \ 4  \ | \ \dots \ | \ k \\
+      &amp; \vdots \\
+      A_k &amp; \rightarrow 1 \ | \ 2 \ | \ 3 \ | \ \dots \ | \ k-1 \ .
+      \end{align*}
+      $$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:19:5</span>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Hier ist ein NEA zu dieser Sprache:<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:27:5</span></span>
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="height: 10em"
+          src="img/finite-state-automata/lower-bounds/nea-01-01.svg"
+        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/lower-bounds/nea-01-01.svg</span></span>
+      </figure>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Jeder Zustand ist akzeptierend. Das heißt aber nicht,<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:34:5</span></span>
+      <span class="t-3003-c">dass dieser NEA alles akzeptiert. So gibt es zum<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:35:5</span></span>
+      <span class="t-3003-c">Beispiel keinen Übergang
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:36:5</span></span><span class="t-3003-c">$A_3 \step{3} ...$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:36:30</span></span><span class="t-3003-c">
+        Seltsamer<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:36:48</span></span>
+      <span class="t-3003-c">vielleicht, dass jeder Zustand &lt;em&gt;Startzustand&lt;/em&gt;<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:37:5</span></span>
+      <span class="t-3003-c">ist. Aber auch das haben wir in unserer Definition ja<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:38:5</span></span>
+      <span class="t-3003-c">erlaubt. Falls es Ihnen Kopfschmerzen bereitet, dann<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:39:5</span></span>
+      <span class="t-3003-c">hier nochmal ein äquivalenter NEA, dieses Mal mit nur<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:40:5</span></span>
+      <span class="t-3003-c">einem Startzustand:<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:41:5</span></span>
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="height: 15em"
+          src="img/finite-state-automata/lower-bounds/nea-02-01.svg"
+        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/lower-bounds/nea-02-01.svg</span></span>
+      </figure>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Um einen DEA zu bauen, können wir natürlich die<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:48:5</span></span>
+      <span class="t-3003-c">Potenzmengenkonstruktion anwenden; oder nachdenken: an<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:49:5</span></span>
+      <span class="t-3003-c">jedem Zustand merken wir uns die Menge<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:50:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:51:5</span></span><span class="t-3003-c">$I \subseteq [k]$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:51:5</span></span><span class="t-3003-c">
+        der Symbole, die wir noch nicht<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:51:22</span></span>
+      <span class="t-3003-c">gelesen haben. Für
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:52:5</span></span><span class="t-3003-c">$k=3$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:52:24</span></span><span class="t-3003-c">
+        sieht das so aus:<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:52:29</span></span>
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="height: 20em"
+          src="img/finite-state-automata/lower-bounds/nea-03-01.svg"
+        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/finite-state-automata/lower-bounds/nea-03-01.svg</span></span>
+      </figure>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Allgemein: für
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:59:5</span></span><span class="t-3003-c">$L_k$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:59:20</span></span><span class="t-3003-c">
+        bekommen Sie einen DEA mit
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:59:25</span></span><span class="t-3003-c">$2^k$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:59:53</span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:59:58</span></span>
+      <span class="t-3003-c">Zuständen. Das ist eine ganze Menge. Geht es besser?<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:60:5</span></span>
+      <span class="t-3003-c">Die Antwort ist &lt;em&gt;Nein&lt;/em&gt;. Intuitiv gesprochen<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:61:5</span></span>
+      <span class="t-3003-c">muss der DEA sich die Menge der bereits gelesenen<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:62:5</span></span>
+      <span class="t-3003-c">Zeichen merken, ansonsten könnte er einen Fehler<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:63:5</span></span>
+      <span class="t-3003-c">machen. Warum? Falls
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:64:5</span></span><span class="t-3003-c">$v, w$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:64:26</span></span><span class="t-3003-c">
+        Wörter sind und es ein<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:64:32</span></span>
+      <span class="t-3003-c">Zeichen
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:65:5</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:65:13</span></span><span class="t-3003-c">
+        gibt, das in
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:65:16</span></span><span class="t-3003-c">$v$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:65:30</span></span><span class="t-3003-c">
+        vorkommt, aber nicht in<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:65:33</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:66:5</span></span><span class="nowrap"><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:66:5</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:66:8</span></span></span><span class="t-3003-c">
+        also
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:66:8</span></span><span class="nowrap"><span class="t-3003-c">$x \in \char(v) \setminus \char(w)$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:66:15</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:66:50</span></span></span><span class="t-3003-c">
+        dann<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:66:50</span></span>
+      <span class="t-3003-c">sei
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:67:5</span></span><span class="t-3003-c">$\gamma$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:67:9</span></span><span class="t-3003-c">
+        ein Wort mit
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:67:17</span></span><span class="nowrap"><span class="t-3003-c">$\Sigma \setminus \char(v)$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:67:31</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:67:58</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:67:58</span></span>
+      <span class="t-3003-c">Dann gilt<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:68:5</span></span>
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      v \gamma &amp; \not \in L_k \\
+      w \gamma &amp; \in L_k
+      \end{align*}
+      $$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:70:5</span>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Da ja in
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:75:5</span></span><span class="t-3003-c">$v \gamma$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:75:14</span></span><span class="t-3003-c">
+        alle Zeichen vorkommen, in<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:75:24</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:76:5</span></span><span class="t-3003-c">$w \gamma$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:76:5</span></span><span class="t-3003-c">
+        aber das Zeichen
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:76:15</span></span><span class="t-3003-c">$x$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:76:33</span></span><span class="t-3003-c">
+        fehlt. Ein Automat,<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:76:36</span></span>
+      <span class="t-3003-c">der nun vergessen hat, ob er bislang
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:77:5</span></span><span class="t-3003-c">$\char(v)$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:77:42</span></span><span class="t-3003-c">
+        oder<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:77:52</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:78:5</span></span><span class="t-3003-c">$\char(w)$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:78:5</span></span><span class="t-3003-c">
+        gelesen hat, wird eventuell ein falsches<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:78:15</span></span>
+      <span class="t-3003-c">Ergebnis liefern! Was heißt es, dass der DEA etwas<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:79:5</span></span>
+      <span class="t-3003-c">"vergessen" hat? Nun, wenn
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:80:5</span></span><span class="t-3003-c">$v$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:80:32</span></span><span class="t-3003-c">
+        und
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:80:35</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:80:40</span></span><span class="t-3003-c">
+        ihn in den<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:80:43</span></span>
+      <span class="t-3003-c">gleichen Zustand bringen, dann kann er sich nicht mehr<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:81:5</span></span>
+      <span class="t-3003-c">erinnern, ob er
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:82:5</span></span><span class="t-3003-c">$v$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:82:21</span></span><span class="t-3003-c">
+        oder
+        <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:82:24</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:82:30</span></span><span class="t-3003-c">
+        gelesen hat. Formal:<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:82:33</span></span>
+    </p>
+    <div
+      id="_28_h.a.i_"
+      class="well statement out"
+    >
+      <p>
+        <b><span class="t-3003-c">Definition 5.4.1 (Unterscheidbares Paar).<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:84:5</span></span></b><span class="t-3003-c">
+          Sei
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:86:35</span></span><span class="t-3003-c">$L \subseteq \Sigma^*$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:86:40</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:86:62</span></span>
+        <span class="t-3003-c">eine Sprache. Zwei Wörter
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:87:9</span></span><span class="t-3003-c">$v, w \in \Sigma^*$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:87:35</span></span><span class="t-3003-c">
+          heißen<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:87:54</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:88:9</span></span><i><span class="t-3003-c">unterscheidbar<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:88:10</span></span></i><span class="t-3003-c">
+          in
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:88:25</span></span><span class="nowrap"><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:88:29</span></span><span class="t-3003-c">,<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:88:32</span></span></span><span class="t-3003-c">
+          wenn es ein<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:88:32</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:89:9</span></span><span class="t-3003-c">$\gamma \in \Sigma^*$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:89:9</span></span><span class="t-3003-c">
+          gibt mit<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:89:30</span></span>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        v \gamma &amp; \not \in L \\
+        w \gamma &amp;  \in L \\
+        \end{align*}
+        $$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:91:9</span>
+      </div>
+      <p>
+        <span class="t-3003-c">(oder umgekehrt).<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:96:9</span></span>
+      </p>
+    </div>
+    <div
+      id="_29_h.a.i_"
+      class="well statement out"
+    >
+      <p>
+        <b><span class="t-3003-c">Lemma 5.4.2<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:98:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:98:5</span></span>
+        <span class="t-3003-c">Sei
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:100:9</span></span><span class="t-3003-c">$L \subseteq \Sigma^*$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:100:13</span></span><span class="t-3003-c">
+          eine Sprache und<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:100:35</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:101:9</span></span><span class="t-3003-c">$M = (\Sigma, Q, \qstart, F, \delta)$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:101:9</span></span><span class="t-3003-c">
+          ein<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:101:46</span></span>
+        <span class="t-3003-c">deterministischer endlicher Automat mit
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:102:9</span></span><span class="nowrap"><span class="t-3003-c">$L(M) = L$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:102:49</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:102:59</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:102:59</span></span>
+        <span class="t-3003-c">Wenn
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:103:9</span></span><span class="t-3003-c">$v$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:103:14</span></span><span class="t-3003-c">
+          und
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:103:17</span></span><span class="t-3003-c">$w$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:103:22</span></span><span class="t-3003-c">
+          in
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:103:25</span></span><span class="t-3003-c">$L$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:103:29</span></span><span class="t-3003-c">
+          unterscheidbar sind, dann<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:103:32</span></span>
+        <span class="t-3003-c">gilt<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:104:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/05/04-lower-bounds.wly:105:9</span></span><span class="nowrap"><span class="t-3003-c">$\hat{\delta}(\qstart, v) \ne \hat{\delta}(\qstart,
+            w)$<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:105:9</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/05/04-lower-bounds.wly:106:12</span></span></span>
+      </p>
+    </div>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./5-3.html">&lt;&lt; Kapitel 5.3<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Nichtdeterministische Endliche Automaten</span></a><a
+          href="./5-5.html"
+          class="menu-row-right"
+        >Kapitel 5.5 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Von einer regulären Grammatik zu einem endlichen Automaten an einem Beispiel</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

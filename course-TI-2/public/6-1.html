@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <title>Kapitel 6.1: Theoretische Informatik 2 - Bachelor-Studium Informatik | TU Chemnitz</title>
+  <meta name="description" content="Theoretische Informatik 2 for Bachelor-Studium Informatik - by Dominik Scheder, TU Chemnitz">
+  <meta name="author" content="Dominik Scheder">
+  <meta name="publisher" content="TU Chemnitz">
+  <meta name="subject" content="Theoretische Informatik 2">
+  <meta name="program" content="Bachelor-Studium Informatik">
+  <meta name="institution" content="TU Chemnitz">
+  <meta property="og:title" content="Kapitel 6.1: Theoretische Informatik 2 - Bachelor-Studium Informatik | TU Chemnitz">
+  <meta property="og:description" content="Theoretische Informatik 2 for Bachelor-Studium Informatik - by Dominik Scheder, TU Chemnitz">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Bachelor-Studium Informatik | TU Chemnitz">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kapitel 6.1: Theoretische Informatik 2 - Bachelor-Studium Informatik | TU Chemnitz">
+  <meta property="twitter:description" content="Theoretische Informatik 2 for Bachelor-Studium Informatik - by Dominik Scheder, TU Chemnitz">
+  <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+  <script type="text/javascript" src="mathjax_setup.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+  <div id="body-wrapper">
+    <div id="top-menu">
+      <div class="menu-row">
+        <a href="./index.html"><span class="inhalts_arrows">&lt;&lt;
+          </span>Inhaltsverzeichnis</a><a
+          href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-2/index.html.en"
+          class="menu-row-right"
+        >zur Kursübersicht</a>
+      </div>
+      <div class="menu-row">
+        <a
+          id="prev-page"
+          href="./6-0.html"
+        >&lt;&lt; Kapitel 6<span
+            style="visibility:hidden"
+            id="top-prev-page-tooltip"
+          >Kontextfreie Sprachen</span></a><a
+          id="next-page"
+          href="./6-2.html"
+          class="menu-row-right"
+        >Kapitel 6.2 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Kontextfreie Grammatiken und Kellerautomaten (nicht im Sommer 2026)</span></a>
+      </div>
+    </div>
+    <div class="main-column page-title">
+      <p>
+        <span class="t-3003-c">6.1&ensp;Ableitungen und Ableitungsbäume<span class="t-3003">./course1/wly/06/01-ableitungen.wly:2:11</span></span>
+      </p>
+    </div>
+    <div class="well statement out">
+      <p>
+        <b><span class="t-3003-c">Definition 6.1.1 (Kontextfreie Grammatik)<span class="t-3003">./course1/wly/06/01-ableitungen.wly:4:5</span></span></b><span class="t-3003-c">
+          Sei
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:5:35</span></span><span class="t-3003-c">$\Sigma$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:5:40</span></span><span class="t-3003-c">
+          ein endliches<span class="t-3003">./course1/wly/06/01-ableitungen.wly:5:48</span></span>
+        <span class="t-3003-c">Alphabet. Eine kontextfreie Grammatik besteht aus<span class="t-3003">./course1/wly/06/01-ableitungen.wly:6:9</span></span>
+      </p>
+      <ul>
+        <li>
+          <p>
+            <span class="t-3003-c">einer endlichen Menge
+              <span class="t-3003">./course1/wly/06/01-ableitungen.wly:10:17</span></span><span class="t-3003-c">$N$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:10:39</span></span><span class="t-3003-c">
+              von Nichtterminalsymbolen;<span class="t-3003">./course1/wly/06/01-ableitungen.wly:10:42</span></span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="t-3003-c">einem Startsymbol
+              <span class="t-3003">./course1/wly/06/01-ableitungen.wly:13:17</span></span><span class="nowrap"><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:13:35</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/01-ableitungen.wly:13:38</span></span></span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="t-3003-c">einer endlichen Menge
+              <span class="t-3003">./course1/wly/06/01-ableitungen.wly:16:17</span></span><span class="t-3003-c">$P$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:16:39</span></span><span class="t-3003-c">
+              von
+              <span class="t-3003">./course1/wly/06/01-ableitungen.wly:16:42</span></span><span class="nowrap"><i><span class="t-3003-c">Produktionen<span class="t-3003">./course1/wly/06/01-ableitungen.wly:16:48</span></span></i><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/01-ableitungen.wly:16:61</span></span></span><span class="t-3003-c">
+              eine<span class="t-3003">./course1/wly/06/01-ableitungen.wly:16:61</span></span>
+            <span class="t-3003-c">Produktion hat die Form<span class="t-3003">./course1/wly/06/01-ableitungen.wly:17:17</span></span>
+          </p>
+          <div class="math-block">
+            $$
+            \begin{align*}
+            X \rightarrow \alpha
+            \end{align*}
+            $$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:19:17</span>
+          </div>
+          <p>
+            <span class="t-3003-c">mit
+              <span class="t-3003">./course1/wly/06/01-ableitungen.wly:23:17</span></span><span class="t-3003-c">$X \in N$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:23:21</span></span><span class="t-3003-c">
+              und
+              <span class="t-3003">./course1/wly/06/01-ableitungen.wly:23:30</span></span><span class="nowrap"><span class="t-3003-c">$\alpha \in (\Sigma \cup N)^*$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:23:35</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/01-ableitungen.wly:23:65</span></span></span>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Wir sehen: reguläre Grammatiken sind ein Sonderfall<span class="t-3003">./course1/wly/06/01-ableitungen.wly:25:5</span></span>
+      <span class="t-3003-c">der kontextfreien. Ein
+        <span class="t-3003">./course1/wly/06/01-ableitungen.wly:26:5</span></span><i><span class="t-3003-c">Wort<span class="t-3003">./course1/wly/06/01-ableitungen.wly:26:29</span></span></i><span class="t-3003-c">
+        ist ein<span class="t-3003">./course1/wly/06/01-ableitungen.wly:26:34</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/01-ableitungen.wly:27:5</span></span><span class="nowrap"><span class="t-3003-c">$w \in \Sigma^*$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:27:5</span></span><span class="t-3003-c">;<span class="t-3003">./course1/wly/06/01-ableitungen.wly:27:21</span></span></span><span class="t-3003-c">
+        eine
+        <span class="t-3003">./course1/wly/06/01-ableitungen.wly:27:21</span></span><i><span class="t-3003-c">Wortform<span class="t-3003">./course1/wly/06/01-ableitungen.wly:27:29</span></span></i><span class="t-3003-c">
+        ist ein<span class="t-3003">./course1/wly/06/01-ableitungen.wly:27:38</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/01-ableitungen.wly:28:5</span></span><span class="nowrap"><span class="t-3003-c">$\alpha \in (\Sigma \cup N)^*$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:28:5</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/01-ableitungen.wly:28:35</span></span></span><span class="t-3003-c">
+        Wir benutzen meist<span class="t-3003">./course1/wly/06/01-ableitungen.wly:28:35</span></span>
+      <span class="t-3003-c">lateinische Buchstäben am Ende des Alphabets
+        <span class="t-3003">./course1/wly/06/01-ableitungen.wly:29:5</span></span><span class="nowrap"><span class="t-3003-c">(<span class="t-3003">./course1/wly/06/01-ableitungen.wly:29:5</span></span><span class="t-3003-c">$u,v,w$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:29:51</span></span><span class="t-3003-c">)<span class="t-3003">./course1/wly/06/01-ableitungen.wly:29:58</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/01-ableitungen.wly:29:58</span></span>
+      <span class="t-3003-c">für Wörter und griechische Buchstaben
+        <span class="t-3003">./course1/wly/06/01-ableitungen.wly:30:5</span></span><span class="nowrap"><span class="t-3003-c">(<span class="t-3003">./course1/wly/06/01-ableitungen.wly:30:5</span></span><span class="t-3003-c">$\alpha,$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:30:44</span></span><span class="t-3003-c">\beta<span class="t-3003">./course1/wly/06/01-ableitungen.wly:30:53</span></span></span><span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/01-ableitungen.wly:30:53</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/01-ableitungen.wly:31:5</span></span><span class="nowrap"><span class="t-3003-c">$,$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:31:5</span></span><span class="t-3003-c">\gamma$)<span class="t-3003">./course1/wly/06/01-ableitungen.wly:31:8</span></span></span><span class="t-3003-c">
+        für Wortformen.<span class="t-3003">./course1/wly/06/01-ableitungen.wly:31:8</span></span>
+    </p>
+    <div class="well statement out">
+      <p>
+        <b><span class="t-3003-c">Definition 6.1.2 (Ableitungschritt und Ableitung)<span class="t-3003">./course1/wly/06/01-ableitungen.wly:33:5</span></span></b><span class="t-3003-c">
+          Sei
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:34:43</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:34:48</span></span><span class="t-3003-c">
+          eine<span class="t-3003">./course1/wly/06/01-ableitungen.wly:34:51</span></span>
+        <span class="t-3003-c">kontextfreie Grammatik. Seien
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:35:9</span></span><span class="t-3003-c">$\alpha, \beta$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:35:39</span></span><span class="t-3003-c">
+          zwei<span class="t-3003">./course1/wly/06/01-ableitungen.wly:35:54</span></span>
+        <span class="t-3003-c">Wortformen. Wir schreiben<span class="t-3003">./course1/wly/06/01-ableitungen.wly:36:9</span></span>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \alpha \Step \beta
+        \end{align*}
+        $$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:38:9</span>
+      </div>
+      <p>
+        <span class="t-3003-c">wenn wir
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:42:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:42:18</span></span><span class="t-3003-c">
+          und
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:42:26</span></span><span class="t-3003-c">$\beta$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:42:31</span></span><span class="t-3003-c">
+          zerlegen können als<span class="t-3003">./course1/wly/06/01-ableitungen.wly:42:38</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:43:9</span></span><span class="t-3003-c">$\alpha = \alpha_1 X \alpha_2$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:43:9</span></span><span class="t-3003-c">
+          und<span class="t-3003">./course1/wly/06/01-ableitungen.wly:43:39</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:44:9</span></span><span class="t-3003-c">$\beta = \alpha_1 \gamma \alpha_2$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:44:9</span></span><span class="t-3003-c">
+          und<span class="t-3003">./course1/wly/06/01-ableitungen.wly:44:43</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:45:9</span></span><span class="t-3003-c">$X \rightarrow \gamma$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:45:9</span></span><span class="t-3003-c">
+          eine Produktion in
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:45:31</span></span><span class="t-3003-c">$G$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:45:51</span></span><span class="t-3003-c">
+          ist.<span class="t-3003">./course1/wly/06/01-ableitungen.wly:45:54</span></span>
+        <span class="t-3003-c">Wir nennen
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:46:9</span></span><span class="t-3003-c">$\alpha \Step \beta$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:46:20</span></span><span class="t-3003-c">
+          einen<span class="t-3003">./course1/wly/06/01-ableitungen.wly:46:40</span></span>
+        <span class="t-3003-c">Ableitungsschritt.<span class="t-3003">./course1/wly/06/01-ableitungen.wly:47:9</span></span>
+      </p>
+      <p>
+        <span class="t-3003-c">Wir schreiben mit Startsymbol
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:49:9</span></span><span class="nowrap"><span class="t-3003-c">$S$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:49:39</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/01-ableitungen.wly:49:42</span></span></span><span class="t-3003-c">
+          Die Ableitung<span class="t-3003">./course1/wly/06/01-ableitungen.wly:49:42</span></span>
+        <span class="t-3003-c">eines Wortes
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:50:9</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:50:22</span></span><span class="t-3003-c">
+          ist eine Sequenz von Wortformen<span class="t-3003">./course1/wly/06/01-ableitungen.wly:50:30</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:51:9</span></span><span class="t-3003-c">$w_0, w_1, \dots, w_n$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:51:9</span></span><span class="t-3003-c">
+          mit
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:51:31</span></span><span class="t-3003-c">$w_0 = S, w_n = \alpha$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:51:36</span></span><span class="t-3003-c">
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:51:59</span></span>
+        <span class="t-3003-c">und
+          <span class="t-3003">./course1/wly/06/01-ableitungen.wly:52:9</span></span><span class="nowrap"><span class="t-3003-c">$w_{i-1} \Longrightarrow w_i$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:52:13</span></span><span class="t-3003-c">.<span class="t-3003">./course1/wly/06/01-ableitungen.wly:52:42</span></span></span>
+      </p>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Das folgende Beispiel ist Beispiel 3.22 aus dem Buch<span class="t-3003">./course1/wly/06/01-ableitungen.wly:54:5</span></span>
+      <span class="t-3003-c">von Aho und Ullman. Wir betrachten die klassische<span class="t-3003">./course1/wly/06/01-ableitungen.wly:55:5</span></span>
+      <span class="t-3003-c">kontextfreie Grammatik für arithmetische Ausdrücke mit<span class="t-3003">./course1/wly/06/01-ableitungen.wly:56:5</span></span>
+      <span class="t-3003-c">Klammerung:<span class="t-3003">./course1/wly/06/01-ableitungen.wly:57:5</span></span>
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      (1)\ E \rightarrow&amp;E + T \\
+      (2)\ E \rightarrow&amp;T \\ (3)\ T \rightarrow&amp;T * F \\ (4)\ T
+      \rightarrow&amp;F \\ (5)\ F \rightarrow&amp;(E) \\ (6)\ F \rightarrow&amp;a \\
+      \end{align*}
+      $$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:59:5</span>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">wobei
+        <span class="t-3003">./course1/wly/06/01-ableitungen.wly:65:5</span></span><span class="t-3003-c">$E$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:65:11</span></span><span class="t-3003-c">
+        das Startsymbol ist. Hier ist ein Beispiel<span class="t-3003">./course1/wly/06/01-ableitungen.wly:65:14</span></span>
+      <span class="t-3003-c">einer Ableitung von
+        <span class="t-3003">./course1/wly/06/01-ableitungen.wly:66:5</span></span><span class="t-3003-c">$a * (a+a)$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:66:25</span></span><span class="t-3003-c">
+        von der obigen<span class="t-3003">./course1/wly/06/01-ableitungen.wly:66:36</span></span>
+      <span class="t-3003-c">Grammatik.<span class="t-3003">./course1/wly/06/01-ableitungen.wly:67:5</span></span>
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      E&amp;\stackrel{2}{\Longrightarrow} T
+      \stackrel{3}{\Longrightarrow} T * F \stackrel{4}{\Longrightarrow} F * F
+      \stackrel{6}{\Longrightarrow} a * F&amp;\\&amp;\stackrel{5}{\Longrightarrow}
+      a * (E) \stackrel{1}{\Longrightarrow} a * (E + T)
+      \stackrel{2}{\Longrightarrow} a * (T + T)&amp;\\&amp;
+      \stackrel{4}{\Longrightarrow} a * (F + T) \stackrel{6}{\Longrightarrow}
+      a * (a + T) \stackrel{4}{\Longrightarrow} a * (a + F)
+      \stackrel{6}{\Longrightarrow} a * (a + a)&amp;
+      \end{align*}
+      $$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:69:5</span>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Insbesondere ist es eine
+        <span class="t-3003">./course1/wly/06/01-ableitungen.wly:80:5</span></span><span class="nowrap"><i><span class="t-3003-c">Linksableitung<span class="t-3003">./course1/wly/06/01-ableitungen.wly:80:31</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/01-ableitungen.wly:80:46</span></span></span><span class="t-3003-c">
+        das heißt,<span class="t-3003">./course1/wly/06/01-ableitungen.wly:80:46</span></span>
+      <span class="t-3003-c">in jedem Schritt wird das am weitesten links stehende<span class="t-3003">./course1/wly/06/01-ableitungen.wly:81:5</span></span>
+      <span class="t-3003-c">Nichtterminal expandiert. In der Tat reicht es, nur<span class="t-3003">./course1/wly/06/01-ableitungen.wly:82:5</span></span>
+      <span class="t-3003-c">die Nummer der angewandten Regel anzugeben (da ja klar<span class="t-3003">./course1/wly/06/01-ableitungen.wly:83:5</span></span>
+      <span class="t-3003-c">ist, welches Nichtterminal expandiert werden muss).<span class="t-3003">./course1/wly/06/01-ableitungen.wly:84:5</span></span>
+      <span class="t-3003-c">Die obige Ableitung kann also kompakt durch die<span class="t-3003">./course1/wly/06/01-ableitungen.wly:85:5</span></span>
+      <span class="t-3003-c">Zahlenfolge 23465124646 repräsentiert werden.<span class="t-3003">./course1/wly/06/01-ableitungen.wly:86:5</span></span>
+      <span class="t-3003-c">Betrachten wir im Folgenden ein weiteres Beispiel<span class="t-3003">./course1/wly/06/01-ableitungen.wly:87:5</span></span>
+      <span class="t-3003-c">einer Ableitung, in diesem Falle eine<span class="t-3003">./course1/wly/06/01-ableitungen.wly:88:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course1/wly/06/01-ableitungen.wly:89:5</span></span><span class="nowrap"><i><span class="t-3003-c">Rechtsableitung<span class="t-3003">./course1/wly/06/01-ableitungen.wly:89:6</span></span></i><span class="t-3003-c">,<span class="t-3003">./course1/wly/06/01-ableitungen.wly:89:22</span></span></span><span class="t-3003-c">
+        in der in jedem Schritt das am<span class="t-3003">./course1/wly/06/01-ableitungen.wly:89:22</span></span>
+      <span class="t-3003-c">weitesten rechts stehende Nichtterminal expandiert<span class="t-3003">./course1/wly/06/01-ableitungen.wly:90:5</span></span>
+      <span class="t-3003-c">wird:<span class="t-3003">./course1/wly/06/01-ableitungen.wly:91:5</span></span>
+    </p>
+    <div class="math-block main-column">
+      $$
+      \begin{align*}
+      E&amp;\stackrel{2}{\Longrightarrow} T
+      \stackrel{3}{\Longrightarrow} T * F \stackrel{5}{\Longrightarrow} T *
+      (E) \stackrel{1}{\Longrightarrow} T * (E+T)
+      \stackrel{4}{\Longrightarrow} T * (E+F)&amp;\\&amp;
+      \stackrel{6}{\Longrightarrow} T * (E+a) \stackrel{2}{\Longrightarrow} T
+      * (T + a) \stackrel{4}{\Longrightarrow} T * (F + a)&amp;\\&amp;
+      \stackrel{6}{\Longrightarrow} T * (a + a) \stackrel{4}{\Longrightarrow}
+      F * (a + a) \stackrel{6}{\Longrightarrow} a * (a + a)&amp;
+      \end{align*}
+      $$<span class="t-3003">./course1/wly/06/01-ableitungen.wly:93:5</span>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Rechtsableitungen können auch kompakt als Zahlenfolge<span class="t-3003">./course1/wly/06/01-ableitungen.wly:104:5</span></span>
+      <span class="t-3003-c">repräsentiert werden. Allerdings geben wir<span class="t-3003">./course1/wly/06/01-ableitungen.wly:105:5</span></span>
+      <span class="t-3003-c">Rechtsableitungen immer in umgekehrter Reihenfolge an,<span class="t-3003">./course1/wly/06/01-ableitungen.wly:106:5</span></span>
+      <span class="t-3003-c">also von hinten nach vorne, in diesem Falle also nicht<span class="t-3003">./course1/wly/06/01-ableitungen.wly:107:5</span></span>
+      <span class="t-3003-c">2351... sondern 64642641532. Beachten Sie, dass wir es<span class="t-3003">./course1/wly/06/01-ableitungen.wly:108:5</span></span>
+      <span class="t-3003-c">hier mit einer eindeutigen Grammatik zu tun haben, es<span class="t-3003">./course1/wly/06/01-ableitungen.wly:109:5</span></span>
+      <span class="t-3003-c">also nur einen Syntaxbaum gibt:<span class="t-3003">./course1/wly/06/01-ableitungen.wly:110:5</span></span>
+    </p>
+    <div class="pseudowell">
+      <figure>
+        <img
+          style="height: 15em"
+          src="img/cfg/syntax-tree-a*(a+a).svg"
+        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course1/public/img/cfg/syntax-tree-a*(a+a).svg</span></span>
+      </figure>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Rechtsableitung und Linksableitung sowie deren<span class="t-3003">./course1/wly/06/01-ableitungen.wly:117:5</span></span>
+      <span class="t-3003-c">Codierung als Zahlenfolge spiegeln also nur zwei<span class="t-3003">./course1/wly/06/01-ableitungen.wly:118:5</span></span>
+      <span class="t-3003-c">verschiedene Weisen wieder, den Baum auszugeben.<span class="t-3003">./course1/wly/06/01-ableitungen.wly:119:5</span></span>
+    </p>
+    <div class="main-column">
+<pre class="listing">
+<span class="listing-bol"></span><span class="t-3003-c">def treeToLeftDerivation (tree):<span class="t-3003">./course1/wly/06/01-ableitungen.wly:122:5</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)<span class="t-3003">./course1/wly/06/01-ableitungen.wly:123:5</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">    for child in tree.children (from left ro right):<span class="t-3003">./course1/wly/06/01-ableitungen.wly:124:5</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">        treeToLeftDerivation(child)<span class="t-3003">./course1/wly/06/01-ableitungen.wly:125:5</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">def treeToRightDerivation (tree):<span class="t-3003">./course1/wly/06/01-ableitungen.wly:126:5</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">    for child in tree.children (from left ro right):<span class="t-3003">./course1/wly/06/01-ableitungen.wly:127:5</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">        treeToLeftDerivation(child)<span class="t-3003">./course1/wly/06/01-ableitungen.wly:128:5</span></span>
+<span class="listing-bol"></span><span class="t-3003-c">    print tree.ruleAtRoot (bzw. drucke nur die Nummer der Regel)<span class="t-3003">./course1/wly/06/01-ableitungen.wly:129:5</span></span>
+</pre>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Beachten Sie, dass wir in beiden Fällen die Liste<span class="t-3003">./course1/wly/06/01-ableitungen.wly:132:5</span></span>
+      <span class="t-3003-c">Kinder von links nach rechts durchgehen.<span class="t-3003">./course1/wly/06/01-ableitungen.wly:133:5</span></span>
+    </p>
+    <div id="end-of-page-elt">
+    </div>
+    <hr id="bottom-menu-hr">
+    <div id="bottom-menu">
+      <div class="menu-row">
+        <a href="./6-0.html">&lt;&lt; Kapitel 6<span
+            style="visibility:hidden"
+            id="bottom-prev-page-tooltip"
+          >Kontextfreie Sprachen</span></a><a
+          href="./6-2.html"
+          class="menu-row-right"
+        >Kapitel 6.2 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Kontextfreie Grammatiken und Kellerautomaten (nicht im Sommer 2026)</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

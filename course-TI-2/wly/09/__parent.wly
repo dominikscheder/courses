@@ -1,6 +1,6 @@
 |> Chapter
     handle=complexity-theory#page
-    title=Complexity Theory
+    title=Komplexitätstheorie
 
     Turingmaschinen erlauben uns, den Resourcenverbrauch
     einer Berechnung zu quantifizieren: zum einen die

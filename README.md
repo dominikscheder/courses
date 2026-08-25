@@ -187,11 +187,11 @@ Steps:
 
 # Committing Local Work After You Fucked Up by Forgetting To Run 'git pull' At Start of Work Session, And Now You Can Neither 'git pull' nor 'git push'
 
-1. stage .wly files: `git add -- '*.wly'`
-2. stage everything that's a directory named "img/": `git add -- ':(glob)**/img/**'`
+1. stage all .wly files, if you have any .wly changes: `git add -- '*.wly'`
+2. stage everything that's inside a directory named "img/" (if you edited/added any images): `git add -- ':(glob)**/img/**'`
 3. optional, run git status to see the files you're about to commit in green: `git status`
-4. commit: `git commit -m "committing my precious local work in this commit!"
-5. discard other (non-precious) local changes that might exist: `git stash`
+4. commit: `git commit -m "committing my precious local work in this commit!"`
+5. discard other (non-precious, i.e., non-.wly, non-img) local changes that might exist: `git stash`
 6. run git pull --rebase: `git pull --rebase`
 7. IF `git pull --rebase` IS SUCCESSFUL, sync your changes now is your chance!!: `git push`
-8. IF `git pull --rebase` IS NOT SUCCESSFUL, abort with ^C and ask an AI to help you, or John (or venture into VSCode and see if you can "resolve conflicts" on your own, which is what I do)
+8. IF `git pull --rebase` IS NOT SUCCESSFUL, abort with ^C and ask an AI to help you, or John (or venture into VSCode and see if you can "resolve conflicts")

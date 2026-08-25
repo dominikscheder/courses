@@ -184,3 +184,14 @@ Steps:
 4. replace contents of `public/pages/` with desired .html files to parse
 5. `rm -rf wly_content/*` (get rid of old TI-2 .wly output) inside `ti2_html` directory
 6. `gleam run -- --parse-html public/pages` & then work through errors (it will crash as soon as it finds an unmatched tag e.g., you have to fix unmatched tags manually; it might be picky about the .html structure in some other ways; if the same pattern is repeatedly causing a crash then one can augment the function named `bad_html_pre_processor` found in `github.com/vistuleB/wly/vxml/vxml.gleam` to pre-process that pattern away)
+
+# Committing Local Work After You Fucked Up by Forgetting To Run 'git pull' At Start of Work Session, And Now You Can Neither 'git pull' nor 'git push'
+
+1. stage .wly files: `git add -- '*.wly'`
+2. stage everything that's a directory named "img/": `git add -- ':(glob)**/img/**'`
+3. optional, run git status to see the files you're about to commit in green: `git status`
+4. commit: `git commit -m "committing my precious local work in this commit!"
+5. discard other (non-precious) local changes that might exist: `git stash`
+6. run git pull --rebase: `git pull --rebase`
+7. IF `git pull --rebase` IS SUCCESSFUL, sync your changes now is your chance!!: `git push`
+8. IF `git pull --rebase` IS NOT SUCCESSFUL, abort with ^C and ask an AI to help you, or John (or venture into VSCode and see if you can "resolve conflicts" on your own, which is what I do)

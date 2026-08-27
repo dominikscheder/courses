@@ -1,12 +1,12 @@
-import vxml/blame as bl
-import desugaring/desugarers as dl
 import desugaring as ds
+import desugaring/core.{type Pipeline} as infra
+import desugaring/desugarers as dl
+import desugaring/group_replacement_splitting as grs
+import desugaring/pipelines as pp
 import gleam/list
 import gleam/string
-import desugaring/group_replacement_splitting as grs
-import desugaring/core.{type Pipeline} as infra
-import desugaring/pipelines as pp
 import vxml
+import vxml/blame as bl
 
 const our_blame = bl.Des([], "pipeline", 9)
 
@@ -439,23 +439,35 @@ pub fn pipeline(
       "Math",
     ]),
     pp.markdown_link_splitting(["WriterlyBlankLine"], ["MathBlock", "Math"]),
-    pp.barbaric_symmetric_delim_splitting("`", "`", "code", ["WriterlyBlankLine"], [
-      "MathBlock",
-      "Math",
-      "pre",
-    ]),
+    pp.barbaric_symmetric_delim_splitting(
+      "`",
+      "`",
+      "code",
+      ["WriterlyBlankLine"],
+      [
+        "MathBlock",
+        "Math",
+        "pre",
+      ],
+    ),
     pp.barbaric_symmetric_delim_splitting("_", "_", "i", ["WriterlyBlankLine"], [
       "MathBlock",
       "Math",
       "pre",
       "code",
     ]),
-    pp.barbaric_symmetric_delim_splitting("\\*", "*", "b", ["WriterlyBlankLine"], [
-      "MathBlock",
-      "Math",
-      "pre",
-      "code",
-    ]),
+    pp.barbaric_symmetric_delim_splitting(
+      "\\*",
+      "*",
+      "b",
+      ["WriterlyBlankLine"],
+      [
+        "MathBlock",
+        "Math",
+        "pre",
+        "code",
+      ],
+    ),
     [
       dl.bridge_whitespace("b"),
       dl.wrap_adjacent_non_whitespace_text_with(#(
@@ -465,12 +477,17 @@ pub fn pipeline(
     ],
     pp.splitting_empty_lines_cleanup(),
     [
-      dl.math_label_to_tag_handle(#("MathBlock", "::++EquationCounter")),
+      dl.math_label_with_handle_to_mathjax_tag(#(
+        "MathBlock",
+        "::++EquationCounter",
+      )),
       dl.substitute_counters(),
       dl.handles_generate_v_definitions_from_t_definitions(),
       dl.handles_add_ids(),
       dl.handles_generate_dictionary("path"),
-      dl.handles_substitute(#("path", "a", "a", [], [], ["a"], ["Math", "MathBlock"])),
+      dl.handles_substitute(
+        #("path", "a", "a", [], [], ["a"], ["Math", "MathBlock"]),
+      ),
       // consumes the 'used' column that handles_substitute leaves on the
       // GrandWrapper dictionary; must sit between the two
       dl.handles_warn_unused(["MathBlock"]),
@@ -569,13 +586,13 @@ pub fn pipeline(
     case author_mode {
       False -> []
       True -> [
-        dl.ti2_turn_lines_into_3003_spans(parameters.input_dir, [
+        dl.ti2_turn_lines_into_3003_spans__outside(parameters.input_dir, [
           "Math",
           "MathBlock",
           "TopMenu",
           "BottomMenu",
         ]),
-        dl.ti2_adorn_img_with_3003_spans(parameters.output_dir, []),
+        dl.ti2_adorn_img_with_3003_spans(parameters.output_dir),
         dl.ti2_adorn_with_3003_spans(#(parameters.input_dir, "", ["MathBlock"])),
         dl.ti2_wrap_with_3003_spans(#(parameters.input_dir, "", ["Math"])),
       ]

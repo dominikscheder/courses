@@ -189,9 +189,12 @@ Steps:
 
 1. stage all .wly files, if you have any .wly changes: `git add -- '*.wly'`
 2. stage everything that's inside a directory named "img/" (if you edited/added any images): `git add -- ':(glob)**/img/**'`
-3. optional, run git status to see the files you're about to commit in green: `git status`
-4. commit: `git commit -m "committing my precious local work in this commit!"`
-5. discard other (non-precious, i.e., non-.wly, non-img) local changes that might exist: `git stash`
-6. run git pull --rebase: `git pull --rebase`
-7. IF `git pull --rebase` IS SUCCESSFUL, sync your changes now is your chance!!: `git push`
-8. IF `git pull --rebase` IS NOT SUCCESSFUL, abort with ^C and ask an AI to help you, or John (or venture into VSCode and see if you can "resolve conflicts")
+3. Optional: inspect what is staged and unstaged: `git status`
+4. Commit: `git commit -m "committing my precious local work in this commit!"`
+5. Safely set aside all remaining tracked and untracked changes:
+   `git stash --include-untracked`
+6. Rebase onto the latest remote changes: `git pull --rebase`
+7. If the rebase succeeds, push the local commits: `git push`
+8. If the rebase reports conflicts, either resolve them and run
+   `git add <resolved-files>` followed by `git rebase --continue`, or cancel
+   the rebase with `git rebase --abort` and ask for help.

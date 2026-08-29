@@ -53,40 +53,26 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">9.5&ensp;Boolesche Erfüllbarkeit (SAT)<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:2:11</span></span>
+        9.5&ensp;Boolesche Erfüllbarkeit (SAT)
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Sei
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:4:5</span></span><span class="t-3003-c">$V$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:4:9</span></span><span class="t-3003-c">
-        eine Menge von Booleschen Variablen. Ein
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:4:12</span></span><i><span class="t-3003-c">Literal<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:4:55</span></span></i><span class="t-3003-c">
-        ist entweder
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:4:63</span></span>
-      <span class="t-3003-c">eine Variable
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:5:5</span></span><span class="t-3003-c">$x \in V$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:5:19</span></span><span class="t-3003-c">
-        (ein
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:5:28</span></span><i><span class="t-3003-c">positives<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:5:35</span></span></i><span class="t-3003-c">
-        Literal) oder ihre
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:5:45</span></span>
-      <span class="t-3003-c">Negation
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:6:5</span></span><span class="t-3003-c">$\bar{x}$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:6:14</span></span><span class="t-3003-c">
-        (ein
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:6:23</span></span><i><span class="t-3003-c">negatives<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:6:30</span></span></i><span class="t-3003-c">
-        Literal). Eine
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:6:40</span></span><i><span class="t-3003-c">Klausel<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:6:57</span></span></i><span class="t-3003-c">
-        ist
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:6:65</span></span>
-      <span class="t-3003-c">ein Oder von Literalen, also zum Beispiel
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:7:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:8:5</span></span><span class="nowrap"><span class="t-3003-c">$(x \vee \bar{y} \vee z)$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:8:5</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:8:30</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:8:30</span></span>
-      <span class="t-3003-c">Eine CNF-Formel oder einfach CNF ist ein Und von Klauseln, also
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:9:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:10:5</span></span><span class="nowrap"><span class="t-3003-c">$C_1 \wedge C_2 \wedge \dots \wedge C_m$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:10:5</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:10:45</span></span></span><span class="t-3003-c">
-        zum Beispiel<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:10:45</span></span>
+      Sei $V$ eine Menge von Booleschen Variablen. Ein
+      <i>Literal</i>
+      ist entweder 
+      eine Variable $x \in V$ (ein
+      <i>positives</i>
+      Literal) oder ihre 
+      Negation $\bar{x}$ (ein
+      <i>negatives</i>
+      Literal). Eine
+      <i>Klausel</i>
+      ist 
+      ein Oder von Literalen, also zum Beispiel
+      <span class="nowrap">$(x \vee \bar{y} \vee z)$.</span>
+      Eine CNF-Formel oder einfach CNF ist ein Und von Klauseln, also
+      <span class="nowrap">$C_1 \wedge C_2 \wedge \dots \wedge C_m$,</span>
+      zum Beispiel
     </p>
     <div class="math-block main-column">
       $$
@@ -95,460 +81,294 @@
       (x \vee \bar{y} \vee z) \wedge (\bar{x} \vee y) \wedge (x \vee y \vee u) \wedge (\bar{x} \vee \bar{y})
       \wedge (\bar{u} \vee \bar{z})
       \end{align}
-      $$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:11:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Eine
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:17:5</span></span><i><span class="t-3003-c">Belegung<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:17:11</span></span></i><span class="t-3003-c">
-        weist jeder Variable einen Wahrheitswert
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:17:20</span></span><code></code><code><span class="t-3003-c">False/True<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:17:65</span></span></code><code></code><span class="t-3003-c">
-        bzw. 0/1 zu.
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:17:78</span></span>
-      <span class="t-3003-c">Formal ist eine Belegung also eine Funktion
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:18:5</span></span><span class="t-3003-c">$\alpha : V \rightarrow \{0,1\}$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:18:49</span></span><span class="t-3003-c">
-        oder
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:18:81</span></span>
-      <span class="t-3003-c">kurz
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:19:5</span></span><span class="nowrap"><span class="t-3003-c">$\alpha \in \cube^V$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:19:10</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:19:30</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:19:30</span></span>
-      <span class="t-3003-c">Eine CNF-Formel
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:20:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:20:21</span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:20:24</span></span>
-      <span class="t-3003-c">über den Variablen
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:21:5</span></span><span class="t-3003-c">$V$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:21:24</span></span><span class="t-3003-c">
-        (oder generell eine Boolesche Formel; oder noch allgemeiner: ein Schaltkreis)
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:21:27</span></span>
-      <span class="t-3003-c">repräsentiert eine Boolesche Funktion
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:22:5</span></span><span class="nowrap"><span class="t-3003-c">$\cube^V \rightarrow \cube$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:22:43</span></span><span class="t-3003-c">;<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:22:70</span></span></span><span class="t-3003-c">
-        sie wird unter einer Belegung
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:22:70</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:22:102</span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:22:110</span></span>
-      <span class="t-3003-c">also entweder falsch oder wahr. Wenn nun
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:23:5</span></span><span class="t-3003-c">$F(\alpha)=1$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:23:46</span></span><span class="t-3003-c">
-        ist, dann sagen wir, dass die Belegung
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:23:59</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:23:99</span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:23:107</span></span>
-      <span class="t-3003-c">die Formel
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:24:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:24:16</span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:24:19</span></span><span class="nowrap"><i><span class="t-3003-c">erfüllt<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:24:21</span></span></i><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:24:29</span></span></span><span class="t-3003-c">
-        Sie ist somit eine
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:24:29</span></span><i><span class="t-3003-c">erfüllende Belegung<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:24:51</span></span></i><span class="t-3003-c">
-        und
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:24:71</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:24:76</span></span><span class="t-3003-c">
-        ist
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:24:79</span></span><span class="nowrap"><i><span class="t-3003-c">erfüllbar<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:24:85</span></span></i><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:24:95</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:24:95</span></span>
-      <span class="t-3003-c">Bei CNF-Formeln ist das konzeptuell ganz einfach:<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:25:5</span></span>
+      Eine
+      <i>Belegung</i>
+      weist jeder Variable einen Wahrheitswert
+      <code></code><code>False/True</code><code></code>
+      bzw. 0/1 zu. 
+      Formal ist eine Belegung also eine Funktion $\alpha : V \rightarrow \{0,1\}$ oder 
+      kurz
+      <span class="nowrap">$\alpha \in \cube^V$.</span>
+      Eine CNF-Formel $F$ 
+      über den Variablen $V$ (oder generell eine Boolesche Formel; oder noch allgemeiner: ein Schaltkreis) 
+      repräsentiert eine Boolesche Funktion
+      <span class="nowrap">$\cube^V \rightarrow \cube$;</span>
+      sie wird unter einer Belegung $\alpha$ 
+      also entweder falsch oder wahr. Wenn nun $F(\alpha)=1$ ist, dann sagen wir, dass die Belegung $\alpha$ 
+      die Formel $F$
+      <span class="nowrap"><i>erfüllt</i>.</span>
+      Sie ist somit eine
+      <i>erfüllende Belegung</i>
+      und $F$ ist
+      <span class="nowrap"><i>erfüllbar</i>.</span>
+      Bei CNF-Formeln ist das konzeptuell ganz einfach:
     </p>
     <div class="main-column">
       <ul>
         <li>
           <p>
-            <span class="t-3003-c">$\alpha$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:29:13</span></span><span class="t-3003-c">
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:29:21</span></span><i><span class="t-3003-c">erfüllt<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:29:23</span></span></i><span class="t-3003-c">
-              das positive Literal
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:29:31</span></span><span class="t-3003-c">$x$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:29:53</span></span><span class="t-3003-c">
-              wenn
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:29:56</span></span><span class="t-3003-c">$\alpha(x)=1$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:29:62</span></span><span class="t-3003-c">
-              ist.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:29:75</span></span>
+            $\alpha$
+            <i>erfüllt</i>
+            das positive Literal $x$ wenn $\alpha(x)=1$ ist.
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">$\alpha$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:31:13</span></span><span class="t-3003-c">
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:31:21</span></span><i><span class="t-3003-c">erfüllt<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:31:23</span></span></i><span class="t-3003-c">
-              das negative Literal
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:31:31</span></span><span class="t-3003-c">$\bar{x}$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:31:53</span></span><span class="t-3003-c">
-              wenn
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:31:62</span></span><span class="t-3003-c">$\alpha(x)=0$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:31:68</span></span><span class="t-3003-c">
-              ist.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:31:81</span></span>
+            $\alpha$
+            <i>erfüllt</i>
+            das negative Literal $\bar{x}$ wenn $\alpha(x)=0$ ist.
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">$\alpha$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:33:13</span></span><span class="t-3003-c">
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:33:21</span></span><i><span class="t-3003-c">erfüllt<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:33:23</span></span></i><span class="t-3003-c">
-              die Klausel
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:33:31</span></span><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:33:44</span></span><span class="t-3003-c">
-              wenn
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:33:47</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:33:53</span></span><span class="t-3003-c">
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:33:61</span></span><i><span class="t-3003-c">mindestens ein<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:33:63</span></span></i><span class="t-3003-c">
-              Literal in
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:33:78</span></span><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:33:91</span></span><span class="t-3003-c">
-              erfüllt.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:33:94</span></span>
+            $\alpha$
+            <i>erfüllt</i>
+            die Klausel $C$ wenn $\alpha$
+            <i>mindestens ein</i>
+            Literal in  $C$ erfüllt.
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">$\alpha$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:35:13</span></span><span class="t-3003-c">
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:35:21</span></span><i><span class="t-3003-c">erfüllt<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:35:23</span></span></i><span class="t-3003-c">
-              die Formel
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:35:31</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:35:43</span></span><span class="t-3003-c">
-              wenn
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:35:46</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:35:52</span></span><span class="t-3003-c">
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:35:60</span></span><i><span class="t-3003-c">jede<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:35:62</span></span></i><span class="t-3003-c">
-              Klausel in
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:35:67</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:35:79</span></span><span class="t-3003-c">
-              erfüllt.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:35:82</span></span>
+            $\alpha$
+            <i>erfüllt</i>
+            die Formel $F$ wenn $\alpha$
+            <i>jede</i>
+            Klausel in $F$ erfüllt.
           </p>
         </li>
       </ul>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Zum Beispiel erfüllt die Belegung
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:37:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:38:5</span></span><span class="t-3003-c">$\alpha = [u \mapsto 0, x \mapsto 0, y \mapsto 1, z \mapsto 1]$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:38:5</span></span><span class="t-3003-c">
-        die obige Formel (\ref{eq-formula});
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:38:68</span></span>
-      <span class="t-3003-c">die Belegung
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:39:5</span></span><span class="t-3003-c">$\beta = [u \mapsto 1, x \mapsto 0, y \mapsto 0, z \mapsto 1]$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:39:18</span></span><span class="t-3003-c">
-        erfüllt
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:39:80</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:39:89</span></span><span class="t-3003-c">
-        nicht.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:39:92</span></span>
-      <span class="t-3003-c">Wenn es für
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:40:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:40:17</span></span><span class="t-3003-c">
-        mindestens eine erfüllende Belegung gibt, so nennen wir
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:40:20</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:40:77</span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:40:80</span></span><span class="nowrap"><i><span class="t-3003-c">erfüllbar<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:40:82</span></span></i><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:40:92</span></span></span><span class="t-3003-c">
-        ansonsten
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:40:92</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:41:5</span></span><span class="nowrap"><i><span class="t-3003-c">unerfüllbar<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:41:6</span></span></i><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:41:18</span></span></span><span class="t-3003-c">
-        Die Formel in (\ref{eq-formula}) ist erfüllbar<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:41:18</span></span>
+      Zum Beispiel erfüllt die Belegung 
+      $\alpha = [u \mapsto 0, x \mapsto 0, y \mapsto 1, z \mapsto 1]$ die obige Formel (\ref{eq-formula}); 
+      die Belegung $\beta = [u \mapsto 1, x \mapsto 0, y \mapsto 0, z \mapsto 1]$ erfüllt $F$ nicht.
+      Wenn es für $F$ mindestens eine erfüllende Belegung gibt, so nennen wir $F$
+      <span class="nowrap"><i>erfüllbar</i>,</span>
+      ansonsten
+      <span class="nowrap"><i>unerfüllbar</i>.</span>
+      Die Formel in (\ref{eq-formula}) ist erfüllbar
     </p>
     <p class="main-column">
-      <span class="t-3003-c">Eine CNF-Formel heißt
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:43:5</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:43:27</span></span><span class="t-3003-c">-CNF<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:43:30</span></span></span><span class="t-3003-c">
-        wenn jede ihrer Klausel maximal
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:43:30</span></span><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:43:67</span></span><span class="t-3003-c">
-        Literale enthält. Die Formel in
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:43:70</span></span>
-      <span class="t-3003-c">(\ref{eq-formula}) ist eine 3-CNF (und nach unserer Definition auch eine
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:44:5</span></span><span class="nowrap"><span class="t-3003-c">$4$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:44:78</span></span><span class="t-3003-c">-CNF<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:44:81</span></span></span><span class="t-3003-c">
-        und auch eine
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:44:81</span></span><span class="nowrap"><span class="t-3003-c">$5$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:44:100</span></span><span class="t-3003-c">-CNF;<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:44:103</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:44:103</span></span>
-      <span class="t-3003-c">und natürlich ist die Formel in (\ref{eq-formula}) auch ein Schaltkreis, wenn auch nicht mit Fan-in 2).<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:45:5</span></span>
+      Eine CNF-Formel heißt
+      <span class="nowrap">$k$-CNF</span>
+      wenn jede ihrer Klausel maximal $k$ Literale enthält. Die Formel in 
+      (\ref{eq-formula}) ist eine 3-CNF (und nach unserer Definition auch eine
+      <span class="nowrap">$4$-CNF</span>
+      und auch eine
+      <span class="nowrap">$5$-CNF;</span>
+      und natürlich ist die Formel in (\ref{eq-formula}) auch ein Schaltkreis, wenn auch nicht mit Fan-in 2).
     </p>
     <div
       id="_65_h.a.i_"
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Problem 9.5.1<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:48:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:48:5</span></span>
-        <span class="t-3003-c">Gegeben eine 3-CNF-Formel
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:50:9</span></span><span class="nowrap"><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:50:35</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:50:38</span></span></span><span class="t-3003-c">
-          entscheide, ob
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:50:38</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:50:55</span></span><span class="t-3003-c">
-          erfüllbar ist oder nicht.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:50:58</span></span>
+        <b>Problem 9.5.1</b>
+        Gegeben eine 3-CNF-Formel
+        <span class="nowrap">$F$,</span>
+        entscheide, ob $F$ erfüllbar ist oder nicht.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wie finden wir eine erfüllende Belegung? Ähnlich wie im letzten Kapitel für
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:53:5</span></span><span class="sc"><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:53:82</span></span><span class="t-3003-c">-Colorability<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:53:85</span></span></span></span><span class="t-3003-c">.
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:53:103</span></span>
-      <span class="t-3003-c">Wir haben eine
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:54:5</span></span><span class="nowrap"><i><span class="t-3003-c">partielle Belegung<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:54:21</span></span></i><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:54:40</span></span></span><span class="t-3003-c">
-        also eine Funktion
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:54:40</span></span><span class="nowrap"><span class="t-3003-c">$\alpha_i : \{v_1, \dots, v_i\} \rightarrow \cube$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:54:61</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:54:111</span></span></span>
+      Wie finden wir eine erfüllende Belegung? Ähnlich wie im letzten Kapitel für
+      <span class="sc"><span class="nowrap">$k$-Colorability</span></span>. 
+      Wir haben eine
+      <span class="nowrap"><i>partielle Belegung</i>,</span>
+      also eine Funktion
+      <span class="nowrap">$\alpha_i : \{v_1, \dots, v_i\} \rightarrow \cube$.</span>
     </p>
     <div class="main-column">
       <ul>
         <li>
           <p>
-            <span class="t-3003-c">Wenn eine Klausel von
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:58:13</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:58:35</span></span><span class="t-3003-c">
-              unter
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:58:38</span></span><span class="t-3003-c">$\alpha_i$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:58:45</span></span><span class="t-3003-c">
-              bereits
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:58:55</span></span><code></code><code><span class="t-3003-c">False<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:58:67</span></span></code><code></code><span class="t-3003-c">
-              wird, gibt
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:58:75</span></span><code></code><code><span class="t-3003-c">False<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:58:90</span></span></code><code></code><span class="t-3003-c">
-              zurück.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:58:98</span></span>
+            Wenn eine Klausel von $F$ unter $\alpha_i$ bereits
+            <code></code><code>False</code><code></code>
+            wird, gibt
+            <code></code><code>False</code><code></code>
+            zurück.
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Setze
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:60:13</span></span><span class="t-3003-c">$x_i$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:60:19</span></span><span class="t-3003-c">
-              probeweise auf
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:60:24</span></span><code></code><code><span class="t-3003-c">True<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:60:43</span></span></code><span class="nowrap"><code></code><span class="t-3003-c">:<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:60:50</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:60:50</span></span><span class="nowrap"><span class="t-3003-c">$\alpha_{i+1} := \alpha_i \cup [x_i \mapsto 1]$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:60:52</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:60:99</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:60:99</span></span>
-            <span class="t-3003-c">Teste rekursiv, ob sich
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:61:13</span></span><span class="t-3003-c">$\alpha_{i+1}$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:61:37</span></span><span class="t-3003-c">
-              zu einer erfüllenden Belegung erweitern lässt.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:61:51</span></span>
+            Setze $x_i$ probeweise auf
+            <code></code><code>True</code><span class="nowrap"><code></code>:</span>
+            <span class="nowrap">$\alpha_{i+1} := \alpha_i \cup [x_i \mapsto 1]$.</span>
+            Teste rekursiv, ob sich $\alpha_{i+1}$ zu einer erfüllenden Belegung erweitern lässt.
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Setze
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:63:13</span></span><span class="t-3003-c">$x_i$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:63:19</span></span><span class="t-3003-c">
-              probeweise auf
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:63:24</span></span><code></code><code><span class="t-3003-c">False<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:63:43</span></span></code><span class="nowrap"><code></code><span class="t-3003-c">:<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:63:51</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:63:51</span></span><span class="nowrap"><span class="t-3003-c">$\alpha_{i+1} := \alpha_i \cup [x_i \mapsto 0]$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:63:53</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:63:100</span></span></span><span class="t-3003-c">
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:63:100</span></span>
-            <span class="t-3003-c">Teste rekursiv, ob sich
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:64:13</span></span><span class="t-3003-c">$\alpha_{i+1}$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:64:37</span></span><span class="t-3003-c">
-              zu einer erfüllenden Belegung erweitern lässt.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:64:51</span></span>
+            Setze $x_i$ probeweise auf
+            <code></code><code>False</code><span class="nowrap"><code></code>:</span>
+            <span class="nowrap">$\alpha_{i+1} := \alpha_i \cup [x_i \mapsto 0]$.</span>
+            Teste rekursiv, ob sich $\alpha_{i+1}$ zu einer erfüllenden Belegung erweitern lässt.
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Falls einer der beiden Zweige erfolgreich war, gib die gefundene erfüllende Belegung
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:66:13</span></span>
-            <span class="t-3003-c">zurück. Ansonsten melde, dass
-              <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:67:13</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:67:43</span></span><span class="t-3003-c">
-              unerfüllbar ist.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:67:46</span></span>
+            Falls einer der beiden Zweige erfolgreich war, gib die gefundene erfüllende Belegung 
+            zurück. Ansonsten melde, dass $F$ unerfüllbar ist.
           </p>
         </li>
       </ul>
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Implementierung in Python
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:72:9</span></span>
+      Implementierung in Python
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">In meiner Python-Implementierung kann alles eine Variable sein, was man als Schlüssel
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:74:5</span></span>
-      <span class="t-3003-c">in einem Dictionary verwenden kann, also Int, Character, String, Tupel etc. aber keine
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:75:5</span></span>
-      <span class="t-3003-c">Listen. Wenn nun
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:76:5</span></span><code></code><code><span class="t-3003-c">x<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:76:25</span></span></code><code></code><span class="t-3003-c">
-        eine Variable ist, dann sind
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:76:29</span></span><code></code><code><span class="t-3003-c">(x, True)<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:76:62</span></span></code><code></code><span class="t-3003-c">
-        und
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:76:74</span></span><code></code><code><span class="t-3003-c">(x, False)<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:76:82</span></span></code><code></code><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:76:95</span></span>
-      <span class="t-3003-c">die Literale
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:77:5</span></span><span class="t-3003-c">$x$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:77:18</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:77:21</span></span><span class="nowrap"><span class="t-3003-c">$\bar{x}$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:77:26</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:77:35</span></span></span><span class="t-3003-c">
-        Ich unterscheide also zwischen der
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:77:35</span></span><i><span class="t-3003-c">Variable<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:77:73</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:77:82</span></span><span class="t-3003-c">$x$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:77:83</span></span><span class="t-3003-c">
-        und
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:77:86</span></span>
-      <span class="t-3003-c">dem
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:78:5</span></span><i><span class="t-3003-c">positiven Literal<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:78:10</span></span></i><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:78:28</span></span><span class="nowrap"><span class="t-3003-c">$x$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:78:29</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:78:32</span></span></span><span class="t-3003-c">
-        Eine Klausel ist nun einfach eine Liste von Literalen, und
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:78:32</span></span>
-      <span class="t-3003-c">eine Formel ist eine Liste von Klauseln.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:79:5</span></span>
+      In meiner Python-Implementierung kann alles eine Variable sein, was man als Schlüssel 
+      in einem Dictionary verwenden kann, also Int, Character, String, Tupel etc. aber keine 
+      Listen. Wenn nun
+      <code></code><code>x</code><code></code>
+      eine Variable ist, dann sind
+      <code></code><code>(x, True)</code><code></code>
+      und
+      <code></code><code>(x, False)</code><code></code>
+      die Literale $x$ und
+      <span class="nowrap">$\bar{x}$.</span>
+      Ich unterscheide also zwischen der
+      <i>Variable</i>
+      $x$ und 
+      dem
+      <i>positiven Literal</i>
+      <span class="nowrap">$x$.</span>
+      Eine Klausel ist nun einfach eine Liste von Literalen, und 
+      eine Formel ist eine Liste von Klauseln.
     </p>
     <div class="main-column">
 <pre class="listing">
-<span class="listing-bol"></span><span class="t-3003-c">[x, y] = ['x', 'y']<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:81:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">formula_2 = [ [(x, True), (y, True)], [(x, True), (y, False)], [(x, False)] ]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:82:5</span></span>
+<span class="listing-bol"></span>[x, y] = ['x', 'y']
+<span class="listing-bol"></span>formula_2 = [ [(x, True), (y, True)], [(x, True), (y, False)], [(x, False)] ]
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Und hier mein ausführbarer Python-Code:<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:85:5</span></span>
+      In der Datei
+      <a href="code/reductions/satsolver/byhandsat.py"></a>
+    </p>
+    <p class="main-column">
+      finden Sie meine Implementierung des rekursiven Algorithmus von oben, ohne 
+      jegliche Optimierung.
     </p>
     <div class="main-column">
 <pre class="listing">
-<span class="listing-bol"></span><span class="t-3003-c">"""<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:89:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">alpha: the partial assignment, as a dictionary<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:90:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">num: the variables 0, ..., num-1 are already assigned, the rest not yet <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:91:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">"""<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:92:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">def extend_partial_assignment(variables, clauses, alpha, num):<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:93:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:94:3</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    def is_clause_alive(clause):<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:95:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        # tests whether 'clause' contains at least one literal that is True or unassigned under alpha    <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:96:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        for (var, sign) in clause:<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:97:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">            if var not in alpha:<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:98:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">                return True<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:99:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">            if sign == alpha[var]:<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:100:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">                return True<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:101:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        return False<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:102:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:103:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    formula_alive = all(is_clause_alive(clause) for clause in clauses)<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:104:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:105:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    if not formula_alive:<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:106:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        return -1 <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:107:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:108:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    if num == len(variables):<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:109:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        return alpha <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:110:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:111:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    # take next variable<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:112:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    v = variables[num]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:113:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:114:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    # try whether v -&gt; 1 works <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:115:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    alpha[v] = True <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:116:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    alpha_1 = extend_partial_assignment(variables, clauses, alpha, num+1)<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:117:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    if alpha_1 != -1:<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:118:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        return alpha_1<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:119:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:120:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    # try whether v -&gt; 0 works <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:121:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    alpha[v] = False <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:122:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    alpha_0 = extend_partial_assignment(variables, clauses, alpha, num+1)<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:123:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    if alpha_0 != -1:<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:124:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        return alpha_0 <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:125:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:126:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    del alpha[v] <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:127:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    return -1<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:128:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:129:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">def find_solution(variables, clauses):<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:130:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    return extend_partial_assignment(variables, clauses, {}, 0)<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:131:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:132:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">u = 'u'<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:133:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">x = 'x'<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:134:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">y = 'y'<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:135:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">z = 'z'<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:136:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">variables = [u,x,y,z]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:137:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">C1 = [(x, True), (y, False), (z, True)]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:138:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">C2 = [(x, False), (y, True)]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:139:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">C3 = [(x, True), (y, True), (u, True)]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:140:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">C4 = [(x, False), (y, False)]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:141:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">C5 = [(u, False), (z, False)]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:142:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:143:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">formula = [C1, C2, C3, C4, C5]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:144:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:145:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">assignment = find_solution(variables, formula)<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:146:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">print(assignment)<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:147:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:148:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:149:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">formula_2 = [ [(x, True), (y, True)], [(x, True), (y, False)], [(x, False)] ]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:150:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">assignment_2 = find_solution([x,y], formula_2)<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:151:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">print(assignment_2)<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:152:5</span></span>
+<span class="listing-bol"></span>$ python -i -m satsolver.byhandsat 
+<span class="listing-bol"></span>&gt;&gt;&gt; find_solution(['x', 'y'], [[('x', True),('y', True)], [('x', False),('y', False)]])
+<span class="listing-bol"></span>{'x': True, 'y': False}
+<span class="listing-bol"></span>&gt;&gt;&gt;
+<span class="listing-bol"></span>&gt;&gt;&gt; find_all_solutions(['x', 'y'], [[('x', True),('y', True)], [('x', False),('y', False)]])
+<span class="listing-bol"></span>[{'x': True, 'y': False}, {'x': False, 'y': True}]
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Der Code erzeugt einen Rekursionsbaum der Tiefe maximal
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:155:5</span></span><span class="nowrap"><span class="t-3003-c">$n = |V|$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:155:61</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:155:70</span></span></span><span class="t-3003-c">
-        in dem jeder innere Knoten
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:155:70</span></span>
-      <span class="t-3003-c">zwei Kinder hat (einen für
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:156:5</span></span><span class="t-3003-c">$v \mapsto 1$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:156:32</span></span><span class="t-3003-c">
-        und einen für
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:156:45</span></span><span class="nowrap"><span class="t-3003-c">$v \mapsto 0$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:156:60</span></span><span class="t-3003-c">).<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:156:73</span></span></span><span class="t-3003-c">
-        Jeder Aufruf selbst
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:156:73</span></span>
-      <span class="t-3003-c">hat Laufzeit
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:157:5</span></span><span class="nowrap"><span class="t-3003-c">$\poly(n)$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:157:18</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:157:28</span></span></span><span class="t-3003-c">
-        je nachdem, wie man
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:157:28</span></span><code></code><code><span class="t-3003-c">is_clause_alive<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:157:53</span></span></code><code></code><span class="t-3003-c">
-        und die partielle
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:157:71</span></span>
-      <span class="t-3003-c">Belegung
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:158:5</span></span><code></code><code><span class="t-3003-c">alpha<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:158:17</span></span></code><code></code><span class="t-3003-c">
-        implementiert. Die Laufzeit ist somit höchstens
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:158:25</span></span><span class="nowrap"><span class="t-3003-c">$O(2^n \poly(n))$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:158:74</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:158:91</span></span></span>
+      Der Code erzeugt einen Rekursionsbaum der Tiefe maximal
+      <span class="nowrap">$n = |V|$,</span>
+      in dem jeder innere Knoten 
+      zwei Kinder hat (einen für $v \mapsto 1$ und einen für
+      <span class="nowrap">$v \mapsto 0$).</span>
+      Jeder Aufruf selbst 
+      hat Laufzeit
+      <span class="nowrap">$\poly(n)$,</span>
+      je nachdem, wie man
+      <code></code><code>is_clause_alive</code><code></code>
+      und die partielle 
+      Belegung
+      <code></code><code>alpha</code><code></code>
+      implementiert. Die Laufzeit ist somit höchstens
+      <span class="nowrap">$O(2^n \poly(n))$.</span>
     </p>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 9.5.1<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:160:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:160:5</span></span>
-        <span class="t-3003-c">Finden Sie Möglichkeiten, die Variable
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:161:9</span></span><span class="t-3003-c">$v$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:161:48</span></span><span class="t-3003-c">
-          in Zeile 25 schlauer zu wählen, so dass
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:161:51</span></span><code></code><code><span class="t-3003-c">is_clause_alive<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:161:95</span></span></code><code></code><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:161:113</span></span>
-        <span class="t-3003-c">für eine
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:162:9</span></span><span class="nowrap"><span class="t-3003-c">$3$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:162:18</span></span><span class="t-3003-c">-CNF<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:162:21</span></span></span><span class="t-3003-c">
-          deutlich schneller läuft als in
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:162:21</span></span><span class="nowrap"><span class="t-3003-c">$O(2^n \poly(n))$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:162:58</span></span><span class="t-3003-c">?<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:162:75</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:162:75</span></span>
-        <span class="t-3003-c">Wie schnell können Sie es machen? Sie dürfen natürlich den restlichen Code von
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:163:9</span></span><code></code><code><span class="t-3003-c">extend_partial_assignment<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:163:91</span></span></code><code></code><span class="t-3003-c">
-          auch verändern.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:163:119</span></span>
+        <b>Übungsaufgabe 9.5.1</b>
+        Finden Sie eine möglichst kurze Formel, die meine Implementierung in die Knie zwingt.
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 9.5.2<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:166:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:166:5</span></span>
-        <span class="t-3003-c">Rufen Sie meinen
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:167:9</span></span><a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/sat-dpll/index.html"><span class="t-3003-c">DPLL-Illustrator
-            <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:170:13</span></span></a><span class="t-3003-c">
-          auf und spielen Sie damit rum. Denken Sie sich interessante unerfüllbare CNF-Formeln aus.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:171:10</span></span>
+        <b>Übungsaufgabe 9.5.2</b>
+        Finden Sie Möglichkeiten, die Variable $v$ in Zeile 25 schlauer zu wählen, so dass
+        <code></code><code>is_clause_alive</code><code></code>
+        für eine
+        <span class="nowrap">$3$-CNF</span>
+        deutlich schneller läuft als in
+        <span class="nowrap">$O(2^n \poly(n))$?</span>
+        Wie schnell können Sie es machen? Sie dürfen natürlich den restlichen Code von
+        <code></code><code>extend_partial_assignment</code><code></code>
+        auch verändern.
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 9.5.3</b>
+        Rufen Sie meinen
+        <a href="https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/sat-dpll/index.html">DPLL-Illustrator
+        </a>
+        auf und spielen Sie damit rum. Denken Sie sich interessante unerfüllbare CNF-Formeln aus.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir beobachten ein ähnliches Phänomen wie bei Graphenfärbbarkeit: eine Lösung zu finden scheint
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:174:5</span></span>
-      <span class="t-3003-c">nicht ganz einfach zu sein; wenn uns jemand aber einen Lösungsvorschlag unterbreitet, also
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:175:5</span></span>
-      <span class="t-3003-c">eine Belegung
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:176:5</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:176:19</span></span><span class="t-3003-c">
-        gibt, so können wir natürlich effizient überprüfen, ob
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:176:27</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:176:83</span></span><span class="t-3003-c">
-        die Formel
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:176:91</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:177:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:177:5</span></span><span class="t-3003-c">
-        erfüllt oder nicht.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:177:8</span></span>
+      Wir beobachten ein ähnliches Phänomen wie bei Graphenfärbbarkeit: eine Lösung zu finden scheint 
+      nicht ganz einfach zu sein; wenn uns jemand aber einen Lösungsvorschlag unterbreitet, also 
+      eine Belegung $\alpha$ gibt, so können wir natürlich effizient überprüfen, ob $\alpha$ die Formel 
+      $F$ erfüllt oder nicht.
     </p>
     <div class="main-column">
 <pre class="listing">
-<span class="listing-bol"></span><span class="t-3003-c">def is_formula_satisfied(variables, clauses, alpha):<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:180:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:181:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    def is_literal_satisfied(lit):<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:182:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        (x, b) = lit <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:183:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        if x not in alpha: <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:184:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">            return False <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:185:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        return alpha[x] == b <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:186:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:187:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    def is_clause_satisfied(clause):<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:188:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        return any(is_literal_satisfied(lit) for lit in clause)<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:189:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:190:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    formula_satisfied = all(is_clause_satisfied(clause) for clause in clauses)<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:191:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    return formula_satisfied<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:192:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:193:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:194:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">[u, x, y, z] = ['u', 'x', 'y', 'z']<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:195:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">variables = [u,x,y,z]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:196:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">C1 = [(x, True), (y, False), (z, True)]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:197:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">C2 = [(x, False), (y, True)]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:198:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">C3 = [(x, True), (y, True), (u, True)]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:199:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">C4 = [(x, False), (y, False)]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:200:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">C5 = [(u, False), (z, False)]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:201:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:202:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">formula = [C1, C2, C3, C4, C5]<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:203:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:204:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">assignment_1 = {u : 0, x : 0, y: 1, z : 1 }<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:205:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">print(is_formula_satisfied(variables, formula, assignment_1))<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:206:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:207:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">assignment_2 = {u : 1, x : 0, y: 0, z : 1 }<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:208:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">print(is_formula_satisfied(variables, formula, assignment_2))    <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:209:5</span></span>
+<span class="listing-bol"></span>def is_formula_satisfied(variables, clauses, alpha):
+<span class="listing-bol"></span>
+<span class="listing-bol"></span>    def is_literal_satisfied(lit):
+<span class="listing-bol"></span>        (x, b) = lit 
+<span class="listing-bol"></span>        if x not in alpha: 
+<span class="listing-bol"></span>            return False 
+<span class="listing-bol"></span>        return alpha[x] == b 
+<span class="listing-bol"></span>    
+<span class="listing-bol"></span>    def is_clause_satisfied(clause):
+<span class="listing-bol"></span>        return any(is_literal_satisfied(lit) for lit in clause)
+<span class="listing-bol"></span>    
+<span class="listing-bol"></span>    formula_satisfied = all(is_clause_satisfied(clause) for clause in clauses)
+<span class="listing-bol"></span>    return formula_satisfied
+<span class="listing-bol"></span>
+<span class="listing-bol"></span>
+<span class="listing-bol"></span>[u, x, y, z] = ['u', 'x', 'y', 'z']
+<span class="listing-bol"></span>variables = [u,x,y,z]
+<span class="listing-bol"></span>C1 = [(x, True), (y, False), (z, True)]
+<span class="listing-bol"></span>C2 = [(x, False), (y, True)]
+<span class="listing-bol"></span>C3 = [(x, True), (y, True), (u, True)]
+<span class="listing-bol"></span>C4 = [(x, False), (y, False)]
+<span class="listing-bol"></span>C5 = [(u, False), (z, False)]
+<span class="listing-bol"></span>
+<span class="listing-bol"></span>formula = [C1, C2, C3, C4, C5]
+<span class="listing-bol"></span>
+<span class="listing-bol"></span>assignment_1 = {u : 0, x : 0, y: 1, z : 1 }
+<span class="listing-bol"></span>print(is_formula_satisfied(variables, formula, assignment_1))
+<span class="listing-bol"></span>
+<span class="listing-bol"></span>assignment_2 = {u : 1, x : 0, y: 0, z : 1 }
+<span class="listing-bol"></span>print(is_formula_satisfied(variables, formula, assignment_2))    
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Der Algorithmus
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:212:5</span></span><code></code><code><span class="t-3003-c">is_alpha_satisfying_assignment<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:212:24</span></span></code><code></code><span class="t-3003-c">
-        ist eine Zertifikatmaschine:
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:212:57</span></span>
-      <span class="t-3003-c">sie erwartet auf dem Eingabeband eine CNF-Formel und auf dem Zertifikatband eine
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:213:5</span></span>
-      <span class="t-3003-c">Belegung
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:214:5</span></span><span class="nowrap"><span class="t-3003-c">$\alpha$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:214:14</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:214:22</span></span></span><span class="t-3003-c">
-        Falls nun
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:214:22</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:214:34</span></span><span class="t-3003-c">
-        erfüllbar ist, dann gibt es eine Belegung
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:214:37</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:215:5</span></span><span class="nowrap"><span class="t-3003-c">$\alpha$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:215:5</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:215:13</span></span></span><span class="t-3003-c">
-        so dass
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:215:13</span></span><code></code><code><span class="t-3003-c">is_alpha_satisfying_assignment<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:215:26</span></span></code><code></code><span class="t-3003-c">$(F,\alpha)$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:215:59</span></span><span class="t-3003-c">
-        akzeptiert bzw.
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:215:71</span></span><code></code><code><span class="t-3003-c">True<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:215:91</span></span></code><code></code><span class="t-3003-c">
-        zurückgibt.
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:215:98</span></span>
-      <span class="t-3003-c">Ist im Gegenteil
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:216:5</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:216:22</span></span><span class="t-3003-c">
-        unerfüllbar, so wird sie immer ablehnen, egal welches
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:216:25</span></span><span class="t-3003-c">$\alpha$<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:216:80</span></span><span class="t-3003-c">
-        man ihr
-        <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:216:88</span></span>
-      <span class="t-3003-c">auf das Zertifikatband schreibt. Daher:<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:217:5</span></span>
+      Der Algorithmus
+      <code></code><code>is_alpha_satisfying_assignment</code><code></code>
+      ist eine Zertifikatmaschine: 
+      sie erwartet auf dem Eingabeband eine CNF-Formel und auf dem Zertifikatband eine 
+      Belegung
+      <span class="nowrap">$\alpha$.</span>
+      Falls nun $F$ erfüllbar ist, dann gibt es eine Belegung
+      <span class="nowrap">$\alpha$,</span>
+      so dass
+      <code></code><code>is_alpha_satisfying_assignment</code><code></code>$(F,\alpha)$ akzeptiert bzw.
+      <code></code><code>True</code><code></code>
+      zurückgibt. 
+      Ist im Gegenteil $F$ unerfüllbar, so wird sie immer ablehnen, egal welches $\alpha$ man ihr 
+      auf das Zertifikatband schreibt. Daher:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beobachtung 9.5.2<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:219:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:219:5</span></span>
-        <span class="t-3003-c">SAT ist in NP.<span class="t-3003">./course-TI-2/wly/09/05-SAT.wly:220:9</span></span>
+        <b>Beobachtung 9.5.2</b>
+        SAT ist in NP.
       </p>
     </div>
     <div id="end-of-page-elt">

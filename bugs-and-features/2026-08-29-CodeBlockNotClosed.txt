@@ -1,0 +1,21 @@
+Here is a snippet of the .wly source code:
+
+    meinen Code herunterladen und damit rumspielen:
+    |> a 
+        href=code/reductions.zip 
+        ```reductions.zip```
+
+    
+    |> Definition 
+
+He doesn't like that line 6 starts with ```. He'll be fine if I write 
+
+    |> a 
+        href=code/reductions.zip 
+        _```reductions.zip```
+
+  💥💥 -------------------------------/ parser error /------------------------------- 💥💥
+  💥💥 blame:  09/04-Colorability.wly:9:9                                             💥💥
+  💥💥 error:  CodeBlockNotClosed(Src([], \"09/04-Colorability.wly\", 9, 9,           💥💥
+  💥💥         Movable))                                                              💥💥
+  💥💥 ------------------------------------------------------------------------------ 💥💥

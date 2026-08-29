@@ -53,54 +53,43 @@
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">9.4&ensp;Graphenfärbbarkeit<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:2:11</span></span>
+        9.4&ensp;Graphenfärbbarkeit
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Wir verlassen nun zumindest scheinbar das Feld der Komplexitätstheorie und
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:4:5</span></span>
-      <span class="t-3003-c">betrachten Graphenalgorithmen.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:5:5</span></span>
+      Wir verlassen nun zumindest scheinbar das Feld der Komplexitätstheorie und 
+      betrachten Graphenalgorithmen. Sie sollten beim Durcharbeiten dieser Kapitel 
+      meinen Code herunterladen und damit rumspielen:<a href="code/reductions.zip"><span class="nowrap">_<code></code></span><code>reductions.zip</code><code></code></a>
     </p>
     <div
       id="_63_h.a.i_"
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Definition 9.4.1<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:7:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:7:5</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:9:9</span></span><span class="t-3003-c">$G = (V,E)$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:9:13</span></span><span class="t-3003-c">
-          ein Graph. Eine
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:9:24</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:9:41</span></span><span class="t-3003-c">-Färbung<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:9:44</span></span></span><span class="t-3003-c">
-          von
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:9:44</span></span><span class="t-3003-c">$G$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:9:57</span></span><span class="t-3003-c">
-          ist eine
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:9:60</span></span>
-        <span class="t-3003-c">Funktion
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:10:9</span></span><span class="nowrap"><span class="t-3003-c">$c: V \rightarrow \{1,\dots, k\}$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:10:18</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:10:51</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:10:51</span></span>
-        <span class="t-3003-c">Die Menge
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:11:9</span></span><span class="t-3003-c">$\{1,\dots, k\}$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:11:19</span></span><span class="t-3003-c">
-          bezeichnet man in diesem Zusammenhang
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:11:35</span></span>
-        <span class="t-3003-c">als die
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:12:9</span></span><span class="nowrap"><i><span class="t-3003-c">Farben<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:12:18</span></span></i><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:12:25</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:12:25</span></span>
-        <span class="t-3003-c">Die Färbung heißt
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:13:9</span></span><i><span class="t-3003-c">gültig<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:13:28</span></span></i><span class="t-3003-c">
-          (Englisch
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:13:35</span></span><span class="nowrap"><i><span class="t-3003-c">proper<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:13:47</span></span></i><span class="t-3003-c">)<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:13:54</span></span></span><span class="t-3003-c">
-          wenn<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:13:54</span></span>
+        <b>Definition 9.4.1</b>
+        Sei $G = (V,E)$ ein Graph. Eine
+        <span class="nowrap">$k$-Färbung</span>
+        von $G$ ist eine 
+        Funktion
+        <span class="nowrap">$c: V \rightarrow \{1,\dots, k\}$.</span>
+        Die Menge $\{1,\dots, k\}$ bezeichnet man in diesem Zusammenhang 
+        als die
+        <span class="nowrap"><i>Farben</i>.</span>
+        Die Färbung heißt
+        <i>gültig</i>
+        (Englisch
+        <span class="nowrap"><i>proper</i>)</span>
+        wenn
       </p>
       <div class="math-block">
         $$
         \begin{align*}
         \forall\ \{u,v\} \in E: \ c(u) \ne c(v) \ ?
         \end{align*}
-        $$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:14:9</span>
+        $$
       </div>
       <p>
-        <span class="t-3003-c">gilt.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:17:9</span></span>
+        gilt.
       </p>
     </div>
     <div
@@ -108,14 +97,12 @@
       class="well statement out"
     >
       <p>
-        <b><span class="t-3003-c">Problem 9.4.2<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:19:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:19:5</span></span>
-        <span class="t-3003-c">(<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:21:9</span></span><span class="sc"><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:21:11</span></span><span class="t-3003-c">-Colorability<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:21:14</span></span></span></span><span class="t-3003-c">). Gegeben ein Graph
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:21:32</span></span><span class="nowrap"><span class="t-3003-c">$G=(V,E)$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:21:53</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:21:62</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:21:62</span></span>
-        <span class="t-3003-c">gibt es eine gültige
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:22:9</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:22:30</span></span><span class="t-3003-c">-Färbung<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:22:33</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:22:33</span></span><span class="nowrap"><span class="t-3003-c">$c$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:22:42</span></span><span class="t-3003-c">?<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:22:45</span></span></span>
+        <b>Problem 9.4.2</b>
+        (<span class="sc"><span class="nowrap">$k$-Colorability</span></span>). Gegeben ein Graph
+        <span class="nowrap">$G=(V,E)$,</span>
+        gibt es eine gültige
+        <span class="nowrap">$k$-Färbung</span>
+        <span class="nowrap">$c$?</span>
       </p>
     </div>
     <div class="pseudowell">
@@ -125,9 +112,9 @@
         <div class="group_scaler">
           <div class="figure__container">
             <figure>
-              <img src="img/09-complexity-theory/np-examples/peterson-3-colorable.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course-TI-2/public/img/09-complexity-theory/np-examples/peterson-3-colorable.svg</span></span>
+              <img src="img/09-complexity-theory/np-examples/peterson-3-colorable.svg">
               <figcaption>
-                <span class="t-3003-c">Der Peterson-Graph ist 3-färbbar.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:30:17</span></span>
+                Der Peterson-Graph ist 3-färbbar.
               </figcaption>
             </figure>
           </div>
@@ -135,9 +122,9 @@
           </div>
           <div class="figure__container">
             <figure>
-              <img src="img/09-complexity-theory/np-examples/not-3-colorable.svg"><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course-TI-2/public/img/09-complexity-theory/np-examples/not-3-colorable.svg</span></span>
+              <img src="img/09-complexity-theory/np-examples/not-3-colorable.svg">
               <figcaption>
-                <span class="t-3003-c">Dieser Graph ist nicht 3-färbbar (aber 4-färbbar).<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:39:17</span></span>
+                Dieser Graph ist nicht 3-färbbar (aber 4-färbbar).
               </figcaption>
             </figure>
           </div>
@@ -145,312 +132,223 @@
       </div>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Eine Anwendung von
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:41:5</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:41:24</span></span><span class="t-3003-c">-Colorability<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:41:27</span></span></span><span class="t-3003-c">
-        wäre zum Beispiel die Wahl der Sendefrequenzen
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:41:27</span></span>
-      <span class="t-3003-c">von 5G-Masten: zwei Masten, deren Sendebereiche sich überlappend, sollten nicht
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:42:5</span></span>
-      <span class="t-3003-c">im gleichen Frequenzband senden, da Handys dann beide Masten "hören" könnten und
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:43:5</span></span>
-      <span class="t-3003-c">es zu Störungen käme. Andererseits stehen den Netzanbietern nicht beliebig viele
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:44:5</span></span>
-      <span class="t-3003-c">Frequenzbänder zur Verfügung. Die
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:45:5</span></span><i><span class="t-3003-c">Knoten<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:45:40</span></span></i><span class="t-3003-c">
-        in unserem Problem sind hier die Masten.
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:45:47</span></span>
-      <span class="t-3003-c">Zwei Masten sind durch eine
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:46:5</span></span><i><span class="t-3003-c">Kante<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:46:34</span></span></i><span class="t-3003-c">
-        verbunden, wenn ihre Sendebereiche sich überlappen.
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:46:40</span></span>
-      <span class="t-3003-c">Man kann nun
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:47:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:47:18</span></span><span class="t-3003-c">
-        verschiedene Frequenzbänder wählen, wenn und nur wenn der entstehende Graph
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:47:21</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:48:5</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:48:5</span></span><span class="t-3003-c">-färbbar<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:48:8</span></span></span><span class="t-3003-c">
-        ist.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:48:8</span></span>
+      Eine Anwendung von
+      <span class="nowrap">$k$-Colorability</span>
+      wäre zum Beispiel die Wahl der Sendefrequenzen 
+      von 5G-Masten: zwei Masten, deren Sendebereiche sich überlappend, sollten nicht 
+      im gleichen Frequenzband senden, da Handys dann beide Masten "hören" könnten und 
+      es zu Störungen käme. Andererseits stehen den Netzanbietern nicht beliebig viele 
+      Frequenzbänder zur Verfügung. Die
+      <i>Knoten</i>
+      in unserem Problem sind hier die Masten. 
+      Zwei Masten sind durch eine
+      <i>Kante</i>
+      verbunden, wenn ihre Sendebereiche sich überlappen. 
+      Man kann nun $k$ verschiedene Frequenzbänder wählen, wenn und nur wenn der entstehende Graph
+      <span class="nowrap">$k$-färbbar</span>
+      ist.
     </p>
     <p class="main-column">
-      <span class="t-3003-c">Eine andere Anwendung kommt aus dem Compilerbau: ein Stück Code, zum Beispiel eine Funktion,
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:50:5</span></span>
-      <span class="t-3003-c">benötigt in der compilierten Version
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:51:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:51:42</span></span><span class="t-3003-c">
-        lokale Variable. Nicht alle werden zum gleichen Zeitpunkt
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:51:45</span></span>
-      <span class="t-3003-c">benötigt. Wenn zum Beispiel
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:52:5</span></span><code></code><code><span class="t-3003-c">initial_value<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:52:36</span></span></code><code></code><span class="t-3003-c">
-        nur am Anfang benötigt und
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:52:52</span></span><code></code><code><span class="t-3003-c">final_result<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:52:83</span></span></code><code></code><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:52:98</span></span>
-      <span class="t-3003-c">erst gegen Ende berechnet wird, dann kann der Compiler für beide
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:53:5</span></span><i><span class="t-3003-c">ein<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:53:71</span></span></i><span class="t-3003-c">
-        Prozessorregister benötigen.
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:53:75</span></span>
-      <span class="t-3003-c">Jetzt will man wissen, ob man alle lokalen Variablen in den
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:54:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:54:65</span></span><span class="t-3003-c">
-        Prozessorregistern ablegen kann;
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:54:68</span></span>
-      <span class="t-3003-c">dies ist wiederum ein Färbbarkeitsproblem: die Knoten sind die lokalen Variablen; die Farben sind
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:55:5</span></span>
-      <span class="t-3003-c">die
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:56:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:56:9</span></span><span class="t-3003-c">
-        Prozessorregister. Zwei lokale Variable
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:56:12</span></span><code></code><code><span class="t-3003-c">var_1<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:56:56</span></span></code><code></code><span class="t-3003-c">
-        und
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:56:64</span></span><code></code><code><span class="t-3003-c">var_2<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:56:72</span></span></code><code></code><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:56:80</span></span>
-      <span class="t-3003-c">sind mit einer Kante verbunden, wenn die Codebereiche, in denen sie vorkommen,
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:57:5</span></span>
-      <span class="t-3003-c">sich überlappen.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:58:5</span></span>
+      Eine andere Anwendung kommt aus dem Compilerbau: ein Stück Code, zum Beispiel eine Funktion, 
+      benötigt in der compilierten Version $n$ lokale Variable. Nicht alle werden zum gleichen Zeitpunkt 
+      benötigt. Wenn zum Beispiel
+      <code></code><code>initial_value</code><code></code>
+      nur am Anfang benötigt und
+      <code></code><code>final_result</code><code></code>
+      erst gegen Ende berechnet wird, dann kann der Compiler für beide
+      <i>ein</i>
+      Prozessorregister benötigen. 
+      Jetzt will man wissen, ob man alle lokalen Variablen in den $k$ Prozessorregistern ablegen kann; 
+      dies ist wiederum ein Färbbarkeitsproblem: die Knoten sind die lokalen Variablen; die Farben sind 
+      die $k$ Prozessorregister. Zwei lokale Variable
+      <code></code><code>var_1</code><code></code>
+      und
+      <code></code><code>var_2</code><code></code>
+      sind mit einer Kante verbunden, wenn die Codebereiche, in denen sie vorkommen, 
+      sich überlappen.
     </p>
     <p class="main-column">
-      <span class="t-3003-c">Überlegen wir uns einen Algorithmus für
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:60:5</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:60:45</span></span><span class="t-3003-c">-Färbbarkeit.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:60:48</span></span></span><span class="t-3003-c">
-        Wenn uns nichts besseres
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:60:48</span></span>
-      <span class="t-3003-c">einfällt, können wir ja alle
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:61:5</span></span><span class="t-3003-c">$k^n$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:61:34</span></span><span class="t-3003-c">
-        möglichen Färbungen
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:61:39</span></span><span class="t-3003-c">$c$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:61:60</span></span><span class="t-3003-c">
-        durchgehen und jede
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:61:63</span></span>
-      <span class="t-3003-c">überprüfen. Am Besten geht das rekursiv. Hierfür haben wir eine
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:62:5</span></span>
-      <span class="t-3003-c">partielle Färbung des Graphen, genauer gesagt eine Funktion
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:63:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:64:5</span></span><span class="nowrap"><span class="t-3003-c">$\chi_i : \{u_1, \dots, u_i\} \rightarrow \{1,\dots,k\}$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:64:5</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:64:61</span></span></span>
+      Überlegen wir uns einen Algorithmus für
+      <span class="nowrap">$k$-Färbbarkeit.</span>
+      Wenn uns nichts besseres 
+      einfällt, können wir ja alle $k^n$ möglichen Färbungen $c$ durchgehen und jede 
+      überprüfen. Am Besten geht das rekursiv. Hierfür haben wir eine 
+      partielle Färbung des Graphen, genauer gesagt eine Funktion
+      <span class="nowrap">$\chi_i : \{u_1, \dots, u_i\} \rightarrow \{1,\dots,k\}$.</span>
     </p>
     <div class="main-column">
       <ul>
         <li>
           <p>
-            <span class="t-3003-c">Iteriere über alle Farben
-              <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:67:13</span></span><span class="t-3003-c">$c \in [k]$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:67:39</span></span>
+            Iteriere über alle Farben $c \in [k]$
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Färbe versuchsweise
-              <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:69:13</span></span><span class="t-3003-c">$u_{i+1}$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:69:33</span></span><span class="t-3003-c">
-              mit Farbe
-              <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:69:42</span></span><span class="nowrap"><span class="t-3003-c">$c$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:69:53</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:69:56</span></span></span><span class="t-3003-c">
-              Setze also
-              <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:69:56</span></span><span class="nowrap"><span class="t-3003-c">$\chi_{i+1} := \chi_i \cup [u_{i+1} \mapsto c]$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:69:69</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:69:116</span></span></span>
+            Färbe versuchsweise $u_{i+1}$ mit Farbe
+            <span class="nowrap">$c$.</span>
+            Setze also
+            <span class="nowrap">$\chi_{i+1} := \chi_i \cup [u_{i+1} \mapsto c]$.</span>
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Falls kein Nachbar von
-              <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:71:13</span></span><span class="t-3003-c">$u_{i+1}$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:71:36</span></span><span class="t-3003-c">
-              bereits Farbe
-              <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:71:45</span></span><span class="t-3003-c">$c$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:71:60</span></span><span class="t-3003-c">
-              hat versuche,
-              <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:71:63</span></span><span class="t-3003-c">$\chi_{i+1}$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:71:78</span></span><span class="t-3003-c">
-              zu einer vollständigen Färbung
-              <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:71:90</span></span>
-            <span class="t-3003-c">zu erweitern. Tu dies rekursiv.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:72:13</span></span>
+            Falls kein Nachbar von $u_{i+1}$ bereits Farbe $c$ hat versuche, $\chi_{i+1}$ zu einer vollständigen Färbung 
+            zu erweitern. Tu dies rekursiv.
           </p>
         </li>
       </ul>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Hier ist mein Python-Code. Den sollten Sie so wie er ist abspeichern und laufen lassen können.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:74:5</span></span>
+      Hier ist mein Python-Code
+      <a href="code/reductions/graphcoloring/demo_exponentialcoloring.py"><span class="nowrap">"<code></code></span><code>demo_exponentialcoloring.py</code><span class="nowrap"><code></code>".</span></a>
+    </p>
+    <p class="main-column">
+      Den können Sie so wie er ist abspeichern und laufen lassen. Das Programm<a href="code/reductions/graphcoloring/exponentialcoloring.py"><span class="nowrap">"<code></code></span><code>exponentialcoloring.py</code><span class="nowrap"><code></code>"</span>
+        </a>kann Graphen als Eingabe lesen und die Färbung ausgeben, falls sie denn existiert:
     </p>
     <div class="main-column">
 <pre class="listing">
-<span class="listing-bol"></span><span class="t-3003-c">"""<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:77:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    vertices: list of vertices <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:78:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    neighbors_of[u] is list of neighbors of u <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:79:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    colors: a list of available colors. Usually [1,2,...,k] but could be ['red', 'blue', 'green'] as well.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:80:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    node_index is the index of the smallest not yet colored vertex <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:81:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    coloring: the partial coloring, defined on the first 'node_index' vertices<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:82:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">"""<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:83:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:84:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">def extend_coloring(vertices, neighbors_of, colors, node_index, coloring):<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:85:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    if node_index == len(vertices):<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:86:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        return coloring<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:87:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:88:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    u = vertices[node_index]<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:89:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    for c in colors:<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:90:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        if all(coloring.get(v) != c for v in neighbors_of[u]):<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:91:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">            # if no neighbor v of u has color c <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:92:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">            coloring[u] = c <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:93:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">            total_coloring = extend_coloring(vertices, neighbors_of, colors, node_index + 1, coloring)<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:94:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">            if total_coloring != -1:<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:95:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">                return total_coloring <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:96:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">            del coloring[u]<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:97:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:98:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    return -1<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:99:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:100:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">def find_one_coloring(vertices, neighbors_of, colors):<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:101:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    return extend_coloring(vertices, neighbors_of, colors, 0, {})<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:102:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:103:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">vertices = [1,2,3,4,5]<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:104:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">neighbors_of = {1: [2,5], 2: [1,3], 3: [2,4], 4: [3,5], 5: [4,1]}<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:105:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:106:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">three_coloring = find_one_coloring(vertices, neighbors_of, ['r', 'g', 'b'])<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:107:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">print(three_coloring)<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:108:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c"><span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:109:1</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">two_coloring = find_one_coloring(vertices, neighbors_of, ['black', 'white'])<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:110:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">print(two_coloring)<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:111:5</span></span>
+<span class="listing-bol"></span>$unzip reductions.zip$ cd reductions 
+<span class="listing-bol"></span>$ python -m graphcoloring.exponentialcoloring 3
+<span class="listing-bol"></span>3 3
+<span class="listing-bol"></span>1 2 
+<span class="listing-bol"></span>2 3 
+<span class="listing-bol"></span>1 3 
+<span class="listing-bol"></span>{1: 1, 2: 2, 3: 3}
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Dieser Code baut einen Rekursionsbaum der Tiefe
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:114:5</span></span><span class="t-3003-c">$n$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:114:53</span></span><span class="t-3003-c">
-        auf, in welchem jeder innere
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:114:56</span></span>
-      <span class="t-3003-c">Knoten maximal
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:115:5</span></span><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:115:20</span></span><span class="t-3003-c">
-        Kinder hat. Somit hat der Baum maximal<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:115:23</span></span>
+      Sie können natürlich direkt mit dem
+      <code></code><code>&lt;</code><span class="nowrap"><code></code>-Operator</span>
+      Dateien auf die Eingabe umleiten:
+    </p>
+    <div class="main-column">
+<pre class="listing">
+<span class="listing-bol"></span>$ python -m graphcoloring.exponentialcoloring 3 &lt; icpc-format-graphs/petersen.txt 
+<span class="listing-bol"></span>{1: 1, 2: 2, 3: 1, 4: 2, 5: 3, 6: 2, 7: 1, 8: 3, 9: 3, 10: 2}
+</pre>
+    </div>
+    <p class="main-column">
+      Der Algorithmus in
+      <code></code><code>demo_exponentialcoloring.py</code><code></code>
+      und
+      <code></code><code>exponentialcoloring.py</code><code></code>
+      baut einen Rekursionsbaum der Tiefe $n$ auf, in welchem jeder innere 
+      Knoten maximal $k$ Kinder hat. Somit hat der Baum maximal
     </p>
     <div class="math-block main-column">
       $$
       \begin{align*}
       1 + k + k^2 + \cdots + k^n \leq k^{n+1}
       \end{align*}
-      $$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:116:5</span>
+      $$
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Knoten
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:119:5</span></span><span class="nowrap"><span class="t-3003-c">(<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:119:5</span></span><i><span class="t-3003-c">Knoten<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:119:14</span></span></i></span><span class="t-3003-c">
-        im Sinne von
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:119:21</span></span><span class="nowrap"><i><span class="t-3003-c">Rekursionsaufrufe<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:119:36</span></span></i><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:119:54</span></span></span><span class="t-3003-c">
-        nicht im Sinne von Knoten des
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:119:54</span></span>
-      <span class="t-3003-c">Graphen
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:120:5</span></span><span class="nowrap"><span class="t-3003-c">$G$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:120:13</span></span><span class="t-3003-c">).<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:120:16</span></span></span><span class="t-3003-c">
-        Pro Knoten, also Aufruf, benötigt der Code
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:120:16</span></span><span class="t-3003-c">$O(n)$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:120:62</span></span><span class="t-3003-c">
-        oder
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:120:68</span></span><span class="t-3003-c">$O(n \log n)$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:120:74</span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:120:87</span></span>
-      <span class="t-3003-c">Schritte, je nach Implementierung (im Moment implementiere ich
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:121:5</span></span><code></code><code><span class="t-3003-c">coloring<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:121:71</span></span></code><code></code><span class="t-3003-c">
-        als
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:121:82</span></span>
-      <span class="t-3003-c">Dictionary, was strenggenommen
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:122:5</span></span><span class="t-3003-c">$O(\log n)$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:122:36</span></span><span class="t-3003-c">
-        Schritte pro Query benötigt; mit einem
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:122:47</span></span>
-      <span class="t-3003-c">Array wäre dies in
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:123:5</span></span><span class="t-3003-c">$O(1)$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:123:24</span></span><span class="t-3003-c">
-        möglich). Wenn wir es auf einer Turingmaschine implementieren
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:123:30</span></span>
-      <span class="t-3003-c">würden, wäre es auf jeden Fall ineffizienter; dennoch würden wir  pro Aufruf nur
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:124:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:125:5</span></span><span class="t-3003-c">$\poly(n)$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:125:5</span></span><span class="t-3003-c">
-        viele Schritte tätigen müssen. Daher:<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:125:15</span></span>
+      Knoten
+      <span class="nowrap">(<i>Knoten</i></span>
+      im Sinne von
+      <span class="nowrap"><i>Rekursionsaufrufe</i>,</span>
+      nicht im Sinne von Knoten des 
+      Graphen
+      <span class="nowrap">$G$).</span>
+      Pro Knoten, also Aufruf, benötigt der Code $O(n)$ oder $O(n \log n)$ 
+      Schritte, je nach Implementierung (im Moment implementiere ich
+      <code></code><code>coloring</code><code></code>
+      als 
+      Dictionary, was strenggenommen $O(\log n)$ Schritte pro Query benötigt; mit einem 
+      Array wäre dies in $O(1)$ möglich). Wenn wir es auf einer Turingmaschine implementieren 
+      würden, wäre es auf jeden Fall ineffizienter; dennoch würden wir  pro Aufruf nur 
+      $\poly(n)$ viele Schritte tätigen müssen. Daher:
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beobachtung 9.4.3<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:127:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:127:5</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:128:9</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:128:9</span></span><span class="t-3003-c">-Colorability<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:128:12</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:128:12</span></span><span class="nowrap"><span class="t-3003-c">$\in \TIME\left(k^n \poly(n)\right)$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:128:26</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:128:62</span></span></span>
+        <b>Beobachtung 9.4.3</b>
+        <span class="nowrap">$k$-Colorability</span>
+        <span class="nowrap">$\in \TIME\left(k^n \poly(n)\right)$.</span>
       </p>
     </div>
     <div class="well exercise out">
       <p>
-        <b><span class="t-3003-c">Übungsaufgabe 9.4.1<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:131:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:131:5</span></span>
-        <span class="t-3003-c">Zeigen Sie, dass
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:132:9</span></span><span class="sc"><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:132:27</span></span><span class="t-3003-c">-Colorability<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:132:30</span></span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:132:48</span></span><span class="t-3003-c">$\in \TIME\left((k-1)^n \poly(n)\right)$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:132:50</span></span><span class="t-3003-c">
-          gilt,
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:132:90</span></span>
-        <span class="t-3003-c">also insbesondere
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:133:9</span></span><span class="sc"><span class="nowrap"><span class="t-3003-c">$2$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:133:28</span></span><span class="t-3003-c">-Colorability<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:133:31</span></span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:133:49</span></span><span class="nowrap"><span class="t-3003-c">$\in \textnormal{P}$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:133:50</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:133:70</span></span></span>
+        <b>Übungsaufgabe 9.4.1</b>
+        Zeigen Sie, dass
+        <span class="sc"><span class="nowrap">$k$-Colorability</span></span>
+        $\in \TIME\left((k-1)^n \poly(n)\right)$ gilt, 
+        also insbesondere
+        <span class="sc"><span class="nowrap">$2$-Colorability</span></span>
+        <span class="nowrap">$\in \textnormal{P}$.</span>
+      </p>
+    </div>
+    <div class="well exercise out">
+      <p>
+        <b>Übungsaufgabe 9.4.2</b>
+        Denken Sie sich ein Beispiel aus, für das
+        <code></code><code>exponentialcoloring.py</code><code></code>
+        sehr lange 
+        braucht. Versuchen Sie, es mit einem möglichst kleinen Graphn in die Knie zu zwingen.
       </p>
     </div>
     <h2 class="main-column topic-announcement">
-      <span class="t-3003-c">Gültige Färbungen erkennen
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:137:9</span></span>
+      Gültige Färbungen erkennen
     </h2>
     <p class="main-column">
-      <span class="t-3003-c">Erst einmal ist es eine triviale Beobachtung: wenn uns jemand eine Färbung
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:139:5</span></span><span class="t-3003-c">$c: V \rightarrow \{1,2,3\}$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:139:80</span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:139:108</span></span>
-      <span class="t-3003-c">vorlegt, dann können wir ganz leicht überprüfen, ob
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:140:5</span></span><span class="t-3003-c">$c$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:140:57</span></span><span class="t-3003-c">
-        für
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:140:60</span></span><span class="t-3003-c">$G$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:140:65</span></span><span class="t-3003-c">
-        eine gültige Färbung darstellt.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:140:68</span></span>
-      <span class="t-3003-c">Hier mein Pseudocode.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:141:5</span></span>
+      Erst einmal ist es eine triviale Beobachtung: wenn uns jemand eine Färbung $c: V \rightarrow \{1,2,3\}$
+      vorlegt, dann können wir ganz leicht überprüfen, ob $c$ für $G$ eine gültige Färbung darstellt.
+      Hier mein Pseudocode.
     </p>
     <div class="main-column">
 <pre class="listing">
-<span class="listing-bol"></span><span class="t-3003-c">def is_proper_3_coloring(graph, c):<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:144:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    (V,E) = graph<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:145:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    for (u,v) in E:<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:146:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        if c[u] == c[v]:<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:147:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">            return False<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:148:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">        if c[u] not in [1,2,3] or c[v] not in [1,2,3]:<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:149:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">            return False<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:150:5</span></span>
-<span class="listing-bol"></span><span class="t-3003-c">    return True<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:151:5</span></span>
+<span class="listing-bol"></span>def is_proper_3_coloring(graph, c):
+<span class="listing-bol"></span>    (V,E) = graph
+<span class="listing-bol"></span>    for (u,v) in E:
+<span class="listing-bol"></span>        if c[u] == c[v]:
+<span class="listing-bol"></span>            return False
+<span class="listing-bol"></span>        if c[u] not in [1,2,3] or c[v] not in [1,2,3]:
+<span class="listing-bol"></span>            return False
+<span class="listing-bol"></span>    return True
 </pre>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Der Algorithmus
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:154:5</span></span><code></code><code><span class="t-3003-c">is_proper_3_coloring<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:154:24</span></span></code><code></code><span class="t-3003-c">
-        ist eine
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:154:47</span></span>
-      <span class="t-3003-c">Zertifikatmaschine im Sinne von
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:155:5</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:156:5</span></span><a
+      Der Algorithmus
+      <code></code><code>is_proper_3_coloring</code><code></code>
+      ist eine 
+      Zertifikatmaschine im Sinne von
+      <a
         href="./9-3.html#_61_h.a.i_"
         class=""
-      >Definition 9.3.3</a><span class="t-3003-c">. Falls
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:156:5</span></span>
-      <span class="t-3003-c">das "Eingabewort"
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:157:5</span></span><span class="t-3003-c">$G$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:157:23</span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:157:26</span></span><span class="nowrap"><span class="t-3003-c">$3$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:157:27</span></span><span class="t-3003-c">-färbbar<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:157:30</span></span></span><span class="t-3003-c">
-        ist, dann gibt es ein Zertifikat,
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:157:30</span></span>
-      <span class="t-3003-c">so dass
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:158:5</span></span><code></code><code><span class="t-3003-c">is_proper_3_coloring(graph, c)<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:158:16</span></span></code><code></code><span class="t-3003-c">
-        akzeptiert (lies:
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:158:49</span></span><code></code><code><span class="t-3003-c">True<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:158:71</span></span></code><code></code><span class="t-3003-c">
-        zurückgibt).
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:158:78</span></span>
-      <span class="t-3003-c">Ist
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:159:5</span></span><span class="t-3003-c">$G$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:159:9</span></span><span class="t-3003-c">
-        nicht
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:159:12</span></span><span class="nowrap"><span class="t-3003-c">$3$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:159:19</span></span><span class="t-3003-c">-färbbar,<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:159:22</span></span></span><span class="t-3003-c">
-        dann gibt
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:159:22</span></span><code></code><code><span class="t-3003-c">is_proper_3_coloring(graph, c)<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:159:45</span></span></code><code></code><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:159:78</span></span>
-      <span class="t-3003-c">für jedes
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:160:5</span></span><span class="t-3003-c">$c$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:160:15</span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:160:18</span></span><code></code><code><span class="t-3003-c">False<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:160:22</span></span></code><code></code><span class="t-3003-c">
-        zurück, lehnt also ab.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:160:30</span></span>
+      >Definition 9.3.3</a>. Falls 
+      das "Eingabewort" $G$
+      <span class="nowrap">$3$-färbbar</span>
+      ist, dann gibt es ein Zertifikat, 
+      so dass
+      <code></code><code>is_proper_3_coloring(graph, c)</code><code></code>
+      akzeptiert (lies:
+      <code></code><code>True</code><code></code>
+      zurückgibt). 
+      Ist $G$ nicht
+      <span class="nowrap">$3$-färbbar,</span>
+      dann gibt
+      <code></code><code>is_proper_3_coloring(graph, c)</code><code></code>
+      für jedes $c$
+      <code></code><code>False</code><code></code>
+      zurück, lehnt also ab.
     </p>
     <div class="well statement out">
       <p>
-        <b><span class="t-3003-c">Beobachtung 9.4.4<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:163:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:163:5</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:164:9</span></span><span class="sc"><span class="t-3003-c">3-Colorability<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:164:10</span></span></span><span class="t-3003-c">
-          ist in NP.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:164:29</span></span>
+        <b>Beobachtung 9.4.4</b>
+        <span class="sc">3-Colorability</span>
+        ist in NP.
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">Das obige Beispiel verdeutlicht die Essenz der Klasse<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:186:5</span></span>
-      <span class="t-3003-c">NP: es ist nicht klar, wie wir einen effizienten<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:187:5</span></span>
-      <span class="t-3003-c">Algorithmus für
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:188:5</span></span><span class="sc"><span class="t-3003-c">3-Colorability<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:188:22</span></span></span><span class="t-3003-c">schreiben können;<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:188:41</span></span>
-      <span class="t-3003-c">aber
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:189:5</span></span><span class="nowrap"><i><span class="t-3003-c">überprüfen<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:189:11</span></span></i><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:189:22</span></span></span><span class="t-3003-c">
-        ob eine gegebene Färbung eine<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:189:22</span></span>
-      <span class="t-3003-c">3-Färbung von
-        <span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:190:5</span></span><span class="t-3003-c">$G$<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:190:19</span></span><span class="t-3003-c">
-        ist, das ist einfach.<span class="t-3003">./course-TI-2/wly/09/04-Colorability.wly:190:22</span></span>
+      Das obige Beispiel verdeutlicht die Essenz der Klasse
+      NP: es ist nicht klar, wie wir einen effizienten
+      Algorithmus für
+      <span class="sc">3-Colorability</span>schreiben können;
+      aber
+      <span class="nowrap"><i>überprüfen</i>,</span>
+      ob eine gegebene Färbung eine
+      3-Färbung von $G$ ist, das ist einfach.
     </p>
     <div id="end-of-page-elt">
     </div>

@@ -2,8 +2,13 @@
     title=Graphenfärbbarkeit
 
     Wir verlassen nun zumindest scheinbar das Feld der Komplexitätstheorie und 
-    betrachten Graphenalgorithmen. 
+    betrachten Graphenalgorithmen. Sie sollten beim Durcharbeiten dieser Kapitel 
+    meinen Code herunterladen und damit rumspielen:
+    |> a 
+        href=code/reductions.zip 
+        _```reductions.zip```
 
+    
     |> Definition 
         handle=def-coloring 
         Sei $G = (V,E)$ ein Graph. Eine $k$-Färbung von $G$ ist eine 
@@ -73,54 +78,35 @@
 
     Hier ist mein Python-Code 
     |> a 
-        src=code/reductions/graphcoloring/demo_exponentialcoloring.py
-        "```demo_exponentialcoloring.py```"
+        href=code/reductions/graphcoloring/demo_exponentialcoloring.py
+        "```demo_exponentialcoloring.py```".
     
     
-    . Den sollten Sie so wie er ist abspeichern und laufen lassen können.
+    Den können Sie so wie er ist abspeichern und laufen lassen. Das Programm
+    |> a 
+        href=code/reductions/graphcoloring/exponentialcoloring.py
+        "```exponentialcoloring.py```" 
+    kann Graphen als Eingabe lesen und die Färbung ausgeben, falls sie denn existiert:
 
-    ```.listing    
-    """
-        vertices: list of vertices 
-        neighbors_of[u] is list of neighbors of u 
-        colors: a list of available colors. Usually [1,2,...,k] but could be ['red', 'blue', 'green'] as well.
-        node_index is the index of the smallest not yet colored vertex 
-        coloring: the partial coloring, defined on the first 'node_index' vertices
-    """
-
-    def extend_coloring(vertices, neighbors_of, colors, node_index, coloring):
-        if node_index == len(vertices):
-            return coloring
-
-        u = vertices[node_index]
-        for c in colors:
-            if all(coloring.get(v) != c for v in neighbors_of[u]):
-                # if no neighbor v of u has color c 
-                coloring[u] = c 
-                total_coloring = extend_coloring(vertices, neighbors_of, colors, node_index + 1, coloring)
-                if total_coloring != -1:
-                    return total_coloring 
-                del coloring[u]
-        
-        return -1
-
-    def find_one_coloring(vertices, neighbors_of, colors):
-        return extend_coloring(vertices, neighbors_of, colors, 0, {})
-
-    vertices = [1,2,3,4,5]
-    neighbors_of = {1: [2,5], 2: [1,3], 3: [2,4], 4: [3,5], 5: [4,1]}
-
-    three_coloring = find_one_coloring(vertices, neighbors_of, ['r', 'g', 'b'])
-    print(three_coloring)
-
-    two_coloring = find_one_coloring(vertices, neighbors_of, ['black', 'white'])
-    print(two_coloring)
+    ```.listing
+    $ unzip reductions.zip
+    $ cd reductions 
+    $ python -m graphcoloring.exponentialcoloring 3
+    3 3
+    1 2 
+    2 3 
+    1 3 
+    {1: 1, 2: 2, 3: 3}
     ```
 
+    Sie können natürlich direkt mit dem ```<```-Operator Dateien auf die Eingabe umleiten:
+    ```.listing
+    $ python -m graphcoloring.exponentialcoloring 3 < icpc-format-graphs/petersen.txt 
+    {1: 1, 2: 2, 3: 1, 4: 2, 5: 3, 6: 2, 7: 1, 8: 3, 9: 3, 10: 2}
+    ```
 
-
-
-    Dieser Code baut einen Rekursionsbaum der Tiefe $n$ auf, in welchem jeder innere 
+    Der Algorithmus in ```demo_exponentialcoloring.py``` und ```exponentialcoloring.py``` 
+    baut einen Rekursionsbaum der Tiefe $n$ auf, in welchem jeder innere 
     Knoten maximal $k$ Kinder hat. Somit hat der Baum maximal 
     \begin{align*}
     1 + k + k^2 + \cdots + k^n \leq k^{n+1}
@@ -142,8 +128,8 @@
         also insbesondere `$2$-Colorability`{sc} $\in \textnormal{P}$.
 
     |> Exercise
-        Denken Sie sich ein Beispiel aus, 
-
+        Denken Sie sich ein Beispiel aus, für das ```exponentialcoloring.py``` sehr lange 
+        braucht. Versuchen Sie, es mit einem möglichst kleinen Graphn in die Knie zu zwingen.
 
 
     |> TopicAnnouncement

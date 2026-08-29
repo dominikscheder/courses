@@ -1,0 +1,12 @@
+
+
+Often I want to show how to use terminal commands. In my lecture notes I mark which lines are me entering commands and which lines are produced by the terminal program I'm running. Roughly like this:
+
+<span class="terminalCommand">ls</span>
+<span class="terminalOutput">IMG-1.jpg</span>
+<span class="terminalOutput">IMG-2.jpg</span>
+<span class="terminalOutput">index.html</span>
+
+The terminalCommand would have a "$" or some similar symbol in the front to show that I'm on a unix terminal. The output would be shown in blue for example. 
+
+Also, I would need an environment for terminal commands that's different from ```.listing because it wouldn't need line numbers.

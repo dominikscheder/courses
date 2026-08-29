@@ -31,6 +31,7 @@
         |> figure
             |> img
                 src=img/09-complexity-theory/np-examples/peterson-3-colorable.svg
+                original=img/09-complexity-theory/np-examples/np-examples.ipe
             |> figcaption
                 Der Peterson-Graph ist 3-färbbar.
 
@@ -187,4 +188,5 @@
     Algorithmus für `3-Colorability`{sc}schreiben können;
     aber _überprüfen_, ob eine gegebene Färbung eine
     3-Färbung von $G$ ist, das ist einfach.
+
 

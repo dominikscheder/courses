@@ -1,0 +1,6 @@
+|> Sub
+    title=$k$-Colorability auf SAT reduzieren 
+
+
+
+    Für SAT gibt es SAT-Solver, also hoch optimierte heuristische Programme, die in der Praxis meistens sehr schnell sind. In diesem Kapitel werden wir sehen, dass wir SAT-Solver nutzen können, um Graphenfärbbarkeit zu entscheiden, und natürlich auch, um Färbungen zu finden. Hierzu werden wir das Problem, einen Graphen mit $k$ Farben zu färben, als CNF formulieren und diese dann mit einem SAT-Solver lösen.

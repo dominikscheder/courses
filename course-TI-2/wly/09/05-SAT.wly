@@ -14,7 +14,7 @@
     \wedge (\bar{u} \vee \bar{z})
     \end{align}
 
-    Eine _Belegung_ weist jeder Variable einen Wahrheitswert ```False/True``` bzw. 0/1 zu. 
+    Eine _Belegung_ weist jeder Variable einen Wahrheitswert `False/True` bzw. 0/1 zu. 
     Formal ist eine Belegung also eine Funktion $\alpha : V \rightarrow \{0,1\}$ oder 
     kurz $\alpha \in \cube^V$. 
     Eine CNF-Formel $F$ 
@@ -55,12 +55,12 @@
 
     |> ul
         |> li
-            Wenn eine Klausel von $F$ unter $\alpha_i$ bereits ```False``` wird, gibt ```False``` zurück. 
+            Wenn eine Klausel von $F$ unter $\alpha_i$ bereits `False` wird, gibt `False` zurück. 
         |> li 
-            Setze $x_i$ probeweise auf ```True```: $\alpha_{i+1} := \alpha_i \cup [x_i \mapsto 1]$. 
+            Setze $x_i$ probeweise auf `True`: $\alpha_{i+1} := \alpha_i \cup [x_i \mapsto 1]$. 
             Teste rekursiv, ob sich $\alpha_{i+1}$ zu einer erfüllenden Belegung erweitern lässt.
         |> li 
-            Setze $x_i$ probeweise auf ```False```: $\alpha_{i+1} := \alpha_i \cup [x_i \mapsto 0]$. 
+            Setze $x_i$ probeweise auf `False`: $\alpha_{i+1} := \alpha_i \cup [x_i \mapsto 0]$. 
             Teste rekursiv, ob sich $\alpha_{i+1}$ zu einer erfüllenden Belegung erweitern lässt.
         |> li 
             Falls einer der beiden Zweige erfolgreich war, gib die gefundene erfüllende Belegung 
@@ -73,11 +73,11 @@
 
     In meiner Python-Implementierung kann alles eine Variable sein, was man als Schlüssel 
     in einem Dictionary verwenden kann, also Int, Character, String, Tupel etc. aber keine 
-    Listen. Wenn nun ```x``` eine Variable ist, dann sind ```(x, True)``` und ```(x, False)``` 
+    Listen. Wenn nun `x` eine Variable ist, dann sind `(x, True)` und `(x, False)` 
     die Literale $x$ und $\bar{x}$. Ich unterscheide also zwischen der _Variable_ $x$ und 
     dem _positiven Literal_ $x$. Eine Klausel ist nun einfach eine Liste von Literalen, und 
     eine Formel ist eine Liste von Klauseln. 
-    ```.listing
+    ```
     [x, y] = ['x', 'y']
     formula_2 = [ [(x, True), (y, True)], [(x, True), (y, False)], [(x, False)] ]
     ```
@@ -89,7 +89,7 @@
     finden Sie meine Implementierung des rekursiven Algorithmus von oben, ohne 
     jegliche Optimierung. 
 
-    ```.listing
+    ```
     $ python -i -m satsolver.byhandsat 
     >>> find_solution(['x', 'y'], [[('x', True),('y', True)], [('x', False),('y', False)]])
     {'x': True, 'y': False}
@@ -100,17 +100,17 @@
 
     Der Code erzeugt einen Rekursionsbaum der Tiefe maximal $n = |V|$, in dem jeder innere Knoten 
     zwei Kinder hat (einen für $v \mapsto 1$ und einen für $v \mapsto 0$). Jeder Aufruf selbst 
-    hat Laufzeit $\poly(n)$, je nachdem, wie man ```is_clause_alive``` und die partielle 
-    Belegung ```alpha``` implementiert. Die Laufzeit ist somit höchstens $O(2^n \poly(n))$. 
+    hat Laufzeit $\poly(n)$, je nachdem, wie man `is_clause_alive` und die partielle 
+    Belegung `alpha` implementiert. Die Laufzeit ist somit höchstens $O(2^n \poly(n))$. 
 
 
     |> Exercise
         Finden Sie eine möglichst kurze Formel, die meine Implementierung in die Knie zwingt. 
 
     |> Exercise 
-        Finden Sie Möglichkeiten, die Variable $v$ in Zeile 25 schlauer zu wählen, so dass ```is_clause_alive``` 
+        Finden Sie Möglichkeiten, die Variable $v$ in Zeile 25 schlauer zu wählen, so dass `is_clause_alive` 
         für eine $3$-CNF deutlich schneller läuft als in $O(2^n \poly(n))$? 
-        Wie schnell können Sie es machen? Sie dürfen natürlich den restlichen Code von ```extend_partial_assignment``` auch verändern.
+        Wie schnell können Sie es machen? Sie dürfen natürlich den restlichen Code von `extend_partial_assignment` auch verändern.
     
 
     |> Exercise 
@@ -159,12 +159,74 @@
     print(is_formula_satisfied(variables, formula, assignment_2))    
     ```
 
-    Der Algorithmus ```is_alpha_satisfying_assignment``` ist eine Zertifikatmaschine: 
+    Der Algorithmus `is_alpha_satisfying_assignment` ist eine Zertifikatmaschine: 
     sie erwartet auf dem Eingabeband eine CNF-Formel und auf dem Zertifikatband eine 
     Belegung $\alpha$. Falls nun $F$ erfüllbar ist, dann gibt es eine Belegung 
-    $\alpha$, so dass ```is_alpha_satisfying_assignment```$(F,\alpha)$ akzeptiert bzw. ```True``` zurückgibt. 
+    $\alpha$, so dass `is_alpha_satisfying_assignment`$(F,\alpha)$ akzeptiert bzw. `True` zurückgibt. 
     Ist im Gegenteil $F$ unerfüllbar, so wird sie immer ablehnen, egal welches $\alpha$ man ihr 
     auf das Zertifikatband schreibt. Daher:
 
     |> Observation
         SAT ist in NP.
+
+
+    |> TopicAnnouncement 
+        SAT-Solver
+
+    Gibt es effiziente Algorithmen für SAT? Bis heute (2026) kennt man keinen. 
+    Vieles spricht dagegen, wie wir in diesem Kapitel sehen werden. Dennoch 
+    lassen sich Forscher nicht davon abschrecken und haben _SAT-Solver_ entwickelt. 
+    Dies sind hochentwickelte, optimierte heuristische Algorithmen, die zwar alle 
+    nicht behaupten, im Worst-Case effizient zu sein, die jedoch in der Praxis 
+    oft sehr schnell sind und erstaunlich große CNF-Formeln in kurzer Zeit lösen können. 
+    Sie werden laufend weiterentwickelt. 
+
+    Ich verwende den SAT-Solver `minisat`. Er und die meisten anderen verwenden das 
+    _DIMACS-Format_, um CNF-Formeln zu codieren. Variablen sind durchnumeriert, und 
+    pro Zeile der Datei wird eine Klausel angegeben.  Die Formel
+    \begin{align*}
+    (x \vee y) \wedge (x \vee \bar{y}) \vee (\bar{x} \vee z)
+    \end{align*} 
+    die in meiner Python-Implementierung mit 
+    ```
+    >>> [x,y,z] = ['x','y','z']
+    >>> formula = [[(x, True), (y, True)], [(x, True), (y, False)], [(x, False), (z, True)]]
+    ```
+    instantiiert werden kann, schaut im DIMACS-Format so aus:
+    ```
+    p cnf 3 3
+    1 2 0
+    1 -2 0
+    -1 3 0
+    ```
+    Das Format ist sehr beschränkt. Im folgenden werden wir Variablen wie $x_{u,c}$ benötigen, wobei $u$ ein 
+    Knoten des Graphen und $i$ eine Farbe ist. Für das DIMACS-Format müsste man das umständlich umrechnen. Ich habe daher eine Python-Funktion geschrieben, die das alles für einen übernimmt und die Ausgabe des SAT-Solvers auch wieder in ein Python-Object wie `{'x': True, 'y': False, 'z': True}` umrechnet:
+
+    ```
+    $ python -i -m satsolver.sat 
+    >>> [x,y,z] = ['x','y','z']
+    >>> formula = [[(x, True), (y, True)], [(x, True), (y, False)], [(x, False), (z, True)]]
+    >>> solve(formula)
+    {'x': True, 'y': False, 'z': True}
+    ```
+
+    |> Exercise 
+        *(Challange).* Finden Sie eine möglichst kurze CNF-Formel, die minisat (gerne via meinem `satsolver.sat`) in die Knie zwingt.
+
+
+
+
+    |> TopicAnnouncement
+        Finden versus Entscheiden 
+
+    In der Komplexitätstheorie denken wir oft nur über _Entscheidungsprobleme_ nach, also: _gegeben eine CNF-Formel $F$, ist sie erfüllbar?_ In Wirklichkeit sind wir ja nicht nur an der Antwort interessiert, sondern an der erfüllenden Belegung, falls es sie gibt. Unsere Programme oben, `satsolver/byhandsat.py` und `satsolver/sat.py` liefern uns ja auch die erfüllende Belegung. Gibt es da einen fundamentalen Unterschied?
+    
+    |> Exercise 
+        Angenommen, ich gebe Ihnen einen effizienten Algorithmus `is_satisfiable` zur Hand, der Erfüllbarkeit von CNF-Formeln effizient entscheidet. Zeigen Sie, wie man daraus einen Algorithmus bauen kann, der die erfüllende Belegung auch findet! 
+
+    Geht das auch für $k$-Colorability?
+    
+    |> Exercise 
+        Angenommen, ich gebe Ihnen einen effizienten Algorithmus `is_k_colorable(G,k)` zur Hand, der $k$-Färbbarkeit von Graphen effizient entscheidet. Zeigen Sie, wie man daraus einen Algorithmus bauen kann, der die gültige $k$-Färbung auch findet! 
+
+        *Hinweis.* Das ist etwas trickreicher als für Erfüllbarkeit von CNF-Formeln.

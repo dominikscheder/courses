@@ -396,6 +396,7 @@ pub fn pipeline(
       dl.ti2_parse_python_prompt_pre(),
       dl.ti2_parse_orange_comments_pre(),
       dl.ti2_parse_arbitrary_prompt_response_pre(),
+      dl.ti2_dominik_prompt_response(),
       dl.ti2_parse_redyellow_pre(),
       dl.ti2_parse_xml_pre(),
       dl.ti2_add_listing_bol_spans(),

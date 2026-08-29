@@ -1,52 +1,55 @@
 import argv
 import desugaring as ds
+import desugaring/core as infra
 import formatter_renderer
 import gleam/dict
 import gleam/io
 import gleam/list
 import gleam/option
 import gleam/string
-import desugaring/core as infra
 import on
 import renderer
 import simplifile
 
 const ins = string.inspect
 
-fn local_usage_message() {
-  let margin = "   "
-  io.println(margin <> "--fmt [<cols>] [<cols> <penalty>] [-file <name>]")
-  io.println(margin <> "  -> (local option) run the formatter")
-  io.println("")
-  io.println(margin <> "     optional arguments:")
-  io.println("")
-  io.println(margin <> "     • <cols>: preferred line length")
-  io.println(margin <> "     • <cols> <penalty>: preferred line")
-  io.println(margin <> "       length and indentation penalty (number")
-  io.println(margin <> "       of chars subtracted from line length at")
-  io.println(margin <> "       each added level of indentation in the file)")
-  io.println(margin <> "     • -file <name>: format only the given file")
-  io.println("")
-  io.println(margin <> "--local")
-  io.println(margin <> "  -> include source-linking tooltips")
-  io.println(margin <> "     server !)")
-  io.println("")
-  io.println(margin <> "--offline-mathjax")
-  io.println(margin <> "  -> use local mathjax library instead of CDN url")
-  io.println("")
-  io.println(margin <> "--last-command")
-  io.println(margin <> "  -> run the same arguments as the previous command (from local")
-  io.println(margin <> "     .last-command file)")
-  io.println("")
-  io.println("...and don't forget to include '--which <course dir>' in")
-  io.println("order to specify which course you want to compile/run!")
-  io.println("")
-  io.println("                             ***")
-  io.println("")
-  io.println("Local server usage: use 'COURSE=<course dir> npm run dev' to")
-  io.println("serve book on localhost:3003, or prefix 'PORT=xxxx' argument")
-  io.println("to serve on specific port! Enjoy!")
-  io.println("")
+fn local_cli_usage() -> String {
+  let margin = string.repeat(" ", ds.help_message_margin)
+  [
+    margin <> "--fmt [<cols>] [<cols> <penalty>] [-file <name>]",
+    margin <> "  -> (local option) run the formatter",
+    "",
+    margin <> "     optional arguments:",
+    "",
+    margin <> "     • <cols>: preferred line length",
+    margin <> "     • <cols> <penalty>: preferred line",
+    margin <> "       length and indentation penalty (number",
+    margin <> "       of chars subtracted from line length at",
+    margin <> "       each added level of indentation in the file)",
+    margin <> "     • -file <name>: format only the given file",
+    "",
+    margin <> "--local",
+    margin <> "  -> include source-linking tooltips",
+    margin <> "     server !)",
+    "",
+    margin <> "--offline-mathjax",
+    margin <> "  -> use local mathjax library instead of CDN url",
+    "",
+    margin <> "--last-command",
+    margin <> "  -> run the same arguments as the previous command (from local",
+    margin <> "     .last-command file)",
+    "",
+    "...and don't forget to include '--which <course dir>' in",
+    "order to specify which course you want to compile/run!",
+    "",
+    "                             ***",
+    "",
+    "Local server usage: use 'COURSE=<course dir> npm run dev' to",
+    "serve book on localhost:3003, or prefix 'PORT=xxxx' argument",
+    "to serve on specific port! Enjoy!",
+    "",
+  ]
+  |> string.join("\n")
 }
 
 pub fn main() {
@@ -84,37 +87,28 @@ pub fn main() {
     False -> args
   }
 
-  let args_string = string.join(args, " ")
-
-  use _ <- on.stay(case args {
-    ["--help"] | ["-help"] | ["-h"] -> {
-      ds.basic_cli_usage("\n'gleam run' command line options (basic):")
-      local_usage_message()
-      on.Return(Nil)
-    }
-
-    ["--esoteric"] -> {
-      ds.advanced_cli_usage("\n'gleam run' command line options (esoteric):")
-      on.Return(Nil)
-    }
-
-    ["--track-help"] -> {
-      ds.track_cli_usage("\n'gleam run -- --track' command line options:")
-      on.Return(Nil)
-    }
-
-    _ -> on.Stay(Nil)
+  let #(args, help_requested) = ds.handle_help_requests(args, local_cli_usage)
+  use _ <- on.stay(case help_requested {
+    True -> on.Return(Nil)
+    False -> on.Stay(Nil)
   })
+
+  let args_string = string.join(args, " ")
 
   use amendments <- on.stay(
     case
-      ds.process_command_line_arguments(args, ["--fmt", "--local", "--which", "--offline-mathjax"])
+      ds.process_command_line_arguments(args, [
+        "--fmt",
+        "--local",
+        "--which",
+        "--offline-mathjax",
+      ])
     {
       Error(error) -> {
         io.println("")
         io.println("command line error: " <> ins(error))
         ds.basic_cli_usage("\ncommand line usage:")
-        local_usage_message()
+        local_cli_usage() |> io.print
         on.Return(Nil)
       }
 
@@ -128,20 +122,51 @@ pub fn main() {
     Ok([name]) -> {
       let name = name |> infra.drop_ending_slash |> infra.drop_prefix("./")
       case simplifile.is_directory(name <> "/wly") {
-        Ok(_) -> {
-          on.Stay(name)
-        }
+        Ok(True) -> on.Stay(name)
         _ -> {
           io.println(
             "\nexpecting '"
             <> name
-            <> "' to be a local directory with subdirectory 'wly'; crashing out",
+            <> "' to be a local directory with subdirectory 'wly'; crashing out\n",
           )
           on.Return(Nil)
         }
       }
     }
-    _ -> {
+    Ok([name, ..unexpected]) -> {
+      let name = name |> infra.drop_ending_slash |> infra.drop_prefix("./")
+      let unexpected = unexpected |> list.map(ins) |> string.join(" ")
+      case simplifile.is_directory(name <> "/wly") {
+        Ok(True) -> {
+          io.println(
+            "\nunrecognized command line arguments after course directory '"
+            <> name
+            <> "': "
+            <> unexpected
+            <> "; crashing out\n",
+          )
+          on.Return(Nil)
+        }
+        _ -> {
+          io.println(
+            "\nexpecting first argument after '--which', '"
+            <> name
+            <> "', to be a local directory with subdirectory 'wly'; "
+            <> "additional arguments were also supplied: "
+            <> unexpected
+            <> "; crashing out\n",
+          )
+          on.Return(Nil)
+        }
+      }
+    }
+    Ok([]) -> {
+      io.println(
+        "\noption '--which' requires one course directory argument (without spaces); crashing out\n",
+      )
+      on.Return(Nil)
+    }
+    Error(_) -> {
       io.println(
         "\nuse '--which' option to specify a course directory pls (without spaces); crashing out\n",
       )

@@ -1,0 +1,220 @@
+|> Sub
+    title=Boolesche Erfüllbarkeit (SAT)
+
+    Sei $V$ eine Menge von Booleschen Variablen. Ein _Literal_ ist entweder 
+    eine Variable $x \in V$ (ein _positives_ Literal) oder ihre 
+    Negation $\bar{x}$ (ein _negatives_ Literal). Eine _Klausel_ ist 
+    ein Oder von Literalen, also zum Beispiel 
+    $(x \vee \bar{y} \vee z)$. 
+    Eine CNF-Formel oder einfach CNF ist ein Und von Klauseln, also 
+    $C_1 \wedge C_2 \wedge \dots \wedge C_m$, zum Beispiel 
+    \begin{align}
+    \label{eq-formula}
+    (x \vee \bar{y} \vee z) \wedge (\bar{x} \vee y) \wedge (x \vee y \vee u) \wedge (\bar{x} \vee \bar{y})
+    \wedge (\bar{u} \vee \bar{z})
+    \end{align}
+
+    Eine _Belegung_ weist jeder Variable einen Wahrheitswert ```False/True``` bzw. 0/1 zu. 
+    Formal ist eine Belegung also eine Funktion $\alpha : V \rightarrow \{0,1\}$ oder 
+    kurz $\alpha \in \cube^V$. 
+    Eine CNF-Formel $F$ 
+    über den Variablen $V$ (oder generell eine Boolesche Formel; oder noch allgemeiner: ein Schaltkreis) 
+    repräsentiert eine Boolesche Funktion $\cube^V \rightarrow \cube$; sie wird unter einer Belegung $\alpha$ 
+    also entweder falsch oder wahr. Wenn nun $F(\alpha)=1$ ist, dann sagen wir, dass die Belegung $\alpha$ 
+    die Formel $F$ _erfüllt_. Sie ist somit eine _erfüllende Belegung_ und $F$ ist _erfüllbar_. 
+    Bei CNF-Formeln ist das konzeptuell ganz einfach:
+
+    |> ul
+        |> li
+            $\alpha$ _erfüllt_ das positive Literal $x$ wenn $\alpha(x)=1$ ist. 
+        |> li 
+            $\alpha$ _erfüllt_ das negative Literal $\bar{x}$ wenn $\alpha(x)=0$ ist. 
+        |> li 
+            $\alpha$ _erfüllt_ die Klausel $C$ wenn $\alpha$ _mindestens ein_ Literal in  $C$ erfüllt.
+        |> li 
+            $\alpha$ _erfüllt_ die Formel $F$ wenn $\alpha$ _jede_ Klausel in $F$ erfüllt. 
+
+    Zum Beispiel erfüllt die Belegung 
+    $\alpha = [u \mapsto 0, x \mapsto 0, y \mapsto 1, z \mapsto 1]$ die obige Formel (\ref{eq-formula}); 
+    die Belegung $\beta = [u \mapsto 1, x \mapsto 0, y \mapsto 0, z \mapsto 1]$ erfüllt $F$ nicht.
+    Wenn es für $F$ mindestens eine erfüllende Belegung gibt, so nennen wir $F$ _erfüllbar_, ansonsten 
+    _unerfüllbar_. Die Formel in (\ref{eq-formula}) ist erfüllbar 
+
+    Eine CNF-Formel heißt $k$-CNF wenn jede ihrer Klausel maximal $k$ Literale enthält. Die Formel in 
+    (\ref{eq-formula}) ist eine 3-CNF (und nach unserer Definition auch eine $4$-CNF und auch eine $5$-CNF; 
+    und natürlich ist die Formel in (\ref{eq-formula}) auch ein Schaltkreis, wenn auch nicht mit Fan-in 2).
+
+
+    |> Problem
+        handle=3-SAT
+        Gegeben eine 3-CNF-Formel $F$, entscheide, ob $F$ erfüllbar ist oder nicht. 
+
+
+    Wie finden wir eine erfüllende Belegung? Ähnlich wie im letzten Kapitel für `$k$-Colorability`{sc}. 
+    Wir haben eine _partielle Belegung_, also eine Funktion $\alpha_i : \{v_1, \dots, v_i\} \rightarrow \cube$. 
+
+    |> ul
+        |> li
+            Wenn eine Klausel von $F$ unter $\alpha_i$ bereits ```False``` wird, gibt ```False``` zurück. 
+        |> li 
+            Setze $x_i$ probeweise auf ```True```: $\alpha_{i+1} := \alpha_i \cup [x_i \mapsto 1]$. 
+            Teste rekursiv, ob sich $\alpha_{i+1}$ zu einer erfüllenden Belegung erweitern lässt.
+        |> li 
+            Setze $x_i$ probeweise auf ```False```: $\alpha_{i+1} := \alpha_i \cup [x_i \mapsto 0]$. 
+            Teste rekursiv, ob sich $\alpha_{i+1}$ zu einer erfüllenden Belegung erweitern lässt.
+        |> li 
+            Falls einer der beiden Zweige erfolgreich war, gib die gefundene erfüllende Belegung 
+            zurück. Ansonsten melde, dass $F$ unerfüllbar ist. 
+            
+
+
+    |> TopicAnnouncement
+        Implementierung in Python 
+
+    In meiner Python-Implementierung kann alles eine Variable sein, was man als Schlüssel 
+    in einem Dictionary verwenden kann, also Int, Character, String, Tupel etc. aber keine 
+    Listen. Wenn nun ```x``` eine Variable ist, dann sind ```(x, True)``` und ```(x, False)``` 
+    die Literale $x$ und $\bar{x}$. Ich unterscheide also zwischen der _Variable_ $x$ und 
+    dem _positiven Literal_ $x$. Eine Klausel ist nun einfach eine Liste von Literalen, und 
+    eine Formel ist eine Liste von Klauseln. 
+    ```.listing
+    [x, y] = ['x', 'y']
+    formula_2 = [ [(x, True), (y, True)], [(x, True), (y, False)], [(x, False)] ]
+    ```
+
+    Und hier mein ausführbarer Python-Code:
+
+
+    ```.listing
+    """
+    alpha: the partial assignment, as a dictionary
+    num: the variables 0, ..., num-1 are already assigned, the rest not yet 
+    """
+    def extend_partial_assignment(variables, clauses, alpha, num):
+  
+        def is_clause_alive(clause):
+            # tests whether 'clause' contains at least one literal that is True or unassigned under alpha    
+            for (var, sign) in clause:
+                if var not in alpha:
+                    return True
+                if sign == alpha[var]:
+                    return True
+            return False
+        
+        formula_alive = all(is_clause_alive(clause) for clause in clauses)
+    
+        if not formula_alive:
+            return -1 
+        
+        if num == len(variables):
+            return alpha 
+
+        # take next variable
+        v = variables[num]
+
+        # try whether v -> 1 works 
+        alpha[v] = True 
+        alpha_1 = extend_partial_assignment(variables, clauses, alpha, num+1)
+        if alpha_1 != -1:
+            return alpha_1
+
+        # try whether v -> 0 works 
+        alpha[v] = False 
+        alpha_0 = extend_partial_assignment(variables, clauses, alpha, num+1)
+        if alpha_0 != -1:
+            return alpha_0 
+        
+        del alpha[v] 
+        return -1
+
+    def find_solution(variables, clauses):
+        return extend_partial_assignment(variables, clauses, {}, 0)
+
+    u = 'u'
+    x = 'x'
+    y = 'y'
+    z = 'z'
+    variables = [u,x,y,z]
+    C1 = [(x, True), (y, False), (z, True)]
+    C2 = [(x, False), (y, True)]
+    C3 = [(x, True), (y, True), (u, True)]
+    C4 = [(x, False), (y, False)]
+    C5 = [(u, False), (z, False)]
+
+    formula = [C1, C2, C3, C4, C5]
+
+    assignment = find_solution(variables, formula)
+    print(assignment)
+
+
+    formula_2 = [ [(x, True), (y, True)], [(x, True), (y, False)], [(x, False)] ]
+    assignment_2 = find_solution([x,y], formula_2)
+    print(assignment_2)
+    ```
+
+    Der Code erzeugt einen Rekursionsbaum der Tiefe maximal $n = |V|$, in dem jeder innere Knoten 
+    zwei Kinder hat (einen für $v \mapsto 1$ und einen für $v \mapsto 0$). Jeder Aufruf selbst 
+    hat Laufzeit $\poly(n)$, je nachdem, wie man ```is_clause_alive``` und die partielle 
+    Belegung ```alpha``` implementiert. Die Laufzeit ist somit höchstens $O(2^n \poly(n))$. 
+
+    |> Exercise 
+        Finden Sie Möglichkeiten, die Variable $v$ in Zeile 25 schlauer zu wählen, so dass ```is_clause_alive``` 
+        für eine $3$-CNF deutlich schneller läuft als in $O(2^n \poly(n))$? 
+        Wie schnell können Sie es machen? Sie dürfen natürlich den restlichen Code von ```extend_partial_assignment``` auch verändern.
+    
+
+    |> Exercise 
+        Rufen Sie meinen 
+        |> a 
+            href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/sat-dpll/index.html 
+            DPLL-Illustrator 
+        \ auf und spielen Sie damit rum. Denken Sie sich interessante unerfüllbare CNF-Formeln aus. 
+
+
+    Wir beobachten ein ähnliches Phänomen wie bei Graphenfärbbarkeit: eine Lösung zu finden scheint 
+    nicht ganz einfach zu sein; wenn uns jemand aber einen Lösungsvorschlag unterbreitet, also 
+    eine Belegung $\alpha$ gibt, so können wir natürlich effizient überprüfen, ob $\alpha$ die Formel 
+    $F$ erfüllt oder nicht. 
+
+    ```.listing
+    def is_formula_satisfied(variables, clauses, alpha):
+
+        def is_literal_satisfied(lit):
+            (x, b) = lit 
+            if x not in alpha: 
+                return False 
+            return alpha[x] == b 
+        
+        def is_clause_satisfied(clause):
+            return any(is_literal_satisfied(lit) for lit in clause)
+        
+        formula_satisfied = all(is_clause_satisfied(clause) for clause in clauses)
+        return formula_satisfied
+
+
+    [u, x, y, z] = ['u', 'x', 'y', 'z']
+    variables = [u,x,y,z]
+    C1 = [(x, True), (y, False), (z, True)]
+    C2 = [(x, False), (y, True)]
+    C3 = [(x, True), (y, True), (u, True)]
+    C4 = [(x, False), (y, False)]
+    C5 = [(u, False), (z, False)]
+
+    formula = [C1, C2, C3, C4, C5]
+
+    assignment_1 = {u : 0, x : 0, y: 1, z : 1 }
+    print(is_formula_satisfied(variables, formula, assignment_1))
+
+    assignment_2 = {u : 1, x : 0, y: 0, z : 1 }
+    print(is_formula_satisfied(variables, formula, assignment_2))    
+    ```
+
+    Der Algorithmus ```is_alpha_satisfying_assignment``` ist eine Zertifikatmaschine: 
+    sie erwartet auf dem Eingabeband eine CNF-Formel und auf dem Zertifikatband eine 
+    Belegung $\alpha$. Falls nun $F$ erfüllbar ist, dann gibt es eine Belegung 
+    $\alpha$, so dass ```is_alpha_satisfying_assignment```$(F,\alpha)$ akzeptiert bzw. ```True``` zurückgibt. 
+    Ist im Gegenteil $F$ unerfüllbar, so wird sie immer ablehnen, egal welches $\alpha$ man ihr 
+    auf das Zertifikatband schreibt. Daher:
+
+    |> Observation
+        SAT ist in NP.

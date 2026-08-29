@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "color": "red"
+  },
+  {
+    "id": 2,
+    "color": "blue"
+  },
+  {
+    "id": 3,
+    "color": "green"
+  },
+  {
+    "id": 4,
+    "color": "blue"
+  },
+  {
+    "id": 5,
+    "color": "green"
+  },
+  {
+    "id": 6,
+    "color": "red"
+  },
+  {
+    "id": 7,
+    "color": "red"
+  },
+  {
+    "id": 8,
+    "color": "green"
+  },
+  {
+    "id": 9,
+    "color": "red"
+  },
+  {
+    "id": 10,
+    "color": "red"
+  },
+  {
+    "id": 11,
+    "color": "green"
+  },
+  {
+    "id": 12,
+    "color": "green"
+  },
+  {
+    "id": 13,
+    "color": "red"
+  },
+  {
+    "id": 14,
+    "color": "blue"
+  },
+  {
+    "id": 15,
+    "color": "violet"
+  },
+  {
+    "id": 16,
+    "color": "green"
+  },
+  {
+    "id": 17,
+    "color": "blue"
+  },
+  {
+    "id": 18,
+    "color": "red"
+  },
+  {
+    "id": 19,
+    "color": "violet"
+  },
+  {
+    "id": 20,
+    "color": "green"
+  },
+  {
+    "id": 21,
+    "color": "violet"
+  },
+  {
+    "id": 22,
+    "color": "blue"
+  },
+  {
+    "id": 23,
+    "color": "red"
+  },
+  {
+    "id": 24,
+    "color": "violet"
+  },
+  {
+    "id": 25,
+    "color": "blue"
+  }
+]

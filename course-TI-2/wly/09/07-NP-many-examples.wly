@@ -2,7 +2,6 @@
     title=Viele Beispiele aus NP
 
     |> Problem
-        handle=problem-3-colorability
         (`3-Colorability`{sc}). Gegeben ein Graph $G= (V,E)$,
         gibt es eine Färbung $c : V \rightarrow \{1,2,3\}$
         mit

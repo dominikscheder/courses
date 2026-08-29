@@ -75,6 +75,7 @@
         Zertifikatmaschinen
 
     |> Definition
+        handle=def-certificate-turing-machine
         *(Zertifikatmaschine).* Eine Zertifikatmaschine ist
         eine deterministische Turingmaschine mit $k$ Bändern.
         Band 1 ist das Eingabeband und Band 2 das

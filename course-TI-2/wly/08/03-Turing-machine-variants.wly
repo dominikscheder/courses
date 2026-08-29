@@ -134,6 +134,7 @@
     Einband-Turingmaschine auch.
 
     |> Theorem
+        handle=theorem-k-tape-to-one-tape
         *(Einband-Turingmaschine simuliert
         Mehrband-Turingmaschine)*. Sei $M$ eine
         Turingmaschine mit $k$ Bändern, wovon eines ein
@@ -154,6 +155,10 @@
                 eins) ist $y$.
 
         In anderen Worten: $M'$ simuliert $M$.
+
+        Weiterhin gilt: falls die Maschine $M$ auf Eingabewörtern 
+        der Länge $n$ innerhalb von $t = t(n)$ Schritten 
+        terminiert, dann terminiert $M'$ innerhalb von $O(t^2 + nt)$ Schritten.
 
     |> Proof
         Der erste Trick ist, dass wir die $k$ Bänder von $M$
@@ -232,6 +237,15 @@
         zum Ausgabeband gehören, durch $\square$ ersetzt.
         Dann wechselt sie in ihren eigenen akzeptierenden
         Zustand `accept'`.
+
+        Um die Laufzeit von $M'$ zu messen, betrachten wir, wie lange 
+        es dauert, _einen_ Schritt von $M$ zu simulieren. Die Maschine 
+        $M'$ muss zweimal die Bänder von $M$ von einem Ende zum anderen 
+        ablaufen. Da $M$ selbst maximal $t$ Schritte läuft, können pro 
+        Band maximal $n + t$ Symbole stehen: im schlimmsten Falle läuft 
+        sie auf dem Eingabeband jedes mal nach links und schreibt etwas. 
+        Also muss $M'$ maximal $O(n+t)$ Schritte, um einen Schritt von $M$ 
+        zu simulieren. $M'$ terminiert also innerhalb von $O(t^2 + nt)$ Schritten. 
 
     |> TopicAnnouncement
         Einfügen versus Überschreiben

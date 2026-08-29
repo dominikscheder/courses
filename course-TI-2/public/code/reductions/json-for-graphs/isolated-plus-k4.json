@@ -1,0 +1,226 @@
+{
+ "vertices": [
+  {
+   "x": 1062,
+   "y": 735,
+   "id": 19,
+   "name": "19",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 1058,
+   "y": 619,
+   "id": 18,
+   "name": "18",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 1157,
+   "y": 568,
+   "id": 17,
+   "name": "17",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 914,
+   "y": 570,
+   "id": 16,
+   "name": "16",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 873,
+   "y": 524,
+   "id": 15,
+   "name": "15",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 830,
+   "y": 495,
+   "id": 14,
+   "name": "14",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 788,
+   "y": 455,
+   "id": 13,
+   "name": "13",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 734,
+   "y": 422,
+   "id": 12,
+   "name": "12",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 676,
+   "y": 400,
+   "id": 11,
+   "name": "11",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 622,
+   "y": 381,
+   "id": 10,
+   "name": "10",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 560,
+   "y": 363,
+   "id": 9,
+   "name": "9",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 497,
+   "y": 352,
+   "id": 8,
+   "name": "8",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 434.00000000000006,
+   "y": 333.00000000000006,
+   "id": 7,
+   "name": "7",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 352,
+   "y": 322,
+   "id": 6,
+   "name": "6",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 276,
+   "y": 337,
+   "id": 5,
+   "name": "5",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 215,
+   "y": 349,
+   "id": 4,
+   "name": "4",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 164,
+   "y": 383,
+   "id": 3,
+   "name": "3",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 114,
+   "y": 430,
+   "id": 2,
+   "name": "2",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  },
+  {
+   "x": 62,
+   "y": 472,
+   "id": 1,
+   "name": "1",
+   "labelDirection": 45,
+   "labelDistance": 30,
+   "radius": 15,
+   "fillColor": "cornsilk"
+  }
+ ],
+ "edges": [
+  {
+   "start": 17,
+   "target": 19,
+   "id": 6
+  },
+  {
+   "start": 16,
+   "target": 18,
+   "id": 5
+  },
+  {
+   "start": 17,
+   "target": 16,
+   "id": 4
+  },
+  {
+   "start": 18,
+   "target": 17,
+   "id": 3
+  },
+  {
+   "start": 19,
+   "target": 18,
+   "id": 2
+  },
+  {
+   "start": 16,
+   "target": 19,
+   "id": 1
+  }
+ ]
+}

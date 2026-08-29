@@ -41,538 +41,573 @@
         >&lt;&lt; Kapitel 9.8<span
             style="visibility:hidden"
             id="top-prev-page-tooltip"
-          >Savitch's Theorem:
-            <span class="t-3003-c">$\textrm{Reachability} \in \textrm{Space}(\log(n))$<span class="t-3003">./course-TI-2/wly/09/08-Savitch.wly:5:9</span></span></span></a><a class="menu-row-placeholder"></a>
+          >Reduktionen</span></a><a
+          id="next-page"
+          href="./9-10.html"
+          class="menu-row-right"
+        >Kapitel 9.10 &gt;&gt;<span
+            style="visibility:hidden"
+            id="top-next-page-tooltip"
+          >Beschränkter Speicherplatz</span></a>
       </div>
     </div>
     <div class="main-column page-title">
       <p>
-        <span class="t-3003-c">9.9&ensp;Das Zeithierarchietheorem, besser<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:2:11</span></span>
+        <span class="t-3003-c">9.9&ensp;Ganz NP reduziert auf SAT: das Cook-Levin-Theorem<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:2:11</span></span>
       </p>
     </div>
     <p class="main-column">
-      <span class="t-3003-c">In diesem Kapitel verwenden wir Diagonalisierung, um folgendes zu zeigen: es gibt<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:4:5</span></span>
-      <span class="t-3003-c">eine Sprache
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:5:5</span></span><span class="nowrap"><span class="t-3003-c">$L$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:5:18</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:5:21</span></span></span><span class="t-3003-c">
-        die wir in
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:5:21</span></span><span class="nowrap"><span class="t-3003-c">$t(n)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:5:34</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:5:40</span></span></span><span class="t-3003-c">
-        aber nicht deutlich schneller entscheiden können.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:5:40</span></span>
-      <span class="t-3003-c">Somit ergibt sich eine
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:6:5</span></span><i><span class="t-3003-c">Zeithierarchie<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:6:29</span></span></i><span class="t-3003-c">
-        von Sprachen mit immer höherer<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:6:44</span></span>
-      <span class="t-3003-c">Zeitkomplexität. Als technische Anforderung an die Zeitschranke
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:7:5</span></span><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:7:69</span></span><span class="t-3003-c">
-        stellen<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:7:91</span></span>
-      <span class="t-3003-c">wir,<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:8:5</span></span>
-      <span class="t-3003-c">dass sie selbst sehr effizient berechenbar sein muss, nämlich:<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:9:5</span></span>
+      <span class="t-3003-c">Hier eine kurze Übersicht über die Reduktionen, die<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:4:5</span></span>
+      <span class="t-3003-c">Sie im vorherigen Kapitel kennengelernt haben.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:5:5</span></span>
     </p>
-    <div class="well statement out">
-      <p>
-        <b><span class="t-3003-c">Definition 9.9.1<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:10:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:10:5</span></span>
-        <span class="t-3003-c">
-          Eine Funktion
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:11:10</span></span><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:11:25</span></span><span class="t-3003-c">
-          heißt<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:11:47</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:12:9</span></span><span class="nowrap"><i><span class="t-3003-c">zeitkonstruierbar<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:12:10</span></span></i><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:12:28</span></span></span><span class="t-3003-c">
-          wenn es eine Turingmaschine gibt, die aus dem Eingabewort
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:12:28</span></span><span class="t-3003-c">$1^n$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:12:88</span></span><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:12:93</span></span>
-        <span class="t-3003-c">das Ausgabewort
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:13:9</span></span><span class="t-3003-c">$1^{t(n)}$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:13:25</span></span><span class="t-3003-c">
-          berechnet und selbst maximal
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:13:35</span></span><span class="t-3003-c">$O(t(n))$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:13:65</span></span><span class="t-3003-c">
-          Schritte läuft.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:13:74</span></span>
-      </p>
-    </div>
-    <p class="main-column">
-      <span class="t-3003-c">Wir definieren nun eine Stoppuhr-Version des Halteproblems für
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:14:5</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:14:68</span></span><span class="t-3003-c">-Band-Turingmaschinen.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:14:71</span></span></span><span class="t-3003-c">
-        Sei<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:14:71</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:15:5</span></span><span class="t-3003-c">$U^k$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:15:5</span></span><span class="t-3003-c">
-        die universelle Turingmaschine für Maschinen mit
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:15:10</span></span><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:15:60</span></span><span class="t-3003-c">
-        Bändern
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:15:63</span></span><span class="nowrap"><span class="t-3003-c">(<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:15:63</span></span><span class="t-3003-c">$U^k$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:15:73</span></span></span><span class="t-3003-c">
-        hat also selbst
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:15:78</span></span><span class="t-3003-c">$k+2$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:15:95</span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:15:100</span></span>
-      <span class="t-3003-c">Bänder, wie wir gesehen haben). Für<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:16:5</span></span>
-      <span class="t-3003-c">eine zeitkonstruierbare Funktion
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:17:5</span></span><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:17:38</span></span><span class="t-3003-c">
-        sei<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:17:60</span></span>
-    </p>
-    <div class="math-block main-column">
-      $$
-      \begin{align*}
-      \bhalt_t^k := \{ (c, x) \ | \ U^k(c,x) \textnormal{ macht $\leq t(|x|)$ Schritte und gibt $1$ aus }
-      \} \
-      .
-      \end{align*}
-      $$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:18:5</span>
-    </div>
-    <div class="pseudowell">
-      <figure>
-        <img
-          src="../img/03-diagonalization/det time hierarchy-01-01.svg"
-          style="height:25em"
-        ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course-TI-2/img/03-diagonalization/det time hierarchy-01-01.svg</span></span>
-      </figure>
-    </div>
-    <p class="main-column">
-      <span class="t-3003-c">Die Sprache
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:27:5</span></span><span class="t-3003-c">$\bhalt_t^k$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:27:17</span></span><span class="t-3003-c">
-        können wir wieder als Tabelle darstellen<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:27:29</span></span>
-      <span class="t-3003-c">und sie mit Nullen und Einsen füllen. Bei den Nullen unterscheiden<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:28:5</span></span>
-      <span class="t-3003-c">wir hier zumindest optisch zwischen "roten Nullen":
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:29:5</span></span><span class="t-3003-c">$U(c,x)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:29:57</span></span><span class="t-3003-c">
-        ist<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:29:65</span></span>
-      <span class="t-3003-c">nicht innerhalb von
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:30:5</span></span><span class="t-3003-c">$t(|x|)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:30:25</span></span><span class="t-3003-c">
-        Schritten fertiggeworden, und<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:30:33</span></span>
-      <span class="t-3003-c">"schwarzen Nullen":
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:31:5</span></span><span class="t-3003-c">$U(c,x)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:31:25</span></span><span class="t-3003-c">
-        ist fertiggeworden und hat akzeptiert.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:31:33</span></span>
-    </p>
-    <div class="well statement out">
-      <p>
-        <b><span class="t-3003-c">Beobachtung 9.9.2<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:32:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:32:5</span></span>
-        <span class="t-3003-c">
-          Die Sprache<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:33:10</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:34:9</span></span><span class="t-3003-c">$\bhalt_t^k$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:34:9</span></span><span class="t-3003-c">
-          ist in
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:34:21</span></span><span class="nowrap"><span class="t-3003-c">$\TIME_{k+3}(t)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:34:29</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:34:45</span></span></span>
-      </p>
-    </div>
-    <div class="well container out main-column">
-      <p>
-        <b><span class="t-3003-c">Beweis.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:37:10</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:37:18</span></span>
-        <span class="t-3003-c">Eine Turingmaschine kann in
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:38:9</span></span><span class="t-3003-c">$O(t(|x|))$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:38:37</span></span><span class="t-3003-c">
-          Schritten die Zahl
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:38:48</span></span><span class="t-3003-c">$t(|x|)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:38:68</span></span><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:38:76</span></span>
-        <span class="t-3003-c">berechnen. Genauer gesagt, sie kann das Wort
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:39:9</span></span><span class="t-3003-c">$1^{t(|x|)}$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:39:54</span></span><span class="t-3003-c">
-          auf ein separates Stoppuhrband<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:39:66</span></span>
-        <span class="t-3003-c">schreiben.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:40:9</span></span>
-        <span class="t-3003-c">Danach simuliert sie
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:41:9</span></span><span class="t-3003-c">$U^k$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:41:30</span></span><span class="t-3003-c">
-          auf der Eingabe
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:41:35</span></span><span class="nowrap"><span class="t-3003-c">$(c,x)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:41:52</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:41:59</span></span></span><span class="t-3003-c">
-          schiebt aber in jedem Schritt den<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:41:59</span></span>
-        <span class="t-3003-c">Kopf auf dem Stoppuhrband nach rechts. Wenn das Ende dieses Bandes erreicht ist und die<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:42:9</span></span>
-        <span class="t-3003-c">Simulation<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:43:9</span></span>
-        <span class="t-3003-c">bislang noch nicht akzeptiert hat, lehnt sie ab (gibt
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:44:9</span></span><span class="t-3003-c">$0$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:44:63</span></span><span class="t-3003-c">
-          aus); ansonsten gibt sie das<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:44:66</span></span>
-        <span class="t-3003-c">Ergebnis der Simulation aus. Hierfür braucht sie die
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:45:9</span></span><span class="t-3003-c">$k+2$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:45:62</span></span><span class="t-3003-c">
-          Bänder von
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:45:67</span></span><span class="t-3003-c">$U^{k+2}$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:45:79</span></span><span class="t-3003-c">
-          und ein<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:45:88</span></span>
-        <span class="t-3003-c">das Stoppuhrband, also insgesamt
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:46:9</span></span><span class="t-3003-c">$k+3$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:46:42</span></span><span class="t-3003-c">
-          Bänder.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:46:47</span></span><span class="qed"><span class="t-3003-c">$\square$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:49:13</span></span></span>
-      </p>
-    </div>
-    <p class="main-column">
-      <span class="t-3003-c">Nun diagonalisieren wir die Sprache:<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:50:5</span></span>
-    </p>
-    <div class="math-block main-column">
-      $$
-      \begin{align*}
-      \bnegdiag^k_t := \{ c \ | \ (c,c) \not \in \bhalt^k_t\}
-      \end{align*}
-      $$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:51:5</span>
-    </div>
-    <p class="main-column">
-      <span class="t-3003-c">Auf Eingabe
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:54:5</span></span><span class="t-3003-c">$c$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:54:17</span></span><span class="t-3003-c">
-        können wir einfach
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:54:20</span></span><span class="t-3003-c">$(c,c)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:54:40</span></span><span class="t-3003-c">
-        auf das Band schreiben und dann<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:54:47</span></span>
-      <span class="t-3003-c">wie oben
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:55:5</span></span><span class="t-3003-c">$\bhalt_t^k$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:55:14</span></span><span class="t-3003-c">
-        entscheiden und das Ergebnis negieren. Daher:<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:55:26</span></span>
-    </p>
-    <div class="well statement out">
-      <p>
-        <b><span class="t-3003-c">Beobachtung 9.9.3<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:56:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:56:5</span></span>
-        <span class="t-3003-c">
-          Die Sprache<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:57:10</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:58:9</span></span><span class="t-3003-c">$\bnegdiag_t^k$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:58:9</span></span><span class="t-3003-c">
-          ist in
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:58:24</span></span><span class="nowrap"><span class="t-3003-c">$\TIME_{k+3}(t)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:58:32</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:58:48</span></span></span>
-      </p>
-    </div>
-    <div class="well statement out">
-      <p>
-        <b><span class="t-3003-c">Lemma 9.9.4<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:59:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:59:5</span></span>
-        <span class="t-3003-c">Sei<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:60:9</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:61:9</span></span><span class="t-3003-c">$s: \N \rightarrow \N$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:61:9</span></span><span class="t-3003-c">
-          eine Funktion mit<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:61:31</span></span>
-      </p>
-      <div class="math-block">
-        $$
-        \begin{align*}
-        \lim_{n \rightarrow \infty} \frac{ns(n)}{t(n)} = 0 \ .
-        \end{align*}
-        $$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:62:9</span>
-      </div>
-      <p>
-        <span class="t-3003-c">Dann gilt
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:65:9</span></span><span class="nowrap"><span class="t-3003-c">$\bnegdiag_t^k \not \in \TIME_{k} (s)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:65:19</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:65:57</span></span></span>
-      </p>
-    </div>
-    <div class="well container out main-column">
-      <p>
-        <b><span class="t-3003-c">Beweis.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:68:10</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:68:18</span></span>
-        <span class="t-3003-c">Nehmen wir zwecks Widerspruch an, dass die
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:69:9</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:69:52</span></span><span class="t-3003-c">-Band<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:69:55</span></span></span><span class="t-3003-c">
-          Turingmaschine
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:69:55</span></span><span class="t-3003-c">$M$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:69:76</span></span><span class="t-3003-c">
-          die Sprache<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:69:79</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:70:9</span></span><span class="t-3003-c">$\bnegdiag_k^t$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:70:9</span></span><span class="t-3003-c">
-          in
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:70:24</span></span><span class="t-3003-c">$O(s(n))$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:70:28</span></span><span class="t-3003-c">
-          Schritten entscheidet. Wir setzen
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:70:37</span></span><span class="t-3003-c">$c := \enc(M)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:70:72</span></span><span class="t-3003-c">
-          und fragen<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:70:86</span></span>
-        <span class="t-3003-c">uns,<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:71:9</span></span>
-        <span class="t-3003-c">ob
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:72:9</span></span><span class="t-3003-c">$c$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:72:12</span></span><span class="t-3003-c">
-          selbst in
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:72:15</span></span><span class="t-3003-c">$\bnegdiag_k^t$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:72:26</span></span><span class="t-3003-c">
-          ist:<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:72:41</span></span>
-      </p>
-      <div class="math-block">
-        $$
-        \begin{align*}
-        c \in \bnegdiag_k^t &amp; \Longleftrightarrow (c,c) \not \in \bhalt_t^k \\
-        &amp; \Longleftrightarrow
-        \underbrace{U(c,c) = 0}_{\textnormal{schwarze Null}} \textnormal{ oder }
-        \underbrace{U(c,c) \textnormal{läuft länger als$t(|c|)$ Schritte }}_{\textnormal{rote Null}}
-        \end{align*}
-        $$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:73:9</span>
-      </div>
-      <p>
-        <span class="t-3003-c">Wieviele Schritte braucht
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:79:9</span></span><span class="t-3003-c">$U(c,c)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:79:35</span></span><span class="t-3003-c">
-          denn? Da
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:79:43</span></span><span class="t-3003-c">$M(c)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:79:53</span></span><span class="t-3003-c">
-          maximal
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:79:59</span></span><span class="t-3003-c">$O(s(|c|))$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:79:68</span></span><span class="t-3003-c">
-          Schritte ausführt,<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:79:79</span></span>
-        <span class="t-3003-c">braucht
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:80:9</span></span><span class="t-3003-c">$U(\enc(M),c)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:80:17</span></span><span class="t-3003-c">
-          maximal
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:80:31</span></span><span class="t-3003-c">$O(|\enc(M)|\cdot s(|c|)) = O(|c| s(|c|)) = a |c| s(|c|) + b$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:80:40</span></span><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:80:101</span></span>
-        <span class="t-3003-c">für<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:81:9</span></span>
-        <span class="t-3003-c">Konstanten
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:82:9</span></span><span class="t-3003-c">$a$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:82:20</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:82:23</span></span><span class="nowrap"><span class="t-3003-c">$b$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:82:28</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:82:31</span></span></span><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:82:31</span></span>
-        <span class="t-3003-c">Da wir den Programmcode von
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:83:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:83:37</span></span><span class="t-3003-c">
-          falls nötig "aufblähen" können, ohne die Funktionalität zu<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:83:40</span></span>
-        <span class="t-3003-c">ändern, können wir annehmen, dass
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:84:9</span></span><span class="t-3003-c">$\enc(M) = c$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:84:43</span></span><span class="t-3003-c">
-          so groß ist, dass<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:84:56</span></span>
-      </p>
-      <div class="math-block">
-        $$
-        \begin{align*}
-        \frac{a|c| s(|c|)+b} {t(|c|)} \leq 1 \ .
-        \end{align*}
-        $$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:85:9</span>
-      </div>
-      <p>
-        <span class="t-3003-c">In anderen Worten:
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:88:9</span></span><span class="t-3003-c">$U(c,c)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:88:28</span></span><span class="t-3003-c">
-          terminiert in maximal
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:88:36</span></span><span class="t-3003-c">$t(|c|)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:88:59</span></span><span class="t-3003-c">
-          Schritten. Somit ist<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:88:67</span></span>
-      </p>
-      <div class="math-block">
-        $$
-        \begin{align*}
-        c \in \bnegdiag_k^t &amp; \Longleftrightarrow U(c,c) = 0 \textnormal{ oder }
-        \underbrace{U(c,c) \textnormal{ läuft länger als $t(|c|)$ Schritte }}_
-        {\textnormal{ist nicht der Fall}} \\
-        &amp; \Longleftrightarrow U(c,c) = 0 \\
-        &amp; \Longleftrightarrow M(c) = 0 \ .
-        \end{align*}
-        $$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:89:9</span>
-      </div>
-      <p>
-        <span class="t-3003-c">Dies ist ein Widerspruch zur Annahme, dass
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:96:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:96:52</span></span><span class="t-3003-c">
-          die Sprache
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:96:55</span></span><span class="t-3003-c">$\bnegdiag_k^t$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:96:68</span></span><span class="t-3003-c">
-          entscheidet.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:96:83</span></span><span class="qed"><span class="t-3003-c">$\square$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:99:13</span></span></span>
-      </p>
-    </div>
-    <p class="main-column">
-      <span class="t-3003-c">Ich finde an diesem Beweis etwas unschön, dass man
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:100:5</span></span><span class="t-3003-c">$M$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:100:56</span></span><span class="t-3003-c">
-        künstlich aufblähen muss, um<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:100:59</span></span>
-      <span class="t-3003-c">sicherzustellen, dass
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:101:5</span></span><span class="t-3003-c">$a |c| s(|c|) + b \leq t(|c|)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:101:27</span></span><span class="t-3003-c">
-        gilt, dass also das "Budget" ausreicht.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:101:57</span></span>
-    </p>
-    <div class="well exercise out">
-      <p>
-        <b><span class="t-3003-c">Übungsaufgabe 9.9.1<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:102:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:102:5</span></span>
-        <span class="t-3003-c">Zeigen Sie eine stärkere Version von
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:103:9</span></span><span
-          class="reference"
-          data-ref="lemma-not-in-time-s"
-        ></span><span class="t-3003-c">, dass es nämlich gilt, solange<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:107:9</span></span>
-      </p>
-      <div class="math-block">
-        $$
-        \begin{align*}
-        \lim \frac{s(n)}{t(n)} = 0
-        \end{align*}
-        $$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:108:9</span>
-      </div>
-      <p>
-        <span class="t-3003-c">ist.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:111:9</span></span>
-      </p>
-      <p>
-        <b><span class="t-3003-c">Tip:<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:113:10</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:113:15</span></span>
-        <span class="t-3003-c">
-          Für jede Turingmaschine
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:114:10</span></span><span class="t-3003-c">$M$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:114:35</span></span><span class="t-3003-c">
-          jede Zahl
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:114:38</span></span><span class="t-3003-c">$n_0$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:114:49</span></span><span class="t-3003-c">
-          gibt<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:114:54</span></span>
-        <span class="t-3003-c">es eine "aufgeblähte" Version
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:115:9</span></span><span class="t-3003-c">$M'$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:115:39</span></span><span class="t-3003-c">
-          von
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:115:43</span></span><span class="t-3003-c">$M$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:115:48</span></span><span class="t-3003-c">
-          mit
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:115:51</span></span><span class="nowrap"><span class="t-3003-c">$|\enc(M')| \geq n_0$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:115:56</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:115:77</span></span></span><span class="t-3003-c">
-          die<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:115:77</span></span>
-        <span class="t-3003-c">zu
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:116:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:116:12</span></span><span class="t-3003-c">
-          äquivalent ist. Zeigen Sie: Sie können die universelle Turingmaschine<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:116:15</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:117:9</span></span><span class="t-3003-c">$U$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:117:9</span></span><span class="t-3003-c">
-          so implementieren, dass sie für jeden simulierten
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:117:12</span></span><span class="nowrap"><span class="t-3003-c">$M'$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:117:63</span></span><span class="t-3003-c">-Schritt<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:117:67</span></span></span><span class="t-3003-c">
-          nicht
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:117:67</span></span><span class="t-3003-c">$O(\enc(M'))$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:117:82</span></span><span class="t-3003-c">
-          viele<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:117:95</span></span>
-        <span class="t-3003-c">Schritte ausführt, sondern nur
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:118:9</span></span><span class="nowrap"><span class="t-3003-c">$O(\enc(M))$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:118:40</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:118:52</span></span></span>
-      </p>
-    </div>
-    <p class="main-column">
-      <span class="t-3003-c">Zusammenfassend erhalten wir die "Rohversion" des Zeithierarchiesatzes:<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:119:5</span></span>
-    </p>
-    <div class="well statement out">
-      <p>
-        <b><span class="t-3003-c">Theorem 9.9.5  (Zeithierarchiesatz,<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:120:5</span></span>
-          <span class="t-3003-c">Rohversion).<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:122:9</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:122:22</span></span>
-        <span class="t-3003-c">Seien
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:123:9</span></span><span class="t-3003-c">$s, t: \N \rightarrow \N$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:123:15</span></span><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:123:40</span></span>
-        <span class="t-3003-c">zeitkonstruierbare Funktionen mit
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:124:9</span></span><span class="t-3003-c">$s(n) \geq n$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:124:43</span></span><span class="t-3003-c">
-          und<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:124:56</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:125:9</span></span><span class="t-3003-c">$s \in o(t)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:125:9</span></span><span class="t-3003-c">
-          (also
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:125:21</span></span><span class="nowrap"><span class="t-3003-c">$\lim_{n \rightarrow \infty} s(n)/t(n)
-            = 0$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:125:28</span></span><span class="t-3003-c">).<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:126:13</span></span></span><span class="t-3003-c">
-          Dann gilt<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:126:13</span></span>
-      </p>
-      <div class="math-block">
-        $$
-        \begin{align*}
-        \TIME_k(s) \subsetneq \TIME_{k+3}(t)
-        \end{align*}
-        $$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:127:9</span>
-      </div>
-      <p>
-        <span class="t-3003-c">für alle
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:130:9</span></span><span class="nowrap"><span class="t-3003-c">$k \geq 1$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:130:18</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:130:28</span></span></span>
-      </p>
-    </div>
-    <p class="main-column">
-      <span class="t-3003-c">Zusammen mit der Simulation von
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:131:5</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:131:37</span></span><span class="t-3003-c">-Band-TMs<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:131:40</span></span></span><span class="t-3003-c">
-        durch
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:131:40</span></span><span class="nowrap"><span class="t-3003-c">$2$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:131:56</span></span><span class="t-3003-c">-Band-TMs,<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:131:59</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:131:59</span></span>
-      <span class="t-3003-c">also
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:132:5</span></span><span
-        class="reference"
-        data-ref="k-tape-to-2-tape"
-      ></span><span class="t-3003-c">
-        folgt nun<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:136:6</span></span>
-    </p>
-    <div class="math-block main-column">
-      $$
-      \begin{align*}
-      \TIME(s) \subsetneq \TIME_2(s \log s) \subsetneq \TIME_5(t \log t)
-      \end{align*}
-      $$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:137:5</span>
-    </div>
-    <p class="main-column">
-      <span class="t-3003-c">oder, alternativ ausgedrückt:<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:140:5</span></span>
-    </p>
-    <div class="well statement out">
-      <p>
-        <b><span class="t-3003-c">Theorem 9.9.6  (Zeithierarchiesatz).<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:141:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:142:34</span></span>
-        <span class="t-3003-c">Seien
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:143:9</span></span><span class="t-3003-c">$s, t: \N \rightarrow \N$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:143:15</span></span><span class="t-3003-c">
-          mit
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:143:40</span></span><span class="t-3003-c">$s(n) \geq n$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:143:45</span></span><span class="t-3003-c">
-          und
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:143:58</span></span><span class="nowrap"><span class="t-3003-c">$s \log s \in o(t)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:143:63</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:143:82</span></span></span><span class="t-3003-c">
-          Dann gilt<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:143:82</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:144:9</span></span><span class="nowrap"><span class="t-3003-c">$\TIME(s) \subsetneq \TIME(t)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:144:9</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:144:39</span></span></span>
-      </p>
-    </div>
-    <p class="main-column">
-      <span class="t-3003-c">Bitte beachten Sie, dass wir diese Version nicht vollständig bewiesen habe, da ich<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:145:5</span></span>
-      <span class="t-3003-c">die effizientere Simulation einer
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:146:5</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:146:39</span></span><span class="t-3003-c">-Band-Turingmaschine<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:146:42</span></span></span><span class="t-3003-c">
-        durch eine
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:146:42</span></span><span class="nowrap"><span class="t-3003-c">$2$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:146:74</span></span><span class="t-3003-c">-Band-Turingmaschine,<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:146:77</span></span></span><span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:146:77</span></span>
-      <span class="t-3003-c">also
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:147:5</span></span><span class="t-3003-c">$\TIME_k(t) \subseteq \TIME_2(t \log t)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:147:10</span></span><span class="t-3003-c">
-        nicht erklärt habe. Mit der ineffizienten, also<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:147:50</span></span>
-      <span class="t-3003-c">
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:148:5</span></span><span class="nowrap"><span class="t-3003-c">$\TIME_k(t) \subseteq \TIME_1(t^2)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:148:5</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:148:40</span></span></span><span class="t-3003-c">
-        erhalten wir<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:148:40</span></span>
-      <span class="t-3003-c">einen Zeithierarchiesatz solange
-        <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:149:5</span></span><span class="t-3003-c">$s^2 \in o(t)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:149:38</span></span><span class="t-3003-c">
-        ist.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:149:52</span></span>
-    </p>
-    <div class="well statement out">
-      <p>
-        <b><span class="t-3003-c">Theorem 9.9.7 (Platzhierarchietheorem<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:150:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:151:34</span></span>
-        <span class="t-3003-c">Sei
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:152:9</span></span><span class="t-3003-c">$t: \N \rightarrow \N$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:152:13</span></span><span class="t-3003-c">
-          zeitkonstruierbar und
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:152:35</span></span><span class="t-3003-c">$s: \N \rightarrow \N$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:152:58</span></span><span class="t-3003-c">
-          mit<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:152:80</span></span>
-        <span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:153:9</span></span><span class="nowrap"><span class="t-3003-c">$\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:153:9</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:153:60</span></span></span><span class="t-3003-c">
-          Dann gilt<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:153:60</span></span>
-      </p>
-      <div class="math-block">
-        $$
-        \begin{align*}
-        \SPACE(s(n)) \subsetneq \SPACE(t(n)) \ .
-        \end{align*}
-        $$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:154:9</span>
-      </div>
-    </div>
-    <div class="well exercise out">
-      <p>
-        <b><span class="t-3003-c">Übungsaufgabe 9.9.2<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:157:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:157:5</span></span>
-        <span class="t-3003-c">Beweisen Sie das Platzhierarchietheorem. Geht genauso wie das Zeithierarchietheorem.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:158:9</span></span>
-        <span class="t-3003-c">Überlegen Sie sich, was der Platzoverhead ist, wenn Sie eine
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:159:9</span></span><span class="nowrap"><span class="t-3003-c">$k$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:159:70</span></span><span class="t-3003-c">-Bandmaschine<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:159:73</span></span></span><span class="t-3003-c">
-          durch eine<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:159:73</span></span>
-        <span class="t-3003-c">1-Band oder 2-Bandmaschine simulieren.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:160:9</span></span>
-      </p>
-      <p>
-        <span class="t-3003-c">Bekommen Sie hier als Bedingung
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:162:9</span></span><span class="t-3003-c">$\frac{ns^2(n)}{t(n)} \rightarrow 0$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:162:41</span></span><span class="t-3003-c">
-          oder können<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:162:77</span></span>
-        <span class="t-3003-c">Sie schärfere Schranken aufstellen? Reicht zum Beispiel
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:163:9</span></span><span class="nowrap"><span class="t-3003-c">$\frac{s(n)}{t(n)} \rightarrow 0$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:163:65</span></span><span class="t-3003-c">?<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:163:98</span></span></span>
-      </p>
-    </div>
-    <p class="main-column">
-      <span class="t-3003-c">Folgende Aufgabe habe ich auf<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:164:5</span></span>
-    </p>
-    <div class="well exercise out">
-      <p>
-        <b><span class="t-3003-c">Übungsaufgabe 9.9.3<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:165:5</span></span></b><span class="t-3003-c">
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:165:5</span></span>
-        <span class="t-3003-c">Wir haben die folgenden Komplexitätsklassen bereits kennengelernt<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:166:9</span></span>
-      </p>
-      <div class="math-block">
-        $$
-        \begin{align*}
-        \EXP := \bigcup_{k \geq 0} \TIME\left(2^{n^k}\right) \\
-        \mathsf{E} := \bigcup_{c \geq 0} \TIME\left(2^{cn}\right) \\
-        \PSPACE := \bigcup_{k \geq 0} \SPACE\left(n^k \right)
-        \end{align*}
-        $$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:167:9</span>
-      </div>
+    <div class="main-column">
       <ol>
         <li>
           <p>
-            <span class="t-3003-c">Zeigen Sie, dass
-              <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:174:17</span></span><span class="t-3003-c">$\mathsf{E} \ne \EXP$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:174:34</span></span><span class="t-3003-c">
-              gilt (das ist einfach).<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:174:55</span></span>
+            <span class="sc"><span class="t-3003-c">3-Colorability
+                <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:9:14</span></span><span class="t-3003-c">$\leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:9:29</span></span><span class="t-3003-c">
+                CNF-Satisfiability<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:9:37</span></span></span>
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">Von
-              <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:176:17</span></span><a href="https://scottaaronson.blog/?p=392"><span class="t-3003-c">Scott Aaronsons<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:179:21</span></span>
-              <span class="t-3003-c">Blog<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:180:21</span></span></a><span class="t-3003-c">:<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:181:17</span></span>
-            <span class="t-3003-c">Zeigen Sie, dass
-              <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:182:17</span></span><span class="t-3003-c">$\PSPACE \ne \mathsf{E}$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:182:34</span></span><span class="t-3003-c">
-              gilt (das braucht einen Trick).<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:182:58</span></span>
+            <span class="sc"><span class="t-3003-c">CNF-Satisfiability
+                <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:12:14</span></span><span class="t-3003-c">$\leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:12:33</span></span><span class="t-3003-c">
+                3-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:12:41</span></span></span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc"><span class="t-3003-c">3-SAT
+                <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:15:14</span></span><span class="t-3003-c">$\leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:15:20</span></span><span class="t-3003-c">
+                3-Colorability<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:15:28</span></span></span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc"><span class="t-3003-c">3-SAT
+                <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:18:14</span></span><span class="t-3003-c">$\leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:18:20</span></span><span class="t-3003-c">
+                Independent Set<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:18:28</span></span></span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc"><span class="t-3003-c">Hamilton Path
+                <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:21:14</span></span><span class="t-3003-c">$\leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:21:28</span></span><span class="t-3003-c">
+                Hamilton Cycle<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:21:36</span></span></span>
+          </p>
+        </li>
+        <li>
+          <p>
+            <span class="sc"><span class="t-3003-c">Hamilton Cycle
+                <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:24:14</span></span><span class="t-3003-c">$\leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:24:29</span></span><span class="t-3003-c">
+                Hamilton Path<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:24:37</span></span></span>
+          </p>
+        </li>
+      </ol>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Mit etwas Anstrengung würden wir auch<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:26:5</span></span><span class="sc"><span class="t-3003-c">Hamilton Path<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:26:43</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:27:5</span></span><span class="t-3003-c">$\leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:27:5</span></span><span class="t-3003-c">
+          CNF-Satisfiability<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:27:13</span></span></span><span class="t-3003-c">hinkriegen. Alle<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:27:37</span></span>
+      <span class="t-3003-c">erwähnten Probleme Mitglieder von NP: wir können<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:28:5</span></span>
+      <span class="t-3003-c">Ja-Instanzen effizient verifizieren. Gibt es in NP<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:29:5</span></span>
+      <span class="t-3003-c">"Allzweckwaffen", also Probleme, mit deren Hilfe wir<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:30:5</span></span>
+      <span class="t-3003-c">
+        <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:31:5</span></span><i><span class="t-3003-c">alle anderen<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:31:6</span></span></i><span class="t-3003-c">
+        NP-Probleme lösen könnten?<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:31:19</span></span>
+    </p>
+    <div class="well statement out">
+      <p>
+        <b><span class="t-3003-c">Definition 9.9.1<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:33:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:33:5</span></span>
+        <span class="t-3003-c">Ein Entscheidungsproblem
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:34:9</span></span><span class="t-3003-c">$L \subseteq \Sigma^*$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:34:34</span></span><span class="t-3003-c">
+          heißt<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:34:56</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:35:9</span></span><span class="nowrap"><i><span class="t-3003-c">NP-schwer<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:35:10</span></span></i><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:35:20</span></span></span><span class="t-3003-c">
+          wenn für jedes Problem
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:35:20</span></span><span class="t-3003-c">$K \in {\rm NP}$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:35:45</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:35:61</span></span>
+        <span class="t-3003-c">gilt:
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:36:9</span></span><span class="nowrap"><span class="t-3003-c">$K \leq_p L$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:36:15</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:36:27</span></span></span><span class="t-3003-c">
+          Wenn sich also jedes NP-Problem<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:36:27</span></span>
+        <span class="t-3003-c">auf
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:37:9</span></span><span class="t-3003-c">$K$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:37:13</span></span><span class="t-3003-c">
+          in polynomieller Zeit reduzieren lässt.
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:37:16</span></span><span class="t-3003-c">$L$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:37:57</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:37:60</span></span>
+        <span class="t-3003-c">ist
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:38:9</span></span><span class="nowrap"><span class="t-3003-c">NP-<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:38:9</span></span><i><span class="t-3003-c">vollständig<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:38:17</span></span></i><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:38:29</span></span></span><span class="t-3003-c">
+          wenn zusätzlich
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:38:29</span></span><span class="t-3003-c">$L$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:38:47</span></span><span class="t-3003-c">
+          selbst in<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:38:50</span></span>
+        <span class="t-3003-c">NP ist.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:39:9</span></span>
+      </p>
+    </div>
+    <div class="well statement out">
+      <p>
+        <b><span class="t-3003-c">Theorem 9.9.2 (Cook-Levin-Theorem).<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:41:5</span></span></b><span class="t-3003-c">
+          3-SAT ist NP-vollständig. In<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:42:32</span></span>
+        <span class="t-3003-c">anderen Worten: Sei
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:43:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:43:29</span></span><span class="t-3003-c">
+          ein beliebiges<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:43:32</span></span>
+        <span class="t-3003-c">Entscheidgungsproblem aus NP. Dann gilt
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:44:9</span></span><span class="sc"><span class="t-3003-c">
+            <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:44:50</span></span><span class="t-3003-c">$L \leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:44:51</span></span><span class="t-3003-c">
+            <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:44:61</span></span>
+          <span class="t-3003-c">3-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:45:9</span></span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:45:19</span></span>
+      </p>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Wir führen das Zwischenproblem
+        <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:47:5</span></span><span class="sc"><span class="t-3003-c">Circuit-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:47:37</span></span></span><span class="t-3003-c">
+        ein<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:47:53</span></span>
+      <span class="t-3003-c">und zeigen (1) dass
+        <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:48:5</span></span><span class="t-3003-c">$L \leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:48:25</span></span><span class="t-3003-c">
+        <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:48:35</span></span><span class="sc"><span class="t-3003-c">Circuit-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:48:37</span></span></span><span class="t-3003-c">
+        und<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:48:53</span></span>
+      <span class="t-3003-c">(2)
+        <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:49:5</span></span><span class="sc"><span class="t-3003-c">Circuit-SAT
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:49:10</span></span><span class="t-3003-c">$\leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:49:22</span></span><span class="t-3003-c">
+          3-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:49:30</span></span></span><span class="t-3003-c">
+        gilt.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:49:41</span></span>
+    </p>
+    <div class="well statement out">
+      <p>
+        <b><span class="t-3003-c">Problem 9.9.3<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:51:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:51:5</span></span>
+        <span class="t-3003-c">(<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:52:9</span></span><span class="sc"><span class="t-3003-c">Circuit-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:52:11</span></span></span><span class="t-3003-c">). Gegeben ein Boolescher<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:52:27</span></span>
+        <span class="t-3003-c">Schaltkreis
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:53:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:53:21</span></span><span class="t-3003-c">
+          mit
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:53:24</span></span><span class="t-3003-c">$n$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:53:29</span></span><span class="t-3003-c">
+          Eingabevariablen. Gibt es ein<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:53:32</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:54:9</span></span><span class="t-3003-c">$x \in \{0,1\}^n$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:54:9</span></span><span class="t-3003-c">
+          mit
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:54:26</span></span><span class="nowrap"><span class="t-3003-c">$C(x) = 1$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:54:31</span></span><span class="t-3003-c">?<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:54:41</span></span></span>
+      </p>
+    </div>
+    <p class="main-column">
+      <span class="t-3003-c">Offensichtlich gilt
+        <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:56:5</span></span><span class="sc"><span class="t-3003-c">CNF-Satisfiability
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:56:26</span></span><span class="t-3003-c">$\leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:56:45</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:56:53</span></span>
+        <span class="t-3003-c">Circuit-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:57:5</span></span></span><span class="t-3003-c">
+        und
+        <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:57:21</span></span><span class="sc"><span class="t-3003-c">3-SAT
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:57:27</span></span><span class="t-3003-c">$\leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:57:33</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:57:41</span></span>
+        <span class="t-3003-c">Circuit-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:58:5</span></span></span><span class="t-3003-c">, da CNF-Formeln (und somit auch
+        <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:58:21</span></span><span class="t-3003-c">$3$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:58:54</span></span><span class="t-3003-c">
+        <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:58:57</span></span>
+      <span class="t-3003-c">-CNF-Formeln) Spezialfälle Boolescher Schaltkreise<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:59:5</span></span>
+      <span class="t-3003-c">sind.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:60:5</span></span>
+    </p>
+    <div class="well statement out">
+      <p>
+        <b><span class="t-3003-c">Lemma 9.9.4<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:62:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:62:5</span></span>
+        <span class="t-3003-c">Sei
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:63:9</span></span><span class="nowrap"><span class="t-3003-c">$L \in {\rm NP}$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:63:13</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:63:29</span></span></span><span class="t-3003-c">
+          Dann gilt
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:63:29</span></span><span class="sc"><span class="t-3003-c">$L \leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:63:42</span></span><span class="t-3003-c">
+            <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:63:52</span></span>
+          <span class="t-3003-c">Circuit-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:64:9</span></span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:64:25</span></span>
+      </p>
+    </div>
+    <div class="well highlight out">
+      <p>
+        <b>Beweis</b>
+        
+        <span class="t-3003-c">Wir können annehmen, dass
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:67:9</span></span><span class="nowrap"><span class="t-3003-c">$L \subset \{0,1\}^*$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:67:35</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:67:56</span></span></span><span class="t-3003-c">
+          da<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:67:56</span></span>
+        <span class="t-3003-c">wir andernfalls eine geeignete Codierung<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:68:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:69:9</span></span><span class="t-3003-c">$\Sigma \rightarrow \{0,1\}^*$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:69:9</span></span><span class="t-3003-c">
+          wählen können. Da<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:69:39</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:70:9</span></span><span class="t-3003-c">$L \in {\rm NP}$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:70:9</span></span><span class="t-3003-c">
+          ist, gibt es ein
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:70:25</span></span><span class="t-3003-c">$k \in \N$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:70:43</span></span><span class="t-3003-c">
+          und eine<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:70:53</span></span>
+        <span class="t-3003-c">Zertifikatmaschine
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:71:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:71:28</span></span><span class="t-3003-c">
+          mit Laufzeit
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:71:31</span></span><span class="nowrap"><span class="t-3003-c">$t(n) = n^k$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:71:45</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:71:57</span></span></span><span class="t-3003-c">
+          so<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:71:57</span></span>
+        <span class="t-3003-c">dass<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:72:9</span></span>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        x \in L \Longleftrightarrow \exists z \in \{0,1\}^{t(|x|)}: M(x,z) = \texttt{accept}
+        \end{align*}
+        $$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:74:9</span>
+      </div>
+      <p>
+        <span id="_76_h.a.i_"></span><span class="t-3003-c">besagt, dass wir eine Turingmaschine von Laufzeit<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:80:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:81:9</span></span><span class="t-3003-c">$t(n)$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:81:9</span></span><span class="t-3003-c">
+          in einen Schaltkreis
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:81:15</span></span><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:81:37</span></span><span class="t-3003-c">
+          der Größe
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:81:40</span></span><span class="t-3003-c">$O(t(n)^2)$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:81:51</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:81:62</span></span>
+        <span class="t-3003-c">umformen können, so dass<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:82:9</span></span>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \forall x \in \{0,1\}^n: \quad x \in L \Longleftrightarrow C(x) = 1 \ .
+        \end{align*}
+        $$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:84:9</span>
+      </div>
+      <p>
+        <span class="t-3003-c">Diese Konstruktion funktioniert für jede Inputgröße<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:88:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:89:9</span></span><span class="nowrap"><span class="t-3003-c">$n$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:89:9</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:89:12</span></span></span><span class="t-3003-c">
+          aber wir müssen
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:89:12</span></span><span class="t-3003-c">$n$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:89:30</span></span><span class="t-3003-c">
+          natürlich zum Zeitpunkt der<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:89:33</span></span>
+        <span class="t-3003-c">Umformung kennen. Der gleiche Beweis lässt uns die<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:90:9</span></span>
+        <span class="t-3003-c">Zertifikatmaschine
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:91:9</span></span><span class="nowrap"><span class="t-3003-c">$M$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:91:28</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:91:31</span></span></span><span class="t-3003-c">
+          die zwei Inputs
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:91:31</span></span><span class="t-3003-c">$x$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:91:49</span></span><span class="t-3003-c">
+          und
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:91:52</span></span><span class="t-3003-c">$z$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:91:57</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:91:60</span></span>
+        <span class="t-3003-c">nimmt, in einen Schaltkreis
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:92:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:92:37</span></span><span class="t-3003-c">
+          von Größe
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:92:40</span></span><span class="t-3003-c">$O(t(n)^2)$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:92:51</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:92:62</span></span>
+        <span class="t-3003-c">mit
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:93:9</span></span><span class="t-3003-c">$n + t(n)$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:93:13</span></span><span class="t-3003-c">
+          Eingabevariablen umformen, so dass<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:93:23</span></span>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        \forall x \in \{0,1\}^n, z \in \{0,1\}^{t(n)}: \quad
+        M(x,z) = \texttt{accept} \Longleftrightarrow C(x,z) = 1
+        \end{align*}
+        $$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:95:9</span>
+      </div>
+      <p>
+        <span class="t-3003-c">Somit gilt für jedes
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:100:9</span></span><span class="t-3003-c">$x \in \{0,1\}^n$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:100:30</span></span><span class="t-3003-c">
+          mit<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:100:47</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:101:9</span></span><span class="nowrap"><span class="t-3003-c">$t := t(n)$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:101:9</span></span><span class="t-3003-c">:<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:101:20</span></span></span>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        x \in L \quad&amp;\Longleftrightarrow \exists z \in \{0,1\}^t: M(x,z) = \texttt{accept} \\
+        &amp;
+        \Longleftrightarrow \exists z \in \{0,1\}^t: C(x,z) = 1 \ . \\
+        \end{align*}
+        $$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:103:9</span>
+      </div>
+      <p>
+        <span class="t-3003-c">Unsere Reduktion von
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:109:9</span></span><span class="t-3003-c">$L$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:109:30</span></span><span class="t-3003-c">
+          auf
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:109:33</span></span><span class="sc"><span class="t-3003-c">Ciruit-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:109:39</span></span></span><span class="t-3003-c">
+          geht<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:109:54</span></span>
+        <span class="t-3003-c">nun wie folgt: Bei Eingabewort
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:110:9</span></span><span class="t-3003-c">$x \in \{0,1\}^*$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:110:40</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:110:57</span></span>
+        <span class="t-3003-c">setzen wir
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:111:9</span></span><span class="t-3003-c">$n := |x|$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:111:20</span></span><span class="t-3003-c">
+          und
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:111:30</span></span><span class="nowrap"><span class="t-3003-c">$t := t(n)$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:111:35</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:111:46</span></span></span><span class="t-3003-c">
+          Wir führen die<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:111:46</span></span>
+        <span class="t-3003-c">Umformung von
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:112:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:112:23</span></span><span class="t-3003-c">
+          in einen Schaltkreis
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:112:26</span></span><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:112:48</span></span><span class="t-3003-c">
+          durch.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:112:51</span></span>
+        <span class="t-3003-c">Dieser
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:113:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:113:16</span></span><span class="t-3003-c">
+          hat
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:113:19</span></span><span class="t-3003-c">$n + t$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:113:24</span></span><span class="t-3003-c">
+          Eingabevariablen,
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:113:31</span></span><span class="t-3003-c">$n$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:113:50</span></span><span class="t-3003-c">
+          viele<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:113:53</span></span>
+        <span class="t-3003-c">für das Eingabeband von
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:114:9</span></span><span class="t-3003-c">$M$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:114:33</span></span><span class="t-3003-c">
+          und
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:114:36</span></span><span class="t-3003-c">$t$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:114:41</span></span><span class="t-3003-c">
+          viele für das<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:114:44</span></span>
+        <span class="t-3003-c">Zertifikatband. Da wir
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:115:9</span></span><span class="t-3003-c">$x$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:115:32</span></span><span class="t-3003-c">
+          bereits kennen, verkabeln<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:115:35</span></span>
+        <span class="t-3003-c">wir es fest in
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:116:9</span></span><span class="nowrap"><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:116:24</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:116:27</span></span></span><span class="t-3003-c">
+          d.h. wir ersetzen die
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:116:27</span></span><span class="nowrap"><span class="t-3003-c">$i$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:116:51</span></span><span class="t-3003-c">-te<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:116:54</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:116:54</span></span>
+        <span class="t-3003-c">Eingabevariable von
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:117:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:117:29</span></span><span class="t-3003-c">
+          durch den Booleschen Wert<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:117:32</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:118:9</span></span><span class="t-3003-c">$x_i$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:118:9</span></span><span class="t-3003-c">
+          (dies ist eine Konstante, keine Variable, da<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:118:14</span></span>
+        <span class="t-3003-c">wir ein konkretes Eingabewort
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:119:9</span></span><span class="t-3003-c">$x \in \{0,1\}^n$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:119:39</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:119:56</span></span>
+        <span class="t-3003-c">gegebenen haben) und erhalten einen Schaltkreis<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:120:9</span></span>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        D := C(x, \cdot)
+        \end{align*}
+        $$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:122:9</span>
+      </div>
+      <p>
+        <span class="t-3003-c">mit
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:126:9</span></span><span class="t-3003-c">$t$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:126:13</span></span><span class="t-3003-c">
+          Eingabe-Gates. Nach Konstruktion gilt<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:126:16</span></span>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        x \in L&amp;\Longleftrightarrow \exists z \in \{0,1\}^t : D(z) = 1
+        \end{align*}
+        $$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:128:9</span>
+      </div>
+      <p>
+        <span class="t-3003-c">also genau dann, wenn
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:132:9</span></span><span class="sc"><span class="t-3003-c">$D \in$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:132:32</span></span><span class="t-3003-c">
+            Circuit-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:132:39</span></span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:132:56</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
+      </p>
+    </div>
+    <div class="well statement out">
+      <p>
+        <b><span class="t-3003-c">Lemma 9.9.5<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:134:5</span></span></b><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:134:5</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:135:9</span></span><span class="sc"><span class="t-3003-c">Circuit-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:135:10</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:135:26</span></span><span class="t-3003-c">$\leq_p$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:135:27</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:135:35</span></span><span class="sc"><span class="t-3003-c">3-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:135:37</span></span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:135:47</span></span>
+      </p>
+    </div>
+    <div class="well highlight out">
+      <p>
+        <b>Beweis</b>
+        
+        <span class="t-3003-c">Wir haben also einen Schaltkreis
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:138:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:138:42</span></span><span class="t-3003-c">
+          mit
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:138:45</span></span><span class="t-3003-c">$n$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:138:50</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:138:53</span></span>
+        <span class="t-3003-c">Eingabe-Variablen und
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:139:9</span></span><span class="t-3003-c">$m$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:139:31</span></span><span class="t-3003-c">
+          Gates gegeben. Unsere<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:139:34</span></span>
+        <span class="t-3003-c">Aufgabe ist es, eine
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:140:9</span></span><span class="nowrap"><span class="t-3003-c">$3$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:140:30</span></span><span class="t-3003-c">-CNF-Formel<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:140:33</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:140:33</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:140:45</span></span><span class="t-3003-c">
+          zu bauen, so<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:140:48</span></span>
+        <span class="t-3003-c">dass
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:141:9</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:141:14</span></span><span class="t-3003-c">
+          genau dann erfüllbar ist, wenn
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:141:17</span></span><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:141:49</span></span><span class="t-3003-c">
+          erfüllbar<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:141:52</span></span>
+        <span class="t-3003-c">ist. Wir demonstrieren die Umformung an einem<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:142:9</span></span>
+        <span class="t-3003-c">Beispiel:<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:143:9</span></span>
+      </p>
+      <div class="figure__container">
+        <figure>
+          <img
+            style="height:16em"
+            src="img/09-complexity-theory/circuit-to-3-cnf/circuit-to-3-cnf-01-01.svg"
+          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course-TI-2/public/img/09-complexity-theory/circuit-to-3-cnf/circuit-to-3-cnf-01-01.svg</span></span>
+        </figure>
+      </div>
+      <p>
+        <span class="t-3003-c">Ich will zuerst diskutieren, was
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:150:9</span></span><i><span class="t-3003-c">nicht<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:150:43</span></span></i><span class="t-3003-c">
+          geht. Der<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:150:49</span></span>
+        <span class="t-3003-c">obige Schaltkreis (so wie jeder) berechnet eine<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:151:9</span></span>
+        <span class="t-3003-c">Funktion
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:152:9</span></span><span class="t-3003-c">$f_C: \{0,1\}^n \rightarrow \{0,1\}$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:152:18</span></span><span class="t-3003-c">
+          . Das<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:152:54</span></span>
+        <span class="t-3003-c">Problem
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:153:9</span></span><span class="sc"><span class="t-3003-c">Circuit-SAT<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:153:18</span></span></span><span class="t-3003-c">
+          fragt nun, ob
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:153:34</span></span><span class="t-3003-c">$f_C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:153:49</span></span><span class="t-3003-c">
+          nicht<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:153:54</span></span>
+        <span class="t-3003-c">die konstante Nullfunktion ist. Wir können im<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:154:9</span></span>
+        <span class="t-3003-c">Allgemeinen
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:155:9</span></span><span class="t-3003-c">$f_C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:155:21</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:155:26</span></span><i><span class="t-3003-c">nicht<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:155:28</span></span></i><span class="t-3003-c">
+          als
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:155:34</span></span><span class="t-3003-c">$3$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:155:39</span></span><span class="t-3003-c">
+          -CNF-Formel<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:155:42</span></span>
+        <span class="t-3003-c">schreiben. Obigen Schaltkreis zum Beispiel nicht. Wir<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:156:9</span></span>
+        <span class="t-3003-c">können
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:157:9</span></span><span class="t-3003-c">$f_C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:157:16</span></span><span class="t-3003-c">
+          allgemein als CNF-Formel schreiben mit<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:157:21</span></span>
+        <span class="t-3003-c">der Wahrheitstabellenmethode. Hierfür brauchen wir<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:158:9</span></span>
+        <span class="t-3003-c">aber
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:159:9</span></span><span class="t-3003-c">$2^n$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:159:14</span></span><span class="t-3003-c">
+          Schritte, und unsere Reduktion wäre nicht<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:159:19</span></span>
+        <span class="t-3003-c">mehr polynomiell. Allerdings muss die
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:160:9</span></span><span class="t-3003-c">$3$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:160:47</span></span><span class="t-3003-c">
+          -CNF-Formel<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:160:50</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:161:9</span></span><span class="nowrap"><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:161:9</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:161:12</span></span></span><span class="t-3003-c">
+          also das Ergebnis der Reduktion, auch nicht<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:161:12</span></span>
+        <span class="t-3003-c">äquivalent zu
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:162:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:162:23</span></span><span class="t-3003-c">
+          sein, sondern nur
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:162:26</span></span><span class="nowrap"><i><span class="t-3003-c">SAT-äquivalent<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:162:46</span></span></i><span class="t-3003-c">:<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:162:61</span></span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:162:61</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:163:9</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:163:9</span></span><span class="t-3003-c">
+          muss genau dann erfüllbar sein, wenn
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:163:12</span></span><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:163:50</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:163:53</span></span>
+        <span class="t-3003-c">erfüllbar ist. Wenden wir uns obigem Schaltkreis zu.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:164:9</span></span>
+        <span class="t-3003-c">Wir führen für jedes Gate eine Variable ein, die<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:165:9</span></span>
+        <span class="t-3003-c">seinen Output darstellen soll. Hier sind das<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:166:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:167:9</span></span><span class="nowrap"><span class="t-3003-c">$g_1, g_2, \dots, g_{11}$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:167:9</span></span><span class="t-3003-c">:<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:167:34</span></span></span>
+      </p>
+      <div class="figure__container">
+        <figure>
+          <img
+            style="height:16em"
+            src="img/09-complexity-theory/circuit-to-3-cnf/circuit-to-3-cnf-01-02.svg"
+          ><span class="t-3003 t-3003-i"><span class="t-3003-i-url">course-TI-2/public/img/09-complexity-theory/circuit-to-3-cnf/circuit-to-3-cnf-01-02.svg</span></span>
+        </figure>
+      </div>
+      <p>
+        <span class="t-3003-c">Die Aussage
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:174:9</span></span><i><span class="t-3003-c">$g_4$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:174:22</span></span><span class="t-3003-c">
+            ist der Output des zweiten<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:174:27</span></span>
+          <span class="t-3003-c">OR-Gates von links<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:175:9</span></span></i><span class="t-3003-c">
+          können wir nun schreiben als<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:175:28</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:176:9</span></span><span class="nowrap"><span class="t-3003-c">$g_4 \leftrightarrow (x \vee y)$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:176:9</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:176:41</span></span></span><span class="t-3003-c">
+          Das<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:176:41</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:177:9</span></span><span class="t-3003-c">$\leftrightarrow$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:177:9</span></span><span class="t-3003-c">
+          ist hierbei der Boolesche Operator,<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:177:26</span></span>
+        <span class="t-3003-c">der Gleichheit testet. Wir tun dies für jedes Gate und<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:178:9</span></span>
+        <span class="t-3003-c">erhalten folgende Formel:<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:179:9</span></span>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        &amp;(g_1 \leftrightarrow (\neg x)) \quad \wedge \\
+        &amp;(g_2 \leftrightarrow (\neg y)) \quad \wedge \\
+        &amp;(g_3 \leftrightarrow (g_1 \vee g_2)) \quad \wedge \\
+        &amp;(g_4 \leftrightarrow (x \vee y)) \quad \wedge \\
+        &amp;(g_5 \leftrightarrow (g_3 \wedge g_4)) \quad \wedge \\
+        &amp;(g_6 \leftrightarrow (\neg z)) \quad \wedge \\
+        &amp;(g_7 \leftrightarrow (\neg w)) \quad \wedge \\
+        &amp;(g_8 \leftrightarrow (g_6 \vee g_7)) \quad \wedge \\
+        &amp;(g_9 \leftrightarrow (z \vee w)) \quad \wedge \\
+        &amp;(g_{10} \leftrightarrow (g_8 \wedge g_9)) \quad \wedge \\
+        &amp;(g_{11} \leftrightarrow (g_{5} \vee g_{10}))\\
+        &amp;(g_{11})
+        \end{align*}
+        $$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:181:9</span>
+      </div>
+      <p>
+        <span class="t-3003-c">Die ersten 11 Teilausdrücke stellen sicher, dass<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:196:9</span></span>
+        <span class="t-3003-c">jedes
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:197:9</span></span><span class="t-3003-c">$g_i$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:197:15</span></span><span class="t-3003-c">
+          den "richtigen" Wert annimmt. Mit dem<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:197:20</span></span>
+        <span class="t-3003-c">letzten Teilausdruck
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:198:9</span></span><span class="t-3003-c">$(g_{11})$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:198:30</span></span><span class="t-3003-c">
+          drücken wir aus, dass<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:198:40</span></span>
+        <span class="t-3003-c">wir wollen, dass der Schaltkreis
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:199:9</span></span><span class="t-3003-c">$1$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:199:42</span></span><span class="t-3003-c">
+          ausgibt. Es gilt<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:199:45</span></span>
+        <span class="t-3003-c">nun:<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:200:9</span></span>
+      </p>
+      <ol>
+        <li>
+          <p>
+            <span class="t-3003-c">Wenn eine Belegung der Variablen<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:204:17</span></span>
             <span class="t-3003-c">
-              <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:183:17</span></span><b><span class="t-3003-c">Tip:<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:183:18</span></span></b><span class="t-3003-c">
-              verwenden Sie Padding, um
-              <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:183:23</span></span><span class="t-3003-c">$2^{|x|^2}$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:183:50</span></span><span class="t-3003-c">
-              zu
-              <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:183:61</span></span><span class="t-3003-c">$2^{|y|}$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:183:65</span></span><span class="t-3003-c">
-              zu machen.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:183:74</span></span>
+              <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:205:17</span></span><span class="t-3003-c">$(x, y, z, w, g_1, \dots, g_{11})$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:205:17</span></span><span class="t-3003-c">
+              die Formel
+              <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:205:51</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:205:63</span></span><span class="t-3003-c">
+              <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:205:66</span></span>
+            <span class="t-3003-c">erfüllt, dann haben alle Variablen
+              <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:206:17</span></span><span class="t-3003-c">$g_i$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:206:52</span></span><span class="t-3003-c">
+              den Wert,<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:206:57</span></span>
+            <span class="t-3003-c">den das entsprechende Gate ausgibt, und somit gilt<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:207:17</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:208:17</span></span><span class="nowrap"><span class="t-3003-c">$C(x,y,z,w) = 1$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:208:17</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:208:33</span></span></span>
           </p>
         </li>
         <li>
           <p>
-            <span class="t-3003-c">(Exercise 3.5.1 aus Arora und Barak): Zeigen Sie, dass
-              <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:185:17</span></span><span class="t-3003-c">$\SPACE(n) \ne \NP$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:185:72</span></span><span class="t-3003-c">
-              gilt.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:185:91</span></span>
+            <span class="t-3003-c">Falls
+              <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:211:17</span></span><span class="t-3003-c">$C(x,y,z,w) = 1$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:211:23</span></span><span class="t-3003-c">
+              gilt, dann können wir
+              <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:211:39</span></span><span class="t-3003-c">$g_i$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:211:62</span></span><span class="t-3003-c">
+              <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:211:67</span></span>
+            <span class="t-3003-c">auf den Output-Wert des
+              <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:212:17</span></span><span class="nowrap"><span class="t-3003-c">$i$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:212:41</span></span><span class="t-3003-c">-ten<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:212:44</span></span></span><span class="t-3003-c">
+              Gates setzen und<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:212:44</span></span>
+            <span class="t-3003-c">erhalten eine Belegung der Variablen<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:213:17</span></span>
+            <span class="t-3003-c">
+              <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:214:17</span></span><span class="nowrap"><span class="t-3003-c">$(x, y, z, w, g_1, \dots, g_{11})$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:214:17</span></span><span class="t-3003-c">,<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:214:51</span></span></span><span class="t-3003-c">
+              die
+              <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:214:51</span></span><span class="t-3003-c">$F$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:214:57</span></span><span class="t-3003-c">
+              erfüllt.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:214:60</span></span>
           </p>
         </li>
       </ol>
       <p>
-        <span class="t-3003-c">Beachten Sie, dass wir weder
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:186:9</span></span><span class="t-3003-c">$\PSPACE \subseteq \mathsf{E}$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:186:38</span></span><span class="t-3003-c">
-          noch
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:186:68</span></span><span class="t-3003-c">$\mathsf{E} \subseteq
-          \PSPACE$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:186:74</span></span><span class="t-3003-c">
-          beweisen noch widerlegen können. Vielleicht sind beide Inklusionen falsch.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:187:17</span></span>
-        <span class="t-3003-c">Gleiches gilt für
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:188:9</span></span><span class="t-3003-c">$\SPACE(n)$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:188:27</span></span><span class="t-3003-c">
-          vs.
-          <span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:188:38</span></span><span class="nowrap"><span class="t-3003-c">$\NP$<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:188:43</span></span><span class="t-3003-c">.<span class="t-3003">./course-TI-2/wly/09/09-time-hierarchy-theorem-alternative.wly:188:48</span></span></span>
+        <span class="t-3003-c">Im allgemeinen gilt also für jedes
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:216:9</span></span><span class="nowrap"><span class="t-3003-c">$x \in \{0,1\}^n$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:216:44</span></span><span class="t-3003-c">:<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:216:61</span></span></span>
+      </p>
+      <div class="math-block">
+        $$
+        \begin{align*}
+        C(x) = 1 \Longleftrightarrow \exists g \in \{0,1\}^m: F(x,g) = 1 .
+        \end{align*}
+        $$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:218:9</span>
+      </div>
+      <p>
+        <span class="t-3003-c">Die obige Formel ist nicht in konjunktiver<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:222:9</span></span>
+        <span class="t-3003-c">Normalform, da jeder Teilausdruck Operatoren wie<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:223:9</span></span>
+        <span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:224:9</span></span><span class="t-3003-c">$\leftrightarrow$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:224:9</span></span><span class="t-3003-c">
+          etc. enthält. Jeder Teilausdruck<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:224:26</span></span>
+        <span class="t-3003-c">ist aber in sich eine Formel mit drei Variablen; somit<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:225:9</span></span>
+        <span class="t-3003-c">können wir eine Wahrheitstabelle mit
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:226:9</span></span><span class="t-3003-c">$8$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:226:46</span></span><span class="t-3003-c">
+          Zeilen<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:226:49</span></span>
+        <span class="t-3003-c">anlegen und ihn in eine äquivalente 3-CNF-Formel mit<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:227:9</span></span>
+        <span class="t-3003-c">maximal
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:228:9</span></span><span class="t-3003-c">$8$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:228:17</span></span><span class="t-3003-c">
+          Klauseln umformen. Die schlussendliche
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:228:20</span></span><span class="t-3003-c">$3$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:228:60</span></span><span class="t-3003-c">
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:228:63</span></span>
+        <span class="t-3003-c">-CNF-Formel hat somit
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:229:9</span></span><span class="t-3003-c">$n + m$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:229:31</span></span><span class="t-3003-c">
+          Variable (die<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:229:38</span></span>
+        <span class="t-3003-c">Eingabevariablen von
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:230:9</span></span><span class="t-3003-c">$C$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:230:30</span></span><span class="t-3003-c">
+          plus eine für jedes Gate)<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:230:33</span></span>
+        <span class="t-3003-c">und maximal
+          <span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:231:9</span></span><span class="t-3003-c">$8m + 1$<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:231:21</span></span><span class="t-3003-c">
+          Klauseln, von denen jede<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:231:29</span></span>
+        <span class="t-3003-c">höchstens drei Variable enthält.<span class="t-3003">./course-TI-2/wly/09/09-Cook-Levin.wly:232:9</span></span><span style="color:#0000;visibility:none;">A</span><span class="qed">\(\square\)</span>
       </p>
     </div>
     <div id="end-of-page-elt">
@@ -583,8 +618,13 @@
         <a href="./9-8.html">&lt;&lt; Kapitel 9.8<span
             style="visibility:hidden"
             id="bottom-prev-page-tooltip"
-          >Savitch's Theorem:
-            <span class="t-3003-c">$\textrm{Reachability} \in \textrm{Space}(\log(n))$<span class="t-3003">./course-TI-2/wly/09/08-Savitch.wly:5:9</span></span></span></a><a class="menu-row-placeholder"></a>
+          >Reduktionen</span></a><a
+          href="./9-10.html"
+          class="menu-row-right"
+        >Kapitel 9.10 &gt;&gt;<span
+            style="visibility:hidden"
+            id="bottom-next-page-tooltip"
+          >Beschränkter Speicherplatz</span></a>
       </div>
     </div>
   </div>

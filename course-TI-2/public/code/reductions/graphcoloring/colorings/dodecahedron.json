@@ -1,0 +1,83 @@
+*** now calling satsolver.sat.solve ***
+[
+  {
+    "id": 1,
+    "color": "green"
+  },
+  {
+    "id": 2,
+    "color": "red"
+  },
+  {
+    "id": 3,
+    "color": "blue"
+  },
+  {
+    "id": 4,
+    "color": "green"
+  },
+  {
+    "id": 5,
+    "color": "blue"
+  },
+  {
+    "id": 6,
+    "color": "blue"
+  },
+  {
+    "id": 7,
+    "color": "red"
+  },
+  {
+    "id": 8,
+    "color": "green"
+  },
+  {
+    "id": 9,
+    "color": "red"
+  },
+  {
+    "id": 10,
+    "color": "green"
+  },
+  {
+    "id": 11,
+    "color": "blue"
+  },
+  {
+    "id": 12,
+    "color": "red"
+  },
+  {
+    "id": 13,
+    "color": "red"
+  },
+  {
+    "id": 14,
+    "color": "red"
+  },
+  {
+    "id": 15,
+    "color": "green"
+  },
+  {
+    "id": 16,
+    "color": "green"
+  },
+  {
+    "id": 17,
+    "color": "red"
+  },
+  {
+    "id": 18,
+    "color": "blue"
+  },
+  {
+    "id": 19,
+    "color": "blue"
+  },
+  {
+    "id": 20,
+    "color": "blue"
+  }
+]

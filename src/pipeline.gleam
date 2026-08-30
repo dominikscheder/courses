@@ -5,6 +5,7 @@ import desugaring/group_replacement_splitting as grs
 import desugaring/pipelines as pp
 import gleam/list
 import gleam/string
+import local_desugarers as local_dl
 import vxml
 import vxml/blame as bl
 
@@ -257,8 +258,8 @@ pub fn pipeline(
         #("Demo", "Statement", [#("title", "*Demo*")]),
         #("Proof", "Highlight", [#("title", proof)]),
       ]),
-      dl.ti2_add_should_be_numbers(),
-      dl.ti2_backfill(),
+      local_dl.ti2_add_should_be_numbers(),
+      local_dl.ti2_backfill(),
       dl.append_attribute__batch([
         #("Document", "counter", "EquationCounter"),
         #("Document", "counter", "ChapterCounter"),
@@ -392,16 +393,16 @@ pub fn pipeline(
       dl.trim("p"),
       dl.delete_if_empty("p"),
       dl.expand_info_attribute(["pre"]),
-      dl.ti2_process_pre_listing_classname(),
-      dl.ti2_parse_python_prompt_pre(),
-      dl.ti2_parse_orange_comments_pre(),
-      dl.ti2_parse_arbitrary_prompt_response_pre(),
-      dl.ti2_dominik_prompt_response(),
-      dl.ti2_parse_redyellow_pre(),
-      dl.ti2_parse_xml_pre(),
-      dl.ti2_add_listing_bol_spans(),
-      dl.ti2_create_index(),
-      dl.ti2_add_prev_next_chapter_title_elements(),
+      local_dl.ti2_process_pre_listing_classname(),
+      local_dl.ti2_parse_python_prompt_pre(),
+      local_dl.ti2_parse_orange_comments_pre(),
+      local_dl.ti2_parse_arbitrary_prompt_response_pre(),
+      local_dl.ti2_dominik_prompt_response(),
+      local_dl.ti2_parse_redyellow_pre(),
+      local_dl.ti2_parse_xml_pre(),
+      local_dl.ti2_add_listing_bol_spans(),
+      local_dl.ti2_create_index(),
+      local_dl.ti2_add_prev_next_chapter_title_elements(),
       dl.insert_custom_before_first(#(
         "Chapter",
         end_of_page_element,
@@ -410,7 +411,7 @@ pub fn pipeline(
       )),
       dl.append_custom(#("Sub", end_of_page_element, infra.GoBack)),
       dl.append_custom(#("Index", end_of_page_element, infra.GoBack)),
-      dl.ti2_create_menu(),
+      local_dl.ti2_create_menu(),
       dl.delete__batch(["PrevChapterOrSubTitle", "NextChapterOrSubTitle"]),
       dl.wrap_and_custom_steal(
         #(
@@ -420,8 +421,11 @@ pub fn pipeline(
           infra.is_v_and_tag_equals(_, "figcaption"),
         ),
       ),
-      dl.ti2_expand_carousels(),
-      dl.ti2_cut_paste_width_height_to_descendant_img(["Group", "figure"]),
+      local_dl.ti2_expand_carousels(),
+      local_dl.ti2_cut_paste_width_height_to_descendant_img([
+        "Group",
+        "figure",
+      ]),
       dl.insert_attribute_value_at_first_child_start(#(
         "ChapterTitle",
         "number-chiron",
@@ -587,15 +591,33 @@ pub fn pipeline(
     case author_mode {
       False -> []
       True -> [
-        dl.ti2_turn_lines_into_3003_spans__outside(parameters.input_dir, [
-          "Math",
-          "MathBlock",
-          "TopMenu",
-          "BottomMenu",
-        ]),
-        dl.ti2_adorn_img_with_3003_spans(parameters.output_dir),
-        dl.ti2_adorn_with_3003_spans(#(parameters.input_dir, "", ["MathBlock"])),
-        dl.ti2_wrap_with_3003_spans(#(parameters.input_dir, "", ["Math"])),
+        dl.source_provenance_wrap_lines__outside(
+          #(parameters.input_dir, [#("class", "t-3003-c")], [
+            #("class", "t-3003"),
+          ]),
+          ["Math", "MathBlock", "TopMenu", "BottomMenu"],
+        ),
+        dl.source_provenance_append_img_spans(
+          #(
+            parameters.output_dir,
+            "original",
+            ["img", "figure", "Carousel"],
+            [#("class", "t-3003 t-3003-i")],
+            [#("class", "t-3003-i-url")],
+          ),
+        ),
+        dl.source_provenance_append_span(
+          #(parameters.input_dir, [#("class", "t-3003")], ["MathBlock"]),
+        ),
+        dl.source_provenance_wrap(
+          #(
+            parameters.input_dir,
+            "span",
+            [#("class", "t-3003-c")],
+            [#("class", "t-3003")],
+            ["Math"],
+          ),
+        ),
       ]
     },
     [

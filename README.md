@@ -155,6 +155,17 @@ gleam run -- --fmt <x> // re-formats the source at x chars per line
 gleam run -- --help    // more options
 ```
 
+Local desugarer maintenance:
+
+```sh
+gleam run -- --renumber                 # renumber local blame lines
+gleam run -- --generate                 # regenerate local_desugarers.gleam
+gleam run -- --desugarer-tests          # test every local desugarer
+gleam run -- --desugarer-tests <name>   # test one local desugarer
+gleam run -- --desugarers               # perform all three operations
+gleam run -m local_desugarer_tests       # direct standalone test command
+```
+
 Git cheat sheet:
 
 ```

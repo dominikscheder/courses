@@ -7,6 +7,7 @@ import gleam/io
 import gleam/list
 import gleam/option
 import gleam/string
+import local_desugarers
 import on
 import renderer
 import simplifile
@@ -38,6 +39,18 @@ fn local_cli_usage() -> String {
     margin <> "--last-command",
     margin <> "  -> run the same arguments as the previous command (from local",
     margin <> "     .last-command file)",
+    "",
+    margin <> "--renumber",
+    margin <> "  -> renumber blame lines in local desugarers",
+    "",
+    margin <> "--generate / --regenerate",
+    margin <> "  -> regenerate src/local_desugarers.gleam",
+    "",
+    margin <> "--desugarers",
+    margin <> "  -> renumber, regenerate, and test local desugarers",
+    "",
+    margin <> "--desugarer-tests / --test-desugarers [<name> ...]",
+    margin <> "  -> test all or selected local desugarers",
     "",
     "...and don't forget to include '--which <course dir>' in",
     "order to specify which course you want to compile/run!",
@@ -89,6 +102,18 @@ pub fn main() {
 
   let #(args, help_requested) = ds.handle_help_requests(args, local_cli_usage)
   use _ <- on.stay(case help_requested {
+    True -> on.Return(Nil)
+    False -> on.Stay(Nil)
+  })
+
+  use #(args, maintenance_requested) <- on.error_ok(
+    ds.handle_maintenance_requests(args, local_desugarers.assertive_tests),
+    fn(error) {
+      io.println("maintenance error: " <> error)
+      io.println("")
+    },
+  )
+  use _ <- on.stay(case maintenance_requested {
     True -> on.Return(Nil)
     False -> on.Stay(Nil)
   })

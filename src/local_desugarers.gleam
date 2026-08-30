@@ -1,0 +1,68 @@
+import desugarers/ti2_add_listing_bol_spans
+import desugarers/ti2_add_prev_next_chapter_title_elements
+import desugarers/ti2_add_should_be_numbers
+import desugarers/ti2_backfill
+import desugarers/ti2_create_index
+import desugarers/ti2_create_menu
+import desugarers/ti2_cut_paste_width_height_to_descendant_img
+import desugarers/ti2_dominik_prompt_response
+import desugarers/ti2_expand_carousels
+import desugarers/ti2_expand_carousels_v2
+import desugarers/ti2_parse_arbitrary_prompt_response_pre
+import desugarers/ti2_parse_orange_comments_pre
+import desugarers/ti2_parse_python_prompt_pre
+import desugarers/ti2_parse_redyellow_pre
+import desugarers/ti2_parse_xml_pre
+import desugarers/ti2_process_pre_listing_classname
+import desugaring/core
+
+pub const ti2_add_listing_bol_spans = ti2_add_listing_bol_spans.constructor
+
+pub const ti2_add_prev_next_chapter_title_elements = ti2_add_prev_next_chapter_title_elements.constructor
+
+pub const ti2_add_should_be_numbers = ti2_add_should_be_numbers.constructor
+
+pub const ti2_backfill = ti2_backfill.constructor
+
+pub const ti2_create_index = ti2_create_index.constructor
+
+pub const ti2_create_menu = ti2_create_menu.constructor
+
+pub const ti2_cut_paste_width_height_to_descendant_img = ti2_cut_paste_width_height_to_descendant_img.constructor
+
+pub const ti2_dominik_prompt_response = ti2_dominik_prompt_response.constructor
+
+pub const ti2_expand_carousels = ti2_expand_carousels.constructor
+
+pub const ti2_expand_carousels_v2 = ti2_expand_carousels_v2.constructor
+
+pub const ti2_parse_arbitrary_prompt_response_pre = ti2_parse_arbitrary_prompt_response_pre.constructor
+
+pub const ti2_parse_orange_comments_pre = ti2_parse_orange_comments_pre.constructor
+
+pub const ti2_parse_python_prompt_pre = ti2_parse_python_prompt_pre.constructor
+
+pub const ti2_parse_redyellow_pre = ti2_parse_redyellow_pre.constructor
+
+pub const ti2_parse_xml_pre = ti2_parse_xml_pre.constructor
+
+pub const ti2_process_pre_listing_classname = ti2_process_pre_listing_classname.constructor
+
+pub const assertive_tests: List(fn() -> core.AssertiveTestCollection) = [
+  ti2_add_listing_bol_spans.assertive_tests,
+  ti2_add_prev_next_chapter_title_elements.assertive_tests,
+  ti2_add_should_be_numbers.assertive_tests,
+  ti2_backfill.assertive_tests,
+  ti2_create_index.assertive_tests,
+  ti2_create_menu.assertive_tests,
+  ti2_cut_paste_width_height_to_descendant_img.assertive_tests,
+  ti2_dominik_prompt_response.assertive_tests,
+  ti2_expand_carousels.assertive_tests,
+  ti2_expand_carousels_v2.assertive_tests,
+  ti2_parse_arbitrary_prompt_response_pre.assertive_tests,
+  ti2_parse_orange_comments_pre.assertive_tests,
+  ti2_parse_python_prompt_pre.assertive_tests,
+  ti2_parse_redyellow_pre.assertive_tests,
+  ti2_parse_xml_pre.assertive_tests,
+  ti2_process_pre_listing_classname.assertive_tests,
+]

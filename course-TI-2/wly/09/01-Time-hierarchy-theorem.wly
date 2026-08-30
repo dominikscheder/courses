@@ -19,6 +19,15 @@
     es nur eine Zerlegung $w=cx$ geben kann. Falls $w$ nicht diese Form hat, also nicht mit der Codierung
     einer Turingmaschine beginnt, lehnt $U^k$ sofort ab.
 
+    ```dominik-prompt-response
+    $ `ls`{elm-0}
+    IMG-1.jpg
+    IMG-2.jpg
+    index.html
+    $ pwd
+    /home/user/images
+    ```
+
 
     |> Observation
         Die Sprache
@@ -159,7 +168,7 @@
             style=height:25em
     
     |> Lemma 
-        handle=lemma-D-not-in-s-better 
+        handle=lemma-D-not-in-s-better
         Sei
         $s: \N \rightarrow \N$ eine Funktion mit
         \begin{align*}
@@ -199,9 +208,9 @@
         Wir sehen: die Maschine $M$ gibt auf Eingabe $x_i$ genau die falsche  Antwort. 
 
     Zusammenfassend erhalten wir die "Rohversion" des Zeithierarchiesatzes:
+
     |> Theorem
-        \ *(Zeithierarchiesatz,
-        Rohversion).*
+        *(Zithierarchiesatz, Rohversion).*
         Seien $s, t: \N \rightarrow \N$
         zeitkonstruierbare Funktionen mit $s(n) \geq n$ und
         $s \in o(t)$ (also $\lim_{n \rightarrow \infty} s(n)/t(n)
@@ -214,18 +223,17 @@
 
     Zusammen mit der Simulation von $k$-Band-Turingmaschinen durch $1$-Band-Turingmaschinen, 
     also Theorem >>theorem-k-tape-to-one-tape, können wir nun für 
-    |> span
-        class=reference
-        data-ref=k-tape-to-2-tape
-    \ folgt nun
+    folgt nun
     \begin{align*}
     \TIME(\sqrt{s}) \subsetneq \TIME_2(s) \subsetneq \TIME_5(t)
     \end{align*}
-    oder, alternativ ausgedrückt:
+    oder, alternativ augedrückt:
+
     |> Theorem
-        \ *(Zeithierarchiesatz, schwache Form).*
+        *(Zeithierarchiesatz, schwache Form).*
         Seien $s, t: \N \rightarrow \N$ mit $s(n) \geq n$ und $s^2 \in o(t)$. Dann gilt
         $\TIME(s) \subsetneq \TIME(t)$.
+
     |> Proof
         Aus der Simulation von $k$-Band-Turingmaschinen durch $1$-Band-Turingmaschinen, 
         also Theorem >>theorem-k-tape-to-one-tape, folgt 

@@ -555,6 +555,10 @@ p:has(> span.qed):not(:has(> *:not(span.qed))):last-child {
   font-size: 1em;
 }
 
+.terminal-output {
+  color: var(--arbitrary-prompt);
+}
+
 .python-prompt-carets {
   color: var(--python-prompt-carets);
 }

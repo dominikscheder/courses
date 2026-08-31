@@ -1,8 +1,8 @@
-import gleam/string
-import desugaring/desugarers as dl
 import desugaring/core.{type Pipeline} as infra
-import gleam/list
+import desugaring/desugarers as dl
 import desugaring/pipelines as pp
+import gleam/list
+import gleam/string
 
 const minimum_line_wrap_length = 40
 
@@ -78,19 +78,20 @@ const p_cannot_be_contained_in = [
   "WriterlyComment",
 ]
 
-fn ends_with_dollar_starts_with_punctuation(s1: String,
-s2: String) {
-  string.ends_with(s1, "$") && {
-    string.starts_with(s2, ".") ||
-    string.starts_with(s2, ",") ||
-    string.starts_with(s2, ":") ||
-    string.starts_with(s2, ";")
+fn ends_with_dollar_starts_with_punctuation(s1: String, s2: String) {
+  string.ends_with(s1, "$")
+  && {
+    string.starts_with(s2, ".")
+    || string.starts_with(s2, ",")
+    || string.starts_with(s2, ":")
+    || string.starts_with(s2, ";")
   }
 }
 
 pub fn formatter_pipeline(
   line_length: Int,
-  indentation_line_length_penalty: Int, // amount subtracted from the line_length at each new level of indentation (with Sub, Chapter)
+  indentation_line_length_penalty: Int,
+  // amount subtracted from the line_length at each new level of indentation (with Sub, Chapter)
 ) -> Pipeline {
   [
     [
@@ -98,34 +99,71 @@ pub fn formatter_pipeline(
       dl.attribute_drop_prefixes(#("src", ["./", "/"])),
       dl.delete("QED"),
     ],
-    pp.create_mathblock_elements([infra.DoubleDollar, infra.BackslashSquareBracket, infra.BeginEndAlign, infra.BeginEndAlignStar], infra.DoubleDollar, ["WriterlyBlankLine"]),
+    pp.create_mathblock_elements(
+      [
+        infra.DoubleDollar,
+        infra.BackslashSquareBracket,
+        infra.BeginEndAlign,
+        infra.BeginEndAlignStar,
+      ],
+      infra.DoubleDollar,
+      ["WriterlyBlankLine"],
+    ),
     [
-      dl.concatenate_consecutive_lines_if(ends_with_dollar_starts_with_punctuation),
+      dl.concatenate_consecutive_lines_if(
+        ends_with_dollar_starts_with_punctuation,
+      ),
     ],
-    pp.create_math_elements([infra.BackslashParenthesis, infra.SingleDollar], infra.SingleDollar, infra.BackslashParenthesis, ["WriterlyBlankLine"]),
+    pp.create_math_elements(
+      [infra.BackslashParenthesis, infra.SingleDollar],
+      infra.SingleDollar,
+      infra.BackslashParenthesis,
+      ["WriterlyBlankLine"],
+    ),
     [
-      dl.trim_spaces_around_newlines__outside(["pre", "Math", "MathBlock", "WriterlyCodeBlock", "WriterlyComment"]),
-      dl.trim_ending_spaces_except_last_line(),
-      dl.strip_delimiters_inside_if(#(
+      dl.trim_spaces_around_newlines__outside([
+        "pre",
+        "Math",
         "MathBlock",
-        infra.latex_strippable_display_delimiters(),
-        infra.descendant_text_contains(_, "\\begin{align")
-      )),
-      dl.group_consecutive_children__outside(#("p", p_cannot_contain), p_cannot_be_contained_in),
+        "WriterlyCodeBlock",
+        "WriterlyComment",
+      ]),
+      dl.trim_ending_spaces_except_last_line(),
+      dl.strip_delimiters_inside_if(
+        #(
+          "MathBlock",
+          infra.latex_strippable_display_delimiters(),
+          infra.descendant_text_contains(_, "\\begin{align"),
+        ),
+      ),
+      dl.group_consecutive_children__outside(
+        #("p", p_cannot_contain),
+        p_cannot_be_contained_in,
+      ),
       dl.concatenate_text_nodes(),
       dl.insert_text_start_end(#("tt", #("`", "`"))),
       dl.fold_contents_into_text("tt"),
       dl.insert_text_start_end(#("code", #("`", "`"))),
       dl.fold_contents_into_text("code"),
-      dl.insert_text_start_end_if_unique_attr(#("span", "style", "font-variant:small-caps;", #("`", "`{sc}"))),
-      dl.fold_children_into_text_if(#("span", infra.v_has_key_val(_, "style", "font-variant:small-caps;"))),
+      dl.insert_text_start_end_if_unique_attr(#(
+        "span",
+        "style",
+        "font-variant:small-caps;",
+        #("`", "`{sc}"),
+      )),
+      dl.fold_children_into_text_if(
+        #("span", infra.v_has_key_val(_, "style", "font-variant:small-caps;")),
+      ),
       dl.wrap_adjacent_non_whitespace_text_with(#(["Math"], "NoWrap")),
       dl.line_rewrap_no2__outside(
-        #(["Chapter", "Sub"],
-        line_length,
-        minimum_line_wrap_length,
-        indentation_line_length_penalty,
-        infra.is_v_and_tag_is_one_of(_, ["Math", "NoWrap"])), ["MathBlock", "pre", "WriterlyCodeBlock", "WriterlyComment"],
+        #(
+          ["Chapter", "Sub"],
+          line_length,
+          minimum_line_wrap_length,
+          indentation_line_length_penalty,
+          infra.is_v_and_tag_is_one_of(_, ["Math", "NoWrap"]),
+        ),
+        ["MathBlock", "pre", "WriterlyCodeBlock", "WriterlyComment"],
       ),
       dl.concatenate_text_nodes(),
       dl.unwrap("NoWrap"),
@@ -139,7 +177,13 @@ pub fn formatter_pipeline(
       dl.absorb_forward_one(#("WriterlyComment", "WriterlyBlankLine")),
       dl.absorb_backward_one(#("WriterlyComment", "WriterlyBlankLine")),
       dl.unwrap__outside("WriterlyBlankLine", ["WriterlyComment"]),
-      dl.trim_spaces_around_newlines__outside(["pre", "Math", "MathBlock", "WriterlyCodeBlock", "WriterlyComment"]),
+      dl.trim_spaces_around_newlines__outside([
+        "pre",
+        "Math",
+        "MathBlock",
+        "WriterlyCodeBlock",
+        "WriterlyComment",
+      ]),
       dl.trim("p"),
       dl.delete_if_empty("p"),
       dl.add_between(#("p", "p", "WriterlyBlankLine")),
@@ -170,39 +214,120 @@ pub fn formatter_pipeline(
       dl.add_between(#("pre", "p", "WriterlyBlankLine")),
       dl.add_between(#("div", "p", "WriterlyBlankLine")),
       dl.add_between(#("Highlight", "p", "WriterlyBlankLine")),
-      dl.expel_initial_last_backward_forward(#("WriterlyComment", ["WriterlyBlankLine"], ["WriterlyBlankLine"])),
-      dl.add_if_missing_before_but_not_before_first_child(#("MathBlock", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("TopicAnnouncement", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("SubtopicAnnouncement", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Exercise", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Remark", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Theorem", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Proof", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Definition", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Observation", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Example", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Lemma", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Claim", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Problem", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Algorithm", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Demo", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Statement", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("h3", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("h2", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("ol", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("ul", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("li", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("figure", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Carousel", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("pre", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("div", "WriterlyBlankLine")),
-      dl.add_if_missing_before_but_not_before_first_child(#("Highlight", "WriterlyBlankLine")),
+      dl.expel_initial_last_backward_forward(
+        #("WriterlyComment", ["WriterlyBlankLine"], ["WriterlyBlankLine"]),
+      ),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "MathBlock",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "TopicAnnouncement",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "SubtopicAnnouncement",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Exercise",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Remark",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Theorem",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Proof",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Definition",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Observation",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Example",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Lemma",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Claim",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Problem",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Algorithm",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Demo",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Statement",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "h3",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "h2",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "ol",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "ul",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "li",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "figure",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Carousel",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "pre",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "div",
+        "WriterlyBlankLine",
+      )),
+      dl.add_if_missing_before_but_not_before_first_child(#(
+        "Highlight",
+        "WriterlyBlankLine",
+      )),
       dl.prepend(#("Chapter", "WriterlyBlankLine")),
       dl.prepend(#("Sub", "WriterlyBlankLine")),
       dl.unwrap("p"),
       dl.unwrap("MathBlock"),
       dl.delete_attribute__batch(["test", "t"]),
-    ]
+      dl.format_writerly_commented_attributes(),
+    ],
   ]
   |> list.flatten
 }

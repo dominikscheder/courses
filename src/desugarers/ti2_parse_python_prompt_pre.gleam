@@ -64,10 +64,7 @@ fn nodemap(vxml: VXML) -> VXML {
             "pre",
             attrs
               |> core.attrs_delete("language")
-              |> core.attrs_append_classes(
-                desugarer_blame(68),
-                "python-prompt",
-              ),
+              |> core.attrs_append_classes(desugarer_blame(68), "python-prompt"),
             children,
           )
         }

@@ -1,5 +1,6 @@
-import vxml/blame.{Ext}
 import desugaring as ds
+import desugaring/core as infra
+import desugaring/writerly_defaults as wd
 import gleam/dict
 import gleam/io
 import gleam/list
@@ -7,13 +8,12 @@ import gleam/option.{type Option, None, Some}
 import gleam/regexp.{type Regexp}
 import gleam/result
 import gleam/string.{inspect as ins}
-import desugaring/core as infra
-import desugaring/writerly_defaults as wd
-import vxml/io_lines.{type OutputLine, OutputLine}
 import on
 import pipeline
 import simplifile
 import vxml.{type VXML}
+import vxml/blame.{Ext}
+import vxml/io_lines.{type OutputLine, OutputLine}
 import writerly
 
 const favicon_loc = "./img/favicon.svg"
@@ -55,7 +55,9 @@ fn index_error(e: infra.SingletonError) -> TI2SplitterError {
   }
 }
 
-fn our_splitter(root: VXML) -> Result(List(Fragment(VXML)), TI2SplitterError) {
+fn our_splitter(
+  root: VXML,
+) -> Result(#(List(Fragment(VXML)), ds.Feedback), TI2SplitterError) {
   use index <- result.try(
     infra.descendants_with_class(root, "index")
     |> infra.read_singleton
@@ -112,7 +114,7 @@ fn our_splitter(root: VXML) -> Result(List(Fragment(VXML)), TI2SplitterError) {
     chapter_fragments,
     sub_fragments,
   ])
-  |> Ok
+  |> fn(fragments) { Ok(#(fragments, ds.NoFeedback)) }
 }
 
 // index emitter - handles index fragments
@@ -481,12 +483,13 @@ fn our_emitter(
   fragment: Fragment(VXML),
   offline_mathjax: Bool,
   document_info: DocumentInfo,
-) -> Result(Fragment(OL), String) {
+) -> Result(#(Fragment(OL), ds.Feedback), String) {
   case fragment.classifier {
     Index -> index_emitter(fragment, offline_mathjax, document_info)
     Chapter(_) -> chapter_emitter(fragment, offline_mathjax, document_info)
     Sub(_, _) -> subchapter_emitter(fragment, offline_mathjax, document_info)
   }
+  |> result.map(fn(fragment) { #(fragment, ds.NoFeedback) })
 }
 
 fn existing_html_artifacts(output_dir: String) -> List(String) {
@@ -570,10 +573,7 @@ fn expand_filename_shorthands_to_path_fragments(
       filename_shorthand_regexp,
     ))
 
-  ds.CommandLineAmendments(
-    ..amendments,
-    only_paths: only_paths,
-  )
+  ds.CommandLineAmendments(..amendments, only_paths: only_paths)
 }
 
 pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
@@ -591,7 +591,8 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
       Ok(False) -> io.println("\nfile not found: '" <> parent <> "'")
     }
   })
-  let assert Ok([parsed_contents, ..]) = writerly.string_to_writerlys(contents, "")
+  let assert Ok([parsed_contents, ..]) =
+    writerly.string_to_writerlys(contents, "")
   let parsed_contents = writerly.writerly_to_vxml(parsed_contents)
   let banner = case infra.v_first_attr_with_key(parsed_contents, "banner") {
     None ->

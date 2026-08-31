@@ -489,13 +489,14 @@ pub fn pipeline(
       dl.substitute_counters(),
       dl.handles_generate_v_definitions_from_t_definitions(),
       dl.handles_add_ids(),
-      dl.handles_generate_dictionary("path"),
-      dl.handles_substitute(
+      dl.handles_grand_wrapper_generate_dictionary("path"),
+      dl.handles_grand_wrapper_substitute(
         #("path", "a", "a", [], [], ["a"], ["Math", "MathBlock"]),
       ),
-      // consumes the 'used' column that handles_substitute leaves on the
+      // consumes the 'used' column that handles_grand_wrapper_substitute
+      // leaves on the
       // GrandWrapper dictionary; must sit between the two
-      dl.handles_warn_unused(["MathBlock"]),
+      dl.handles_grand_wrapper_warn_unused(["MathBlock"]),
       dl.unwrap("GrandWrapper"),
     ],
     [

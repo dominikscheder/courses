@@ -65,6 +65,22 @@ fn local_cli_usage() -> String {
   |> string.join("\n")
 }
 
+fn contains_maintenance_request(args: List(String)) -> Bool {
+  list.any(args, fn(arg) {
+    list.contains(
+      [
+        "--renumber",
+        "--generate",
+        "--regenerate",
+        "--desugarers",
+        "--desugarer-tests",
+        "--test-desugarers",
+      ],
+      arg,
+    )
+  })
+}
+
 pub fn main() {
   let args =
     argv.load().arguments
@@ -101,6 +117,11 @@ pub fn main() {
   }
 
   let #(args, help_requested) = ds.handle_help_requests(args, local_cli_usage)
+
+  case contains_maintenance_request(args) {
+    True -> io.println("")
+    False -> Nil
+  }
 
   use #(args, maintenance_requested) <- on.error_ok(
     ds.handle_maintenance_requests(args, local_desugarers.assertive_tests),

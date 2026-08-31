@@ -64,7 +64,7 @@ fn nodemap(vxml: VXML) -> VXML {
             "pre",
             attrs
               |> core.attrs_delete("language")
-              |> core.attrs_append_classes(desugarer_blame(68), "python-prompt"),
+              |> core.attrs_append_classes(desugarer_blame(67), "python-prompt"),
             children,
           )
         }
@@ -86,15 +86,15 @@ fn python_prompt_chunk_to_vxmls(chunk: PythonPromptChunk) -> List(VXML) {
       let z = terminal_prompt_length
       [
         V(
-          desugarer_blame(92),
+          desugarer_blame(89),
           "span",
-          [Attr(desugarer_blame(94), "class", "terminal-prompt")],
+          [Attr(desugarer_blame(91), "class", "terminal-prompt")],
           [T(line.blame, [Line(line.blame, terminal_prompt)])],
         ),
         V(
-          desugarer_blame(98),
+          desugarer_blame(95),
           "span",
-          [Attr(desugarer_blame(100), "class", "terminal-prompt-content")],
+          [Attr(desugarer_blame(97), "class", "terminal-prompt-content")],
           [
             T(bl.advance(line.blame, z), [
               Line(
@@ -109,15 +109,15 @@ fn python_prompt_chunk_to_vxmls(chunk: PythonPromptChunk) -> List(VXML) {
     PromptLine(line) -> {
       [
         V(
-          desugarer_blame(115),
+          desugarer_blame(112),
           "span",
-          [Attr(desugarer_blame(117), "class", "python-prompt-carets")],
+          [Attr(desugarer_blame(114), "class", "python-prompt-carets")],
           [T(line.blame, [Line(line.blame, ">>>")])],
         ),
         V(
-          desugarer_blame(121),
+          desugarer_blame(118),
           "span",
-          [Attr(desugarer_blame(123), "class", "python-prompt-content")],
+          [Attr(desugarer_blame(120), "class", "python-prompt-content")],
           [
             T(bl.advance(line.blame, 3), [
               Line(
@@ -132,9 +132,9 @@ fn python_prompt_chunk_to_vxmls(chunk: PythonPromptChunk) -> List(VXML) {
     OkResponseLines(lines) -> {
       [
         V(
-          desugarer_blame(138),
+          desugarer_blame(135),
           "span",
-          [Attr(desugarer_blame(140), "class", "python-prompt-ok-response")],
+          [Attr(desugarer_blame(137), "class", "python-prompt-ok-response")],
           [T(lines |> core.lines_first_blame, lines)],
         ),
       ]
@@ -142,9 +142,9 @@ fn python_prompt_chunk_to_vxmls(chunk: PythonPromptChunk) -> List(VXML) {
     ErrorResponseLines(lines) -> {
       [
         V(
-          desugarer_blame(148),
+          desugarer_blame(145),
           "span",
-          [Attr(desugarer_blame(150), "class", "python-prompt-error-response")],
+          [Attr(desugarer_blame(147), "class", "python-prompt-error-response")],
           [T(lines |> core.lines_first_blame, lines)],
         ),
       ]
@@ -179,6 +179,7 @@ fn process_python_prompt_lines(lines: List(Line)) -> List(PythonPromptChunk) {
 // 🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊
 // 🌊🌊🌊 tests 🌊🌊🌊🌊
 // 🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊
+
 fn assertive_tests_data() -> List(core.AssertiveTestDataNoParam) {
   [
     core.AssertiveTestDataNoParam(

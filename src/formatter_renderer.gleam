@@ -132,27 +132,30 @@ fn extract_line_length_and_indentation_penalty(
   }
 }
 
-pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
-  let assert Ok(fmt_args) = dict.get(amendments.user_args, "--fmt")
+pub fn render(
+  arguments: ds.ParsedCLIArguments,
+  course_dir: String,
+) -> Result(Nil, String) {
+  let assert Ok(fmt_args) = dict.get(arguments.user_args, "--fmt")
 
   use #(files, fmt_args) <- on.error_ok(extract_files(fmt_args), fn(msg) {
-    io.println(msg)
+    Error(msg)
   })
 
   use #(line_length, indentation_penalty) <- on.error_ok(
     extract_line_length_and_indentation_penalty(fmt_args),
-    fn(msg) { io.println(msg) },
+    fn(msg) { Error(msg) },
   )
 
   let pipeline = formatter_pipeline(line_length, indentation_penalty)
 
-  let #(output_dir_local_path, amendments) = case amendments.output_dir {
-    None -> #("wly", amendments)
-    Some(x) -> #(x, ds.CommandLineAmendments(..amendments, output_dir: None))
+  let #(output_dir_local_path, arguments) = case arguments.output_dir {
+    None -> #("wly", arguments)
+    Some(x) -> #(x, ds.ParsedCLIArguments(..arguments, output_dir: None))
   }
 
-  let assert None = amendments.input_dir
-  let assert None = amendments.output_dir
+  let assert None = arguments.input_dir
+  let assert None = arguments.output_dir
 
   let parameters =
     ds.RendererParameters(
@@ -160,7 +163,7 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
       output_dir: "./" <> course_dir <> "/" <> output_dir_local_path,
       prettifier_behavior: ds.PrettifierOff,
     )
-    |> ds.amend_renderer_parameters_by_command_line_amendments(amendments)
+    |> ds.amend_renderer_parameters_by_arguments(arguments)
 
   let input_dir = parameters.input_dir
   let input_dir_name_only = case input_dir {
@@ -183,7 +186,7 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
 
   let options =
     ds.RendererOptions(..ds.vanilla_options(), verbose: True)
-    |> ds.amend_renderer_options_by_command_line_amendments(amendments)
+    |> ds.amend_renderer_options_by_arguments(arguments)
 
   let renderer =
     ds.Renderer(
@@ -202,22 +205,27 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
 
   let _ = simplifile.delete(parameters.output_dir <> "/*")
 
-  list.each(
-    case files {
-      [] -> [""]
-      _ -> files
-    },
-    fn(f) {
-      io.println("")
-      let parameters =
-        ds.RendererParameters(
-          ..parameters,
-          input_dir: parameters.input_dir <> f,
-        )
-      case ds.run_renderer(renderer, parameters, options) {
-        Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
-        _ -> Nil
-      }
-    },
+  use _ <- on.ok(
+    list.try_map(
+      case files {
+        [] -> [""]
+        _ -> files
+      },
+      fn(f) {
+        let parameters =
+          ds.RendererParameters(
+            ..parameters,
+            input_dir: parameters.input_dir <> f,
+          )
+        case ds.run_renderer(renderer, parameters, options) {
+          Error(error) -> Error(ins(error))
+          _ -> {
+            io.println("")
+            Ok(Nil)
+          }
+        }
+      },
+    ),
   )
+  Ok(Nil)
 }

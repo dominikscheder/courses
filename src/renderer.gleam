@@ -562,28 +562,28 @@ fn filename_shorthand_to_path_fragment(
 }
 
 fn expand_filename_shorthands_to_path_fragments(
-  amendments: ds.CommandLineAmendments,
-) -> ds.CommandLineAmendments {
+  arguments: ds.ParsedCLIArguments,
+) -> ds.ParsedCLIArguments {
   let assert Ok(filename_shorthand_regexp) =
     regexp.from_string("^([1-9][\\d]{0,1})[\\.]([1-9][\\d]{0,1})$")
 
   let only_paths =
-    list.map(amendments.only_paths, filename_shorthand_to_path_fragment(
+    list.map(arguments.only_paths, filename_shorthand_to_path_fragment(
       _,
       filename_shorthand_regexp,
     ))
 
-  ds.CommandLineAmendments(..amendments, only_paths: only_paths)
+  ds.ParsedCLIArguments(..arguments, only_paths: only_paths)
 }
 
-pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
-  let #(output_dir_local_path, amendments) = case amendments.output_dir {
-    None -> #("public", amendments)
-    Some(x) -> #(x, ds.CommandLineAmendments(..amendments, output_dir: None))
+pub fn render(arguments: ds.ParsedCLIArguments, course_dir: String) -> Nil {
+  let #(output_dir_local_path, arguments) = case arguments.output_dir {
+    None -> #("public", arguments)
+    Some(x) -> #(x, ds.ParsedCLIArguments(..arguments, output_dir: None))
   }
 
-  let assert None = amendments.input_dir
-  let assert None = amendments.output_dir
+  let assert None = arguments.input_dir
+  let assert None = arguments.output_dir
   let parent = course_dir <> "/wly/__parent.wly"
   use contents <- on.error_ok(simplifile.read(parent), fn(_) {
     case simplifile.is_file(parent) {
@@ -643,14 +643,14 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
       output_dir: "./" <> course_dir <> "/" <> output_dir_local_path <> "/",
       prettifier_behavior: ds.PrettifierOff,
     )
-    |> ds.amend_renderer_parameters_by_command_line_amendments(amendments)
+    |> ds.amend_renderer_parameters_by_arguments(arguments)
 
-  let author_mode = dict.has_key(amendments.user_args, "--local")
-  let offline_mathjax = dict.has_key(amendments.user_args, "--offline-mathjax")
-  let amendments = expand_filename_shorthands_to_path_fragments(amendments)
+  let author_mode = dict.has_key(arguments.user_args, "--local")
+  let offline_mathjax = dict.has_key(arguments.user_args, "--offline-mathjax")
+  let arguments = expand_filename_shorthands_to_path_fragments(arguments)
   let options =
     ds.vanilla_options()
-    |> ds.amend_renderer_options_by_command_line_amendments(amendments)
+    |> ds.amend_renderer_options_by_arguments(arguments)
 
   let renderer =
     ds.Renderer(
@@ -667,12 +667,14 @@ pub fn render(amendments: ds.CommandLineAmendments, course_dir: String) -> Nil {
   let existing_html = existing_html_artifacts(parameters.output_dir)
 
   case ds.run_renderer(renderer, parameters, options) {
-    Error(error) -> io.println("\nrenderer error: " <> ins(error) <> "\n")
-    Ok(written_artifacts) ->
+    Error(error) -> io.println("renderer error: " <> ins(error) <> "\n")
+    Ok(written_artifacts) -> {
       cleanup_stale_html_files(
         parameters.output_dir,
         existing_html,
         written_artifacts,
       )
+      io.println("")
+    }
   }
 }

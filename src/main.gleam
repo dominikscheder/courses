@@ -65,23 +65,23 @@ fn local_cli_usage() -> String {
   |> string.join("\n")
 }
 
-fn contains_maintenance_request(args: List(String)) -> Bool {
-  list.any(args, fn(arg) {
-    list.contains(
-      [
-        "--renumber",
-        "--generate",
-        "--regenerate",
-        "--desugarers",
-        "--desugarer-tests",
-        "--test-desugarers",
-      ],
-      arg,
-    )
-  })
+fn handle_fmt_request(
+  arguments: ds.ParsedCLIArguments,
+  course_dir: String,
+) -> Result(Bool, String) {
+  case dict.has_key(arguments.user_args, "--fmt") {
+    False -> Ok(False)
+    True -> {
+      io.println("wly -> wly formatter")
+      use _ <- on.ok(formatter_renderer.render(arguments, course_dir))
+      Ok(True)
+    }
+  }
 }
 
 pub fn main() {
+  io.println("")
+
   let args =
     argv.load().arguments
     |> list.map(fn(x) {
@@ -116,15 +116,34 @@ pub fn main() {
     False -> args
   }
 
-  let #(args, help_requested) = ds.handle_help_requests(args, local_cli_usage)
+  let args_string = string.join(args, " ")
 
-  case contains_maintenance_request(args) {
-    True -> io.println("")
-    False -> Nil
-  }
+  use arguments <- on.stay(
+    case
+      ds.process_command_line_arguments(args, [
+        "--fmt",
+        "--local",
+        "--which",
+        "--offline-mathjax",
+      ])
+    {
+      Error(error) -> {
+        io.println("command line error: " <> ins(error) <> "\n")
+        ds.basic_cli_usage("command line usage:")
+        local_cli_usage() |> io.println
+        on.Return(Nil)
+      }
 
-  use #(args, maintenance_requested) <- on.error_ok(
-    ds.handle_maintenance_requests(args, local_desugarers.assertive_tests),
+      Ok(arguments) -> {
+        on.Stay(arguments)
+      }
+    },
+  )
+
+  let help_requested = ds.handle_help_requests(arguments, local_cli_usage)
+
+  use maintenance_requested <- on.error_ok(
+    ds.handle_maintenance_requests(arguments, local_desugarers.assertive_tests),
     fn(error) {
       io.println("maintenance error: " <> error)
       io.println("")
@@ -135,39 +154,14 @@ pub fn main() {
     False -> on.Stay(Nil)
   })
 
-  let args_string = string.join(args, " ")
-
-  use amendments <- on.stay(
-    case
-      ds.process_command_line_arguments(args, [
-        "--fmt",
-        "--local",
-        "--which",
-        "--offline-mathjax",
-      ])
-    {
-      Error(error) -> {
-        io.println("")
-        io.println("command line error: " <> ins(error))
-        ds.basic_cli_usage("\ncommand line usage:")
-        local_cli_usage() |> io.print
-        on.Return(Nil)
-      }
-
-      Ok(amendments) -> {
-        on.Stay(amendments)
-      }
-    },
-  )
-
-  use course_dir <- on.stay(case dict.get(amendments.user_args, "--which") {
+  use course_dir <- on.stay(case dict.get(arguments.user_args, "--which") {
     Ok([name]) -> {
       let name = name |> infra.drop_ending_slash |> infra.drop_prefix("./")
       case simplifile.is_directory(name <> "/wly") {
         Ok(True) -> on.Stay(name)
         _ -> {
           io.println(
-            "\nexpecting '"
+            "expecting '"
             <> name
             <> "' to be a local directory with subdirectory 'wly'; crashing out\n",
           )
@@ -181,7 +175,7 @@ pub fn main() {
       case simplifile.is_directory(name <> "/wly") {
         Ok(True) -> {
           io.println(
-            "\nunrecognized command line arguments after course directory '"
+            "unrecognized command line arguments after course directory '"
             <> name
             <> "': "
             <> unexpected
@@ -191,7 +185,7 @@ pub fn main() {
         }
         _ -> {
           io.println(
-            "\nexpecting first argument after '--which', '"
+            "expecting first argument after '--which', '"
             <> name
             <> "', to be a local directory with subdirectory 'wly'; "
             <> "additional arguments were also supplied: "
@@ -204,45 +198,45 @@ pub fn main() {
     }
     Ok([]) -> {
       io.println(
-        "\noption '--which' requires one course directory argument (without spaces); crashing out\n",
+        "option '--which' requires one course directory argument (without spaces); crashing out\n",
       )
       on.Return(Nil)
     }
     Error(_) -> {
       io.println(
-        "\nuse '--which' option to specify a course directory pls (without spaces); crashing out\n",
+        "use '--which' option to specify a course directory pls (without spaces); crashing out\n",
       )
       on.Return(Nil)
     }
   })
 
-  use _ <- on.stay(case amendments.input_dir {
+  use _ <- on.stay(case arguments.input_dir {
     option.Some(_) -> {
       io.println(
-        "\nunexpected --input-dir argument; use '--which' to specify a local project directory; crashing out\n",
+        "unexpected --input-dir argument; use '--which' to specify a local project directory; crashing out\n",
       )
       on.Return(Nil)
     }
     _ -> on.Stay(Nil)
   })
 
-  case dict.get(amendments.user_args, "--fmt") {
-    Ok(_) -> {
+  use formatting_requested <- on.error_ok(
+    handle_fmt_request(arguments, course_dir),
+    fn(error) {
+      io.println("formatter error: " <> error)
       io.println("")
-      io.println("wly -> wly formatter")
-      formatter_renderer.render(amendments, course_dir)
-    }
+    },
+  )
+  use _ <- on.stay(case formatting_requested {
+    True -> on.Return(Nil)
+    False -> on.Stay(Nil)
+  })
 
-    Error(_) -> {
-      io.println("")
-      io.println("wly -> html renderer")
-      renderer.render(amendments, course_dir)
-      io.println("")
-    }
-  }
+  io.println("wly -> html renderer")
+  renderer.render(arguments, course_dir)
 
   case simplifile.write(".last-command", args_string) {
     Ok(_) -> Nil
-    _ -> io.println("Warning: unable to write args_string to .last-command")
+    _ -> io.println("Warning: unable to write args_string to .last-command\n")
   }
 }

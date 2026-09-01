@@ -1,12 +1,12 @@
-import desugaring/authoring
-import desugaring/core.{type Desugarer, type DesugarerTransform}
-import desugaring/nodemaps_2_transform as n2t
-import desugaring/testing
 import gleam/list
 import gleam/result
 import gleam/string
 import vxml.{type Line, type VXML, Attr, Line, T, V}
 import vxml/blame as bl
+import vxml_pipeline/authoring
+import vxml_pipeline/core.{type Desugarer, type DesugarerTransform}
+import vxml_pipeline/nodemaps_2_transform as n2t
+import vxml_pipeline/testing
 
 pub const name = "ti2_parse_arbitrary_prompt_response_pre"
 

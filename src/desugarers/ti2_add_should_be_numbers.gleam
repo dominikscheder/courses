@@ -1,10 +1,3 @@
-import desugaring/authoring
-import desugaring/core.{
-  type Desugarer, type DesugarerTransform, type DesugaringError,
-  type TrafficLight, Continue, DesugaringError, GoBack,
-}
-import desugaring/nodemaps_2_transform as n2t
-import desugaring/testing
 import gleam/int
 import gleam/list
 import gleam/option.{Some}
@@ -13,6 +6,13 @@ import gleam/string.{inspect as ins}
 import on
 import vxml.{type VXML, V}
 import vxml/blame.{type Blame} as bl
+import vxml_pipeline/authoring
+import vxml_pipeline/core.{
+  type Desugarer, type DesugarerTransform, type DesugaringError,
+  type TrafficLight, Continue, DesugaringError, GoBack,
+}
+import vxml_pipeline/nodemaps_2_transform as n2t
+import vxml_pipeline/testing
 
 pub const name = "ti2_add_should_be_numbers"
 

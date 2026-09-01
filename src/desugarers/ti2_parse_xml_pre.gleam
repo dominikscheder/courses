@@ -1,12 +1,12 @@
-import desugaring/authoring
-import desugaring/core.{type Desugarer, type DesugarerTransform}
-import desugaring/nodemaps_2_transform as n2t
-import desugaring/testing
 import gleam/list
 import gleam/string
 import vxml.{type VXML, Attr, Line, T, V}
 import vxml/blame.{type Blame} as bl
 import vxml/io_lines
+import vxml_pipeline/authoring
+import vxml_pipeline/core.{type Desugarer, type DesugarerTransform}
+import vxml_pipeline/nodemaps_2_transform as n2t
+import vxml_pipeline/testing
 import xml_streamer as xs
 
 pub const name = "ti2_parse_xml_pre"

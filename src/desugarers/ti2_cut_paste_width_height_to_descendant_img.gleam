@@ -1,15 +1,15 @@
-import desugaring/authoring
-import desugaring/core.{
-  type Desugarer, type DesugarerTransform, type DesugaringError, DesugaringError,
-}
-import desugaring/nodemaps_2_transform as n2t
-import desugaring/testing
 import gleam/list
 import gleam/option.{type Option, None, Some}
 import gleam/string
 import on
 import vxml.{type Attr, type VXML, V}
 import vxml/blame.{type Blame}
+import vxml_pipeline/authoring
+import vxml_pipeline/core.{
+  type Desugarer, type DesugarerTransform, type DesugaringError, DesugaringError,
+}
+import vxml_pipeline/nodemaps_2_transform as n2t
+import vxml_pipeline/testing
 
 pub const name = "ti2_cut_paste_width_height_to_descendant_img"
 

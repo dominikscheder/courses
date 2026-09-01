@@ -14,7 +14,7 @@ import desugarers/ti2_parse_python_prompt_pre
 import desugarers/ti2_parse_redyellow_pre
 import desugarers/ti2_parse_xml_pre
 import desugarers/ti2_process_pre_listing_classname
-import desugaring/testing
+import vxml_pipeline/testing
 
 pub const ti2_add_listing_bol_spans = ti2_add_listing_bol_spans.constructor
 

@@ -1,6 +1,6 @@
 import argv
-import desugaring/testing
 import local_desugarers
+import vxml_pipeline/testing
 
 pub fn main() {
   case

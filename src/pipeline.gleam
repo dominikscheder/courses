@@ -1,12 +1,12 @@
-import desugaring as ds
-import desugaring/core.{type Pipeline} as infra
-import desugaring/delimited_syntax as syntax
-import desugaring/desugarers as dl
-import desugaring/split_replacement as sr
 import gleam/list
 import local_desugarers as local_dl
 import vxml
 import vxml/blame as bl
+import vxml_pipeline as ds
+import vxml_pipeline/core.{type Pipeline} as infra
+import vxml_pipeline/delimited_syntax as syntax
+import vxml_pipeline/desugarers as dl
+import vxml_pipeline/split_replacement as sr
 import writerly
 
 const our_blame = bl.Des([], "pipeline", 9)

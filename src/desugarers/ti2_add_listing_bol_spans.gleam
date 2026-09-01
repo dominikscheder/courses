@@ -1,11 +1,11 @@
-import desugaring/authoring
-import desugaring/core.{type Desugarer, type DesugarerTransform}
-import desugaring/nodemaps_2_transform as n2t
-import desugaring/testing
 import gleam/list
 import on
 import vxml.{type Line, type VXML, Attr, T, V}
 import vxml/blame as bl
+import vxml_pipeline/authoring
+import vxml_pipeline/core.{type Desugarer, type DesugarerTransform}
+import vxml_pipeline/nodemaps_2_transform as n2t
+import vxml_pipeline/testing
 
 pub const name = "ti2_add_listing_bol_spans"
 

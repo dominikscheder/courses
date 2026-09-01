@@ -1,8 +1,8 @@
-import desugaring/core.{type Pipeline} as infra
-import desugaring/delimited_syntax as syntax
-import desugaring/desugarers as dl
 import gleam/list
 import gleam/string
+import vxml_pipeline/core.{type Pipeline} as infra
+import vxml_pipeline/delimited_syntax as syntax
+import vxml_pipeline/desugarers as dl
 
 const minimum_line_wrap_length = 40
 

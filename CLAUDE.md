@@ -206,9 +206,9 @@ Key stages in order:
 11. **`insert_attribute_as_text`** — injects `Statement.title` and `Highlight.title` /
     `Remark.title` as text nodes
 12. **`substitute_counters()`** — expands all `::øø...` counter references
-13. **Math block parsing** — `pp.create_mathblock_elements` (`$$`, `\begin{align}`,
+13. **Math block parsing** — `syntax.create_mathblock_elements` (`$$`, `\begin{align}`,
     `\begin{align*}`)
-14. **Inline math parsing** — `pp.create_math_elements` (`\(`, `$`)
+14. **Inline math parsing** — `syntax.create_math_elements` (`\(`, `$`)
 15. **Escaped dollar sign** — `regex_split_and_replace__outside` turns `\$` → `<span>$</span>`
 16. **Paragraph grouping** — `group_consecutive_children__outside("p", p_cannot_contain)`
 17. **Blank line / p cleanup**
@@ -223,12 +223,12 @@ Key stages in order:
 22. **Carousel expansion** — `dl.wrap_and_custom_steal`, `dl.ti2_expand_carousels()`
 23. **Image dimension forwarding** — `dl.ti2_cut_paste_width_height_to_descendant_img`
 24. **Number chiron insertion** — inserts `&ensp;` before chapter/sub title numbers
-25. **Backtick splitting** — `pp.annotated_backtick_splitting` for annotated spans
-26. **Markdown link splitting** — `pp.markdown_link_splitting` (skips math)
+25. **Backtick splitting** — `syntax.annotated_backtick_pipeline` for annotated spans
+26. **Markdown link splitting** — `syntax.markdown_link_pipeline` (skips math)
 27. **Backtick → `<code>`** — `` `...` `` → `<code>` (skips math, pre)
 28. **Italic/bold** — `_..._` → `<i>`, `*...*` → `<b>` (skips math, pre, code)
 29. **`bridge_whitespace("b")`**, **`wrap_adjacent_non_whitespace_text_with`** (NoWrap for math/i/b/code)
-30. **Splitting cleanup** — `pp.splitting_empty_lines_cleanup()`
+30. **Splitting cleanup** — `syntax.split_replacement_cleanup()`
 31. **Handle resolution** — `handles_add_ids`, `handles_generate_dictionary_and_id_list`,
     `handles_substitute_and_fix_nonlocal_id_links`
 32. **Link rearrangement** — `rearrange_links_4_pre_tokenized_src__batch` for patterns like

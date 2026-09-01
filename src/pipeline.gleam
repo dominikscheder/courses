@@ -1,8 +1,8 @@
 import desugaring as ds
 import desugaring/core.{type Pipeline} as infra
+import desugaring/delimited_syntax as syntax
 import desugaring/desugarers as dl
-import desugaring/group_replacement_splitting as grs
-import desugaring/pipelines as pp
+import desugaring/split_replacement as sr
 import gleam/list
 import local_desugarers as local_dl
 import vxml
@@ -101,10 +101,10 @@ pub fn pipeline(
     }
   }
 
-  let escaped_dollar_to_span_rr_splitter =
-    grs.rr_splitter_for_groups([
-      #("\\\\", grs.Trash),
-      #("\\$", grs.TagWithTextChild("span")),
+  let escaped_dollar_to_span_regexp_split_rule =
+    sr.regexp_split_rule_for_groups([
+      #("\\\\", sr.Discard),
+      #("\\$", sr.TagWithSegmentChild("span")),
     ])
 
   let pre_transformation_document_tags = [
@@ -371,22 +371,25 @@ pub fn pipeline(
       dl.prepend_attribute_as_text(#("Remark", "title")),
       dl.substitute_counters(),
     ],
-    pp.create_mathblock_elements(
+    syntax.create_mathblock_elements(
       [infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar],
       infra.DoubleDollar,
       ["WriterlyBlankLine"],
     ),
-    pp.create_math_elements(
+    syntax.create_math_elements(
       [infra.BackslashParenthesis, infra.SingleDollar],
       infra.SingleDollar,
       infra.BackslashParenthesis,
       ["WriterlyBlankLine"],
     ),
     [
-      dl.regex_split_and_replace__outside(escaped_dollar_to_span_rr_splitter, [
-        "Math",
-        "MathBlock",
-      ]),
+      dl.regex_split_and_replace__outside(
+        escaped_dollar_to_span_regexp_split_rule,
+        [
+          "Math",
+          "MathBlock",
+        ],
+      ),
       dl.group_consecutive_children__outside(
         #("p", p_cannot_contain),
         p_cannot_be_contained_in,
@@ -441,12 +444,12 @@ pub fn pipeline(
         infra.GoBack,
       )),
     ],
-    pp.annotated_backtick_splitting("span", "class", ["WriterlyBlankLine"], [
+    syntax.annotated_backtick_pipeline("span", "class", ["WriterlyBlankLine"], [
       "MathBlock",
       "Math",
     ]),
-    pp.markdown_link_splitting(["WriterlyBlankLine"], ["MathBlock", "Math"]),
-    pp.barbaric_symmetric_delim_splitting(
+    syntax.markdown_link_pipeline(["WriterlyBlankLine"], ["MathBlock", "Math"]),
+    syntax.permissive_symmetric_delimiter_pipeline(
       "`",
       "`",
       "code",
@@ -457,13 +460,19 @@ pub fn pipeline(
         "pre",
       ],
     ),
-    pp.barbaric_symmetric_delim_splitting("_", "_", "i", ["WriterlyBlankLine"], [
-      "MathBlock",
-      "Math",
-      "pre",
-      "code",
-    ]),
-    pp.barbaric_symmetric_delim_splitting(
+    syntax.permissive_symmetric_delimiter_pipeline(
+      "_",
+      "_",
+      "i",
+      ["WriterlyBlankLine"],
+      [
+        "MathBlock",
+        "Math",
+        "pre",
+        "code",
+      ],
+    ),
+    syntax.permissive_symmetric_delimiter_pipeline(
       "\\*",
       "*",
       "b",
@@ -482,7 +491,7 @@ pub fn pipeline(
         "NoWrap",
       )),
     ],
-    pp.splitting_empty_lines_cleanup(),
+    syntax.split_replacement_cleanup(),
     [
       dl.math_label_with_handle_to_mathjax_tag(#(
         "MathBlock",

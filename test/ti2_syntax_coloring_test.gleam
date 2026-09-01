@@ -1,5 +1,5 @@
 import desugaring/core.{type Desugarer, type Pipeline}
-import desugaring/pipelines as pp
+import desugaring/delimited_syntax as syntax
 import gleam/list
 import local_desugarers as local_dl
 import vxml.{type VXML, V}
@@ -30,10 +30,15 @@ fn assert_annotation_survives(source: String, colorer: Desugarer) {
   let assert Ok([vxml]) = vxml.parse_string(source, "integration test", True)
   let pipeline = [
     colorer,
-    ..pp.annotated_backtick_splitting("span", "class", ["WriterlyBlankLine"], [
-      "MathBlock",
-      "Math",
-    ])
+    ..syntax.annotated_backtick_pipeline(
+      "span",
+      "class",
+      ["WriterlyBlankLine"],
+      [
+        "MathBlock",
+        "Math",
+      ],
+    )
   ]
   let output = apply_pipeline(vxml, pipeline)
   assert contains_annotated_span(output)

@@ -1,6 +1,7 @@
 import desugaring/authoring
 import desugaring/core.{type Desugarer, type DesugarerTransform}
 import desugaring/nodemaps_2_transform as n2t
+import desugaring/testing
 import either_or as eo
 import gleam/list
 import gleam/string
@@ -180,9 +181,9 @@ fn process_python_prompt_lines(lines: List(Line)) -> List(PythonPromptChunk) {
 // 🌊🌊🌊 tests 🌊🌊🌊🌊
 // 🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊
 
-fn assertive_tests_data() -> List(core.AssertiveTestDataNoParam) {
+fn assertive_tests_data() -> List(testing.AssertiveTestDataNoParam) {
   [
-    core.AssertiveTestDataNoParam(
+    testing.data_no_param(
       source: "
                           <> pre
                             language=python-prompt
@@ -240,9 +241,5 @@ fn assertive_tests_data() -> List(core.AssertiveTestDataNoParam) {
 }
 
 pub fn assertive_tests() {
-  core.assertive_test_collection_from_data_no_param(
-    name,
-    assertive_tests_data(),
-    constructor,
-  )
+  testing.collection_no_param(name, assertive_tests_data(), constructor)
 }

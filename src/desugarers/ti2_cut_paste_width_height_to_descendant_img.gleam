@@ -3,6 +3,7 @@ import desugaring/core.{
   type Desugarer, type DesugarerTransform, type DesugaringError, DesugaringError,
 }
 import desugaring/nodemaps_2_transform as n2t
+import desugaring/testing
 import gleam/list
 import gleam/option.{type Option, None, Some}
 import gleam/string
@@ -216,9 +217,9 @@ fn extract_height_width_from_style_and_attrs(
 // 🌊🌊🌊 tests 🌊🌊🌊🌊
 // 🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊
 
-fn assertive_tests_data() -> List(core.AssertiveTestData(Param)) {
+fn assertive_tests_data() -> List(testing.AssertiveTestData(Param)) {
   [
-    core.AssertiveTestData(
+    testing.data(
       param: ["Group", "figure"],
       source: "
         <> Group
@@ -233,7 +234,7 @@ fn assertive_tests_data() -> List(core.AssertiveTestData(Param)) {
             src=test.jpg
       ",
     ),
-    core.AssertiveTestData(
+    testing.data(
       param: ["Group", "figure"],
       source: "
         <> figure
@@ -248,7 +249,7 @@ fn assertive_tests_data() -> List(core.AssertiveTestData(Param)) {
             src=test.jpg
       ",
     ),
-    core.AssertiveTestData(
+    testing.data(
       param: ["Group", "figure"],
       source: "
         <> Group
@@ -265,7 +266,7 @@ fn assertive_tests_data() -> List(core.AssertiveTestData(Param)) {
               src=nested.jpg
       ",
     ),
-    core.AssertiveTestData(
+    testing.data(
       param: ["Group", "figure"],
       source: "
         <> figure
@@ -281,7 +282,7 @@ fn assertive_tests_data() -> List(core.AssertiveTestData(Param)) {
             src=test.jpg
       ",
     ),
-    core.AssertiveTestData(
+    testing.data(
       param: ["Group", "figure"],
       source: "
         <> figure
@@ -298,7 +299,7 @@ fn assertive_tests_data() -> List(core.AssertiveTestData(Param)) {
             src=test.jpg
       ",
     ),
-    core.AssertiveTestData(
+    testing.data(
       param: ["Group", "figure"],
       source: "
           <> img
@@ -311,7 +312,7 @@ fn assertive_tests_data() -> List(core.AssertiveTestData(Param)) {
             src=test.jpg
       ",
     ),
-    core.AssertiveTestData(
+    testing.data(
       param: ["Group", "figure"],
       source: "
         <> div
@@ -330,9 +331,5 @@ fn assertive_tests_data() -> List(core.AssertiveTestData(Param)) {
 }
 
 pub fn assertive_tests() {
-  core.assertive_test_collection_from_data(
-    name,
-    assertive_tests_data(),
-    constructor,
-  )
+  testing.collection(name, assertive_tests_data(), constructor)
 }

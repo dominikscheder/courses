@@ -4,6 +4,7 @@ import desugaring/core.{
   type TrafficLight, Continue, DesugaringError, GoBack,
 }
 import desugaring/nodemaps_2_transform as n2t
+import desugaring/testing
 import gleam/int
 import gleam/list
 import gleam/string.{inspect as ins}
@@ -125,9 +126,9 @@ fn backfill_elements(
 // 🌊🌊🌊 tests 🌊🌊🌊🌊
 // 🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊
 
-fn assertive_tests_data() -> List(core.AssertiveTestDataNoParam) {
+fn assertive_tests_data() -> List(testing.AssertiveTestDataNoParam) {
   [
-    core.AssertiveTestDataNoParam(
+    testing.data_no_param(
       source: "
                   <> Document
                     <> Chapter
@@ -155,7 +156,7 @@ fn assertive_tests_data() -> List(core.AssertiveTestDataNoParam) {
                         should-be-number=3
                 ",
     ),
-    core.AssertiveTestDataNoParam(
+    testing.data_no_param(
       source: "
                   <> Document
                     <> Chapter
@@ -179,7 +180,7 @@ fn assertive_tests_data() -> List(core.AssertiveTestDataNoParam) {
                       should-be-number=4
                 ",
     ),
-    core.AssertiveTestDataNoParam(
+    testing.data_no_param(
       source: "
                   <> Document
                     <> Chapter
@@ -217,9 +218,5 @@ fn assertive_tests_data() -> List(core.AssertiveTestDataNoParam) {
 }
 
 pub fn assertive_tests() {
-  core.assertive_test_collection_from_data_no_param(
-    name,
-    assertive_tests_data(),
-    constructor,
-  )
+  testing.collection_no_param(name, assertive_tests_data(), constructor)
 }

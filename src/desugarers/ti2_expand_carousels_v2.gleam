@@ -3,6 +3,7 @@ import desugaring/core.{
   type Desugarer, type DesugarerTransform, type DesugaringError, DesugaringError,
 }
 import desugaring/nodemaps_2_transform as n2t
+import desugaring/testing
 import gleam/list
 import gleam/option.{None, Some}
 import gleam/string
@@ -147,9 +148,9 @@ fn desugarer_blame(line_no: Int) {
 // 🌊🌊🌊 tests 🌊🌊🌊🌊
 // 🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊
 
-fn assertive_tests_data() -> List(core.AssertiveTestDataNoParam) {
+fn assertive_tests_data() -> List(testing.AssertiveTestDataNoParam) {
   [
-    core.AssertiveTestDataNoParam(
+    testing.data_no_param(
       source: "
                           <> Carousel
                             src=image1.jpg
@@ -169,7 +170,7 @@ fn assertive_tests_data() -> List(core.AssertiveTestDataNoParam) {
                                 src=image3.jpg
                 ",
     ),
-    core.AssertiveTestDataNoParam(
+    testing.data_no_param(
       source: "
                           <> Carousel
                             src=image1.jpg
@@ -189,7 +190,7 @@ fn assertive_tests_data() -> List(core.AssertiveTestDataNoParam) {
                                 src=image2.jpg
                 ",
     ),
-    core.AssertiveTestDataNoParam(
+    testing.data_no_param(
       source: "
                           <> Carousel
                             src=only.jpg
@@ -203,7 +204,7 @@ fn assertive_tests_data() -> List(core.AssertiveTestDataNoParam) {
                                 src=only.jpg
                 ",
     ),
-    core.AssertiveTestDataNoParam(
+    testing.data_no_param(
       source: "
                           <> root
                             <> Carousel
@@ -223,7 +224,7 @@ fn assertive_tests_data() -> List(core.AssertiveTestDataNoParam) {
                                 'Other content'
                 ",
     ),
-    core.AssertiveTestDataNoParam(
+    testing.data_no_param(
       source: "
                           <> root
                             <> div
@@ -248,9 +249,5 @@ fn assertive_tests_data() -> List(core.AssertiveTestDataNoParam) {
 // - src attrs with children: "Carousel cannot have src attr and children at the same time."
 
 pub fn assertive_tests() {
-  core.assertive_test_collection_from_data_no_param(
-    name,
-    assertive_tests_data(),
-    constructor,
-  )
+  testing.collection_no_param(name, assertive_tests_data(), constructor)
 }

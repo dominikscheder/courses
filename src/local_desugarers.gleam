@@ -14,7 +14,7 @@ import desugarers/ti2_parse_python_prompt_pre
 import desugarers/ti2_parse_redyellow_pre
 import desugarers/ti2_parse_xml_pre
 import desugarers/ti2_process_pre_listing_classname
-import desugaring/core
+import desugaring/testing
 
 pub const ti2_add_listing_bol_spans = ti2_add_listing_bol_spans.constructor
 
@@ -48,7 +48,7 @@ pub const ti2_parse_xml_pre = ti2_parse_xml_pre.constructor
 
 pub const ti2_process_pre_listing_classname = ti2_process_pre_listing_classname.constructor
 
-pub const assertive_tests: List(fn() -> core.AssertiveTestCollection) = [
+pub const assertive_tests: List(fn() -> testing.AssertiveTestCollection) = [
   ti2_add_listing_bol_spans.assertive_tests,
   ti2_add_prev_next_chapter_title_elements.assertive_tests,
   ti2_add_should_be_numbers.assertive_tests,

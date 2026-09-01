@@ -11,3 +11,5 @@ npm-debug.log*
 .env
 .last-command
 .vscode/
+**/public/[0-9]*-[0-9]*.html
+**/public/index.html

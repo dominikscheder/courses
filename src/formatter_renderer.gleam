@@ -4,7 +4,6 @@ import desugaring/writerly_defaults as wd
 import formatter_pipeline.{formatter_pipeline}
 import gleam/dict
 import gleam/int
-import gleam/io
 import gleam/list
 import gleam/option.{type Option, None, Some}
 import gleam/string.{inspect as ins}
@@ -219,10 +218,7 @@ pub fn render(
           )
         case ds.run_renderer(renderer, parameters, options) {
           Error(error) -> Error(ins(error))
-          _ -> {
-            io.println("")
-            Ok(Nil)
-          }
+          _ -> Ok(Nil)
         }
       },
     ),

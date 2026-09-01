@@ -535,6 +535,10 @@ fn cleanup_stale_html_files(
         )
     }
   })
+  case stale_html {
+    [] -> Nil
+    _ -> io.println("")
+  }
 }
 
 fn filename_shorthand_to_path_fragment(
@@ -674,7 +678,6 @@ pub fn render(arguments: ds.ParsedCLIArguments, course_dir: String) -> Nil {
         existing_html,
         written_artifacts,
       )
-      io.println("")
     }
   }
 }

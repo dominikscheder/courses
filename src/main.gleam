@@ -6,6 +6,7 @@ import gleam/dict
 import gleam/io
 import gleam/list
 import gleam/option
+import gleam/result
 import gleam/string
 import local_desugarers
 import on
@@ -36,10 +37,6 @@ fn local_cli_usage() -> String {
     margin <> "--offline-mathjax",
     margin <> "  -> use local mathjax library instead of CDN url",
     "",
-    margin <> "--last-command",
-    margin <> "  -> run the same arguments as the previous command (from local",
-    margin <> "     .last-command file)",
-    "",
     margin <> "--renumber",
     margin <> "  -> renumber blame lines in local desugarers",
     "",
@@ -68,12 +65,15 @@ fn local_cli_usage() -> String {
 fn handle_fmt_request(
   arguments: ds.ParsedCLIArguments,
   course_dir: String,
-) -> Result(Bool, String) {
+) -> Result(Bool, ds.CLIError) {
   case dict.has_key(arguments.user_args, "--fmt") {
     False -> Ok(False)
     True -> {
       io.println("wly -> wly formatter")
-      use _ <- on.ok(formatter_renderer.render(arguments, course_dir))
+      use _ <- on.ok(
+        formatter_renderer.render(arguments, course_dir)
+        |> result.map_error(ds.ClientSideError),
+      )
       Ok(True)
     }
   }
@@ -92,63 +92,28 @@ pub fn main() {
       }
     })
 
-  let #(args, use_last_command) = case list.contains(args, "--last-command") {
-    True -> {
-      let args = list.filter(args, fn(s) { s != "--last-command" })
-      #(args, True)
-    }
-    False -> #(args, False)
-  }
+  use args <- on.error_ok(ds.read_from_dot_last_command(args), handle_cli_error)
 
-  assert !list.contains(args, "--last-command")
-
-  let args = case use_last_command {
-    True ->
-      case simplifile.read(".last-command") {
-        Ok(contents) -> {
-          string.split(contents, " ")
-          |> list.map(string.trim)
-          |> list.filter(fn(s) { !string.is_empty(s) })
-          |> list.append(args)
-        }
-        Error(_) -> panic as "unable to find '.last-command'"
-      }
-    False -> args
-  }
-
-  let args_string = string.join(args, " ")
-
-  use arguments <- on.stay(
-    case
-      ds.process_command_line_arguments(args, [
-        "--fmt",
-        "--local",
-        "--which",
-        "--offline-mathjax",
-      ])
-    {
-      Error(error) -> {
-        io.println("command line error: " <> ins(error) <> "\n")
-        ds.basic_cli_usage("command line usage:")
-        local_cli_usage() |> io.println
-        on.Return(Nil)
-      }
-
-      Ok(arguments) -> {
-        on.Stay(arguments)
-      }
-    },
+  use arguments <- on.error_ok(
+    ds.process_command_line_arguments(args, [
+      "--fmt",
+      "--local",
+      "--which",
+      "--offline-mathjax",
+    ]),
+    handle_cli_error,
   )
 
-  let help_requested = ds.handle_help_requests(arguments, local_cli_usage)
+  use help_requested <- on.error_ok(
+    ds.handle_help_requests(arguments, local_cli_usage),
+    handle_cli_error,
+  )
 
   use maintenance_requested <- on.error_ok(
     ds.handle_maintenance_requests(arguments, local_desugarers.assertive_tests),
-    fn(error) {
-      io.println("maintenance error: " <> error)
-      io.println("")
-    },
+    handle_cli_error,
   )
+
   use _ <- on.stay(case maintenance_requested || help_requested {
     True -> on.Return(Nil)
     False -> on.Stay(Nil)
@@ -169,6 +134,7 @@ pub fn main() {
         }
       }
     }
+
     Ok([name, ..unexpected]) -> {
       let name = name |> infra.drop_ending_slash |> infra.drop_prefix("./")
       let unexpected = unexpected |> list.map(ins) |> string.join(" ")
@@ -196,12 +162,14 @@ pub fn main() {
         }
       }
     }
+
     Ok([]) -> {
       io.println(
         "option '--which' requires one course directory argument (without spaces); crashing out\n",
       )
       on.Return(Nil)
     }
+
     Error(_) -> {
       io.println(
         "use '--which' option to specify a course directory pls (without spaces); crashing out\n",
@@ -222,21 +190,21 @@ pub fn main() {
 
   use formatting_requested <- on.error_ok(
     handle_fmt_request(arguments, course_dir),
-    fn(error) {
-      io.println("formatter error: " <> error)
-      io.println("")
-    },
+    handle_cli_error,
   )
+
   use _ <- on.stay(case formatting_requested {
     True -> on.Return(Nil)
     False -> on.Stay(Nil)
   })
 
+  use _ <- on.error_ok(ds.write_to_dot_last_command(args), handle_cli_error)
+
   io.println("wly -> html renderer")
   renderer.render(arguments, course_dir)
+}
 
-  case simplifile.write(".last-command", args_string) {
-    Ok(_) -> Nil
-    _ -> io.println("Warning: unable to write args_string to .last-command\n")
-  }
+fn handle_cli_error(error: ds.CLIError) -> Nil {
+  io.println("command line error: " <> ds.cli_error_message(error))
+  io.println("")
 }

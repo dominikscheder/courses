@@ -1,5 +1,5 @@
 |> Sub
-    title=Ein Schritt weiter:  while-Schleifen und \(\mu\)-Rekursion
+    title=Ein Schritt weiter:  while-Schleifen und $\mu$-Rekursion
 
     Primitive Rekursion erlaubt uns Schleifen, allerdings
     nur in einer sehr restriktiven Form:

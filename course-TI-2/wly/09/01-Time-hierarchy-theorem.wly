@@ -255,9 +255,10 @@
     den starken Zeithierarchiesatz zeigen:
     
     |> Theorem
-        \ *(Zeithierarchiesatz, schwache Form).*
+        *(Zeithierarchiesatz, schwache Form).*
         Seien $s, t: \N \rightarrow \N$ mit $s(n) \geq n$ und $s \log s \in o(t)$. Dann gilt
         $\TIME(s) \subsetneq \TIME(t)$.
+
     |> Proof
         Aus Theorem Theorem >>theorem-k-tape-to-2-tape folgt 
         \begin{align*}
@@ -268,7 +269,6 @@
     $1$- oder $2$-Band-Turingmaschinen Gedanken zu machen. Daher ist folgender Satz mit dem, das 
     Sie bis hier gelernt haben, nicht allzu schwer zu zeigen:
 
-
     |> Theorem
         *(Platzhierarchiesatz)*
         Sei $t: \N \rightarrow \N$ zeitkonstruierbar und $s: \N \rightarrow \N$ mit
@@ -276,9 +276,9 @@
         \begin{align*}
         \SPACE(s(n)) \subsetneq \SPACE(t(n)) \ .
         \end{align*}
+
     |> Exercise
         Beweisen Sie das Platzhierarchietheorem. Geht genauso wie das Zeithierarchietheorem.
         Überlegen Sie sich, was der Platzoverhead ist, wenn Sie eine $k$-Bandmaschine durch eine
         1-Band oder 2-Bandmaschine simulieren.
-
        

@@ -964,7 +964,7 @@ button img {
 .math-block {
   position: relative;
   display: block;
-  width: fit-content;
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
   overflow-x: scroll;
@@ -975,7 +975,11 @@ button img {
   display: none;
 }
 
-mjx-container {
+.math-block > mjx-container[display="true"] {
+  min-width: 100%;
+}
+
+mjx-container:not([display="true"]) {
   width: fit-content;
 }
 

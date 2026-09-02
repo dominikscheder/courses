@@ -284,36 +284,30 @@ pub fn pipeline(
         "./::øøChapterCounter-::øøSubCounter.html",
         infra.GoBack,
       )),
-      dl.counters_prepend_incrementing_attribute(#(
+      dl.sigil_counters_prepend_incrementing_attribute(#(
         "Chapter",
         "ChapterCounter",
         infra.GoBack,
       )),
-      dl.counters_prepend_incrementing_attribute(#(
+      dl.sigil_counters_prepend_incrementing_attribute(#(
         "Sub",
         "SubCounter",
         infra.GoBack,
       )),
-      dl.counters_prepend_incrementing_attribute(#(
+      dl.sigil_counters_prepend_incrementing_attribute(#(
         "Exercise",
         "ExerciseCounter",
         infra.Continue,
       )),
-      dl.counters_prepend_incrementing_attribute(#(
+      dl.sigil_counters_prepend_incrementing_attribute(#(
         "Statement",
         "StatementCounter",
         infra.Continue,
       )),
-      dl.writerly_handles_set_value(#(
-        "Chapter",
-        "::øøChapterCounter",
-        infra.GoBack,
-      )),
-      dl.writerly_handles_set_value(#(
-        "Sub",
-        "::øøChapterCounter.::øøSubCounter",
-        infra.GoBack,
-      )),
+      dl.writerly_handles_set_value__batch([
+        #("Chapter", "::øøChapterCounter"),
+        #("Sub", "::øøChapterCounter.::øøSubCounter"),
+      ]),
       dl.writerly_handles_set_value_if_has_ancestor_else(#(
         "Statement",
         "Sub",
@@ -374,7 +368,7 @@ pub fn pipeline(
       dl.insert_attribute_as_text(#("Statement", "title")),
       dl.prepend_attribute_as_text(#("Highlight", "title")),
       dl.prepend_attribute_as_text(#("Remark", "title")),
-      dl.counters_substitute(),
+      dl.sigil_counters_substitute__outside(["pre"]),
     ],
     syntax.create_mathblock_elements(
       [infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar],
@@ -506,7 +500,7 @@ pub fn pipeline(
         "MathBlock",
         "::++EquationCounter",
       )),
-      dl.counters_substitute(),
+      dl.sigil_counters_substitute__outside(["pre"]),
       dl.writerly_handles_generate_v_definitions_from_t_definitions(),
       dl.writerly_handles_add_ids(),
       dl.writerly_handles_grand_wrapper_generate_dictionary("path"),

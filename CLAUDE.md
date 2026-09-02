@@ -197,15 +197,15 @@ Key stages in order:
 7. **Path attributes** — injects `path` attributes: `Chapter` → `./N-0.html`,
    `Sub` → `./N-M.html`
 8. **Handle system** — `set_handle_value` on `Chapter`, `Sub`, `Statement`, `Exercise`, `Topic`;
-   later resolved with `handles_add_ids` + `handles_generate_dictionary_and_id_list` +
-   `handles_substitute_and_fix_nonlocal_id_links`
+   later resolved with `writerly_handles_add_ids` + `writerly_handles_generate_dictionary_and_id_list` +
+   `writerly_handles_substitute_and_fix_nonlocal_id_links`
 9. **Auto-generate titles** — `auto_generate_child_if_missing_from_attribute` for `ChapterTitle`
    and `SubTitle`; injects `number-chiron` attributes for numbering display
 10. **Counter text injection** — `prepend_text_node_if_has_ancestor_else__batch` for `Exercise`
     and `Statement` (with Sub-aware dotted numbering, e.g. "2.3.1")
 11. **`insert_attribute_as_text`** — injects `Statement.title` and `Highlight.title` /
     `Remark.title` as text nodes
-12. **`substitute_counters()`** — expands all `::øø...` counter references
+12. **`counters_substitute()`** — expands all `::øø...` counter references
 13. **Math block parsing** — `syntax.create_mathblock_elements` (`$$`, `\begin{align}`,
     `\begin{align*}`)
 14. **Inline math parsing** — `syntax.create_math_elements` (`\(`, `$`)
@@ -229,8 +229,8 @@ Key stages in order:
 28. **Italic/bold** — `_..._` → `<i>`, `*...*` → `<b>` (skips math, pre, code)
 29. **`bridge_whitespace("b")`**, **`wrap_adjacent_non_whitespace_text_with`** (NoWrap for math/i/b/code)
 30. **Splitting cleanup** — `syntax.split_replacement_cleanup()`
-31. **Handle resolution** — `handles_add_ids`, `handles_generate_dictionary_and_id_list`,
-    `handles_substitute_and_fix_nonlocal_id_links`
+31. **Handle resolution** — `writerly_handles_add_ids`, `writerly_handles_generate_dictionary_and_id_list`,
+    `writerly_handles_substitute_and_fix_nonlocal_id_links`
 32. **Link rearrangement** — `rearrange_links_4_pre_tokenized_src__batch` for patterns like
     "Theorem _1_", "Übungsaufgabe _1_", "Kapitel _1_", "Lemma _1_", etc.
 33. **Class assignment** — `append_class__batch` for `Index`, `Chapter`, `ChapterTitle`, `Sub`,

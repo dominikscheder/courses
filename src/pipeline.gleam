@@ -242,6 +242,7 @@ pub fn pipeline(
     [
       dl.check_tags(#(pre_transformation_approved_tags, "pre-transformation")),
       dl.delete("WriterlyComment"),
+      dl.concatenate_text_nodes(),
       dl.delete_attribute_if(fn(key, _) {
         writerly.is_commented_attribute_key(key)
       }),
@@ -283,45 +284,49 @@ pub fn pipeline(
         "./::øøChapterCounter-::øøSubCounter.html",
         infra.GoBack,
       )),
-      dl.prepend_counter_incrementing_attribute(#(
+      dl.counters_prepend_incrementing_attribute(#(
         "Chapter",
         "ChapterCounter",
         infra.GoBack,
       )),
-      dl.prepend_counter_incrementing_attribute(#(
+      dl.counters_prepend_incrementing_attribute(#(
         "Sub",
         "SubCounter",
         infra.GoBack,
       )),
-      dl.prepend_counter_incrementing_attribute(#(
+      dl.counters_prepend_incrementing_attribute(#(
         "Exercise",
         "ExerciseCounter",
         infra.Continue,
       )),
-      dl.prepend_counter_incrementing_attribute(#(
+      dl.counters_prepend_incrementing_attribute(#(
         "Statement",
         "StatementCounter",
         infra.Continue,
       )),
-      dl.set_handle_value(#("Chapter", "::øøChapterCounter", infra.GoBack)),
-      dl.set_handle_value(#(
+      dl.writerly_handles_set_value(#(
+        "Chapter",
+        "::øøChapterCounter",
+        infra.GoBack,
+      )),
+      dl.writerly_handles_set_value(#(
         "Sub",
         "::øøChapterCounter.::øøSubCounter",
         infra.GoBack,
       )),
-      dl.set_handle_value_if_has_ancestor_else(#(
+      dl.writerly_handles_set_value_if_has_ancestor_else(#(
         "Statement",
         "Sub",
         "::øøChapterCounter.::øøSubCounter.::øøStatementCounter",
         "::øøChapterCounter.::øøStatementCounter",
       )),
-      dl.set_handle_value_if_has_ancestor_else(#(
+      dl.writerly_handles_set_value_if_has_ancestor_else(#(
         "Exercise",
         "Sub",
         "::øøChapterCounter.::øøSubCounter.::øøExerciseCounter",
         "::øøChapterCounter.::øøExerciseCounter",
       )),
-      dl.set_handle_value_if_has_ancestor_else(#(
+      dl.writerly_handles_set_value_if_has_ancestor_else(#(
         "Topic",
         "Sub",
         "::øøChapterCounter.::øøSubCounter",
@@ -369,7 +374,7 @@ pub fn pipeline(
       dl.insert_attribute_as_text(#("Statement", "title")),
       dl.prepend_attribute_as_text(#("Highlight", "title")),
       dl.prepend_attribute_as_text(#("Remark", "title")),
-      dl.substitute_counters(),
+      dl.counters_substitute(),
     ],
     syntax.create_mathblock_elements(
       [infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar],
@@ -397,7 +402,11 @@ pub fn pipeline(
       dl.unwrap("WriterlyBlankLine"),
       dl.trim("p"),
       dl.delete_if_empty("p"),
-      dl.expand_info_attribute(["pre"]),
+      dl.expand_emmet_like_attribute(#(
+        ["pre"],
+        ["WriterlyCodeBlockInfoStringPrefix", "info"],
+        "language",
+      )),
       local_dl.ti2_process_pre_listing_classname(),
       local_dl.ti2_parse_python_prompt_pre(),
       local_dl.ti2_parse_orange_comments_pre(),
@@ -493,22 +502,22 @@ pub fn pipeline(
     ],
     syntax.split_replacement_cleanup(),
     [
-      dl.math_label_with_handle_to_mathjax_tag(#(
+      dl.writerly_handles_materialize_mathjax_tags(#(
         "MathBlock",
         "::++EquationCounter",
       )),
-      dl.substitute_counters(),
-      dl.handles_generate_v_definitions_from_t_definitions(),
-      dl.handles_add_ids(),
-      dl.handles_grand_wrapper_generate_dictionary("path"),
-      dl.handles_grand_wrapper_substitute(
+      dl.counters_substitute(),
+      dl.writerly_handles_generate_v_definitions_from_t_definitions(),
+      dl.writerly_handles_add_ids(),
+      dl.writerly_handles_grand_wrapper_generate_dictionary("path"),
+      dl.writerly_handles_grand_wrapper_substitute(
         #("path", "a", "a", [], [], ["a"], ["Math", "MathBlock"]),
       ),
-      // consumes the 'used' column that handles_grand_wrapper_substitute
+      // consumes the 'used' column that writerly_handles_grand_wrapper_substitute
       // leaves on the
       // GrandWrapper dictionary; must sit between the two
-      dl.handles_grand_wrapper_warn_unused(["MathBlock"]),
-      dl.unwrap("GrandWrapper"),
+      dl.writerly_handles_grand_wrapper_warn_unused(["MathBlock"]),
+      dl.writerly_handles_grand_wrapper_unwrap(),
     ],
     [
       dl.tokenize_href_surroundings(),

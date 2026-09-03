@@ -4,7 +4,7 @@ import vxml
 import vxml/blame as bl
 import vxml_pipeline as ds
 import vxml_pipeline/core.{type Pipeline} as infra
-import vxml_pipeline/delimited_syntax as syntax
+import vxml_pipeline/delimiter_pipelines as syntax
 import vxml_pipeline/desugarers as dl
 import vxml_pipeline/split_replacement as sr
 import writerly
@@ -370,16 +370,18 @@ pub fn pipeline(
       dl.prepend_attribute_as_text(#("Remark", "title")),
       dl.sigil_counters_substitute__outside(["pre"]),
     ],
-    syntax.create_mathblock_elements(
+    syntax.math_block_pipeline(
       [infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar],
       infra.DoubleDollar,
       ["WriterlyBlankLine"],
+      [],
     ),
-    syntax.create_math_elements(
+    syntax.inline_math_pipeline(
       [infra.BackslashParenthesis, infra.SingleDollar],
       infra.SingleDollar,
       infra.BackslashParenthesis,
       ["WriterlyBlankLine"],
+      [],
     ),
     [
       dl.regex_split_and_replace__outside(
@@ -494,7 +496,7 @@ pub fn pipeline(
         "NoWrap",
       )),
     ],
-    syntax.split_replacement_cleanup(),
+    syntax.delimiter_cleanup_pipeline(),
     [
       dl.writerly_handles_materialize_mathjax_tags(#(
         "MathBlock",

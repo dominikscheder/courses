@@ -2,7 +2,7 @@ import gleam/list
 import local_desugarers as local_dl
 import vxml.{type VXML, V}
 import vxml_pipeline/core.{type Desugarer, type Pipeline}
-import vxml_pipeline/delimited_syntax as syntax
+import vxml_pipeline/delimiter_pipelines as syntax
 
 fn apply_pipeline(vxml: VXML, pipeline: Pipeline) -> VXML {
   list.fold(pipeline, vxml, fn(vxml, desugarer: Desugarer) {

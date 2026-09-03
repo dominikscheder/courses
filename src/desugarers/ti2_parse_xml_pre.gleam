@@ -68,10 +68,9 @@ fn nodemap(vxml: VXML) -> VXML {
                         span(b, "xml-0", "<?"),
                         span(b |> bl.advance(2), "xml-1", tag),
                       ]
-                      xs.TagStartDoctype(b, tag) -> [
-                        span(b, "xml-0", "<!"),
-                        span(b |> bl.advance(2), "xml-1", tag),
-                      ]
+                      xs.DoctypeStartSequence(b) -> [span(b, "xml-0", "<!")]
+                      xs.DoctypeContents(b, load) -> [span(b, "xml-1", load)]
+                      xs.DoctypeEndSequence(b) -> [span(b, "xml-0", ">")]
                       xs.TagStartClosing(b, tag) -> [
                         span(b, "xml-0", "</"),
                         span(b |> bl.advance(2), "xml-1", tag),
@@ -90,6 +89,7 @@ fn nodemap(vxml: VXML) -> VXML {
                       xs.ValueSingleQuoted(b, load) -> [
                         span(b, "xml-4", "'" <> load <> "'"),
                       ]
+                      xs.ValueUnquoted(b, load) -> [span(b, "xml-4", load)]
                       xs.ValueMalformed(b, load) -> [span(b, "xml-4b", load)]
                       xs.TagEndOrdinary(b) -> [span(b, "xml-0", ">")]
                       xs.TagEndXMLVersion(b) -> [span(b, "xml-0", "?>")]

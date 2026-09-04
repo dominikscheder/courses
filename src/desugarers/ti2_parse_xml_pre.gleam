@@ -95,6 +95,9 @@ fn nodemap(vxml: VXML) -> VXML {
                       xs.TagEndXMLVersion(b) -> [span(b, "xml-0", "?>")]
                       xs.TagEndSelfClosing(b) -> [span(b, "xml-0", "/>")]
                       xs.Text(b, content) -> [span(b, "xml-5", content)]
+                      xs.TextWithUnrecognizedLessThan(b, content) -> [
+                        span(b, "xml-5", content),
+                      ]
                       xs.CommentStartSequence(b) -> [span(b, "xml-6", "<!--")]
                       xs.CommentEndSequence(b) -> [span(b, "xml-6", "-->")]
                       xs.CommentContents(b, load) -> [span(b, "xml-6", load)]
@@ -128,6 +131,26 @@ fn desugarer_blame(line_no: Int) {
 
 fn assertive_tests_data() -> List(testing.AssertiveTestDataNoParam) {
   [
+    testing.data_no_param(
+      source: "
+                  <> root
+                    <> pre
+                      language=xml
+                      <>
+                        'x < 2'
+                ",
+      expected: "
+                  <> root
+                    <> pre
+                      <> span
+                        class=xml-5
+                        <>
+                          'x < 2'
+                      <>
+                        ''
+                        ''
+                ",
+    ),
     testing.data_no_param(
       source: "
                   <> root

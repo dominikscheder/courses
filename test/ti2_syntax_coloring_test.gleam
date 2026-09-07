@@ -27,7 +27,7 @@ fn contains_annotated_span(vxml: VXML) -> Bool {
 }
 
 fn assert_annotation_survives(source: String, colorer: Desugarer) {
-  let assert Ok([vxml]) = vxml.parse_string(source, "integration test", True)
+  let assert Ok([vxml]) = vxml.string_to_vxmls(source, "integration test")
   let pipeline = [
     colorer,
     ..syntax.annotated_backtick_pipeline(

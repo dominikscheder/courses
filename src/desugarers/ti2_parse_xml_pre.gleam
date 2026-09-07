@@ -68,10 +68,9 @@ fn nodemap(vxml: VXML) -> VXML {
                         span(b, "xml-0", "<?"),
                         span(b |> bl.advance(2), "xml-1", tag),
                       ]
-                      xs.TagStartDoctype(b, tag) -> [
-                        span(b, "xml-0", "<!"),
-                        span(b |> bl.advance(2), "xml-1", tag),
-                      ]
+                      xs.DoctypeStartSequence(b) -> [span(b, "xml-0", "<!")]
+                      xs.DoctypeContents(b, load) -> [span(b, "xml-1", load)]
+                      xs.DoctypeEndSequence(b) -> [span(b, "xml-0", ">")]
                       xs.TagStartClosing(b, tag) -> [
                         span(b, "xml-0", "</"),
                         span(b |> bl.advance(2), "xml-1", tag),
@@ -90,11 +89,15 @@ fn nodemap(vxml: VXML) -> VXML {
                       xs.ValueSingleQuoted(b, load) -> [
                         span(b, "xml-4", "'" <> load <> "'"),
                       ]
+                      xs.ValueUnquoted(b, load) -> [span(b, "xml-4", load)]
                       xs.ValueMalformed(b, load) -> [span(b, "xml-4b", load)]
                       xs.TagEndOrdinary(b) -> [span(b, "xml-0", ">")]
                       xs.TagEndXMLVersion(b) -> [span(b, "xml-0", "?>")]
                       xs.TagEndSelfClosing(b) -> [span(b, "xml-0", "/>")]
                       xs.Text(b, content) -> [span(b, "xml-5", content)]
+                      xs.TextWithUnrecognizedLessThan(b, content) -> [
+                        span(b, "xml-5", content),
+                      ]
                       xs.CommentStartSequence(b) -> [span(b, "xml-6", "<!--")]
                       xs.CommentEndSequence(b) -> [span(b, "xml-6", "-->")]
                       xs.CommentContents(b, load) -> [span(b, "xml-6", load)]
@@ -128,6 +131,26 @@ fn desugarer_blame(line_no: Int) {
 
 fn assertive_tests_data() -> List(testing.AssertiveTestDataNoParam) {
   [
+    testing.data_no_param(
+      source: "
+                  <> root
+                    <> pre
+                      language=xml
+                      <>
+                        'x < 2'
+                ",
+      expected: "
+                  <> root
+                    <> pre
+                      <> span
+                        class=xml-5
+                        <>
+                          'x < 2'
+                      <>
+                        ''
+                        ''
+                ",
+    ),
     testing.data_no_param(
       source: "
                   <> root

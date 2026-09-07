@@ -1,0 +1,53 @@
+|> Sub
+    title=Viele Reduktionen auf SAT
+
+    |> TopicAnnouncement
+        Perfekte Matchings
+
+    |> Definition 
+        *(Matching).* Let $G = (V,E)$ be a graph. A _matching_ is a subset $M \subseteq E$ of edges that ``do not touch``. Formally, 
+        \begin{align*}
+        \forall e, f \in M: \ |e \cap f| \ne 1 \ . 
+        \end{align*}
+        So either $e, f$ are identical or don't share a vertex. In other words, the subgraph $(V,M)$ has maximum degree 1. A matching $M$ is a _perfect matching_ if $|M| = |V|/2$; equivalently, if $(V,M)$ is a $1$-regular graph. 
+
+
+    |> Problem
+        (`PerfectMatching`{sc}). Gegeben ein Graph $G= (V,E)$. Gibt es ein perfektes Matching $M \subseteq E$?
+    
+
+    |> Exercise 
+        Zeigen Sie, wie man für einen Graphen $G = (V,E)$ eine $2$-CNF $F$ mit Variablenmenge $E$ bauen kann, so dass es eine "offensichtliche" Bijektion gibt zwischen der Menge der Matchings in $G$ und der Menge der erfüllenden Belegungen von $F$. Formal: zu jedem $M \subseteq E$ betrachten wir die Belegung 
+        \begin{align}
+        \beta_E : E & \rightarrow \{0,1\} \\
+        e & \mapsto 
+        \begin{cases}
+        1 & \textnormal{ wenn $e \in M$} \\
+        0 & \textnormal{ wenn $e \not \in M$.}
+        \end{cases}
+        \label{eqn-matchings-and-assignments}
+        \end{align}
+        Es soll also gelten: $M \subseteq E$ ist ein Matching von $G$ genau dann, wenn $F(\beta_E) = 1$ ist. 
+        
+        
+
+
+    |> Exercise 
+        Reduzieren Sie `PerfectMatching`{sc} auf SAT: zeigen Sie, wie man für $G = (V,E)$ eine CNF-Formel $F$ über der Variablenmenge $E$ bauen kann, so dass perfekte Matchings von $G$ und erfüllende Belegungen von $F$ genau korrespondieren, wie in (\ref{eqn-matchings-and-assignments}) dargelegt. 
+
+
+
+    |> TopicAnnouncement 
+        Maximum Independent Set
+
+
+    |> Definition 
+        Eine _unabhängige Menge_ in einem Graphen $G = (V,E)$ ist eine Menge $X \subseteq V$ von Knoten, so dass keine zwei Knoten in $X$ benachbart sind:
+        \begin{align*}
+        \forall u, v \in X: \{u,v\} \not \in E \ . 
+        \end{align*}
+
+    Wir betrachten nun das Optimierungsproblem, in einem Graphen die größtmögliche unabhängige Menge zu finden.
+
+    |> Problem
+        (`Maximum Independent Set`{sc}). Gegeben 

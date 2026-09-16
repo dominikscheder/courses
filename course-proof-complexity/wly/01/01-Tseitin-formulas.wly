@@ -30,8 +30,8 @@
 
         \begin{align*}
         h + i&amp;= 1 \tag{$c_t$}\\
-        e + f&amp;= 1 \tag{$c_u$} \\
-        f + g + i&amp;= 0 \tag{$c_v$}\\
+        e + f&amp;= 1 \tag{c_u_def##<<$c_u$>>##} \\
+        f + g + i&amp;= 0 \tag{c_v_def##<<$c_v$>>##}\\
         e + g + h&amp;= 0 \tag{$c_w$}
         \end{align*}
 
@@ -67,14 +67,14 @@
 
         \begin{align}
         h + i + e + f + f + g + i + e + g + h = 1
-        \label{eqn-sum-all-constraints}
+        eqn-sum-all-constraints##<<
         \end{align}
 
         Every variable occurs twice on the left-hand side;
         this is clear since for each edge $e = \{u,v\}$, the
         variable $x_e$ appears in $c_u$ and $c_v$ and nowhere
         else. Modulo 2 the above
-        (\ref{eqn-sum-all-constraints}) reduces to
+        (>>eqn-sum-all-constraints) reduces to
 
         \begin{align*}
         0 = 1 \ ,
@@ -98,7 +98,7 @@
                 original=img/tseitin/tseitin.ipe
 
         Here is a vector $\x \in \{0,1\}^E$ that is _not_ a
-        solution: constraints $c_u$ and $c_v$ are violated:
+        solution: constraints [($c_u$)](>>c_u_def) and [($c_v$)](>>c_v_def) are violated:
 
         |> figure
             |> img

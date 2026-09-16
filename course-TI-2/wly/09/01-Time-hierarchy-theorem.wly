@@ -28,7 +28,7 @@
     einer Turingmaschine beginnt, lehnt $U^k$ sofort ab.
 
     ```dominik-prompt-response
-    $`ls`{elm-0}
+    $ ls
     IMG-1.jpg
     IMG-2.jpg
     index.html$ pwd

@@ -106,6 +106,7 @@ fn assertive_tests_data() -> List(testing.AssertiveTestDataNoParam) {
                     '$ ls'
                     'IMG-1.jpg'
                     'IMG-2.jpg'
+                    'index.html'
                     '$ pwd'
                     '/home/user/images'
                 ",
@@ -134,6 +135,13 @@ fn assertive_tests_data() -> List(testing.AssertiveTestDataNoParam) {
                     class=terminal-output
                     <>
                       'IMG-2.jpg'
+                  <>
+                    ''
+                    ''
+                  <> span
+                    class=terminal-output
+                    <>
+                      'index.html'
                   <>
                     ''
                     ''

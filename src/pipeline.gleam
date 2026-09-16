@@ -374,14 +374,14 @@ pub fn pipeline(
       [infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar],
       infra.DoubleDollar,
       ["WriterlyBlankLine"],
-      [],
+      ["pre"],
     ),
     syntax.inline_math_pipeline(
       [infra.BackslashParenthesis, infra.SingleDollar],
       infra.SingleDollar,
       infra.BackslashParenthesis,
       ["WriterlyBlankLine"],
-      [],
+      ["pre"],
     ),
     [
       dl.regex_split_and_replace__outside(
@@ -520,7 +520,6 @@ pub fn pipeline(
       dl.rearrange_links_4_pre_tokenized_src__batch([
         #("Theorem <a href=1>_1_</a>", "<a href=1>Theorem _1_</a>"),
         #("Observation <a href=1>_1_</a>", "<a href=1>Observation _1_</a>"),
-        #("(Theorem <a href=1>_1_</a>", "(<a href=1>Theorem _1_</a>"),
         #("Übungsaufgabe <a href=1>_1_</a>", "<a href=1>Übungsaufgabe _1_</a>"),
         #("Aufgabe <a href=1>_1_</a>", "<a href=1>Aufgabe _1_</a>"),
         #("Lemma <a href=1>_1_</a>", "<a href=1>Lemma _1_</a>"),
@@ -531,6 +530,9 @@ pub fn pipeline(
         #("Definition <a href=1>_1_</a>", "<a href=1>Definition _1_</a>"),
       ]),
       dl.detokenize_href_surroundings(),
+      dl.rearrange_links__batch([
+        #("(<a href=0>_0_</a>)", "<a href=0>(_0_)</a>"),
+      ]),
     ],
     [
       dl.wrap_children(#("Carousel", "CarouselItems", infra.Continue)),

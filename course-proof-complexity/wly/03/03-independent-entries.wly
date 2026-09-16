@@ -1,0 +1,23 @@
+|> Sub 
+    title=Matrices with independently chosen entries
+
+    Suppose we sample $A \in \F_2^{n \times n}$ by setting every entry
+    to $1$ with probability $k/n$. Let's see whether the
+    blueprint outlined in the previous chapter works. We run into
+    a couple of problems.
+    |> ol
+        |> li
+            Some constraints will contain
+            much more than $k$ entries, thus we won't be able to write $Ax = b$
+            as a $k$-CNF formula. We can try to remedy this by (1) removing
+            all rows with more than $2k$ entries and constructing
+            a $2k$-CNF formula; (2) alternatively, we can take variables
+            occurring in "too heavy" constraints and fixing them to $0$.
+            Both approaches might cause problems further downstream. 
+        |> li
+            Some small subsystem $A' x = b'$ of only few rows might already be
+            unsatisfiable. Indeed, if row $i$ of $A$ is completely zero and
+            if $b_i=1$, then $Ax = b$ is unsatisfiable and indeed
+            the $i$-th constraint already is. We can remedy this
+            by replacing $A$ with $A+I$ (see below under "fortification").
+        |> li

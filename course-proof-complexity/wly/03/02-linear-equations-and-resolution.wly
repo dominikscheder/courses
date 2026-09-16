@@ -1,0 +1,78 @@
+|> Sub 
+    title=Gaussian resolution: resolution on systems of linear equations
+
+    |> TopicAnnouncement
+        Resolution of such formulas
+
+    We look again at the system of equations from the previous chapter:
+    \begin{align*}
+    x_{1}&= 1 \\
+    x_{1} + x_{2}&= 1 \\
+    x_{3} + x_{6} + x_{8}&= 0 \\
+    x_{4} + x_{5} + x_{6}&= 0 \\
+    x_{2} + x_{5}&= 0\\
+    x_{5} + x_{6} + x_{7}&= 1 \\
+    x_{3} + x_{5} +x_{7}&= 0 \\
+    x_{1} + x_{5} + x_{8} & = 1
+    \end{align*}
+    A resolution is a rule to derive a new clause from two existing clauses
+    according to the following pattern:
+    |> figure
+        |> img
+            src=../img/resolution-steps/resolution-step.svg
+            style=height:4em
+    It is easy to see that the conjunction of the two old clauses implies
+    the resolvent $C \vee D$.
+
+
+    |> Theorem 
+        *(Gaussian Resolution)* Let $A \x = \b$ be an unsatisfiable system of linear equations and let $F$ be the CNF formula encoding it. Let $C_1, C_2, ..., C_t = \Box$ be a tree refutation of $F$. Then there exists a tree...
+
+
+    |> TopicAnnouncement
+        Matrix times vector 
+        
+    We consider a linear system of the form $Ax = b$.
+    If every row of $A$ has at most $k$ $1$s, then it can be
+    written as a $k$-CNF formula $F$. If $Ax = b$ has no solution
+    then $F$ is unsatisfiable. Our goal is to prove that
+    $F$ has only wide (and thus large) resolution refutations.
+    The blueprint for a proof is as follows:
+    |> ol
+        |> li
+            Take a treelike resolution derivation $F \vdash \Box$ and
+            contruct from it the "equation tree" $T$ as in the previous chapter.
+            Each node $u$ of $T$ is labeled with a row vector $c_u^T \in \F_2^n$
+            and a right-hand side $w_u \in \F_2$, representing the
+            constraint $c_u^T \cdot x = w_u$. At a leaf we have
+            $c^T_u = a_i^T$ (a row of $A$) and $w_u = b_i$, so the leaf
+            represents the "original" constraint $a_i^T x = b_i$. At the
+            root we have $c_{\rm root}^T = 0^T$ and $w_{\rm root} = 1$, representing
+            the derived contradiction $0=1$.
+            If $\width(F \vdash \Box) \leq w$ then each equation that appesars
+            at a node of the equation tree has at most $w$ variables:
+            $\norm{c_u^T}_1 \leq w$.
+
+            Note that every constraint $c^T_u \cdot x = w_u$ is the
+            sum of some original constraints. That is, there is a
+            row vector $r^T_u \in \F_2^n$ with
+            $c^T_u = r^T_u \cdot A$ and $w_u = r^T b$.
+            If $u$ is a leaf then $\norm{r^T_u}_1 = 1$ since this is a
+            single original constraint.
+        |> li
+            Show that a linear number of rows of $A$
+            are necessary to derive a contradiction. In other words:
+            $\norm{r^T_{\rm root}} = \alpha n$ for some $\alpha \gt 0$ independent of $n$.
+            Conclude from this that there is a node $u$ in the tree
+            for which
+            \begin{align*}
+            \alpha n \leq \norm{r^T_u}_1 \leq 2 \alpha n
+            \end{align*}
+        |> li
+            Argue by the expansion properties of $A$ that
+            $\norm{s^T A}_1$ is "large" (say linear) whenever $\norm{s^T_1}$ is "large but not
+            too large". Thus, $\norm{r_u^T A}_1$ is large. Since
+            $r_u^T A = c_u^T$, the constraint at node $u$ contains a linear
+            number of variables, and so does the clause appearing at node $u$ in the
+            resolution tree.
+    Depending on how we construct $A$, those points will pose some challenges.

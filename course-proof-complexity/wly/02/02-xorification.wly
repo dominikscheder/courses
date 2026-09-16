@@ -1,0 +1,64 @@
+|> Sub 
+    title=Width to Height via Xorification
+
+   
+    |> Definition 
+        Let $F=F(x_1, \dots, x_n)$ be a $k$-CNF formula on the variables $x_1, \dots, x_n$. Define the Boolean function 
+        \begin{align*}
+        g(y_1, z_1, y_2, z_2, \dots, y_n, z_n) := F(y_1 \oplus z_1, \dots, y_n \oplus z_n) \ . 
+        \end{align*}
+        The above definition constructs a depth-3 circuit for g with a top AND gate, middle OR gates and bottom XOR gates. Each OR gate depends on $2k$ input variables and can thus be transformed into a $2k$-CNF formula; those can then be merged and therefore we can express $g$ as a $2k$-CNF formula, denoted by $G$. 
+
+
+    |> Theorem 
+        handle=theorem-2-Xorification
+        *(citation needed)* Suppose $\width(F \vdash \Box) \geq w$. Then $\size(G \vdash \Box) \geq \pfrac{4}{3}^w$.
+
+    |> Proof 
+        We will go the other way, assuming that $\size(G \vdash \Box) \leq s := \pfrac{4}{3}^w$ and showing that $\width(F \vdash \Box) \leq w$. So let 
+        \begin{align}
+        C_1, \dots, C_s = \Box
+        \label{eqn-resolution-refutation}
+        \end{align}
+        be a resolution refutation of $G$. The idea is that we will hit (\ref{eqn-resolution-refutation}) with a random restriction that will satisfy each clause $C_i$ with probability $1-\pfrac{3}{4}^{|C_i|}$. By an averaging argument, there is some random restriction that satisfies _all_ clauses in (\ref{eqn-resolution-refutation}) of greater than $w$. The remaining sequencee of not-yet-satisfied clauses, all of which contain at most $w$ literals, will be (equivalent to) a refutation of $F$. Thus, $\width(F \vdash \Box)$ will be small. 
+
+        To fill in the details, choose $\rho : \var(G) \rightarrow \{0,1,*\}$ by choosing 
+        \begin{align}
+        (\rho(y_i), \rho(z_i)) \uar \{(0, *), (1, *), (*, 0), (*, 1) \} \ . 
+        \label{eqn-sample-rho}
+        \end{align}
+        In words: for each pair $(y_i, z_i)$, leave one of them unassigned and fix the other one to a random bit.
+
+        |> Observation 
+            Let $C$ be a clause over the variables $y_1, z_1, \dots, y_n, z_n$. Then $\Pr[C(\rho) \ne 1] \leq \pfrac{3}{4}^{|C|}$. 
+
+        |> Proof 
+            The _index_ of a literal $l$ is the $i$ such that $\var(l) \in \{y_i, z_i\}$. We can split $C$ up by index into $a$ pairs and $b$ singletons, i.e., write $C = D_1 \vee \dots \vee D_{a+b}$ with $D_j = l_j \vee l'_j$ for $1 \leq j \leq a$ and $D_j = l_j$ for $a+1 \leq j \leq a+b$ where the literals from the same $D_j$ have the same index and literals from different $D_j$'s have different indices. 
+            Now the events $[D_j(\rho) \ne 1]$ are independent:
+
+            \begin{align*}
+            \Pr[D(\rho) \ne 1] = \prod_{j=1}^{a+b} \Pr[D_j(\rho) \ne 1] \ . 
+            \end{align*}
+
+            For $1 \leq j \leq a$, consider $D_j = l_j \vee l'_j$, for example $D_j = y_i \vee \bar{z}_i$. Then two choices for $\rho$ on $(y_i, z_i)$ out of four satisfy $D_j$, namely $(1,*)$ and $(*,0)$, and thus $\Pr[D_j(\rho) \ne 1] = 1/2$. 
+            For $a+1 \leq j \leq a+b$, consider $D_j = l_j$, for example $D_j = y_i$. Then exactly one choice out of four satisifies $D_j$, namely $(1,*)$, and $\Pr[D_j(\rho) \ne 1] = 3/4$. multiplying everything, we get 
+
+            \begin{align*}
+            \Pr[D(\rho) \ne 1] & = \prod_{j=1}^{a+b} \Pr[D_j(\rho) \ne 1] \\
+            & = \pfrac{1}{2}^{a} \cdot \pfrac{3}{4}^b \\
+            & < \pfrac{3}{4}^{2a} \cdot \pfrac{3}{4}^b  = \pfrac{3}{4}^{2a+b} = \pfrac{3}{4}^{|C|} \ . 
+            \end{align*}
+
+
+        A clause $C$ with $|C| > w$ stays not-yet-satisfied with probability less than $\pfrac{3}{4}^w = \frac{1}{s}$, and thus, when we hit the refutation $C_1, \dots, C_s$ with our random $\rho$, then on expectation strictly fewer than one clause of width greater than $w$ remain not-yet-satisfied. That is, there _is_ some choice of $\rho$ such that _every_ clause $C_i$ from (\ref{eqn-resolution-refutation}) with $|C| > w$ is satisfied by $\rho$. 
+        Let $C'_1, \dots, C'_{s'}$ be the remaining clauses, i.e., each $C'_{i'}$ is $C_i|_{\rho}$ for some $i$. This is a refutation of $G|_{\rho}$, of width at most $w$. 
+
+        |> Observation
+            For each $\rho$ sampled as in (\ref{eqn-sample-rho}) it holds that $\width(G|_{\rho} \vdash \Box) \leq w$.
+
+        Lastly, we claim that $G|_{\rho}$ is in a sense isomorphic to $F$. Indeed, $G$ arises from $F$ by replacing $x_i$ with $y_i \oplus z_i$. Thus, choosing $(0,*)$ at position $i$ makes this $0 \oplus z_i  \equiv z_i$; choosing $(1,*)$ makes it $1 \oplus z_i  \equiv \bar{z}_i$; choosing $(*,0)$ makes it $y_i$; and $(*,1)$ makes it $\bar{y}_i$. Whatever we choose, $x_i$ is simply randomly renamed into $y_i$ or $z_i$, and with probability $1/2$ all its occurrences are negated. This process describes how we arrive from $F$ at $G|_{\rho}$. Clearly renaming a variable and possibly negating all its occurrences does not affect resolution width, and therefore 
+        \begin{align*}
+        \width(F, \Box) = \width(F|_{\rho}, \Box) \leq w \ . 
+        \end{align*}
+        
+           

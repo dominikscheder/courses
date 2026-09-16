@@ -2,8 +2,8 @@
     title=Die Grenzen regulärer Sprachen
     id=limitations-of-regular-grammars
 
-    Noch spannender, als zu erkunden, was möglich ist,
-    ist aus Sicht eines theoretischen Informatikers, zu
+    Noch spannender, als zu erkunden, was möglich ist, ist
+    aus Sicht eines theoretischen Informatikers, zu
     erkunden, was _nicht möglich_ ist. Also Grenzen
     aufzuzeigen. Wir haben in den letzten vier
     Teilkapiteln gezeigt, was man mit regulären Sprachen
@@ -13,10 +13,10 @@
 
     |> Example
         SEI $L$ die Sprache aller Wörter über dem Alphabet
-        $\Sigma = \{a,b\}$, die die Form $a^n b^n$ haben;
-        also eine beliebig lange Folge von $a$s, gefolgt von
-        genau so vielen $b$ s. Hier ist eine kontextfreie
-        Grammatik für $L$:
+        $\Sigma = \{a,b\}$, die die Form $a^n b^n$ haben; also
+        eine beliebig lange Folge von $a$s, gefolgt von genau
+        so vielen $b$ s. Hier ist eine kontextfreie Grammatik
+        für $L$:
 
         \begin{align*}
         S&\rightarrow \epsilon \\
@@ -40,11 +40,11 @@
         Grammatik $G = (\{a,b\}, N, P, S)$ gibt und dann
         argumentieren, dass $G$ nicht richtig ist; zum
         Beispiel Produktionen danach einteilen, ob sie
-        $X \rightarrow aY$ oder $X \rightarrow bY$ machen,
-        und dann die darin involvieren Nichtterminale $X$ und
-        $Y$ weiter betrachten. Zu Hilfe kommt uns die
-        Tatsache, dass wir für reguläre Sprachen nun viele
-        äquivalente Modelle gefunden haben:
+        $X \rightarrow aY$ oder $X \rightarrow bY$ machen, und
+        dann die darin involvieren Nichtterminale $X$ und $Y$
+        weiter betrachten. Zu Hilfe kommt uns die Tatsache,
+        dass wir für reguläre Sprachen nun viele äquivalente
+        Modelle gefunden haben:
 
         |> ol
             |> li
@@ -82,30 +82,29 @@
         viele Dinge "merken": er weiß nur, in welchem Zustand
         er gerade ist. Um Wörter der Form $a^nb^n$ zu
         erkennen, müsste er sich allerdings merken, wieviele
-        $a$ 's er bereits gelesen hat. Vergisst er es, kann
-        er bei den folgenden $b$'s nicht mehr richtig
-        mitzählen. Unser Plan ist also, das Gedächtnis des
-        Automaten zu überfordern. Setzen wir diesen Plan in
-        die Tat um. Wir füttern dem Automaten eine Folge von
-        $aaaaaaa...$ und beobachten die Zustandsfolge
-        $q_0, q_1, q_2, \dots$, die sich daraus ergibt.
-        Formal:
+        $a$ 's er bereits gelesen hat. Vergisst er es, kann er
+        bei den folgenden $b$'s nicht mehr richtig mitzählen.
+        Unser Plan ist also, das Gedächtnis des Automaten zu
+        überfordern. Setzen wir diesen Plan in die Tat um. Wir
+        füttern dem Automaten eine Folge von $aaaaaaa...$ und
+        beobachten die Zustandsfolge $q_0, q_1, q_2, \dots$,
+        die sich daraus ergibt. Formal:
 
         \begin{align*}
         q_i := \hat{\delta}(q_0, a^i) \ ,
         \end{align*}
 
         wobei $a^i$ das Wort ist, dass aus $i$ vielen $a$ 's
-        hintereinander besteht. Da der Automat nur $|Q|$
-        viele Zustände hat, muss sich nach mindestens $|Q|$
-        vielen $a$'s eine Wiederholung einstellen, also
-        $q_i = q_j$ für $0 \leq i \lt j \leq |Q|$. Die Wörter
-        $a^i$ und $a^j$ bringen also den Automaten beide in
-        den Zustand $q_i$; der Automat kann also nicht
-        unterscheiden, ob er gerade $i$ viele oder $j$ viele
-        $a$'s gelesen hat. Nun schlagen wir zu: Wir füttern
-        den Automaten mit dem Wort $a^i b^i$. Der Automat
-        landet in einem Zustand $q^*$:
+        hintereinander besteht. Da der Automat nur $|Q|$ viele
+        Zustände hat, muss sich nach mindestens $|Q|$ vielen
+        $a$'s eine Wiederholung einstellen, also $q_i = q_j$
+        für $0 \leq i \lt j \leq |Q|$. Die Wörter $a^i$ und
+        $a^j$ bringen also den Automaten beide in den Zustand
+        $q_i$; der Automat kann also nicht unterscheiden, ob
+        er gerade $i$ viele oder $j$ viele $a$'s gelesen hat.
+        Nun schlagen wir zu: Wir füttern den Automaten mit dem
+        Wort $a^i b^i$. Der Automat landet in einem Zustand
+        $q^*$:
 
         \begin{align*}
         q_0 \step{a^i} q_i \step{b^i} q^*
@@ -130,11 +129,10 @@
 
         Wir haben aber bereits gesehen, dass $q^*$ ein
         akzeptierender Zustand sein muss; also akzeptiert der
-        Automat auch $a^j b^i$ ; das ist aber ein Fehler,
-        denn $a^j b^i \not \in L$. Der Automat ist also
-        fehlerhaft. Da wir dieses Argument ganz allgemein für
-        einen endlichen Automaten $M$ geführt haben,
-        schließen wir:
+        Automat auch $a^j b^i$ ; das ist aber ein Fehler, denn
+        $a^j b^i \not \in L$. Der Automat ist also fehlerhaft.
+        Da wir dieses Argument ganz allgemein für einen
+        endlichen Automaten $M$ geführt haben, schließen wir:
 
         |> div
             class=display
@@ -156,8 +154,8 @@
     Sprachen ein solches Argument anführen kann. Die
     Hauptarbeit besteht nun darin, Konzepte wie _der
     Automat kann $\alpha$ nicht von $\alpha'$
-    unterscheiden_ und _der Automat muss aber $\gamma$
-    von $\gamma'$ unterscheiden können_ zu formalisieren.
+    unterscheiden_ und _der Automat muss aber $\gamma$ von
+    $\gamma'$ unterscheiden können_ zu formalisieren.
 
     |> Definition
         *$M$-Äquivalenz* Sei
@@ -171,16 +169,16 @@
         \end{align*}
 
         wenn
-        $\hat{\delta}(\qstart, \alpha) =
-        \hat{\delta}(\qstart, \beta)$
+        $\hat{\delta}(\qstart, \alpha) = \hat{\delta}(\qstart,
+        \beta)$
         gilt; wenn sie also den Automaten in den gleichen
         Zustand bringen.
 
     Wir können bereits ein bisschen über $\equiv_M$
     aussagen. Wenn beispielsweise $M$ ein endlicher
     Automat für die Sprache $L$ ist und
-    $\alpha \equiv_M \beta$ gilt, dann sind entweder
-    beide Wörter in $L$ (nämlich wenn
+    $\alpha \equiv_M \beta$ gilt, dann sind entweder beide
+    Wörter in $L$ (nämlich wenn
     $\hat{\delta}(\qstart, \alpha)$ ein akzeptierender
     Zustand ist) oder beide Wörter nicht in $L$ (falls es
     kein akzeptierender Zustand ist). Auch sehen wir: wenn
@@ -193,8 +191,8 @@
 
     |> Definition
         *$L$-Äquivalenz* Sei $L \subseteq \Sigma^*$ eine
-        Sprache. Zwei Wörter $\alpha, \beta \in \Sigma^*$
-        sind _$L$ -äquivalent_, geschrieben
+        Sprache. Zwei Wörter $\alpha, \beta \in \Sigma^*$ sind
+        _$L$ -äquivalent_, geschrieben
 
         \begin{align*}
         \alpha \equiv_L \beta \ ,
@@ -217,8 +215,7 @@
         \qstart \Step{\alpha} q \textnormal{ und } \qstart \Step{\beta} q
         \end{align*}
 
-        Des weiteren sei $q' := \hat{\delta}(q, \gamma)$,
-        also
+        Des weiteren sei $q' := \hat{\delta}(q, \gamma)$, also
 
         \begin{align*}
         \qstart \Step{\alpha} q \Step{\gamma} q' \textnormal{ und } \qstart \Step{\beta} q \Step{\gamma}
@@ -239,13 +236,13 @@
     Hier ist nun ein allgemeiner Angriffsplan, wie man
     zeigt, dass eine Sprache $L$ nicht regulär ist: wir
     finden eine unendliche Folge von Wörtern
-    $\alpha_1, \alpha_2, \alpha_3, \dots,$, die alle
-    nicht $L$-äquivalent sind. Wenn nun $M$ ein endlicher
+    $\alpha_1, \alpha_2, \alpha_3, \dots,$, die alle nicht
+    $L$-äquivalent sind. Wenn nun $M$ ein endlicher
     Automat mit Zustandsmenge $Q$ ist, dann müssen sich
     unter $|Q|+1$ Eingabewörter mindestens zwei
     äquivalente finden, da sie ja nicht alle den Automaten
-    in einen anderen Zustand bringen. Der Automat $M$
-    kann also die Sprache $L$ nicht erkennen. Formaler:
+    in einen anderen Zustand bringen. Der Automat $M$ kann
+    also die Sprache $L$ nicht erkennen. Formaler:
 
     |> Definition
         Sei $L \subseteq \Sigma^*$. Der _Index von $L$_ ist
@@ -291,13 +288,13 @@
         $q = q'$ gelten würde.
 
     |> Example
-        Die Sprache $L = \{a^n b^n \ | \ n \geq 0\}$ ist
-        nicht regulär. In der Tat hat diese Sprache
-        unendlichen Index. Die Wörter $a, aa, aaa, aaaa, ...$
-        sind alle nicht $L$ -äquivalent. Für $a^i$ und $a^j$
-        könnten wir zum Beispiel $\gamma := b^i$ wählen, um
-        zu zeigen, dass $a^i \gamma \in L$ und
-        $a^j \gamma \not \in L$ ist.
+        Die Sprache $L = \{a^n b^n \ | \ n \geq 0\}$ ist nicht
+        regulär. In der Tat hat diese Sprache unendlichen
+        Index. Die Wörter $a, aa, aaa, aaaa, ...$ sind alle
+        nicht $L$ -äquivalent. Für $a^i$ und $a^j$ könnten wir
+        zum Beispiel $\gamma := b^i$ wählen, um zu zeigen,
+        dass $a^i \gamma \in L$ und $a^j \gamma \not \in L$
+        ist.
 
     |> Example
         Sei $L \subseteq \{a,b\}^*$ die Sprache aller
@@ -370,7 +367,7 @@
         $\alpha x \equiv \beta x$. (Überlegen Sie sich,
         warum!) Auch gilt für jedes $1 \leq i \leq n$:
         entweder sind alle Wörter in $A_i$ in der Sprache,
-        also  $A_i \subseteq L$ oder keines, also \(A_i \cap
+        also  $A_i \subseteq L$ oder keines, also \(\(A_i \cap
         L = \emptyset). Des weiteren gibt es genau ein $A_i$,
         welches das leere Wort $\epsilon$ enthält. Wir bauen
         nun einen endlichen Automaten mit der Zustandsmenge
@@ -402,8 +399,8 @@
         \end{align*}
 
         Der Automat $(\Sigma, Q, \qstart, F, \delta)$ erkennt
-        die Sprache $L$; die Anzahl seiner Zustände ist
-        gleich dem Index der Sprache $L$.
+        die Sprache $L$; die Anzahl seiner Zustände ist gleich
+        dem Index der Sprache $L$.
 
     Wir können den Index nicht nur verwenden, um zu
     argumentieren, dass eine Sprache nicht regulär ist,
@@ -438,15 +435,15 @@
             bestehend aus $5-i$ Nullen. Das viertletzte Zeichen
             von $\alpha\gamma$ ist 0, das viertletzte Zeichen von
             $\beta\gamma$ ist 1; also gilt
-            $\alpha\gamma \in L, \beta\gamma\not \in L$, und
-            somit $\alpha \not \equiv \beta$. Der Index ist also
+            $\alpha\gamma \in L, \beta\gamma\not \in L$, und somit
+            $\alpha \not \equiv \beta$. Der Index ist also
             _mindestens_ 16. Das er höchstens 16 ist, sehen wir,
             indem wir einen determinisitschen Automaten mit 16
             Zuständen bauen.
 
         Allgemeiner: sei $L$ die Sprache aller
-        $\alpha \in \{0,1\}^n$, deren $n$-letztes Zeichen
-        eine 1 ist. Dann gibt es für $L$ einen
+        $\alpha \in \{0,1\}^n$, deren $n$-letztes Zeichen eine
+        1 ist. Dann gibt es für $L$ einen
         nichtdeterministischen endlichen Automaten mit $n+1$
         Zuständen und einen determinisitschen mit $2^n$
         Zuständen. Es gibt keinen determinisitschen Automaten

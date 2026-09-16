@@ -14,10 +14,9 @@
     Funktionen mit _einem_ Ausgabewert, also
     $f : \{0,1\}^{n} \to \{0,1\}$. Dies ist ein endliches
     Objekt, wir können es also codieren, indem wir für
-    jeden Eingabewert $(x_1, \ldots, x_n)$ den
-    Ausgabewert angeben. Dies nennt man eine
-    _Wahrheitstabelle_ (englisch _truth table_). Hier
-    sehen Sie ein Beispiel:
+    jeden Eingabewert $(x_1, \ldots, x_n)$ den Ausgabewert
+    angeben. Dies nennt man eine _Wahrheitstabelle_
+    (englisch _truth table_). Hier sehen Sie ein Beispiel:
 
     $$
     \begin{array}{ccc|c}
@@ -63,12 +62,12 @@
     }
     \end{align*}
 
-    Die obere, roten Hälfte kommt Ihnen vielleicht
-    bekannt vor: es ist genau die Wahrheitstabelle von
-    $y \vee z$. Der Wert von $x$ ist im roten Teil ja
-    immer $0$, also ist die obere Hälfte im Prinzip eine
-    Funktion mit zwei Variablen: $y$ und $z$; wir sagen
-    also mal, die obere Hälfte "ist" 
+    Die obere, roten Hälfte kommt Ihnen vielleicht bekannt
+    vor: es ist genau die Wahrheitstabelle von $y \vee z$.
+    Der Wert von $x$ ist im roten Teil ja immer $0$, also
+    ist die obere Hälfte im Prinzip eine Funktion mit zwei
+    Variablen: $y$ und $z$; wir sagen also mal, die obere
+    Hälfte "ist" 
     |> span
         style=color:red
         $y \vee z$
@@ -125,9 +124,9 @@
         (x_1,\dots,x_{i-1}, x_{i+1}, \dots, x_n) &\mapsto f(x_1,\dots,x_{i-1}, b, x_{i+1}, \dots, x_{n}).
         \end{align*}
 
-        In Worten: wir fixieren den $i$-ten Input auf den
-        Wert $b$ und erhalten eine Funktion in den restlichen
-        $n-1$ Variablen.
+        In Worten: wir fixieren den $i$-ten Input auf den Wert
+        $b$ und erhalten eine Funktion in den restlichen $n-1$
+        Variablen.
 
     Das Ergebnis ist im Allgemeinen sehr groß, aber was
     erwarten Sie bei einer Tabelle mit $2^n$ Zeilen?
@@ -175,9 +174,9 @@
     x \wedge \bar{y} \wedge z \ .
     $$
 
-    Von den 8 möglichen Input-Tupeln gibt es nur eins,
-    für das dieser Ausdruck eine 1 ausgibt, in diesem
-    Falle $(1,0,1)$. Wir werden nun also für jede 1-Zeile
+    Von den 8 möglichen Input-Tupeln gibt es nur eins, für
+    das dieser Ausdruck eine 1 ausgibt, in diesem Falle
+    $(1,0,1)$. Wir werden nun also für jede 1-Zeile
     unserer Wahrheitstabelle einen solchen Ausdruck
     hinschreiben und diese dann in einem großen OR
     zusammenführen. Einen Ausdruck, der aus einem AND von
@@ -257,9 +256,9 @@
     1 herauskommen. Wir gehen also in der Wahrheitstabelle
     alle Zeilen mit Wert 0 durch und schreiben einen
     Ausdruck, der genau diese Zeile verbietet. So kann man
-    den Ausdruck $(\bar{x} \vee \bar{y} \vee z)$
-    verstehen als " $(x,y,z)$ darf nicht $(1,1,0)$ sein."
-    An dem obigen Beispiel ergibt dies:
+    den Ausdruck $(\bar{x} \vee \bar{y} \vee z)$ verstehen
+    als " $(x,y,z)$ darf nicht $(1,1,0)$ sein." An dem
+    obigen Beispiel ergibt dies:
 
     $$
     \begin{array}{ccc|c|c}
@@ -288,9 +287,9 @@
             src=img/circuits/cnf-example.svg
 
     |> Definition
-        Eine Formel in _konjunktiver Normalform_ (CNF) ist
-        ein AND von Klauseln. Alternativ: eine CNF-Formel ist
-        ein Schaltkreis der Tiefe 2 (wobei NOT-Gates nicht
+        Eine Formel in _konjunktiver Normalform_ (CNF) ist ein
+        AND von Klauseln. Alternativ: eine CNF-Formel ist ein
+        Schaltkreis der Tiefe 2 (wobei NOT-Gates nicht
         mitzählen), dessen Output-Gate ein AND-Gate ist.
 
     In diesem konkreten Beispiel ist die CNF viel kürzer

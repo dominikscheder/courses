@@ -3,8 +3,7 @@
 
     |> Problem
         (`3-Colorability`{sc}). Gegeben ein Graph $G= (V,E)$,
-        gibt es eine Färbung $c : V \rightarrow \{1,2,3\}$
-        mit
+        gibt es eine Färbung $c : V \rightarrow \{1,2,3\}$ mit
 
         \begin{align*}
         \forall\ \{u,v\} \in E: \ c(u) \ne c(v) \ ?
@@ -76,11 +75,11 @@
         ```
 
         Falls nun $G$ $3$-färbbar ist, wenn es also eine
-        solche Färbung $c: V \rightarrow \{1,2,3\}$ gibt,
-        dann wird obiger Algorithmus `is_3_coloring(graph,c)`
-        auch `True` ausgeben. Falls er für ein $c$ `True`
-        ausgibt, dann ist $c$ tatsächlich eine gültige
-        3-Färbung und $G$ ist $3$ -färbbar.
+        solche Färbung $c: V \rightarrow \{1,2,3\}$ gibt, dann
+        wird obiger Algorithmus `is_3_coloring(graph,c)` auch
+        `True` ausgeben. Falls er für ein $c$ `True` ausgibt,
+        dann ist $c$ tatsächlich eine gültige 3-Färbung und
+        $G$ ist $3$ -färbbar.
 
     Das obige Beispiel verdeutlicht die Essenz der Klasse
     NP: es ist nicht klar, wie wir einen effizienten
@@ -90,8 +89,8 @@
 
     |> Exercise
         handle=problem-CNF-SAT
-        (`CNF-Satisfiability`{sc}). Gegeben eine Formel $F$
-        in konjunktiver Normalform. Gibt es eine Belegung der
+        (`CNF-Satisfiability`{sc}). Gegeben eine Formel $F$ in
+        konjunktiver Normalform. Gibt es eine Belegung der
         Variablen, so dass $F$ zu `True` wird?
 
     Auch hier können wir eine einfache Prüf-Funktion
@@ -125,8 +124,8 @@
         eine unabhängige Menge in $I$ in $G$ mit $|I| \geq k$,
         falls es eine solche gibt.
 
-    Ist dies in NP? Schon syntaktisch nicht! Es ist ja
-    gar kein Entscheidungsproblem. Wir können aber eine
+    Ist dies in NP? Schon syntaktisch nicht! Es ist ja gar
+    kein Entscheidungsproblem. Wir können aber eine
     Entscheidungsvariante definieren:
 
     |> Problem
@@ -170,16 +169,16 @@
     Dies geht nicht immer! Erinnern Sie sich an
     `Primes`{sc}. Der Agrawal–Kayal–Saxena-Algorithmus
     lässt uns entscheiden, ob eine gegebene Zahl $n$ prim
-    ist; also auch, ob $n$ zusammengesetzt ist;
-    allerdings geht daraus kein Algorithmus hervor, der
-    einen Faktor auch findet. Wo wir gerade beim
-    Faktorisieren sind: das Problem _gegeben eine Zahl
-    $X \in \N$, zerlege sie in ihre Primfaktoren_ ist ja
-    kein Entscheidungsproblem. Können wir ein
-    "entsprechendes" Entscheidungsproblem formulieren? Es
-    sollte gelten: wenn wir das Entscheidungsproblem lösen
-    können, dann auch das Suchproblem. Wie wir gesehen
-    haben, ist `Primes`{sc} bzw.`NonPrimes`{sc}nicht das
+    ist; also auch, ob $n$ zusammengesetzt ist; allerdings
+    geht daraus kein Algorithmus hervor, der einen Faktor
+    auch findet. Wo wir gerade beim Faktorisieren sind:
+    das Problem _gegeben eine Zahl $X \in \N$, zerlege sie
+    in ihre Primfaktoren_ ist ja kein
+    Entscheidungsproblem. Können wir ein "entsprechendes"
+    Entscheidungsproblem formulieren? Es sollte gelten:
+    wenn wir das Entscheidungsproblem lösen können, dann
+    auch das Suchproblem. Wie wir gesehen haben, ist
+    `Primes`{sc} bzw.`NonPrimes`{sc}nicht das
     entsprechende Entscheidungsproblem, weil es uns nicht
     erlaubt, den Faktor auch zu finden.
 

@@ -1,8 +1,8 @@
 |> Sub
     title=Primitive Rekursion: Motivation und Definitionen
 
-    Primitive Rekursion ist ein Versuch, Berechbarkeit
-    von Funktionen $f: \N^k \rightarrow \N$ anhand eines
+    Primitive Rekursion ist ein Versuch, Berechbarkeit von
+    Funktionen $f: \N^k \rightarrow \N$ anhand eines
     "Baukastenprinzips" zu modellieren. Man stellt gewisse
     Basisfunktionen als "offensichtlich berechenbar" zur
     Verfügung und beschreibt _Kombinatoren_, die aus

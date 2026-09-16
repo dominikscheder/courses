@@ -10,8 +10,8 @@
     Wie wir zuvor gelernt haben, ist sie nicht regulär:
     die Wörter $a^i$, $a^j$ sind _unterscheidbar_ für
     $i\ne j$, denn für $\gamma := b^i$ gilt
-    $a^i \gamma \in L$, aber $a^j \gamma \not \in L$.
-    Hier ist eine _kontextfreie_ Grammatik für $L$.
+    $a^i \gamma \in L$, aber $a^j \gamma \not \in L$. Hier
+    ist eine _kontextfreie_ Grammatik für $L$.
 
     \begin{align*}
     S & \step{1} TX \\

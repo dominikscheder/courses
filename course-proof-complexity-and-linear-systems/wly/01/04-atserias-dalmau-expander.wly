@@ -42,9 +42,9 @@
         For a partial assignment $\rho$, i.e., a state of the
         Atserias-Dalmau game, let $E_\rho$ denote the set of
         edges $e$ for which $x_e$ is defined by $\rho$, and
-        let $G_{-\rho} := (V, E \setminus E_{\rho})$. That
-        is, $G_{-\rho}$ is the graph obtained by removing
-        edges defined under $\rho$.
+        let $G_{-\rho} := (V, E \setminus E_{\rho})$. That is,
+        $G_{-\rho}$ is the graph obtained by removing edges
+        defined under $\rho$.
 
         |> Observation
             When we remove up to $w+1$ edges from $G$, no
@@ -70,8 +70,8 @@
                 The connected component of $G_{-\rho}$ containing the
                 Achilles heel of $\alpha$ has more than $t$ vertices.
 
-        How can Delayer maintain the invariant? Let $S$ be
-        the connected component of $G_{-\rho}$ containing the
+        How can Delayer maintain the invariant? Let $S$ be the
+        connected component of $G_{-\rho}$ containing the
         Achilles heel $u$ of $\alpha$. Suppose Prover queries
         $x_e$. There are two cases:
 
@@ -83,8 +83,8 @@
         shrink.
 
         *Case 2:* Removing $e$ makes $S$ break into two parts
-        $S_1$ and $S_2$. Since $t \lt |S| = |S|_1 + |S|_2$,
-        at least one of the parts is greater than $t/2$, say
+        $S_1$ and $S_2$. Since $t \lt |S| = |S|_1 + |S|_2$, at
+        least one of the parts is greater than $t/2$, say
         $S_1$. Since $S_1$ is a component of the graph
         obtained from $G$ by removing $|\rho|+1 \leq w+1$
         edges, we know from the claim that $|S_1| \gt t$. If
@@ -98,10 +98,9 @@
         in $G_{-\rho}$. She constructs
         $\alpha' := \alpha \oplus p$, meaning taking $\alpha$
         but flipping all $x_f$ for edges $f \in p$. She only
-        changes variables undefined by $\rho$, so $\alpha'$
-        is still a superassignment of $\rho$. It satisfies
-        all constraints except $v$. So Delayer changed
-        $\alpha$ to $\alpha'$, which moved the Achilles heel
-        into the large enough connected component $S_1$. Thus
-        she maintains all invariants and can play
-        indefinitely.
+        changes variables undefined by $\rho$, so $\alpha'$ is
+        still a superassignment of $\rho$. It satisfies all
+        constraints except $v$. So Delayer changed $\alpha$ to
+        $\alpha'$, which moved the Achilles heel into the
+        large enough connected component $S_1$. Thus she
+        maintains all invariants and can play indefinitely.

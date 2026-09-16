@@ -62,8 +62,7 @@
         |> ul
             |> li
                 sie die Sprache entscheidet, also
-                $x \in L \Longleftrightarrow f_M(x) =
-                \texttt{accept}$
+                $x \in L \Longleftrightarrow f_M(x) = \texttt{accept}$
                 und
 
             |> li
@@ -125,21 +124,20 @@
         \textnormal{P} := \bigcup_{k=1}^{\infty} \TIME(n^k) \ ,
         \end{align*}
 
-        also die Klasse aller Probleme (formal: Sprachen),
-        die man in _polynomieller Zeit_ entscheiden kann.
+        also die Klasse aller Probleme (formal: Sprachen), die
+        man in _polynomieller Zeit_ entscheiden kann.
 
     Wenn wir in der Komplexitätstheorie davon sprechen,
     dass ein Algorithmus effizient ist, dann meinen wir:
     seine Laufzeit ist polynomiell, also $O(|x|^k)$ für
-    ein beliebiges aber fixes $k$. Wenn wir zeigen
-    wollen, dass ein Problem (bzw. eine Sprache) in P ist,
-    dann bauen wir üblicherweise keine Turingmaschine,
-    sondern beschreiben (oder implementieren) einen
-    _Algorithmus_, denn wir wissen ja mittlerweile (bzw.
-    vertrauen darauf), dass man diesen Algorithmus dann
-    effizient auf einer Mehrband-Turingmaschine
-    implementieren kann. Wir sind also bildlich gesprochen
-    wieder in
+    ein beliebiges aber fixes $k$. Wenn wir zeigen wollen,
+    dass ein Problem (bzw. eine Sprache) in P ist, dann
+    bauen wir üblicherweise keine Turingmaschine, sondern
+    beschreiben (oder implementieren) einen _Algorithmus_,
+    denn wir wissen ja mittlerweile (bzw. vertrauen
+    darauf), dass man diesen Algorithmus dann effizient
+    auf einer Mehrband-Turingmaschine implementieren kann.
+    Wir sind also bildlich gesprochen wieder in
     [TI-1](https://www.tu-chemnitz.de/informatik/theoretische-informatik/TI-1)
     und können sagen: ein Problem ist in $P$, wenn es
     dafür einen effizienten Algorithmus gibt. Hier ist
@@ -147,11 +145,11 @@
 
     |> ol
         |> li
-            `Undirected Graph Reachability`{sc}: Gegeben ein
-            Graph $(V,E)$ und zwei Knoten $s$ und $t$. Gibt es
-            einen Pfad von $s$ nach $t$? Algorithmus: Tiefensuche
-            oder Breitensuche. Beachten Sie: um das als "Sprache"
-            zu betrachten, müssen wir eine Codierung für Graphen
+            `Undirected Graph Reachability`{sc}: Gegeben ein Graph
+            $(V,E)$ und zwei Knoten $s$ und $t$. Gibt es einen
+            Pfad von $s$ nach $t$? Algorithmus: Tiefensuche oder
+            Breitensuche. Beachten Sie: um das als "Sprache" zu
+            betrachten, müssen wir eine Codierung für Graphen
             festlegen. Das ist wohl kein Problem: wir brauchen
             Klammern, Kommas und ein Alphabet, um unsere Knoten
             bezeichnen zu können.
@@ -178,17 +176,17 @@
             $\Sigma = \{1\}$; ist $n$ eine Primzahl? Algorithmus:
             wir prüfen für jedes $2 \leq k \leq n-1$, ob es $n$
             teilt. (Wie programmiert man Teilbarkeit auf einer
-            Turingmaschine? Sie könnten zum Beispiel $1^k$ auf
-            das zweite Band schreiben und dann beide Bänder
+            Turingmaschine? Sie könnten zum Beispiel $1^k$ auf das
+            zweite Band schreiben und dann beide Bänder
             durchgehen, das zweite mehrmals, und schauen, ob es
             "aufgeht"; das geht in Zeit $n$). Die Gesamtlaufzeit
             ist also $n^2$.
 
         |> li
             `Primes`{sc}: Gegeben eine binär codierte Zahl
-            $x \in \{0,1\}^n$, ist sie eine Primzahl?
-            Algorithmus: der obige Algorithmus, alle potenziellen
-            Teiler auszuprobieren, benötigt $X^2$ Schritte, wobei
+            $x \in \{0,1\}^n$, ist sie eine Primzahl? Algorithmus:
+            der obige Algorithmus, alle potenziellen Teiler
+            auszuprobieren, benötigt $X^2$ Schritte, wobei
             $X \in \N$ die von $x$ codierte Zahl ist. Da
             $X \leq 2^n - 1$ ist dies nicht mehr polynomiell in
             der Eingabelänge $n$. Wir brauchen also einen
@@ -291,8 +289,8 @@
             \{u,v\} \in E_1 \Longleftrightarrow \{f(u), f(v)\} \in E_2 \ ?
             \end{align*}
 
-            In Worten: kann ich von $G_1$ zu $G_2$ gelangen,
-            indem ich die Knoten einfach umbenenne?
+            In Worten: kann ich von $G_1$ zu $G_2$ gelangen, indem
+            ich die Knoten einfach umbenenne?
 
         |> li
             `Factoring`{sc}: Gegeben eine natürliche Zahl in

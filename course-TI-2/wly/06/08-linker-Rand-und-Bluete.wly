@@ -12,12 +12,12 @@
     finden. Als erstes müssen wir uns überlegen, wie die
     Front $\front(\gamma) = \alpha \beta$ überhaupt
     aussehen kann. Wenn wir uns den Ableitungsbaum von
-    $\gamma$ ansehen, wird das einigermaßen
-    offensichtlich sein. Zur Erinnerung: Zu jeder
-    Ableitung $S \Step{}^* w \in \Sigma^*$ können wir
-    eindeutig einen _Ableitungsbaum_ zeichnen. Wenn die
-    Grammatik eindeutig ist, so hängt auch der Baum nur
-    vom Wort $w \in L(G)$ ab und nicht von der Ableitung
+    $\gamma$ ansehen, wird das einigermaßen offensichtlich
+    sein. Zur Erinnerung: Zu jeder Ableitung
+    $S \Step{}^* w \in \Sigma^*$ können wir eindeutig
+    einen _Ableitungsbaum_ zeichnen. Wenn die Grammatik
+    eindeutig ist, so hängt auch der Baum nur vom Wort
+    $w \in L(G)$ ab und nicht von der Ableitung
     $S \Step{}^* w$. Allerdings können wir für
     Zwischenformen $S \Step{}^* \gamma \Step{}^* w$ auch
     einen Ableitungsbaum zeichnen, und der unterscheidet
@@ -43,10 +43,10 @@
         src=img/context-free/LR/G-left-derivation.svg
         src=img/context-free/LR/G-messy-derivation.svg
 
-    Fällt Ihnen etwas auf? Schauen Sie sich bitte noch
-    ein weiteres Beispiel an für den Ableitungsbaum einer
-    in einer gültigen Wortform, also von einer, die in
-    einer Rechtsableitung vorkommen kann:
+    Fällt Ihnen etwas auf? Schauen Sie sich bitte noch ein
+    weiteres Beispiel an für den Ableitungsbaum einer in
+    einer gültigen Wortform, also von einer, die in einer
+    Rechtsableitung vorkommen kann:
 
     |> figure
         |> img
@@ -62,59 +62,58 @@
 
     |> Remark
         title=*Auflösung.*
-        Hier sehen Sie noch einmal den gleichen Baum, nun
-        aber gewisse Teile verschieden umrandet / eingefärbt.
+        Hier sehen Sie noch einmal den gleichen Baum, nun aber
+        gewisse Teile verschieden umrandet / eingefärbt.
 
     |> figure
         |> img
             style=height:40em
             src=img/context-free/LR/G-tree-large-colored.svg
 
-    Sie sehen: links vom Stamm gibt es nur Blätter.
-    Rechts vom Stamm ist jedes Blatt ein Terminalsymbol.
-    Wir erkennen auch, was der letzte Ableitungsschritt
-    war, der zu diesem Baum geführt hat: die Blüte ist
+    Sie sehen: links vom Stamm gibt es nur Blätter. Rechts
+    vom Stamm ist jedes Blatt ein Terminalsymbol. Wir
+    erkennen auch, was der letzte Ableitungsschritt war,
+    der zu diesem Baum geführt hat: die Blüte ist
     hinzugekommen, in diesem Fall also
-    $A \rightarrow x B S$. Wir definieren nun
-    eingeführten Begriffe formal:
+    $A \rightarrow x B S$. Wir definieren nun eingeführten
+    Begriffe formal:
 
     |> Statement
         title=*Definition / Beobachtung*
-        *(Stamm, linker Rand, Blüte, Front, rechter Rest)*
-        Sei $S \Step{}^* \gamma$ eine Rechtsableitung,
-        $\gamma$ also eine gültige Wortform, und $\mathcal{T}$
-        der Ableitungsbaum von $\gamma$. Der _Stamm_ ist der
-        Pfad von der Wurzel zu jenem inneren Knoten $u$, der
-        von allen inneren Knoten, deren Kinder allesamt
-        Blätter sind, am weistesten links steht. Die Kinder
-        von $u$, per Definition alles Blätter, sind die
-        _Blüte_. Die Menge der Knoten, die einen Stammknoten
-        als rechtes Geschwister haben, heißt der _linke Rand_.
-        Jeder Knoten $v$ im linken Rand muss ein Blatt sein,
-        ansonsten stünde er ja weiter links als $u$; die
-        Menge der rechten Geschwisterkinder von Stammknoten
-        sowie deren Nachkommen heißt der _rechte Rand_. Im
-        rechten Rest ist jedes Blatt ein Terminalsymbol,
-        ansonsten wäre es keine Rechtsableitung. Die
-        Beschriftung der Knoten im linken Rand ergibt eine
-        Wortform $\alpha$; die Blüte ergibt $\beta$. Die
-        Blätter im rechten Rand sind ausschließlich mit
-        Terminalen beschriftet und ergeben ein Wort
-        $w \in \Sigma^*$ . Der ganze Baum stellt also eine
-        Rechtsableitung
+        *(Stamm, linker Rand, Blüte, Front, rechter Rest)* Sei
+        $S \Step{}^* \gamma$ eine Rechtsableitung, $\gamma$
+        also eine gültige Wortform, und $\mathcal{T}$ der
+        Ableitungsbaum von $\gamma$. Der _Stamm_ ist der Pfad
+        von der Wurzel zu jenem inneren Knoten $u$, der von
+        allen inneren Knoten, deren Kinder allesamt Blätter
+        sind, am weistesten links steht. Die Kinder von $u$,
+        per Definition alles Blätter, sind die _Blüte_. Die
+        Menge der Knoten, die einen Stammknoten als rechtes
+        Geschwister haben, heißt der _linke Rand_. Jeder
+        Knoten $v$ im linken Rand muss ein Blatt sein,
+        ansonsten stünde er ja weiter links als $u$; die Menge
+        der rechten Geschwisterkinder von Stammknoten sowie
+        deren Nachkommen heißt der _rechte Rand_. Im rechten
+        Rest ist jedes Blatt ein Terminalsymbol, ansonsten
+        wäre es keine Rechtsableitung. Die Beschriftung der
+        Knoten im linken Rand ergibt eine Wortform $\alpha$;
+        die Blüte ergibt $\beta$. Die Blätter im rechten Rand
+        sind ausschließlich mit Terminalen beschriftet und
+        ergeben ein Wort $w \in \Sigma^*$ . Der ganze Baum
+        stellt also eine Rechtsableitung
 
         \begin{align*}
         S \Step{R}^* \alpha \beta w
         \end{align*}
 
-        dar. Die Wortform $\alpha\beta$, also linker Rand
-        plus Blüte, nennen wir die _Front_ von $\mathcal{T}$
-        und schreiben sie als $\front(\mathcal{T})$. Wir
-        sagen auch, dass $\beta$ _eine Blüte von $\gamma$_
-        und $\alpha\beta$ die _Front_ von $\gamma$ ist, ohne
-        über den Ableitungsbaum $\mathcal{T}$ selbst zu
-        reden. Hierbei ist zu beachten, dass in einer
-        mehrdeutigen Grammatik eine gültige Wortform mehrere
+        dar. Die Wortform $\alpha\beta$, also linker Rand plus
+        Blüte, nennen wir die _Front_ von $\mathcal{T}$ und
+        schreiben sie als $\front(\mathcal{T})$. Wir sagen
+        auch, dass $\beta$ _eine Blüte von $\gamma$_ und
+        $\alpha\beta$ die _Front_ von $\gamma$ ist, ohne über
+        den Ableitungsbaum $\mathcal{T}$ selbst zu reden.
+        Hierbei ist zu beachten, dass in einer mehrdeutigen
+        Grammatik eine gültige Wortform mehrere
         Ableitungsbäume und somit mehrere Blüten haben kann,
         die Unterteilung $\gamma = \alpha\beta w$ also nicht
         eindeutig ist. Für eindeutige Grammatiken ist die
@@ -135,8 +134,8 @@
 
     Wir können also, ausgehend von der Wortform $\gamma$,
     eine Linksreduktion $\gamma \rstep{}^* S$ finden,
-    indem wir den Ableitungsbaum von $\gamma$ zeichnen
-    und immer wieder die Blüte abschneiden:
+    indem wir den Ableitungsbaum von $\gamma$ zeichnen und
+    immer wieder die Blüte abschneiden:
 
     |> Carousel
         src=img/context-free/LR/tree-destruction/01.svg
@@ -176,8 +175,8 @@
     einfache Struktur" können wir formalisieren.
 
     |> Definition
-        Für eine kontextfreie Grammatik $G$ definieren wir
-        die Sprache $\Front(G) \subseteq (\Sigma \cup N)^*$:
+        Für eine kontextfreie Grammatik $G$ definieren wir die
+        Sprache $\Front(G) \subseteq (\Sigma \cup N)^*$:
 
         \begin{align*}
         \Front(G) := \{\front(\mathcal{T}) \ | \ \mathcal{T}
@@ -196,25 +195,23 @@
         gültigen Wortform sind.
 
     |> Lemma
-        Die Sprache $\Front(G)$ ist regulär. Insbesondere
-        gibt es eine erweitert reguläre Grammatik $\hat{G}$
-        für $\Front(G)$, so dass die Blüte genau die im
-        letzen Ableitungsschritt erzeugten Terminalsymbole
-        sind.
+        Die Sprache $\Front(G)$ ist regulär. Insbesondere gibt
+        es eine erweitert reguläre Grammatik $\hat{G}$ für
+        $\Front(G)$, so dass die Blüte genau die im letzen
+        Ableitungsschritt erzeugten Terminalsymbole sind.
 
-    Hier ist etwas Mentalgymnastik vonnöten: aus Sicht
-    der Sprache $\Front(G)$ sind $\Sigma \cup N$
+    Hier ist etwas Mentalgymnastik vonnöten: aus Sicht der
+    Sprache $\Front(G)$ sind $\Sigma \cup N$
     _Terminalsymbole_. Sie können ja schließlich in den
     Wörtern der Sprache auftauchen. Die Grammatik
     $\hat{G}$ hat also die Terminalsymbole
     $\Sigma \cup N$. Darüberhinaus hat sie die
     Nichtterminale
     $\hat{N} := \{ \hat{X} \ | \ X \in N\}$, also für
-    jedes Nichtterminal $X$ von $G$ ein
-    Meta-Nichtterminal $\hat{X}$. Das $X \in N$
-    entspricht dem $\boxed{X}$ in den obigen Bäumen, wo
-    also $N$ als Blatt vorkommt; das $\hat{X} \in \hat{N}$
-    entspricht dem 
+    jedes Nichtterminal $X$ von $G$ ein Meta-Nichtterminal
+    $\hat{X}$. Das $X \in N$ entspricht dem $\boxed{X}$ in
+    den obigen Bäumen, wo also $N$ als Blatt vorkommt; das
+    $\hat{X} \in \hat{N}$ entspricht dem 
     |> CircleX
     , also wo $W$ als innerer Knoten vorkommt. Bevor ich
     $\hat{G}$ formal definiere, zeige ich den obigen
@@ -243,8 +240,7 @@
         Sei $G = (\Sigma, N, S, P)$ eine kontextfreie
         Grammatik. Die Front-Grammatik oder DK-Grammatik von
         $G$ ist die _erweitert reguläre_ Grammatik
-        $\hat{G} = (\Sigma \cup N, \hat{N}, \hat{S},
-        \hat{P})$
+        $\hat{G} = (\Sigma \cup N, \hat{N}, \hat{S}, \hat{P})$
         mit $\hat{N} := \{\hat{X} \ | \ X \in N\}$, wobei
         $\hat{P}$ für jede $G$-Produktion
 
@@ -308,14 +304,13 @@
 
     |> Algorithm
         handle=algorithm-LR-parser
-        *- Der $LR(0)$-Parser.* Starte mit einem leerem
-        Stack. Sei $\gamma$ der Inhalt des Stacks zu einem
-        Zeitpunkt.
+        *- Der $LR(0)$-Parser.* Starte mit einem leerem Stack.
+        Sei $\gamma$ der Inhalt des Stacks zu einem Zeitpunkt.
 
         |> ol
             |> li
-                Wenn $\gamma \in \Front(G)$, dann betrachte die
-                letzte angewandte $\hat{G}$ -Produktion
+                Wenn $\gamma \in \Front(G)$, dann betrachte die letzte
+                angewandte $\hat{G}$ -Produktion
                 $\hat{X} \rightarrow \beta$ und schreibe
                 $\gamma = \alpha\beta$. Wende die $G$-Produktion
                 $X \rightarrow \beta$ rückwärts an, reduziere also
@@ -324,8 +319,8 @@
                 \alpha \beta \rstep{} \alpha X
                 \end{align*}
 
-                Konkret: lösche $\beta$ vom Stack und ersetze es
-                durch $A$.
+                Konkret: lösche $\beta$ vom Stack und ersetze es durch
+                $A$.
 
             |> li
                 Falls $\gamma \not \in \Front(G)$, lies das nächste
@@ -374,8 +369,8 @@
         weiteren ist der Stack leer, also $\gamma = \epsilon$,
         und daher sicherlich ein Präfix von $\front(w)$. Wir
         zeigen nun, dass, wenn die Invariante in Schritt $t$
-        gilt, sie auch im nächsten Schritt $t+1$ gilt. Es
-        gibt nun zwei Möglichkeiten.
+        gilt, sie auch im nächsten Schritt $t+1$ gilt. Es gibt
+        nun zwei Möglichkeiten.
 
         |> ol
             |> li
@@ -411,15 +406,15 @@
                 \end{align}
 
                 an. Da (>>left-reduction-w') korrekt ist und
-                $\alpha \beta w$ nach Invariante eine gültige
-                Wortform ist, ist nach LR(0)-Bedingung auch
+                $\alpha \beta w$ nach Invariante eine gültige Wortform
+                ist, ist nach LR(0)-Bedingung auch
                 (>>left-reduction-w) ein korrekter Schritt;
-                $\alpha Aw$ ist also auch eine gültige Wortform;
-                somit gilt Teil (i) der Invariante. Um zu sehen, dass
-                (ii) gilt, beachten Sie, dass nun auf dem Stack oben
-                ein Nichtterminal liegt: $A$; da rechts vom aktiven
-                Teil nur Terminale stehen, muss $\alpha A$ ein Präfix
-                von $\front(\alpha A w)$ sein.
+                $\alpha Aw$ ist also auch eine gültige Wortform; somit
+                gilt Teil (i) der Invariante. Um zu sehen, dass (ii)
+                gilt, beachten Sie, dass nun auf dem Stack oben ein
+                Nichtterminal liegt: $A$; da rechts vom aktiven Teil
+                nur Terminale stehen, muss $\alpha A$ ein Präfix von
+                $\front(\alpha A w)$ sein.
 
             |> li
                 Der Parser wendet Schritt 2 an, also $w = cw'$, er

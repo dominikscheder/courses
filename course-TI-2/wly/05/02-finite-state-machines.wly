@@ -73,10 +73,10 @@
         handle=definition-finite-state-machine
         *(Endlicher Automat, Finite State Machine).* Ein
         endlicher Automat besteht aus einem endlichen
-        Eingabealphaet $\Sigma$, einer endlichen Menge $Q$
-        von Zuständen, einem Startzustand $\qstart \in Q$,
-        einer Menge $F \subseteq Q$ von akzeptierenden
-        Endzuständen und einer Zustandsübergangsfunktion
+        Eingabealphaet $\Sigma$, einer endlichen Menge $Q$ von
+        Zuständen, einem Startzustand $\qstart \in Q$, einer
+        Menge $F \subseteq Q$ von akzeptierenden Endzuständen
+        und einer Zustandsübergangsfunktion
 
         \begin{align*}
         \delta : Q \times \Sigma \rightarrow Q \ .
@@ -143,10 +143,10 @@
         \end{array}
         \end{align*}
 
-        Da die Funktion $\delta$ bei jedem endlichen
-        Automaten genau zwei Eingabeparameter hat, können wir
-        es eventuell übersichtlicher als zweidimensionale
-        Tabelle darstellen:
+        Da die Funktion $\delta$ bei jedem endlichen Automaten
+        genau zwei Eingabeparameter hat, können wir es
+        eventuell übersichtlicher als zweidimensionale Tabelle
+        darstellen:
 
         \begin{align*}
         \begin{array}{c|c|c|c}
@@ -157,8 +157,8 @@
         \end{array}
         \end{align*}
 
-        Diese zwei Tabellen dienen in diesem Beispiel aber
-        nur dazu, noch einmal zu illustrieren, was ich damit
+        Diese zwei Tabellen dienen in diesem Beispiel aber nur
+        dazu, noch einmal zu illustrieren, was ich damit
         meine, wenn ich sage, dass $\delta$ eine Funktion von
         $Q \times \Sigma$ nach $Q$ ist. Wenn Sie selbst an
         endlichen Automaten rumbasteln, empfehle ich Ihnen,
@@ -220,9 +220,9 @@
 
     |> Exercise
         Ändern Sie den Automaten aus dem letzten Beispiel so
-        ab, dass die Bedingung _"die auf $x$ enden"_
-        entfällt, er also alle Wörter akzeptiert, die die
-        Folge $xy$ nicht enthalten.
+        ab, dass die Bedingung _"die auf $x$ enden"_ entfällt,
+        er also alle Wörter akzeptiert, die die Folge $xy$
+        nicht enthalten.
 
     |> Exercise
         Zeichnen Sie einen Automaten für die Sprache aller
@@ -237,8 +237,8 @@
     |> TopicAnnouncement
         Endliche Automaten zu regulären Grammatiken
 
-    Wenn wir einen endlichen Automaten gegeben haben,
-    dann können wir leicht eine entsprechende reguläre
+    Wenn wir einen endlichen Automaten gegeben haben, dann
+    können wir leicht eine entsprechende reguläre
     Grammatik dazu bauen, indem wir alle Pfeile einfach in
     Produktionen übersetzen. Für den Automaten
 
@@ -295,10 +295,9 @@
         einführen. Wir zeigen nun per Induktion:
 
         |> Claim
-            Sei $\alpha \in \Sigma^*$ und $q, q' \in Q$. Dann
-            gilt $q \stackrel{\alpha}{\rightarrow} q'$ genau
-            dann, wenn $q \Rightarrow^* \alpha q'$ in Grammatik
-            $G'$ gilt.
+            Sei $\alpha \in \Sigma^*$ und $q, q' \in Q$. Dann gilt
+            $q \stackrel{\alpha}{\rightarrow} q'$ genau dann, wenn
+            $q \Rightarrow^* \alpha q'$ in Grammatik $G'$ gilt.
 
         Bevor wir diese Behauptung beweisen, achten Sie auf
         die Bedeutung der Symbole. Der einfache Pfeil in
@@ -317,17 +316,17 @@
             Wir verwenden Induktion über die Länge des Wortes
             $\alpha$.
 
-            *Induktionsbasis.* Wenn $\alpha = \epsilon$ gilt,
-            also $\alpha$ die Länge 0 hat, dann gilt
+            *Induktionsbasis.* Wenn $\alpha = \epsilon$ gilt, also
+            $\alpha$ die Länge 0 hat, dann gilt
             $q \stackrel{\epsilon}{\rightarrow} q'$ genau dann,
             wenn $q = q'$ ist. Wie kann nun
-            $q \Rightarrow^* \epsilon q'$ in $G'$ gelten?
-            Beachten Sie, dass jede Produktion in $G'$ ein
-            Terminalsymbol erzeugt; $q \Rightarrow^* \epsilon q'$
-            kann also nur gelten, wenn _keine_ Produktion erfolgt
-            ist und somit $q = q'$ gilt. Wir sehen: beide
-            Aussagen sind äquivalent zu $q = q'$ und somit auch
-            äquivalent zueinander.
+            $q \Rightarrow^* \epsilon q'$ in $G'$ gelten? Beachten
+            Sie, dass jede Produktion in $G'$ ein Terminalsymbol
+            erzeugt; $q \Rightarrow^* \epsilon q'$ kann also nur
+            gelten, wenn _keine_ Produktion erfolgt ist und somit
+            $q = q'$ gilt. Wir sehen: beide Aussagen sind
+            äquivalent zu $q = q'$ und somit auch äquivalent
+            zueinander.
 
             *Induktionsschritt*. Wenn $\alpha$ die Länge $n+1$
             hat, so schreiben wir $\alpha = x \beta$ für ein Wort
@@ -360,10 +359,10 @@
 
             Der erste Teil, also
             $q \stackrel{x}{\rightarrow} q_1$, bedeutet, dass wir
-            in $G'$ die Produktion $q \rightarrow xq_1$
-            eingeführt haben. Auf den zweiten Teil, also
-            $q_1 \stackrel{\beta}{\rightarrow} q'$, können wir
-            die Induktionshypothese anwenden und schließen, dass
+            in $G'$ die Produktion $q \rightarrow xq_1$ eingeführt
+            haben. Auf den zweiten Teil, also
+            $q_1 \stackrel{\beta}{\rightarrow} q'$, können wir die
+            Induktionshypothese anwenden und schließen, dass
             $q_1 \Rightarrow^* \beta q'$ gilt. Nun können wir mit
             dem Nichtterminal $q$ beginnen, die Produktion
             $q \rightarrow x q_1$ anwenden und dann mit $q_1$
@@ -376,11 +375,10 @@
             Dies zeigt die erste Richtung.
 
             *Aus (2) folgt (1).* Nun nehmen wir an, dass
-            $q \Rightarrow^* x \beta q'$ gilt. Untersuchen wir
-            die erste Produktion, die in dieser Ableitung
-            verwendet worden ist. Alle Produktionen in $G'$
-            erzeugen ein Terminalsymbol, also muss es eine
-            Produktion der Form
+            $q \Rightarrow^* x \beta q'$ gilt. Untersuchen wir die
+            erste Produktion, die in dieser Ableitung verwendet
+            worden ist. Alle Produktionen in $G'$ erzeugen ein
+            Terminalsymbol, also muss es eine Produktion der Form
 
             $$
             q \rightarrow x q_1
@@ -431,8 +429,8 @@
 
         Wenn nun also
         $\qstart \stackrel{\alpha}{\rightarrow} q'$ gilt und
-        $q' \in F$, dann wissen wir von der obigen
-        Behauptung, dass es in $G'$ die Ableitung
+        $q' \in F$, dann wissen wir von der obigen Behauptung,
+        dass es in $G'$ die Ableitung
         $\qstart \Rightarrow^* \alpha q'$ gibt. Da $q' \in F$
         ist, enthält $G$ die Produktion
         $q' \rightarrow \epsilon$, und somit können wir in $G$
@@ -445,11 +443,11 @@
         letzten Ableitungsschritt ein Nichtterminalsymbol
         verschwunden sein. Die einzigen Produktionen in $G$
         bei denen das Nichtterminal verschwindet, sind von der
-        Form $q' \rightarrow \epsilon$, wenn $q'$ im
-        Automaten $M$ ein akzeptierender Endzustand ist. Sei
-        nun also $q' \rightarrow \epsilon$ die Produktion,
-        die im letzten Ableitungsschritt angewendet worden
-        ist. Es gilt also
+        Form $q' \rightarrow \epsilon$, wenn $q'$ im Automaten
+        $M$ ein akzeptierender Endzustand ist. Sei nun also
+        $q' \rightarrow \epsilon$ die Produktion, die im
+        letzten Ableitungsschritt angewendet worden ist. Es
+        gilt also
         $\qstart \Rightarrow^* \alpha q' \Rightarrow \alpha$.
         Beachten Sie nun weiter, dass all jene Produktionen,
         die in $G$ aber nicht in $G'$ sind, die Form
@@ -475,9 +473,9 @@
     Gedächtnis zu rufen.
 
     |> Exercise
-        Schreiben Sie zu folgendem Automaten über dem
-        Alphabet $\Sigma = \{0,1,2,3,4,5,6,7,8,9\}$ eine
-        äquivalente reguläre Grammatik:
+        Schreiben Sie zu folgendem Automaten über dem Alphabet
+        $\Sigma = \{0,1,2,3,4,5,6,7,8,9\}$ eine äquivalente
+        reguläre Grammatik:
 
         |> figure
             |> img
@@ -554,25 +552,25 @@
         E&\rightarrow \epsilon \
         \end{align*}
 
-        Wobei wir aus dem vorherigen Beispiel lernen und
-        einen Fehlerzustand einführen:
+        Wobei wir aus dem vorherigen Beispiel lernen und einen
+        Fehlerzustand einführen:
 
         |> figure
             |> img
                 style=height:7em
                 src=img/finite-state-automata/finite-state-machine-example-05.svg
 
-        Leider ist diese Lösung auch nicht korrekt: jetzt
-        gibt es zu viele Pfeile! Aus dem Zustand $A$ gehen
-        zwei Pfeile mit $1$ beschriftet hinaus. Wenn wir uns
-        vor Augen halten, was die von $G$ erzeugte Sprache
-        ist, so wird das Problem klarer: $G$ erzeugt die
-        Sprache aller Wörter über $\{0,1\}$, deren
-        _viertletztes_ Zeichen eine 1 ist. Die Herausforderung
-        ist nun: wenn der Automat eine 1 liest, dann weiß er
-        nicht, ob das jetzt schon das viertletzte Zeichen ist
-        oder nicht; er weiß also nicht, ob er im Zustand $A$
-        bleiben soll oder weiter zum Zustand $B$ gehen soll.
+        Leider ist diese Lösung auch nicht korrekt: jetzt gibt
+        es zu viele Pfeile! Aus dem Zustand $A$ gehen zwei
+        Pfeile mit $1$ beschriftet hinaus. Wenn wir uns vor
+        Augen halten, was die von $G$ erzeugte Sprache ist, so
+        wird das Problem klarer: $G$ erzeugt die Sprache aller
+        Wörter über $\{0,1\}$, deren _viertletztes_ Zeichen
+        eine 1 ist. Die Herausforderung ist nun: wenn der
+        Automat eine 1 liest, dann weiß er nicht, ob das jetzt
+        schon das viertletzte Zeichen ist oder nicht; er weiß
+        also nicht, ob er im Zustand $A$ bleiben soll oder
+        weiter zum Zustand $B$ gehen soll.
 
     Um mit Fällen wie dem eben geschilderten umgehen zu
     können, erweitern wir die Definition des endlichen

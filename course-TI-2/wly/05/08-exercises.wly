@@ -8,9 +8,9 @@
         Sei $\Sigma = \{\sigma_1, \sigma_2, \dots, \sigma_k\}$
         ein endliches Alphabet. Wir können jedes Zeichen
         $\sigma_i \in \Sigma$ als natürliche Zahl $i$
-        codieren. Ein Wort $\alpha \in \Sigma^*$ wird somit
-        zu einer Folge $(a_1, a_2, \dots, a_n) \in \N^*$, was
-        wir wiederum mit den Methoden aus Kapitel
+        codieren. Ein Wort $\alpha \in \Sigma^*$ wird somit zu
+        einer Folge $(a_1, a_2, \dots, a_n) \in \N^*$, was wir
+        wiederum mit den Methoden aus Kapitel
         >>wahrheitstabellen#page als _eine_ natürliche Zahl
         $\bar{\alpha}$ codieren können. Mittels dieser
         Codierung wird eine Sprache $L \subseteq \Sigma^*$ zu
@@ -57,9 +57,9 @@
     Gates, der $f_L$ berechnet.
 
     |> Exercise
-        Verbessern Sie die obige Konstruktion: Ihr
-        Schaltkreis $C$ sollte nun Tiefe $O(\log(n))$ haben
-        und vorzugsweise immer noch $O(n)$ Gates.
+        Verbessern Sie die obige Konstruktion: Ihr Schaltkreis
+        $C$ sollte nun Tiefe $O(\log(n))$ haben und
+        vorzugsweise immer noch $O(n)$ Gates.
 
     |> Exercise
         *(Challenge).* Betrachten wir eine Variante des
@@ -76,21 +76,21 @@
         \delta: Q \times (\Sigma \cup \{\lt, \gt\}) \rightarrow Q \times \{L, R\} \ .
         \end{align*}
 
-        Wenn z.B. $\delta(q, x) = (r, L)$ ist, dann heißt
-        das: _wenn Du im Zustand $q$ bist und der Lesekopf
-        ein $x$ liest, dann wechsle in den Zustand $r$ und
-        gehe nach links. _ Der Automat hat genau einen
-        akzeptierenden und einen ablehnenden Zustand. Wenn ein
-        solcher Zustand erreicht wird, hält der Automat an und
-        gibt 1 bzw. 0 aus. Die von so einem Automaten $M$
-        akzeptierte Sprache $L(M)$ ist dann definiert als die
-        Menge aller Wörter  $\alpha$, die $M$ in einen
-        akzeptierenden Zustand bringen. Beachten Sie, dass $M$
-        möglicherweise in eine Endlosschleife geraten kann. In
-        diesem Falle ist $\alpha$ _kein_ Wort in $L(M)$.
-        Zeigen Sie, dass $L(M)$ eine reguläre Sprache ist.
-        Dass man also aus $M$ einen neuen Automaten $M'$
-        bauen kann, der nur nach rechts laufen kann.
+        Wenn z.B. $\delta(q, x) = (r, L)$ ist, dann heißt das:
+        _wenn Du im Zustand $q$ bist und der Lesekopf ein $x$
+        liest, dann wechsle in den Zustand $r$ und gehe nach
+        links. _ Der Automat hat genau einen akzeptierenden
+        und einen ablehnenden Zustand. Wenn ein solcher
+        Zustand erreicht wird, hält der Automat an und gibt 1
+        bzw. 0 aus. Die von so einem Automaten $M$ akzeptierte
+        Sprache $L(M)$ ist dann definiert als die Menge aller
+        Wörter  $\alpha$, die $M$ in einen akzeptierenden
+        Zustand bringen. Beachten Sie, dass $M$ möglicherweise
+        in eine Endlosschleife geraten kann. In diesem Falle
+        ist $\alpha$ _kein_ Wort in $L(M)$. Zeigen Sie, dass
+        $L(M)$ eine reguläre Sprache ist. Dass man also aus
+        $M$ einen neuen Automaten $M'$ bauen kann, der nur
+        nach rechts laufen kann.
 
     |> Exercise
         Sei $\Sigma = \{1,2, \dots, k\}$ und $L$ die Sprache
@@ -112,7 +112,7 @@
         *(Challange.)* Sei $L$ die Sprache aus der vorherigen
         Aufgabe und $\bar{L} = \Sigma^* \setminus L$ ihr
         Komplement. $\bar{L}$ ist also die Sprache aller
-        Wörter, in denen jedes Zeichen aus $\Sigma$
-        mindestens einmal vorkommt. Zeigen Sie, dass jede
-        reguläre Grammatik für $\bar{L}$ mindestens $2^k$
+        Wörter, in denen jedes Zeichen aus $\Sigma$ mindestens
+        einmal vorkommt. Zeigen Sie, dass jede reguläre
+        Grammatik für $\bar{L}$ mindestens $2^k$
         Nichtterminale benötigt.

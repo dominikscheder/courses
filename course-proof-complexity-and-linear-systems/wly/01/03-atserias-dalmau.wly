@@ -8,10 +8,10 @@
     and a delayer. Loosely speaking, the pover wants to
     demonstrate that $F$ is unsatisfiable; the delayer
     wants to delay or completely avoid this. The prover
-    proceeds by building up a partial assignment $\rho$
-    on the variables: in each round she picks a variable
-    $x$ and asks the delayer _What is the value of $x$?_
-    to which the delayer answers with a Boolean value
+    proceeds by building up a partial assignment $\rho$ on
+    the variables: in each round she picks a variable $x$
+    and asks the delayer _What is the value of $x$?_ to
+    which the delayer answers with a Boolean value
     $b \in \{0,1\}$, and the prover adds $[x \mapsto b]$
     to $\rho$. The prover wins once $\rho$ violates a
     clause $C \in F$. If $F$ is unsatisfiable, she can
@@ -49,11 +49,11 @@
                 Prover can now exhibit a clause $C \in F$ with
                 $C(\rho) = 0$, winning the game.
 
-    Delayer wins if he can make sure that the
-    `while`-loop never terminates. If every clause of $F$
-    has size exactly $k$ and $w \lt k$ then of course
-    Delayer wins the game. His challenge is to win it even
-    for "large" $w$, e.g. for $w = n/3$.
+    Delayer wins if he can make sure that the `while`-loop
+    never terminates. If every clause of $F$ has size
+    exactly $k$ and $w \lt k$ then of course Delayer wins
+    the game. His challenge is to win it even for "large"
+    $w$, e.g. for $w = n/3$.
 
     |> Theorem
         handle=theorem-atserias-dalmau-win-when-narrow
@@ -64,8 +64,8 @@
         Let $C_1, C_2, \dots, C_l = \Box$ be a resolution
         refutation of $F$. The prover makes her way from $C_l$
         at the end of the proof backwards to a clause of $F$,
-        maintaining the invariant that her $\rho$ violates
-        her current clause. Here is her strategy:
+        maintaining the invariant that her $\rho$ violates her
+        current clause. Here is her strategy:
 
         |> Algorithm
             Strategy for Prover:
@@ -139,8 +139,8 @@
         a slightly more general statement. First we allow
         $\adg(F,w)$ to start with a partial assignment $\rho$
         that is not empty (but surely $|\rho| \leq w$). We
-        call this $\adg(F,w,\rho)$. The stronger statement
-        now is:
+        call this $\adg(F,w,\rho)$. The stronger statement now
+        is:
 
         |> Claim
             If Prover can win $\adg(F,w,\rho)$ then there is a
@@ -148,32 +148,31 @@
             width at most $w$ such that $\rho$ violates the final
             clause $C_l$.
 
-        If we can prove the claim, then the theorem follows
-        by playing $\adg(F,w,[\ ])$: the assignment $[\ ]$
-        will violate the final clause $C_l$, which can only
-        mean $C_l = \Box$. So let's prove the claim.
+        If we can prove the claim, then the theorem follows by
+        playing $\adg(F,w,[\ ])$: the assignment $[\ ]$ will
+        violate the final clause $C_l$, which can only mean
+        $C_l = \Box$. So let's prove the claim.
 
         We prove the claim by induction on the length of the
         game, i.e., the number of times the players iterate
         through the `while`-loop. If Prover wins with 0
         iterations of the loop, then the original $\rho$
-        violates some clause $C$ of $F$. So $C$ is by itself
-        a resolution proof from $F$, of width
+        violates some clause $C$ of $F$. So $C$ is by itself a
+        resolution proof from $F$, of width
         $|C| \leq |\rho| \leq w$, ending in $C$, and $\rho$
         violating its final clause.
 
         So suppose Prover can win within $t$ steps, no matter
         the moves Delayer makes. Prover queries a variable
-        $x$. Let $b \in \{0,1\}$ be the value Delayer
-        answers. Prover builds $\rho \cup [x \mapsto b]$ and
-        possibly forgets some other variable; call the
-        resulting partial assignment $\rho_b$. Since Prover
-        can win within $t$ steps no matter what Delayer
-        answers, he can win within $t-1$ steps when starting
-        with $\rho_0$ and when starting with $\rho_1$. In
-        other words: she can win $\adg(F,w,\rho_0)$ within
-        $t-1$ steps and $\adg(F,w,\rho_1)$ within $t-1$
-        steps.
+        $x$. Let $b \in \{0,1\}$ be the value Delayer answers.
+        Prover builds $\rho \cup [x \mapsto b]$ and possibly
+        forgets some other variable; call the resulting
+        partial assignment $\rho_b$. Since Prover can win
+        within $t$ steps no matter what Delayer answers, he
+        can win within $t-1$ steps when starting with $\rho_0$
+        and when starting with $\rho_1$. In other words: she
+        can win $\adg(F,w,\rho_0)$ within $t-1$ steps and
+        $\adg(F,w,\rho_1)$ within $t-1$ steps.
 
         By the induction hypothesis, there is a resultion
         proof $\pi_0$ from $F$ of width $w$ ending in $C_0$
@@ -186,7 +185,7 @@
         appears in both clauses. Since $C_0(\rho_0)=0$ we
         conclude that $\rho_0(x)=0$ (it must be defined and
         surely it isn't 1), so $x \in C_0$. Similarly
-        $\bar{x} \in C_1$. They have a resolvent which we
-        call $C$. Every variable of $C$ is defined by $\rho$
-        and indeed $\rho(C) = 0$. Since $|\rho| \leq w$ this
-        also implies $|C| \leq w$, finishing the proof.
+        $\bar{x} \in C_1$. They have a resolvent which we call
+        $C$. Every variable of $C$ is defined by $\rho$ and
+        indeed $\rho(C) = 0$. Since $|\rho| \leq w$ this also
+        implies $|C| \leq w$, finishing the proof.

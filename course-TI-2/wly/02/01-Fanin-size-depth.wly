@@ -50,6 +50,6 @@
     |> Theorem
         Sei $C$ ein Schaltkreis Maximum-Fan-in $k$ Größe $s$
         und Tiefe $d$. Dann gibt es einen äquivalenten
-        Schaltkreis $C^{\prime}$ mit Maximum-Fan-in $2$,
-        Größe höchstens $s(k - 1)$ und Tiefe höchstens
+        Schaltkreis $C^{\prime}$ mit Maximum-Fan-in $2$, Größe
+        höchstens $s(k - 1)$ und Tiefe höchstens
         $d \ceil{\log_{2}k}$.

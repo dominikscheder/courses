@@ -67,8 +67,8 @@
 
     Können Sie das zweie PCP-Puzzle lösen und zu Ende
     führen? Informell sehen wir bereits: um das Puzzle zu
-    lösen, müssen wir die $\texttt{x}$ loswerden. Das
-    geht nur, indem wir jedes $\texttt{x}$ mit Hilfe des
+    lösen, müssen wir die $\texttt{x}$ loswerden. Das geht
+    nur, indem wir jedes $\texttt{x}$ mit Hilfe des
     fünften (beigefarbenen) Kärtchens nach rechts
     schieben, bis es auf ein $\texttt{a}$ stösst, wo wir
     es mit dem sechsten (violetten) verschwinden lassen
@@ -86,13 +86,12 @@
             |> li
                 Eine _Kachel_ (auch _Kärtchen_ genannt) ist ein Paar
                 $(\alpha : \beta) \in \Sigma^* \times \Sigma^*$. Hier
-                bezeichnet $\alpha$ das Wort auf der oberen Hälfte
-                der Kachel und $\beta$ das auf der unteren.
+                bezeichnet $\alpha$ das Wort auf der oberen Hälfte der
+                Kachel und $\beta$ das auf der unteren.
 
             |> li
                 Ein PCP-Puzzle (oder einfach nur Puzzle in diesem
-                Zusammenhang) ist eine endliche Menge $S$ von
-                Kacheln.
+                Zusammenhang) ist eine endliche Menge $S$ von Kacheln.
 
             |> li
                 Eine Kachelung ist eine Folge $s$ von Kacheln aus $S$,
@@ -112,8 +111,8 @@
                 \end{align*}
 
             |> li
-                Eine Kachelung $s$ ist eine _Lösung_ des Puzzles,
-                wenn $\top(s) = \bottom(s)$ gilt.
+                Eine Kachelung $s$ ist eine _Lösung_ des Puzzles, wenn
+                $\top(s) = \bottom(s)$ gilt.
 
     Illustrieren wir die Definitionen noch einmal anhand
     des ersten Beispiels:
@@ -140,11 +139,10 @@
 
     Die Kachelung $k_3 k_2 k_3$ ist noch keine Lösung,
     aber $k_3 k_2 k_3 k_1$ ist eine. Für ein festes
-    $\Sigma$ können wir natürlich ein PCP-Puzzle
-    codieren, indem wir die Menge $S$ der Kacheln
-    codieren, z.B. über dem Alphabet
-    $\Sigma \cup \{(, :, )\}$. Das erste Beispielpuzzle
-    $S$ wäre dann
+    $\Sigma$ können wir natürlich ein PCP-Puzzle codieren,
+    indem wir die Menge $S$ der Kacheln codieren, z.B.
+    über dem Alphabet $\Sigma \cup \{(, :, )\}$. Das erste
+    Beispielpuzzle $S$ wäre dann
 
     \begin{align*}
     \enc(S) := (a:baa)(ab:aa)(bba:bb)
@@ -179,8 +177,8 @@
         |> Lemma
             Gegeben ein MPCP-Puzzle $S$, so können wir ein
             (normales) PCP-Puzzle $S'$ erstellen, mit der
-            Eigenschaft, dass $S$ eine Lösung hat genau dann,
-            wenn $S'$ eine Lösung hat.
+            Eigenschaft, dass $S$ eine Lösung hat genau dann, wenn
+            $S'$ eine Lösung hat.
 
         |> Proof
             Im MPCP zwingen uns bereits die Spielregeln, mit der
@@ -236,8 +234,8 @@
             Schluss hängen wir noch die Kachel für den rechten
             Rand an. Sollte umgekehrt das PCP-Puzzle $S'$ eine
             Lösung haben, so erhalten wir eine Lösung des MPCP
-            Puzzles $S$, indem wir alle Sterne herausstreichen
-            und die rechte Endkachel entfernen.
+            Puzzles $S$, indem wir alle Sterne herausstreichen und
+            die rechte Endkachel entfernen.
 
         Nun wissen wir also, dass wir den "Spieler" zwingen
         können, mit einer bestimmten Kachel zu beginnen, ohne
@@ -253,14 +251,14 @@
         w_1 w_2 \dots w_{j-1} q w_j \dots w_m
         \end{align*}
 
-        mit $w_i \in \Gamma$ und $q \in Q$. Die Bedeutung
-        ist, dass auf dem Band das Wort $w_1 w_2 \dots w_m$
-        steht, die Turingmaschine im Zustand $q$ ist und der
+        mit $w_i \in \Gamma$ und $q \in Q$. Die Bedeutung ist,
+        dass auf dem Band das Wort $w_1 w_2 \dots w_m$ steht,
+        die Turingmaschine im Zustand $q$ ist und der
         Schreib-Lese-Kopf über den Zeichen $w_j$ steht. Wir
         schreiben also den Zustand unmittelbar _links_ von dem
         Zeichen, über dem er steht. Wenn das Eingabewort
-        $x_1 \dots x_n$ und $q_0 \in Q$ der Startzustand,
-        dann ist
+        $x_1 \dots x_n$ und $q_0 \in Q$ der Startzustand, dann
+        ist
 
         \begin{align*}
         C_0 := q_0 x_1 \dots x_n
@@ -285,15 +283,15 @@
                 style=height:3em
                 src=img/pcp/halt-to-pcp-01.svg
 
-        zu bauen. Wir sehen: oben "steht etwas über", und
-        zwar genau die Startkonfiguration. Wir wollen nun
-        weitere Kacheln entwerfen, die es dem Spieler
-        erlauben, unten auch die Konfiguration zu legen, ihn
-        dabei allerdings zwingen, oben die Folgekonfiguration
-        zu legen. Hierfür brauchen wir "Kopierkacheln", die es
-        uns erlauben, Zeichen in die Folgekonfiguration zu
-        kopieren und "Kopf-Kacheln", die die Aktion am
-        Schreib-Lese-Kopf simulieren.
+        zu bauen. Wir sehen: oben "steht etwas über", und zwar
+        genau die Startkonfiguration. Wir wollen nun weitere
+        Kacheln entwerfen, die es dem Spieler erlauben, unten
+        auch die Konfiguration zu legen, ihn dabei allerdings
+        zwingen, oben die Folgekonfiguration zu legen. Hierfür
+        brauchen wir "Kopierkacheln", die es uns erlauben,
+        Zeichen in die Folgekonfiguration zu kopieren und
+        "Kopf-Kacheln", die die Aktion am Schreib-Lese-Kopf
+        simulieren.
 
         \begin{align*}
         \delta(q_0, x_1) = (q_1, y, \texttt{R})
@@ -342,11 +340,11 @@
         Regel immer anzuwenden ist, egal, welches Symbol $y$
         links vom Schreib-Lese-Kopf steht. Fassen wir
         zusammen, was wir bis jetzt gesehen haben. Wir
-        konstruieren Kopierkacheln $(x:x)$, die es dem
-        Spieler erlauben, die Konfiguration zu kopieren;
-        Kopfkacheln, die den Spieler zwingen, in der Umgebung
-        des Schreib-Lese-Kopfes den Regeln der Turingmaschine
-        zu folgen; und eine Startkachel, die die
+        konstruieren Kopierkacheln $(x:x)$, die es dem Spieler
+        erlauben, die Konfiguration zu kopieren; Kopfkacheln,
+        die den Spieler zwingen, in der Umgebung des
+        Schreib-Lese-Kopfes den Regeln der Turingmaschine zu
+        folgen; und eine Startkachel, die die
         Startkonfiguration abbildet. Also:
 
         |> figure
@@ -362,8 +360,8 @@
         entwerfen, die diese Fälle behandeln, oder aber
         "Bandwrweiterungskacheln", die uns erlauben, der
         Konfiguration $C$ links oder rechts ein Leersymbol
-        $\_$ anzuhängen. Ich überlasse es an dieser Stelle
-        dem Leser / der Leserin, die Details hierfür
+        $\_$ anzuhängen. Ich überlasse es an dieser Stelle dem
+        Leser / der Leserin, die Details hierfür
         auszuarbeiten. Ganz zum Schluss müssen wir noch
         beschreiben, was geschieht, wenn die Maschine in den
         akzeptierenden Zustand $q^*$ wechselt. Wir erschaffen
@@ -388,8 +386,8 @@
         Strenggenommen müssten wir jetzt beweisen, dass das
         MPCP-Puzzle genau dann lösbar ist, wenn die
         Turingmaschine akzeptiert. Hierfür könnten wir zum
-        Beispiel zeigen, dass, wenn $s$ eine Kachelung ist,
-        in welcher $\top(s)$ und $\bottom(s)$ beide auf dem
+        Beispiel zeigen, dass, wenn $s$ eine Kachelung ist, in
+        welcher $\top(s)$ und $\bottom(s)$ beide auf dem
         Zeichen $\#$ enden und wenn $\bottom(s)$ nicht das
         Zeichen $q^*$ enthält, dann ist
 
@@ -398,9 +396,9 @@
         \bottom(s)&= \#\# C_0 \# C_1 \# \dots \# C_j\# \\
         \end{align*}
 
-        wobei $C_0 = q_0 x_1 \dots x_n$ die
-        Startkonfiguration der Turingmaschine ist und jedes
-        $C_{i+1}$ die Folgekonfiguration von $C_i$; dass also
-        die Teillösung $s$ des Puzzles getreu die Berechnung
-        der Turingmaschine abbildet. Wir ersparen uns weitere
+        wobei $C_0 = q_0 x_1 \dots x_n$ die Startkonfiguration
+        der Turingmaschine ist und jedes $C_{i+1}$ die
+        Folgekonfiguration von $C_i$; dass also die Teillösung
+        $s$ des Puzzles getreu die Berechnung der
+        Turingmaschine abbildet. Wir ersparen uns weitere
         Details.

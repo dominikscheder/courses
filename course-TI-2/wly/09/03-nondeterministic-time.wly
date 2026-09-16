@@ -67,8 +67,8 @@
         \textnormal{NP} := \bigcup_{k=1}^{\infty} \NTIME(n^k) \ ,
         \end{align*}
 
-        also die Klasse aller Probleme (formal: Sprachen),
-        die man in nichtdeterministisch polynomieller Zeit
+        also die Klasse aller Probleme (formal: Sprachen), die
+        man in nichtdeterministisch polynomieller Zeit
         entscheiden kann.
 
     |> SubtopicAnnouncement
@@ -83,8 +83,8 @@
         $f_M(x,z) \in \{\texttt{accept}, \texttt{reject},
         \texttt{undefined}\}$
         bezeichnen wir den Endzustand, den $M$ erreicht, wenn
-        wir sie mit $x$ auf Band 1 und $z$ auf Band 2
-        starten, bzw. $\texttt{undefined}$ wenn $M$ gar nicht
+        wir sie mit $x$ auf Band 1 und $z$ auf Band 2 starten,
+        bzw. $\texttt{undefined}$ wenn $M$ gar nicht
         terminiert. Die von $M$ akzeptierte Sprache ist
 
         \begin{align*}
@@ -106,11 +106,10 @@
 
     |> Theorem
         *(NDTM simulieren Zertifikatmaschinen).* Sei
-        $t: \N \rightarrow \N$ zeitkonstruierbar. Sei $M$
-        eine Zertifikatmaschine, die die Sprache $L$ in Zeit
-        $t$ entscheidet. Dann gibt es eine
-        nichtdeterministische Turingmaschine $M'$, die $L$ in
-        Zeit $t$ entscheidet.
+        $t: \N \rightarrow \N$ zeitkonstruierbar. Sei $M$ eine
+        Zertifikatmaschine, die die Sprache $L$ in Zeit $t$
+        entscheidet. Dann gibt es eine nichtdeterministische
+        Turingmaschine $M'$, die $L$ in Zeit $t$ entscheidet.
 
     |> Proof
         Die Maschine $M'$ hat so viele Bänder wie $M$, wobei
@@ -148,9 +147,9 @@
         mehr wird $M$ eh nicht lesen. Nun gibt es für $M'$
         eine Folge von Konfigurationen, in der $M'$ nach
         Berechnung von $t(|x|)$ auf das zweite Band genau die
-        Zeichenfolge $z$ schreibt. Danach startet sie $M$,
-        die dann nach weiteren $t$ Schritten `accept`
-        ausgibt. Es gilt also $w \in L(M')$, und somit gilt
+        Zeichenfolge $z$ schreibt. Danach startet sie $M$, die
+        dann nach weiteren $t$ Schritten `accept` ausgibt. Es
+        gilt also $w \in L(M')$, und somit gilt
         $w \in L(M) \Longrightarrow w \in L(M')$. Sei nun
         andererseits $w \in L(M')$. Betrachten wir die
         Konfigurationsfolge, die zu einem `accept` führt. Sei
@@ -166,29 +165,29 @@
         tätigt nach Annahme die Berechnung von $M(x,z)$ ja
         maximal $O(t(|x|))$ Schritte, formal also maximal
         $a t(|x|) + b$, nicht maximal $T = t(|x|)$ . Es kann
-        also durchaus sein, dass mehr als $T = t(|x|)$
-        Zeichen von $z$ gelesen werden. Der zweite Fehler
-        ist, dass eventuell das einzige $z$ , dass $M(x,z)$
-        zum akzeptieren bringt, die Länge $|z| = k \lt t(|x|)$
-        hat, und $M$ wirklich überprüft, ob nach $k+1$
-        Zeichen auf ein Band ein $\Box$ steht, und
-        andernfalls ablehnt. Dann würde unser $M'$ oben immer
-        ablehnen, weil sie in Phase 2 ja wirklich _genau_ $T$
-        Zeichen schreibt. Flicken Sie diese beiden Fehler!
+        also durchaus sein, dass mehr als $T = t(|x|)$ Zeichen
+        von $z$ gelesen werden. Der zweite Fehler ist, dass
+        eventuell das einzige $z$ , dass $M(x,z)$ zum
+        akzeptieren bringt, die Länge $|z| = k \lt t(|x|)$
+        hat, und $M$ wirklich überprüft, ob nach $k+1$ Zeichen
+        auf ein Band ein $\Box$ steht, und andernfalls
+        ablehnt. Dann würde unser $M'$ oben immer ablehnen,
+        weil sie in Phase 2 ja wirklich _genau_ $T$ Zeichen
+        schreibt. Flicken Sie diese beiden Fehler!
 
     |> Theorem
         handle=theorem-certificate-simulates-nondet
         *(Zertifikatmaschinen simulieren NDTM).* Sei
-        $t: \N \rightarrow \N$ zeitkonstruierbar. Sei $M$
-        eine nichtdeterministische Turingmaschine, die die
-        Sprache $L$ in Zeit $t$ entscheidet. Dann gibt es
-        eine Zertifikatmaschine $M'$, die $L$ in Zeit $t$
+        $t: \N \rightarrow \N$ zeitkonstruierbar. Sei $M$ eine
+        nichtdeterministische Turingmaschine, die die Sprache
+        $L$ in Zeit $t$ entscheidet. Dann gibt es eine
+        Zertifikatmaschine $M'$, die $L$ in Zeit $t$
         entscheidet.
 
     |> Proof
         Da $M$ nichtdeterministisch ist, ist
-        $\delta \subseteq (Q \times \Gamma^k) \times (Q
-        \times \Gamma^k \times \{L,S,R\}^k)$
+        $\delta \subseteq (Q \times \Gamma^k) \times (Q \times
+        \Gamma^k \times \{L,S,R\}^k)$
         eine Relation, keine Funktion. Wir können es aber als
         Funktion in die Potenzmenge betrachten, also
 
@@ -224,8 +223,8 @@
         dass $M'(x,z)$ akzeptiert. Wenn wir die
         Konfigurationsfolge von $M'$ betrachten, aber das
         zweite Band ignorieren, dann ist das genau eine
-        Konfigurationsfolge von $M(x)$, die zu `accept`
-        führt. Somit gilt auch $x \in L(M)$. Falls umgekehrt
+        Konfigurationsfolge von $M(x)$, die zu `accept` führt.
+        Somit gilt auch $x \in L(M)$. Falls umgekehrt
         $x \in L(M)$ ist, dann gibt es eine
         Konfigurationsfolge, die zu `accept` führt. In jedem
         Schritt wird dabei entweder das erste oder das zweite

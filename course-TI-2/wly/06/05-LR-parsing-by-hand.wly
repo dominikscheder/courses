@@ -61,9 +61,9 @@
         \end{align}
 
         Wenn wir jetzt die ersten $k$ Zeichen lesen:
-        $aaaa \dots$, dann gibt es keinen Weg, zu
-        entscheiden, ob danach gleich viele oder weniger $b$'s
-        folgen werden, ob wir also $S \rightarrow sS$ oder
+        $aaaa \dots$, dann gibt es keinen Weg, zu entscheiden,
+        ob danach gleich viele oder weniger $b$'s folgen
+        werden, ob wir also $S \rightarrow sS$ oder
         $S \rightarrow Xc$ anwenden sollen. Das lässt sich
         auch nicht durch Umschreiben der Grammatik lösen. Wir
         müssen lesen, bis wir ein $b$ sehen.
@@ -71,18 +71,18 @@
     |> TopicAnnouncement
         Das LR-Paradigma
 
-    Wir brauchen einen Paradigmenwechsel. Das
-    LL-Paradigma war ja, mit $S$ zu starten und, geleitet
-    von den nächsten $k$ Zeichen, zu entscheiden, welche
+    Wir brauchen einen Paradigmenwechsel. Das LL-Paradigma
+    war ja, mit $S$ zu starten und, geleitet von den
+    nächsten $k$ Zeichen, zu entscheiden, welche
     Ableitungsregel als nächstes anzuwenden ist. Hierbei
     haben wir immer versucht, für das am weitesten links
     stehende Nichtterminal eine Regel zu finden. Wir
     beschreiben nun ein ganz anderes Vorgehen: wir lesen
-    das Eingabewort $v$ von links nach rechts,
-    unterhalten also einen _Stack_, auf dem ein Präfix
-    $\gamma$ von $v$ liegt, bis wir am rechten Ende die
-    rechte Seite einer Produktionsregel erkennen - bis
-    also $\gamma = \alpha \beta$ und es eine Produktion
+    das Eingabewort $v$ von links nach rechts, unterhalten
+    also einen _Stack_, auf dem ein Präfix $\gamma$ von
+    $v$ liegt, bis wir am rechten Ende die rechte Seite
+    einer Produktionsregel erkennen - bis also
+    $\gamma = \alpha \beta$ und es eine Produktion
     $X \rightarrow \beta$ gibt. Dann ersetzen wir
     $\alpha \beta$ durch $\alpha X$. Unser Stack enthält
     nun keine Präfix von $v$ mehr, sondern eine Wortform
@@ -169,8 +169,8 @@
     das R), allerdings in umgekehrter Reihenfolge. Statt
     von $S$ ausgehend $w$ abzuleiten, also
     $S \Step{}^* w$, versuchen wir $w$ zu $S$ zu
-    _reduzieren_, also $w \Pets{}^* S$. Allerdings ist
-    das nicht immer so einfach: manchmal ist nicht auf den
+    _reduzieren_, also $w \Pets{}^* S$. Allerdings ist das
+    nicht immer so einfach: manchmal ist nicht auf den
     ersten Blick erkennbar, welche Produktionsregel wir
     (rückwärts) anwenden sollen. Hier ein etwas
     konstruiertes Beispiel:
@@ -210,8 +210,8 @@
 
     Es stellen sich einige Fragen: woher wissen wir zum
     Beispiel bei $XYa\textcolor{darkgray}{z}$, dass wir
-    per $Y \rightarrow Ya$ reduzieren müssen und nicht
-    per $Y \rightarrow a$? Wir könnten ja auch auf
+    per $Y \rightarrow Ya$ reduzieren müssen und nicht per
+    $Y \rightarrow a$? Wir könnten ja auch auf
     $XYa \Pets{} XYY$ reduzieren. Oder in Schritt 2, bei
     $a\textcolor{darkgray}{cabaz}$. Da könnten wir ja
     gleich $a \Pets{} Y$ reduzieren.
@@ -236,11 +236,11 @@
     der Grammatik ab. Aber selbst dann brauchen wir einen
     Algorithmus, der uns sagen kann, ob $XYa \Pets{} XYY$
     ein korrekter Reduktionsschritt ist. Dies scheint
-    komplexer, als $w \stackrel{?}{\in} L$ zu
-    entscheiden, ist aber _einfacher_! Ein zweites Problem
-    ist, dass wir eben manchmal kein Glück haben und es
-    mehrere plausible Reduktionsschritte geben kann. Ein
-    Beispiel wäre die obere Grammatik, leicht abgewandelt:
+    komplexer, als $w \stackrel{?}{\in} L$ zu entscheiden,
+    ist aber _einfacher_! Ein zweites Problem ist, dass
+    wir eben manchmal kein Glück haben und es mehrere
+    plausible Reduktionsschritte geben kann. Ein Beispiel
+    wäre die obere Grammatik, leicht abgewandelt:
 
     \begin{align*}
     S&\rightarrow XY \tag{beachten Sie: oben hatten wir $S \rightarrow XYz$}\\
@@ -270,14 +270,14 @@
 
     wobei $Sb$ eben keine Wortform ist, die in einer
     Rechtsableitung vorkommen könnte. Das wissen wir aber
-    erst, wenn wir $b$ gelesen haben. Wäre das
-    Eingabewort nämlich nur $ca$, dann wäre $XY \Pets{} S$
-    tatsächlich die korrekte Reduktion. In der ersten
-    Grammatik hatten wir als "Work-around" ein $z$ am
-    Ende angehängt, um das Wortende zu erkennen. Im
-    Allgemeinen ist es aber leichter, dem Parser zu
-    erlauben, das nächste Zeichen zu lesen. All diese
-    Gedanken theoretisch rigoros zu formulieren ist
-    einigermaßen herausvordernd. Daher werden wir erst
-    einmal für eine Grammatik arithmetischer Ausdrücke
-    einen Parser in Java implementieren.
+    erst, wenn wir $b$ gelesen haben. Wäre das Eingabewort
+    nämlich nur $ca$, dann wäre $XY \Pets{} S$ tatsächlich
+    die korrekte Reduktion. In der ersten Grammatik hatten
+    wir als "Work-around" ein $z$ am Ende angehängt, um
+    das Wortende zu erkennen. Im Allgemeinen ist es aber
+    leichter, dem Parser zu erlauben, das nächste Zeichen
+    zu lesen. All diese Gedanken theoretisch rigoros zu
+    formulieren ist einigermaßen herausvordernd. Daher
+    werden wir erst einmal für eine Grammatik
+    arithmetischer Ausdrücke einen Parser in Java
+    implementieren.

@@ -100,7 +100,6 @@
         Sei $L \subseteq \Sigma^*$ eine Sprache und
         $M = (\Sigma, Q, \qstart, F, \delta)$ ein
         deterministischer endlicher Automat mit $L(M) = L$.
-        Wenn $v$ und $w$ in $L$ unterscheidbar sind, dann
-        gilt
+        Wenn $v$ und $w$ in $L$ unterscheidbar sind, dann gilt
         $\hat{\delta}(\qstart, v) \ne \hat{\delta}(\qstart,
         w)$.

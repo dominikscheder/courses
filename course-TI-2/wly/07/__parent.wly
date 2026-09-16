@@ -46,8 +46,7 @@
         \end{align*}
 
         wobei $\beta \in (\Sigma \cup \Gamma)^*$ und
-        $\alpha \in (\Sigma \cup \Gamma)^* \setminus
-        \Sigma^*$.
+        $\alpha \in (\Sigma \cup \Gamma)^* \setminus \Sigma^*$.
         Letzeres bedeutet einfach, dass die linke Seite
         $\alpha$ mindestens ein Nichtterminal enthalten muss.
 
@@ -57,10 +56,10 @@
     einem Nichtterminal bestehen; in diesem Falle hätten
     wir eine kontextfreie Grammatik. Sie verbietet auch
     nicht, dass zusätzlich alle rechten Seiten
-    $\beta \in \Sigma^* \times N \cup \Sigma^*$ sind,
-    also höchstens ein Nichtterminal enthalten, welches
-    ganz rechts stehen muss. In diesem Falle würde es sich
-    um eine reguläre Grammatik handeln.
+    $\beta \in \Sigma^* \times N \cup \Sigma^*$ sind, also
+    höchstens ein Nichtterminal enthalten, welches ganz
+    rechts stehen muss. In diesem Falle würde es sich um
+    eine reguläre Grammatik handeln.
 
     |> Definition
         *(Ableitung und erzeugte Sprache)*. Sei $G$ eine
@@ -125,8 +124,8 @@
     die verbotene Produktionen der Form
     $\alpha \rightarrow \beta$ mit $\alpha \in \Sigma^*$
     enthalten, immer "auf Linie" bringen, indem wir jedes
-    Terminalsymbol $x$ in den Produktionen durch ein
-    neues Nichtterminal $X$ ersetzen und schließlich
+    Terminalsymbol $x$ in den Produktionen durch ein neues
+    Nichtterminal $X$ ersetzen und schließlich
     Produktionen $X \rightarrow x$ einführen.
 
     |> Example
@@ -137,9 +136,9 @@
         L = \{a^nb^nc^n \ | \ n \geq 0\}
         \end{align*}
 
-        zu erstellen. Wir haben ja bereits gesehen, dass es
-        zu dieser Sprache keine kontextfreie Grammatik gibt.
-        Als ersten Versuch kopieren wir die obige Grammatik,
+        zu erstellen. Wir haben ja bereits gesehen, dass es zu
+        dieser Sprache keine kontextfreie Grammatik gibt. Als
+        ersten Versuch kopieren wir die obige Grammatik,
         allerdings lassen wir nur die Vertauschungsregeln zu,
         die die Buchstaben in die richtige Reihenfolge
         bringen:
@@ -237,8 +236,8 @@
                 \end{align*}
 
         Nun müssen wir zeigen, dass die Grammatik die Sprache
-        $L$ erzeugt. Für jedes Wort $a^n b^n c^n \in L$
-        müssen wir zeigen, dass wir es ableiten können:
+        $L$ erzeugt. Für jedes Wort $a^n b^n c^n \in L$ müssen
+        wir zeigen, dass wir es ableiten können:
 
         \begin{align*}
         &S \Step{1}^* S(ABC)^n \Step{2} X(ABC)^n
@@ -260,9 +259,8 @@
         enthält gleich viele $A$ wie $B$ wie $C$.
 
         |> Claim
-            Sei $\#_{A,a}(\beta)$ die Anahl der $A$ und $a$ in
-            der Wortform $\beta$. Wenn $S \Step{} \beta$, dann
-            gilt
+            Sei $\#_{A,a}(\beta)$ die Anahl der $A$ und $a$ in der
+            Wortform $\beta$. Wenn $S \Step{} \beta$, dann gilt
 
             |> ol
                 |> li
@@ -389,9 +387,9 @@
         Die Multiplikationsgrammatik wandelt uns dies in
         $L A^m B^m C^{m^2} T$ um. Schlussendlich führen wir
         ein Killersymbol $K$ ein, das bei $T$ entsteht und
-        sich nach links durcharbeitet, dabei die $C$ in \(1)\
-        umwandelt und die $\tilde{A},B$ durch $\epsilon$
-        ersetzt:
+        sich nach links durcharbeitet, dabei die $C$ in
+        \(\(1)\ umwandelt und die $\tilde{A},B$ durch
+        $\epsilon$ ersetzt:
 
         \begin{align*}
         R&\rightarrow K \\
@@ -415,11 +413,10 @@
         A&\rightarrow \tilde{A} X
         \end{align*}
 
-        Das neue Nichtterminal $\tilde{A}$ bedeutet soviel
-        wie "ein $A$, das bereits abgearbeitet worden ist."
-        Das Nichtterminal $X$ bedeutet: erzeuge rechts vom $B$
-        -Block einen $C$-Block gleicher Länge. Wir wollen
-        also
+        Das neue Nichtterminal $\tilde{A}$ bedeutet soviel wie
+        "ein $A$, das bereits abgearbeitet worden ist." Das
+        Nichtterminal $X$ bedeutet: erzeuge rechts vom $B$
+        -Block einen $C$-Block gleicher Länge. Wir wollen also
 
         \begin{align*}
         L \tilde{A}^i X A^j B^n R \Step{}
@@ -439,8 +436,8 @@
 
         Das $X$ erzeugt also von seinem Entstehen bis zu
         seinem Verschwinden bei $R$ genau $n$ viele
-        $\tilde{C}$-Symbole. Wir erstellen nun Regeln, die
-        uns zwingen, jedes $\tilde{C}$ nach rechts laufen zu
+        $\tilde{C}$-Symbole. Wir erstellen nun Regeln, die uns
+        zwingen, jedes $\tilde{C}$ nach rechts laufen zu
         lassen, wo sie in ein $C$ umgewandelt werden können:
 
         \begin{align*}
@@ -457,9 +454,9 @@
                 Wir können $R$ nur loswerden, indem wir es in das
                 Killersymbol $K$ umwandeln. Das Killersymbol kann nur
                 bei $L$ verschwinden. Dazwischen kann es nur die
-                Zeichen $\tilde{A}, B, C$ passieren. Zum Zeitpunkt,
-                wo wir $R \rightarrow K$ anwenden, darf die Wortform
-                also keine $A$-Symbole mehr enthalten.
+                Zeichen $\tilde{A}, B, C$ passieren. Zum Zeitpunkt, wo
+                wir $R \rightarrow K$ anwenden, darf die Wortform also
+                keine $A$-Symbole mehr enthalten.
 
             |> li
                 Wir können eine $A$ nur verschwinden lassen durch
@@ -471,12 +468,12 @@
             |> li
                 Um ein $X$ wieder verschwinden zu lassen, muss es den
                 ganzen $B$-Block durchlaufen und produziert damit
-                insgesamt $n$ viele (\tilde{C}\).
+                insgesamt $n$ viele (\tilde{C}\)\).
 
             |> li
                 Da wir insgesamt $m$ viele $X$ produzieren und jedes
-                $X$ insgesamt $n$ viele $\tilde{C}$ produziert,
-                werden insgesamt $mn$ viele $\tilde{C}$ erzeugt.
+                $X$ insgesamt $n$ viele $\tilde{C}$ produziert, werden
+                insgesamt $mn$ viele $\tilde{C}$ erzeugt.
 
             |> li
                 Jedes $\tilde{C}$ kann nur in ein $C$ umgewandelt
@@ -503,8 +500,8 @@
 
         erzeugen.
 
-    Die Sprache \{a^m b^n c^{m+n}\} können wir eh: die
-    ist sogar kontextfrei. Wir können also Arithmetik mit
+    Die Sprache \{a^m b^n c^{m+n}\} können wir eh: die ist
+    sogar kontextfrei. Wir können also Arithmetik mit
     formalen Grammatiken "programmieren".
 
     |> Exercise
@@ -514,8 +511,8 @@
         L = \{w\texttt{:}w \ | \ w \in \{a,b\}^* \}
         \end{align*}
 
-        an. Dies ist auch ein Paradebeispiel für eine
-        Sprache, die nicht kontextfrei ist.
+        an. Dies ist auch ein Paradebeispiel für eine Sprache,
+        die nicht kontextfrei ist.
 
     Überlegen Sie, wie man "lineare Suche" implementieren
     könnte:

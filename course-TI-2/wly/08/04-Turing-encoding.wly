@@ -67,10 +67,9 @@
     ist schwieriger. Können wir eine Maschine bauen, die
     als eingabe (1) die Codierung $\enc(M)$ einer
     Turingmaschine und (2) ein Eingabewort
-    $w \in \Sigma^*$ entgegennimmt und dann die
-    Berechnung $M(x)$ simuliert bzw. zu dem Ergebnis
-    gelangt, zu dem auch $M(x)$ gelangen würde? Die
-    Programmierer von
+    $w \in \Sigma^*$ entgegennimmt und dann die Berechnung
+    $M(x)$ simuliert bzw. zu dem Ergebnis gelangt, zu dem
+    auch $M(x)$ gelangen würde? Die Programmierer von
     [turingmachinesimulator.com](https://turingmachinesimulator.com)
     haben dies offensichtlich geschafft: sie haben eine
     Maschine "gebaut" (also wohl einen Server gemietet und
@@ -82,8 +81,8 @@
     abhängigen Alphabet codieren können. Im nächsten
     Teilkapitel werden wir uns überlegen, wie man einen
     Turingmaschinen-Simulator selbst als Turingmaschine
-    implementieren kann. Also eine Turingmaschine $U$,
-    die als Input Wörter der Form
+    implementieren kann. Also eine Turingmaschine $U$, die
+    als Input Wörter der Form
 
     \begin{align*}
     c\#x
@@ -167,8 +166,8 @@
     Versuch.* Wir müssen also die Zustandsmenge $Q$ und
     die Zeichen $\Gamma \setminus \Sigma$ erst einmal
     selbst codieren, beispielsweise über dem Alphabet
-    $\{0,1\}$. Die $\delta$-Tabelle der Turingmaschine
-    für $\{a^nb^nc^n\}$
+    $\{0,1\}$. Die $\delta$-Tabelle der Turingmaschine für
+    $\{a^nb^nc^n\}$
 
     |> figure
         |> img
@@ -188,13 +187,13 @@
     schreiben, auch nicht einfach die Codierungen
     zusammenschreiben: in diesem Falle würde nämlich
     $\delta(00,0) = (11,0,\texttt{R})$ zu
-    $000110\texttt{R}$ und wir würden nicht mehr
-    erkennen, wo welches Zeichen beginnt und aufhört. Wir
-    brauchen ein Separatorzeichen, beispielsweise ein
-    Komma. Aus Gründen, die später klar werden werden,
-    schließen wir die Codierung der Turingmaschine mit
-    einem $\texttt{;}$ ab. Die Codierung der obigen
-    Maschine ist dann also
+    $000110\texttt{R}$ und wir würden nicht mehr erkennen,
+    wo welches Zeichen beginnt und aufhört. Wir brauchen
+    ein Separatorzeichen, beispielsweise ein Komma. Aus
+    Gründen, die später klar werden werden, schließen wir
+    die Codierung der Turingmaschine mit einem
+    $\texttt{;}$ ab. Die Codierung der obigen Maschine ist
+    dann also
 
     ```
     00#100#00,a,01,1,S#00,b,L#00,c,L#00,1,L#00,0,11,0,R#01,a,R#01,b,10,1,S#01,1,R#10,b,R#10,c,00,1,S#10,1,R#11,1,R#11,0,100#;
@@ -212,8 +211,8 @@
     \end{align*}
 
     also `#01,1,01,1,R#` Wir können nun _jede_
-    Turingmaschine über dem Alphabet $\Sigma$ codieren
-    als Wort über dem Alphabet
+    Turingmaschine über dem Alphabet $\Sigma$ codieren als
+    Wort über dem Alphabet
 
     \begin{align*}
     \Lambda := \writelambda
@@ -227,9 +226,8 @@
         \texttt{R}, \texttt{;} \not \in \Sigma$.
         Wir können nun jede Turingmaschine $M$ mit
         Eingabealphabet $\Sigma$ als String
-        $\enc(M) \in \Lambda^*$ codieren. Per Konvention
-        kommt `;` in $\enc(M)$ genau einmal vor, nämlich am
-        Schluss.
+        $\enc(M) \in \Lambda^*$ codieren. Per Konvention kommt
+        `;` in $\enc(M)$ genau einmal vor, nämlich am Schluss.
 
     |> div
         class=well alert-info

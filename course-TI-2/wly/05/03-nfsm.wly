@@ -49,12 +49,12 @@
     Unterschied zu den nichtdeterministischen zu
     verdeutlichen. Wenn in einem deterministischen
     endlichen Automaten $\delta(q,x) = q'$ war, so hatte
-    das die Bedeutung _wenn der Automat im Zustand $q$
-    ist und $x$ liest, so geht er in Zustand $q'$ über_;
-    wenn nun in einem nichtdeterministischen Automaten
-    $(q,x,q') \in \delta$ gilt, so bedeutet das, _wenn
-    der Automat im Zustand $q$ ist und $x$ liest, so kann
-    er in Zustand $q'$ übergehen_. Analog zu den
+    das die Bedeutung _wenn der Automat im Zustand $q$ ist
+    und $x$ liest, so geht er in Zustand $q'$ über_; wenn
+    nun in einem nichtdeterministischen Automaten
+    $(q,x,q') \in \delta$ gilt, so bedeutet das, _wenn der
+    Automat im Zustand $q$ ist und $x$ liest, so kann er
+    in Zustand $q'$ übergehen_. Analog zu den
     deterministischen Automaten definieren wir eine
     erweiterte Zustandsübergangsrelation.
 
@@ -68,8 +68,8 @@
         als die Menge aller Zustand-Wort-Zustand-Tripel
         $(q,x_1 x_2 \dots x_n,q')$, für die wir
         Zwischenzustände
-        $q = \qstart, q_1, q_2, \dots, q_n = q'$ finden
-        können mit
+        $q = \qstart, q_1, q_2, \dots, q_n = q'$ finden können
+        mit
 
         $$
         (\qstart, x_1, q_1), (q_1,
@@ -96,8 +96,8 @@
     mehr oder weniger identisch mit dem Beweis von Theorem
     >>theorem-fsm-regular; wir haben nämlich in jenem
     Beweis nirgends verwendet, dass $\delta$ eine
-    _Funktion_ ist, und daher geht mit einem $\delta$,
-    das eine _Relation_ ist, alles ganz genau gleich.
+    _Funktion_ ist, und daher geht mit einem $\delta$, das
+    eine _Relation_ ist, alles ganz genau gleich.
     Allerdings gilt nun auch der Umkehrschluss: zu einer
     regulären Grammatik gibt es einen
     nichtdeterministischen endlichen Automaten:
@@ -108,9 +108,9 @@
         Automaten $M$ mit $L(G) = L(M)$.
 
     |> Proof
-        Unser Automat hat als Zustandsmenge $N$, die Menge
-        der nichtterminalen Symbole und als Startzustand $S$,
-        das Startsymbol der Grammatik $G$. Wir definieren
+        Unser Automat hat als Zustandsmenge $N$, die Menge der
+        nichtterminalen Symbole und als Startzustand $S$, das
+        Startsymbol der Grammatik $G$. Wir definieren
         $\delta$, indem wir jeden $G$ -Pfeil in einem
         $M$-Pfeil umwandeln: eine Produktion
 
@@ -138,8 +138,8 @@
         $X \rightarrow a$ zu eliminieren.
 
     |> Example
-        Wir betrachten abermals die reguläre Grammatik aus
-        dem vorherigen Kapitel >>example-aaabb:
+        Wir betrachten abermals die reguläre Grammatik aus dem
+        vorherigen Kapitel >>example-aaabb:
 
         \begin{align*}
         S&\rightarrow \epsilon \ |\ a S \ | \ b T \\ T&
@@ -164,8 +164,8 @@
         = \{(S,a,S), (S,b,S), (T,b,T) \} \ .
         $$
 
-        Jeder Zustand ist ein Endzustand, allerdings heißt
-        das nicht, dass der Automat jedes Wort akzeptiert. Für
+        Jeder Zustand ist ein Endzustand, allerdings heißt das
+        nicht, dass der Automat jedes Wort akzeptiert. Für
         $\alpha = ba$ beispielsweise gibt es keinen Zustand
         $q$ mit $S \stackrel{ba}{\rightarrow} q$, geschweige
         denn einen akzeptierenden Endzustand. Daher gilt:
@@ -180,11 +180,11 @@
         | \ b A \ | \ c A \\ B&\rightarrow \epsilon \ | \ a B \ | \ c B
         \end{align*}
 
-        Bevor wir einen nichtdeterministischen Automaten
-        bauen können, müssen wir erst die Produktionen der
-        Form $X \rightarrow Y$ eliminieren bzw. ersetzen.
-        Wenn Sie Aufgabe 4.1.7 gelöst haben, haben Sie
-        wahrscheinlich in etwa folgende Grammatik erhalten:
+        Bevor wir einen nichtdeterministischen Automaten bauen
+        können, müssen wir erst die Produktionen der Form
+        $X \rightarrow Y$ eliminieren bzw. ersetzen. Wenn Sie
+        Aufgabe 4.1.7 gelöst haben, haben Sie wahrscheinlich
+        in etwa folgende Grammatik erhalten:
 
         \begin{align*}
         S&\rightarrow \epsilon \ | \ bA \ | \ cA \ | \ aB \ |
@@ -276,10 +276,10 @@
     Am Ende landet der grüne Punkt im Zustand $E$. Das
     Wort ist also in $L(M)$. Das können wir auch ganz
     allgemein tun. Wenn Zustand $q$ einen "Punkt" hat und
-    Zeichen $x$ gelesen wird, dann teilt sich dieser
-    Punkt und plaziert einen Kind-Punkt in jedem Zustand
-    $q'$, für den $q \stackrel{x}{\rightarrow} q'$ gilt.
-    Formal gesprochen: für eine Menge $R \subseteq Q$ von
+    Zeichen $x$ gelesen wird, dann teilt sich dieser Punkt
+    und plaziert einen Kind-Punkt in jedem Zustand $q'$,
+    für den $q \stackrel{x}{\rightarrow} q'$ gilt. Formal
+    gesprochen: für eine Menge $R \subseteq Q$ von
     Zuständen (die, die gerade einen "Punkt" haben) und
     ein Eingabe-Symbol $x$ definieren wir
 
@@ -288,16 +288,16 @@
     q \in R \textnormal{ mit } q \step{x} q'\}
     \end{align*}
 
-    Für ein Eingabewort $\alpha= x_1 \dots x_n$ fangen
-    wir nun mit $R_0 = \{\qstart\}$ an, das entspricht
-    dem einen roten Punkt auf dem Startzustand, und
-    berechnen dann jeweils $R_i = \Delta(R_{i-1}, x_i)$;
-    wenn die Menge $R_n$ einen akzeptierenden Endzustand
-    enthält (dieser also am Ende einen "Punkt" hat), gilt
-    $\alpha \in L(M)$. Treten Sie einen Schritt zurück
-    und betrachten, was wir mit $\Delta$ definiert haben:
-    wir haben eine Zustandsübergangsfunktion definiert,
-    die nun aber nicht auf Zuständen sondern auf
+    Für ein Eingabewort $\alpha= x_1 \dots x_n$ fangen wir
+    nun mit $R_0 = \{\qstart\}$ an, das entspricht dem
+    einen roten Punkt auf dem Startzustand, und berechnen
+    dann jeweils $R_i = \Delta(R_{i-1}, x_i)$; wenn die
+    Menge $R_n$ einen akzeptierenden Endzustand enthält
+    (dieser also am Ende einen "Punkt" hat), gilt
+    $\alpha \in L(M)$. Treten Sie einen Schritt zurück und
+    betrachten, was wir mit $\Delta$ definiert haben: wir
+    haben eine Zustandsübergangsfunktion definiert, die
+    nun aber nicht auf Zuständen sondern auf
     Zustands_mengen_ operiert. Das heißt, im Gegensatz zu
     $\delta$, das eine Funktion
     $\delta: Q \times \Sigma \rightarrow Q$ ist, ist
@@ -306,8 +306,8 @@
     \Delta: 2^Q \times \Sigma \rightarrow 2^Q \ .
     \end{align*}
 
-    Wenn Sie die Schreibweise $2^Q$ nicht kennen: dies
-    ist die Potenzmenge von $Q$, also die Menge aller
+    Wenn Sie die Schreibweise $2^Q$ nicht kennen: dies ist
+    die Potenzmenge von $Q$, also die Menge aller
     Untermengen, was die leere Menge $\emptyset$ und die
     "volle Menge" $Q$ selbst miteinschließt. Wir haben
     also folgendes Theorem:
@@ -319,8 +319,7 @@
         $M = (\Sigma, Q, \qstart, F, \delta)$ ein
         nichtdeterministischer Automat; dann heiße der
         deterministische Automat
-        $M' = (\Sigma, 2^Q, \{\qstart\}, \mathcal{F},
-        \Delta)$
+        $M' = (\Sigma, 2^Q, \{\qstart\}, \mathcal{F}, \Delta)$
         mit Endzustandsmenge $\mathcal{F}$ definiert als
 
         \begin{align*}
@@ -355,11 +354,11 @@
         von $M$ den Zustand $A$ enthalten. Dieser wird nie
         verschwinden. Also sehen wir, dass man $M'$ mit 16
         Zuständen implementieren kann (die anderen, die, die
-        nicht $A$ enthalten, sind _unerreichbar_). Da 16
-        immer noch recht groß für eine Abbildung ist, nehmen
-        wir uns die Sprache aller Wörter, deren _drittletztes
-        Zeichen_ eine 1 ist. Der nichtdeterministische Automat
-        hierfür ist
+        nicht $A$ enthalten, sind _unerreichbar_). Da 16 immer
+        noch recht groß für eine Abbildung ist, nehmen wir uns
+        die Sprache aller Wörter, deren _drittletztes Zeichen_
+        eine 1 ist. Der nichtdeterministische Automat hierfür
+        ist
 
         |> figure
             |> img
@@ -377,8 +376,8 @@
         Potenzmengenautomaten unnötige Zustände zu vermeiden,
         bauen wir ihn Schritt für Schritt, angefangen mit dem
         Startzustand $\{A\}$ bzw. $A$, und hängen jedem
-        Zustand einen ausgehenden $0$ -Pfeil und $1$-Pfeil
-        an, wobei wir womöglich neue Zustände "entdecken".
+        Zustand einen ausgehenden $0$ -Pfeil und $1$-Pfeil an,
+        wobei wir womöglich neue Zustände "entdecken".
 
         |> Carousel
             src=img/finite-state-automata/potenzmengenautomat/01.svg
@@ -401,10 +400,10 @@
 
         Wenn wir uns vorstellen, dass wir vor das Eingabewort
         $\alpha$ die Zeichen 000 stellen, also $\alpha$ durch
-        $000\alpha$ ersetzen, dann codiert jeder Zustand
-        genau die letzten drei Zeichen des Eingabewortes, die
-        der Automat gelesen hat. Der Zustand $ACD$ bedeutet
-        zum Beispiel _die letzten drei Zeichen waren $110$_.
+        $000\alpha$ ersetzen, dann codiert jeder Zustand genau
+        die letzten drei Zeichen des Eingabewortes, die der
+        Automat gelesen hat. Der Zustand $ACD$ bedeutet zum
+        Beispiel _die letzten drei Zeichen waren $110$_.
 
     Im folgenden Unterkapitel werden wir alle
     Transformationen, die wir bisher gesehen haben, an

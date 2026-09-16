@@ -44,18 +44,18 @@
     $h: A \rightarrow B$ kombinieren. Geht das immer?
 
     |> Theorem
-        *(Schröder-Bernstein-Theorem).* Seien $A$ und $B$
-        zwei Mengen. Wenn $A \leq B$ und $B \leq A$ gilt,
-        dann gilt $A \approx B$. In Worten: wenn es injektive
-        Funktionen $f: A \rightarrow B$ und
-        $g : B\rightarrow A$ gibt, dann gibt es auch eine
-        bijektive Funktion $h: A \rightarrow B$.
+        *(Schröder-Bernstein-Theorem).* Seien $A$ und $B$ zwei
+        Mengen. Wenn $A \leq B$ und $B \leq A$ gilt, dann gilt
+        $A \approx B$. In Worten: wenn es injektive Funktionen
+        $f: A \rightarrow B$ und $g : B\rightarrow A$ gibt,
+        dann gibt es auch eine bijektive Funktion
+        $h: A \rightarrow B$.
 
     |> Proof
-        Wir tun so, als ob $A \cap B = \emptyset$ gälte.
-        Falls dies nicht der Fall sein sollte, können wir $A$
-        durch $A \times \{0\} = \{ (a,0) \ | \ a \in A\}$
-        ersetzen und $B$ durch
+        Wir tun so, als ob $A \cap B = \emptyset$ gälte. Falls
+        dies nicht der Fall sein sollte, können wir $A$ durch
+        $A \times \{0\} = \{ (a,0) \ | \ a \in A\}$ ersetzen
+        und $B$ durch
         $A \times \{1\} = \{ (b,1) \ | \ b \in B\}$. Wir
         betrachten nun die Menge $A \cup B$ und zeichnen
         Pfeile ein: $f$-Pfeile von jedem $a$ zu $f(a)$ und
@@ -120,16 +120,15 @@
             $a \in A'$ .
 
         |> Proof
-            Wenn $a \in A'$ gilt, dann gilt $a \in X_{2i+1}$,
-            also für einen ungeraden Index. Nach Konstruktion gilt
+            Wenn $a \in A'$ gilt, dann gilt $a \in X_{2i+1}$, also
+            für einen ungeraden Index. Nach Konstruktion gilt
             $X_{2i+1} = g(X_{2i})$, die Menge aller Bilder von
             $X_{2i}$ unter $g$; daher gibt es zu $a \in X_{2i+1}$
             auch ein $b \in X_{2i}$ mit $g(b) = a$. In andere
             Worten: $g^{-1}(a)$ ist definiert.
 
-        Eindeutig ist $g^{-1}(a)$ sowieso, falls es
-        existiert. Wir sehen nun: $h$ ist wohldefiniert. Ist
-        es injektiv?
+        Eindeutig ist $g^{-1}(a)$ sowieso, falls es existiert.
+        Wir sehen nun: $h$ ist wohldefiniert. Ist es injektiv?
 
         |> Remark
             *Behauptung 2.* $h$ ist injektiv.

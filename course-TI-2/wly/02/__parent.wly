@@ -77,8 +77,8 @@
             style=height:13em
             src=img/circuits/if-then-else-gate-with-values.svg
         |> figcaption
-            Das if-then-else-Gate mit einer konkreten Belegung
-            und einem Ausgabewert
+            Das if-then-else-Gate mit einer konkreten Belegung und
+            einem Ausgabewert
 
     |> Exercise
         Bauen Sie folgende Gates aus And-, Or- und Not-Gates
@@ -159,10 +159,10 @@
     Das Flipflop zeigt ein interessantes Verhalten: wenn
     $\text{Reset} = 0$, $\text{Set} = 1$ ist, so ist der
     Ausgabe-Wert des unteren OR-Gates auf jeden Fall 1,
-    und somit ist $\bar{Q} = 0$; somit sind wiederum
-    beide Input-Werte des oberen OR-Gates 0 und $Q = 1$.
-    Wenn $\text{Reset} = 1$, $\text{Set} = 0$, dann ist
-    analog $Q = 0$, $\bar{Q} = 1$. Wenn
+    und somit ist $\bar{Q} = 0$; somit sind wiederum beide
+    Input-Werte des oberen OR-Gates 0 und $Q = 1$. Wenn
+    $\text{Reset} = 1$, $\text{Set} = 0$, dann ist analog
+    $Q = 0$, $\bar{Q} = 1$. Wenn
     $\text{Reset} = \text{Set} = 0$, dann leiten beide
     OR-Gates einfach die Werte der anderen, von rechts
     kommenden Kabel durch, und somit gilt
@@ -229,6 +229,6 @@
 
     |> Definition
         Zwei Boolesche Schaltkreise $C, C^{\prime}$ heißen
-        äquivalent, wenn $f_C = f_{C^{\prime}}$, wenn sie
-        also die gleiche Funktion berechnen. Wir schreiben
+        äquivalent, wenn $f_C = f_{C^{\prime}}$, wenn sie also
+        die gleiche Funktion berechnen. Wir schreiben
         $C \equiv C^{\prime}$.

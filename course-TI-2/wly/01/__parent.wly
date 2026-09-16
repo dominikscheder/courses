@@ -162,8 +162,8 @@
                 ihnen?
 
             |> li
-                Probieren Sie das "f-Pentomino" als
-                Startkonfiguration aus:
+                Probieren Sie das "f-Pentomino" als Startkonfiguration
+                aus:
 
                 |> figure
                     |> img
@@ -194,8 +194,8 @@
 
     |> ul
         |> li
-            Wie können wir endliche Beschreibungen von
-            unendlichen Objekten angeben?
+            Wie können wir endliche Beschreibungen von unendlichen
+            Objekten angeben?
 
         |> li
             Was heißt es, etwas zu berechnen? Welche Modelle fürs

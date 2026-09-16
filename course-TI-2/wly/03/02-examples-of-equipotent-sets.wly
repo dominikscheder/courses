@@ -9,9 +9,9 @@
     $\N \approx \Q$. Dies scheint absurd! $\N$ und $\Z$
     liegen ja schön der Reihe nach sortiert, sodass sich
     eine Bijektion durch eine einfach Umordnung erreichen
-    ließ. Die Elemente der Menge $\Q$ aber liegen ja
-    nicht säuberlich getrennt, sondern ganz dicht
-    nebeneinander. Aber eins nach dem anderen.
+    ließ. Die Elemente der Menge $\Q$ aber liegen ja nicht
+    säuberlich getrennt, sondern ganz dicht nebeneinander.
+    Aber eins nach dem anderen.
 
     |> Theorem
         handle=theorem-N-N^2
@@ -34,28 +34,28 @@
 
     |> Proof
         Wir skizzieren eine Bijektion
-        $f : \N \times \N \rightarrow \N$, indem wir für
-        jeden Punkt $(x,y) \in \N \times \N$ angeben, auf
-        welche natürliche Zahl er abgebildet werden soll:
+        $f : \N \times \N \rightarrow \N$, indem wir für jeden
+        Punkt $(x,y) \in \N \times \N$ angeben, auf welche
+        natürliche Zahl er abgebildet werden soll:
 
         |> figure
             |> img
                 src=img/infinite-sets/N-times-N-to-N.svg
 
-        Wir zerlegen $\N \times \N$ also in fallende
-        Diagonale und gehen jede Diagonale von rechts unten
-        nach links oben durch. Dadurch können wir die
-        zweidimensionale Gestalt von $\N \times \N$
-        "aufdröseln" und dem eindimensionalen $\N$ zuordnen.
+        Wir zerlegen $\N \times \N$ also in fallende Diagonale
+        und gehen jede Diagonale von rechts unten nach links
+        oben durch. Dadurch können wir die zweidimensionale
+        Gestalt von $\N \times \N$ "aufdröseln" und dem
+        eindimensionalen $\N$ zuordnen.
 
     |> Exercise
         Finden Sie eine explizite Formel für die Funktion
         $f : \N \times \N$ aus dem obigen Theorem. Achten Sie
         erst einmal auf die Werte von $f(x,0)$: $f(3,0) = 6$
         und $f(4,0) = 10$ beispielsweise. Erkennen Sie die
-        blauen Zahlen auf der $x$-Achse? Haben Sie eine
-        Formel für sie? Finden Sie eine. Dann erweitern Sie
-        die Formel, so dass sie für alle Werte von
+        blauen Zahlen auf der $x$-Achse? Haben Sie eine Formel
+        für sie? Finden Sie eine. Dann erweitern Sie die
+        Formel, so dass sie für alle Werte von
         $(x,y) \in \N \times \N$ funktioniert!
 
     |> Exercise
@@ -110,16 +110,16 @@
         \end{align*}
 
         mit $a \in \Z$ und $b \in \N^+$ und $\gcd(a,b) = 1$.
-        Mit $\gcd(a,b)$ bezeichnen wir den größten
-        gemeinsamen Teiler (_greatest common divisor_) von $a$
-        und $b$. Wir definieren nun also
-        $f_1(q) := (a,b) \in \Z \times \N$. Dies ist
-        injektiv: zwei verschiedene rationale Zahlen $q$ und
-        $q'$ haben verschiedene Darstellung als gekürzter
-        Bruch, und somit gilt auch $f_1(q) \ne f_1(q')$. Wir
-        haben nun also eine Injektion
-        $f_1 : \Q \rightarrow \Z \times \N$. Mit
-        Übungsaufgabe >>exercise-cartesian-product und Theorem
+        Mit $\gcd(a,b)$ bezeichnen wir den größten gemeinsamen
+        Teiler (_greatest common divisor_) von $a$ und $b$.
+        Wir definieren nun also
+        $f_1(q) := (a,b) \in \Z \times \N$. Dies ist injektiv:
+        zwei verschiedene rationale Zahlen $q$ und $q'$ haben
+        verschiedene Darstellung als gekürzter Bruch, und
+        somit gilt auch $f_1(q) \ne f_1(q')$. Wir haben nun
+        also eine Injektion
+        $f_1 : \Q \rightarrow \Z \times \N$. Mit Übungsaufgabe
+        >>exercise-cartesian-product und Theorem
         >>theorem-N-N^2 gilt
         $\Z \times \N \approx \N \times \N \approx \N$, und
         somit gibt es eine Bijektion
@@ -180,8 +180,8 @@
             |> img
                 src=img/infinite-sets/Z-times-N-removed.svg
 
-        Die Punkte sind die Elemente von $\Z \times \N^+$.
-        Die schwarzen Punkte sind jene Punkte $(x,y)$ mit
+        Die Punkte sind die Elemente von $\Z \times \N^+$. Die
+        schwarzen Punkte sind jene Punkte $(x,y)$ mit
         $\gcd(x,y)=1$. Diese stehen nun in Bijektion mit den
         rationalen Zahlen. Die entsprechenden rationalen
         Zahlen habe ich daneben geschrieben - die negativen
@@ -215,8 +215,8 @@
     Erinnern wir uns an $\{0,1\}^*$, die Menge aller
     endlichen Bitstrings. Die Menge ist ganz klar
     unendlich, weil sie zum Beispiel
-    $1, 11, 111, 1111, \dots$ enthält. Ist sie
-    _abzählbar_ unendlich?
+    $1, 11, 111, 1111, \dots$ enthält. Ist sie _abzählbar_
+    unendlich?
 
     |> Theorem
         Es gilt $\{0,1\}^* \approx \N$.
@@ -250,8 +250,8 @@
         einmal die Bitstrings nach ihrer Länge. Dann gehen wir
         $\{0,1\}^n$ lexicographisch durch, also von $00\dots0$
         bis $11\dots$. Diese Reihenfolge durchläuft ganz
-        $\{0,1\}^*$ und ordnet jedem Bitstring eine
-        natürliche Zahl zu. Also:
+        $\{0,1\}^*$ und ordnet jedem Bitstring eine natürliche
+        Zahl zu. Also:
 
         \begin{align*}
         \begin{array}{c|c} \epsilon&0&1&00&01&10&11
@@ -274,11 +274,11 @@
     Geht das auch mit mehr als zwei Symbolen?
 
     |> Exercise
-        Definieren Sie eine Bijektion von $\{0,1,2,3\}$^*
-        nach $\N$. Weil das "Alphabet" $\{0,1,2,3\}$ die
-        Größe $4 = 2^2$ hat, können Sie sich mit einem
-        kleinen Taschenspielertrick behelfen. Schwieriger wird
-        es mit $\{0,1,2\}^*$. Zeigen Sie, dass
+        Definieren Sie eine Bijektion von $\{0,1,2,3\}$^* nach
+        $\N$. Weil das "Alphabet" $\{0,1,2,3\}$ die Größe
+        $4 = 2^2$ hat, können Sie sich mit einem kleinen
+        Taschenspielertrick behelfen. Schwieriger wird es mit
+        $\{0,1,2\}^*$. Zeigen Sie, dass
         $\{0,1,2\}^* \approx \N$ gilt. Zeigen Sie ganz
-        allgemein: wenn $\Sigma$ eine endliche Menge ist,
-        dann gilt $\Sigma^* \approx \N$.
+        allgemein: wenn $\Sigma$ eine endliche Menge ist, dann
+        gilt $\Sigma^* \approx \N$.

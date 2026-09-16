@@ -18,8 +18,8 @@
     fiktiver Produktion $X \rightarrow aBcDe$ und
     $X \rightarrow uVw$ Schritt für Schritt durch. Wir
     erkennen die Terminale $\Sigma = \{a,c,e,u,w\}$ und
-    die Nichtterminale $N = \{X,B,D,V\}$. In $\dk{G}$
-    sind \{a,c,e,u,w,A,B,D,V\} alles Terminale, und die
+    die Nichtterminale $N = \{X,B,D,V\}$. In $\dk{G}$ sind
+    \{a,c,e,u,w,A,B,D,V\} alles Terminale, und die
     Nichtterminale sind
     $\dk{N} = \{\dk{X}, \dk{B}, \dk{D}, \dk{V}\}.$ Die
     Produktionen von $\hat{G}$ sind
@@ -33,9 +33,8 @@
 
     Diese übersetzen wir in einen verallgemeinert
     nichtdeterministischen Automaten, bei dem jede Kante
-    mit einem Wort $\beta \in (\Sigma \cup N)^*$, also
-    aus _Terminalen_ der Grammatik $\dk{G}$ beschriftet
-    ist:
+    mit einem Wort $\beta \in (\Sigma \cup N)^*$, also aus
+    _Terminalen_ der Grammatik $\dk{G}$ beschriftet ist:
 
     |> figure
         |> img
@@ -51,11 +50,10 @@
             src=img/context-free/LR/hat-G-to-generalized-automaton-break-edges.svg
 
     Nochmal: jede Kante ist mit einem _Terminalsymbol_
-    beschriftet. Die Symbole $B, D, V$ sind _Terminale_
-    in der Grammatik $\dk{G}$. Wenn wir $\epsilon$
-    -Übergänge zulassen, können wir den Automaten
-    übersichtlicher gestalten und mehrere Zustände
-    zusammenfassen:
+    beschriftet. Die Symbole $B, D, V$ sind _Terminale_ in
+    der Grammatik $\dk{G}$. Wenn wir $\epsilon$ -Übergänge
+    zulassen, können wir den Automaten übersichtlicher
+    gestalten und mehrere Zustände zusammenfassen:
 
     |> figure
         |> img
@@ -75,8 +73,8 @@
     entspricht dann der Entscheidung, auch $D$ zu einem
     Blatt zu machen, während
     $\boxed{4} \step{\epsilon} \dk{D}$ der Entscheidung
-    entspricht, $D$ zu einem Knoten im Stamm zu machen
-    und eine $D$-Produktion anzuwenden. Die beiden
+    entspricht, $D$ zu einem Knoten im Stamm zu machen und
+    eine $D$-Produktion anzuwenden. Die beiden
     $\epsilon$-Übergänge von $\dk{X}$ nach $\boxed{1}$
     bzw. $\boxed{7}$ stellen einfach sicher, dass wir uns
     erst entscheiden, mit welcher Produktion wir den
@@ -118,8 +116,7 @@
     \dkt{ab} \end{array}
     \end{align*}
 
-    In dieser Grammatik betrachten wir die
-    Rechtsableitung
+    In dieser Grammatik betrachten wir die Rechtsableitung
 
     \begin{align*}
     S \Step{} aS \Step{} aaS \Step{} aaB \Step{} aaaBb
@@ -179,13 +176,13 @@
                 Falls $\sigma$ ein Nichtterminal $Y$ ist, also
                 $\beta = \beta_1 Y \beta_2$, gibt es zusätzlich noch
                 den Übergang
-                $\boxed{X \step{} \beta_1 . Y \beta_2}
-                \step{\epsilon} \boxed{Y}$
+                $\boxed{X \step{} \beta_1 . Y \beta_2} \step{\epsilon}
+                \boxed{Y}$
 
         Die Interpretation dieser Übergänge in
         Rechtsableitungsbaum-Begriffen ist: (1) heißt, dass
-        $\boxed{X}$ ein Stammknoten ist und wir ihn anhand
-        der Regel $X \rightarrow \beta$ expandieren; wir
+        $\boxed{X}$ ein Stammknoten ist und wir ihn anhand der
+        Regel $X \rightarrow \beta$ expandieren; wir
         erschaffen also Kinder, die mit den Symbolen von
         $\beta$ beschriftet sind. (2) heißt, dass wir uns
         bereits entschieden haben, die Kinder $\beta_1$ von
@@ -214,8 +211,8 @@
     deterministischen Automaten ist wie bei der
     Potenzmengenkonstruktion jeder Zustand eine _Menge_
     $R$ von Zuständen des nichtdeterministischen
-    Automaten. Wenn wir nun in eine solche Menge $R$
-    einen Zustand $q$ einfügen, dann fügen wir auch alle
+    Automaten. Wenn wir nun in eine solche Menge $R$ einen
+    Zustand $q$ einfügen, dann fügen wir auch alle
     Zustände $q'$ hinzu, zu denen es einen $\epsilon$
     -Übergang $q \step{\epsilon} q'$ gibt. Für den obigen
     nichtdeterministischen Automaten sieht das dann so
@@ -258,9 +255,9 @@
     Zustandsübergangsfunktion
     $\delta: Q \times \Sigma \rightarrow Q$ ist gar keine
     Funktion, sondern eine _partielle_ Funktion, da
-    $\delta(q,\sigma)$ für manche Eingabewerte
-    undefiniert ist. Wir verwenden aber die Konvention,
-    dass der Automat in diesem Falle in einen Todeszustand
+    $\delta(q,\sigma)$ für manche Eingabewerte undefiniert
+    ist. Wir verwenden aber die Konvention, dass der
+    Automat in diesem Falle in einen Todeszustand
     wechselt, aus dem er nicht wieder herauskommt und der
     nicht akzeptierend ist. Dies ist übersichtlicher, als
     überall Todeskanten hinzuzufügen.
@@ -276,20 +273,19 @@
 
         |> ul
             |> li
-                (DK.1) Ein akzeptierender Zustand von $M$ (der ja
-                eine Menge von Zuständen des NDK-Automaten ist)
-                enthält genau einen akzeptierenden NDK-Zustand, also
-                genau ein $\boxed{X \rightarrow \beta .}$
+                (DK.1) Ein akzeptierender Zustand von $M$ (der ja eine
+                Menge von Zuständen des NDK-Automaten ist) enthält
+                genau einen akzeptierenden NDK-Zustand, also genau ein
+                $\boxed{X \rightarrow \beta .}$
 
             |> li
-                (DK.2) Wenn $q$ ein akzeptierender Zustand von $M$
-                ist und $q \step{\sigma} q'$, dann ist $\sigma$ ein
+                (DK.2) Wenn $q$ ein akzeptierender Zustand von $M$ ist
+                und $q \step{\sigma} q'$, dann ist $\sigma$ ein
                 Nichtterminal.
 
         Wenn diese beiden Bedingungen gelten, sagen wir, dass
         $G$ den DK-Test bestanden hat. Das Theorem sagt also:
-        $G$ ist LR(0) genau dann, wenn es den DK-Test
-        besteht.
+        $G$ ist LR(0) genau dann, wenn es den DK-Test besteht.
 
     |> Highlight
         title=*Beweisskizze.*
@@ -314,10 +310,10 @@
                 |> li
                     Wenn $\alpha' \beta' = \alpha \beta \varphi$ und
                     $|\varphi| \geq 1$, dann $\varphi \not \in \Sigma^*$;
-                    in Worten: wenn $\front(\gamma)$ ein echter Präfix
-                    von $\front(\gamma')$ ist, dann muss in dem
-                    überstehenden Teil von $\front(\gamma)$ mindestens
-                    ein Nichtterminal vorkommen.
+                    in Worten: wenn $\front(\gamma)$ ein echter Präfix von
+                    $\front(\gamma')$ ist, dann muss in dem überstehenden
+                    Teil von $\front(\gamma)$ mindestens ein Nichtterminal
+                    vorkommen.
 
         Es ist nicht schwer zu sehen, dass (DK.1) äquivalent
         zu Punkt 1 des Lemmas ist. Wenden wir uns (DK.2) und
@@ -356,14 +352,14 @@
         $v \in \Sigma^*$ und einen akzeptierenden Zustand
         $q''$. Es sind also sowohl $\alpha \beta$ als auch
         $\alpha \beta \sigma v$ Fronten von $G$, und
-        $\sigma v$ besteht nur aus Terminalen. Das heißt,
-        dass Punkt 2 der Schlussfolgerung nicht gilt.
+        $\sigma v$ besteht nur aus Terminalen. Das heißt, dass
+        Punkt 2 der Schlussfolgerung nicht gilt.
 
     |> TopicAnnouncement
         LR(1)-Grammatiken
 
-    Hier ist der nichtdeterministische Automat für $G$
-    mit Lookahead 1.
+    Hier ist der nichtdeterministische Automat für $G$ mit
+    Lookahead 1.
 
     |> figure
         |> img

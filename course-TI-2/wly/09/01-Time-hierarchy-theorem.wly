@@ -1,120 +1,154 @@
 |> Sub
-    title=Das Zeithierarchietheorem, besser 
+    title=Das Zeithierarchietheorem, besser
 
-    In diesem Kapitel verwenden wir Diagonalisierung, um folgendes zu zeigen: es gibt
-    eine Sprache $L$, die wir in $t(n)$, aber nicht deutlich schneller entscheiden können.
-    Somit ergibt sich eine _Zeithierarchie_ von Sprachen mit immer höherer
-    Zeitkomplexität. 
-    Wir definieren nun eine Stoppuhr-Version des Halteproblems für $k$-Band-Turingmaschinen. Sei
-    $U^k$ die universelle Turingmaschine für Maschinen mit $k$ Bändern ($U^k$ hat also selbst $k+2$
-    Bänder, wie wir gesehen haben). Für
-    eine zeitkonstruierbare Funktion $t: \N \rightarrow \N$ sei
+    In diesem Kapitel verwenden wir Diagonalisierung, um
+    folgendes zu zeigen: es gibt eine Sprache $L$, die wir
+    in $t(n)$, aber nicht deutlich schneller entscheiden
+    können. Somit ergibt sich eine _Zeithierarchie_ von
+    Sprachen mit immer höherer Zeitkomplexität. Wir
+    definieren nun eine Stoppuhr-Version des Halteproblems
+    für $k$-Band-Turingmaschinen. Sei $U^k$ die
+    universelle Turingmaschine für Maschinen mit $k$
+    Bändern ($U^k$ hat also selbst $k+2$ Bänder, wie wir
+    gesehen haben). Für eine zeitkonstruierbare Funktion
+    $t: \N \rightarrow \N$ sei
+
     \begin{align*}
     \bhalt_t^k := \{ cx \ | \ U^k (cx) \textnormal{ macht $\leq t(|x|)$ Schritte und gibt $1$ aus }
     \} \
     .
     \end{align*}
-    Erinnern Sie sich: die universelle Turingmaschine erwartet, dass ihr Eingabewort sich zerlegen lässt als 
-    $w=cx$ wobei $c$ die gültige Codierung einer Turingmaschine ist; die Codierung ist präfixfrei, so dass 
-    es nur eine Zerlegung $w=cx$ geben kann. Falls $w$ nicht diese Form hat, also nicht mit der Codierung
+
+    Erinnern Sie sich: die universelle Turingmaschine
+    erwartet, dass ihr Eingabewort sich zerlegen lässt als
+    $w=cx$ wobei $c$ die gültige Codierung einer
+    Turingmaschine ist; die Codierung ist präfixfrei, so
+    dass es nur eine Zerlegung $w=cx$ geben kann. Falls
+    $w$ nicht diese Form hat, also nicht mit der Codierung
     einer Turingmaschine beginnt, lehnt $U^k$ sofort ab.
 
     ```dominik-prompt-response
-    $ `ls`{elm-0}
+    $`ls`{elm-0}
     IMG-1.jpg
     IMG-2.jpg
-    index.html
-    $ pwd
+    index.html$ pwd
     /home/user/images
     ```
 
-
     |> Observation
-        Die Sprache
-        $\bhalt_t^k$ ist in $\TIME_{k+3}(t)$, solange... (siehe unten)
+        Die Sprache $\bhalt_t^k$ ist in $\TIME_{k+3}(t)$,
+        solange... (siehe unten)
+
     |> Proof
-        Wir bauen eine Turingmaschine $U^k_t$ für $\bhalt_t^k$. Sie scannt zuerst das Eingabewort $w$ und zerlegt 
-        es als $w=cx$. Dann berechnet sie $T := t(|x|)$ und scheribt diese Zahlen
-        in unärer Codierung auf ein separates _Stoppuhrband_. Genauer: sie schreibt 
-        das Symbol $a$ genau $T$ mal auf das Band.
+        Wir bauen eine Turingmaschine $U^k_t$ für
+        $\bhalt_t^k$. Sie scannt zuerst das Eingabewort $w$
+        und zerlegt es als $w=cx$. Dann berechnet sie
+        $T := t(|x|)$ und scheribt diese Zahlen in unärer
+        Codierung auf ein separates _Stoppuhrband_. Genauer:
+        sie schreibt das Symbol $a$ genau $T$ mal auf das
+        Band.
 
-        Nun simuliert $U^k_t$ einfach die universelle Turingmaschine $U^k$ auf dem Eingabewort 
-        $w$, geht aber auf dem Stoppuhrband in jedem Schritt eins nach links. Wenn sie 
-        dort auf ein $\Box$-Symbol stößt, bemerkt sie, dass sie bereits mehr als $T$ Schritte 
-        ausgeführt hat und lehnt ab. Falls jedoch zuvor bereits $U^k$ in ihren akzeptierenden oder ablehnenden
-        Endzustand gewechselt ist, tut $U^k_t$ das auch. 
+        Nun simuliert $U^k_t$ einfach die universelle
+        Turingmaschine $U^k$ auf dem Eingabewort $w$, geht
+        aber auf dem Stoppuhrband in jedem Schritt eins nach
+        links. Wenn sie dort auf ein $\Box$-Symbol stößt,
+        bemerkt sie, dass sie bereits mehr als $T$ Schritte
+        ausgeführt hat und lehnt ab. Falls jedoch zuvor
+        bereits $U^k$ in ihren akzeptierenden oder ablehnenden
+        Endzustand gewechselt ist, tut $U^k_t$ das auch.
 
-        Unsere Maschine hat $k+3$ Bänder: die $k+2$ von $U^{k+2}$ und das 
-        das Stoppuhrband, also insgesamt $k+3$ Bänder. Wie schnell ist sie? Die Simulation von 
-        $U^k(w)$ benötigt höchstens $T+1$ Schritte; davor müssen wir noch das Wort 
-        $a^T$ auf das Stoppuhrband schreiben.
-        Dies motiviert folgende Definition:
+        Unsere Maschine hat $k+3$ Bänder: die $k+2$ von
+        $U^{k+2}$ und das das Stoppuhrband, also insgesamt
+        $k+3$ Bänder. Wie schnell ist sie? Die Simulation von
+        $U^k(w)$ benötigt höchstens $T+1$ Schritte; davor
+        müssen wir noch das Wort $a^T$ auf das Stoppuhrband
+        schreiben. Dies motiviert folgende Definition:
 
         |> Definition
-            Eine Funktion $t: \N \rightarrow \N$ heißt _zeitkonstruierbar_ falls 
-            es eine Turingmaschine gibt, die auf Eingabe $x$ maximal $O(t(|x|))$ Schritte läuft 
-            und $a^T$ auf ihr Ausgabeband schreibt. 
+            Eine Funktion $t: \N \rightarrow \N$ heißt
+            _zeitkonstruierbar_ falls es eine Turingmaschine gibt,
+            die auf Eingabe $x$ maximal $O(t(|x|))$ Schritte läuft
+            und $a^T$ auf ihr Ausgabeband schreibt.
 
-        Nun können wir auch die Zusatzbedingung ... in der Beobachtung oben füllen. 
+        Nun können wir auch die Zusatzbedingung ... in der
+        Beobachtung oben füllen.
 
     |> Observation
         handle=obs-diag-in-time-t
-        \ Die Sprache
-        $\bhalt_t^k$ ist in $\TIME_{k+3}(t)$, solange $t$ zeitkonstruierbar ist.
-    
-    Die Sprache $\bhalt_t^k$ können wir wieder als Tabelle darstellen
-    und sie mit Nullen und Einsen füllen. Bei den Nullen unterscheiden
-    wir hier zumindest optisch zwischen "roten Nullen": $U(c,x)$ ist
-    nicht innerhalb von $T$ Schritten fertiggeworden, und
-    "schwarzen Nullen": $U(c,x)$ ist fertiggeworden und hat akzeptiert.    
+        Die Sprache $\bhalt_t^k$ ist in $\TIME_{k+3}(t)$,
+        solange $t$ zeitkonstruierbar ist.
+
+    Die Sprache $\bhalt_t^k$ können wir wieder als Tabelle
+    darstellen und sie mit Nullen und Einsen füllen. Bei
+    den Nullen unterscheiden wir hier zumindest optisch
+    zwischen "roten Nullen": $U(c,x)$ ist nicht innerhalb
+    von $T$ Schritten fertiggeworden, und "schwarzen
+    Nullen": $U(c,x)$ ist fertiggeworden und hat
+    akzeptiert.
 
     |> figure
         |> img
-            src=img/09-complexity-theory/diagonalization/det time hierarchy-01-01.svg 
+            src=img/09-complexity-theory/diagonalization/det time hierarchy-01-01.svg
             original=img/09-complexity-theory/diagonalization/det time hierarchy.ipe
             style=height:25em
 
-    Wie zuvor bilden wir eine neue Sprache durch Diagonalisierung: 
+    Wie zuvor bilden wir eine neue Sprache durch
+    Diagonalisierung:
+
     \begin{align*}
     \bnegdiag^k_t := \{ c \ | \ cc \not \in \bhalt^k_t\}
     \end{align*}
-    Auf Eingabe $c$ können wir einfach $cc$ auf das Band schreiben und dann
-    wie oben $\bhalt_t^k$ entscheiden und das Ergebnis negieren. Daher:
-    |> Observation
-        \ Die Sprache
-        $\bnegdiag_t^k$ ist in $\TIME_{k+3}(t)$.
 
-    Nun müssen wir noch zeigen, dass man $\bnegdiag_t^k$ nicht deutlich schneller entscheiden kann:
+    Auf Eingabe $c$ können wir einfach $cc$ auf das Band
+    schreiben und dann wie oben $\bhalt_t^k$ entscheiden
+    und das Ergebnis negieren. Daher:
+
+    |> Observation
+        Die Sprache $\bnegdiag_t^k$ ist in $\TIME_{k+3}(t)$.
+
+    Nun müssen wir noch zeigen, dass man $\bnegdiag_t^k$
+    nicht deutlich schneller entscheiden kann:
 
     |> Lemma
         handle=lemma-diag-not-in-time-s
-        Sei
-        $s: \N \rightarrow \N$ eine Funktion mit
+        Sei $s: \N \rightarrow \N$ eine Funktion mit
+
         \begin{align*}
         \lim_{n \rightarrow \infty} \frac{ns(n)}{t(n)} = 0 \ .
         \end{align*}
+
         Dann gilt $\bnegdiag_t^k \not \in \TIME_{k} (s)$.
-    |> Proof 
-        (fast).
-        Nehmen wir zwecks Widerspruch an, dass die $k$-Band Turingmaschine $M$ die Sprache
-        $\bnegdiag_k^t$ in $O(s(n))$ Schritten entscheidet. Wir setzen $c := \enc(M)$ und fragen
-        uns,
-        ob $c$ selbst in $\bnegdiag_k^t$ ist:
+
+    |> Proof
+        (fast). Nehmen wir zwecks Widerspruch an, dass die
+        $k$-Band Turingmaschine $M$ die Sprache
+        $\bnegdiag_k^t$ in $O(s(n))$ Schritten entscheidet.
+        Wir setzen $c := \enc(M)$ und fragen uns, ob $c$
+        selbst in $\bnegdiag_k^t$ ist:
+
         \begin{align*}
         c \in \bnegdiag_k^t & \Longleftrightarrow (c,c) \not \in \bhalt_t^k \\
         & \Longleftrightarrow
         \underbrace{U(c,c) = 0}_{\textnormal{schwarze Null}} \textnormal{ oder }
         \underbrace{U(c,c) \textnormal{ läuft länger als $t(|c|)$ Schritte }}_{\textnormal{rote Null}}
         \end{align*}
-        Wieviele Schritte braucht $U(c,c)$ denn? Da $M(c)$ maximal $O(s(|c|))$ Schritte ausführt,
-        braucht $U(\enc(M),c)$ maximal $O(|\enc(M)|\cdot s(|c|)) = O(|c| s(|c|)) = a |c| s(|c|) + b$
-        für
-        Konstanten $a$ und $b$.
-        Falls $|c|$ hinreichend groß ist, gilt wegen $\lim \frac{ns(n)}{t(n)} = 0$ auch 
+
+        Wieviele Schritte braucht $U(c,c)$ denn? Da $M(c)$
+        maximal $O(s(|c|))$ Schritte ausführt, braucht
+        $U(\enc(M),c)$ maximal
+        $O(|\enc(M)|\cdot s(|c|)) = O(|c| s(|c|)) = a |c|
+        s(|c|) + b$
+        für Konstanten $a$ und $b$. Falls $|c|$ hinreichend
+        groß ist, gilt wegen $\lim \frac{ns(n)}{t(n)} = 0$
+        auch
+
         \begin{align*}
         \frac{a|c| s(|c|)+b} {t(|c|)} \leq 1 \ .
         \end{align*}
-        In anderen Worten: $U(c,c)$ terminiert in maximal $t(|c|)$ Schritten. Somit ist
+
+        In anderen Worten: $U(c,c)$ terminiert in maximal
+        $t(|c|)$ Schritten. Somit ist
+
         \begin{align*}
         c \in \bnegdiag_k^t & \Longleftrightarrow U(c,c) = 0 \textnormal{ oder }
         \underbrace{U(c,c) \textnormal{ läuft länger als $t(|c|)$ Schritte }}_
@@ -122,82 +156,121 @@
         & \Longleftrightarrow U(c,c) = 0 \\
         & \Longleftrightarrow M(c) = 0 \ .
         \end{align*}
-        Dies ist ein Widerspruch zur Annahme, dass $M$ die Sprache $\bnegdiag_k^t$ entscheidet.
-        
-    Wir haben angenommen, dass $a|c| s(|c|) + b \leq t(|c|)$ gilt, was für alle hinreichend 
-    großen $|c|$ gilt; was aber, wenn die Coderung $c$ recht kurz ist? Nun, man könnte 
-    $M$ künstlich aufblähen, indem man unnötige Zustände etc. einführt, einfach, um 
-    den Programmcode $c$ hinreichend lang zu machen. So argumentieren auch Arora und Barak 
-    in ihrem Buch. Ich finde, es wird klarer, wenn man in Frage stellt, ob man wirklich eine 
-    _Diagonale_ braucht, oder ob es etwas anderes nicht auch tut. Betrachten wir beispielsweise 
-    diese, nun ja, nicht Diagonale, aber diese Auswahl an Zellen in unserer Tabelle:
+
+        Dies ist ein Widerspruch zur Annahme, dass $M$ die
+        Sprache $\bnegdiag_k^t$ entscheidet.
+
+    Wir haben angenommen, dass
+    $a|c| s(|c|) + b \leq t(|c|)$ gilt, was für alle
+    hinreichend großen $|c|$ gilt; was aber, wenn die
+    Coderung $c$ recht kurz ist? Nun, man könnte $M$
+    künstlich aufblähen, indem man unnötige Zustände etc.
+    einführt, einfach, um den Programmcode $c$ hinreichend
+    lang zu machen. So argumentieren auch Arora und Barak
+    in ihrem Buch. Ich finde, es wird klarer, wenn man in
+    Frage stellt, ob man wirklich eine _Diagonale_
+    braucht, oder ob es etwas anderes nicht auch tut.
+    Betrachten wir beispielsweise diese, nun ja, nicht
+    Diagonale, aber diese Auswahl an Zellen in unserer
+    Tabelle:
 
     |> figure
         |> img
-            src=img/09-complexity-theory/diagonalization/det time hierarchy-02-01.svg 
+            src=img/09-complexity-theory/diagonalization/det time hierarchy-02-01.svg
             original=img/09-complexity-theory/diagonalization/det time hierarchy.ipe
             style=height:25em
 
-    Was habe ich hier getan? Ich suche mir für jedes Wort $x$ eine Turingmaschine $M$ bzw. deren 
-    Codierung $c$ aus. Die Idee ist nun, dass die durch $c$ codierte Turingmaschine 
-    an $x$ scheitert. Formal definieren wir uns eine Funktion $\gamma : \Sigma^* \rightarrow \Sigma^*$
-    so dass $\gamma(x)$ die Codierung einer Turingmaschine ist. 
-    Die Funktion $\gamma$ muss nicht injektiv sein: gerne dürfen mehrere $x, x', x''$ auf die gleiche 
-    Turingmaschine abgebildet werden; es soll jedoch jede Turingmaschine drankommen: 
-    für jede Turingmaschine $M$ gibt es ein $x$ mit $\gamma(x) = c := \enc(M)$. Wir definieren nun einfach 
-    \begin{align*}
-    D := \{x \ | \ \gamma(x)x \not \in \bhalt^k_t\} \ . 
-    \end{align*}
-    Damit $D \in \TIME_{k+3}(t)$ gilt, muss $\gamma$ einfach zu berechnen sein. Wir könnten 
-    beispielsweise sagen: falls das Wort $x$ mit einer Codierung $c$ beginnt, also $y = cz$, dann 
-    setzen wir $\gamma(x) := c$; falls $x$ keinen Präfix besitzt, der eine gültige Turingmaschine 
-    darstellt, dann setzen wir $\gamma(x) := c_0$, wobei $c_0$ die Codierung irgendeiner festen Turingmaschine 
-    ist. Wir können nun $D$ in Zeit $t$ entscheiden: $\gamma(x)$ berechnen (einfach); 
-    $x\gamma(x)$ aufs Eingabeband schreiben (auch einfach); $U^k_t$ aufrufen. 
+    Was habe ich hier getan? Ich suche mir für jedes Wort
+    $x$ eine Turingmaschine $M$ bzw. deren Codierung $c$
+    aus. Die Idee ist nun, dass die durch $c$ codierte
+    Turingmaschine an $x$ scheitert. Formal definieren wir
+    uns eine Funktion
+    $\gamma : \Sigma^* \rightarrow \Sigma^*$ so dass
+    $\gamma(x)$ die Codierung einer Turingmaschine ist.
+    Die Funktion $\gamma$ muss nicht injektiv sein: gerne
+    dürfen mehrere $x, x', x''$ auf die gleiche
+    Turingmaschine abgebildet werden; es soll jedoch jede
+    Turingmaschine drankommen: für jede Turingmaschine $M$
+    gibt es ein $x$ mit $\gamma(x) = c := \enc(M)$. Wir
+    definieren nun einfach
 
-    Unsere neue "Diagonale" hat noch eine weitere schöne Eigenschaft: jede Codierung $c$ kommt 
-    nicht nur mindestens einmal vor im Bild von $\gamma$ sondern unendlich oft! Die Funktion 
-    $\gamma(x)$ stürzt sich ja auf den Präfix von $x$, der wie eine gültige Codierung aussieht (falls es einen gibt); 
-    daher gilt für eine gültige Codierung $c = \enc(M)$ immer, dass $\gamma(cy) = c$ ist, egal, welches $y$ danach kommt. 
-    Die "Diagonale" sieht also moralisch gesehen so aus: 
+    \begin{align*}
+    D := \{x \ | \ \gamma(x)x \not \in \bhalt^k_t\} \ .
+    \end{align*}
+
+    Damit $D \in \TIME_{k+3}(t)$ gilt, muss $\gamma$
+    einfach zu berechnen sein. Wir könnten beispielsweise
+    sagen: falls das Wort $x$ mit einer Codierung $c$
+    beginnt, also $y = cz$, dann setzen wir
+    $\gamma(x) := c$; falls $x$ keinen Präfix besitzt, der
+    eine gültige Turingmaschine darstellt, dann setzen wir
+    $\gamma(x) := c_0$, wobei $c_0$ die Codierung
+    irgendeiner festen Turingmaschine ist. Wir können nun
+    $D$ in Zeit $t$ entscheiden: $\gamma(x)$ berechnen
+    (einfach); $x\gamma(x)$ aufs Eingabeband schreiben
+    (auch einfach); $U^k_t$ aufrufen.
+
+    Unsere neue "Diagonale" hat noch eine weitere schöne
+    Eigenschaft: jede Codierung $c$ kommt nicht nur
+    mindestens einmal vor im Bild von $\gamma$ sondern
+    unendlich oft! Die Funktion $\gamma(x)$ stürzt sich ja
+    auf den Präfix von $x$, der wie eine gültige Codierung
+    aussieht (falls es einen gibt); daher gilt für eine
+    gültige Codierung $c = \enc(M)$ immer, dass
+    $\gamma(cy) = c$ ist, egal, welches $y$ danach kommt.
+    Die "Diagonale" sieht also moralisch gesehen so aus:
 
     |> figure
-        |> img 
+        |> img
             src=img/09-complexity-theory/diagonalization/det time hierarchy-03-01.svg
             original=img/09-complexity-theory/diagonalization/det time hierarchy.ipe
             style=height:25em
-    
-    |> Lemma 
+
+    |> Lemma
         handle=lemma-D-not-in-s-better
-        Sei
-        $s: \N \rightarrow \N$ eine Funktion mit
+        Sei $s: \N \rightarrow \N$ eine Funktion mit
+
         \begin{align*}
         \lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0 \ .
         \end{align*}
-        Dann gilt $D \not \in \TIME_{k} (s)$.  
+
+        Dann gilt $D \not \in \TIME_{k} (s)$.
 
     |> Proof
-        Sei $M$ eine $k$-Band Turingmaschine mit Laufzeit $O(s(n))$. Wir werden 
-        zeigen, dass $M$ die Sprache $D$ nicht entscheidet, indem wir ein Wort $x$ finden, 
-        auf dem $M$ falsch antwortet. Wir setzen $c := \enc(M)$. Wie oben ausgeführt gibt es 
-        unendlich viele Eingabewörter $x_1, x_2, x_3, \dots$ mit $\gamma(x_i) = c$. 
-        Fragen wir uns nun, ob $x_i \in D$ ist:
+        Sei $M$ eine $k$-Band Turingmaschine mit Laufzeit
+        $O(s(n))$. Wir werden zeigen, dass $M$ die Sprache $D$
+        nicht entscheidet, indem wir ein Wort $x$ finden, auf
+        dem $M$ falsch antwortet. Wir setzen $c := \enc(M)$.
+        Wie oben ausgeführt gibt es unendlich viele
+        Eingabewörter $x_1, x_2, x_3, \dots$ mit
+        $\gamma(x_i) = c$. Fragen wir uns nun, ob $x_i \in D$
+        ist:
+
         \begin{align*}
         c \in D & \Longleftrightarrow cx_i \not \in \bhalt_t^k \\
         & \Longleftrightarrow
-        \underbrace{U(c,x_i) = 0}_{\textnormal{schwarze Null}} \textnormal{ oder }  
+        \underbrace{U(c,x_i) = 0}_{\textnormal{schwarze Null}} \textnormal{ oder }
         \underbrace{U(c,x_i) \textnormal{ läuft länger als $t(|x_i|)$ Schritte }}_{\textnormal{rote Null}}
         \end{align*}
-        Wieviele Schritte braucht $U(c,x_i)$? Da $M(x_i)$ maximal $O(s(|x_i|))$ Schritte ausführt,
-        braucht $U(\enc(M),x_i)$ maximal $O(|\enc(M)|\cdot s(|x_i|)) = O(|c| s(|x_i|)) = a |c| s(|x_i|) + b$
-        für Konstanten $a$ und $b$, die von $M$ abhängen, aber nicht von $x_i$. 
-        Da wir unendliche viele $x_i$ zur Verfügung haben, können wir $i$ so wählen, 
-        dass $|x_i|$ hinreichend groß ist und somit 
+
+        Wieviele Schritte braucht $U(c,x_i)$? Da $M(x_i)$
+        maximal $O(s(|x_i|))$ Schritte ausführt, braucht
+        $U(\enc(M),x_i)$ maximal
+        $O(|\enc(M)|\cdot s(|x_i|)) = O(|c| s(|x_i|)) = a |c|
+        s(|x_i|) + b$
+        für Konstanten $a$ und $b$, die von $M$ abhängen, aber
+        nicht von $x_i$. Da wir unendliche viele $x_i$ zur
+        Verfügung haben, können wir $i$ so wählen, dass
+        $|x_i|$ hinreichend groß ist und somit
+
         \begin{align*}
-        \frac{a|c| s(|x_i|)+b} {t(|x_i|)} \leq 1 
+        \frac{a|c| s(|x_i|)+b} {t(|x_i|)} \leq 1
         \end{align*}
-        gilt, also $a|c| s(|x_i|) + b \leq t(|x_i|)$. Das heißt $U(cx_i)$ terminiert 
-        innerhalb von $t(|x_i|)$ Schritten und somit ist 
+
+        gilt, also $a|c| s(|x_i|) + b \leq t(|x_i|)$. Das
+        heißt $U(cx_i)$ terminiert innerhalb von $t(|x_i|)$
+        Schritten und somit ist
+
         \begin{align*}
         x_i \in D & \Longleftrightarrow U(c,x_i) = 0 \textnormal{ oder }
         \underbrace{U(c,x_i) \textnormal{ läuft länger als $t(|x_i|)$ Schritte }}_
@@ -205,80 +278,101 @@
         & \Longleftrightarrow U(c,x_i) = 0 \\
         & \Longleftrightarrow M(x_i) = 0 \ .
         \end{align*}
-        Wir sehen: die Maschine $M$ gibt auf Eingabe $x_i$ genau die falsche  Antwort. 
 
-    Zusammenfassend erhalten wir die "Rohversion" des Zeithierarchiesatzes:
+        Wir sehen: die Maschine $M$ gibt auf Eingabe $x_i$
+        genau die falsche  Antwort.
+
+    Zusammenfassend erhalten wir die "Rohversion" des
+    Zeithierarchiesatzes:
 
     |> Theorem
-        *(Zithierarchiesatz, Rohversion).*
-        Seien $s, t: \N \rightarrow \N$
-        zeitkonstruierbare Funktionen mit $s(n) \geq n$ und
-        $s \in o(t)$ (also $\lim_{n \rightarrow \infty} s(n)/t(n)
-        = 0$). Dann gilt 
+        *(Zithierarchiesatz, Rohversion).* Seien
+        $s, t: \N \rightarrow \N$ zeitkonstruierbare
+        Funktionen mit $s(n) \geq n$ und $s \in o(t)$ (also
+        $\lim_{n \rightarrow \infty} s(n)/t(n) = 0$). Dann
+        gilt
+
         \begin{align*}
         \TIME_k(s) \subsetneq \TIME_{k+3}(t)
         \end{align*}
+
         für alle $k \geq 1$.
 
+    Zusammen mit der Simulation von
+    $k$-Band-Turingmaschinen durch
+    $1$-Band-Turingmaschinen, also Theorem
+    >>theorem-k-tape-to-one-tape, können wir nun für folgt
+    nun
 
-    Zusammen mit der Simulation von $k$-Band-Turingmaschinen durch $1$-Band-Turingmaschinen, 
-    also Theorem >>theorem-k-tape-to-one-tape, können wir nun für 
-    folgt nun
     \begin{align*}
     \TIME(\sqrt{s}) \subsetneq \TIME_2(s) \subsetneq \TIME_5(t)
     \end{align*}
+
     oder, alternativ augedrückt:
 
     |> Theorem
-        *(Zeithierarchiesatz, schwache Form).*
-        Seien $s, t: \N \rightarrow \N$ mit $s(n) \geq n$ und $s^2 \in o(t)$. Dann gilt
+        *(Zeithierarchiesatz, schwache Form).* Seien
+        $s, t: \N \rightarrow \N$ mit $s(n) \geq n$ und
+        $s^2 \in o(t)$. Dann gilt
         $\TIME(s) \subsetneq \TIME(t)$.
 
     |> Proof
-        Aus der Simulation von $k$-Band-Turingmaschinen durch $1$-Band-Turingmaschinen, 
-        also Theorem >>theorem-k-tape-to-one-tape, folgt 
+        Aus der Simulation von $k$-Band-Turingmaschinen durch
+        $1$-Band-Turingmaschinen, also Theorem
+        >>theorem-k-tape-to-one-tape, folgt
+
         \begin{align*}
-        \TIME(s) \subsetneq \TIME_1(s^2) \subsetneq \TIME_4(t) \subseteq \TIME(t) \ . 
+        \TIME(s) \subsetneq \TIME_1(s^2) \subsetneq \TIME_4(t) \subseteq \TIME(t) \ .
         \end{align*}
 
-    Man kann die Lücke zwischen $s$ und $t$ noch enger fassen. Dazu brauchen wir aber 
-    eine effizientere Simulation von $k$-Band-Maschinen:
+    Man kann die Lücke zwischen $s$ und $t$ noch enger
+    fassen. Dazu brauchen wir aber eine effizientere
+    Simulation von $k$-Band-Maschinen:
 
-    |> Theorem 
+    |> Theorem
         handle=theorem-k-tape-to-2-tape
-        *(Effiziente Simulation von $k$-Bandmaschinen).* Sei $M$ eine $k$-Band-Turingmaschine
-        von Laufzeit $t$. Dann gibt es eine $2$-Band-Turingmaschine $M'$ von Laufzeit 
-        $O(t \log t)$, die $M$ simuliert. Kurz: $\TIME_k(t) \subseteq \TIME_2(t \log t)$.
+        *(Effiziente Simulation von $k$-Bandmaschinen).* Sei
+        $M$ eine $k$-Band-Turingmaschine von Laufzeit $t$.
+        Dann gibt es eine $2$-Band-Turingmaschine $M'$ von
+        Laufzeit $O(t \log t)$, die $M$ simuliert. Kurz:
+        $\TIME_k(t) \subseteq \TIME_2(t \log t)$.
 
-    Ich werde das Theorem hier nicht beweisen. Die Konstruktion ist brilliant 
-    und trickreich, aber recht technisch. Mit dieser effizienten Simulation können wir nun 
-    den starken Zeithierarchiesatz zeigen:
-    
+    Ich werde das Theorem hier nicht beweisen. Die
+    Konstruktion ist brilliant und trickreich, aber recht
+    technisch. Mit dieser effizienten Simulation können
+    wir nun den starken Zeithierarchiesatz zeigen:
+
     |> Theorem
-        *(Zeithierarchiesatz, schwache Form).*
-        Seien $s, t: \N \rightarrow \N$ mit $s(n) \geq n$ und $s \log s \in o(t)$. Dann gilt
+        *(Zeithierarchiesatz, schwache Form).* Seien
+        $s, t: \N \rightarrow \N$ mit $s(n) \geq n$ und
+        $s \log s \in o(t)$. Dann gilt
         $\TIME(s) \subsetneq \TIME(t)$.
 
     |> Proof
-        Aus Theorem Theorem >>theorem-k-tape-to-2-tape folgt 
+        Aus Theorem Theorem >>theorem-k-tape-to-2-tape folgt
+
         \begin{align*}
-        \TIME(s) \subsetneq \TIME_2(s^2) \subsetneq \TIME_5(t) \subseteq \TIME(t) \ . 
+        \TIME(s) \subsetneq \TIME_2(s^2) \subsetneq \TIME_5(t) \subseteq \TIME(t) \ .
         \end{align*}
 
-    Es ist etwas leichter, sich über eine platzeffiziente Simulation von $k$-Band-Turingmaschinen durch 
-    $1$- oder $2$-Band-Turingmaschinen Gedanken zu machen. Daher ist folgender Satz mit dem, das 
-    Sie bis hier gelernt haben, nicht allzu schwer zu zeigen:
+    Es ist etwas leichter, sich über eine platzeffiziente
+    Simulation von $k$-Band-Turingmaschinen durch $1$-
+    oder $2$-Band-Turingmaschinen Gedanken zu machen.
+    Daher ist folgender Satz mit dem, das Sie bis hier
+    gelernt haben, nicht allzu schwer zu zeigen:
 
     |> Theorem
-        *(Platzhierarchiesatz)*
-        Sei $t: \N \rightarrow \N$ zeitkonstruierbar und $s: \N \rightarrow \N$ mit
-        $\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$. Dann gilt
+        *(Platzhierarchiesatz)* Sei $t: \N \rightarrow \N$
+        zeitkonstruierbar und $s: \N \rightarrow \N$ mit
+        $\lim_{n \rightarrow \infty} \frac{s(n)}{t(n)} = 0$.
+        Dann gilt
+
         \begin{align*}
         \SPACE(s(n)) \subsetneq \SPACE(t(n)) \ .
         \end{align*}
 
     |> Exercise
-        Beweisen Sie das Platzhierarchietheorem. Geht genauso wie das Zeithierarchietheorem.
-        Überlegen Sie sich, was der Platzoverhead ist, wenn Sie eine $k$-Bandmaschine durch eine
-        1-Band oder 2-Bandmaschine simulieren.
-       
+        Beweisen Sie das Platzhierarchietheorem. Geht genauso
+        wie das Zeithierarchietheorem. Überlegen Sie sich, was
+        der Platzoverhead ist, wenn Sie eine $k$-Bandmaschine
+        durch eine 1-Band oder 2-Bandmaschine simulieren.

@@ -5,9 +5,9 @@
     |> TopicAnnouncement
         Turingmaschinen mit mehreren Bändern
 
-    Im letzten Teilkapitel ist Ihnen bestimmt
-    aufgefallen, dass es auffallend lästig ist, selbst für
-    einfache Sprachen wie
+    Im letzten Teilkapitel ist Ihnen bestimmt aufgefallen,
+    dass es auffallend lästig ist, selbst für einfache
+    Sprachen wie
 
     \begin{align*}
     \{a^n b^n c^n \ | \ n \geq 0 \}
@@ -20,14 +20,14 @@
     | \ w \in \{a,b\}^*\}
     \end{align*}
 
-    Turingmaschinen zu programmieren. Ein Grund dafür
-    ist, dass die Maschine nur an einer Position des
-    Bandes lesen und schreiben kann und man deswegen
-    ständig zwischen verschiedenen Stellen hin- und
-    herfahren muss. Es bietet sich daher an, an etwas
-    allgemeineres Modell einer Rechenmaschine zu
-    definieren, das dann auch leichter zu programmieren
-    ist. Dies ist die _Mehrband-Turingmaschine_. Eine
+    Turingmaschinen zu programmieren. Ein Grund dafür ist,
+    dass die Maschine nur an einer Position des Bandes
+    lesen und schreiben kann und man deswegen ständig
+    zwischen verschiedenen Stellen hin- und herfahren
+    muss. Es bietet sich daher an, an etwas allgemeineres
+    Modell einer Rechenmaschine zu definieren, das dann
+    auch leichter zu programmieren ist. Dies ist die
+    _Mehrband-Turingmaschine_. Eine
     Mehrband-Turingmaschine ist wie eine Turingmaschine,
     nur dass sie statt einem $k$ viele Bänder und somit
     auch $k$ viele Schreib-Lese-Köpfe hat. Die
@@ -55,11 +55,11 @@
         L := \{ w \in \{a,b\}^* \ | \ w = w^R \} \ ,
         \end{align*}
 
-        In Beispiel >>example-palindromes haben wir dafür
-        eine Einband-Turingmaschine geschrieben. Deren
-        Nachteil war, dass sie ständig zwischen dem linken und
-        rechten Rand hin-und-herlaufen musste. Bauen wir nun
-        eine Mehrband-Turingmaschine. Diese arbeitet in drei
+        In Beispiel >>example-palindromes haben wir dafür eine
+        Einband-Turingmaschine geschrieben. Deren Nachteil
+        war, dass sie ständig zwischen dem linken und rechten
+        Rand hin-und-herlaufen musste. Bauen wir nun eine
+        Mehrband-Turingmaschine. Diese arbeitet in drei
         einfachen und kurzen Phasen:
 
         |> ol
@@ -67,8 +67,8 @@
                 `copy`: kopiert das $w$ auf das zweite Band
 
             |> li
-                `rewind`: bewegt den Kopf des ersten Bandes zurück
-                zum Anfang
+                `rewind`: bewegt den Kopf des ersten Bandes zurück zum
+                Anfang
 
             |> li
                 `compare`: schaut, ob erstes und zweites Band den
@@ -124,8 +124,7 @@
     der Berechnung das Ausgabewort $f(x)$ steht.
 
     |> TopicAnnouncement
-        Einband-Maschinen können Mehrband-Maschinen
-        simulieren
+        Einband-Maschinen können Mehrband-Maschinen simulieren
 
     Es stellt sich heraus, dass mehrere Bänder zwar ein
     praktisches Feature sind, aber nicht wirklich mehr
@@ -136,17 +135,16 @@
     |> Theorem
         handle=theorem-k-tape-to-one-tape
         *(Einband-Turingmaschine simuliert
-        Mehrband-Turingmaschine)*. Sei $M$ eine
-        Turingmaschine mit $k$ Bändern, wovon eines ein
-        designiertes Ausgabeband ist. Dann gibt es eine
+        Mehrband-Turingmaschine)*. Sei $M$ eine Turingmaschine
+        mit $k$ Bändern, wovon eines ein designiertes
+        Ausgabeband ist. Dann gibt es eine
         Einband-Turingmaschine $M'$ mit folgenden
         Eigenschaften:
 
         |> ol
             |> li
                 $M'(x)$ akzeptiert/lehnt ab/terminiert nicht genau
-                dann, wenn $M(x)$ akzeptiert/ablehnt/nicht
-                terminiert.
+                dann, wenn $M(x)$ akzeptiert/ablehnt/nicht terminiert.
 
             |> li
                 Wenn $M(x)$ akzeptiert und $y$ der Bandinhalt des
@@ -156,9 +154,10 @@
 
         In anderen Worten: $M'$ simuliert $M$.
 
-        Weiterhin gilt: falls die Maschine $M$ auf Eingabewörtern 
-        der Länge $n$ innerhalb von $t = t(n)$ Schritten 
-        terminiert, dann terminiert $M'$ innerhalb von $O(t^2 + nt)$ Schritten.
+        Weiterhin gilt: falls die Maschine $M$ auf
+        Eingabewörtern der Länge $n$ innerhalb von $t = t(n)$
+        Schritten terminiert, dann terminiert $M'$ innerhalb
+        von $O(t^2 + nt)$ Schritten.
 
     |> Proof
         Der erste Trick ist, dass wir die $k$ Bänder von $M$
@@ -234,26 +233,28 @@
         (der natürlich auch im $M'$-Zustand gespeichert
         ist),`accept`erreicht hat, dann macht $M'$ noch eine
         Aufräumphase, in welcher sie alle Symbole, die nicht
-        zum Ausgabeband gehören, durch $\square$ ersetzt.
-        Dann wechselt sie in ihren eigenen akzeptierenden
-        Zustand `accept'`.
+        zum Ausgabeband gehören, durch $\square$ ersetzt. Dann
+        wechselt sie in ihren eigenen akzeptierenden Zustand
+        `accept'`.
 
-        Um die Laufzeit von $M'$ zu messen, betrachten wir, wie lange 
-        es dauert, _einen_ Schritt von $M$ zu simulieren. Die Maschine 
-        $M'$ muss zweimal die Bänder von $M$ von einem Ende zum anderen 
-        ablaufen. Da $M$ selbst maximal $t$ Schritte läuft, können pro 
-        Band maximal $n + t$ Symbole stehen: im schlimmsten Falle läuft 
-        sie auf dem Eingabeband jedes mal nach links und schreibt etwas. 
-        Also muss $M'$ maximal $O(n+t)$ Schritte, um einen Schritt von $M$ 
-        zu simulieren. $M'$ terminiert also innerhalb von $O(t^2 + nt)$ Schritten. 
+        Um die Laufzeit von $M'$ zu messen, betrachten wir,
+        wie lange es dauert, _einen_ Schritt von $M$ zu
+        simulieren. Die Maschine $M'$ muss zweimal die Bänder
+        von $M$ von einem Ende zum anderen ablaufen. Da $M$
+        selbst maximal $t$ Schritte läuft, können pro Band
+        maximal $n + t$ Symbole stehen: im schlimmsten Falle
+        läuft sie auf dem Eingabeband jedes mal nach links und
+        schreibt etwas. Also muss $M'$ maximal $O(n+t)$
+        Schritte, um einen Schritt von $M$ zu simulieren. $M'$
+        terminiert also innerhalb von $O(t^2 + nt)$ Schritten.
 
     |> TopicAnnouncement
         Einfügen versus Überschreiben
 
     Folgende Aufgabe ist auf einer Einband-Turingmaschine
     sehr leicht: gegeben ein Eingabewort
-    $w \in \{a,b\}^*$, ersetze jedes $b$ durch ein $c$.
-    In der Syntax von
+    $w \in \{a,b\}^*$, ersetze jedes $b$ durch ein $c$. In
+    der Syntax von
     [turingmachinesimulator.com](https://turingmachinesimulator.com):
 
     ```.listing
@@ -326,9 +327,9 @@
     [go-left-go-right.txt](./code/turing%20machines/go-left-go-right.txt),
     geben Sie sie auf
     [turingmachinesimulator.com](https://turingmachinesimulator.com)
-    ein und starten Sie sie mit dem Eingabewort $xxx$.
-    Ein neues Zeichen links vom Kopf einfügen ist nun
-    einfach: aus
+    ein und starten Sie sie mit dem Eingabewort $xxx$. Ein
+    neues Zeichen links vom Kopf einfügen ist nun einfach:
+    aus
 
     \begin{align*}
     \delta(q,x) = \textnormal{Zustand $r$, schreibe $y$ und
@@ -358,8 +359,8 @@
     |> TopicAnnouncement
         Die Dictionary-Maschine
 
-    Ein fundamentale Datenstruktur beim Programmieren
-    sind _Dictionaries_, die Key-Value-Paare speichern:
+    Ein fundamentale Datenstruktur beim Programmieren sind
+    _Dictionaries_, die Key-Value-Paare speichern:
 
     ```python-prompt
     user@home:~$ python -i
@@ -389,16 +390,15 @@
         also
         $\Sigma = \{0,1, \texttt{:}, \texttt{;}, \texttt{[},
         \texttt{]}\}$
-        und akzeptiert, wenn es ein $i$ gibt mit $k = k_i$
-        und in diesem Falle $v_i$ auf das Ausgabeband
-        schreibt. *Tip:* Kopieren Sie erst einmal den
-        gesuchten Schlüssel $k$ auf das zweite Band. Dann
-        können Sie bequem den Schlüssel $k_i$ auf dem ersten
-        Band mit dem auf dem zweiten Band vergleichen. Wenn
-        Sie es sich einfach machen wollen, nehmen Sie einfach
-        mal an, dass alle Schlüssel gleiche Länge haben. Das
-        erspart Ihnen gefühlt 20 Zeilen im Programmcode der
-        Turingmaschine.
+        und akzeptiert, wenn es ein $i$ gibt mit $k = k_i$ und
+        in diesem Falle $v_i$ auf das Ausgabeband schreibt.
+        *Tip:* Kopieren Sie erst einmal den gesuchten
+        Schlüssel $k$ auf das zweite Band. Dann können Sie
+        bequem den Schlüssel $k_i$ auf dem ersten Band mit dem
+        auf dem zweiten Band vergleichen. Wenn Sie es sich
+        einfach machen wollen, nehmen Sie einfach mal an, dass
+        alle Schlüssel gleiche Länge haben. Das erspart Ihnen
+        gefühlt 20 Zeilen im Programmcode der Turingmaschine.
 
     |> TopicAnnouncement
         Nichtdeterministische Turingmaschinen
@@ -473,9 +473,9 @@
 
     Wir sagen auch: _Die Konfiguration $C'$ ist von $C$
     aus erreichbar_. Für ein Eingabewort $x$ sie
-    $C_x := \texttt{start} x$ die Startkonfiguration.
-    Eine nichtdeterministische Turingmaschine _akzeptiert_
-    $x$, wenn es eine akzeptierende Endkonfiguration
+    $C_x := \texttt{start} x$ die Startkonfiguration. Eine
+    nichtdeterministische Turingmaschine _akzeptiert_ $x$,
+    wenn es eine akzeptierende Endkonfiguration
     $C_{\rm accept}$ gibt mit
 
     \begin{align*}
@@ -506,8 +506,8 @@
         Für jedes $x \not \in L$ gibt es also keine
         akzeptierende Konfiguration $C$ mit
         $C_x \Rightarrow C$. Die Turingmaschine $M$
-        _entscheidet_ die Sprache $L$, wenn sie sie
-        akzeptiert und es keine unendlich langen Ketten
+        _entscheidet_ die Sprache $L$, wenn sie sie akzeptiert
+        und es keine unendlich langen Ketten
 
         \begin{align*}
         C_x \Step{} C_1 \Step{} C_2 \Step{} \dots
@@ -530,11 +530,11 @@
 
     |> Example
         Beim Teilsummenproblem haben wir eine Liste von Waren
-        (alles Unikate) mit Preisen $p_1, p_2, \dots, p_n$
-        und ein Guthaben $g$ gegeben und wollen wissen, ob
-        wir unser Guthaben exakt ausgeben können. Ob es also
-        eine Teilmenge $I \subseteq [n]$ von Waren gibt, die
-        genau $g$ kostet:
+        (alles Unikate) mit Preisen $p_1, p_2, \dots, p_n$ und
+        ein Guthaben $g$ gegeben und wollen wissen, ob wir
+        unser Guthaben exakt ausgeben können. Ob es also eine
+        Teilmenge $I \subseteq [n]$ von Waren gibt, die genau
+        $g$ kostet:
 
         \begin{align*}
         \textnormal{gibt es ein } I \subseteq [n]
@@ -557,8 +557,8 @@
 
         über dem Alphabet
         $\Sigma = \{0,1,2,3,4,5,6,7,8,9,\#,:\}$ codieren. Das
-        Wort ist in unserer Sprache $L$ enthalten, wenn es
-        nun eben eine Teilmenge gibt, die sich genau zu 194
+        Wort ist in unserer Sprache $L$ enthalten, wenn es nun
+        eben eine Teilmenge gibt, die sich genau zu 194
         aufsummiert. Entwerfen wir nun eine
         nichtdeterministische Turingmaschine $M$ für diese
         Sprache. $M$ geht von links nach rechts alle Waren
@@ -592,15 +592,15 @@
         + 6 + 19 + 58 + 1 + 13
         \end{align*}
 
-        aber eben auch jede beliebige andere Summe. Im
-        Zustand $\texttt{add}$ aufgerufen, muss nun die
-        Turingmaschine alle diese Zahlen auf dem zweiten Band
-        addieren (lästig, geht aber irgendwie) und dann in
-        einer dritten Phase mit der Zahl rechts vom :
-        vergleichen. Stimmen sie überein, akzeptiert die
-        Turingmaschine, stimmt sie nicht über ein, lehnt sie
-        ab. Da $6 + 19 + 58 + 1 + 13 = 97$, haben wir eine
-        ablehnende Konfiguration erreicht. Es sind aber viele
+        aber eben auch jede beliebige andere Summe. Im Zustand
+        $\texttt{add}$ aufgerufen, muss nun die Turingmaschine
+        alle diese Zahlen auf dem zweiten Band addieren
+        (lästig, geht aber irgendwie) und dann in einer
+        dritten Phase mit der Zahl rechts vom : vergleichen.
+        Stimmen sie überein, akzeptiert die Turingmaschine,
+        stimmt sie nicht über ein, lehnt sie ab. Da
+        $6 + 19 + 58 + 1 + 13 = 97$, haben wir eine ablehnende
+        Konfiguration erreicht. Es sind aber viele
         Endkonfigurationen erreichbar. Wir können zum Beispiel
         in Phase 1 auch
 
@@ -673,18 +673,18 @@
         \end{align*}
 
         außer wenn
-        $q \in \{\texttt{reject},\texttt{accept}\}$; dann
-        gibt es gar keine Möglichkeit. Dies ist einfach:
-        sollte es mehr als zwei Möglichkeiten geben, so führen
-        wir Zwischenzustände ein:
+        $q \in \{\texttt{reject},\texttt{accept}\}$; dann gibt
+        es gar keine Möglichkeit. Dies ist einfach: sollte es
+        mehr als zwei Möglichkeiten geben, so führen wir
+        Zwischenzustände ein:
 
         |> figure
             |> img
                 style=height: 10em
                 src=img/turing-machines/nondeterminism/three-to-two.svg
 
-        Auf der Menge der Konfigurationen schaut das dann
-        noch intuitiver aus:
+        Auf der Menge der Konfigurationen schaut das dann noch
+        intuitiver aus:
 
         |> figure
             |> img
@@ -712,8 +712,8 @@
         Falls wir auf dem zweiten Band einem anderen Zeichen
         begegnen ( $\square$ oder sonst etwas, das weder 0
         noch 1 ist), dann lehnen wir sofort ab. Wir haben nun
-        eine deterministische Turingmaschine $M''$, die
-        jedoch nicht das gleiche tut wie $M$ . Aber: wenn
+        eine deterministische Turingmaschine $M''$, die jedoch
+        nicht das gleiche tut wie $M$ . Aber: wenn
         $x \in L(M)$, dann gibt es ein Wort $z \in \{0,1\}^*$,
         das wir auf das zweite Band schreiben _könnten_, so
         dass $M''$ das Eingabewort $x$ akzeptiert. Im

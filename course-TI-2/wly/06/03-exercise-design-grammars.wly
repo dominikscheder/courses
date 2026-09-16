@@ -46,17 +46,17 @@
         S ->; "(" S "]" S;
         ```
 
-        Was ist die erzeugte Sprache? Können Sie sie in
-        Worten beschreiben? Erzeugen Sie Wörter in dieser
-        Sprache, für die der Backtrack-Baum viele rote
-        Sackgassen enthält. Schreiben Sie eine äquivalente
-        Grammatik (d.h., die die gleiche Sprache erzeugt), für
-        die es keine oder nur sehr kurze Sackgassen gibt.
-        Testen Sie die beiden Grammatiken mit "großen"
-        Eingabewörtern und schauen Sie, ob Sie
-        Laufzeitunterschiede bemerken. (Hier erweist sich mein
-        ineffizienter Code als Vorteil: eine schlechte
-        Grammatik wird sofort bestraft).
+        Was ist die erzeugte Sprache? Können Sie sie in Worten
+        beschreiben? Erzeugen Sie Wörter in dieser Sprache,
+        für die der Backtrack-Baum viele rote Sackgassen
+        enthält. Schreiben Sie eine äquivalente Grammatik
+        (d.h., die die gleiche Sprache erzeugt), für die es
+        keine oder nur sehr kurze Sackgassen gibt. Testen Sie
+        die beiden Grammatiken mit "großen" Eingabewörtern und
+        schauen Sie, ob Sie Laufzeitunterschiede bemerken.
+        (Hier erweist sich mein ineffizienter Code als
+        Vorteil: eine schlechte Grammatik wird sofort
+        bestraft).
 
     |> Exercise
         Schreiben Sie eine kontextfreie Grammatik für die
@@ -126,13 +126,12 @@
         X ->; "a" | "a" X | "a" X X;
         ```
 
-        Das ist aber keine Kunst, da die Grammatik
-        uneindeutig ist. Können Sie eine _eindeutige_
-        Grammatik angebene, die ähnlich exponentielles
-        Verhalten zeigt? Exponentiell heißt: mit jedem
-        zusätlichen Zeichen des Eingabewortes kann die Größe
-        des Backtrack-Baumes um einen Faktor $R \gt 1$
-        wachsen.
+        Das ist aber keine Kunst, da die Grammatik uneindeutig
+        ist. Können Sie eine _eindeutige_ Grammatik angebene,
+        die ähnlich exponentielles Verhalten zeigt?
+        Exponentiell heißt: mit jedem zusätlichen Zeichen des
+        Eingabewortes kann die Größe des Backtrack-Baumes um
+        einen Faktor $R \gt 1$ wachsen.
 
     |> Exercise
         *(Super-Challenge; ich hab selbst keine Lösung)*.

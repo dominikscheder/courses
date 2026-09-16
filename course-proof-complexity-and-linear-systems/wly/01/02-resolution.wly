@@ -5,10 +5,10 @@
     $s : V \rightarrow \{0,1\}$ the parity requirements.
     We can encode each constraint
     $c_u: \sum_{e \sim v} x_e$ as a CNF formula. This
-    creates $2^{d(v)-1}$ clauses, each of size $d(v)$.
-    Let us denote this CNF formula by $F_u(G,s)$ or
-    simply $F_u$ if $G$ and $s$ are understood from the
-    context. We finally define
+    creates $2^{d(v)-1}$ clauses, each of size $d(v)$. Let
+    us denote this CNF formula by $F_u(G,s)$ or simply
+    $F_u$ if $G$ and $s$ are understood from the context.
+    We finally define
 
     \begin{align*}
     \tseitin(G,s) := \bigwedge_{u \in V} F_u(G,s) \ .
@@ -20,10 +20,9 @@
     $\tseitin(G,s)$ has exactly $2^{k-1} |V|$ clauses,
     each of width exactly $k$.
 
-    If an odd number of vertices have a parity
-    requirement of $1$, then $\tseitin(G,s)$ is
-    unsatisfiable and we can reason about resolution
-    refutations of it.
+    If an odd number of vertices have a parity requirement
+    of $1$, then $\tseitin(G,s)$ is unsatisfiable and we
+    can reason about resolution refutations of it.
 
     |> TopicAnnouncement
         Resolution
@@ -63,9 +62,9 @@
                 $j_1, j_2 \lt i$ such that $C_i$ is a _resolvent_ of
                 $C_{j_1}, C_{j_2}$.
 
-        If $C_l = \Box$ then the proof is called a
-        _resolution refutation_ of $F$. The _size_ of the
-        proof is $l$. The _width_ of the proof is
+        If $C_l = \Box$ then the proof is called a _resolution
+        refutation_ of $F$. The _size_ of the proof is $l$.
+        The _width_ of the proof is
         $\max \{|C_i| \ | \ 1 \leq i \leq l \}$.
 
     Suppose $C$ is a clause appearing in a resolution
@@ -73,12 +72,12 @@
     denoted by $F \Rightarrow C$, meaning that for every
     assignment $\alpha \in \{0,1\}^V$ with $F(\alpha) = 1$
     also $C(\alpha)=1$. Maybe $C$ is already implied by a
-    subset of clauses of $F$. The following question
-    turns out to be important:
+    subset of clauses of $F$. The following question turns
+    out to be important:
 
     |> Quotation
-        What is a minimal set $G$ of clauses of $F$ that
-        still implies $C$?
+        What is a minimal set $G$ of clauses of $F$ that still
+        implies $C$?
 
     In the case of a Tseitin formulas $F = \tseitin(G,s)$,
     the clauses of $F$ come in bundles $F_u(G,s)$, our
@@ -88,9 +87,9 @@
     be better:
 
     |> Quotation
-        What is a minimal set $S \subseteq V$ of vertices
-        such that $F_S := \bigwedge_{v \in S} F_v(G,s)$
-        implies $C$?
+        What is a minimal set $S \subseteq V$ of vertices such
+        that $F_S := \bigwedge_{v \in S} F_v(G,s)$ implies
+        $C$?
 
     The second question is different insofar as we still
     ask for a subset of clauses of $F$ implying $C$, but
@@ -125,10 +124,10 @@
         \end{align*}
 
         So $\alpha$ satisfies all constraints $c_v$ for
-        $v \in S \setminus \{u\}$. But it violates $c_u$.
-        Why? Suppose $\alpha$ did satisfy $c_u$ as well; then
-        it would satisfy all of $F_S$. By choice of $S$ we
-        know that $F_S$ implies $C$ so $C(\alpha)=1$, a
+        $v \in S \setminus \{u\}$. But it violates $c_u$. Why?
+        Suppose $\alpha$ did satisfy $c_u$ as well; then it
+        would satisfy all of $F_S$. By choice of $S$ we know
+        that $F_S$ implies $C$ so $C(\alpha)=1$, a
         contradiction. We conclude:
 
         \begin{align*}
@@ -141,9 +140,9 @@
 
         We don't know about $F_v(\alpha)$ for
         $v \in V \setminus S$ but we don't care, either.
-        Suppose we take $\alpha$ and flip the value it
-        assigns to edge $f$. We get a new assignment $\beta$
-        defined by
+        Suppose we take $\alpha$ and flip the value it assigns
+        to edge $f$. We get a new assignment $\beta$ defined
+        by
 
         \begin{align*}
         \beta(x_e) := \begin{cases}
@@ -152,10 +151,10 @@
         \end{cases}
         \end{align*}
 
-        Now consider some $v \in S \setminus \{v\}$. The
-        edge $f = \{u,w\}$ is not incident to $v$ and thus
-        $x_f$ does not appear in $c_v$ and neither in $F_v$,
-        its equivalent CNF formula. This means that
+        Now consider some $v \in S \setminus \{v\}$. The edge
+        $f = \{u,w\}$ is not incident to $v$ and thus $x_f$
+        does not appear in $c_v$ and neither in $F_v$, its
+        equivalent CNF formula. This means that
         $F_v(\beta)=F_v(\alpha)=1$. What about $c_u$? The
         assignment $\alpha$ violates $c_u$, as seen above:
         $\sum_{e \sim u} \alpha(x_e) \ne s(u)$. This sum also
@@ -201,10 +200,10 @@
 
         for every set $S \subseteq V$ of size $|S| \leq t$.
 
-    Typically, we say that $G$ is a good expander if it
-    is $k$-regular for constant $k$ and $t \in \Omega(n)$
-    and $h \in \Omega(k)$. I don't want to make this
-    formal right now.
+    Typically, we say that $G$ is a good expander if it is
+    $k$-regular for constant $k$ and $t \in \Omega(n)$ and
+    $h \in \Omega(k)$. I don't want to make this formal
+    right now.
 
     |> Example
         If $G = (V,E)$ is $d$-regular and has girth at least
@@ -233,9 +232,9 @@
         \end{align*}
 
         In words: the edges included in $S$ or leaving $S$
-        generate $d|S|$ "endpoints". At most $2 |E_S|$ of
-        them can be inside $G[S]$. The others must be on an
-        edge leaving $S$. We conclude that
+        generate $d|S|$ "endpoints". At most $2 |E_S|$ of them
+        can be inside $G[S]$. The others must be on an edge
+        leaving $S$. We conclude that
         $\delta(S) \geq (d-2) |S|$.
 
     |> Theorem
@@ -271,13 +270,13 @@
         \end{cases}
         \end{align*}
 
-        Since $G$ is connected and the number of vertices
-        with parity requirement $1$ is even in $s'$, the
-        formula $\tseitin(G,s')$ is satisfiable. Since all
-        other parity requirements are the same, the formula
-        $F_S$ is also a subformula of $\tseitin(G,s')$ and
-        thus $F_S$ is satisfiable. Therefore $F_S$ cannot
-        imply $\Box$. We conclude that $\mu(\Box) = |V|$.
+        Since $G$ is connected and the number of vertices with
+        parity requirement $1$ is even in $s'$, the formula
+        $\tseitin(G,s')$ is satisfiable. Since all other
+        parity requirements are the same, the formula $F_S$ is
+        also a subformula of $\tseitin(G,s')$ and thus $F_S$
+        is satisfiable. Therefore $F_S$ cannot imply $\Box$.
+        We conclude that $\mu(\Box) = |V|$.
 
         Now consider a resolution refutation of $F$ and a
         clause $C$ in it. If $C$ is the resolvent of two

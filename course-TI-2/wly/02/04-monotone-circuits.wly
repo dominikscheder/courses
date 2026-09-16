@@ -5,29 +5,29 @@
     Für zwei Tupel $\mathbf{x}, \mathbf{y} \in \{0,1\}^n$
     schreiben wir $\mathbf{x} \leq \mathbf{y}$, falls
     $x_1 \leq y_1, \dots, x_n \leq y_n$, also $\mathbf{x}$
-    _in jeder Koordinate_ kleiner gleich $\mathbf{y}$
-    ist. Beispielsweise gilt $(0,0,1) \leq (1,0,1)$.
-    Allerdings gilt weder $(0,1,0) \leq (1,0,1)$ noch
-    umgekehrt; die beiden Tupel sind _unvergleichbar_; es
-    handelt sich bei $\leq$ also um eine
-    _Partialordnung_. Am Besten stellen Sie sich eine
-    solche Partialordnung als gerichteten Graphen vor:
+    _in jeder Koordinate_ kleiner gleich $\mathbf{y}$ ist.
+    Beispielsweise gilt $(0,0,1) \leq (1,0,1)$. Allerdings
+    gilt weder $(0,1,0) \leq (1,0,1)$ noch umgekehrt; die
+    beiden Tupel sind _unvergleichbar_; es handelt sich
+    bei $\leq$ also um eine _Partialordnung_. Am Besten
+    stellen Sie sich eine solche Partialordnung als
+    gerichteten Graphen vor:
 
     |> figure
         |> img
             style=height:10em
             src=img/circuits/hasse-diagram.svg
 
-    Diese Darstellung einer Partialordnung als
-    gerichteter Graph bezeichnet man auch als
-    _Hasse-Diagramm_ (ich verzichte hier auf eine formale
-    Definition). Es gilt nun $\mathbf{x} \leq \mathbf{y}$,
-    wenn Sie im Hasse-Diagramm einen Pfad von $\mathbf{x}$
-    nach $\mathbf{y}$ finden. *Vorsicht.* Im obigen Bild
-    steht zwar $001$ unterhalb von $110$, allerdings
-    werden Sie keinen Pfad von $001$ nach $110$ finden;
-    es gilt also $001 \not \leq 110$; die beiden Elemente
-    sind _unvergleichbar_.
+    Diese Darstellung einer Partialordnung als gerichteter
+    Graph bezeichnet man auch als _Hasse-Diagramm_ (ich
+    verzichte hier auf eine formale Definition). Es gilt
+    nun $\mathbf{x} \leq \mathbf{y}$, wenn Sie im
+    Hasse-Diagramm einen Pfad von $\mathbf{x}$ nach
+    $\mathbf{y}$ finden. *Vorsicht.* Im obigen Bild steht
+    zwar $001$ unterhalb von $110$, allerdings werden Sie
+    keinen Pfad von $001$ nach $110$ finden; es gilt also
+    $001 \not \leq 110$; die beiden Elemente sind
+    _unvergleichbar_.
 
     |> Definition
         Eine Boolesche Funktion
@@ -52,8 +52,7 @@
     oder nicht. Für eine Funktion
     $f: \{0,1\}^2 \rightarrow \{0,1\}$ markieren wir im
     Hasse-Diagramm von $\{0,1\}^2$ diejenigen Elemente
-    blau, auf denen $f(x,y) = 1$ ist, und die anderen
-    rot.
+    blau, auf denen $f(x,y) = 1$ ist, und die anderen rot.
 
     |> figure
         |> img
@@ -65,9 +64,9 @@
     liegt, im Bild von $\oplus$ allerdings schon. Der
     Grund: $\wedge$ ist monoton, $\xor$ ist es nicht.
     Formaler argumentiert: in der Partialordnung gilt
-    $01 \leq 11$ aber $\xor (0,1) \gt \xor (1,0)$, was
-    der Definition einer monotonen Funktion widerspricht.
-    (Ich habe hier absichtlich die Präfixschreibweise
+    $01 \leq 11$ aber $\xor (0,1) \gt \xor (1,0)$, was der
+    Definition einer monotonen Funktion widerspricht. (Ich
+    habe hier absichtlich die Präfixschreibweise
     $\xor(0,1)$ verwendet, um hervorzuheben, dass es sich
     hierbei um eine Funktion in zwei Variablen handelt.)
     Beachten Sie, dass ich die Worte _"oberhalb"_ im Sinne
@@ -174,8 +173,7 @@
 
     |> ul
         |> li
-            kleine Beispiele untersuchen und dann
-            verallgemeinern,
+            kleine Beispiele untersuchen und dann verallgemeinern,
 
         |> li
             bereits Bekanntes abwandeln und hoffen, dass es
@@ -207,19 +205,19 @@
             $f: \{0,1\}^n \rightarrow \{0,1\}$ gibt es einen
             Schaltkreis $C$, der $f$ berechnet.
 
-        Wir haben diese Konstruktion in der Vorlesung an
-        einem Beispiel durchexerziert und auch Größe und Tiefe
-        des resultierenden Schaltkreises analysiert,
-        allerdings haben wir den Beweis nicht formal
-        aufgeschrieben. Nutzen wir hier die Gelegennheit und
-        üben an diesem Beispiel das Finden und Führen
-        mathematischer Beweise. Beachten Sie, dass wir nun
-        vorerst über allgemeine, nicht notwendigerweise
-        monotone Boolesche Funktionen reden. Falls Sie sich
-        noch gut an unseren Beweis von Theorem 2 in der
-        Vorlesung erinnern können und eher an Theorem 1 als an
-        allgemeinen Beweismethoden interessiert sind, dürfen
-        Sie gerne [runterspringen](>>after-sub-proof).
+        Wir haben diese Konstruktion in der Vorlesung an einem
+        Beispiel durchexerziert und auch Größe und Tiefe des
+        resultierenden Schaltkreises analysiert, allerdings
+        haben wir den Beweis nicht formal aufgeschrieben.
+        Nutzen wir hier die Gelegennheit und üben an diesem
+        Beispiel das Finden und Führen mathematischer Beweise.
+        Beachten Sie, dass wir nun vorerst über allgemeine,
+        nicht notwendigerweise monotone Boolesche Funktionen
+        reden. Falls Sie sich noch gut an unseren Beweis von
+        Theorem 2 in der Vorlesung erinnern können und eher an
+        Theorem 1 als an allgemeinen Beweismethoden
+        interessiert sind, dürfen Sie gerne
+        [runterspringen](>>after-sub-proof).
 
         |> Proof
             Als _Beweismethode_ verwenden wir Induktion über $n$,
@@ -242,8 +240,8 @@
                         dass, wenn $P(n)$ für eine Zahl $n \in \N$ gilt, dann
                         sicherlich auch $P(n+1)$ gilt (*Induktionsschritt*).
 
-                Wenn wir beide Teile gezeigt haben, können wir uns
-                nun "hochhangeln": $P(0)$ gilt, weil wir in Punkt 1
+                Wenn wir beide Teile gezeigt haben, können wir uns nun
+                "hochhangeln": $P(0)$ gilt, weil wir in Punkt 1
                 gezeigt haben; mit Hilfe von Punkt 2 können wir nun
                 argumentieren, dass aus $P(0)$ die Aussage $P(1)$
                 folgt; dass aus $P(1)$ die Aussage $P(2)$ folgt; und
@@ -307,13 +305,12 @@
                 ansetzen wollen, dann sehen wir, dass es _vier_
                 Funktionen gibt: $0, 1, x, \neg x$ ; all diese haben
                 natürlich einen (sehr einfachen) Schaltkreis. Nur bei
-                $\neg x$ braucht unser Schaltkreis überhaupt ein
-                Gate. An diesem Punkt protestieren Sie vielleicht und
-                sagen, dass $0$ keine Funktion in _einer_ Variable
-                ist, sondern in _zwei_ Variablen. Und auch hier
-                appelliere ich an Ihre Programmiererfahrung: weder Sie
-                noch der Java-Compiler werden Probleme mit der
-                Funktion
+                $\neg x$ braucht unser Schaltkreis überhaupt ein Gate.
+                An diesem Punkt protestieren Sie vielleicht und sagen,
+                dass $0$ keine Funktion in _einer_ Variable ist,
+                sondern in _zwei_ Variablen. Und auch hier appelliere
+                ich an Ihre Programmiererfahrung: weder Sie noch der
+                Java-Compiler werden Probleme mit der Funktion
 
                 ```.listing
                 public boolean constantFalse(boolean x) {
@@ -336,9 +333,9 @@
                 In der Praxis gehen wir in der Mathematik deutlich
                 laxer mit Notation um und hoffen, dass der Leser aus
                 dem Kontext die richtige Interpretation herausliest:
-                ob $0$ nun eine Konstante ist, eine Funktion mit
-                einer Input-Variablen, mit zwei Input-Variablen etc.
-                In mathematischen Papern lesen Sie in diesem Kontext
+                ob $0$ nun eine Konstante ist, eine Funktion mit einer
+                Input-Variablen, mit zwei Input-Variablen etc. In
+                mathematischen Papern lesen Sie in diesem Kontext
                 manchmal [_with abuse of
                 notation_](https://en.wikipedia.org/wiki/Abuse_of_notation),
                 womit die Autoren andeuten, dass sie ihre Notation
@@ -390,8 +387,8 @@
 
             In anderen Worten, wir fixieren das erste Input-Bit
             auf einen konstanten Wert und erhalten so eine
-            Funktion in $n-1$ Variablen. Die Funktion $f_0$ ist
-            im Prinzip die obere Hälfte der Wahrheitstabelle, und
+            Funktion in $n-1$ Variablen. Die Funktion $f_0$ ist im
+            Prinzip die obere Hälfte der Wahrheitstabelle, und
             $f_1$ ist die untere Hälfte. Da $f_0$ und $f_1$
             jeweils nur $n-1$ Input-Variablen haben, können wir
             die Induktionshypothese anwenden und folgern, dass es
@@ -437,9 +434,9 @@
         handle=after-sub-proof
         !! after-sub-proof##<<
 
-    Diesen "hellblauen" Beweis haben wir ja bereits in
-    der Vorlesung geführt. Ich habe ihn hier wiederholt
-    und in größerem Detail besprochen, um auf verschiedene
+    Diesen "hellblauen" Beweis haben wir ja bereits in der
+    Vorlesung geführt. Ich habe ihn hier wiederholt und in
+    größerem Detail besprochen, um auf verschiedene
     formale Aspekte der Beweisführung einzugehen. Wenden
     wir uns jetzt dem Beweis von Theorem
     >>theorem-monotone-zu-jeder zu.
@@ -481,9 +478,9 @@
                 src=img/circuits/top-down-if-then-else-2.svg
 
         Die "durchgetrichenen" Kabel bedeuten, dass hier
-        mehrere Kabel parallel laufen (also hier $n-1$
-        viele). Erkennen Sie das Problem mit der Konstruktion?
-        Klar: das `if-then-else`-Gate ist nicht monoton. Unser
+        mehrere Kabel parallel laufen (also hier $n-1$ viele).
+        Erkennen Sie das Problem mit der Konstruktion? Klar:
+        das `if-then-else`-Gate ist nicht monoton. Unser
         Schaltkreis schaut also in Wirklichkeit so aus:
 
         |> figure
@@ -518,17 +515,16 @@
         statt $f_1(x_2,\dots,x_n)$ zu schreiben. Auch ein
         _abuse of notation_. In der obigen Formel habe ich
         rechts das $x$ ausgeklammert; die Formel beginnt nun
-        mit $x \wedge ...$; falls $x=0$ ist, gibt sie also
-        auf jeden Fall $0$ aus; das kann im Allgemeinen nicht
+        mit $x \wedge ...$; falls $x=0$ ist, gibt sie also auf
+        jeden Fall $0$ aus; das kann im Allgemeinen nicht
         korrekt (also äquivalent zu $f$ sein; warum sollte $f$
         automatisch $0$ sein, nur weil $x_1=0$ ist? Wir
         schließen also: das NOT-Gate durch ein gate-loses
         Kabel zu ersetzen ist im Allgemeinen nicht korrekt.
         Schauen wir uns also den Schaltkreis im zweiten Bild
-        an. Das rechte $\wedge$-Gate hat nur einen Input,
-        kann also weggelassen werden (d.h. durch ein Kabel
-        ersetzt werden); wir erhalten den monotonen
-        Schaltkreis
+        an. Das rechte $\wedge$-Gate hat nur einen Input, kann
+        also weggelassen werden (d.h. durch ein Kabel ersetzt
+        werden); wir erhalten den monotonen Schaltkreis
 
         |> figure
             |> img
@@ -598,9 +594,9 @@
 
                     Wir überprüfen nun also: wenn
                     $f_0(x_2, \dots, x_n) = 0$ ist, dann gilt
-                    $f_0 \vee f_1 = 0 \vee f_1 = f_1$. Wenn $f_0 = 1$
-                    ist, dann ist $f_1 = 1$ wegen Monotonität (größer als
-                    1 geht ja nicht), und daher
+                    $f_0 \vee f_1 = 0 \vee f_1 = f_1$. Wenn $f_0 = 1$ ist,
+                    dann ist $f_1 = 1$ wegen Monotonität (größer als 1
+                    geht ja nicht), und daher
                     $f_0 \vee f_1 = 1 \vee 1 = 1 = f_1$. In jedem Fall
                     gilt also:
 
@@ -639,10 +635,10 @@
         einer DNF-Formel auf Basis der gegebenen
         Wahrheitstabelle. Für jedes $n$-Tupel
         $\mathbf{a} := a_1,\dots,a_n) \in \{0,1\}^n$, für
-        welches $f$ den Wert 1 ausgibt, konstruieren wir
-        einen DNF-Term $T_{\mathbf{a}}$, der auf $\mathbf{a}$
-        eine 1 ausgibt und sonst überall eine 0. Um den Term
-        genau zu beschreiben, definieren wir
+        welches $f$ den Wert 1 ausgibt, konstruieren wir einen
+        DNF-Term $T_{\mathbf{a}}$, der auf $\mathbf{a}$ eine 1
+        ausgibt und sonst überall eine 0. Um den Term genau zu
+        beschreiben, definieren wir
 
         \begin{align*}
         I_{\mathbf{a}}&:= \{ i \in \{1,\dots, n\} \ | \ a_i = 1 \} \\
@@ -684,8 +680,8 @@
         x_4 \wedge \bar{x}_5$.
         Das gibt den gleichen Term wie zuvor, nur mit den
         Literalen in anderer Reihenfolge aufgelistet (was
-        keine Rolle spielt, da $\wedge$ kommutativ ist).
-        Gegen eine Boolesche Funktion
+        keine Rolle spielt, da $\wedge$ kommutativ ist). Gegen
+        eine Boolesche Funktion
         $f: \{0,1\}^n \rightarrow \{0,1\}$, definieren wir
 
         $$
@@ -772,8 +768,7 @@
             $$
 
             Eine Möglichkeit, eine Gleichheit $=$ zu zeigen, ist,
-            beide Ungleichungen $\leq$ und $\geq$ zu zeigen,
-            also:
+            beide Ungleichungen $\leq$ und $\geq$ zu zeigen, also:
 
             |> ol
                 |> li
@@ -848,13 +843,13 @@
             schaut denn ein Input $\mathbf{y}$ aus, auf dem
             $T_{\mathbf{a}^*}$ 1 ausgibt? So ein $\mathbf{y}$
             müsste $y_i=1$ für alle $i \in I(\mathbf{a}^*)$ und
-            $y_i=0$ für alle $i \in O(\mathbf{a}^*)$ haben; also
-            1 sein, wo $\mathbf{a}^*$ auch 1 ist, und 0 sein, wo
+            $y_i=0$ für alle $i \in O(\mathbf{a}^*)$ haben; also 1
+            sein, wo $\mathbf{a}^*$ auch 1 ist, und 0 sein, wo
             $\mathbf{a}^*$ auch 0 ist. Aha! Es müsste
-            $\mathbf{a}^*$ selbst sein! Na klar, wir erinnern
-            uns: wir haben den Term $T_{\mathbf{a}}$ so
-            definiert, dass er auf $\mathbf{a}$ und nur dort 1
-            wird. Wir wissen also:
+            $\mathbf{a}^*$ selbst sein! Na klar, wir erinnern uns:
+            wir haben den Term $T_{\mathbf{a}}$ so definiert, dass
+            er auf $\mathbf{a}$ und nur dort 1 wird. Wir wissen
+            also:
 
             $$
             T_{\mathbf{a}^*} (\mathbf{a}^*) = 1 \ .
@@ -863,9 +858,9 @@
             Wenn wir Glück haben, gilt
             $\mathbf{a}^* = \mathbf{x}$. Ansonsten gilt immerhin,
             dass $x_i=1$ für alle $i \in I(\mathbf{a}^*)$, also
-            $x_1 = 1$ wenn $a^*_i = 1$. In anderen Worten, es
-            gilt $\mathbf{x} \geq \mathbf{a}^*$ ! Wunderbar!
-            Jetzt können wir Monotonie anwenden! Denn selbst wenn
+            $x_1 = 1$ wenn $a^*_i = 1$. In anderen Worten, es gilt
+            $\mathbf{x} \geq \mathbf{a}^*$ ! Wunderbar! Jetzt
+            können wir Monotonie anwenden! Denn selbst wenn
             $T_{\mathbf{a}^*}$ nicht monoton ist, so wissen wir,
             dass $F$ eine monotone Funktion berechnet, und somit
 
@@ -884,9 +879,8 @@
 
     Ich habe Ihnen zweieinhalb Beweise versprochen. Der
     zweieinhalbte Beweis geht nun genau so wie der zweite,
-    nur dass er eine CNF-Formel $G$ statt einer
-    DNF-Formel $F$ konstruiert und aus dieser dann alle
-    negativen Literale entfernt, womit wir eine monotone
-    CNF-Formel $G'$ erhalten. Der Beweis, dass $G'$ und
-    $G$ dieselbe Funktion berechnen, geht analog zu dem
-    obigen Beweis.
+    nur dass er eine CNF-Formel $G$ statt einer DNF-Formel
+    $F$ konstruiert und aus dieser dann alle negativen
+    Literale entfernt, womit wir eine monotone CNF-Formel
+    $G'$ erhalten. Der Beweis, dass $G'$ und $G$ dieselbe
+    Funktion berechnen, geht analog zu dem obigen Beweis.

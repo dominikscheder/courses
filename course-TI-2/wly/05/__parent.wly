@@ -14,9 +14,9 @@
     .schlaumeier@gmail.com                              //Ungültig: Google will kein . an erster Stelle
     ```
 
-    Hier sehen Sie den Teil eines HTML-Dokuments.
-    Beachten Sie die typische hierarchisch-geschachtelte
-    Struktur (sie müssen es nicht im Detail lesen):
+    Hier sehen Sie den Teil eines HTML-Dokuments. Beachten
+    Sie die typische hierarchisch-geschachtelte Struktur
+    (sie müssen es nicht im Detail lesen):
 
     ```xml.listing
     <div class="carousel-inner" style="display:inline-block">
@@ -41,9 +41,8 @@
     </div class="carousel-inner">
     ```
 
-    Hier sehen Sie einen Ausschnitt aus einem
-    Elm-Programm (auch diesen müssen Sie nicht im Detail
-    lesen):
+    Hier sehen Sie einen Ausschnitt aus einem Elm-Programm
+    (auch diesen müssen Sie nicht im Detail lesen):
 
     ```.listing
     `find`{elm-1} `:`{elm-0} `Bst`{elm-2} `->`{elm-6} `String`{elm-2} `->`{elm-6} `Maybe`{elm-2} `String`{elm-2}
@@ -357,9 +356,9 @@
     $$
 
     Ein Element $x \in \Sigma^*$, also einen endlichen
-    String aus $\Sigma$-Symbolen, bezeichnen wir als
-    _Wort über $\Sigma$_. Mit $\Sigma^+$ bezeichnen wir
-    die Menge aller nichtleeren Strings, also
+    String aus $\Sigma$-Symbolen, bezeichnen wir als _Wort
+    über $\Sigma$_. Mit $\Sigma^+$ bezeichnen wir die
+    Menge aller nichtleeren Strings, also
     $\Sigma^+ = \Sigma^* \setminus \{\epsilon\}$.
 
     |> SubtopicAnnouncement
@@ -372,8 +371,7 @@
 
     |> ol
         |> li
-            Die Sprache aller syntaktisch korrekten
-            Emailadressen.
+            Die Sprache aller syntaktisch korrekten Emailadressen.
 
         |> li
             Die Sprache aller Java-Programme, die ohne
@@ -396,9 +394,9 @@
             Wörter, die von vorne wie hinten gelesen gleich
             aussehen.
 
-    Wir wollen herausfinden, welche Arten von Sprachen
-    wir mit den im letzten Abschnitt eingeführen Regelwerk
-    aus Ableitungen beschreiben können. Für die gerade
+    Wir wollen herausfinden, welche Arten von Sprachen wir
+    mit den im letzten Abschnitt eingeführen Regelwerk aus
+    Ableitungen beschreiben können. Für die gerade
     aufgelisteten sechs Sprachen lautet die Antwort
 
     |> ol
@@ -435,8 +433,8 @@
                 Symbolen_;
 
             |> li
-                einer dazu disjunkten endlichen Menge $N$, genannt
-                die _nichtterminalen Symbole_;
+                einer dazu disjunkten endlichen Menge $N$, genannt die
+                _nichtterminalen Symbole_;
 
             |> li
                 einer endlichen Menge $P$ von _Produktionsregeln_ der
@@ -490,13 +488,12 @@
         \Rightarrow aAbb \Rightarrow abb \ .
         \end{align*}
 
-        In jedem Schritt wählen wir ein Nichtterminal aus,
-        zum Beispiel im zweiten Schritt $A$, und wenden eine
-        Regel an, zum Beispiel $A \rightarrow aA$. Dadurch
-        wird $AB$ zu $aAB$. Wir setzen diese
-        Ableitungsschritte so lange fort, bis nur noch
-        terminale Symbole übrigbleiben. Dann hat sich ein Wort
-        $\alpha \in \Sigma^*$ ergeben.
+        In jedem Schritt wählen wir ein Nichtterminal aus, zum
+        Beispiel im zweiten Schritt $A$, und wenden eine Regel
+        an, zum Beispiel $A \rightarrow aA$. Dadurch wird $AB$
+        zu $aAB$. Wir setzen diese Ableitungsschritte so lange
+        fort, bis nur noch terminale Symbole übrigbleiben.
+        Dann hat sich ein Wort $\alpha \in \Sigma^*$ ergeben.
 
     |> Definition
         Gegeben sei eine kontextfreie Grammatik
@@ -585,9 +582,9 @@
 
     |> Example
         Sei $G$ die zuletzt betrachtete Grammatik. Dann ist
-        $L(G)$ die Menge aller Wörter der Form $a^* b^*$,
-        also Wörter, in denen auf beliebig viele $a$'s
-        beliebig viele $b$'s folgen.
+        $L(G)$ die Menge aller Wörter der Form $a^* b^*$, also
+        Wörter, in denen auf beliebig viele $a$'s beliebig
+        viele $b$'s folgen.
 
     Wir betrachten nun einige weitere Beispiele
 
@@ -604,8 +601,8 @@
 
         Hier sind mögliche Ableitungen des Wortes $abab$. Zur
         Verdeutlichung schreiben wir über den Pfeil
-        $\Rightarrow$ die Nummer der Regel, die wir
-        angewendet haben:
+        $\Rightarrow$ die Nummer der Regel, die wir angewendet
+        haben:
 
         \begin{align*}
         S&\stackrel{(1)}{\Rightarrow} aSbS
@@ -669,19 +666,18 @@
     logische Struktur von $x$ schließen. Handelt es sich
     bei $G$ zum Beispiel um eine Grammatik für die
     Programmiersprache Java, so wäre ein Ziel, aus der
-    Ableitungssequenz $G \Rightarrow^* x$ die Struktur
-    des Programms $x$, also Klassenstruktur, Methoden,
-    etc., ablesen zu können und schlussendlich das
-    Programm in ausführbaren Maschinencode kompilieren zu
-    können.
+    Ableitungssequenz $G \Rightarrow^* x$ die Struktur des
+    Programms $x$, also Klassenstruktur, Methoden, etc.,
+    ablesen zu können und schlussendlich das Programm in
+    ausführbaren Maschinencode kompilieren zu können.
 
     |> Statement
         title=*Algorithmisches Problem: Parsing*
         Gegeben eine (kontextfreie) Grammatik $G$ und ein
         Zielwort $x$ , finde eine Ableitung
         $G \Rightarrow^* x$, falls es so eine gibt. Für einen
-        String $x$ eine Ableitung zu finden bezeichnen wir
-        als _parsen_, das zugehörige Hauptwort als _Parsing_.
+        String $x$ eine Ableitung zu finden bezeichnen wir als
+        _parsen_, das zugehörige Hauptwort als _Parsing_.
 
     *Die gute Nachricht:* Die gute Nachricht: wir kennen
     Algorithmen, die dieses Problem im effizient lösen,

@@ -33,8 +33,7 @@
                 $f$ ist stetig.
 
             |> li
-                $f$ ist streng monoton (z.B. weil $f'(x) \gt 0$
-                gilt).
+                $f$ ist streng monoton (z.B. weil $f'(x) \gt 0$ gilt).
 
             |> li
                 $\lim_{x \rightarrow -\infty} f(x) = 0$ und
@@ -94,8 +93,8 @@
 
         $f(1/2) = 100000\dots$, $f(1/4) = 010000\dots$. Die
         konstruierte Funktion $f$ ist injektiv: zwei
-        verschiedene $0 \leq x \lt y \lt 1$ haben
-        verschiedene Binärdarstellung und werden somit zu zwie
+        verschiedene $0 \leq x \lt y \lt 1$ haben verschiedene
+        Binärdarstellung und werden somit zu zwie
         verschiedenen $0/1$-Folgen. Leider ist sie nicht
         surjektiv: die Binärdarstellung einer reellen Zahl
         hört nie mit $11111\dots$ auf. Statt
@@ -322,9 +321,9 @@
         Wir wollen jetzt eine Bijektion
         $f : \cuben \times \cuben \rightarrow \cuben$
         definieren. Dafür wenden wir den gleichen Trick an wie
-        in dem Beweis, dass $\N \approx \N \times \N$ ist:
-        wir zerlegen die Tabelle in Diagonalen und arbeiten
-        jede separat ab:
+        in dem Beweis, dass $\N \approx \N \times \N$ ist: wir
+        zerlegen die Tabelle in Diagonalen und arbeiten jede
+        separat ab:
 
         |> figure
             |> img
@@ -375,14 +374,13 @@
     Addition? Die Vereinigung $A \cup B$ wäre zu kurz
     gegriffen, weil ja zum Beispiel
     $\{1,2,3\} \cup \{4,5\}$ fünf Elemente hat,
-    $\{1,2,3\} \cup \{1,2\}$ aber nur drei. Das
-    "richtige" Analog ist die _disjunkte Vereinigung_
-    $A \uplus B$, die die Elemente von $B$ erst einmal
-    "markiert", um sie von denen von $A$ unterscheidbar
-    zu machen. Somit wäre also
-    $\{1,2,3\} \uplus \{1,2\} = \{1,2,3,1',2'\}$ eine
-    Menge der Kardinalität 5. Formal kann man $A \uplus B$
-    so definieren;
+    $\{1,2,3\} \cup \{1,2\}$ aber nur drei. Das "richtige"
+    Analog ist die _disjunkte Vereinigung_ $A \uplus B$,
+    die die Elemente von $B$ erst einmal "markiert", um
+    sie von denen von $A$ unterscheidbar zu machen. Somit
+    wäre also $\{1,2,3\} \uplus \{1,2\} = \{1,2,3,1',2'\}$
+    eine Menge der Kardinalität 5. Formal kann man
+    $A \uplus B$ so definieren;
 
     \begin{align*}
     A \uplus B := \{ (a,0) \ | \ a \in A\} \cup \{ (b,1) \ |
@@ -391,8 +389,8 @@
 
     |> Theorem
         handle=calculating-with-cardinals
-        *(mit Kardinalzahlen rechnen)*. Es gelten die
-        üblichen Rechenregeln:
+        *(mit Kardinalzahlen rechnen)*. Es gelten die üblichen
+        Rechenregeln:
 
         |> ol
             |> li
@@ -410,8 +408,7 @@
 
     Als zweites gilt, dass wir in so einem
     "mengentheoretisch-arithmetischen" Ausdruck eine Menge
-    $A$ durch eine äquipotente Menge $A'$ ersetzen
-    können:
+    $A$ durch eine äquipotente Menge $A'$ ersetzen können:
 
     |> Theorem
         handle=replacing-equipotent-cardinals
@@ -498,12 +495,12 @@
     \subseteq 2\N \cup \{1,3\} \subseteq 2\N \cup \{1,3,5\} \subseteq \dots
     \end{align*}
 
-    Wenn wir ganz links noch $\{0\}$ hinschreiben und
-    ganz rechts noch $\N$, dann haben wir ein weiteres,
-    eventuell ungewohntes Phänomen: das Element $\{0\}$
-    in der Kette hat keinen eindeutigen _Nachfolger_.
-    Egal, welches $A$ mit $\{0\} \subsetneq A$ Sie
-    wählen, sie finden immer noch ein $B$ dazwischen:
+    Wenn wir ganz links noch $\{0\}$ hinschreiben und ganz
+    rechts noch $\N$, dann haben wir ein weiteres,
+    eventuell ungewohntes Phänomen: das Element $\{0\}$ in
+    der Kette hat keinen eindeutigen _Nachfolger_. Egal,
+    welches $A$ mit $\{0\} \subsetneq A$ Sie wählen, sie
+    finden immer noch ein $B$ dazwischen:
     $\{0\} \subsetneq B \subsetneq A$.
 
     |> Definition
@@ -517,15 +514,15 @@
     $x \lt \frac{x+z}{2} \lt z$. Sie finden also immer
     etwas dazwischen. Die Ordnung $(\Z, \lt)$ ist nicht
     dicht: zwischen $7$ und $8$ finden Sie nichts. Die
-    Partialordnung $(2^\N, \subseteq)$ ist nicht dicht:
-    es gilt $\{2\} \subsetneq \{2,3\}$, aber es gibt
-    keine Menge zwischen den beiden.
+    Partialordnung $(2^\N, \subseteq)$ ist nicht dicht: es
+    gilt $\{2\} \subsetneq \{2,3\}$, aber es gibt keine
+    Menge zwischen den beiden.
 
     |> Exercise
         Finden Sie in $(2^\N, \subseteq)$ eine Kette $X$, so
         dass $(X, \subseteq)$ dicht ist. Also: eine Menge $X$,
         so dass für alle $A,C \in X$ mit $A \ne C$ entweder
         $A \subsetneq C$ oder $C \subsetneq A$ gilt (d.h. $X$
-        soll eine Kette sein) und zusätzlich ein $B \in X$
-        mit $A \subsetneq B \subsetneq C$ (oder
+        soll eine Kette sein) und zusätzlich ein $B \in X$ mit
+        $A \subsetneq B \subsetneq C$ (oder
         $C \subseteq B \subsetneq A$).

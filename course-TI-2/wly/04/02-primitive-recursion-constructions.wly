@@ -31,8 +31,8 @@
     ```
 
     erinnern Sie sich daran: $h$ muss immer eine Funktion
-    in der lokalen Variable temp, der Laufvariable $i$
-    und $\vec{x}$ sein. Daher:
+    in der lokalen Variable temp, der Laufvariable $i$ und
+    $\vec{x}$ sein. Daher:
 
     \begin{align*}
     {\rm mult} = \primrec(\zero, \comp({\rm add}, \pi_0, \pi_2))
@@ -137,15 +137,15 @@
         Wurzel und Suchen im Allgemeinen
 
     Eine größere Herausforderung stellt die ganzzahlige
-    Wurzel $x \mapsto \floor{\sqrt{x}}$ dar. Hierfür
-    haben wir keine Formel mit $+, *, -$, auch keine
-    schöne rekursive Formel zur Hand. Es handelt sich um
-    ein Suchproblem: $\floor{\sqrt{x}}$ ist die größte
+    Wurzel $x \mapsto \floor{\sqrt{x}}$ dar. Hierfür haben
+    wir keine Formel mit $+, *, -$, auch keine schöne
+    rekursive Formel zur Hand. Es handelt sich um ein
+    Suchproblem: $\floor{\sqrt{x}}$ ist die größte
     natürliche Zahl $i$ mit $i^2 \leq x$. Wir können auch
     den Suchraum begrenzen: da $\sqrt{x} \leq x$ für alle
     natürlichen Zahlen, so gilt: $\floor{\sqrt{x}}$ ist
-    die größte natürliche Zahl $i \in \{0,1,\dots,x\}$
-    mit $i^2 \leq x$. Das Prädikat
+    die größte natürliche Zahl $i \in \{0,1,\dots,x\}$ mit
+    $i^2 \leq x$. Das Prädikat
 
     \begin{align*}
     {\rm iSquareLessEqualX } (i,x)&= [ i^2 \leq x ]
@@ -170,9 +170,9 @@
 
     Was geht hier vor? Wenn
     ${\rm iSquareLessEqualX}(i,x))$ True ist, dann
-    ersetzen wir temp durch $i$. Ansonsten belassen wir
-    es beim alten Wert; der endgültige Wert von temp ist
-    also das letzte $i$, für das das Prädikat True wahr.
+    ersetzen wir temp durch $i$. Ansonsten belassen wir es
+    beim alten Wert; der endgültige Wert von temp ist also
+    das letzte $i$, für das das Prädikat True wahr.
 
     \begin{align*}
     {\rm largestIbelowTwithISquareLessEqualX = \primrec(zero,
@@ -190,9 +190,9 @@
     allgemein können wir für ein Prädikat
     ${\rm predicate}(i,x)$ das größte
     $i \in \{0,\dots,t\}$ finden, für das
-    ${\rm predicate}(i,x)$ True ergibt. Da wir wissen,
-    wie wir das primitiv rekursiv machen können, erlauben
-    wir uns, einen neuen Kombinator zu definieren, anstatt
+    ${\rm predicate}(i,x)$ True ergibt. Da wir wissen, wie
+    wir das primitiv rekursiv machen können, erlauben wir
+    uns, einen neuen Kombinator zu definieren, anstatt
     diese Konstruktion jedes Mal "von Hand" durchzuführen:
 
     ```
@@ -233,9 +233,8 @@
         return a
     ```
 
-    Wir führen hier zwei lokale Variable, $a$ und $b$.
-    Das $c$ könnten wir mit diesem schönen Trick
-    eliminieren:
+    Wir führen hier zwei lokale Variable, $a$ und $b$. Das
+    $c$ könnten wir mit diesem schönen Trick eliminieren:
 
     ```
     b = a+b
@@ -294,8 +293,8 @@
 
     und somit ist $x+y$ der größte Wert von $i$, so dass
     $n \geq \pair(0,i)$ ist. Aus $x+y$ und
-    ${x+y+1 \choose 2} + x$ können wir dann leicht $x$
-    und $y$ berechnen:
+    ${x+y+1 \choose 2} + x$ können wir dann leicht $x$ und
+    $y$ berechnen:
 
     \begin{align*}
     {\rm getXplusY}&= {\rm LargestLessThan}(\pi_0, \comp({\rm greaterEqual}, \pi_1, \comp(\pair,
@@ -354,9 +353,9 @@
     vertretbarer Zeit nicht behandeln können. Bei meinen
     eigenen Experimenten mit meinem Python-Framework bin
     ich daher dazu übergegangen, dass ich, sobald ich
-    gezeigt habe, dass eine Funktion $f$ primitiv
-    rekursiv ist, sie _nativ_ in Python zu implementieren,
-    also beispielsweise in meiner Datei `stockpile.py`:
+    gezeigt habe, dass eine Funktion $f$ primitiv rekursiv
+    ist, sie _nativ_ in Python zu implementieren, also
+    beispielsweise in meiner Datei `stockpile.py`:
 
     ```.listing
     def pair(x,y):

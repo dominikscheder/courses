@@ -42,14 +42,13 @@
         wenn wir $\alpha$ und $\beta$ zerlegen können als
         $\alpha = \alpha_1 X \alpha_2$ und
         $\beta = \alpha_1 \gamma \alpha_2$ und
-        $X \rightarrow \gamma$ eine Produktion in $G$ ist.
-        Wir nennen $\alpha \Step \beta$ einen
-        Ableitungsschritt.
+        $X \rightarrow \gamma$ eine Produktion in $G$ ist. Wir
+        nennen $\alpha \Step \beta$ einen Ableitungsschritt.
 
-        Wir schreiben mit Startsymbol $S$. Die Ableitung
-        eines Wortes $\alpha$ ist eine Sequenz von Wortformen
-        $w_0, w_1, \dots, w_n$ mit $w_0 = S, w_n = \alpha$
-        und $w_{i-1} \Longrightarrow w_i$.
+        Wir schreiben mit Startsymbol $S$. Die Ableitung eines
+        Wortes $\alpha$ ist eine Sequenz von Wortformen
+        $w_0, w_1, \dots, w_n$ mit $w_0 = S, w_n = \alpha$ und
+        $w_{i-1} \Longrightarrow w_i$.
 
     Das folgende Beispiel ist Beispiel 3.22 aus dem Buch
     von Aho und Ullman. Wir betrachten die klassische

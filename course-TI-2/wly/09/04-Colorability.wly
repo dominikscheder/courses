@@ -1,31 +1,32 @@
 |> Sub
     title=Graphenfärbbarkeit
 
-    Wir verlassen nun zumindest scheinbar das Feld der Komplexitätstheorie und 
-    betrachten Graphenalgorithmen. Sie sollten beim Durcharbeiten dieser Kapitel 
-    meinen Code herunterladen und damit rumspielen:
-    |> a 
-        href=code/reductions.zip 
+    Wir verlassen nun zumindest scheinbar das Feld der
+    Komplexitätstheorie und betrachten Graphenalgorithmen.
+    Sie sollten beim Durcharbeiten dieser Kapitel meinen
+    Code herunterladen und damit rumspielen:
+    |> a
+        href=code/reductions.zip
         _```reductions.zip```
 
-    
-    |> Definition 
-        handle=def-coloring 
-        Sei $G = (V,E)$ ein Graph. Eine $k$-Färbung von $G$ ist eine 
-        Funktion $c: V \rightarrow \{1,\dots, k\}$. 
-        Die Menge $\{1,\dots, k\}$ bezeichnet man in diesem Zusammenhang 
-        als die _Farben_.
-        Die Färbung heißt _gültig_ (Englisch _proper_) wenn 
+    |> Definition
+        handle=def-coloring
+        Sei $G = (V,E)$ ein Graph. Eine $k$-Färbung von $G$
+        ist eine Funktion $c: V \rightarrow \{1,\dots, k\}$.
+        Die Menge $\{1,\dots, k\}$ bezeichnet man in diesem
+        Zusammenhang als die _Farben_. Die Färbung heißt
+        _gültig_ (Englisch _proper_) wenn
+
         \begin{align*}
         \forall\ \{u,v\} \in E: \ c(u) \ne c(v) \ ?
         \end{align*}
+
         gilt.
 
     |> Problem
         handle=problem-3-colorability
         (`$k$-Colorability`{sc}). Gegeben ein Graph $G=(V,E)$,
         gibt es eine gültige $k$-Färbung $c$?
-
 
     |> Group
         |> figure
@@ -44,101 +45,133 @@
             |> figcaption
                 Dieser Graph ist nicht 3-färbbar (aber 4-färbbar).
 
-    Eine Anwendung von $k$-Colorability wäre zum Beispiel die Wahl der Sendefrequenzen 
-    von 5G-Masten: zwei Masten, deren Sendebereiche sich überlappend, sollten nicht 
-    im gleichen Frequenzband senden, da Handys dann beide Masten "hören" könnten und 
-    es zu Störungen käme. Andererseits stehen den Netzanbietern nicht beliebig viele 
-    Frequenzbänder zur Verfügung. Die _Knoten_ in unserem Problem sind hier die Masten. 
-    Zwei Masten sind durch eine _Kante_ verbunden, wenn ihre Sendebereiche sich überlappen. 
-    Man kann nun $k$ verschiedene Frequenzbänder wählen, wenn und nur wenn der entstehende Graph 
-    $k$-färbbar ist. 
-    
-    Eine andere Anwendung kommt aus dem Compilerbau: ein Stück Code, zum Beispiel eine Funktion, 
-    benötigt in der compilierten Version $n$ lokale Variable. Nicht alle werden zum gleichen Zeitpunkt 
-    benötigt. Wenn zum Beispiel ```initial_value``` nur am Anfang benötigt und ```final_result``` 
-    erst gegen Ende berechnet wird, dann kann der Compiler für beide _ein_ Prozessorregister benötigen. 
-    Jetzt will man wissen, ob man alle lokalen Variablen in den $k$ Prozessorregistern ablegen kann; 
-    dies ist wiederum ein Färbbarkeitsproblem: die Knoten sind die lokalen Variablen; die Farben sind 
-    die $k$ Prozessorregister. Zwei lokale Variable ```var_1``` und ```var_2``` 
-    sind mit einer Kante verbunden, wenn die Codebereiche, in denen sie vorkommen, 
-    sich überlappen. 
+    Eine Anwendung von $k$-Colorability wäre zum Beispiel
+    die Wahl der Sendefrequenzen von 5G-Masten: zwei
+    Masten, deren Sendebereiche sich überlappend, sollten
+    nicht im gleichen Frequenzband senden, da Handys dann
+    beide Masten "hören" könnten und es zu Störungen käme.
+    Andererseits stehen den Netzanbietern nicht beliebig
+    viele Frequenzbänder zur Verfügung. Die _Knoten_ in
+    unserem Problem sind hier die Masten. Zwei Masten sind
+    durch eine _Kante_ verbunden, wenn ihre Sendebereiche
+    sich überlappen. Man kann nun $k$ verschiedene
+    Frequenzbänder wählen, wenn und nur wenn der
+    entstehende Graph $k$-färbbar ist.
 
-    Überlegen wir uns einen Algorithmus für $k$-Färbbarkeit. Wenn uns nichts besseres 
-    einfällt, können wir ja alle $k^n$ möglichen Färbungen $c$ durchgehen und jede 
-    überprüfen. Am Besten geht das rekursiv. Hierfür haben wir eine 
-    partielle Färbung des Graphen, genauer gesagt eine Funktion 
-    $\chi_i : \{u_1, \dots, u_i\} \rightarrow \{1,\dots,k\}$. 
-    |> ul 
-        |> li 
-            Iteriere über alle Farben $c \in [k]$
+    Eine andere Anwendung kommt aus dem Compilerbau: ein
+    Stück Code, zum Beispiel eine Funktion, benötigt in
+    der compilierten Version $n$ lokale Variable. Nicht
+    alle werden zum gleichen Zeitpunkt benötigt. Wenn zum
+    Beispiel ```initial_value``` nur am Anfang benötigt
+    und ```final_result``` erst gegen Ende berechnet wird,
+    dann kann der Compiler für beide _ein_
+    Prozessorregister benötigen. Jetzt will man wissen, ob
+    man alle lokalen Variablen in den $k$
+    Prozessorregistern ablegen kann; dies ist wiederum ein
+    Färbbarkeitsproblem: die Knoten sind die lokalen
+    Variablen; die Farben sind die $k$ Prozessorregister.
+    Zwei lokale Variable ```var_1``` und ```var_2``` sind
+    mit einer Kante verbunden, wenn die Codebereiche, in
+    denen sie vorkommen, sich überlappen.
+
+    Überlegen wir uns einen Algorithmus für
+    $k$-Färbbarkeit. Wenn uns nichts besseres einfällt,
+    können wir ja alle $k^n$ möglichen Färbungen $c$
+    durchgehen und jede überprüfen. Am Besten geht das
+    rekursiv. Hierfür haben wir eine partielle Färbung des
+    Graphen, genauer gesagt eine Funktion
+    $\chi_i : \{u_1, \dots, u_i\} \rightarrow
+    \{1,\dots,k\}$.
+
+    |> ul
         |> li
-            Färbe versuchsweise $u_{i+1}$ mit Farbe $c$. Setze also $\chi_{i+1} := \chi_i \cup [u_{i+1} \mapsto c]$.
-        |> li 
-            Falls kein Nachbar von $u_{i+1}$ bereits Farbe $c$ hat versuche, $\chi_{i+1}$ zu einer vollständigen Färbung 
-            zu erweitern. Tu dies rekursiv. 
+            Iteriere über alle Farben $c \in [k]$
+
+        |> li
+            Färbe versuchsweise $u_{i+1}$ mit Farbe $c$. Setze
+            also $\chi_{i+1} := \chi_i \cup [u_{i+1} \mapsto c]$.
+
+        |> li
+            Falls kein Nachbar von $u_{i+1}$ bereits Farbe $c$ hat
+            versuche, $\chi_{i+1}$ zu einer vollständigen Färbung
+            zu erweitern. Tu dies rekursiv.
 
     Hier ist mein Python-Code 
-    |> a 
+    |> a
         href=code/reductions/graphcoloring/demo_exponentialcoloring.py
         "```demo_exponentialcoloring.py```".
-    
-    
-    Den können Sie so wie er ist abspeichern und laufen lassen. Das Programm
-    |> a 
+
+    Den können Sie so wie er ist abspeichern und laufen
+    lassen. Das Programm
+    |> a
         href=code/reductions/graphcoloring/exponentialcoloring.py
         "```exponentialcoloring.py```" 
-    kann Graphen als Eingabe lesen und die Färbung ausgeben, falls sie denn existiert:
+    kann Graphen als Eingabe lesen und die Färbung
+    ausgeben, falls sie denn existiert:
 
     ```.listing
-    $ unzip reductions.zip
-    $ cd reductions 
+    $unzip reductions.zip$ cd reductions
     $ python -m graphcoloring.exponentialcoloring 3
     3 3
-    1 2 
-    2 3 
-    1 3 
+    1 2
+    2 3
+    1 3
     {1: 1, 2: 2, 3: 3}
     ```
 
-    Sie können natürlich direkt mit dem ```<```-Operator Dateien auf die Eingabe umleiten:
+    Sie können natürlich direkt mit dem ```<```-Operator
+    Dateien auf die Eingabe umleiten:
+
     ```.listing
-    $ python -m graphcoloring.exponentialcoloring 3 < icpc-format-graphs/petersen.txt 
+    $ python -m graphcoloring.exponentialcoloring 3 < icpc-format-graphs/petersen.txt
     {1: 1, 2: 2, 3: 1, 4: 2, 5: 3, 6: 2, 7: 1, 8: 3, 9: 3, 10: 2}
     ```
 
-    Der Algorithmus in ```demo_exponentialcoloring.py``` und ```exponentialcoloring.py``` 
-    baut einen Rekursionsbaum der Tiefe $n$ auf, in welchem jeder innere 
-    Knoten maximal $k$ Kinder hat. Somit hat der Baum maximal 
+    Der Algorithmus in ```demo_exponentialcoloring.py```
+    und ```exponentialcoloring.py``` baut einen
+    Rekursionsbaum der Tiefe $n$ auf, in welchem jeder
+    innere Knoten maximal $k$ Kinder hat. Somit hat der
+    Baum maximal
+
     \begin{align*}
     1 + k + k^2 + \cdots + k^n \leq k^{n+1}
     \end{align*}
-    Knoten (_Knoten_ im Sinne von _Rekursionsaufrufe_, nicht im Sinne von Knoten des 
-    Graphen $G$). Pro Knoten, also Aufruf, benötigt der Code $O(n)$ oder $O(n \log n)$ 
-    Schritte, je nach Implementierung (im Moment implementiere ich ```coloring``` als 
-    Dictionary, was strenggenommen $O(\log n)$ Schritte pro Query benötigt; mit einem 
-    Array wäre dies in $O(1)$ möglich). Wenn wir es auf einer Turingmaschine implementieren 
-    würden, wäre es auf jeden Fall ineffizienter; dennoch würden wir  pro Aufruf nur 
+
+    Knoten (_Knoten_ im Sinne von _Rekursionsaufrufe_,
+    nicht im Sinne von Knoten des Graphen $G$). Pro
+    Knoten, also Aufruf, benötigt der Code $O(n)$ oder
+    $O(n \log n)$ Schritte, je nach Implementierung (im
+    Moment implementiere ich ```coloring``` als
+    Dictionary, was strenggenommen $O(\log n)$ Schritte
+    pro Query benötigt; mit einem Array wäre dies in
+    $O(1)$ möglich). Wenn wir es auf einer Turingmaschine
+    implementieren würden, wäre es auf jeden Fall
+    ineffizienter; dennoch würden wir  pro Aufruf nur
     $\poly(n)$ viele Schritte tätigen müssen. Daher:
 
     |> Observation
-        $k$-Colorability $\in \TIME\left(k^n \poly(n)\right)$. 
-
-
-    |> Exercise
-        Zeigen Sie, dass `$k$-Colorability`{sc}  $\in \TIME\left((k-1)^n \poly(n)\right)$ gilt, 
-        also insbesondere `$2$-Colorability`{sc} $\in \textnormal{P}$.
+        $k$-Colorability $\in \TIME\left(k^n \poly(n)\right)$.
 
     |> Exercise
-        Denken Sie sich ein Beispiel aus, für das ```exponentialcoloring.py``` sehr lange 
-        braucht. Versuchen Sie, es mit einem möglichst kleinen Graphn in die Knie zu zwingen.
+        Zeigen Sie, dass `$k$-Colorability`{sc}
+        $\in \TIME\left((k-1)^n \poly(n)\right)$ gilt, also
+        insbesondere `$2$-Colorability`{sc}
+        $\in \textnormal{P}$.
 
+    |> Exercise
+        Denken Sie sich ein Beispiel aus, für das
+        \```exponentialcoloring.py``` sehr lange braucht.
+        Versuchen Sie, es mit einem möglichst kleinen Graphn
+        in die Knie zu zwingen.
 
     |> TopicAnnouncement
         Gültige Färbungen erkennen 
 
-    Erst einmal ist es eine triviale Beobachtung: wenn uns jemand eine Färbung $c: V \rightarrow \{1,2,3\}$
-    vorlegt, dann können wir ganz leicht überprüfen, ob $c$ für $G$ eine gültige Färbung darstellt.
-    Hier mein Pseudocode.  
+    Erst einmal ist es eine triviale Beobachtung: wenn uns
+    jemand eine Färbung $c: V \rightarrow \{1,2,3\}$
+    vorlegt, dann können wir ganz leicht überprüfen, ob
+    $c$ für $G$ eine gültige Färbung darstellt. Hier mein
+    Pseudocode.
 
     ```.listing
     def is_proper_3_coloring(graph, c):
@@ -149,16 +182,17 @@
             if c[u] not in [1,2,3] or c[v] not in [1,2,3]:
                 return False
         return True
-    ```    
+    ```
 
-    Der Algorithmus ```is_proper_3_coloring``` ist eine 
-    Zertifikatmaschine im Sinne von 
-    Definition >>def-certificate-turing-machine. Falls 
-    das "Eingabewort" $G$ $3$-färbbar ist, dann gibt es ein Zertifikat, 
-    so dass ```is_proper_3_coloring(graph, c)``` akzeptiert (lies: ```True``` zurückgibt). 
-    Ist $G$ nicht $3$-färbbar, dann gibt ```is_proper_3_coloring(graph, c)```
-    für jedes $c$ ```False``` zurück, lehnt also ab. 
-
+    Der Algorithmus ```is_proper_3_coloring``` ist eine
+    Zertifikatmaschine im Sinne von Definition
+    >>def-certificate-turing-machine. Falls das
+    "Eingabewort" $G$ $3$-färbbar ist, dann gibt es ein
+    Zertifikat, so dass ```is_proper_3_coloring(graph,
+    c)``` akzeptiert (lies: ```True``` zurückgibt). Ist
+    $G$ nicht $3$-färbbar, dann gibt
+    \```is_proper_3_coloring(graph, c)``` für jedes $c$
+    \```False``` zurück, lehnt also ab.
 
     |> Observation
         `3-Colorability`{sc} ist in NP.
@@ -181,12 +215,8 @@
         !!     src=img/test_img2.svg
         !!     src=img/test_img2.svg
 
-   
-
     Das obige Beispiel verdeutlicht die Essenz der Klasse
     NP: es ist nicht klar, wie wir einen effizienten
     Algorithmus für `3-Colorability`{sc}schreiben können;
     aber _überprüfen_, ob eine gegebene Färbung eine
     3-Färbung von $G$ ist, das ist einfach.
-
-

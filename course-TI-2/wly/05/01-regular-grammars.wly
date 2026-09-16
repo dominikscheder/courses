@@ -112,8 +112,8 @@
         \rightarrow \epsilon \
         \end{align*}
 
-        mit Startsymbol $A$. Leiten Sie das Wort $01101001$
-        ab und beschreiben Sie die erzeugte Sprache in eigenen
+        mit Startsymbol $A$. Leiten Sie das Wort $01101001$ ab
+        und beschreiben Sie die erzeugte Sprache in eigenen
         Worten.
 
     |> Exercise
@@ -173,11 +173,11 @@
     S \rightarrow \epsilon \ | \ 111S
     \end{align*}
 
-    Sehen Sie, Sie können hier Einsen nur in
-    Dreierblöcken erzeugen. Leider ist diese Grammatik
-    nicht regulär nach unserer obigen Definition. Was tun
-    wir, wenn wir nicht zufrieden sind mit einer
-    Definition? Wir wandeln sie ab.
+    Sehen Sie, Sie können hier Einsen nur in Dreierblöcken
+    erzeugen. Leider ist diese Grammatik nicht regulär
+    nach unserer obigen Definition. Was tun wir, wenn wir
+    nicht zufrieden sind mit einer Definition? Wir wandeln
+    sie ab.
 
     |> Definition
         Eine Grammatik $G = (\Sigma, N, P, S)$ heißt
@@ -189,8 +189,8 @@
         \alpha \\
         \end{align*}
 
-        hat, wobei $X \in N$ und $\alpha \in \Sigma^*$ ist.
-        Im Unterschied zu den eigentlich regulären Grammatiken
+        hat, wobei $X \in N$ und $\alpha \in \Sigma^*$ ist. Im
+        Unterschied zu den eigentlich regulären Grammatiken
         erlauben wir also mehrere terminale Symbole auf der
         rechten Seite, sofern Sie _vor_ dem Nichtterminal
         vorkommen.
@@ -260,13 +260,13 @@
 
     |> Proof
         Produktionen vom Typ 2, also von der Form
-        $X \rightarrow a$ können wir leicht eliminieren,
-        indem wir ein neues Nichtterminalsymbol
+        $X \rightarrow a$ können wir leicht eliminieren, indem
+        wir ein neues Nichtterminalsymbol
         $E \not \in \Sigma \cup N$ einführen, jedes
         $X \rightarrow a$ durch $X \rightarrow aE$ ersetzen
         und die Produktion $E \rightarrow \epsilon$
-        hinzufügen. Produktionen der Form $X \rightarrow Y$
-        zu eliminieren ist etwas komplizierter. Die Idee ist,
+        hinzufügen. Produktionen der Form $X \rightarrow Y$ zu
+        eliminieren ist etwas komplizierter. Die Idee ist,
         dass in einer von $X$ ausgehende Ableitung eines
         Wortes irgendwann zum ersten Mal eine Wortform
         $\alpha$ vorkommen muss, die nicht ein einzelnes
@@ -282,8 +282,7 @@
         $$
 
         als neue Menge von Produktionen, die keine
-        Produktionen von der Form $X \rightarrow Y$
-        enthalten.
+        Produktionen von der Form $X \rightarrow Y$ enthalten.
 
     Im vorhergehenden Beweis haben wir nicht formal
     gezeigt, dass $L(G')= L(G)$ gilt. Unser Kernargument
@@ -309,9 +308,9 @@
     \end{align*}
 
     definieren, also die Menge derjenigen
-    Nichtterminalsymbole, die sich in bis zu $k$
-    Schritten von $X$ aus ableiten lassen. Wir berechnen
-    die $N_k$ iterativ wie folgt:
+    Nichtterminalsymbole, die sich in bis zu $k$ Schritten
+    von $X$ aus ableiten lassen. Wir berechnen die $N_k$
+    iterativ wie folgt:
 
     \begin{align*}
     N_0 (X)&:= \{X\} \ , \\ N_{k+1}
@@ -325,8 +324,7 @@
     $Y \rightarrow Z$. Um $N_{k+1}(X)$ für _alle_
     $X \in N$ zu berechnen, brauchen wir eine weitere
     `for`-Schleife. Wir berechnen nun $N_{\geq k}$ für
-    steigende $k$, bis keine weitere Veränderung
-    eintritt.
+    steigende $k$, bis keine weitere Veränderung eintritt.
 
     |> Observation
         Wenn $N_{k+1}(X) = N_k(X)$, dann ist
@@ -349,13 +347,12 @@
 
     |> Exercise
         handle=exercise-no-a-or-no-b
-        Sei $\Sigma = \{a,b,c\}$. Die Grammatik mit den
-        Regeln $A \rightarrow \epsilon \ | \ b A \ | \ c A$
-        erzeugt die Sprache aller Wörter, die kein $a$
-        enthalten. Die Grammatik
-        $B \rightarrow \epsilon \ | \ a B \ | \ c B$ erzeugt
-        die Wörter, die kein $b$ enthalten. Die Grammatik $G$
-        mit Startsymbol $S$ und den Produktionen
+        Sei $\Sigma = \{a,b,c\}$. Die Grammatik mit den Regeln
+        $A \rightarrow \epsilon \ | \ b A \ | \ c A$ erzeugt
+        die Sprache aller Wörter, die kein $a$ enthalten. Die
+        Grammatik $B \rightarrow \epsilon \ | \ a B \ | \ c B$
+        erzeugt die Wörter, die kein $b$ enthalten. Die
+        Grammatik $G$ mit Startsymbol $S$ und den Produktionen
 
         \begin{align*}
         S&\rightarrow A \ | \ B \\ A&
@@ -396,10 +393,10 @@
         handle=baukasten
         Reguläre Sprachen nach Baukastenprinzip bauen
 
-    Eine schöne Eigenschaft von regulären Grammatiken
-    ist, dass sie mächtig genug sind, um uns zu erlauben,
-    die nach dem Baukastenprinzip zu komplizierteren
-    Einheiten zusammenzufügen. Formate wie beispielsweise
+    Eine schöne Eigenschaft von regulären Grammatiken ist,
+    dass sie mächtig genug sind, um uns zu erlauben, die
+    nach dem Baukastenprinzip zu komplizierteren Einheiten
+    zusammenzufügen. Formate wie beispielsweise
     Emailadressen sind oft aufgebaut nach Mustern wie
 
     |> ul
@@ -408,28 +405,26 @@
             dann `@`, dann Domainname_
 
         |> li
-            Ding, bliebig oft wiederholt, wie beispielsweise
-            _eine beliebig lange Folge von Labels, mit `.`
-            separiert._
+            Ding, bliebig oft wiederholt, wie beispielsweise _eine
+            beliebig lange Folge von Labels, mit `.` separiert._
 
         |> li
             Ding 1 oder Ding 2. Beispielsweise _Bindestrich oder
             alphanumerisches Zeichen_.
 
     |> Lemma
-        Seien $L_1$ und $L_2$ zwei reguläre Sprachen. Dann
-        ist $L_1 \cup L_2$ auch regulär.
+        Seien $L_1$ und $L_2$ zwei reguläre Sprachen. Dann ist
+        $L_1 \cup L_2$ auch regulär.
 
     |> Proof
         Unsere Strategie ist, reguläre Grammatiken $G_1$ für
         $L_1$ und $G_2$ für $L_2$ zu betrachten und daraus
-        eine neue reguläre Grammatik $G$ für $L_1 \cup L_2$
-        zu bauen. Aus $G$ sollen also genau diejenigen
-        Strings ableitbar sein, die in $L_1$ oder $L_2$
-        enthalten sind. Seien nun
-        $G_1 = (\Sigma_1, N_1, P_1, S_1)$ und
-        $G_2 = (\Sigma_2, N_2, P_2, S_2)$ die beiden
-        regulären Grammatiken. Wir gehen davon aus, dass
+        eine neue reguläre Grammatik $G$ für $L_1 \cup L_2$ zu
+        bauen. Aus $G$ sollen also genau diejenigen Strings
+        ableitbar sein, die in $L_1$ oder $L_2$ enthalten
+        sind. Seien nun $G_1 = (\Sigma_1, N_1, P_1, S_1)$ und
+        $G_2 = (\Sigma_2, N_2, P_2, S_2)$ die beiden regulären
+        Grammatiken. Wir gehen davon aus, dass
         $N_1 \cap N_2 = \emptyset$, dass es also bei den
         nichtterminalen Symbolen keinen Zweifel gibt, zu
         welcher Grammatik sie gehören. Falls dies nicht der
@@ -471,8 +466,8 @@
         \end{align*}
 
     |> Lemma
-        Seien $L_1$ und $L_2$ zwei reguläre Sprachen. Dann
-        ist $L_1 \circ L_2$ auch regulär.
+        Seien $L_1$ und $L_2$ zwei reguläre Sprachen. Dann ist
+        $L_1 \circ L_2$ auch regulär.
 
     |> Proof
         Wir im letzten Beweis nehmen wir uns eine reguläre
@@ -491,16 +486,16 @@
         S \rightarrow S_1 S_2
         $$
 
-        hinzu. Es sollte nun klar sein, dass wir aus $S$
-        genau die Wörter der Form $\alpha \beta$ mit
+        hinzu. Es sollte nun klar sein, dass wir aus $S$ genau
+        die Wörter der Form $\alpha \beta$ mit
         $S_1 \Rightarrow^* \alpha$ und
         $S_2 \Rightarrow^* \beta$ ableiten können, also genau
         die in $L_1 \cup L_2$. Leider ist die Regel
         $S \rightarrow S_1 S_2$ nicht regulär, da auf der
         rechten Seite zwei nichtterminale Symbole vorkommen.
         Wir müssen anders vorgehen. Wir ändern die Regeln von
-        $G_1$ so ab, dass immer, wenn in einer $G_1$-Regle
-        die Ableitung endet, wir das Zeichen $S_2$ anhängen:
+        $G_1$ so ab, dass immer, wenn in einer $G_1$-Regle die
+        Ableitung endet, wir das Zeichen $S_2$ anhängen:
 
         \begin{align*}
         \begin{array}{l|l} \textnormal{Regel in $G_1$}&
@@ -538,8 +533,8 @@
         \end{align*}
 
         also die Sprache der Wörter der Form
-        $\alpha_1 \alpha_2 \dots \alpha_n$, wobei $n$
-        beliebig und jedes $\alpha_i \in L$ ist.
+        $\alpha_1 \alpha_2 \dots \alpha_n$, wobei $n$ beliebig
+        und jedes $\alpha_i \in L$ ist.
 
     |> Lemma
         Sei $L$ eine reguläre Sprache. Dann ist $L^*$ auch
@@ -578,8 +573,8 @@
 
         |> ol
             |> li
-                Dem Protokoll. Hier ist das `https`; es kann aber
-                auch `http` oder `ftp` sein.
+                Dem Protokoll. Hier ist das `https`; es kann aber auch
+                `http` oder `ftp` sein.
 
             |> li
                 Dem `://` nach dem Protokoll.
@@ -598,14 +593,14 @@
                 Key=Value, wobei die Paare mit einem `&` separiert
                 sind.
 
-        Zeigen Sie, dass die Sprache der syntaktisch
-        korrekten URLs (in dem gerade beschriebenen Format)
-        regulär ist. Sie können entweder direkt eine reguläre
-        Grammatik angeben oder mit dem Baukastenprinzip und
-        den drei letzten Lemmas argumentieren.
+        Zeigen Sie, dass die Sprache der syntaktisch korrekten
+        URLs (in dem gerade beschriebenen Format) regulär ist.
+        Sie können entweder direkt eine reguläre Grammatik
+        angeben oder mit dem Baukastenprinzip und den drei
+        letzten Lemmas argumentieren.
 
-    Wir führen ein weiteres Baukastenwerkzeug ein, weil
-    es in der Praxis recht häufig vorkommt.
+    Wir führen ein weiteres Baukastenwerkzeug ein, weil es
+    in der Praxis recht häufig vorkommt.
 
     |> Theorem
         handle=operation-L
@@ -621,25 +616,25 @@
         ist wiederum regulär.
 
     |> Proof
-        Dies folgt sofort aus den vorherigen Theorem, weil
-        wir nur Konkatenation $\circ$ und Kleenesche Hülle
-        $^*$ verwenden. Dennoch lohne es sich, explizit für
-        $L'$ eine Grammatik zu bauen. Es ist auch recht
-        einfach. Sei \(G = $\Sigma, N, P, S)$ eine reguläre
-        Grammatik für $L$. Die Grammatik $G'$ für $L'$ hat
-        die gleichen Nichtterminale und das gleiche
-        Startsymbol, gibt uns aber zusätzlich die Möglichkeit,
-        wenn eine $G$ -Ableitung aufhört, dann wieder ein $cS$
-        anzuhängen und wieder mit $S$ weiterzumachen. Also:
-        wir beginnen mit $P' := P$, fügen aber noch weitere
-        Produktionen hinzu. Nämlich: Für jede $G$-Produktion
-        der Form $Y \rightarrow \epsilon$ fügen wir
-        $Y \rightarrow cS$ hinzu. Für jede $G$-Produktion der
-        Form $Y \rightarrow a$ fügen wir $Y \rightarrow acS$
-        hinzu. Die neue Grammatik $G'$ ist eine _erweitert
-        reguläre Grammatik_, da Regeln wie $Y \rightarrow acS$
-        auf der rechten Seite zwei Terminalsymbole haben. Wir
-        müssen sie also erst noch in eine "richtig reguläre"
+        Dies folgt sofort aus den vorherigen Theorem, weil wir
+        nur Konkatenation $\circ$ und Kleenesche Hülle $^*$
+        verwenden. Dennoch lohne es sich, explizit für $L'$
+        eine Grammatik zu bauen. Es ist auch recht einfach.
+        Sei \(\(G = $\Sigma, N, P, S)$ eine reguläre Grammatik
+        für $L$. Die Grammatik $G'$ für $L'$ hat die gleichen
+        Nichtterminale und das gleiche Startsymbol, gibt uns
+        aber zusätzlich die Möglichkeit, wenn eine $G$
+        -Ableitung aufhört, dann wieder ein $cS$ anzuhängen
+        und wieder mit $S$ weiterzumachen. Also: wir beginnen
+        mit $P' := P$, fügen aber noch weitere Produktionen
+        hinzu. Nämlich: Für jede $G$-Produktion der Form
+        $Y \rightarrow \epsilon$ fügen wir $Y \rightarrow cS$
+        hinzu. Für jede $G$-Produktion der Form
+        $Y \rightarrow a$ fügen wir $Y \rightarrow acS$ hinzu.
+        Die neue Grammatik $G'$ ist eine _erweitert reguläre
+        Grammatik_, da Regeln wie $Y \rightarrow acS$ auf der
+        rechten Seite zwei Terminalsymbole haben. Wir müssen
+        sie also erst noch in eine "richtig reguläre"
         umwandeln. In konkreten Anwendungne empfiehlt es dazu,
         die Nichtterminale von $G'$ umzubenennen, damit keien
         Verwechslungsgefahr droht.

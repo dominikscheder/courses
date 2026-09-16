@@ -2,8 +2,8 @@
     title=Turing-Maschinen simulieren Turing-Maschinen: die universelle Turing-Maschine
     handle=turing-universal#page
 
-    Im letzten Teilkapitel haben wir gesehen, wie wir
-    jede Turingmaschine $M$ mit Eingabealphabet $\Sigma$
+    Im letzten Teilkapitel haben wir gesehen, wie wir jede
+    Turingmaschine $M$ mit Eingabealphabet $\Sigma$
     codieren können als
 
     \begin{align*}
@@ -42,19 +42,18 @@
     Das ist alles nicht besonders tiefgründig und dient
     allein dazu, sicherzustellen, dass wir die
     Konfigurationen von $M$ darstellen können in dem
-    Alphabet $\Lambda$, das _unabhängig_ von $M$ ist.
-    Dass wir also _jede_ Turingmaschine $M$ mit
-    Eingabealphabet $\Sigma$ und _jede_ ihrer
-    Konfigurationen als Strings über _einem_ festen
-    Alphabet $\Lambda$ darstellen können. Eine
-    Turingmaschine simulieren heißt nun, einen String
-    $\enc(M)\texttt{;}w$ mit $w \in \Sigma^*$ zu lesen
-    und daraus den String $\enc(\hat{\delta}^*_M (w))$ zu
-    berechnen, also das Ergebnis $\hat{\delta}^*_M(w)$,
-    passend codiert über dem Alphabet $\Lambda$. Das
-    zentrale Ergebnis dieses Teilkapitels ist, dass wir
-    diese Simulation selbst mit einer Turingmaschine
-    implementieren können.
+    Alphabet $\Lambda$, das _unabhängig_ von $M$ ist. Dass
+    wir also _jede_ Turingmaschine $M$ mit Eingabealphabet
+    $\Sigma$ und _jede_ ihrer Konfigurationen als Strings
+    über _einem_ festen Alphabet $\Lambda$ darstellen
+    können. Eine Turingmaschine simulieren heißt nun,
+    einen String $\enc(M)\texttt{;}w$ mit $w \in \Sigma^*$
+    zu lesen und daraus den String
+    $\enc(\hat{\delta}^*_M (w))$ zu berechnen, also das
+    Ergebnis $\hat{\delta}^*_M(w)$, passend codiert über
+    dem Alphabet $\Lambda$. Das zentrale Ergebnis dieses
+    Teilkapitels ist, dass wir diese Simulation selbst mit
+    einer Turingmaschine implementieren können.
 
     |> Theorem
         handle=theorem-universal
@@ -97,15 +96,15 @@
     |> div
         class=alert-info well
         *Ein technischer aber letztendlich irrelevanter
-        Punkt:* die Mengen $Q$ und $\Gamma$ der
-        Turingmaschine $M$ können ja beliebige (endliche)
-        Mengen sein, und weder $\Lambda$ noch die
-        Turingmaschine $U$ haben "Kenntnis" von ihnen. Wir
-        nehmen aber aus Gründen der Einfachheit an, dass $Q$
-        immer die Zustände $\qaccept$ und $\qreject$ enthält
-        und auch $U$ diese Zustände verwendet. Daraus ergibt
-        sich, dass für eine Endkonfiguration $uqv$ von $M$
-        zwar $q \in \{\qaccept, \qreject\}$ gilt, allerdings
+        Punkt:* die Mengen $Q$ und $\Gamma$ der Turingmaschine
+        $M$ können ja beliebige (endliche) Mengen sein, und
+        weder $\Lambda$ noch die Turingmaschine $U$ haben
+        "Kenntnis" von ihnen. Wir nehmen aber aus Gründen der
+        Einfachheit an, dass $Q$ immer die Zustände $\qaccept$
+        und $\qreject$ enthält und auch $U$ diese Zustände
+        verwendet. Daraus ergibt sich, dass für eine
+        Endkonfiguration $uqv$ von $M$ zwar
+        $q \in \{\qaccept, \qreject\}$ gilt, allerdings
         $\enc(q) \in \{0,1\}^+$, da wir diese $M$ -Zustände
         binär codieren. Somit ist
         $q\ \enc(uqv) \in \{\qaccept, \qreject\} \times
@@ -119,9 +118,9 @@
         Arbeitssymbol $z \in \Gamma \setminus \Sigma$ von $M$
         binär codiert wird. Das heißt insbesondere, dass für
         eine $M$ -Konfiguration $C$ die Codierung $\enc(C)$
-        kein $\Box$ enthält (selbst wenn $C$ als
-        Konfiguration von $M$ dies tut), und in der Tat ist
-        ja $\enc(C) \in \Lambda^*$, und $\Lambda$ ist das
+        kein $\Box$ enthält (selbst wenn $C$ als Konfiguration
+        von $M$ dies tut), und in der Tat ist ja
+        $\enc(C) \in \Lambda^*$, und $\Lambda$ ist das
         Eingabealphabet von $U$ mit $\Box \not \in \Lambda$.
 
     |> Proof

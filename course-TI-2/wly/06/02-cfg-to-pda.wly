@@ -15,11 +15,11 @@
         Zeitpunkt eine Wortform bilden, aus der der noch nicht
         gelesene Teil des Restwortes ableitbar ist. Wenn oben
         auf dem Stack also ein Terminalsymbol $x$ liegt und
-        $x$ auch das nächste Inputzeichen ist, dann poppen
-        wir $x$ vom Stack und lesen $x$, d.h. schieben den
+        $x$ auch das nächste Inputzeichen ist, dann poppen wir
+        $x$ vom Stack und lesen $x$, d.h. schieben den
         Lesekopf um ein Zeichen nach rechts; der Stack ist von
-        $x \alpha$ auf $\alpha$ geschruft und das Restwort
-        von $xw$ auf $w$; wenn also $x\alpha \Rightarrow^* xw$
+        $x \alpha$ auf $\alpha$ geschruft und das Restwort von
+        $xw$ auf $w$; wenn also $x\alpha \Rightarrow^* xw$
         galt, so gilt nun immer noch $\alpha \Rightarrow^* w$.
         Wenn ein Nichtterminal $X$ oben auf dem Stack liegt,
         dieser also die Form $X \alpha$ hat, und $w$ das
@@ -76,18 +76,18 @@
         $B \rightarrow v$, dann ein `}` und so weiter. Wir
         können das also im Automaten implementieren, indem wir
         $A$ vom Stack löschen und durch
-        $\texttt{\{} B \texttt{\}} S$ auf den Stack legen,
-        mit dem linkesten Symbol zuoberst. Wenn wir für ein
+        $\texttt{\{} B \texttt{\}} S$ auf den Stack legen, mit
+        dem linkesten Symbol zuoberst. Wenn wir für ein
         Nichtterminal mehrere Regeln haben, also z.B.
-        $X \rightarrow \alpha$ und $X \rightarrow \beta$,
-        dann können ein $X$ auf dem Stack sowohl durch
-        $\alpha$ als auch durch $\beta$ ersetzen. Hierfür
-        benötigen wir den Nichtdeterminismus. Beachten Sie,
-        dass wir ein Nichtterminal grundsätzlich immer durch
-        die entsprechende rechte Seite ersetzen können, egal,
-        was das nächste Zeichen ist; es wird im Automaten also
-        ein $\step{\epsilon}$-Übergang sein. Konkret also
-        bauen wir für obige Grammatik die folgenden
+        $X \rightarrow \alpha$ und $X \rightarrow \beta$, dann
+        können ein $X$ auf dem Stack sowohl durch $\alpha$ als
+        auch durch $\beta$ ersetzen. Hierfür benötigen wir den
+        Nichtdeterminismus. Beachten Sie, dass wir ein
+        Nichtterminal grundsätzlich immer durch die
+        entsprechende rechte Seite ersetzen können, egal, was
+        das nächste Zeichen ist; es wird im Automaten also ein
+        $\step{\epsilon}$-Übergang sein. Konkret also bauen
+        wir für obige Grammatik die folgenden
         Automatentransitionen:
 
         \begin{align*}
@@ -113,11 +113,11 @@
 
         Dies ist völlig mechanisch und benötigt kein
         Nachdenken. Wie fangen wir an? Wir legen anfangs ein
-        $S$ auf den leeren Stack. Wenn dieses $S$
-        abgearbeitet ist und das Wort zu Ende ist, akzeptieren
-        wir, und nur dann. Um festzustellen, dass wir wirklich
-        den Stack ganz leer gemacht haben, brauchen wir die
-        Markierung `\$`. Also:
+        $S$ auf den leeren Stack. Wenn dieses $S$ abgearbeitet
+        ist und das Wort zu Ende ist, akzeptieren wir, und nur
+        dann. Um festzustellen, dass wir wirklich den Stack
+        ganz leer gemacht haben, brauchen wir die Markierung
+        `\$`. Also:
 
         \begin{align*}
         (\qstart, \epsilon) \step{\epsilon} (q_1, S \$) \\
@@ -125,14 +125,14 @@
         \end{align*}
 
         Unsere Maschine hat also nur drei Zustände: $\qstart$,
-        $q_1$ und $\qend$, welches der akeptierende
-        Endzustand ist. Beachten Sie, dass es von $\qend$ aus
-        keine ausgehenden Transitionen gibt; sollte es also
-        nach Erreichen von $\qend$ noch weitere Zeichen im
+        $q_1$ und $\qend$, welches der akeptierende Endzustand
+        ist. Beachten Sie, dass es von $\qend$ aus keine
+        ausgehenden Transitionen gibt; sollte es also nach
+        Erreichen von $\qend$ noch weitere Zeichen im
         Eingabewort geben, so kann der Automat keine weiteren
         Schritte durchführen, was einem _reject_ entspricht.
-        Erreichen des Zustandes $\qend$ führt also nur dann
-        zu einem _accept_, wenn dies am Ende des Wortes
+        Erreichen des Zustandes $\qend$ führt also nur dann zu
+        einem _accept_, wenn dies am Ende des Wortes
         geschieht.
 
         |> Carousel
@@ -194,8 +194,8 @@
     Die Gegenrichtung ist schwieriger.
 
     |> Theorem
-        Zu jedem Kellerautomaten $M$ gibt es eine
-        kontextfreie Grammatik $G$ mit $L(M) = L(G)$.
+        Zu jedem Kellerautomaten $M$ gibt es eine kontextfreie
+        Grammatik $G$ mit $L(M) = L(G)$.
 
     Ich folge hier im Wesentlichen dem Beweis aus Sipsers
     Kapitel 2.
@@ -212,10 +212,10 @@
                 -Übergänge erreichen.
 
             |> li
-                Der Automat leert den Stack, bevor er akzeptiert.
-                Dies können wir z.B. dadurch erreichen, dass wir
-                anfangs ein \(\$\) auf den Stack legen und am Ende
-                den Stack poppen, bis wir \(\$\) gepoppt haben.
+                Der Automat leert den Stack, bevor er akzeptiert. Dies
+                können wir z.B. dadurch erreichen, dass wir anfangs
+                ein \(\$\) auf den Stack legen und am Ende den Stack
+                poppen, bis wir \(\$\) gepoppt haben.
 
             |> li
                 Für jede Transition
@@ -259,11 +259,10 @@
         |> ol
             |> li
                 Fall 1: in der Konfigurationsfolge von
-                $(p, \epsilon) \Step{w}^* (q,\epsilon)$ wird der
-                Stack zwischendurch auch mal leer, und zwar nachdem
-                der Präfix $u$ des Wortes $w = uv$ gelesen ist, und
-                der Automat ist zu diesem Zeitpunkt im Zustand $r$.
-                Also:
+                $(p, \epsilon) \Step{w}^* (q,\epsilon)$ wird der Stack
+                zwischendurch auch mal leer, und zwar nachdem der
+                Präfix $u$ des Wortes $w = uv$ gelesen ist, und der
+                Automat ist zu diesem Zeitpunkt im Zustand $r$. Also:
 
                 \begin{align*}
                 (p, \epsilon) \Step{u}^* (r,\epsilon) \Step{v}^* (q,\epsilon) \ .
@@ -351,10 +350,10 @@
         \end{align*}
 
         Diese ist _nicht_ regulär, da der Präfix und der
-        Suffix aus $a$ die gleiche Länge $m$ haben müssen.
-        Wir bauen zuerst einen Kellerautomaten und übersetzen
-        den dann entsprechend dem Schema aus dem letzten
-        Theorem in eine Grammatik. Dann vergleichen wir die
+        Suffix aus $a$ die gleiche Länge $m$ haben müssen. Wir
+        bauen zuerst einen Kellerautomaten und übersetzen den
+        dann entsprechend dem Schema aus dem letzten Theorem
+        in eine Grammatik. Dann vergleichen wir die
         entstandene Grammatik mit der, die wir per Hand aus
         der obigen Sprachbeschreibung bauen würden. Unser
         Automat hat einen Zustand $q_1$, in welchem er
@@ -411,8 +410,8 @@
         und 4 für $\qend$. Als zweite Beobachtung sehen wir,
         dass man mit leerem Stapel beispielsweise gar nicht
         von $\qstart$ nach $q_3$ kommt: auf dem Weg dorthin
-        wird ein \(\$\) gepusht und nie gepoppt; gleiches
-        gilt für viele weitere Zustandspaare. Das erweiterte
+        wird ein \(\$\) gepusht und nie gepoppt; gleiches gilt
+        für viele weitere Zustandspaare. Das erweiterte
         Diagramm hier gibt eine Orientierung. Neben jeden
         Zustand haben wir schematisch den Stack gemalt:
 
@@ -428,10 +427,10 @@
         A_{04}, A_{13}
         \end{align*}
 
-        Da man von $\qstart$ zu sich selber und von $\qend$
-        zu sich selber nur mit dem leeren Wort gelant,
-        ersetzen wir $A_{00}$ und $A_{44}$ sofort durch
-        $\epsilon$. Als Produktionen der Form
+        Da man von $\qstart$ zu sich selber und von $\qend$ zu
+        sich selber nur mit dem leeren Wort gelant, ersetzen
+        wir $A_{00}$ und $A_{44}$ sofort durch $\epsilon$. Als
+        Produktionen der Form
         $A_{pq} \rightarrow A_{pr} A_{rq}$ erhalten wir also:
 
         \begin{align*}
@@ -445,12 +444,11 @@
         Schon deutlich besser als die 125 Produktionen, die
         wir bekämen, wenn wir stur an der Methode im Beweis
         festhalten würden. Wir brauchen noch Produktionen der
-        Form $A_{pq} \rightarrow a A_{rs} b$. Dafür müssen
-        wir nach Push-Pop-Paaren
-        $(p,\epsilon) \step{a} (r,x)$,
+        Form $A_{pq} \rightarrow a A_{rs} b$. Dafür müssen wir
+        nach Push-Pop-Paaren $(p,\epsilon) \step{a} (r,x)$,
         $(s,x) \step{b} (q,\epsilon)$ suchen. Stack-Symbole
-        sind $a, b, x$. Suchen wir also zuerst nach Paaren
-        von Transitionen, die $a$ pushen und poppen.
+        sind $a, b, x$. Suchen wir also zuerst nach Paaren von
+        Transitionen, die $a$ pushen und poppen.
 
         \begin{align*}
         (q_1, \epsilon) \step{a} (q_1, a) \textnormal{ und }
@@ -527,9 +525,9 @@
         A_{22}&\rightarrow \epsilon \\
         \end{align*}
 
-        Überlegen wir nun, ausgehend von dieser Grammatik,
-        was wir aus dem Startsymbol $A_{13}$ ableiten können.
-        Die einzigen zwei Produktionen mit $A_{13}$ sind
+        Überlegen wir nun, ausgehend von dieser Grammatik, was
+        wir aus dem Startsymbol $A_{13}$ ableiten können. Die
+        einzigen zwei Produktionen mit $A_{13}$ sind
         $A_{13} \rightarrow a A_{13} a$ und
         $A_{13} \rightarrow b A_{22}$, also gilt
 

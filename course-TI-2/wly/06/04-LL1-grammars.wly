@@ -16,9 +16,9 @@
         bei einem Kellerautomaten auf dem Stack liegt, wenn
         ein Nichtterminal ganz oben liegt.
 
-    Grenzformen sind also diejenigen Wortformen, bei
-    denen der Kellerautomat eine Entscheidung treffen
-    muss, weil er eventuell mehrere Produktionen
+    Grenzformen sind also diejenigen Wortformen, bei denen
+    der Kellerautomat eine Entscheidung treffen muss, weil
+    er eventuell mehrere Produktionen
     $A \rightarrow \beta$ zur Auswahl hat. In diesem
     Teilkapitel wollen wir herausarbeiten, unter welchen
     Umständen wir die richtige Auswahl treffen können,
@@ -26,9 +26,8 @@
     Inputwortes lesen dürfen.
 
     |> Definition
-        Für ein Wort $w \in \Sigma^*$ und eine natürliche
-        Zahl $k \in \N$ sei $\first_k(w)$ wie folgt
-        definiert:
+        Für ein Wort $w \in \Sigma^*$ und eine natürliche Zahl
+        $k \in \N$ sei $\first_k(w)$ wie folgt definiert:
 
         \begin{align*}
         \first_k(w) := \begin{cases}
@@ -59,18 +58,18 @@
         A\alpha&\Step{2} \gamma \alpha \Step{}^* y \\
         \end{align*}
 
-        dann müssen sich $x$ und $y$ in den ersten $k$
-        Zeichen unterscheiden, also
+        dann müssen sich $x$ und $y$ in den ersten $k$ Zeichen
+        unterscheiden, also
 
         \begin{align*}
         \first_k(x) \ne \first_k(y) \ .
         \end{align*}
 
-    Intuitiv gesprochen: wenn wir bereits eine ersten
-    Teil $w$ unseres Zielwortes abgeleitet haben, dann
-    können wir die nächste anzuwendende Produktion
-    eindeutig bestimmen, indem wir die nächsten $k$
-    Zeichen des Zielwortes lesen.
+    Intuitiv gesprochen: wenn wir bereits eine ersten Teil
+    $w$ unseres Zielwortes abgeleitet haben, dann können
+    wir die nächste anzuwendende Produktion eindeutig
+    bestimmen, indem wir die nächsten $k$ Zeichen des
+    Zielwortes lesen.
 
     |> Exercise
         Negieren Sie die Definition, d.h., schreiben Sie eine
@@ -110,11 +109,11 @@
             Wenn es also für $\delta$ gilt und wir die Produktion
             $S \rightarrow (S)S$ auf $\delta$ anwenden, dann gilt
             es für jedes "alte" $S$ und auch für die beiden neu
-            erzeugten; wenn wir $S \rightarrow \epsilon$
-            anwenden, dann verschwindet ein $S$, die Behauptung
-            gilt aber nach wie vor für alle anderen $S$ in
-            $\delta$. Wir folgern also, dass für das $\alpha$ den
-            beiden obigne Herleitungen
+            erzeugten; wenn wir $S \rightarrow \epsilon$ anwenden,
+            dann verschwindet ein $S$, die Behauptung gilt aber
+            nach wie vor für alle anderen $S$ in $\delta$. Wir
+            folgern also, dass für das $\alpha$ den beiden obigne
+            Herleitungen
             $\first_k(\alpha) \in \{\epsilon, \texttt{)}\}$ gilt.
             Keines davon ist ein Nichtterminal, und so muss auch
             $\first_k(\alpha) = \first_k(x)$ gelten.
@@ -128,23 +127,22 @@
             und somit sind sie verschieden. Wir folgern, dass $G$
             eine LL(1)-Grammatik ist.
 
-    Sehen Sie, dass die LL($k$)-Bedingung der Aussage
-    "der Backtrack-Baum hat keine langen Sackgassen"
-    ähnelt (aber nicht völlig äquivalent dazu ist). Wenn
-    $G$ eine LL( $k$)-Grammatik ist und wir den
-    Backtrack-Baum für ein Wort bauen, dann gilt: sobald
-    wir in einer Sackgasse $k$ neue Terminalsymbole am
-    "Terminalpräfix" der Wortform hergeleitet haben,
-    merken wir, dass wir in einer Sackgasse sind. Mit
-    Terminalpräfix meine ich den längsten Präfix einer
-    Wortform, der ausschließlich aus Terminalen besteht.
-    Allerdings muss nicht jeder Ableitungsschritt den
-    Terminalpräfix wachsen lassen (Regeln wie
-    $X \rightarrow YbZ$ zum Beispiel ersetzen einfach das
-    erste Nichtterminal), aber "moralisch" geschieht etwas
-    ähnliches). Wenn umgekehrt eine Grammatik _nicht_ LL(
-    $k$) ist, dann muss der Backtrack-Baum beiden
-    Ableitungen
+    Sehen Sie, dass die LL($k$)-Bedingung der Aussage "der
+    Backtrack-Baum hat keine langen Sackgassen" ähnelt
+    (aber nicht völlig äquivalent dazu ist). Wenn $G$ eine
+    LL( $k$)-Grammatik ist und wir den Backtrack-Baum für
+    ein Wort bauen, dann gilt: sobald wir in einer
+    Sackgasse $k$ neue Terminalsymbole am "Terminalpräfix"
+    der Wortform hergeleitet haben, merken wir, dass wir
+    in einer Sackgasse sind. Mit Terminalpräfix meine ich
+    den längsten Präfix einer Wortform, der ausschließlich
+    aus Terminalen besteht. Allerdings muss nicht jeder
+    Ableitungsschritt den Terminalpräfix wachsen lassen
+    (Regeln wie $X \rightarrow YbZ$ zum Beispiel ersetzen
+    einfach das erste Nichtterminal), aber "moralisch"
+    geschieht etwas ähnliches). Wenn umgekehrt eine
+    Grammatik _nicht_ LL( $k$) ist, dann muss der
+    Backtrack-Baum beiden Ableitungen
 
     \begin{align*}
     w A \alpha&\Rightarrow w \beta \alpha \\
@@ -157,9 +155,9 @@
     Sackgassen.
 
     |> Exercise
-        (Beispiel 5.3 aus _The Theory of Parsing,
-        Translation, and Compiling_ von Alfred V. Aho und
-        Jeffrey D. Ullman). Betrachten wir die Grammatik
+        (Beispiel 5.3 aus _The Theory of Parsing, Translation,
+        and Compiling_ von Alfred V. Aho und Jeffrey D.
+        Ullman). Betrachten wir die Grammatik
 
         \begin{align*}
         S&\step{1} \epsilon \\
@@ -168,8 +166,8 @@
         A&\step{4} b
         \end{align*}
 
-        Zeigen Sie, dass diese Grammatik LL(2) ist, aber
-        nicht LL(1). *Tip.* Leiten Sie erst einmal ein Dutzend
+        Zeigen Sie, dass diese Grammatik LL(2) ist, aber nicht
+        LL(1). *Tip.* Leiten Sie erst einmal ein Dutzend
         verschiedene Wörter ab und finden dann eine
         "normalsprachliche" Beschreibung dieser Sprache.
         Beschreiben Sie dann alle möglichen Wortformen
@@ -197,8 +195,8 @@
         \end{align*}
 
         also Wörter, wo auf beliebig viele $a$'s eine Folge
-        von _höchstens_ so vielen $b$'s folgt. Geben Sie
-        diese Grammatik in den
+        von _höchstens_ so vielen $b$'s folgt. Geben Sie diese
+        Grammatik in den
         [Parser-Simulator](href=https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html)
         ein und finden Wörter mit langen Sackgassen. Zeigen
         Sie, dass diese Grammatik nicht LL$(k)$ ist, für kein
@@ -217,10 +215,10 @@
         Grammatik, geben Sie diese im
         [Parser-Simulator](https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html)
         ein und schauen, wie lang die Sackgassen werden
-        können. Zeigen Sie, dass $L_3$ eine LL$(k)$
-        -Grammatik ist. Für welchen Wert von $k$? Ist $L_t$
-        (für im Voraus bekanntes $t$ ) eine LL$(k)$
-        -Grammatik? Für welchen Wert von $k$?
+        können. Zeigen Sie, dass $L_3$ eine LL$(k)$ -Grammatik
+        ist. Für welchen Wert von $k$? Ist $L_t$ (für im
+        Voraus bekanntes $t$ ) eine LL$(k)$ -Grammatik? Für
+        welchen Wert von $k$?
 
     |> TopicAnnouncement
         LL$(k)$-Grammatiken parsen
@@ -236,8 +234,7 @@
     |> Definition
         Sei eine kontextfreie Grammatik
         $G = (\Sigma, N, S, P)$ und eine Wortform
-        $\alpha \in (\Sigma \cup N)^*$ gegeben. Wir
-        definieren
+        $\alpha \in (\Sigma \cup N)^*$ gegeben. Wir definieren
 
         \begin{align*}
         \First_k(\alpha) := \{ \first_k(w) \ | \ w \in \Sigma^*, \alpha \Step{}^* w\}
@@ -259,8 +256,8 @@
         A&\rightarrow \beta_l
         \end{align*}
 
-        die Mengen $\First(\beta_i \alpha)$ paarweise
-        disjunkt sind (wenn also keine zwei dieser Mengen ein
+        die Mengen $\First(\beta_i \alpha)$ paarweise disjunkt
+        sind (wenn also keine zwei dieser Mengen ein
         gemeinsames Element enthalten).
 
     Nehmen wir eine Momentaufnahme unseres
@@ -271,19 +268,18 @@
     S \Rightarrow^*{} x \alpha
     \end{align*}
 
-    durchgeführt. Die Wortform $\alpha$ ist genau das,
-    was im Moment auf dem Stack des Automaten liegt (um
-    ganz genau zu sein: \(\alpha\texttt{\$}\) liegt auf
-    dem Stack). Wenn $\alpha$ mit einem Terminalsymbol $c$
+    durchgeführt. Die Wortform $\alpha$ ist genau das, was
+    im Moment auf dem Stack des Automaten liegt (um ganz
+    genau zu sein: \(\alpha\texttt{\$}\) liegt auf dem
+    Stack). Wenn $\alpha$ mit einem Terminalsymbol $c$
     beginnt, so ist klar, was wir machen müssen: wir
     schauen, ob $y$ mit $c$ beginnt. Wenn ja, lesen wir
     $c$ und poppen es vom Stack. Der schwierige Fall ist,
-    wenn $\alpha$ mit einem Nichtterminal beginnt.
-    Nochmal von vorn: im schwierigen Fall liegt auf dem
-    Stack (oberhalb vom \(\$\)) eine Wortform, die mit
-    einem Nichtterminal beginnt, also $A \alpha$. Das
-    bedeutet, dass der Automat per Linksableitung bis
-    jetzt
+    wenn $\alpha$ mit einem Nichtterminal beginnt. Nochmal
+    von vorn: im schwierigen Fall liegt auf dem Stack
+    (oberhalb vom \(\$\)) eine Wortform, die mit einem
+    Nichtterminal beginnt, also $A \alpha$. Das bedeutet,
+    dass der Automat per Linksableitung bis jetzt
 
     \begin{align*}
     S \Step{}^* x A \alpha
@@ -304,9 +300,8 @@
     davon aus, dass er das kann; programmieren könnten wir
     das auf jeden Fall; ob man es im strengen Framework
     des Kellerautomaten hinkriegt, werden wir später
-    sehen). Wenn $G$ eine LL$(k)$-Grammatik ist, dann
-    gibt es höchstens eine Regel $A \rightarrow \beta_i$
-    mit
+    sehen). Wenn $G$ eine LL$(k)$-Grammatik ist, dann gibt
+    es höchstens eine Regel $A \rightarrow \beta_i$ mit
 
     \begin{align*}
     \first_k(y) \in \first_k(\beta_i \alpha)
@@ -377,8 +372,8 @@
                                 |> ul
                                     |> li
                                         Wenn es genau eine solche Produktion
-                                        $A \rightarrow \beta_i$ gibt: wende Sie an; es ist
-                                        die richtige Produktion.
+                                        $A \rightarrow \beta_i$ gibt: wende Sie an; es ist die
+                                        richtige Produktion.
 
                                     |> li
                                         Wenn es keine gibt: `Reject`. Das Wort kann nicht
@@ -392,9 +387,9 @@
                         Wenn das oberste Symbol \(\texttt{\$}\) ist: wenn
                         Eingabewort zu Ende `Accept` ansonsten `Reject`
 
-    Die rot und fett gedruckte Zeile ist das "Herz"
-    dieses Algorithmus. Um den Algorithmus implementieren
-    zu können, müssen wir es schaffen, die Menge
+    Die rot und fett gedruckte Zeile ist das "Herz" dieses
+    Algorithmus. Um den Algorithmus implementieren zu
+    können, müssen wir es schaffen, die Menge
     $\First_k(\beta_i\alpha)$ zu berechnen.
 
     |> TopicAnnouncement
@@ -424,8 +419,8 @@
         \end{align*}
 
     Im Allgemeinen gilt
-    $\First_k(S_1 \circ \dots \circ S_l) = S_1 \circ_k
-    S_2 \circ_k \dots \circ_k S_l$.
+    $\First_k(S_1 \circ \dots \circ S_l) = S_1 \circ_k S_2
+    \circ_k \dots \circ_k S_l$.
     In Worten: der $\circ_k$-Operator bildet alle
     möglichen Kombinationen von Wörtern und nimmt von
     jedem die ersten $k$ Zeichen.
@@ -499,11 +494,10 @@
 
     Für ein Terminalsymbol $c$ ist es trivial,
     $\First_k(c)$ zu berechnen: es ist $\{c\}$, da sich
-    aus $c$ natürlich nur das Wort $c$ ableiten lässt.
-    Für Nichtterminale müssen wir uns anstrengen. Die
-    erste Idee ist, dass wir für $\First_k(X)$ eine
-    Gleichung schreiben können, die (>>first-k-wortform)
-    verwendet.
+    aus $c$ natürlich nur das Wort $c$ ableiten lässt. Für
+    Nichtterminale müssen wir uns anstrengen. Die erste
+    Idee ist, dass wir für $\First_k(X)$ eine Gleichung
+    schreiben können, die (>>first-k-wortform) verwendet.
 
     |> Observation
         Sei $X$ ein Nichtterminal und
@@ -524,10 +518,10 @@
         \end{align}
 
         Was ja eigentlich offensichtlich ist: wenn sich ein
-        Wort $X \Step{}^* w$ aus $X$ ableiten lässt, dann
-        muss dies mittels einer der obigen Produktionen
-        geschehen: $X \Step{} \alpha_i \Step{}^* w$, und
-        somit gilt $\first_k(w)\in \First_k(\alpha_i)$.
+        Wort $X \Step{}^* w$ aus $X$ ableiten lässt, dann muss
+        dies mittels einer der obigen Produktionen geschehen:
+        $X \Step{} \alpha_i \Step{}^* w$, und somit gilt
+        $\first_k(w)\in \First_k(\alpha_i)$.
 
     Die Gleichungen (>>first-k-wortform) und
     (>>first-k-nonterminal) leuchten zwar ein, scheinen
@@ -543,8 +537,8 @@
     sich "die Katze in den Schwanz beißt", hilft es oft,
     die Definition vorerst _komplexere_ un _genauer_ zu
     machen. Wir führen nun, zusätzlich zu $\First_k(X)$
-    und $\First_k(\alpha)$, noch eine feinere
-    Unterteilung an:
+    und $\First_k(\alpha)$, noch eine feinere Unterteilung
+    an:
 
     |> Definition
         Sei $\sigma$ ein Symbol und $d \in \N$. Dann ist
@@ -585,8 +579,8 @@
         \end{align*}
 
         Für eine Wortform
-        $\alpha = \sigma_1 \sigma_2 \dots \sigma_n \in
-        (\Sigma \cup N)^*$
+        $\alpha = \sigma_1 \sigma_2 \dots \sigma_n \in (\Sigma
+        \cup N)^*$
         definieren wir
 
         \begin{align*}

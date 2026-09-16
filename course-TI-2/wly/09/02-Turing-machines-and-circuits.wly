@@ -14,10 +14,10 @@
     x&\mapsto [M(x) = \texttt{accept}]
     \end{align*}
 
-    Also $f(x)=1$ falls $M$ die Eingabe $x$ akzeptiert
-    und $f(x)=0$ falls $M$ die Eingabe ablehnt (falls $L$
-    und $n$ aus dem Kontext hervorgehen, schreiben wir
-    einfach $f$).
+    Also $f(x)=1$ falls $M$ die Eingabe $x$ akzeptiert und
+    $f(x)=0$ falls $M$ die Eingabe ablehnt (falls $L$ und
+    $n$ aus dem Kontext hervorgehen, schreiben wir einfach
+    $f$).
 
     |> Theorem
         Wenn $L$ in Zeit $t(n)$ entscheidbar ist und
@@ -28,20 +28,19 @@
     |> Highlight
         title=*Beweisidee.*
         Die $k$-Band-Turingmaschine $M$, die $L$ entscheidet,
-        macht auf Eingabe $x$ höchstens $T = t(|x|)$
-        Schritte. Es gibt also einen Bereich von insgesamt
-        $2Tk$ Zellen ($2t$ pro Band), den sie nie verlässt.
-        Das heißt, jede Konfiguration besteht aus $O(t)$
-        Zeichen. Die Funktion $\hat{\delta}_M$, die für jede
-        Konfiguration $C$ die Nachfolgekonfiguration
-        $C' := \hat{\delta}_M(C)$ berechnet, ist sehr lokal
-        und sehr einfach; die $i$-te Stelle von Konfiguration
-        $C$ hat nur auf die Stellen $i-2$, $i-1$, $i$ und
-        $i+1$ von $C'$ Einfluss. Somit können wir bei
-        geeigneter binärer Codierung einen effizienten
-        Schaltkreis bauen, der $\hat{\delta}_{M}$ berechnet.
-        Da wir wissen, dass $M$ höchstens $T$ Schritte macht,
-        wissen wir, dass
+        macht auf Eingabe $x$ höchstens $T = t(|x|)$ Schritte.
+        Es gibt also einen Bereich von insgesamt $2Tk$ Zellen
+        ($2t$ pro Band), den sie nie verlässt. Das heißt, jede
+        Konfiguration besteht aus $O(t)$ Zeichen. Die Funktion
+        $\hat{\delta}_M$, die für jede Konfiguration $C$ die
+        Nachfolgekonfiguration $C' := \hat{\delta}_M(C)$
+        berechnet, ist sehr lokal und sehr einfach; die $i$-te
+        Stelle von Konfiguration $C$ hat nur auf die Stellen
+        $i-2$, $i-1$, $i$ und $i+1$ von $C'$ Einfluss. Somit
+        können wir bei geeigneter binärer Codierung einen
+        effizienten Schaltkreis bauen, der $\hat{\delta}_{M}$
+        berechnet. Da wir wissen, dass $M$ höchstens $T$
+        Schritte macht, wissen wir, dass
         $\hat{\delta}^*(x) = \hat{\delta}^{(T)}(x)$ gilt; wir
         können nun einfach $T$ Schaltkreise
         hintereinanderschalten, um $\hat{\delta}^*(x)$ und
@@ -74,25 +73,24 @@
         kann also Zellen $j-2, j-1, j, j+1$ im nächsten
         Schritt beeinflussen. Lege wir zuerst eine globale
         Indizierung der Stellen der Konfiguration fest. Der
-        Schreib-Lese-Kopf startet an Zelle $0$ des Bandes;
-        das Eingabewort belegt also die Zellen
-        $0, 1, \dots, n-1$. Da die Turingmaschine maximal $T$
-        Schritte läuft, ist der Kopf immer auf einer Zelle in
-        $\{-T, \dots, T\}$. Wir können also jede
-        Konfiguration mit $2T+1$ Zeichen darstellen - nein,
-        mit $S := 2T+2$ Zeichen, da der Kopf selbst ja auch
-        eine Stelle der Konfiguration belegt. Somit ist also
-        $C \in (Q \cup \Gamma)^{s}$. Unbenutzte Zellen links
-        und rechts füllen wir mit $\Box$ auf, so dass immer
-        eine Länge von $s$ benutzt wird. Sei
-        $C^{(t)} = \hat{\delta}^{(t)}(\qstart, x)$ die
-        Konfiguration nach $t$ Schritten. Sei $C^{(t)}_i$ das
-        $i$-te Zeichen darin. Den Wert von $C^{(t+1)}_i$
+        Schreib-Lese-Kopf startet an Zelle $0$ des Bandes; das
+        Eingabewort belegt also die Zellen $0, 1, \dots, n-1$.
+        Da die Turingmaschine maximal $T$ Schritte läuft, ist
+        der Kopf immer auf einer Zelle in $\{-T, \dots, T\}$.
+        Wir können also jede Konfiguration mit $2T+1$ Zeichen
+        darstellen - nein, mit $S := 2T+2$ Zeichen, da der
+        Kopf selbst ja auch eine Stelle der Konfiguration
+        belegt. Somit ist also $C \in (Q \cup \Gamma)^{s}$.
+        Unbenutzte Zellen links und rechts füllen wir mit
+        $\Box$ auf, so dass immer eine Länge von $s$ benutzt
+        wird. Sei $C^{(t)} = \hat{\delta}^{(t)}(\qstart, x)$
+        die Konfiguration nach $t$ Schritten. Sei $C^{(t)}_i$
+        das $i$-te Zeichen darin. Den Wert von $C^{(t+1)}_i$
         können wir bestimmen allein mit Kenntnis von
         $C^{(t)}_{i-1}$, $C^{(t)}_{i}$,
 
-        $C^{(t)}_{i+1}$ und $C^{(t)}_{i+2}$. Es gibt also
-        eine Funktion
+        $C^{(t)}_{i+1}$ und $C^{(t)}_{i+2}$. Es gibt also eine
+        Funktion
 
         \begin{align*}
         \tilde{\delta} : (Q \cup \Gamma)^4 \rightarrow (Q \cup \Gamma)
@@ -144,9 +142,9 @@
         der Eingabegröße $n=|x|$ abhängt, können wir sogar
         behaupten: die Größe von $\Delta$ ist $O(1)$. Wir
         schalten jetzt $S$ Kopien von $\Delta$ parallel, um
-        $\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$
-        zu berechnen, also aus einer gegebenen Konfiguration
-        die Folgekonfiguration:
+        $\hat{\delta}: \mathcal{C} \rightarrow \mathcal{C}$ zu
+        berechnen, also aus einer gegebenen Konfiguration die
+        Folgekonfiguration:
 
         |> figure
             |> img
@@ -170,19 +168,17 @@
         Schreib-Lese-Kopf niemals dorthin gelangen wird. Jetzt
         schalten wir $T$ Kopien von $\Delta^{S}$
         hintereinander, um aus der Startkonfiguration
-        $C^{(0)}$ die Endkonfiguration $C^{(T)}$ zu
-        berechnen:
+        $C^{(0)}$ die Endkonfiguration $C^{(T)}$ zu berechnen:
 
         |> figure
             |> img
                 style=height:30em
                 src=img/09-complexity-theory/to-circuits/to-circuits-04-01.svg
 
-        Ganz zum Schluss bauen wir uns noch einen
-        Schaltkreis, der an jede Stelle von $C{^(T)}$ schaut
-        und, falls dort der Endzustand steht, liest, ob das
-        `accept` oder `reject` ist und je nachdem $1$ oder $0$
-        ausgibt.
+        Ganz zum Schluss bauen wir uns noch einen Schaltkreis,
+        der an jede Stelle von $C{^(T)}$ schaut und, falls
+        dort der Endzustand steht, liest, ob das `accept` oder
+        `reject` ist und je nachdem $1$ oder $0$ ausgibt.
 
         |> figure
             |> img

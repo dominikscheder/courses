@@ -1,14 +1,13 @@
 |> Sub
     title=Beschränkter Speicherplatz
 
-    In den vergangen Kapiteln haben wir die Laufzeit
-    einer Turingmaschine beschränkt und die
-    Komplexitätsklassen studiert, die sich daraus ergeben,
-    allen voran P und NP. Die neben Zeit wohl wichtigste
-    Resource beim Rechnen ist der Platz. Turingmaschinen
-    erlauben uns auch, präzise über den benötigten
-    Speicherplatz zu sprechen. Der _Platz_ einer
-    Konfiguration
+    In den vergangen Kapiteln haben wir die Laufzeit einer
+    Turingmaschine beschränkt und die Komplexitätsklassen
+    studiert, die sich daraus ergeben, allen voran P und
+    NP. Die neben Zeit wohl wichtigste Resource beim
+    Rechnen ist der Platz. Turingmaschinen erlauben uns
+    auch, präzise über den benötigten Speicherplatz zu
+    sprechen. Der _Platz_ einer Konfiguration
     $C = uqv \in \Gamma^* \times Q \times \Gamma^*$ ist
     die Anzahl der belegten Speicherzellen, also
     beispielsweise $|uv|$. Bei $k$ -Band-Maschinen müssen
@@ -134,9 +133,9 @@
     \textnormal{L} := \SPACE(\log n) \ .
     \end{align*}
 
-    die Menge aller Probleme, die man mit
-    _logarithmischem Speicherplatz_ entscheiden kann. Man
-    nennt $L$ auch LogSpace.
+    die Menge aller Probleme, die man mit _logarithmischem
+    Speicherplatz_ entscheiden kann. Man nennt $L$ auch
+    LogSpace.
 
     |> Exercise
         Zeigen Sie, dass ${\rm NP} \subseteq {\rm PSPACE}$
@@ -144,9 +143,8 @@
         PSPACE`{sc} zu zeigen.
 
     |> Exercise
-        Sei `Palindrome`{sc} die Sprache aller
-        Palindromwörter mit Trennungszeichen in der Mitte,
-        also
+        Sei `Palindrome`{sc} die Sprache aller Palindromwörter
+        mit Trennungszeichen in der Mitte, also
 
         \begin{align*}
         \{ucu^{R} \ | \ u \in \{a,b\}^* \} \ .
@@ -166,8 +164,8 @@
     |> Exercise
         Seien $f: \Sigma_1 \rightarrow \Sigma_2$ und
         $g: \Sigma_2 \rightarrow \Sigma_3$ zwei Funktionen.
-        Zeigen Sie, dass, falls $f$ und $g$ in
-        logarithmischem Platz berechnet werden können, dann
-        auch $g \circ f: \Sigma_1 \rightarrow \Sigma_3$.
-        *Hinweis:* der "offensichtliche" Ansatz funktioniert
-        nicht. Warum nicht?
+        Zeigen Sie, dass, falls $f$ und $g$ in logarithmischem
+        Platz berechnet werden können, dann auch
+        $g \circ f: \Sigma_1 \rightarrow \Sigma_3$. *Hinweis:*
+        der "offensichtliche" Ansatz funktioniert nicht. Warum
+        nicht?

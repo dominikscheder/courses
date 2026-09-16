@@ -12,8 +12,8 @@
     mit einer Beschreibung eines Formats in natürlicher
     Sprache; (2) basteln uns daraus mit Hilfe des
     "Baukastenprinzips" eine reguläre Sprache; (3) säubern
-    diese, indem wir Regeln der Form $X \rightarrow Y$
-    und $X \rightarrow a$ eliminieren; (4) bauen einen
+    diese, indem wir Regeln der Form $X \rightarrow Y$ und
+    $X \rightarrow a$ eliminieren; (4) bauen einen
     nichtdeterministischen endlichen Automaten; (5)
     transformieren diesen in einen deterministischen
     endlichen Automaten.
@@ -79,10 +79,10 @@
     bauen, in dem wir Theorem >>operation-L anwenden. Wir
     fügen zur "End-Produktion" $B \rightarrow a$ eine
     weiter Produktion $B \rightarrow a:B$ hinzu und tun
-    das gleiche für $B \rightarrow b$. Allerdings
-    benennen wir $B$ in $C$ um, damit keine
-    Verwechslungsgefahr mit dem ursprünglichen $B$
-    aufkommt. Das gleiche machen wir für $D$.
+    das gleiche für $B \rightarrow b$. Allerdings benennen
+    wir $B$ in $C$ um, damit keine Verwechslungsgefahr mit
+    dem ursprünglichen $B$ aufkommt. Das gleiche machen
+    wir für $D$.
 
     \begin{align*}
     C&\rightarrow a \ | \ aC \ | \ a{:}C \\
@@ -90,9 +90,9 @@
     T&\rightarrow C \ | D
     \end{align*}
 
-    Von $L$ lassen sich nun also alle Labels ableiten.
-    Wir brauchen nun zum Schluss wieder eine Folge von
-    $L$, mit `.` separiert, müssen also wieder Theorem
+    Von $L$ lassen sich nun also alle Labels ableiten. Wir
+    brauchen nun zum Schluss wieder eine Folge von $L$,
+    mit `.` separiert, müssen also wieder Theorem
     >>operation-L anwenden, dieses mal auf die von $T$
     erzeugte Sprache. Im Ergebnis benennen wir das
     Startsymbol in $S$ um.
@@ -105,8 +105,8 @@
 
     Um eine "richtig" reguläre Sprache zu erhalten,
     entzerren wir die erweitert regulären Produktionen wie
-    $C \rightarrow a{:}C$. Dafür brauchen wir neue
-    Symbole $C', D', S'$:
+    $C \rightarrow a{:}C$. Dafür brauchen wir neue Symbole
+    $C', D', S'$:
 
     \begin{align*}
     S &\rightarrow C \ | \ D \\
@@ -139,8 +139,8 @@
     In einem zweiten Schritt wollen wir die Produktionen
     $S \rightarrow C$ und $S \rightarrow D$ eliminieren,
     sodass wir nur noch Produktionen der From
-    $X \rightarrow aY$ und $E \rightarrow \epsilon$
-    haben. Wir gehen vor wie in Theorem
+    $X \rightarrow aY$ und $E \rightarrow \epsilon$ haben.
+    Wir gehen vor wie in Theorem
     >>theorem-regular-simplified beschrieben. Wir ersetzen
     $S \rightarrow C$ also durch alle Produktionen der
     Form $S \rightarrow \alpha$, wobei $\alpha$ eine
@@ -173,8 +173,8 @@
             style=height:17em
             src=img/finite-state-automata/nfsm-example-03-big.svg
 
-    Ich habe die Zeichen `.:-` rot unterlegt, weil man
-    sie sonst kaum erkennen würde in dem Automaten.
+    Ich habe die Zeichen `.:-` rot unterlegt, weil man sie
+    sonst kaum erkennen würde in dem Automaten.
 
     |> TopicAnnouncement
         5. Den nichtdeterministischen Automaten in einen
@@ -191,9 +191,9 @@
     Zustände in $2^Q$ also nur dann, wenn wir sie
     brauchen. Wir beginnen mit dem Zustand $\{S\}$ und
     legen dann an jeden Zustand Kanten an, jeweils mit
-    $a, :, -, .$ beschriftet, und erschaffen, falls
-    nötig, dabei neue Zustände. In der folgenden Animation
-    sehen Sie manchmal den mit einem Kreuz markierten
+    $a, :, -, .$ beschriftet, und erschaffen, falls nötig,
+    dabei neue Zustände. In der folgenden Animation sehen
+    Sie manchmal den mit einem Kreuz markierten
     Fehlerzustand (trap state). Die akzeptierenden
     Zustände sind mit fettem Rand markiert.
 
@@ -243,9 +243,9 @@
                 |> br
                 Schritt für Schritt gebaut:
 
-    Dieser Automat hat deutlich weniger also 128
-    Zustände, nämlich mit nur sieben genau so viele wie
-    der nichtdeterministische (es ist Zufall, dass beide
+    Dieser Automat hat deutlich weniger also 128 Zustände,
+    nämlich mit nur sieben genau so viele wie der
+    nichtdeterministische (es ist Zufall, dass beide
     gleich viele Zustände haben; messen Sie dieser
     Tatsache keine Bedeutung bei). Wir könnten nun von
     diesem Automaten ausgehend wiederum eine reguläre

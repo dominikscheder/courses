@@ -14,15 +14,15 @@
 
         *Informelle Beschreibung.* Unsere Turingmaschine
         arbeitet in Phasen. In jeder Phase sucht die Maschine
-        ein $a$ und löscht es (ersetzt es durch ein $X$).
-        Dann geht sie nach rechts und sucht und markiert ein
-        $b$; dann ein $c$. Sobald sie das $c$ markiert hat,
-        geht sie wieder nach links. Dies beendet die Phase.
-        Wenn die Maschine kein $a$ mehr findet und auch kein
-        $b$ oder $c$ mehr da ist, akzeptiert die Maschine.
-        Wenn unterwegs ein "Fehler" geschieht, beispielsweise
-        die Maschine ein $b$ sucht aber keines findet,
-        wechselt sie in den `reject`-Zustand.
+        ein $a$ und löscht es (ersetzt es durch ein $X$). Dann
+        geht sie nach rechts und sucht und markiert ein $b$;
+        dann ein $c$. Sobald sie das $c$ markiert hat, geht
+        sie wieder nach links. Dies beendet die Phase. Wenn
+        die Maschine kein $a$ mehr findet und auch kein $b$
+        oder $c$ mehr da ist, akzeptiert die Maschine. Wenn
+        unterwegs ein "Fehler" geschieht, beispielsweise die
+        Maschine ein $b$ sucht aber keines findet, wechselt
+        sie in den `reject`-Zustand.
 
         *Formellere Beschreibung.* Als Bandalphabet verwenden
         wir
@@ -45,9 +45,9 @@
         |> ul
             |> li
                 `findA`: gehe nach links, bis Du ein $a$ findest,
-                ersetze es durch $X$ und wechsle dann in `findB`.
-                Wenn Du allerdings in ein $\square$ läufst, bist Du
-                am linken Rand und es gibt keine $a$ mehr; wechsle
+                ersetze es durch $X$ und wechsle dann in `findB`. Wenn
+                Du allerdings in ein $\square$ läufst, bist Du am
+                linken Rand und es gibt keine $a$ mehr; wechsle
                 nach`noA` und gehe ein Feld nach rechts.
 
             |> li
@@ -153,9 +153,9 @@
 
             |> li
                 `readA, readB`: wir gehen nach rechts, bis wir ein
-                $\square$ lesen, also den rechten Rand erreicht
-                haben, und wechseln dann nach `killA` bzw.`killB` und
-                gehen einen Schritt nach links.
+                $\square$ lesen, also den rechten Rand erreicht haben,
+                und wechseln dann nach `killA` bzw.`killB` und gehen
+                einen Schritt nach links.
 
             |> li
                 `killA, killB`: hier weiß die Turingmaschine, was das

@@ -10,12 +10,12 @@
             Schleife durchlaufen wollen;
 
         |> li
-            wir dürfen nur eine lokale Variable mitführen (und
-            den Iterationsindex).
+            wir dürfen nur eine lokale Variable mitführen (und den
+            Iterationsindex).
 
-    Der zweite Punkt ist keine echte Beschränkung, wie
-    wir gesehen haben: wenn wir zwei lokale Variablen
-    $a,b$ führen wollen, können wir die via der Bijektion
+    Der zweite Punkt ist keine echte Beschränkung, wie wir
+    gesehen haben: wenn wir zwei lokale Variablen $a,b$
+    führen wollen, können wir die via der Bijektion
     ${\rm pair} : \N^2 \rightarrow \N$ in _eine_
     natürliche Zahl codieren. Der erste Punkt allerdings
     scheint eine echte Beschränkung zu sein: wir wissen
@@ -40,8 +40,8 @@
     \end{align*}
 
     Für eine natürliche Zahl $n$ können wir dann die
-    Collatz-Folge definieren: $n, f(n), f(f(n)), ...$.
-    Man sieht leicht, dass diese Folge in einer Schleife
+    Collatz-Folge definieren: $n, f(n), f(f(n)), ...$. Man
+    sieht leicht, dass diese Folge in einer Schleife
     landen kann:
 
     \begin{align*}

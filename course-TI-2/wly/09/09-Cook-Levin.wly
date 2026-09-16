@@ -35,8 +35,8 @@
         _NP-schwer_, wenn für jedes Problem $K \in {\rm NP}$
         gilt: $K \leq_p L$. Wenn sich also jedes NP-Problem
         auf $K$ in polynomieller Zeit reduzieren lässt. $L$
-        ist NP-_vollständig_, wenn zusätzlich $L$ selbst in
-        NP ist.
+        ist NP-_vollständig_, wenn zusätzlich $L$ selbst in NP
+        ist.
 
     |> Theorem
         *(Cook-Levin-Theorem).* 3-SAT ist NP-vollständig. In
@@ -54,10 +54,9 @@
         $x \in \{0,1\}^n$ mit $C(x) = 1$?
 
     Offensichtlich gilt `CNF-Satisfiability $\leq_p$
-    Circuit-SAT`{sc} und `3-SAT $\leq_p$
-    Circuit-SAT`{sc}, da CNF-Formeln (und somit auch $3$
-    -CNF-Formeln) Spezialfälle Boolescher Schaltkreise
-    sind.
+    Circuit-SAT`{sc} und `3-SAT $\leq_p$ Circuit-SAT`{sc},
+    da CNF-Formeln (und somit auch $3$ -CNF-Formeln)
+    Spezialfälle Boolescher Schaltkreise sind.
 
     |> Lemma
         Sei $L \in {\rm NP}$. Dann gilt `$L \leq_p$
@@ -106,18 +105,18 @@
         \Longleftrightarrow \exists z \in \{0,1\}^t: C(x,z) = 1 \ . \\
         \end{align*}
 
-        Unsere Reduktion von $L$ auf `Ciruit-SAT`{sc} geht
-        nun wie folgt: Bei Eingabewort $x \in \{0,1\}^*$
-        setzen wir $n := |x|$ und $t := t(n)$. Wir führen die
+        Unsere Reduktion von $L$ auf `Ciruit-SAT`{sc} geht nun
+        wie folgt: Bei Eingabewort $x \in \{0,1\}^*$ setzen
+        wir $n := |x|$ und $t := t(n)$. Wir führen die
         Umformung von $M$ in einen Schaltkreis $C$ durch.
-        Dieser $C$ hat $n + t$ Eingabevariablen, $n$ viele
-        für das Eingabeband von $M$ und $t$ viele für das
+        Dieser $C$ hat $n + t$ Eingabevariablen, $n$ viele für
+        das Eingabeband von $M$ und $t$ viele für das
         Zertifikatband. Da wir $x$ bereits kennen, verkabeln
         wir es fest in $C$, d.h. wir ersetzen die $i$-te
         Eingabevariable von $C$ durch den Booleschen Wert
-        $x_i$ (dies ist eine Konstante, keine Variable, da
-        wir ein konkretes Eingabewort $x \in \{0,1\}^n$
-        gegebenen haben) und erhalten einen Schaltkreis
+        $x_i$ (dies ist eine Konstante, keine Variable, da wir
+        ein konkretes Eingabewort $x \in \{0,1\}^n$ gegebenen
+        haben) und erhalten einen Schaltkreis
 
         \begin{align*}
         D := C(x, \cdot)
@@ -160,10 +159,10 @@
         mehr polynomiell. Allerdings muss die $3$ -CNF-Formel
         $F$, also das Ergebnis der Reduktion, auch nicht
         äquivalent zu $C$ sein, sondern nur _SAT-äquivalent_:
-        $F$ muss genau dann erfüllbar sein, wenn $C$
-        erfüllbar ist. Wenden wir uns obigem Schaltkreis zu.
-        Wir führen für jedes Gate eine Variable ein, die
-        seinen Output darstellen soll. Hier sind das
+        $F$ muss genau dann erfüllbar sein, wenn $C$ erfüllbar
+        ist. Wenden wir uns obigem Schaltkreis zu. Wir führen
+        für jedes Gate eine Variable ein, die seinen Output
+        darstellen soll. Hier sind das
         $g_1, g_2, \dots, g_{11}$:
 
         |> figure
@@ -171,8 +170,8 @@
                 style=height:16em
                 src=img/09-complexity-theory/circuit-to-3-cnf/circuit-to-3-cnf-01-02.svg
 
-        Die Aussage _$g_4$ ist der Output des zweiten
-        OR-Gates von links_ können wir nun schreiben als
+        Die Aussage _$g_4$ ist der Output des zweiten OR-Gates
+        von links_ können wir nun schreiben als
         $g_4 \leftrightarrow (x \vee y)$. Das
         $\leftrightarrow$ ist hierbei der Boolesche Operator,
         der Gleichheit testet. Wir tun dies für jedes Gate und
@@ -193,24 +192,23 @@
         &(g_{11})
         \end{align*}
 
-        Die ersten 11 Teilausdrücke stellen sicher, dass
-        jedes $g_i$ den "richtigen" Wert annimmt. Mit dem
-        letzten Teilausdruck $(g_{11})$ drücken wir aus, dass
-        wir wollen, dass der Schaltkreis $1$ ausgibt. Es gilt
-        nun:
+        Die ersten 11 Teilausdrücke stellen sicher, dass jedes
+        $g_i$ den "richtigen" Wert annimmt. Mit dem letzten
+        Teilausdruck $(g_{11})$ drücken wir aus, dass wir
+        wollen, dass der Schaltkreis $1$ ausgibt. Es gilt nun:
 
         |> ol
             |> li
                 Wenn eine Belegung der Variablen
                 $(x, y, z, w, g_1, \dots, g_{11})$ die Formel $F$
-                erfüllt, dann haben alle Variablen $g_i$ den Wert,
-                den das entsprechende Gate ausgibt, und somit gilt
+                erfüllt, dann haben alle Variablen $g_i$ den Wert, den
+                das entsprechende Gate ausgibt, und somit gilt
                 $C(x,y,z,w) = 1$.
 
             |> li
-                Falls $C(x,y,z,w) = 1$ gilt, dann können wir $g_i$
-                auf den Output-Wert des $i$-ten Gates setzen und
-                erhalten eine Belegung der Variablen
+                Falls $C(x,y,z,w) = 1$ gilt, dann können wir $g_i$ auf
+                den Output-Wert des $i$-ten Gates setzen und erhalten
+                eine Belegung der Variablen
                 $(x, y, z, w, g_1, \dots, g_{11})$, die $F$ erfüllt.
 
         Im allgemeinen gilt also für jedes $x \in \{0,1\}^n$:
@@ -219,14 +217,14 @@
         C(x) = 1 \Longleftrightarrow \exists g \in \{0,1\}^m: F(x,g) = 1 .
         \end{align*}
 
-        Die obige Formel ist nicht in konjunktiver
-        Normalform, da jeder Teilausdruck Operatoren wie
-        $\leftrightarrow$ etc. enthält. Jeder Teilausdruck
-        ist aber in sich eine Formel mit drei Variablen; somit
-        können wir eine Wahrheitstabelle mit $8$ Zeilen
-        anlegen und ihn in eine äquivalente 3-CNF-Formel mit
-        maximal $8$ Klauseln umformen. Die schlussendliche $3$
-        -CNF-Formel hat somit $n + m$ Variable (die
-        Eingabevariablen von $C$ plus eine für jedes Gate)
-        und maximal $8m + 1$ Klauseln, von denen jede
-        höchstens drei Variable enthält.
+        Die obige Formel ist nicht in konjunktiver Normalform,
+        da jeder Teilausdruck Operatoren wie $\leftrightarrow$
+        etc. enthält. Jeder Teilausdruck ist aber in sich eine
+        Formel mit drei Variablen; somit können wir eine
+        Wahrheitstabelle mit $8$ Zeilen anlegen und ihn in
+        eine äquivalente 3-CNF-Formel mit maximal $8$ Klauseln
+        umformen. Die schlussendliche $3$ -CNF-Formel hat
+        somit $n + m$ Variable (die Eingabevariablen von $C$
+        plus eine für jedes Gate) und maximal $8m + 1$
+        Klauseln, von denen jede höchstens drei Variable
+        enthält.

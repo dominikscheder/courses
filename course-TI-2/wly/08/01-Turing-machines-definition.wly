@@ -12,8 +12,8 @@
     Kopf steht). Abhängig vom gelesenen Zeichen $s$ und
     dem internen Zustand $q$ schreibt die Turingmaschine
     ein neues Symbol $s'$ in die Zelle, wechselt in einen
-    neuen Zustand $q'$ und bewegt den Kopf um maximal
-    eine Zelle, also nach link, rechts, oder gar nicht.
+    neuen Zustand $q'$ und bewegt den Kopf um maximal eine
+    Zelle, also nach link, rechts, oder gar nicht.
 
     |> Carousel
         style=width:37em
@@ -128,12 +128,11 @@
         \end{align*}
 
         wobei $uv \in \Gamma^*$ der Bandinhalt ist, der
-        Schreib-Lese-Kopf auf dem ersten Zeichen von $v$
-        steht und $q$ der innere Zustand der Turingmaschine
-        ist. Das $q$ in $C$ kennzeichnet also sowohl die
-        Position des Schreib-Lese-Kopfes auf dem Band sowie
-        den inneren Zustand Die Menge aller Konfigurationen
-        ist
+        Schreib-Lese-Kopf auf dem ersten Zeichen von $v$ steht
+        und $q$ der innere Zustand der Turingmaschine ist. Das
+        $q$ in $C$ kennzeichnet also sowohl die Position des
+        Schreib-Lese-Kopfes auf dem Band sowie den inneren
+        Zustand Die Menge aller Konfigurationen ist
 
         \begin{align*}
         \mathcal{C} := \Gamma^* \times Q \times \Gamma^*
@@ -177,13 +176,12 @@
         Definition $uqv \in \Gamma^* \times Q \times \Gamma^*$
         ist es nicht verboten, dass $u$ auch mit einem
         $\square$-Symbol beginnt oder $v$ mit einem aufhört.
-        Allerdings wären die Konfiguration $\square u q v$
-        und $u q v \square$ genauso gut mit $u q v$
-        beschrieben. Wir können uns also auf die Konvention
-        einigen, dass $\square$ nie am Rande einer
-        Konfiguration $uqv$ steht. Beachten Sie auch, dass
-        die Zellen nicht "numeriert" sind. Die beiden
-        folgenden Momentaufnahmen
+        Allerdings wären die Konfiguration $\square u q v$ und
+        $u q v \square$ genauso gut mit $u q v$ beschrieben.
+        Wir können uns also auf die Konvention einigen, dass
+        $\square$ nie am Rande einer Konfiguration $uqv$
+        steht. Beachten Sie auch, dass die Zellen nicht
+        "numeriert" sind. Die beiden folgenden Momentaufnahmen
 
         |> figure
             |> img
@@ -236,10 +234,10 @@
         \hat{\delta} : \mathcal{C} \rightarrow \mathcal{C} \
         \end{align*}
 
-        Sie beschreibt für eine Konfiguration $C$, welches
-        die Konfiguration im nächsten Schritt ist. Per
-        Konvention legen wir fest, dass $\hat{\delta}(C) = C$
-        gilt, wenn $C$ eine Endkonfiguration ist.
+        Sie beschreibt für eine Konfiguration $C$, welches die
+        Konfiguration im nächsten Schritt ist. Per Konvention
+        legen wir fest, dass $\hat{\delta}(C) = C$ gilt, wenn
+        $C$ eine Endkonfiguration ist.
 
     Unsere obige Turingmaschine hat beispielsweise die
     Regeln $\delta(q_2,b) = (q_3, a,R)$ und
@@ -275,15 +273,14 @@
     \end{align*}
 
     also die Konfiguration, die die Turingmaschine nach
-    $i$ Rechenschritten erreicht hat. Weiterhin
-    definieren wir $\hat{\delta}^* (C)$ als die
-    Endkonfiguration, die bei wiederholter Anwendung von
-    $\hat{\delta}$ schlussendlich erreicht wird. Hier
-    taucht ein Problem auf: es ist nicht gesagt, dass die
-    Turingmaschine, von Konfiguration $C$ beginnend,
-    überhaupt irgendwann in einer Endkonfiguration landen
-    wird. Daher kann $\hat{\delta}^*$ auch `undefined`
-    sein:
+    $i$ Rechenschritten erreicht hat. Weiterhin definieren
+    wir $\hat{\delta}^* (C)$ als die Endkonfiguration, die
+    bei wiederholter Anwendung von $\hat{\delta}$
+    schlussendlich erreicht wird. Hier taucht ein Problem
+    auf: es ist nicht gesagt, dass die Turingmaschine, von
+    Konfiguration $C$ beginnend, überhaupt irgendwann in
+    einer Endkonfiguration landen wird. Daher kann
+    $\hat{\delta}^*$ auch `undefined` sein:
 
     \begin{align*}
     \hat{\delta}^* (C) := \begin{cases}
@@ -295,9 +292,9 @@
 
     Nochmal zur Verdeutlichung: wenn $\delta^{(i)}(C)$
     eine Endkonfiguration ist, dann ist auch
-    $\delta^{(j)}(C)$ eine, für jedes $j \geq i$, weil
-    wir $\hat{\delta}(C') = C'$ für jede Endkonfiguration
-    $C'$ definiert haben. Es spielt also in der obigen
+    $\delta^{(j)}(C)$ eine, für jedes $j \geq i$, weil wir
+    $\hat{\delta}(C') = C'$ für jede Endkonfiguration $C'$
+    definiert haben. Es spielt also in der obigen
     Formulierung _wenn es ein $i$ gibt_ keine Rolle,
     welches solche $i$ wir wählen. Für ein Eingabewort
     $x \in \Sigma^*$ können wir nun das Ergebnis der
@@ -360,10 +357,9 @@
                 $f_M(x) = \texttt{reject}$ für alle
                 $x \in \Sigma^* \setminus L$.
 
-        Insbesondere heißt das, dass $M$ auf jedem
-        Eingabewort terminiert. Eine Sprache $L$ heißt
-        _entscheidbar_, wenn es eine Turingmaschine gibt, die
-        sie entscheidet.
+        Insbesondere heißt das, dass $M$ auf jedem Eingabewort
+        terminiert. Eine Sprache $L$ heißt _entscheidbar_,
+        wenn es eine Turingmaschine gibt, die sie entscheidet.
 
     |> Definition
         *(Turingmaschine akzeptiert eine Sprache)* Eine
@@ -378,9 +374,8 @@
         für $x \not \in \Sigma^*$ entweder irgendwann den
         Endzustand $\qreject$ erreicht oder nie einen
         Endzustand erreicht. Eine Sprache
-        $L \subseteq \Sigma^*$ heißt _semi-entscheidbar_,
-        wenn es eine Turingmaschine $M$ gibt, die $L$
-        akzeptiert.
+        $L \subseteq \Sigma^*$ heißt _semi-entscheidbar_, wenn
+        es eine Turingmaschine $M$ gibt, die $L$ akzeptiert.
 
     In beiden Definition verlangen wir natürlich, dass
     $\Sigma$ das Eingabealphabet der Turingmaschine ist.
@@ -392,11 +387,11 @@
     $L \subseteq \Sigma^*$ entscheiden, sondern eine
     Funktion $g: \Sigma_1^* \rightarrow \Sigma_2^*$
     berechnen. Mit einer Turingmaschine heißt das einfach,
-    dass bei Eingabe $x \in \Sigma_1^*$ die
-    Turingmaschine in einer akzeptierenden
-    Endkonfiguration $C$ landet, und in $C$ steht dann
-    $g(x)$ auf dem Band. Formal müssen wir noch klären,
-    was _$g(x)$ steht auf dem Band_ bedeutet.
+    dass bei Eingabe $x \in \Sigma_1^*$ die Turingmaschine
+    in einer akzeptierenden Endkonfiguration $C$ landet,
+    und in $C$ steht dann $g(x)$ auf dem Band. Formal
+    müssen wir noch klären, was _$g(x)$ steht auf dem
+    Band_ bedeutet.
 
     |> Definition
         *(Turingmaschine berechnet eine Funktion)* Seien
@@ -478,8 +473,8 @@
         \texttt{.}&\rightarrow \square \texttt{.} \
         \end{align*}
 
-        Wenn der Kopf also vor dem $\texttt{.}$ stehen
-        sollte, dann können wir
+        Wenn der Kopf also vor dem $\texttt{.}$ stehen sollte,
+        dann können wir
 
         \begin{align*}
         \texttt{\$}uq\texttt{.} \Step{} \texttt{\$}uq\square \texttt{.}
@@ -491,9 +486,9 @@
 
         |> Observation
             Wenn $\hat{\delta}^{(i)} (uqv) = u'q'v'$ gilt, die
-            Turingmaschine also in $i$ Schritten von
-            Konfiguration $uqv$ nach $u'q'v'$ übergeht, dann gilt
-            in der gerade entwickelten Grammatik auch
+            Turingmaschine also in $i$ Schritten von Konfiguration
+            $uqv$ nach $u'q'v'$ übergeht, dann gilt in der gerade
+            entwickelten Grammatik auch
 
             \begin{align*}
             \texttt{\$}uqv\texttt{.} \Step{}^* \texttt{\$}\square^* u'q'v'\square^*\texttt{.}
@@ -541,8 +536,8 @@
         \texttt{start}&\rightarrow \epsilon
         \end{align*}
 
-        die die Randmarkierungen ersetzen. In dieser
-        Grammatik gilt nun für alle Wörter $x \in \Sigma^*$:
+        die die Randmarkierungen ersetzen. In dieser Grammatik
+        gilt nun für alle Wörter $x \in \Sigma^*$:
 
         \begin{align*}
         x \in L(M) \Longleftrightarrow S \rightarrow
@@ -574,8 +569,8 @@
         an verwenden wir die Produktionen 3, 4, 5, 6, 7, um
         die Berechnung der Turingmaschine $M(x)$ von hinten
         nach vorne zu simulieren, bis wir bei
-        \(\texttt{\$} \texttt{start}\ x \texttt{.}\)
-        angelangt sind. Dann lassen wir
+        \(\texttt{\$} \texttt{start}\ x \texttt{.}\) angelangt
+        sind. Dann lassen wir
         \(\texttt{\$}, \texttt{start}, \texttt{.}\) mit den
         Produktionen 8, 9, 10 verschwinden und haben $x$
         abgeleitet.

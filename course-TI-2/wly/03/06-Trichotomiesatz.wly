@@ -3,8 +3,8 @@
 
     Rekapitulieren wir: für zwei Mengen $A$ und $B$
     schreiben $A \leq B$, wenn es eine injektive Funktion
-    $f : A \rightarrow B$ gibt. Das $\leq$ schaut wie
-    eine Partialordnung aus.
+    $f : A \rightarrow B$ gibt. Das $\leq$ schaut wie eine
+    Partialordnung aus.
 
     |> ol
         |> li
@@ -15,8 +15,8 @@
             Es ist transitiv, weil aus $A \leq B$ und $B \leq C$
             folgt, dass $A \leq C$: Wenn $f: A \rightarrow B$ und
             $g: B \rightarrow C$ injektiv sind, dann ist
-            $g \circ f: A \rightarrow C$, $a \mapsto g(f(a))$
-            auch injektiv.
+            $g \circ f: A \rightarrow C$, $a \mapsto g(f(a))$ auch
+            injektiv.
 
         |> li
             Es ist (so gut wie) antisymmetrisch, weil aus
@@ -56,9 +56,9 @@
         langsam zu einer "richtigen" Lösung hinzutasten. Wir
         müssen zuerst uns in Erinnerung rufen, was eine
         _Funktion_ formal ist.
-        $A \times B := \{ (a,b) \ | \ a \in A, b \in B\}$,
-        die Menge aller Paare, heißt das _cartesische
-        Produkt_. Eine _Relation_ ist eine Teilmenge
+        $A \times B := \{ (a,b) \ | \ a \in A, b \in B\}$, die
+        Menge aller Paare, heißt das _cartesische Produkt_.
+        Eine _Relation_ ist eine Teilmenge
         $R \subseteq A \times B$.
 
         |> Remark
@@ -74,22 +74,22 @@
 
                 |> li
                     _Matching_, wenn es für jedes $a \in A$ _höchstens_
-                    ein $b \in B$ gibt mit $(a,b) \in R$ und umgekehrt
-                    für jedes $b \in B$ höchstens ein $a \in A$ mit
+                    ein $b \in B$ gibt mit $(a,b) \in R$ und umgekehrt für
+                    jedes $b \in B$ höchstens ein $a \in A$ mit
                     $(a,b) \in R$.
 
                 |> li
                     Wenn $R$ ein Matching ist, dann _sättigt_ $R$ die
                     Menge $A$, wenn es für _jedes_ $a \in A$ ein $b \in B$
-                    mit $(a,b) \in R$ gibt; es _sättigt_ $B$ , wenn es
-                    für _jedes_ $b \in B$ ein $a \in A$ gibt mit
+                    mit $(a,b) \in R$ gibt; es _sättigt_ $B$ , wenn es für
+                    _jedes_ $b \in B$ ein $a \in A$ gibt mit
                     $(a,b) \in R$.
 
         Wir beobachten: wenn $R$ ein Matching ist und die
         Menge $A$ sättigt, dann ist $R$ eine injektive
-        Funktion, und umgekehrt. Wenn $R$ ein Matching ist
-        und sowohl $A$ als auch $B$ sättigt, dann ist $R$
-        eine bijektive Funktion. Wir betrachten nun die Menge
+        Funktion, und umgekehrt. Wenn $R$ ein Matching ist und
+        sowohl $A$ als auch $B$ sättigt, dann ist $R$ eine
+        bijektive Funktion. Wir betrachten nun die Menge
         $\mathcal{M}$ aller Matchings in $A \times B$:
 
         \begin{align*}
@@ -124,11 +124,11 @@
         Partialordnung $(\mathcal{M}, \subseteq)$ vorweisen
         können. Aber Vorsicht: nicht jede Partialordnung hat
         ein maximales Element! Ein Gegenbeispiel ist
-        $(\N, \leq)$. Es gibt immer größere natürliche
-        Zahlen, aber kein maximales Element. Die Gefahr ist
-        also, dass es unendliche aufsteigende Folgen
-        $a_1 \lt a_2 \lt a_3 \t \dots$ geben kann, für die
-        man keine obere Schranke findet.
+        $(\N, \leq)$. Es gibt immer größere natürliche Zahlen,
+        aber kein maximales Element. Die Gefahr ist also, dass
+        es unendliche aufsteigende Folgen
+        $a_1 \lt a_2 \lt a_3 \t \dots$ geben kann, für die man
+        keine obere Schranke findet.
 
         |> Remark
             title=*Definition*
@@ -147,9 +147,9 @@
         _keine obere Schranke_ in $\N$. Somit gibt es auch
         kein maximales Element. Was nun mit
         $(\mathcal{M}, \subseteq)$? Wenn
-        $M_1 \subseteq M_2 \subseteq M_3 \subseteq \dots$
-        eine unendliche Folge von Matchings ist, dann können
-        wir die doch alle zusammenwerfen:
+        $M_1 \subseteq M_2 \subseteq M_3 \subseteq \dots$ eine
+        unendliche Folge von Matchings ist, dann können wir
+        die doch alle zusammenwerfen:
         $M_1 \cup M_2 \cup M_3 \cup \dots$ und erhalten ein
         (vielleicht) größeres. Dies gilt nicht nur für
         unendliche Folgen, sondern ganz allgemein für Ketten
@@ -161,8 +161,7 @@
             Sei $S \subseteq \mathcal{M}$ eine Kette in
             $(\mathcal{M}, \subseteq)$, also eine Menge von
             Matchings, so dass für alle $M_1, M_2 \in S$ gilt:
-            $M_1 \subseteq M_2$ oder $M_2 \subseteq M_1$. Dann
-            ist
+            $M_1 \subseteq M_2$ oder $M_2 \subseteq M_1$. Dann ist
 
             \begin{align*}
             \bigcup_{M \in S} M
@@ -191,8 +190,8 @@
             hat, dann enthält $X$ mindestens ein maximales
             Element. Wir sind nun fertig! Wir können das Zornsche
             Lemma auf $(\mathcal{M}, \subseteq)$ anwenden und
-            erhalten ein maximales Matching. Dies sättigt $A$
-            oder $B$ und gibt uns somit eine injektive Funktion
+            erhalten ein maximales Matching. Dies sättigt $A$ oder
+            $B$ und gibt uns somit eine injektive Funktion
             $A \rightarrow B$ oder $B \rightarrow A$.
 
     |> TopicAnnouncement

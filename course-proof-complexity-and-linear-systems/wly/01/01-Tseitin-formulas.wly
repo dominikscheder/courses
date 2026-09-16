@@ -2,21 +2,21 @@
     title=Definitions
 
     |> Definition
-        *(Tseitin formulas).* Let $G = (V,E)$ be an
-        undirected graph and let $s : V \rightarrow \{0,1\}$,
-        called the _parity requirements_. The _Tseitin system
-        for $G$ and $s$_ is a system of linear equations over
-        $GF(2)$ with one variable $x_e$ for each $e \in E$
-        and a constraint $c_u$ for each $u \in V$:
+        *(Tseitin formulas).* Let $G = (V,E)$ be an undirected
+        graph and let $s : V \rightarrow \{0,1\}$, called the
+        _parity requirements_. The _Tseitin system for $G$ and
+        $s$_ is a system of linear equations over $GF(2)$ with
+        one variable $x_e$ for each $e \in E$ and a constraint
+        $c_u$ for each $u \in V$:
 
         \begin{align*}
         \sum_{e: u \in e} x_e \equiv s(u) \mod 2 \tag{$c_u$}\ .
         \end{align*}
 
     |> Example
-        Let us consider the following system of four
-        equations on five variables defined by the following
-        graph and parity requirement:
+        Let us consider the following system of four equations
+        on five variables defined by the following graph and
+        parity requirement:
 
         |> figure
             |> img
@@ -43,8 +43,8 @@
         (e,f,g,h,i) = (1,0,1,0,1) \ .
         \end{align*}
 
-        Let's look at the same graph but with different
-        parity requirements:
+        Let's look at the same graph but with different parity
+        requirements:
 
         |> figure
             |> img
@@ -179,11 +179,10 @@
     |> Proof
         As argued in the above example: when an edge
         $f = \{u,v\}$ is completely inside $S$, i.e., when
-        $u, v \in S$, then $x_f$ appears twice in the sum
-        over the constraints; if $f$ lies completely outside
-        $S$, i.e., $u, v \not \in S$, then $x_f$ doesn't
-        appear at all; if $f \in \delta(S)$ then $x_f$
-        appears once.
+        $u, v \in S$, then $x_f$ appears twice in the sum over
+        the constraints; if $f$ lies completely outside $S$,
+        i.e., $u, v \not \in S$, then $x_f$ doesn't appear at
+        all; if $f \in \delta(S)$ then $x_f$ appears once.
 
     From linear algebra we know (or should know) that a
     system of equations $A \x = \s$ is unsolvable if and
@@ -202,15 +201,15 @@
 
     The first equation implies that $S$ is a union of
     connected components; the second one says that the
-    number of vertices in $S$ that have parity
-    requirement 1 is odd. From this it follows that there
-    is at least one connected component $S'$ with an odd
-    number of parity-requirement-1 vertices:
+    number of vertices in $S$ that have parity requirement
+    1 is odd. From this it follows that there is at least
+    one connected component $S'$ with an odd number of
+    parity-requirement-1 vertices:
 
     |> Lemma
-        The Tseitin system is satisfiable if and only if
-        every connected component has an even number of
-        vertices with parity requirement $1$.
+        The Tseitin system is satisfiable if and only if every
+        connected component has an even number of vertices
+        with parity requirement $1$.
 
     |> Proof
         The _only if_ direction is clear: if a connected
@@ -223,9 +222,9 @@
         reasoning from above; or we can prove it directly:
         First, if $G$ has multiple connected components, we
         can construct a solution for each component
-        separately. So let's assume that $G$ is connected.
-        Let us look at the vertices of parity requirement 1
-        and call them
+        separately. So let's assume that $G$ is connected. Let
+        us look at the vertices of parity requirement 1 and
+        call them
 
         \begin{align*}
         v_1, v_2, \dots, v_l \ .
@@ -237,10 +236,9 @@
         (v_1, v_2), (v_3, v_4), \dots, (v_{l-1}, v_l) \ .
         \end{align*}
 
-        For each such pair $(v_{2i-1}, v_{2i})$ we find a
-        path $p$ between them; this exists because $G$ is
-        connected by assumption. We consider $p$ as a
-        subgraph of $G$. We take $l/2$ such paths, connecting
-        each pair. Then we "add up the paths" as described
-        above and obtain a subgraph that satisfies all
-        constraints.
+        For each such pair $(v_{2i-1}, v_{2i})$ we find a path
+        $p$ between them; this exists because $G$ is connected
+        by assumption. We consider $p$ as a subgraph of $G$.
+        We take $l/2$ such paths, connecting each pair. Then
+        we "add up the paths" as described above and obtain a
+        subgraph that satisfies all constraints.

@@ -61,8 +61,8 @@
 
     Es lohnt sich, diese Funktion für kleine Werte von $m$
     zu untersuchen. Aus der Definition geht unmittelbar
-    hervor, dass $A_0(n) = n+1$ ist. Für $A_1 (n)$
-    rechnen wir
+    hervor, dass $A_0(n) = n+1$ ist. Für $A_1 (n)$ rechnen
+    wir
 
     \begin{align*}
     A_1 (n)&= A_0 ( A_1 (n-1)) =
@@ -75,15 +75,15 @@
     \end{align*}
 
     Soweit schaut die Funktion nicht besonders
-    beindruckend aus. $A_2$ bekommen iwr nach dem
-    gleichen Schema:
+    beindruckend aus. $A_2$ bekommen iwr nach dem gleichen
+    Schema:
 
     \begin{align*}
     A_2 (n)&= \underbrace{A_1 (A_1 (...(A_1}_{n+1 \textnormal{ mal}}(1))...)) \ , \\
     \end{align*}
 
-    wir fangen also mit $1$ an und zählen $n+1$ mal eine
-    2 drauf. Wir erhalten $2n + 3$, also
+    wir fangen also mit $1$ an und zählen $n+1$ mal eine 2
+    drauf. Wir erhalten $2n + 3$, also
 
     \begin{align*}
     A_2 (n)&= 2n + 3 \ .
@@ -102,9 +102,9 @@
     \stackrel{A_2}{\rightarrow} 125
     \end{align*}
 
-    Das ist schon genug, um eine Vermutung zu
-    formulieren: $A_3(n) = 2^{n+3} - 3$ und diese dann
-    per Indution zu beweisen.
+    Das ist schon genug, um eine Vermutung zu formulieren:
+    $A_3(n) = 2^{n+3} - 3$ und diese dann per Indution zu
+    beweisen.
 
     |> TopicAnnouncement
         Die Péter-Ackermann-Funktion ist berechenbar
@@ -134,13 +134,13 @@
         \end{cases}
         \end{align*}
 
-        Wir können also $h = \comp (A_{m-1}, \pi^3_1)$
-        wählen. Was ist $g$? Der Startwert soll $g(\vec{x})$
-        sein, wir haben aber kein $\vec{x}$, bzw. dies ist
-        der "leere Vektor". Wir brauchen eine Funktion $C$,
-        die null Argumente nimmt und $A_{m-1}(1)$ zurückgibt.
-        Also: $g = \comp(A_{m-1}, {\rm one})$ . Wir könnten
-        sogar noch frecher sein und
+        Wir können also $h = \comp (A_{m-1}, \pi^3_1)$ wählen.
+        Was ist $g$? Der Startwert soll $g(\vec{x})$ sein, wir
+        haben aber kein $\vec{x}$, bzw. dies ist der "leere
+        Vektor". Wir brauchen eine Funktion $C$, die null
+        Argumente nimmt und $A_{m-1}(1)$ zurückgibt. Also:
+        $g = \comp(A_{m-1}, {\rm one})$ . Wir könnten sogar
+        noch frecher sein und
         $g = \comp(\succ, \comp(\succ, \comp(... \comp(\succ,
         \zero))))$
         schreiben, einfach $A_{m-1}(1)$ mal hintereinander;
@@ -166,8 +166,8 @@
     Zeitpunkt nicht formal beantworten, weil wir den
     Begriff allgemeiner Berechenbarkeit noch gar nicht
     definiert haben. Es ist allerdings an der Definition
-    von $A(m,n)$ nichts magisches, und intuitiv würden
-    wir sagen, dass es klar berechenbar ist; so wie wir ja
+    von $A(m,n)$ nichts magisches, und intuitiv würden wir
+    sagen, dass es klar berechenbar ist; so wie wir ja
     auch leicht eine Funktion implementieren könnten, die
     $A(m,n)$ berechnet.
 
@@ -206,11 +206,10 @@
     wird sich herausstellen, dass $A_m$ in gewisser Weise
     die am schnellsten wachsende aller solcher Funktionen
     ist. Wäre also $A(m,n)$ primitiv-rekursiv, dann
-    könnten wir es mit $d$ verschachtelten
-    `for`-Schleifen berechnen; was ein Widerspruch ist,
-    weil bereits $A_{d+1}$ schneller wächst als jede
-    primitiv-rekursive Funktion mit $d$ verschachtelten
-    Schleifen.
+    könnten wir es mit $d$ verschachtelten `for`-Schleifen
+    berechnen; was ein Widerspruch ist, weil bereits
+    $A_{d+1}$ schneller wächst als jede primitiv-rekursive
+    Funktion mit $d$ verschachtelten Schleifen.
 
     |> Proof
         Wir brauchen eine robuste Definition, was es heißt,
@@ -237,10 +236,10 @@
         ganz allgemein weil $2^x + 2 \gt x^2$ für alle
         $x \in \N$ gilt. Wir werden nun zeigen, dass jede
         primitiv rekursive Funktion $g: \N^k \rightarrow \N$
-        von einem $A_r$ majorisiert wird; hierbei ist
-        wichtig, dass der Index $r$ als Konstante betrachtet
-        wird, also von der "Bauweise" von $g$ abhängen darf,
-        nicht aber von den Eingabewerten, die $g$ bekommt.
+        von einem $A_r$ majorisiert wird; hierbei ist wichtig,
+        dass der Index $r$ als Konstante betrachtet wird, also
+        von der "Bauweise" von $g$ abhängen darf, nicht aber
+        von den Eingabewerten, die $g$ bekommt.
 
         |> Lemma
             Für jede primitiv rekursive Funktion
@@ -275,8 +274,8 @@
         betrachten wir die Basisfunktionen
         $\zero, \succ, \pi^n_k$. Wir wissen bereits, dass
         $A_0(n) = n+1$ ist, also $A_0 = \succ$. Leider
-        majorisiert $A_0$ also $\succ$ nicht. Wie steht es
-        mit $A_1$? Es gilt $A_1(n) = n+2$, und somit ist
+        majorisiert $A_0$ also $\succ$ nicht. Wie steht es mit
+        $A_1$? Es gilt $A_1(n) = n+2$, und somit ist
 
         \begin{align*}
         \zero(\vec{x})&= 0 \lt 1 \lt A_1(x) \\
@@ -294,9 +293,9 @@
         *Komposition:*
         $f(\vec{x}) = g(h_1(\vec{x}), \dots, h_k(\vec{x}))$,
         für primitiv rekursive Funktionen
-        $g, h_1, \dots, h_k$. Jede dieser Funktionen wurde
-        mit _weniger_ Kombinatoren konstruiert; somit wird
-        jede dieser Funktionen von einem $A_r$ majorisiert:
+        $g, h_1, \dots, h_k$. Jede dieser Funktionen wurde mit
+        _weniger_ Kombinatoren konstruiert; somit wird jede
+        dieser Funktionen von einem $A_r$ majorisiert:
         $A_r \gt g, A_{s_1} \gt h_1, \dots, A_{s_k} \gt h_k$.
         Für einen Eingabevektor $\vec{x}$ schreiben wir
         $x := \max(x_1,\dots,x_n)$ und rechnen:
@@ -344,8 +343,8 @@
             $x = \max(\vec{x}) = \max(x_1,\dots,x_n)$.
 
         |> Proof
-            Wir verwenden Induktion über $t$. Wenn $t=0$ ist,
-            dann gilt
+            Wir verwenden Induktion über $t$. Wenn $t=0$ ist, dann
+            gilt
 
             \begin{align*}
             f(0,\vec{x})&= g(\vec{x}) \lt A_q (x) \leq A_{q+1} (x) \ .
@@ -370,11 +369,11 @@
 
         Die Behauptung reicht aber noch nicht, da die rechte
         Seite der Ungleichung $f(t,\vec{x}) \lt A_{q+1}(t+x)$
-        eine Funktion in zwei Parametern ist: $t$ und $x$,
-        wir aber für das zu beweisende Lemma aber eine
-        Funktion in einem Parameter brauchen, nämlich
-        $\max(t, \vec{x})$. Sei also
-        $z := \max(t,x) = \max(t, x_1,\dots,x_n)$. Dann gilt
+        eine Funktion in zwei Parametern ist: $t$ und $x$, wir
+        aber für das zu beweisende Lemma aber eine Funktion in
+        einem Parameter brauchen, nämlich $\max(t, \vec{x})$.
+        Sei also $z := \max(t,x) = \max(t, x_1,\dots,x_n)$.
+        Dann gilt
 
         \begin{align*}
         A_{q+1} (x+t)&\leq A_{q+1} (2z) \leq A_{q+1} (2(z-1) + 3) \\

@@ -56,9 +56,9 @@
             Die Sprachen $\emptyset$, $\{\epsilon\}$ und $\{x\}$
             für jedes $x \in \Sigma$ sind regulär.
 
-    Aus diesen $|\Sigma|+2$ "Grundbausteinen" und den
-    drei Kombinatoren $\cup$, $\circ$ und $^*$ können Sie
-    jede reguläre Sprache zusammenbauen. Dieses
+    Aus diesen $|\Sigma|+2$ "Grundbausteinen" und den drei
+    Kombinatoren $\cup$, $\circ$ und $^*$ können Sie jede
+    reguläre Sprache zusammenbauen. Dieses
     Baukastenprinzip hat auch einen Namen: reguläre
     Ausdrücke. Definieren wir diese nun formal.
 
@@ -70,15 +70,15 @@
         |> ul
             |> li
                 *Atome.* $\emptyset$ ist ein regulärer Ausdruck und
-                beschreibt die Sprache $\emptyset$. $\epsilon$ ist
-                ein regulärer Ausdruck und beschreibt die Sprache
+                beschreibt die Sprache $\emptyset$. $\epsilon$ ist ein
+                regulärer Ausdruck und beschreibt die Sprache
                 $\{\epsilon\}$. Jedes einzelne Zeichen $x \in \Sigma$
                 ist ein regulärer Ausdruck und beschreibt die Sprache
                 $\{x\}$.
 
             |> li
-                *Alternative.* Wenn $R_1, R_2$ reguläre Ausdrücke
-                über $\Sigma$ sind und die Sprachen $L_1$ und $L_2$
+                *Alternative.* Wenn $R_1, R_2$ reguläre Ausdrücke über
+                $\Sigma$ sind und die Sprachen $L_1$ und $L_2$
                 beschreiben, so ist $(R_1 | R_2)$ ein regulärer
                 Ausdruck und beschreibt die Sprache $L_1 \cup L_2$
                 (die regulär ist, wie wir in Kapitel >>baukasten
@@ -136,12 +136,12 @@
         Folge von alphanumerischen Zeichen ist (wir haben uns
         dann auf den Buchstaben $a$ beschränkt). Sehen Sie,
         dass bereits unsere natürlichsprachliche Beschreibung
-        von $L$ von dem Baukastenprinzip gebraucht macht.
-        Wenn wir nun einen regulären Ausdruck für $L$
-        erstellen wollen, so können wir bequem Stück für Stück
-        vorgehen. Ein Block ist eine nichtleere Folge von
-        $a$'s. Der entsprechende reguläre Ausdruck $B$ für
-        Blöcke ist also
+        von $L$ von dem Baukastenprinzip gebraucht macht. Wenn
+        wir nun einen regulären Ausdruck für $L$ erstellen
+        wollen, so können wir bequem Stück für Stück vorgehen.
+        Ein Block ist eine nichtleere Folge von $a$'s. Der
+        entsprechende reguläre Ausdruck $B$ für Blöcke ist
+        also
 
         \begin{align*}
         B : = a^+
@@ -163,24 +163,24 @@
         T' := B ( ({:}B)^* | (\text{-}B)^* )
         \end{align*}
 
-        Beide Varianten sind äquivalent, d.h., sie
-        beschreiben die gleiche Sprache; die erste Variante,
-        also $T$, ähnelt mehr dem, was wir in unserer
-        Grammatik bzw. dem nichtdeterministischen Automaten
-        für $L$ getan haben, während $T'$ eher die
-        Arbeitsweise des determinisitschen Automaten
-        reflektiert (wir lesen erst einmal einen Block und
-        erst, wenn wir zum ersten mal auf `:` oder `-` stoßen,
-        entscheiden wir uns für den "Typ" des Labels).
-        Schlussendlich ist ein Wort in der Sprache eine mit
-        `.` separierte Folge von Labels, also:
+        Beide Varianten sind äquivalent, d.h., sie beschreiben
+        die gleiche Sprache; die erste Variante, also $T$,
+        ähnelt mehr dem, was wir in unserer Grammatik bzw. dem
+        nichtdeterministischen Automaten für $L$ getan haben,
+        während $T'$ eher die Arbeitsweise des
+        determinisitschen Automaten reflektiert (wir lesen
+        erst einmal einen Block und erst, wenn wir zum ersten
+        mal auf `:` oder `-` stoßen, entscheiden wir uns für
+        den "Typ" des Labels). Schlussendlich ist ein Wort in
+        der Sprache eine mit `.` separierte Folge von Labels,
+        also:
 
         \begin{align*}
         R := T ({.}T)^*
         \end{align*}
 
-        Somit können wir nun den regulären Ausdruck für $L$
-        in seiner ganzen Pracht zeigen:
+        Somit können wir nun den regulären Ausdruck für $L$ in
+        seiner ganzen Pracht zeigen:
 
         \begin{align*}
         R := (a^+ ({:}a^+)^* | a^+ (\text{-}a^+)^*) ({.}(a^+ ({:}a^+)^* | a^+ (\text{-}a^+)^*))^*
@@ -201,8 +201,8 @@
         false
         ```
 
-        Schreiben Sie nun einen regulären Ausdruck $R$ für
-        die obige Sprache und testen Sie ihn mit dem
+        Schreiben Sie nun einen regulären Ausdruck $R$ für die
+        obige Sprache und testen Sie ihn mit dem
         Java-Programm.
 
     |> Exercise
@@ -242,16 +242,16 @@
         regulären Ausdruck $R$, der $L$ beschreibt, also
         $L(R) = R$.
 
-    Wir paraphrasieren hier den Beweis aus Michael
-    Sipsers _Introduction to the Theory of Computation_.
+    Wir paraphrasieren hier den Beweis aus Michael Sipsers
+    _Introduction to the Theory of Computation_.
 
     |> Proof
-        Zunächst skizzieren wir die Beweisidee. Da $L$
-        regulär ist, gibt es einen nichtdeterministischen
-        endlichen Automaten $M$, die $L$ akzeptiert. Wir
-        werden nun $M$ Schritt für Schritt in einen regulären
-        Ausdruck verwandeln. Kern der Idee ist, dass wir neben
-        den üblichen Übergängen
+        Zunächst skizzieren wir die Beweisidee. Da $L$ regulär
+        ist, gibt es einen nichtdeterministischen endlichen
+        Automaten $M$, die $L$ akzeptiert. Wir werden nun $M$
+        Schritt für Schritt in einen regulären Ausdruck
+        verwandeln. Kern der Idee ist, dass wir neben den
+        üblichen Übergängen
 
         \begin{align*}
         q_1 \step{x} q_2
@@ -260,16 +260,16 @@
         komplexere Übergänge wie zum Beispiel
         $q_1 \step{xy} q_2$ zulassen. Die Bedeutung wäre hier
         beispielsweise, dass der Automat von $q_1$ nach $q_2$
-        übergehen kann, wenn er die Eingabesymbole $xy$
-        liest. Wir lassen auch komplexere Übergänge wie
+        übergehen kann, wenn er die Eingabesymbole $xy$ liest.
+        Wir lassen auch komplexere Übergänge wie
 
         \begin{align*}
         q_1 \step{x|yz^*} q_2
         \end{align*}
 
-        zu, also "von $q_1$ kann der Automat nach $q_2$
-        gehen, wenn er ein $x$ liest oder ein $y$, gefolgt
-        von beliebig vielen $z$ "; ganz allgemein lassen wir
+        zu, also "von $q_1$ kann der Automat nach $q_2$ gehen,
+        wenn er ein $x$ liest oder ein $y$, gefolgt von
+        beliebig vielen $z$ "; ganz allgemein lassen wir
         Übergänge der Form
 
         \begin{align*}
@@ -279,15 +279,15 @@
         wobei $R$ ein regulärer Ausdruck ist. Insbesondere
         lassen wir Übergänge der Form
         $q_1 \step{\epsilon} q_2$ zu. Dies bedeutet, dass der
-        Automat von $q_1$ nach $q_2$ "springen" kann, ohne
-        ein Eingabesymbol zu lesen. Des weiteren verlangen
-        wir, dass es genau einen akzeptierenden Endzustand
+        Automat von $q_1$ nach $q_2$ "springen" kann, ohne ein
+        Eingabesymbol zu lesen. Des weiteren verlangen wir,
+        dass es genau einen akzeptierenden Endzustand
         $q_{\rm end}$ mit $\qstart \ne q_{\rm end}$, und dass
         es keine Kanten gibt, die in $\qstart$ hineingehen,
-        und keine, die aus $q_{\rm end}$ hinausgehen. All
-        dies lässt sich leicht verwirklichen, wenn wir
-        reguläre Ausdrücke als Kantenbeschriftung zulassen.
-        Wir nennen so einen Automaten einen _verallgemeinerten
+        und keine, die aus $q_{\rm end}$ hinausgehen. All dies
+        lässt sich leicht verwirklichen, wenn wir reguläre
+        Ausdrücke als Kantenbeschriftung zulassen. Wir nennen
+        so einen Automaten einen _verallgemeinerten
         nichtdeterministischen endlichen Automaten (VNEA)_.
 
         |> figure
@@ -303,8 +303,8 @@
             Automat, VNEA).* Ein VNEA besteht aus einem Alphabet
             $\Sigma$, einer Zustandsmenge $Q$, einen Startzustand
             $\qstart \in Q$, einem akzeptierenden Zustand
-            $q_{\rm end} \in Q \setminus \{\qstart\}$, einer
-            Menge von gerichteten Kanten
+            $q_{\rm end} \in Q \setminus \{\qstart\}$, einer Menge
+            von gerichteten Kanten
 
             \begin{align*}
             E \subseteq (Q \setminus \{\qstart\}) \times (Q \setminus \{q_{\rm end}\}) \ .

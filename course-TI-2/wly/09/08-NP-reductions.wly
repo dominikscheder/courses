@@ -1,13 +1,13 @@
 |> Sub
     title=Reduktionen
 
-    `3-Colorability`{sc} und `CNF-Satisfiability`{sc}
-    sind in NP: gegeben ein Graph $G$ und eine Färbung
-    $c$, so können wir effizient feststellen, ob $c$ eine
-    gültige 3-Färbung von $G$ darstellt; gegeben eine
-    CNF-Formel $F$ und eine Belegung $\alpha$, so können
-    wir effizient überprüfen, ob $F$ unter $\alpha$ zu
-    `True` auswertet. Können wir `3-Colorability`{sc} und
+    `3-Colorability`{sc} und `CNF-Satisfiability`{sc} sind
+    in NP: gegeben ein Graph $G$ und eine Färbung $c$, so
+    können wir effizient feststellen, ob $c$ eine gültige
+    3-Färbung von $G$ darstellt; gegeben eine CNF-Formel
+    $F$ und eine Belegung $\alpha$, so können wir
+    effizient überprüfen, ob $F$ unter $\alpha$ zu `True`
+    auswertet. Können wir `3-Colorability`{sc} und
     `CNF-Satisfiability`{sc} auch effizient entscheiden?
     Sind sie in P? Das ist (Stand: 2025) nicht bekannt.
     Was wir aber sagen können: entweder sind beide
@@ -28,10 +28,10 @@
         Boolesche Variable ein:
         $r_1, \dots, r_n, g_1, \dots, g_n, b_1, \dots, b_n$.
         Die Intention hierbei ist, dass $r_i$ anzeigt, ob
-        $v_i$ rot ist und so weiter. Wir müssen jetzt
-        Klauseln erschaffen, die die Aussage "das ist eine
-        gültige 3-Färbung" als CNF-Formel codieren. Wir
-        erschaffen folgende Klauseln:
+        $v_i$ rot ist und so weiter. Wir müssen jetzt Klauseln
+        erschaffen, die die Aussage "das ist eine gültige
+        3-Färbung" als CNF-Formel codieren. Wir erschaffen
+        folgende Klauseln:
 
         \begin{align*}
         &(r_i \vee g_i \vee b_i) \tag{$v_i$ hat mindestens eine Farbe}\\
@@ -139,11 +139,11 @@
             src=img/09-complexity-theory/sat-to-col/sat-to-col-01-23.svg
             src=img/09-complexity-theory/sat-to-col/sat-to-col-01-24.svg
 
-        Wir wiederholen die beschriebene Konstruktion für
-        jede Klausel in $F$. Wir erhalten einen Graphen $G$,
-        der genau dann $3$-färbbar ist, wenn $F$ erfüllbar
-        ist. Auch können wir direkt eine gültige $3$-Färbung
-        in eine erfüllende Belegung übersetzen und umgekehrt.
+        Wir wiederholen die beschriebene Konstruktion für jede
+        Klausel in $F$. Wir erhalten einen Graphen $G$, der
+        genau dann $3$-färbbar ist, wenn $F$ erfüllbar ist.
+        Auch können wir direkt eine gültige $3$-Färbung in
+        eine erfüllende Belegung übersetzen und umgekehrt.
         Hier ist also der Code:
 
         ```orange-comments.listing
@@ -199,22 +199,22 @@
         \end{align*}
 
         Wir entfernen nun $C$ und fügen $C_1$ und $C_2$ ein
-        und erhalten eine neue CNF-Formel $F_{i+1}$. Wir
-        sehen nun: wenn $\alpha$ die Formel $F_{i+1}$
-        erfüllt, dann erfüllt sie auch $F_i$; umgekehrt wenn
-        die Belegung $\beta$ die Formel $F_i$ erfüllt, dann
-        erfüllt $\beta$ insbesondere $C$; wir bauen nun eine
-        neue Belegung, die auch $z$ einen Wert zuweist und
-        dann $C_1$ und $C_2$ erfüllt: falls (1) $\beta$ die
-        Klausel $(u_1 \vee u_2)$ erfüllt, dann setzen wir $z$
-        auf $1$, also $\alpha := \beta \cup [z \mapsto 1]$.
-        Die Belegung $\alpha$ erfüllt nun $C_1$, weil $\beta$
-        das bereits tut, und $C_2$, weil $\alpha(z)=1$ ist;
-        falls jedoch (2) $\beta$ die Klausel $(u_1 \vee u_2)$
-        nicht erfüllt, dann muss sie, da sie ja $C$ erfüllt,
-        die Klausel $(u_3 \vee \dots \vee u_k)$ erfüllen und
-        erfüllt somit $C_2$, auch ohne Verwendung von $z$.
-        Wir setzen nun $z$ auf $0$, also
+        und erhalten eine neue CNF-Formel $F_{i+1}$. Wir sehen
+        nun: wenn $\alpha$ die Formel $F_{i+1}$ erfüllt, dann
+        erfüllt sie auch $F_i$; umgekehrt wenn die Belegung
+        $\beta$ die Formel $F_i$ erfüllt, dann erfüllt $\beta$
+        insbesondere $C$; wir bauen nun eine neue Belegung,
+        die auch $z$ einen Wert zuweist und dann $C_1$ und
+        $C_2$ erfüllt: falls (1) $\beta$ die Klausel
+        $(u_1 \vee u_2)$ erfüllt, dann setzen wir $z$ auf $1$,
+        also $\alpha := \beta \cup [z \mapsto 1]$. Die
+        Belegung $\alpha$ erfüllt nun $C_1$, weil $\beta$ das
+        bereits tut, und $C_2$, weil $\alpha(z)=1$ ist; falls
+        jedoch (2) $\beta$ die Klausel $(u_1 \vee u_2)$ nicht
+        erfüllt, dann muss sie, da sie ja $C$ erfüllt, die
+        Klausel $(u_3 \vee \dots \vee u_k)$ erfüllen und
+        erfüllt somit $C_2$, auch ohne Verwendung von $z$. Wir
+        setzen nun $z$ auf $0$, also
         $\alpha := \beta \cup [z \mapsto 0]$ und erfüllen
         sowohl $C_1$ als auch $C_2$. Alle anderen Klauseln
         sind sowieso erfüllt, weil $\beta$ sie bereits
@@ -224,11 +224,10 @@
         F_i \textnormal{ ist erfüllbar } \Longleftrightarrow F_{i+1} \textnormal{ ist erfüllbar } \ .
         \end{align*}
 
-        Die beiden neuen Klauseln $C_1$ und $C_2$ sind
-        jeweils echt kleiner als $C$. Der Prozess endet
-        irgendwann mit einer Formel $F_t$, in der jede
-        Klausel höchstens drei Literale hat. Dies ist unser
-        $F'$.
+        Die beiden neuen Klauseln $C_1$ und $C_2$ sind jeweils
+        echt kleiner als $C$. Der Prozess endet irgendwann mit
+        einer Formel $F_t$, in der jede Klausel höchstens drei
+        Literale hat. Dies ist unser $F'$.
 
     Wir haben nun also eine Kette von Implikationen
     erschaffen:
@@ -285,11 +284,11 @@
         \Longleftrightarrow f(x) \in L_2
         \end{align*}
 
-        und $f$ in Zeit $\poly(n)$ berechnet werden kann.
-        Wenn es also ein Polynom $p: \N \rightarrow \N$ und
-        eine Turingmaschine $M$ mit Eingabealphabet $\Sigma_1$
-        und Ausgabealphabet $\Sigma_2$ gibt, die Laufzeit $p$
-        hat und $f$ berechnet. Wir schreiben dann
+        und $f$ in Zeit $\poly(n)$ berechnet werden kann. Wenn
+        es also ein Polynom $p: \N \rightarrow \N$ und eine
+        Turingmaschine $M$ mit Eingabealphabet $\Sigma_1$ und
+        Ausgabealphabet $\Sigma_2$ gibt, die Laufzeit $p$ hat
+        und $f$ berechnet. Wir schreiben dann
         $L_1 \leq_p L_2$.
 
     Wenn wir eine Reduktion von $L_1$ auf $L_2$ haben und
@@ -342,38 +341,37 @@
 
         |> ul
             |> li
-                Für jede Variable $x$ nehmen wir $x$ in $I$ auf,
-                falls $\alpha(x)=1$ ist, ansonsten $\bar{x}$.
+                Für jede Variable $x$ nehmen wir $x$ in $I$ auf, falls
+                $\alpha(x)=1$ ist, ansonsten $\bar{x}$.
 
             |> li
                 Für jede Klausel $C = (u \vee v \vee w)$ gibt es ein
                 erfülltes Literal, sagen wir $u$. Dieser entspricht
-                dem Klauselknoten $u_C$, der mit mit dem
-                Literalknoten $\bar{u}$ verbunden. Da $\alpha(u) = 1$
-                und $\alpha(\bar{u}) = 0$ ist, ist $u \not \in I$ und
-                wir können $u_C$ in $I$ aufnehmen.
+                dem Klauselknoten $u_C$, der mit mit dem Literalknoten
+                $\bar{u}$ verbunden. Da $\alpha(u) = 1$ und
+                $\alpha(\bar{u}) = 0$ ist, ist $u \not \in I$ und wir
+                können $u_C$ in $I$ aufnehmen.
 
             |> li
                 Unsere Menge $I$ enthält $n$ Literalknoten und $m$
                 Klauselknoten, also insgesamt $k$ Knoten.
 
         Für die Gegenrichtung nehmen wir an, dass $I$ eine
-        unabhängige Menge von $G$ ist und $|I| = n+m$ gilt.
-        Da $I$ pro Literalpaar und pro Klauseldreieck
-        höchstens einen Knoten enthalten kann, enthält $I$
-        _genau_ einen pro Literalpaar und Klauseldreieck. Wir
-        definieren nun eine Belegung $\alpha$ wie folgt: wenn
-        für eine Variable $x$ der Literalknoten $x$ in $I$
-        ist, setzen wir $\alpha(x)=1$; falls $\bar{x}$ in $I$
-        ist, setzen wir $\alpha(x)=0$. Wir behaupten nun,
-        dass $\alpha$ die Formel $F$ erfüllt. Sei
-        $C= (u \vee v \vee w)$ eine beliebige Klausel von $F$.
-        Nach obiger Überlegung enthält $I$ genau einen
-        Klauselknoten von $C$, sagen wir $u_C$ . Das heißt
-        somit, dass der Literalknoten $\bar{u}$ nicht in $I$
-        ist - sonst wäre $I$ ja nicht unabhängig. Somit muss
-        $u \in I$ gelten und $\alpha(u) = 1$, und $\alpha$
-        erfüllt $C$ .
+        unabhängige Menge von $G$ ist und $|I| = n+m$ gilt. Da
+        $I$ pro Literalpaar und pro Klauseldreieck höchstens
+        einen Knoten enthalten kann, enthält $I$ _genau_ einen
+        pro Literalpaar und Klauseldreieck. Wir definieren nun
+        eine Belegung $\alpha$ wie folgt: wenn für eine
+        Variable $x$ der Literalknoten $x$ in $I$ ist, setzen
+        wir $\alpha(x)=1$; falls $\bar{x}$ in $I$ ist, setzen
+        wir $\alpha(x)=0$. Wir behaupten nun, dass $\alpha$
+        die Formel $F$ erfüllt. Sei $C= (u \vee v \vee w)$
+        eine beliebige Klausel von $F$. Nach obiger Überlegung
+        enthält $I$ genau einen Klauselknoten von $C$, sagen
+        wir $u_C$ . Das heißt somit, dass der Literalknoten
+        $\bar{u}$ nicht in $I$ ist - sonst wäre $I$ ja nicht
+        unabhängig. Somit muss $u \in I$ gelten und
+        $\alpha(u) = 1$, und $\alpha$ erfüllt $C$ .
 
     |> Exercise
         Zeigen Sie `Independent Set $\leq_p$ SAT`{sc}. Also:
@@ -430,8 +428,8 @@
         `Hamilton Cycle $\leq_p$ Hamilton Path`{sc}
 
     |> Highlight
-        *(Falscher) Beweis.* Tasten wir uns langsam heran.
-        Wir stellen uns vor, eine Bibliotheksfunktion
+        *(Falscher) Beweis.* Tasten wir uns langsam heran. Wir
+        stellen uns vor, eine Bibliotheksfunktion
         `has_hamilton_path(G)` zu haben und wollen mithilfe
         dieser eine neue Funktion `has_hamilton_cycle(G)`
         schreiben. Sei $u$ ein beliebiger Knoten. Wir wissen:
@@ -443,15 +441,15 @@
         Allerdings kann es sein, dass $G'$ sowieso einen
         Hamiltonschen Pfad besitzt, der allerdings nicht $u$
         und $v$ als Endknoten hat, so dass er sich mit
-        $\{u,v\}$ nicht zu einem Hamiltonschen Kreis
-        schließt. Wir müssen irgendwie die Frage beantworten
-        können: besitzt $G'$ einen Hamiltonschen Pfad, der $u$
-        und $v$ als Start- bzw. Endknoten hat? Dies ist
-        einfach: wir können neue Knoten $s$ und $t$ und die
-        Kanten $\{s,u\}$ und $\{t,v\}$ einführen. Da $s$ und
-        $t$ nun Grad $1$ haben, muss ein Hamiltonscher Pfad,
-        wenn er denn existiert, $u$ und $v$ als Endknoten
-        haben. Sei also $G'' := G' + \{s,u\} + \{t,v\}$.
+        $\{u,v\}$ nicht zu einem Hamiltonschen Kreis schließt.
+        Wir müssen irgendwie die Frage beantworten können:
+        besitzt $G'$ einen Hamiltonschen Pfad, der $u$ und $v$
+        als Start- bzw. Endknoten hat? Dies ist einfach: wir
+        können neue Knoten $s$ und $t$ und die Kanten
+        $\{s,u\}$ und $\{t,v\}$ einführen. Da $s$ und $t$ nun
+        Grad $1$ haben, muss ein Hamiltonscher Pfad, wenn er
+        denn existiert, $u$ und $v$ als Endknoten haben. Sei
+        also $G'' := G' + \{s,u\} + \{t,v\}$.
 
         |> div
             class=well container-fluid subtheorem
@@ -494,12 +492,12 @@
     $\leq_p$ verpflichten, verlangt, dass wir auf Eingabe
     $G$ _einen_ Graphen $G'$ bauen, mit der Eigenschaft,
     dass $G$ genau dann einen Hamiltonschen Kreis hat,
-    wenn $G'$ einen Hamiltonschen Pfad hat. Uns steht
-    also genau _ein_ Aufruf von `has_hamilton_path` zu.
-    Aber ganz wertlos ist der obige Beweis dennoch nicht,
-    zeigt er doch, dass, falls `Hamilton Path $\in$
-    P`{sc} ist, dann auch `Hamilton Cycle $\in$ P`{sc}.
-    Der Fachbegriff für das, was unsere obige Funktion
+    wenn $G'$ einen Hamiltonschen Pfad hat. Uns steht also
+    genau _ein_ Aufruf von `has_hamilton_path` zu. Aber
+    ganz wertlos ist der obige Beweis dennoch nicht, zeigt
+    er doch, dass, falls `Hamilton Path $\in$ P`{sc} ist,
+    dann auch `Hamilton Cycle $\in$ P`{sc}. Der
+    Fachbegriff für das, was unsere obige Funktion
     `has_hamilton_cycle` tut, nennt sich _Cook-Reduktion_,
     nach Stephen Cook, einem der Väter der Klasse NP. Eine
     Reduktion, die dem strengen Reduktionsbegriff folgt,

@@ -38,11 +38,11 @@
         wir uns den Ableitungsbaum für ein "sehr langes"
         $\gamma$ an und werden sehen, dass wir in $G$ andere
         Wörter $\gamma'$ ableiten können, die nicht in $L$
-        sind. Somit haben wir gezeigt, dass $G$ keine
-        korrekte Grammatik für $L$ ist. Als erstes verlangen
-        wir, dass $G$ in Chomsky-Normalform vorliegt. Dann
-        schauen wir uns für ein $\gamma = a^n b^n c^n$ den
-        Ableitungsbaum an:
+        sind. Somit haben wir gezeigt, dass $G$ keine korrekte
+        Grammatik für $L$ ist. Als erstes verlangen wir, dass
+        $G$ in Chomsky-Normalform vorliegt. Dann schauen wir
+        uns für ein $\gamma = a^n b^n c^n$ den Ableitungsbaum
+        an:
 
         |> figure
             |> img
@@ -51,9 +51,9 @@
 
         Nun betrachten wir in diesem Ableitungsbaum den
         längsten Pfad von $S$ zu einem Nichtterminalknoten
-        $X$, der direkt über den Terminalen steht. Wenn
-        dieser Länge $d$ hat (also $d$ Kanten lang ist), dann
-        hat der Baum höchstens $2^d$ Blätter, also
+        $X$, der direkt über den Terminalen steht. Wenn dieser
+        Länge $d$ hat (also $d$ Kanten lang ist), dann hat der
+        Baum höchstens $2^d$ Blätter, also
         $|\gamma| \leq 2^d$. Wenn nun
         $|\gamma| \geq 2^{|N|} =: p$ ist, dann gibt es einen
         Pfad der Länge $|N|$ von diesem $X$ aufwärts richtung
@@ -69,22 +69,21 @@
         Der Pfad vom oberen $Z$ zu irgendeinem Nichtterminal
         darunter hat höchstens Länge $N$ (so haben wir diesen
         Pfad gewählt), und somit hat das Unterwort $vwx$
-        höchstens $p = 2^{|N|}$ Zeichen. Wenn wir nun das
-        Wort $a^nb^nc^n$ für ein sehr großes $n$ betrachten,
-        sagen wir $n \geq p = 2^{|N|}$ , dann kann das Wort
-        $vwx$ nicht alle drei Symbole $a,b,c$ enthalten;
-        sonst würde es ja alle $n$ Symbole $b$ und noch
-        weitere enthalten, wäre also länger als $n \geq p$;
-        allerdings haben wir ja gesehen, dass $|vwx| \leq p$
-        gilt. Nehmen wir nun also der Einfachheit halber an,
-        dass $vwx$ nicht das Symbol $c$ enthält:
-        $vwx \in \{a,b\}^*$ (der andere Fall ist symmetrisch
-        und kann mit den gleichen Argumenten wie unten
-        behandelt werden). Nun holen wir zum entscheidenden
-        Schlag aus: wir "pumpen" das Wort $\gamma$ auf, indem
-        wir die Teilbäume mit $Z$ an der Wurzel wiederholen.
-        Konkret besagt ja oberer Baum, dass $\gamma$ wie
-        folgt hergeleitet wurde:
+        höchstens $p = 2^{|N|}$ Zeichen. Wenn wir nun das Wort
+        $a^nb^nc^n$ für ein sehr großes $n$ betrachten, sagen
+        wir $n \geq p = 2^{|N|}$ , dann kann das Wort $vwx$
+        nicht alle drei Symbole $a,b,c$ enthalten; sonst würde
+        es ja alle $n$ Symbole $b$ und noch weitere enthalten,
+        wäre also länger als $n \geq p$; allerdings haben wir
+        ja gesehen, dass $|vwx| \leq p$ gilt. Nehmen wir nun
+        also der Einfachheit halber an, dass $vwx$ nicht das
+        Symbol $c$ enthält: $vwx \in \{a,b\}^*$ (der andere
+        Fall ist symmetrisch und kann mit den gleichen
+        Argumenten wie unten behandelt werden). Nun holen wir
+        zum entscheidenden Schlag aus: wir "pumpen" das Wort
+        $\gamma$ auf, indem wir die Teilbäume mit $Z$ an der
+        Wurzel wiederholen. Konkret besagt ja oberer Baum,
+        dass $\gamma$ wie folgt hergeleitet wurde:
 
         \begin{align*}
         S \Step{}^* u Z v \Step{}^* uvZxy \Step{}^* uvwxy
@@ -117,22 +116,22 @@
         gesehen, dass in $uvwxy$ alle $c$-Symbole rechts von
         $vwx$ liegen, also in $y$. Das Wort $uwy$ hat also
         immer noch $n$ viele $c$ -Symbole. Allerdings hat es
-        die Symbole in $v$ und $x$ verloren! Wir wissen
-        nicht, wieviele davon $a$ und $b$ waren, aber eines
-        ist ganz klar: in $uwy$ kommen die Symbole $a,b,c$
-        nicht mehr gleich häufig vor, und somit
-        $uwy\not \in L$. Wir haben also gezeigt, dass die
-        kontextfreie Grammatik $G$ _nicht_ die Sprache $L$
-        erzeugt: wenn wir alle $\gamma \in L$ erzeugen kann,
-        dann kann sie auch Wörter wie $uwy \not \in L$
-        erzeugen. Da unsere Argumentation keine Annahmen über
-        $G$ getroffen hat, außer, dass sie kontextfrei ist,
-        haben wir gezeigt: $L$ ist keine kontextfreie
-        Sprache. *Vorsicht!* Wir haben angenommen, das $uwy$
-        weniger Zeichen hat als $uvwxy$, weil ja $v$ und $x$
-        fehlen. Kann aber $v = x = \epsilon$ eintreten? Dies
-        würde unsere Argumentation zerstören. Hier kommt
-        wieder die Chomsky-Normalform zur Hilfe: es gibt keine
+        die Symbole in $v$ und $x$ verloren! Wir wissen nicht,
+        wieviele davon $a$ und $b$ waren, aber eines ist ganz
+        klar: in $uwy$ kommen die Symbole $a,b,c$ nicht mehr
+        gleich häufig vor, und somit $uwy\not \in L$. Wir
+        haben also gezeigt, dass die kontextfreie Grammatik
+        $G$ _nicht_ die Sprache $L$ erzeugt: wenn wir alle
+        $\gamma \in L$ erzeugen kann, dann kann sie auch
+        Wörter wie $uwy \not \in L$ erzeugen. Da unsere
+        Argumentation keine Annahmen über $G$ getroffen hat,
+        außer, dass sie kontextfrei ist, haben wir gezeigt:
+        $L$ ist keine kontextfreie Sprache. *Vorsicht!* Wir
+        haben angenommen, das $uwy$ weniger Zeichen hat als
+        $uvwxy$, weil ja $v$ und $x$ fehlen. Kann aber
+        $v = x = \epsilon$ eintreten? Dies würde unsere
+        Argumentation zerstören. Hier kommt wieder die
+        Chomsky-Normalform zur Hilfe: es gibt keine
         Produktionen $X \rightarrow \epsilon$, (außer
         vielleicht für das Startsymbol $S$, welches dann aber
         nicht auf einer rechten Seite auftreten dürfte). Ganz
@@ -167,8 +166,7 @@
         zu $G$ äquivalenten Chomsky-Normalform ist.
 
     |> Exercise
-        Sei $L \subseteq \{a,b,c\}^n$ die Sprache aller
-        Wörter
+        Sei $L \subseteq \{a,b,c\}^n$ die Sprache aller Wörter
 
         \begin{align*}
         \{\alpha c \alpha \ | \ \alpha \in \{a,b\}^* \} \ .
@@ -242,12 +240,11 @@
 
                 |> ul
                     |> li
-                        Nach Punkt 4 sind $\bar{L}_1$ und $\bar{L}_2$
-                        regulär.
+                        Nach Punkt 4 sind $\bar{L}_1$ und $\bar{L}_2$ regulär.
 
                     |> li
-                        Nach Punkt 1 daher auch $\bar{L}_1 \cup \bar{L}_2$
-                        ist regulär.
+                        Nach Punkt 1 daher auch $\bar{L}_1 \cup \bar{L}_2$ ist
+                        regulär.
 
                     |> li
                         Nach Punkt 4 ist daher wiederum
@@ -281,8 +278,8 @@
                     $L_1^R$
 
                 |> li
-                    Überspringen wir $L_1 \cap L_2$; dieses ist nämlich
-                    im Allgemeinen nicht kontextfrei.
+                    Überspringen wir $L_1 \cap L_2$; dieses ist nämlich im
+                    Allgemeinen nicht kontextfrei.
 
             *Tip:* dies ist viel einacher als für reguläre
             Grammatiken.

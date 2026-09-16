@@ -21,11 +21,11 @@
         Die Beweismethode ist vielleicht neu für Sie, aber in
         der Komplexitätstheorie und Kombinatorik sehr wichtig.
         Wir stellen uns zwei _Zählaufgaben_: (1) wie viele
-        Boolesche Funktion $f : \fcube$ gibt es? (2) Wie
-        viele Boolesche Schaltkreise mit $n$ Input-Variablen,
-        Fan-in 2 und $s$ Gates gibt es? Wenn die Antwort auf
-        (2) kleiner ausfällt als auf (1), dann können nicht
-        alle Booleschen Funktionen mit $n$ Variablen einen
+        Boolesche Funktion $f : \fcube$ gibt es? (2) Wie viele
+        Boolesche Schaltkreise mit $n$ Input-Variablen, Fan-in
+        2 und $s$ Gates gibt es? Wenn die Antwort auf (2)
+        kleiner ausfällt als auf (1), dann können nicht alle
+        Booleschen Funktionen mit $n$ Variablen einen
         Schaltkreis mit weniger als $s$ Gates haben. Es gibt
         einfach nicht genug für alle. Dahinter steht folgende
         Beobachtung: zwei verschiedene Boolesche Funktionen
@@ -86,9 +86,8 @@
                     Möglichkeiten.
 
                 |> li
-                    Für den gesamten Schaltkreis: welches Gate
-                    Output-Gate sein soll. Da haben wir $s$
-                    Möglichkeiten.
+                    Für den gesamten Schaltkreis: welches Gate Output-Gate
+                    sein soll. Da haben wir $s$ Möglichkeiten.
 
             Um die Gesamtzahl der Möglichkeiten abzuschätzen,
             müssen wir das alles multiplizieren. Wir haben
@@ -105,9 +104,9 @@
             $n$ Variablen.
 
         Wählen wir nun $s := 2^{n} / (2n)$. Wieviele
-        Schaltkreise mit $n$ Variablen, Fan-in 2 und $s$
-        Gates gibt es? Die Schranke in der obigen Behauptung
-        sagt, dies seien höchstens
+        Schaltkreise mit $n$ Variablen, Fan-in 2 und $s$ Gates
+        gibt es? Die Schranke in der obigen Behauptung sagt,
+        dies seien höchstens
 
         \begin{align*}
         \pfrac{2^n}{2n}^{\frac{2^{n}}{n} + 1}&= \left(2^{n - \log (2n)}\right)^{\frac{2^n}{n} + 1} \\
@@ -127,18 +126,18 @@
         Aussage und Beweis? Was geschieht, wenn wir weitere
         Gates, z.B. $\oplus$ als atomare Gates zulassen?
 
-    Der obige Beweis sagt noch mehr: der Anteil
-    Boolescher Funktionen, bei denen wir mit
-    $\frac{2^n}{2n}$ Gates auskommen, ist verschwindend
-    klein. Fast _alle_ Funktionen brauchen also riesige
-    Schaltkreise. In einem Gewissen Sinne haben wir also
-    einfach Glück: die Funktionen, die uns interessieren,
-    wie $n$ -Bit-Addition, Majority, Parity und so
-    weiter, haben einfach niedrige Komplexität. Das liegt
-    wohl in der Natur der Sache: wir addieren,
-    multiplizieren, bauen Brücken, Häuser, Flugzeuge,
-    Computer, weil wir es _können_, weil also die dafür
-    benötigten Berechnungen effizient durchführbar sind.
+    Der obige Beweis sagt noch mehr: der Anteil Boolescher
+    Funktionen, bei denen wir mit $\frac{2^n}{2n}$ Gates
+    auskommen, ist verschwindend klein. Fast _alle_
+    Funktionen brauchen also riesige Schaltkreise. In
+    einem Gewissen Sinne haben wir also einfach Glück: die
+    Funktionen, die uns interessieren, wie $n$
+    -Bit-Addition, Majority, Parity und so weiter, haben
+    einfach niedrige Komplexität. Das liegt wohl in der
+    Natur der Sache: wir addieren, multiplizieren, bauen
+    Brücken, Häuser, Flugzeuge, Computer, weil wir es
+    _können_, weil also die dafür benötigten Berechnungen
+    effizient durchführbar sind.
 
     |> Remark
         title=*Forschungsprojekt.*
@@ -160,8 +159,8 @@
         c : V \rightarrow \{\textnormal{rot, grün, blau}\} \ ,
         \end{align*}
 
-        so dass $c(u) \ne c(v)$ für alle $\{u,v\} \in E$
-        gilt? Dass also benachbarte Knoten verschiedene Farben
+        so dass $c(u) \ne c(v)$ für alle $\{u,v\} \in E$ gilt?
+        Dass also benachbarte Knoten verschiedene Farben
         bekommen?
 
     3-Färbbarkeit ist ein zentrales NP-vollständiges
@@ -213,17 +212,16 @@
 
         *$\F_2$-Polynome.* Polynome in mehreren Variablen
         kennen Sie sicherlich: zum Beispiel
-        $xyz + xy + 1 + y$. Der Unterschied hier ist nur,
-        dass wir alle Werte modulo 2 auswerten, also in dem
+        $xyz + xy + 1 + y$. Der Unterschied hier ist nur, dass
+        wir alle Werte modulo 2 auswerten, also in dem
         endlichen Körper $\F_2$ arbeiten. Wir brauchen daher
-        auch keine höheren Potenzen: $x^2$ und $x$ ergeben
-        für alle $x \in \{0,1\}$ die gleichen Werte. Wenn wir
-        in $\F_2$ rechnen, können wir uns also auf
-        _multilineare_ Polynome beschränken. Führen wir
-        Polynome formal ein: wir haben eine Menge
-        $x_1, \dots, x_n$ von Variablen; ein Monom in diesem
-        Variablen ist ein Produkt aus Variablen, also
-        $\prod_{i \in I} x_i$ für eine Menge
+        auch keine höheren Potenzen: $x^2$ und $x$ ergeben für
+        alle $x \in \{0,1\}$ die gleichen Werte. Wenn wir in
+        $\F_2$ rechnen, können wir uns also auf _multilineare_
+        Polynome beschränken. Führen wir Polynome formal ein:
+        wir haben eine Menge $x_1, \dots, x_n$ von Variablen;
+        ein Monom in diesem Variablen ist ein Produkt aus
+        Variablen, also $\prod_{i \in I} x_i$ für eine Menge
         $I \subseteq [n]$. Wir schreiben das kurzerhand als
         $\x^I$. Ein Polynom ist nun eine Summe von Monomen:
         $\x^{I_1} + \x^{I_2} + \dots + \x^{I_t}$. Beachten
@@ -250,18 +248,17 @@
 
         |> Exercise
             Zeigen Sie, dass sich jede Funktion $f :\fcube$
-            _eindeutig_ als multilineares $\F_2$-Polynom
-            schreiben lässt. In anderen Worten: wenn $p$ und $q$
-            zwei verschiedene multilineare Polynome sind, dann
+            _eindeutig_ als multilineares $\F_2$-Polynom schreiben
+            lässt. In anderen Worten: wenn $p$ und $q$ zwei
+            verschiedene multilineare Polynome sind, dann
             berechnen sie verschiedene Funktionen.
 
         Ein $\F_2$-Polynom können wir natürlich ganz einfach
         als Schaltkreis mit AND- und XOR-Gates schreiben. AND
         für die Multiplikation und XOR für die Addition in
-        $\F_2$. Dies ist also die erste Kernidee: wir
-        arbeiten mit AND und XOR und somit mit
-        $\F_2$-Polynomen. Wieviele Gates brauchen wir dafür?
-        Schreiben wir
+        $\F_2$. Dies ist also die erste Kernidee: wir arbeiten
+        mit AND und XOR und somit mit $\F_2$-Polynomen.
+        Wieviele Gates brauchen wir dafür? Schreiben wir
         $f = \x^{I_1} + \x^{I_2} + \dots + \x^{I_t}$. Ein
         Monom $\x^{I}$ können wir mit $|I|-1$ AND-Gates
         berechnen. Die Summe bilden wir mit $t-1$ weiteren
@@ -307,16 +304,16 @@
             wir $x_1 x_2 x_3$ eh berechnen, da wir ja _alle_
             Monome wollen. Wenn wir also einen Schaltkreis für
             $x_1 x_2 x_3$ haben, können wir daraus mit _einem_
-            zusätzlichen AND-Gate $x_1x_2x_3x_4$ berechnen.
-            Formal geht es mit Induktion über $n$. Für $n=0$
-            haben wir ein einziges Monom, nämlich $1$, und einen
-            Schaltkreis mit einem einzigen Gate: dem
-            Konstant-1-Gate, das gleichzeitig ein Output-Gate ist.
-            Für $n \geq 1$ bauen wir zuerst per Induktion einen
-            Schaltkreis $C_{n-1}$, der alle $2^{n-1}$ Monome
-            $x^{I}$ für $I \subseteq [n-1]$ berechnet. Um $C_n$
-            zu bauen, schaffen wir für jedes $I \subseteq [n-1]$
-            ein AND-Gate, das $\x^{I} \wedge x_n$ berechnet.
+            zusätzlichen AND-Gate $x_1x_2x_3x_4$ berechnen. Formal
+            geht es mit Induktion über $n$. Für $n=0$ haben wir
+            ein einziges Monom, nämlich $1$, und einen Schaltkreis
+            mit einem einzigen Gate: dem Konstant-1-Gate, das
+            gleichzeitig ein Output-Gate ist. Für $n \geq 1$ bauen
+            wir zuerst per Induktion einen Schaltkreis $C_{n-1}$,
+            der alle $2^{n-1}$ Monome $x^{I}$ für
+            $I \subseteq [n-1]$ berechnet. Um $C_n$ zu bauen,
+            schaffen wir für jedes $I \subseteq [n-1]$ ein
+            AND-Gate, das $\x^{I} \wedge x_n$ berechnet.
 
             |> Carousel
                 src=img/circuits/all-monomials-1.svg

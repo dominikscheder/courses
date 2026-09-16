@@ -58,16 +58,16 @@
         dass $G$ genau dann ein Palindromwort ableiten kann,
         wenn $P$ eine Lösung hat. Die Konstruktion ist
         überraschend einfach. Wir erschaffen ein Startsymbol
-        $S$ für unsere Grammatik und erstellen zu jeder
-        Kachel $\alpha : \beta$ die Grammatikregel
+        $S$ für unsere Grammatik und erstellen zu jeder Kachel
+        $\alpha : \beta$ die Grammatikregel
 
         \begin{align*}
         S&\rightarrow \alpha S \beta^R \ ,
         \end{align*}
 
-        wobei $\beta^R$ das Wort $\beta$ von rechts nach
-        links gelesen bedeutet, also $(xyz)^R = zyx$. Wir
-        fügen noch eine weitere Regel hinzu:
+        wobei $\beta^R$ das Wort $\beta$ von rechts nach links
+        gelesen bedeutet, also $(xyz)^R = zyx$. Wir fügen noch
+        eine weitere Regel hinzu:
 
         \begin{align*}
         S&\rightarrow \$ \ ,
@@ -100,8 +100,8 @@
             eine Lösung des PCP-Puzzles.
 
         |> Claim
-            Wenn das PCP-Puzzle $P$ eine Lösung hat, dann kann
-            die Grammatik $G$ ein Palindromwort ableiten.
+            Wenn das PCP-Puzzle $P$ eine Lösung hat, dann kann die
+            Grammatik $G$ ein Palindromwort ableiten.
 
         |> Proof
             Sei
@@ -129,8 +129,8 @@
             \alpha_1 \alpha_2 \dots \alpha_n \$ \beta_n^R \dots \beta_2^R \beta_1^R
             \end{align*}
 
-            Somit ist gezeigt, dass $G$ ein Palindromwort
-            ableiten kann.
+            Somit ist gezeigt, dass $G$ ein Palindromwort ableiten
+            kann.
 
         Hätten wir nun also einen Algorithmus, der für eine
         gegebene kontextfreie Grammatik entscheiden könnte, ob
@@ -160,8 +160,7 @@
 
         |> li
             Wir wissen bereits, wie man eine allgemeine primitiv
-            rekursive Funktion im $\lambda$ -Kalkül
-            implementiert.
+            rekursive Funktion im $\lambda$ -Kalkül implementiert.
 
         |> li
             Wir schließen nun, dass $n \mapsto n!$ im $\lambda$
@@ -189,9 +188,9 @@
         \end{align*}
 
     Erinnern Sie sich: dass $f$ Turing-berechenbar ist,
-    heißt, dass es eine Turingmaschine $_f$ gibt mit
-    einem dezidierten Ausgabe-Band, so dass $M_f(x)$ für
-    jedes Eingabewort terminiert und zum Zeitpunkt der
+    heißt, dass es eine Turingmaschine $_f$ gibt mit einem
+    dezidierten Ausgabe-Band, so dass $M_f(x)$ für jedes
+    Eingabewort terminiert und zum Zeitpunkt der
     Terminierung $f(x)$ auf das Ausgabeband geschrieben
     hat. Wenn wir eine Reduktion von $L_1$ nach $L_2$
     haben, dann liefert uns jeder Entscheidungsalgorithmus
@@ -207,13 +206,13 @@
         Sei $M_2$ eine Turingmaschine, die $L_2$ entscheidet
         und sei $M_f$ die Turingmaschine, die $f$ berechnet.
         Wir bauen nun eine neue Turingmaschine $M_1$. Sie
-        nimmt das Eingabewort $x \in \Sigma_1^*$ und lässt
-        die Turingmaschine $M_f$ auf $x$ arbeiten; wenn $M_f$
+        nimmt das Eingabewort $x \in \Sigma_1^*$ und lässt die
+        Turingmaschine $M_f$ auf $x$ arbeiten; wenn $M_f$
         terminiert, steht $f(x)$ auf ihrem Ausgabeband. Wir
         rufen nun die Turing-Maschien $M_2$ mit dem
         Eingabewort $f(x)$ auf. Wenn $M_2$ akzeptiert (oder
-        eben ablehnt), dann lassen wir $M_1$ akzeptieren
-        (oder eben ablehnen). Es gilt nun:
+        eben ablehnt), dann lassen wir $M_1$ akzeptieren (oder
+        eben ablehnen). Es gilt nun:
 
         \begin{align*}
         M_1(x) = \texttt{accept}&\Leftrightarrow M_2(f(x)) = \texttt{accept} \\
@@ -223,8 +222,8 @@
 
         und somit entscheidet $M_1$ die Sprache $L_1$.
 
-    Stellen Sie sich einfach vor, dass $M_f$ der Code
-    ist, den Sie selber schreiben müssen, und $M_2$ die
+    Stellen Sie sich einfach vor, dass $M_f$ der Code ist,
+    den Sie selber schreiben müssen, und $M_2$ die
     "Bibliotheksfunktion" ist, die Sie ohne groß
     nachzudenken aufrufen, weil sie ja bereist von anderen
     Leuten (hoffentlich korrekt) implementiert worden ist.
@@ -265,10 +264,10 @@
     Üben wir also Reduktionen:
 
     |> Theorem
-        *(Schnittproblem kontextfreier Sprachen)* Gegeben
-        zwei kontextfreie Grammatiken $G_1, G_2$. Es ist
-        unentscheidbar, ob $L(G_1) \cap L(G_2)$ nichtleer
-        ist, ob es also ein Wort $x$ mit $x \in G_1$ und
+        *(Schnittproblem kontextfreier Sprachen)* Gegeben zwei
+        kontextfreie Grammatiken $G_1, G_2$. Es ist
+        unentscheidbar, ob $L(G_1) \cap L(G_2)$ nichtleer ist,
+        ob es also ein Wort $x$ mit $x \in G_1$ und
         $x \in G_2$ gibt. Dieses Problem ist als
         _Schnittproblem kontextfreier Sprachen_ bekannt.
 
@@ -290,19 +289,19 @@
         (bzw. deren Codierung) und gibt das Paar $(G,G')$ aus
         (bzw. deren Codierungen). Wir stellen fest: $G$ kann
         ein Palindromwort ableiten genau dann, wenn
-        $L(G) \cap L(G') \ne \emptyset$, wenn es also ein
-        Wort $\alpha$ gibt, dass aus $G$ und aus $G'$
-        abgeleitet werden kann. Die Funktion $f$ ist also
-        eine Reduktion vom Palindromwortproblem auf das
-        Schnittproblem. Mit Behauptung 4.6.9 zusammen heißt
-        das, dass das Schnittproblem unentscheidbar ist.
+        $L(G) \cap L(G') \ne \emptyset$, wenn es also ein Wort
+        $\alpha$ gibt, dass aus $G$ und aus $G'$ abgeleitet
+        werden kann. Die Funktion $f$ ist also eine Reduktion
+        vom Palindromwortproblem auf das Schnittproblem. Mit
+        Behauptung 4.6.9 zusammen heißt das, dass das
+        Schnittproblem unentscheidbar ist.
 
     |> Theorem
         *(Mehrdeutigkeitsproblem kontextfreier Sprachen)*
         Gegeben eine kontextfreie Grammatik $G$. Es ist
-        unentscheidbar, ob $G$ mehrdeutig ist, d.h., ob es
-        ein Wort $x \in \Sigma^*$ gibt, für das zwei
-        verschiedene Ableitungsbäume existieren.
+        unentscheidbar, ob $G$ mehrdeutig ist, d.h., ob es ein
+        Wort $x \in \Sigma^*$ gibt, für das zwei verschiedene
+        Ableitungsbäume existieren.
 
     |> div
         style=background-color: rgba(255,0,0,0.1);
@@ -325,9 +324,9 @@
 
         und übernehmen alle Produktionen von $G_1$ und $G_2$.
         Dies ist unsere neue Grammatik $G$. Sie sehen nun:
-        wenn es ein $x \in L(G_1) \cap L(G_2)$ gibt, dann
-        kann man $x$ auf zwei verschiedene Weisen in $G$
-        ableiten, nämlich
+        wenn es ein $x \in L(G_1) \cap L(G_2)$ gibt, dann kann
+        man $x$ auf zwei verschiedene Weisen in $G$ ableiten,
+        nämlich
 
         \begin{align*}
         S&\Rightarrow S_1 \Rightarrow^* x \tag{Ableitung wie in $G_1$} \\
@@ -336,14 +335,14 @@
 
         und das sind wirklich zwei verschiedene Ableitungen,
         weil ja bereits $S_1 \ne S_2$. Wenn nun umgekehrt ein
-        Wort $y$ via $S_1$ und via $S_2$ ableitbar sein
-        sollte ($G$ also mehrdeutig sein sollte), dann
-        bedeutet dies, dass $G_1$ und $G_2$ beide das Wort $y$
-        ableiten können, also einen nichtleeren Schnitt haben.
-        Dies ist somit unsere Reduktion $f$ : nimm als
-        Eingabe das Paar $G_1, G_2$ (bzw. dessen Codierung),
-        konstruiere $G$ und gib $G$ aus. Dieses $f$ reduziert
-        das Schnittproblem auf das Mehrdeutigkeitsproblem.
+        Wort $y$ via $S_1$ und via $S_2$ ableitbar sein sollte
+        ($G$ also mehrdeutig sein sollte), dann bedeutet dies,
+        dass $G_1$ und $G_2$ beide das Wort $y$ ableiten
+        können, also einen nichtleeren Schnitt haben. Dies ist
+        somit unsere Reduktion $f$ : nimm als Eingabe das Paar
+        $G_1, G_2$ (bzw. dessen Codierung), konstruiere $G$
+        und gib $G$ aus. Dieses $f$ reduziert das
+        Schnittproblem auf das Mehrdeutigkeitsproblem.
 
     Haben Sie den Fehler im Beweis erkannt? Das Problem
     ist, dass es sein könnte, dass $G_1$ und $G_2$ leeren
@@ -391,7 +390,7 @@
         $i$ stellen sicher, dass jede von $S_1$ ausgehende
         Ableitung eindeutig ist (und genau so von $S_2$); die
         einzige Mehrdeutigkeit kann aufkommen, wenn ein Wort
-        sowohl via $S_1$ als auch via $S_2$ ableitbar ist;
-        und dies geschieht genau dann, wenn das PCP-Puzzle
-        eine Lösung hat. Wir haben nun also unsere Reduktion
-        von PCP auf das Mehrdeutigkeitsproblem.
+        sowohl via $S_1$ als auch via $S_2$ ableitbar ist; und
+        dies geschieht genau dann, wenn das PCP-Puzzle eine
+        Lösung hat. Wir haben nun also unsere Reduktion von
+        PCP auf das Mehrdeutigkeitsproblem.

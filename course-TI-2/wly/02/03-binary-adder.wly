@@ -32,10 +32,10 @@
     Stelle zur Addition weitergegeben. Aber halt! Das
     heißt doch, dass wir in der nächsten Stelle _drei_
     Bits addieren müssen: das von $x$, das von $y$, und
-    das eingehende Carry $\cin$. Daraus berechnet sich
-    das Output-Bit $s$ und das ausgehende Carry $\cout$,
-    das nach links weitergegeben wird. Unsere Tabelle ist
-    also etwas größer:
+    das eingehende Carry $\cin$. Daraus berechnet sich das
+    Output-Bit $s$ und das ausgehende Carry $\cout$, das
+    nach links weitergegeben wird. Unsere Tabelle ist also
+    etwas größer:
 
     $$
     \begin{array}{ccc|cc}
@@ -102,11 +102,11 @@
 
     Eine Größe von $O(n)$ ist gut; besseres können wir
     nicht wirklich erwarten, schließlich muss der
-    Schaltkreis ja allein schon $n$ Input-Gates haben.
-    Wie steht es mit der Tiefe? Wenn wir jedes $\oplus$
-    und $M$ als Gate betrachten, dann hat der Pfad von
-    $x_0$ zu $s_n$ die Länge $n$ (beachten Sie: das ganz
-    links stehende $M$ ist streng genommen bereits das
+    Schaltkreis ja allein schon $n$ Input-Gates haben. Wie
+    steht es mit der Tiefe? Wenn wir jedes $\oplus$ und
+    $M$ als Gate betrachten, dann hat der Pfad von $x_0$
+    zu $s_n$ die Länge $n$ (beachten Sie: das ganz links
+    stehende $M$ ist streng genommen bereits das
     Output-Gate; die ausgehende Kante $s_n$ ist also
     vielmehr ein Output-Label als eine ausgehende Kante
     und daher bei der Tiefenbestimmung nicht mitgezählt).
@@ -197,8 +197,7 @@
     nicht besonders handlich.
 
     |> TopicAnnouncement
-        Carry-Lookahead mit $O(n)$ Gates und $O(\log n)$
-        Tiefe
+        Carry-Lookahead mit $O(n)$ Gates und $O(\log n)$ Tiefe
 
     Effizientere Lösungen beginnen oft mit einer guten
     Definition. In diesem Falle ist das die
@@ -276,8 +275,8 @@
     c_{k+1} = g_{[0, k]}
     $$
 
-    gilt, wir also die Carrys direkt ablesen, zweitens
-    wir die $g_{[a,b]}$ bequem rekursiv berechnen können:
+    gilt, wir also die Carrys direkt ablesen, zweitens wir
+    die $g_{[a,b]}$ bequem rekursiv berechnen können:
 
     |> Observation
         Wenn wir $[a,b] = [a,i] \cup [i+1,b]$ schreiben für
@@ -288,19 +287,19 @@
         g_{[a,b]}&= g_{[i+1,b]} \vee (g_{[a,i]} \wedge p_{[i+1,b]}) \ . \\
         \end{align*}
 
-    Überzeugen Sie sich von der Richtigkeit entweder
-    durch Nachdenken (z.B. "damit im Interval $[a,b]$ ein
-    Carry erzeugt wird, muss es entweder im höheren
-    Interval erzeugt werden, oder im niedrigeren, und dann
-    im höheren weitergegeben werden") oder indem Sie
-    explizit die Definitionsformel von $g_{[a,b]}$ nehmen
-    und in der unteren Hälfte "ausklammern". Die Idee ist
-    jetzt, dass wir mit Hilfe dieser Formel die Funktionen
+    Überzeugen Sie sich von der Richtigkeit entweder durch
+    Nachdenken (z.B. "damit im Interval $[a,b]$ ein Carry
+    erzeugt wird, muss es entweder im höheren Interval
+    erzeugt werden, oder im niedrigeren, und dann im
+    höheren weitergegeben werden") oder indem Sie explizit
+    die Definitionsformel von $g_{[a,b]}$ nehmen und in
+    der unteren Hälfte "ausklammern". Die Idee ist jetzt,
+    dass wir mit Hilfe dieser Formel die Funktionen
     $p_I, g_I$ für alle Intervalle
-    $I \subseteq [0,\dots,n-1]$ berechnen und dann
-    mittels $s_i = x_i \oplus y_i \oplus c_i$ unmittelbar
-    die Binärdarstellung der Summe $x+y$ ausgeben können.
-    Das Problem: es gibt zu viele Intervalle, nämlich
+    $I \subseteq [0,\dots,n-1]$ berechnen und dann mittels
+    $s_i = x_i \oplus y_i \oplus c_i$ unmittelbar die
+    Binärdarstellung der Summe $x+y$ ausgeben können. Das
+    Problem: es gibt zu viele Intervalle, nämlich
     $1 + 2 + \dots + n = {n+1 \choose 2} = \Theta(n^2)$
     viele. Der Trick: wir beschränken uns auf besonders
     schöne Intervalle, nämlich_Binärintervalle_.
@@ -326,8 +325,8 @@
     in _Sternchennotation_ mit [11**] notieren.
 
     |> Exercise
-        Seit $n = 2^d-1$. Wie viele Binärintervalle gibt es
-        in $\{0,\dots,n-1\}$?
+        Seit $n = 2^d-1$. Wie viele Binärintervalle gibt es in
+        $\{0,\dots,n-1\}$?
 
     |> Lemma
         Es gibt einen Schaltkreis mit Input-Gates
@@ -366,10 +365,10 @@
         Mit Hilfe dieses Gates können wir
         $p_{c0*^k}, g_{c0*^k}$ und $p_{c1*^k}, g_{c1*^k}$ zu
         $p_{c*^{k+1}}, g_{c*^{k+1}}$ kombinieren. Wir fangen
-        nun mit Binärintervallen der Größe $1$ an und
-        arbeiten uns hoch. Der Übersichtlichkeit halber
-        schreiben wir $pg_I$ für das Paar $(p_I, g_I)$. Für
-        $n=16$ schaut das so aus:
+        nun mit Binärintervallen der Größe $1$ an und arbeiten
+        uns hoch. Der Übersichtlichkeit halber schreiben wir
+        $pg_I$ für das Paar $(p_I, g_I)$. Für $n=16$ schaut
+        das so aus:
 
         |> figure
             |> img
@@ -383,30 +382,30 @@
         $x_i, y_i$ berechnet werden mittels
         $p_i = x_i \vee y_i$ bzw. $g_i = x_i \wedge y_i$. Der
         Schaltkreis hat also $2n$ Input-Gates und pro
-        Binärinterval $I$ zwei Output-Gates: $p_I, g_I$.
-        Jedes $pg$ im obigen Bild ist also gleichzeitig ein
+        Binärinterval $I$ zwei Output-Gates: $p_I, g_I$. Jedes
+        $pg$ im obigen Bild ist also gleichzeitig ein
         Output-Gate (auch wenn es für weiter oben
         "wiederverwendet" wird; nirgendwo steht geschrieben,
         dass ein Output-Gate keine ausgehenden Kanten haben
-        darf). Sie sehen, dass maximal $\ceil{\log_2 n}$
-        viele $pg$-Gates hintereinander kommen. Die
-        $pg$-Gate-Tiefe ist also $\ceil{\log_2 n}$. Jedes
-        $pg$-Gate hat an sich Tiefe 2 (siehe oben), und mit
-        den untersten $pg_i$ kommt noch einmal eine Schicht
-        dazu. Die Gesamttiefe des oben abgebildeten
-        Schaltkreises ist also
+        darf). Sie sehen, dass maximal $\ceil{\log_2 n}$ viele
+        $pg$-Gates hintereinander kommen. Die $pg$-Gate-Tiefe
+        ist also $\ceil{\log_2 n}$. Jedes $pg$-Gate hat an
+        sich Tiefe 2 (siehe oben), und mit den untersten
+        $pg_i$ kommt noch einmal eine Schicht dazu. Die
+        Gesamttiefe des oben abgebildeten Schaltkreises ist
+        also
 
         $$
         2\, \ceil{\log_2 n} + 1 \ .
         $$
 
         Um die Größe zu bestimmen, beachten Sie, dass der
-        Schaltkreis wie ein Binärbaum aus $pg$-Gates
-        aussieht. Für $n$ -stellige Zahlen gibt es also $n-1$
-        viele $pg$-Gates, von denen jedes vier "normale"
-        Gates hat. Pro unterstem $pg_i$ kommen noch einmal
-        zwei hinzu: ein $\wedge$-Gate für $g_i$ und ein $\vee$
-        -Gate für $p_i$. Insgesamt also
+        Schaltkreis wie ein Binärbaum aus $pg$-Gates aussieht.
+        Für $n$ -stellige Zahlen gibt es also $n-1$ viele
+        $pg$-Gates, von denen jedes vier "normale" Gates hat.
+        Pro unterstem $pg_i$ kommen noch einmal zwei hinzu:
+        ein $\wedge$-Gate für $g_i$ und ein $\vee$ -Gate für
+        $p_i$. Insgesamt also
 
         $$
         4 (n-1) + 2n = 6n - 4 \ ,
@@ -436,8 +435,8 @@
         \end{align*}
 
         Wie kann man das formalisieren? *1. Fall.* Wenn $k$
-        die Form $k = 2^d-1$ hat, dann ist $[0,k]$ bereits
-        ein Binärintervall; dies passiert, wenn die
+        die Form $k = 2^d-1$ hat, dann ist $[0,k]$ bereits ein
+        Binärintervall; dies passiert, wenn die
         Binärdarstellung von $k$ die Form $k = (1^b)_2$ hat
         (wobei $b=0$ sein kann, in welchem Fall $k=0$ ist).
         *2. Fall.* Wenn $k$ nicht die Form $k = 2^d-1$ hat,
@@ -469,12 +468,12 @@
         Der Wert $pg_{[l+1,k]}$ ist bereits ein
         Binärintervall, kann also direkt aus dem vorherigen
         Schaltkreis abgelesen werden; der andere Input,
-        $pg_{[0,l]}$, muss rekursiv berechnet werden.
-        Beachten Sie, dass $l = (\alpha 0 1^a 1^b)_2)$ gilt,
-        die Anzahl der schließenden 1en in der
-        Binärdarstellung also von $b$ auf $a+b \geq b+1$
-        gewachsen ist. Hier ist ein Beispiel für
-        $n = 32, k = 28$, in Dezimal- und Binärdarstellung:
+        $pg_{[0,l]}$, muss rekursiv berechnet werden. Beachten
+        Sie, dass $l = (\alpha 0 1^a 1^b)_2)$ gilt, die Anzahl
+        der schließenden 1en in der Binärdarstellung also von
+        $b$ auf $a+b \geq b+1$ gewachsen ist. Hier ist ein
+        Beispiel für $n = 32, k = 28$, in Dezimal- und
+        Binärdarstellung:
 
         \begin{align*}
         [0,28]&= [0,15] \cup [16,23] \cup [24,27] \cup [28] \\
@@ -491,15 +490,14 @@
         1en ist mindestens 0 (trivialierweise) und höchstens
         $d$; ein genauerer Blick zeigt, dass sie sogar
         höchstens $d-1$ ist: wäre sie genau $d$, dann hätten
-        wir es mit der Zahl $(1^d)_2 = 2^d-1 \geq n-1$ zu
-        tun; da aber die Folge der Zahlen _abnimmt_, müsste
-        bereits $k = 2^d-1$ gelten, und wir wären in Fall 1,
-        bzw. bereits fertig, weil $[0,k]$ bereits in
-        Binärintervall wäre. Der Wert von $b$, der Anzahl
-        schließender 1en, kann also höchstens $d-1$ mal
-        zunehmen, und somit brauchen wir höchstens $d-1$
-        viele $pg$-Gates. Das Maximum wird erreicht, wenn
-        $k = (1...10)_2$:
+        wir es mit der Zahl $(1^d)_2 = 2^d-1 \geq n-1$ zu tun;
+        da aber die Folge der Zahlen _abnimmt_, müsste bereits
+        $k = 2^d-1$ gelten, und wir wären in Fall 1, bzw.
+        bereits fertig, weil $[0,k]$ bereits in Binärintervall
+        wäre. Der Wert von $b$, der Anzahl schließender 1en,
+        kann also höchstens $d-1$ mal zunehmen, und somit
+        brauchen wir höchstens $d-1$ viele $pg$-Gates. Das
+        Maximum wird erreicht, wenn $k = (1...10)_2$:
 
         |> figure
             |> img
@@ -512,8 +510,8 @@
         *Größe.* Zählen wir die Anzahl von $pg$-Gates in
         unserem Schaltkreis. Wir haben bereits gesehen, dass
         die Berechnung von $g_{[0,k]}$ höchstens $d-1$ viele
-        $pg$-Gates braucht. Es scheint also, als bräuchten
-        wir für alle $n$ Werte von $k$ insgesamt
+        $pg$-Gates braucht. Es scheint also, als bräuchten wir
+        für alle $n$ Werte von $k$ insgesamt
         $(d-1)n = \Theta(n \log n)$ viele. Wir könnten
         vielleicht noch eine genauere Schranke beweisen, weil
         nicht jedes $k$ den Wert $d-1$ erreicht, allerdings
@@ -557,12 +555,12 @@
 
         Es reichen also in der Tat $2n$ Basis-Gates aus.
 
-    Wir kombinieren wir nun die beiden Lemmas und
-    erhalten einen Schaltkreis der Tiefe
-    $4 \ceil { \log_2 n } - 1$ und Größe $8n - 4$, mit
-    $x_0, y_0, \dots, x_{n-1}, y_{n-1}$ als
-    Inputvariablen und Carrys $c_1, \dots, c_n$ als
-    Output-Variablen. Jetzt können wir schließlich
+    Wir kombinieren wir nun die beiden Lemmas und erhalten
+    einen Schaltkreis der Tiefe $4 \ceil { \log_2 n } - 1$
+    und Größe $8n - 4$, mit
+    $x_0, y_0, \dots, x_{n-1}, y_{n-1}$ als Inputvariablen
+    und Carrys $c_1, \dots, c_n$ als Output-Variablen.
+    Jetzt können wir schließlich
 
     $$
     s_i = x_i \oplus y_i \oplus c_i
@@ -585,8 +583,8 @@
     $$
 
     |> Exercise
-        Bauen Sie einen Schaltkreis für die Boolesche
-        Funktion "less-than":
+        Bauen Sie einen Schaltkreis für die Boolesche Funktion
+        "less-than":
 
         \begin{align*}
         LT : \{0,1\}^{n} \times \{0,1\}^n \rightarrow \{0,1\} \\

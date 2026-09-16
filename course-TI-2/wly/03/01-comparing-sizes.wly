@@ -7,18 +7,17 @@
     Elemente hat. Können wir auch für unendliche Mengen
     einen Größenbegriff einführen, oder sie zumindest
     hinsichtlich ihrer Größe vergleichen? Bei den
-    "üblichen" unendlichen Mengen $\N, \Z, \Q, \R$
-    scheint das zu gehen. Es gilt nämlich
+    "üblichen" unendlichen Mengen $\N, \Z, \Q, \R$ scheint
+    das zu gehen. Es gilt nämlich
     $\N \subsetneq \Z \subsetneq \Q \subsetneq \R$, und
     damit können wir doch mit Fug und Recht behaupten:
     _Die Menge der ganzen Zahlen ist kleiner als die der
     rationalen Zahlen_. Unser erster Versuch, unendliche
     Mengen ihrer Größe nach zu vergleichen, verwendet
-    Mengeninklusion: wenn $A \subseteq B$ gilt, dann
-    sagen wir, dass $A$ kleiner gleich $B$ gilt.
-    Allerdings hat dieser Größenbegriff einen großen
-    Nachteil: welche der beiden Mengen ist Ihrer Meinung
-    denn größer:
+    Mengeninklusion: wenn $A \subseteq B$ gilt, dann sagen
+    wir, dass $A$ kleiner gleich $B$ gilt. Allerdings hat
+    dieser Größenbegriff einen großen Nachteil: welche der
+    beiden Mengen ist Ihrer Meinung denn größer:
 
     \begin{align*}
     \{\dots, -4, -2, 0, 2, 4, 6, \dots\} \quad
@@ -26,10 +25,10 @@
     \end{align*}
 
     Also die geraden ganzen Zahlen oder die natürlichen?
-    Oder noch schlimmer: ist $\Q$ oder $\{a,b\}^*$
-    größer? Die zweite Menge hat ja gar nichts mit Zahlen
-    zu tun, sondern besteht aus Strings mit den Symbolen
-    $a$ und $b$. Und generell: auch zwischen den Mengen
+    Oder noch schlimmer: ist $\Q$ oder $\{a,b\}^*$ größer?
+    Die zweite Menge hat ja gar nichts mit Zahlen zu tun,
+    sondern besteht aus Strings mit den Symbolen $a$ und
+    $b$. Und generell: auch zwischen den Mengen
     $\{0,1,2,3,4,5,6,7,8,9\}$ und $\{a,e,i,o,u\}$ gibt es
     keine Inklusionsrelation, und dennoch ist erstere ganz
     klar größer als letztere. Eine rigorose und belastbare
@@ -43,9 +42,9 @@
         Beginnen wir mit einem  einfachen Beispiel und
         betrachten die zwei Mengen $\N = \{0,1,2,3,4,\dots\}$
         und $\N^+ = \{1,2,3,4,\dots\}$. Beide sind unendlich,
-        und $\N^+ \subsetneq \N$. Dennoch sind sie in
-        gewisser Weise gleich groß. Ihre Elemente lassen sich
-        nämlich einander paarweise zuordnen:
+        und $\N^+ \subsetneq \N$. Dennoch sind sie in gewisser
+        Weise gleich groß. Ihre Elemente lassen sich nämlich
+        einander paarweise zuordnen:
 
         |> figure
             |> img
@@ -72,8 +71,8 @@
     weitere Gäste aufnehmen.
 
     |> Example
-        Ermutigt von unserem Erfolg gerade eben betrachten
-        wir zwei unendliche Mengen, die sich stärker
+        Ermutigt von unserem Erfolg gerade eben betrachten wir
+        zwei unendliche Mengen, die sich stärker
         unterscheiden: $\N$ und
         $\Z = \{\dots, -2, -1, 0, 1, 2, \dots\}$. Wir können
         diese beiden nicht so schön nebeneinander legen wie
@@ -149,8 +148,8 @@
     |> TopicAnnouncement
         Was ist unendlich?
 
-    Der Begriff der Gleichmächtigkeit liefert uns nun
-    eine wunderbar einfache und rigorose Definition von
+    Der Begriff der Gleichmächtigkeit liefert uns nun eine
+    wunderbar einfache und rigorose Definition von
     Unendlichkeit.
 
     |> Definition

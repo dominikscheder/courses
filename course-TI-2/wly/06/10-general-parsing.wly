@@ -4,8 +4,8 @@
     Wir haben drei Methoden kennengelernt, kontextfreie
     Sprachen zu parsen: rekursiver Abstieg (mit Demoseite
     [drawManualGrammar.html](https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawManualGrammar.html)),
-    die LL-Parser (die die Mengen $\First_k(X)$
-    berechnen, wie auf
+    die LL-Parser (die die Mengen $\First_k(X)$ berechnen,
+    wie auf
     [drawFirstComputation.html](https://www.tu-chemnitz.de/informatik/theoretische-informatik/demos/drawFirstComputation.html)
     demonstriert), und die LR-Parser (die die Teilbäume
     auf den Stack legen und nach Blüten suchen, hier die
@@ -27,10 +27,10 @@
     \end{align*}
 
     Weder LL-Parser noch LR-Parser können bei langen
-    Wörtern wie $aaaaaaaaaaaaaabbaaaaaaaaaaaaaa$
-    erkennen, wo die Mitte ist. Das muss man aber wissen,
-    denn sonst landet man in einer Sackgasse. Es gilt
-    sogar: jeder Kellerautomat für diese Sprache muss
+    Wörtern wie $aaaaaaaaaaaaaabbaaaaaaaaaaaaaa$ erkennen,
+    wo die Mitte ist. Das muss man aber wissen, denn sonst
+    landet man in einer Sackgasse. Es gilt sogar: jeder
+    Kellerautomat für diese Sprache muss
     nichtdeterministisch sein (was wir an dieser Stelle
     weder formal definieren noch beweisen). Noch schlimmer
     steht es mit Grammatiken wie
@@ -61,8 +61,8 @@
     Methode, die für alle Grammatiken funktioniert? Ja,
     den sogenannten CYK-Algorithmus. Nur leider ist die
     nicht besonders schnell. Sie hat kubische Laufzeit
-    $O(n^3)$, was zwar in der theoretischen Informatik
-    als _effizient_ durchgeht, in der Praxis leider meist
+    $O(n^3)$, was zwar in der theoretischen Informatik als
+    _effizient_ durchgeht, in der Praxis leider meist
     unbrauchbar ist.
 
     |> TopicAnnouncement
@@ -77,9 +77,9 @@
     X&\rightarrow a
     \end{align*}
 
-    Eine solche Sprache kann offensichtlich nicht das
-    Wort $\epsilon$ ableiten. Daher lassen wir als
-    Sonderregel die Produktion
+    Eine solche Sprache kann offensichtlich nicht das Wort
+    $\epsilon$ ableiten. Daher lassen wir als Sonderregel
+    die Produktion
 
     \begin{align*}
     S&\rightarrow \epsilon
@@ -122,8 +122,8 @@
                 Wie finden Sie das im Allgemeinen heraus?
 
             |> li
-                Welche Nichtterminale können $\epsilon$ ableiten,
-                also $U \Step{}^* \epsilon$? Wie finden Sie das im
+                Welche Nichtterminale können $\epsilon$ ableiten, also
+                $U \Step{}^* \epsilon$? Wie finden Sie das im
                 Allgemeinen heraus?
 
     Wenn nun $G$ in Chomsky-Normalform vorliegt und wir
@@ -142,14 +142,14 @@
     $B \Step{}^* v$ ableitet. Da wir sie aber _nicht_
     kennen, also konkret nicht wissen, wie lange $u$ und
     $v$ sind, können wir alle Möglichkeiten
-    durchprobieren. Da $G$ in Chomsky-Normalform
-    vorliegt, wissen wir, dass $|u| \geq 1$ und
-    $|v| \geq 1$, also $1 \leq |u| \leq |w|-1$. Wir
-    probieren also alle $n-1$ möglichen Zerlegungen von
-    $w$ durch. Wenn wir das rekursiv täten, dann würden
-    das eine enorme Laufzeit verursachen. Der Trick
-    besteht darin, Zwischenergebnisse systematisch zu
-    berechnen, um somit Laufzeit zu sparen.
+    durchprobieren. Da $G$ in Chomsky-Normalform vorliegt,
+    wissen wir, dass $|u| \geq 1$ und $|v| \geq 1$, also
+    $1 \leq |u| \leq |w|-1$. Wir probieren also alle $n-1$
+    möglichen Zerlegungen von $w$ durch. Wenn wir das
+    rekursiv täten, dann würden das eine enorme Laufzeit
+    verursachen. Der Trick besteht darin,
+    Zwischenergebnisse systematisch zu berechnen, um somit
+    Laufzeit zu sparen.
 
     |> TopicAnnouncement
         Der CYK-Algorithmus
@@ -195,12 +195,12 @@
 
     Das ist also die Menge der Nichtterminale, die das
     Teilwort $w[i:j]$ ableiten können. Die "Hauptfrage"
-    ist dann: enthält $N_{0,|w|}$ das Startsymbol $S$?
-    Der CYK-Algorithmus berechnet nun die Mengen
-    $N_{i, i+d}$ systematisch für $d = 1, \dots, n$,
-    versucht also, alle Unterwörter der Länge $d$
-    abzuleiten, beginnend mit $d = 1$, also $N_{i,i+1}$.
-    Diese Mengen sind leicht zu bestimmen:
+    ist dann: enthält $N_{0,|w|}$ das Startsymbol $S$? Der
+    CYK-Algorithmus berechnet nun die Mengen $N_{i, i+d}$
+    systematisch für $d = 1, \dots, n$, versucht also,
+    alle Unterwörter der Länge $d$ abzuleiten, beginnend
+    mit $d = 1$, also $N_{i,i+1}$. Diese Mengen sind
+    leicht zu bestimmen:
 
     \begin{align}
     N_{i,i+1} := \{X \in N \ | \ X \step{} w_i \textnormal{ ist eine Produktion in $G$}\} \ .
@@ -280,8 +280,8 @@
                                     |> ol
                                         type=a
                                         |> li
-                                            füge $X$ zu $N_{i,k}$ hinzu, falls $Y \in N_{i,j}$
-                                            und $Z \in N_{j,k}$ gilt.
+                                            füge $X$ zu $N_{i,k}$ hinzu, falls $Y \in N_{i,j}$ und
+                                            $Z \in N_{j,k}$ gilt.
 
                                 |> li
                                     `end for all productions`
@@ -311,17 +311,17 @@
     ausgeführt. Können Sie eine geschlossene Form für die
     drei Summen angeben? Leichter geht es, wenn wir
     erkennen, dass für alle $i,j,k$ die Ungleichung
-    $0 \leq i \lt j \lt k \leq n-1$ gilt, und jedes
-    solche Tripel auch drankommt. Wie viele solche Tripel
-    gibt es? Genau ${n \choose 3}$ viele. Also: die Zeile
-    a wird
+    $0 \leq i \lt j \lt k \leq n-1$ gilt, und jedes solche
+    Tripel auch drankommt. Wie viele solche Tripel gibt
+    es? Genau ${n \choose 3}$ viele. Also: die Zeile a
+    wird
 
     \begin{align*}
     g \cdot {n \choose 3} = g \cdot \frac{n (n-1) (n-2)}{6}
     \end{align*}
 
-    mal durchlaufen. Also "ungefähr" $g n^3 / 6$ und
-    "noch ungefährer" $g n^3$. Also:
+    mal durchlaufen. Also "ungefähr" $g n^3 / 6$ und "noch
+    ungefährer" $g n^3$. Also:
 
     |> Observation
         Sei $n = |w|$ die Länge des Eingabewortes und $g$ die
@@ -333,8 +333,7 @@
     Zeile vernachlässigt. Überlegen Sie sich, wie viel
     Laufzeit diese verursachen kann und überzeugen Sie
     sich, dass dies in den meisten Fällen gegenüber dem
-    Term $g \cdot n^3$ wohl nicht ins Gewicht fallen
-    wird.
+    Term $g \cdot n^3$ wohl nicht ins Gewicht fallen wird.
 
     |> Demo
         Betrachten wir die Grammatik

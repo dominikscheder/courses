@@ -5,7 +5,7 @@ import pipeline
 import vxml.{type VXML, T, V}
 import vxml_pipeline as ds
 import vxml_pipeline/core.{type Desugarer, type Pipeline}
-import vxml_pipeline/delimiter_pipelines as syntax
+import vxml_pipeline/delimiter_pipelines as delimiters
 
 fn apply_pipeline(vxml: VXML, pipeline: Pipeline) -> VXML {
   list.fold(pipeline, vxml, fn(vxml, desugarer: Desugarer) {
@@ -33,7 +33,7 @@ fn assert_annotation_survives(source: String, colorer: Desugarer) {
   let assert Ok([vxml]) = vxml.string_to_vxmls(source, "integration test")
   let pipeline = [
     colorer,
-    ..syntax.annotated_backtick_pipeline(
+    ..delimiters.annotated_backtick_pipeline(
       "span",
       "class",
       ["WriterlyBlankLine"],

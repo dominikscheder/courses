@@ -1,2 +1,188 @@
 |> Sub 
     title=Bounds for Regular Resolution using $l$-Xorification
+
+
+    In this subchapter we will see that the $l$-xorification does indeed yield very strong size lower bounds if we restrict ourselves to _regular resolution_. This exposition broadly follows the paper _Strong ETH and Resolution via Games and the Multiplicity of Strategies_ by Bonacina and Talebanfard (2015).
+    The key ingredent is a more general view of Atserias-Dalmau games, following _Proofs as games_ by Pudlák (2000). 
+
+    |> Definition 
+        Let $F$ be a CNF formula over the variabel set $V$ and $\mathcal{R}$ a set of partial assignments on $V$ that contains the empty assignment $[]$. We define the Atserias-Dalmau game on $F$ and $\mathcal{R}$, denoted by $\Game(F,\mathcal{R})$. 
+
+        |> ol
+            |> li 
+                At the beginning of each step, the position of the game is one partial assignment $\alpha \in \mathcal{R}$. 
+            |> li 
+                Prover picks a variable $x \in V \setminus \var(\alpha)$. 
+            |> li 
+                Delayer answers with a bit $b \in \{0,1\}$.
+            |> li 
+                Prover chooses a new $\beta \in \mathcal{R}$ with $\beta \subseteq \alpha \cup [x \mapsto b]$. This concludes the step, and the next step then starts with the partial assignment $\beta$. 
+
+        
+        The game ends when the assignment $\alpha$ falsifies a clause $C \in F$. In this case we say that Prover wins. 
+
+        A _strategy_ for Delayer is a function $S: \{0,1,*\}^V \times V \rightarrow \{0,1\}$. That is, when the game is at position $\alpha$ and Prover asks for the value of $x$, then Delayer answers $S(\alpha, x)$. 
+
+    When we let $\mathcal{R}$ be the set of partial assignments that are defined on at most $w$ variables, we recover the original definition of Atserias-Dalmau games in >>def-aterias-dalmau-first. 
+
+
+    Note that when Delayer plays against Prover, there are certain elements $(\alpha, x)$ in the domain of $S$ that will never be queried, for example because $\alpha \not \in \mathcal{R}$. However, it will be advantageous to have $S$ defined everywhere on $\{0,1,*\}^V \times V$, so Delayer is prepared to answer also queries like $S(\alpha, x)$, even if such a  $\alpha$ is not legal in $\Game(F, \mathcal{R})$. The reason is that we will be investigating a Delayer strategy $S$ being used in different games $\Game(F, \mathcal{R}), \Game(F, \mathcal{R}')$, defined by different sets of allowed partial assignments. 
+
+    |> Lemma 
+        [Pudlák (2000)]. Let $F$ be a CNF formula. The following are equivalent: 
+        |> ol 
+            |> li
+                $\size(F \vdash \Box) \leq s$. 
+            |> li 
+                There is a set $\mathcal{R}$ of partial assignments with $|\mathcal{R}| \leq s$ such that Prover wins $\Game(F, \mathcal{R})$. 
+
+    |> Proof 
+        We show (1) $\Longrightarrow$ (2), which is the important direction for proving size lower bounds. So we assume that there is a resolution refutation 
+        \begin{align*}
+        C_1, \dots, C_s = \Box 
+        \end{align*}
+        of size $s$. Let $\rho$ be the unique partial assignment of size $|C_i|$ falsifying $C_i$. For example, if $C_i = (x \vee \bar{y} \vee z)$, then $\rho = [x \mapsto 0, y \mapsto 1, z \mapsto 0]$. Note that $\rho_s = []$, the empty assignment. We set $\mathcal{R} = \{\rho_1, \dots, \rho_s\}$ and claim that Prover wins $\Game(F, \mathcal{R})$. His strategy is simple:
+
+        |> ol 
+            |> li 
+                Let $\rho_i$ be the current partial assignment. It violates $C_i$. If $C_i \in F$ than he wins the game. 
+            |> li 
+                Otherwise, $C_i$ is the resolvent of $C_j, C_{j'}$ for $j, j' < i$. Let $x$ be the resolved variable. Now Prover queries $x$ and Delayer answers with some $b \in \{0,1\}$. Prover considers $\rho_i \cup [x \mapsto b]$. This assignment surely violates exactly one of $C_j$ and $C_{j'}$, say without loss of generality $C_j$. Then $\rho_j$, which is the minimal partial assignment violating $C_j$, is a sub-assignment of $\rho_i \cup [x \mapsto b]$. So Prover moves to $\rho_j$. 
+            |> li 
+                Since the index $i$ of the current assignment $\rho_i$ decreases in every step, Prover will finally arrive at a clause $C_i \in F$ and win the game. 
+
+
+    When Prover and Delayer play an Atserias-Dalmau game, they produce a sequence of partial assignments and steps:
+    \begin{align*}
+    \alpha_0 \step{x_1} \alpha_1 \step{x_2} \step{} \dots \step{} \alpha_{t-1} \step{x_t} \alpha_t \ , 
+    \end{align*}
+    where the notation $\alpha \step{x} \beta$ means that the partial assignment was $\alpha$ in the beginning, then Prover queried $x$, and Delayer answered $b$, upon which Prover chose $\beta \subseteq \alpha \cup [x \mapsto b]$. We call this sequence a _game transcript_. We also define  _lazy games_ and _lazy transcripts_. There Prover is allowed to not query anything and simply choose $\beta \subseteq \alpha$, i.e., he can forget variables without querying. In the lazy transcript, this is denoted by $\alpha \step{\epsilon} \beta$.
+
+
+
+
+    Given a resolution derivation, we call the strategy employed by Prover in the proof the _canonical Prover strategy_. 
+    In the following, we imagine a resolution derivation from a CNF formula $F$  as a directed acyclic graph (DAG); every vertex $u$ has a clause label $C_u$. Every vertex $u$ is either (1) a source and its clause label $C_u$ is a clause of $F$; or (2) has exactly two incoming arcs $(v,u)$ and $(w,u)$, and $C_u$ is the resolvent of $C_v$ and $C_w$. It is a resolution refutation if some vertex $u$ has clause label $C_u = \Box$. If the refutation is minimal, then the DAG has a unique sink and its label is $\Box$. Every non-source vertex $u$ with predecessors $v$ and $w$ has a _variable label_, namely the resolved variable in the step $C_v, C_w \vdash C_u$. 
+
+    A resolution refutation is called _regular_ if all variable labels on a source-to-sink path in the DAG are distinct. It is easy to see that a minimal tree-like resolution proof (where the  DAG is a tree) is always regular. We write $\regularsize(G \vdash \Box)$ to denote the minimum size of a regular resolution refutation of $G$. 
+
+    We again consider the $l$-xorification of $F$, now with slightly different notation. If $F$ is a $k$-CNF over the variables $V$, then $G$is an $lk$-CNF over $W := V \times [l]$. For $x \in V$ we write $x^1, \dots, x^l \in W$ to denote the _block_ of $W$ corresponding to the variable $x$. 
+
+
+    |> Theorem 
+        handle=theorem-l-xorification
+        (Bonacina and Talebanfard). Let $F$ be a $k$-CNF formula with $\width(F \vdash \Box) \geq w$ and let $G$ be the $l$-xorification of $F$. Then $\regularsize(G \vdash \Box) \geq \pfrac{2^l}{l+1}^w$.
+
+    |> Proof 
+        We denote $\var(F)$ by $V$ and the set of variables of $G$ by $W$. 
+        Write $s := \regularsize(G \vdash \Box)$ and fix a regular resolution refutation of $G$ of size $s$. For a vertex $u$  in the resolution DAG let $\rho_u$ be the minimal partial assignment falsifying $C_u$. For example, $\rho_{\rm sink} = []$ since $C_{\rm sink} = \Box$. 
+
+        Let $\oplus'$ be the binary operation on $\{0,1,*\}$ such that $a \oplus' b$ is $*$ if at least one of $a, b$ is $*$, and $a \oplus b$ if $a, b \in \{0,1\}$. This is associative and commutative. 
+        For a partial assignment $\alpha \in \{0,1,*\}^W$ we define its projection $\alpha' : \{0,1,^*\}^V$ via 
+        \begin{align*}
+        \alpha'(x) := \alpha(x^1) \oplus' \cdots \oplus' \alpha(x^l)
+        \end{align*}
+        Note that for $b \in \{0,1\}$ we have $G(\alpha) = b$ iff $F(\alpha') = b$. For $y \in W$ we write $y'$ to denote the $x \in V$ from where $y$ came: that is, if $y = x^i$ with $1 \leq i \leq l$, then $y' = x$. 
+        Also, suppose we have an Atserias-Dalmau game transcript on $G$:
+        \begin{align*}
+        \alpha_0 \step{y_1} \alpha_1 \step{y_2} \step{} \dots \step{} \alpha_{t-1} \step{y_t}  \alpha_t \ , 
+        \end{align*}
+        Now we transform this into a lazy game transcript on $F$ by replacing each step $\alpha_{r-1} \step{y_r} \alpha_r$ by 
+        $\alpha'_{r-1} \step{?} \alpha'_r$ where $?$ is determined as follows: suppose $y_r$ is $x^i$, i.e., belongs to the block of $x \in V$. 
+        |> ol 
+            |> li 
+                If there is some $x^j$ with $\alpha_r(x^j) = *$ then $?$ is $\epsilon$. 
+            |> li 
+                Otherwise, if the block of $x$ is _full_ under $\alpha_r$, then $?$ is $x$. 
+        
+        Note the only variable where a $*$ in $\alpha'_{r-1}$ might become a $0$ or $1$ in  $\alpha'_r$ is $x$ because the queried variable $y_r$ belongs to the block of $x$. In Case 1 the block of $x$ contains a $*$ even in $\alpha_r$, and therefore $\alpha'_r(x)$ is $*$, too, and thus $\alpha'_r \subseteq \alpha'_{r-1}$. In the second case, the block of $x$ becomes full, i.e., $\alpha_r$ is defined on all $x^1, \dots, x^l$, and thus $\alpha'_r$ is defined on $x$. Therefore, $\alpha'_r \subseteq \alpha'_{r-1} \cup [x \mapsto b]$. In other words, the sequence 
+        \begin{align*}
+        \alpha'_0 \step{?} \alpha'_1 \step{?} \dots \step{?} \alpha'_{t-1} \step{?} \alpha'_t  
+        \end{align*}
+        is a lazy game transcript for $F$.
+        
+        By assumption, Delayer can win the width-bounded Atserias-Dalmau game $\Game(F, w-1)$. Let $S$ be a winning strategy for her. So $S$ is defined on $\{0,1,*\}^V \times V \rightarrow \{0,1\}$. 
+        We will now, for each total assignment $\beta \in \{0,1\}^{W}$, define a ``lifted strategy'' $S_{\beta}: \{0,1,*\}^W \times W \rightarrow \{0,1\}$. The idea is that Delayer tries to mimick $S$ on the values $x^1 \oplus \dots \oplus x^l$ but follows $\beta$ for as long as possible inside each block. More formally, 
+        let the current partial assignment be $\alpha \in \{0,1,*\}^W$ and the queried variable be $x^i$. If the block $x^1, \dots, x^l$ contains at least one other unassigned variable besides $x^i$, then answer $\beta(x^i)$. Otherwise, answer such that $x^1 \oplus \cdots \oplus x^l$ becomes $S(\alpha', x)$. Formally:
+        \begin{align*}
+        S_\beta(\alpha, y^i) & = \begin{cases}
+        \beta(x^i) & \textnormal{ if at least two of $x^1, \dots, x^l$ are $*$ under $\alpha$} \\ 
+        S(\alpha', x) \oplus \bigoplus_{j \ne i} \alpha(x^{j}) & \textnormal{ else. }
+        \end{cases}
+        \end{align*}
+
+        We now play the game $\Game(G, \mathcal{R})$ with Delayer using strategy $S_\beta$ and Prover using his canonical strategy on the refutation DAG. Since the latter is a winning strategy, we observe Prover winning the game. This produces a game transcript 
+        \begin{align}
+        \alpha_0 \step{y_1} \alpha_1 \step{y_2} \step{} \dots \step{} \alpha_{t-1} \step{y_t}  \alpha_t 
+        \label{eqn-transcript-on-G}
+        \end{align}
+        with $\alpha_0 = []$ and $\alpha_t$ violating a clause of $G$. So $G(\alpha_t) = 0$. Let's look at its projection 
+        \begin{align}
+        \alpha'_0 \step{?} \alpha'_1 \step{?} \step{} \dots \step{} \alpha'_{t-1} \step{?}  \alpha'_t  \ . 
+        \label{eqn-lazy-on-F}
+        \end{align}
+        This is a lazy game transcript for $F$. Also, since $G(\alpha_t) = 0$ we have $F(\alpha_t) = 0$, too, so $\alpha_t$ violates some clause of $F$, meaning Delayer lost this particular game run on $F$. Note that each step in the lazy transcript is either $\alpha'_{r-1} \step{\epsilon} \alpha'_r$ or $\alpha'_{r-1} \step{x} \alpha'_r$. In the latter case, this means that $y_r$ belongs to the block of $x$; Delayer in $G$ answered such that $x^1 \oplus \dots \oplus x^l$ becomes $S(\alpha'_{r}, x)$ under $\alpha_r$, therefore $\alpha'_r \subseteq \alpha' \cup [x \mapsto S(\alpha'_{r}, x)]$. In other words, the lazy game transcript in (\ref{eqn-lazy-on-F}) would indeed happen if Delayer employed the strategy $S$.
+        
+        But $S$ is a winning strategy for Delayer in $\Game(F,w-1)$, so how can it be that Delayer loses the game run (\ref{eqn-lazy-on-F})? It must be because (\ref{eqn-lazy-on-F}) contains partial assignments $\alpha'_r$ that Prover might not legally hold in $\Game(F,w-1)$: partial assignments setting $w$ or more variables! For each total assignment $\beta$, let $\alpha$ be the first partial assignment in the transcript (\ref{eqn-transcript-on-G}) for which $\alpha'$ fixes at least $w$ variables. How does $\alpha$ look? 
+
+        |> ol 
+            |> li 
+                Exactly $w$ blocks of $W$ are full, i.e., there are $w$ variables $x$ for which $x^1, \dots, x^l \in W$ are all defined under $\alpha$. 
+            |> li 
+                Once a block $x^1, \dots, x^l$ becomes un-full in a game run (by the Prover un-assigning a variable) it will never become full again: this is because Prover uses the canonical strategy, thus a game run corresponds to a sink-to-source path in the DAG, and because it's a regular resolution refutation, no variable ever occurs twice! That is, once Prover forgets a variable, he will never query it again. 
+            |> li 
+                This means that in each full block, $\beta$ and $\alpha$ agree in at least $l-1$ variables, and in each non-full block, they agree on all defined variables. 
+        
+        We say $\alpha \in \{0,1,^*\}^W$ _covers_ $\beta \in \{0,1\}^W$ if this holds: if $\alpha$ and $\beta$ disagree in at most one variable in each block where $\alpha$ is fully defined, and in each non-full block they agree whenever $\alpha$ is defined. We have just observed: for each $\beta \in \{0,1\}^W$ there is some $\alpha \in \mathcal{R}$ that covers it. 
+
+        |> Observation 
+            Each $\alpha$ covers at most $(l+1)^w \cdot 2^{(n-w)l}$ many $\beta$. 
+        |> Proof
+            Without loss of generality the first $w$ blocks of $\alpha$ are full. In each such block, there are $l+1$ possibilties for $\beta$: agree everywhere (1 possibility) or disagree in exactly one position ($l$ possibilities). This explains the $(l+1)^w$ factor. In the remaining $n-w$ blocks, $\beta$ can be arbitrary, so there are $2^l$  per block.
+
+        There are $2^{nl}$ different assignments $\beta$; each must be covered by some $\alpha \in \mathcal{R}$. From this it follows that 
+        \begin{align*}
+        |\mathcal{R}| \geq \frac{2^{nl}}{(l+1)^w \cdot 2^{(n-w)l}} = \frac{2^{wl}}{(l+1)^w} \ . 
+        \end{align*}
+        Since $|\mathcal{R}|$ is equal to the size of our regular resolution refuatation, we conclude that $\regularsize(F \vdash \Box) \geq \frac{2^{wl}}{(l+1)^w}$.
+
+
+
+    |> Theorem
+        If SETH is true for resolution width, then it's true for regular resolution size. 
+
+    |> Proof
+        If SETH is true for resolution width, then for every $\epsilon > 0$ we can find a $k$, a threshold $n_0$, and a family 
+        $(F_n)_{n \in \N}$ of $k$-CNF formulas over $n$ variables such that 
+        \begin{align*}
+        \width(F_n \vdash \Box) \geq (1-\epsilon) n \ \forall n \geq n_0 . 
+        \end{align*}
+        Now choose $l$ big enough such that $\frac{2^{l}}{l+1} \geq 2^{(1-\epsilon) l}$. Then for $n' = ln$ let $G_{n'}$ be the $l$-xorification of $F_n$. By Theorem>>theorem-l-xorification we have 
+        \begin{align*}
+        \regularsize(G_{n'} \vdash \Box) & \geq \pfrac{2^l}{l+1}^{(1-\epsilon)n } \\
+        & \geq 2^{(1-\epsilon)^2 ln}  \geq 2^{(1-2\epsilon) n'} \ . 
+        \end{align*}
+        So by dividing $\epsilon$ by half we get formulas $G_{n'}$ over $n'$ variables and $\regularsize(G \vdash \Box) \geq 2^{(1-\epsilon) n'}$.
+        A minor issue remains because we have defined $G_{n'}$ only for those $n'$ that are integer multiples of $l$. This is not a big problem: for other $n'$ we define $G_{n'}:= G_{ l \floor{n'/}}$, rounding it down to the next integer multiple. We get 
+        \begin{align*}
+        \regularsize(G_{n'} \vdash \Box) \geq 2^{(1 - \epsilon) l \floor{n' / l}} 
+        \geq 2^{(1-\epsilon)(n'-l)} \ . 
+        \end{align*}
+        Since $l$ was chosen independent of $n'$, we can simply choose an even smaller $\epsilon$ to compensate.
+    
+    Bonacina and Talebanfard actually use this proof to show lower bounds on the size of _almost regular_ resolution proofs: suppose we require that on each source-to-sink path in the resolution refuatation DAG, at most $\delta n$ variables are resolved multiple times (that's what they call _$\delta$-regular_). Note that in a $\delta$-regular resolution refutation of $G$, up to $\delta ln$ variables are allowed to occur multiple times, since $G$ has $ln$ variables. 
+    Recall the $\alpha$ defined in the proof. Its full blocks contain a total of $wl$ variables, and on them, $\alpha$ and $\beta$ can disagree in up to $w + \delta ln$ variables. Thus every $\alpha$ can cover at most 
+    \begin{align*}
+    2^{l(n-w)} {wl \choose w + \delta  l n} 
+    \end{align*}
+    total assignments $\beta$ and therefore 
+    \begin{align*}
+    |\mathcal{R}| & \geq \frac{2^{nl}}{2^{l(n-w)} {wl \choose w + \delta l n} } \\
+    & = \frac{2^{lw}}{{wl \choose w + \delta l n}} \ . 
+    \end{align*}
+    If we parametrize the resolution width $w$ of $F$  as $w = \nu n$ then the above becomes 
+    \begin{align*}
+    |\mathcal{R}| & \geq \frac{2^{l\nu n}}{{l \nu n \choose \nu n + \delta l n}} 
+    \geq \frac{2^{l \nu n}}{ \pfrac{el \nu}{\nu + \delta l }^{(\nu + \delta l )n}  }\\
+    &\ \geq  
+    \end{align*}

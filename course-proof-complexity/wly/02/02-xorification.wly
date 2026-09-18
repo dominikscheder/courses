@@ -61,4 +61,68 @@
         \width(F, \Box) = \width(F|_{\rho}, \Box) \leq w \ . 
         \end{align*}
         
+    Let's take a step back: we go from a formula on $n$ variables and resolution width $w$ to a formula on $2n$ variables and resolution size $2^{\log_{2}{(4/3)} w} \approx 2^{0.41 w}$. So if we have a width lower bound of  $(1-\epsilon)n$, we get a size lower bound of $2^{0.41 (1-\epsilon) n /2}$, the $n/2$ taking into account the fact that the new formula has twice as many variables. So a lower bound of around $0.205n$ is the best we can hope for. Can we do better?
            
+
+    What if we replace $x_i$ not by $y_i \oplus z_i$ but by $y_i^1 \oplus \dots \oplus y_i^l$? We get an $lk$-CNF formula $G$ on $ln$ variables. But what size lower bound for $G$ to we get? What's the obvious generalization to sample $\rho$? For each $i$, 
+    
+    |> ol
+        |> li 
+            sample $j \uar [l]$ and set $\rho(y_i^j) = *$; 
+        |> li
+            sample $\rho(y_i^{j'}) \uar \{0,1\}$ for all $j' \in [l] \setminus \{j\}
+
+    One part of the above proof stays the same: when replacing $x_i$ by 
+    $y_i^1 \oplus \dots \oplus y_i^l$ and then hitting this with $\rho$, 
+    we are left with some $y_i^j \oplus b$, i.e., either $y_i^j$ or 
+    $\bar{y}_i^j$. Therefore, $G|_{\rho}$ is isomorphic to $F$ for 
+    every $\rho$ thusly sampled, and  the equation 
+    \begin{align*}
+    \width(F \vdash \Box) = \width(G|_{\rho} \vdash \Box)
+    \end{align*}
+    still holds. What's the probability that some $C$ stays not-yet-satisfied? A single literal becomes satisfied with probability 
+    \begin{align*}
+    \Pr[\rho(l) = 1] = \Pr[\rho(l) \ne *] \cdot \Pr[\rho(l) = 1 \ | \ \rho(l) \ne *] = 
+    \frac{l-1}{l} \cdot \frac{1}{2} = \frac{l-1}{2l} \ . 
+    \end{align*}
+    So the probability of not becoming $1$ is 
+    \begin{align}
+    \Pr[\rho(l) \ne 1] = 1 - \frac{l-1}{2l} = \frac{l+1}{2l} \ . 
+    \label{eqn-lxor-single}
+    \end{align}
+    For $l=2$ this becomes $\frac{3}{4}$, just as in the proof above. 
+
+
+    What about literals coming from the same block? Suppose clause $C$ contains $y_i^1, dots, y_i^d$, without loss of generality the positive literals. There are two possibiltiies how $\rho$ could possibly _not_ satisfy the sub-clause $y_i^1 \vee \dots y_i^d$: either (1) the * is sampled from the other $l-d$ variables $y_i^{d+1}, \dots, y_i^l$ and $y_i^1, \dots, y_i^d$ are all set to $0$, which happens with probability $\frac{l-d}{l} \cdot 2^{-d}$; or the $*$ is sampled from the $y_i^1, \dots, y_i^d$ and the others are set to $0$, which happens with probability $\frac{d}{l} 2^{-d+1}$. In total the probability is 
+    \begin{align*}
+    \Pr[(y_i^1 \vee \dots \vee y_i^d) (\rho) \ne 1] & = 
+    \frac{l-d}{l} \cdot 2^{-d} + \frac{d}{l} 2^{-d+1} =
+    2^{-d} + \frac{d}{l} \left(-2^{-d + 2^{-d+1}}\right) \\
+    & = 2^{-d} + \frac{d}{l} 2^{-d} = 2^{-d} \left(1 + \frac{d}{l}\right)
+    = \frac{l+d}{l} \cdot 2^{-d} \ . 
+    \end{align*}
+    For $d=1$ this becomes $\frac{l+1}{2l}$, as in (\ref{eqn-lxor-single}); for $d=l=2$ this becomes $\frac{1}{2}$ as in the $y_i \vee z_i$ in the proof above.
+    We claim that, as above, the worst case (smallest probability of becoming satisfied) is reached when all literals of $C$ come from different blocks:
+
+    |> Claim 
+        $\frac{l+d}{l} \cdot 2^{-d} \leq \pfrac{l+1}{2l}^d$.
+
+    |> Proof 
+        We cancel the factor $2^{-d}$ on both sides and are left with having to show that $\frac{l+d}{l} \leq \pfrac{l+1}{l}^d$. This is true because 
+        \begin{align*}
+        \pfrac{l+1}{l}^d = \left(1 + \frac{1}{l}\right)^d = 1 + d \cdot \frac{1}{l} + {d \choose 2} \pfrac{1}{l}^2 + \cdots \geq 
+        1 + d \cdot \frac{1}{l} = \frac{l+d}{l} \ . 
+        \end{align*}
+
+    So partition $C$ by index into blocks: $C = D_1 \vee D_2 \vee \dots \vee D_a$, where the literals from one $D_j$ have the same index and literals from different $D_j$'s have different indices. Then the events $[D_j(\rho) \ne 1]$ are independent and 
+    \begin{align*}
+    \Pr[C(\rho) \ne 1] & = \prod_{j=1}^a \Pr[D_j(\rho) \ne 1] \\
+    & = \prod_{j=1}^d \left( \frac{l+|D_j|}{l} \cdot 2^{-|D_j|} \right) \\
+    & \leq \prod_{j=1}^d \pfrac{l+1}{2l}^{|D_j|}  = \pfrac{l+1}{2l}^{|C|} \ . \\
+    \end{align*}
+    Plugging this into the same computation, we see that a formula $F$ on $n$ variables with $\width(F \vdash \Box) \geq (1- \epsilon) n$ turns into a formula $G$ with $n' = ln$ variables with 
+    \begin{align*}
+    \size(G \vdash \Box) \geq \pfrac{2l}{l+1}^{(1-\epsilon)n} = \pfrac{2l}{l+1}^{(1-\epsilon)n'/l} = 
+    \left(2^{\log_2 \pfrac{2l}{l+1} / l} \right)^{(1-\epsilon)n} \ . 
+    \end{align*}
+    The exponent $\log_2 \pfrac{2l}{l+1} / l$ reaches its maximum for $l=2$, so values $l=3$ or larger will not yield a better bound.

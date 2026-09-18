@@ -194,7 +194,7 @@
         $(t,h)$-expander if
 
         \begin{align}
-        \label{eqn-expansion}
+        eqn-expansion##<<
         |\delta(S)| \geq h \cdot |S|
         \end{align}
 

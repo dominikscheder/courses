@@ -4,7 +4,7 @@ import vxml
 import vxml/blame as bl
 import vxml_pipeline as ds
 import vxml_pipeline/core.{type Pipeline} as infra
-import vxml_pipeline/delimiter_pipelines as syntax
+import vxml_pipeline/delimiter_pipelines as delimiters
 import vxml_pipeline/desugarers as dl
 import vxml_pipeline/split_replacement as sr
 import writerly
@@ -370,18 +370,18 @@ pub fn pipeline(
       dl.prepend_attribute_as_text(#("Remark", "title")),
       dl.sigil_counters_substitute__outside(["pre"]),
     ],
-    syntax.math_block_pipeline(
+    delimiters.math_block_pipeline(
       [infra.DoubleDollar, infra.BeginEndAlign, infra.BeginEndAlignStar],
       infra.DoubleDollar,
       ["WriterlyBlankLine"],
-      [],
+      ["pre"],
     ),
-    syntax.inline_math_pipeline(
+    delimiters.inline_math_pipeline(
       [infra.BackslashParenthesis, infra.SingleDollar],
       infra.SingleDollar,
       infra.BackslashParenthesis,
       ["WriterlyBlankLine"],
-      [],
+      ["pre"],
     ),
     [
       dl.regex_split_and_replace__outside(
@@ -449,12 +449,20 @@ pub fn pipeline(
         infra.GoBack,
       )),
     ],
-    syntax.annotated_backtick_pipeline("span", "class", ["WriterlyBlankLine"], [
+    delimiters.annotated_backtick_pipeline(
+      "span",
+      "class",
+      ["WriterlyBlankLine"],
+      [
+        "MathBlock",
+        "Math",
+      ],
+    ),
+    delimiters.markdown_link_pipeline(["WriterlyBlankLine"], [
       "MathBlock",
       "Math",
     ]),
-    syntax.markdown_link_pipeline(["WriterlyBlankLine"], ["MathBlock", "Math"]),
-    syntax.permissive_symmetric_delimiter_pipeline(
+    delimiters.permissive_symmetric_delimiter_pipeline(
       "`",
       "`",
       "code",
@@ -465,7 +473,7 @@ pub fn pipeline(
         "pre",
       ],
     ),
-    syntax.permissive_symmetric_delimiter_pipeline(
+    delimiters.permissive_symmetric_delimiter_pipeline(
       "_",
       "_",
       "i",
@@ -477,7 +485,7 @@ pub fn pipeline(
         "code",
       ],
     ),
-    syntax.permissive_symmetric_delimiter_pipeline(
+    delimiters.permissive_symmetric_delimiter_pipeline(
       "\\*",
       "*",
       "b",
@@ -496,7 +504,7 @@ pub fn pipeline(
         "NoWrap",
       )),
     ],
-    syntax.delimiter_cleanup_pipeline(),
+    delimiters.delimiter_cleanup_pipeline(),
     [
       dl.writerly_handles_materialize_mathjax_tags(#(
         "MathBlock",
@@ -520,7 +528,6 @@ pub fn pipeline(
       dl.rearrange_links_4_pre_tokenized_src__batch([
         #("Theorem <a href=1>_1_</a>", "<a href=1>Theorem _1_</a>"),
         #("Observation <a href=1>_1_</a>", "<a href=1>Observation _1_</a>"),
-        #("(Theorem <a href=1>_1_</a>", "(<a href=1>Theorem _1_</a>"),
         #("Übungsaufgabe <a href=1>_1_</a>", "<a href=1>Übungsaufgabe _1_</a>"),
         #("Aufgabe <a href=1>_1_</a>", "<a href=1>Aufgabe _1_</a>"),
         #("Lemma <a href=1>_1_</a>", "<a href=1>Lemma _1_</a>"),
@@ -531,6 +538,9 @@ pub fn pipeline(
         #("Definition <a href=1>_1_</a>", "<a href=1>Definition _1_</a>"),
       ]),
       dl.detokenize_href_surroundings(),
+      dl.rearrange_links__batch([
+        #("(<a href=0>_0_</a>)", "<a href=0>(_0_)</a>"),
+      ]),
     ],
     [
       dl.wrap_children(#("Carousel", "CarouselItems", infra.Continue)),

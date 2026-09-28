@@ -108,13 +108,15 @@ window.MathJax = {
       EXP: "\\textnormal{EXP}",
       tseitin: "\\textnormal{Tseitin}",
       width: "\\textnormal{width}",
-      norm: ["\\|#1\\|", 1],
+      norm: ["\\left\\|#1\\right\\|", 1],
       size: "\\textnormal{size}",
       regularsize: "\\textnormal{regularsize}",
       uar: "\\in_{\\textnormal{u.a.r.}}",
       var: "\\textnormal{var}",
+      supp: "\\textnormal{supp}",
       up: ["\\rule{0pt}{#1em}", 1],
       dn: ["\\Rule{0pt}{0em}{#1em}", 1],
+      ssocc: ["\\textnormal{soc}"]
     },
   },
 };

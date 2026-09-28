@@ -1,0 +1,287 @@
+|> Sub 
+    title=Strong ETH for Treelike Resolution size
+
+
+    
+
+    We have seen that using linear systems alone, we won't be able to proof a $(1 - \epsilon) n $ lower bound, at least not for $k$-CNF formulas. Impagliazzo and Pudlák go around this issue by analyzing the size of a resolution tree directly, not the width of a clause therein. To get a feeling, let's try to explain their technique on a Tseitin formula and a resolution tree for it. Spoiler: it won't work, that's why they change to Tseitin formulas on _hypergraphs_  (although I will not use hypergraph language in my exposition of their result). 
+
+    So let $G = (V,E)$ be a graph and $c: V \rightarrow \{0,1\}$ be the charge function. The Tseitin formula $F(G,c)$ is 
+    \begin{align*}
+    F(G,c) := \bigwedge_{u \in V}  \left( \bigoplus_{e \sim u} e  = c(u) \right) \ . 
+    \end{align*}
+
+    Naively, we'd like to argue that (1) all leaves in the resolution tree are very deep and (2) therefore the tree, being a complete binary tree, has a number of leaves that is exponential in this depth. Of course, (1) is false in general: nothing prevents a DPLL algorithm to query the k variables of a clause consecutively, and voilà, there is one empty clause at depth $k$; in the resulting resolution tree this means that there is a leaf at depth $k$. No, it's a bit more complicated: we will identify a subtree in which (3) along each path, _almost_ all nodes have two children; (4) all leaves are deep. For this we have to inspect the resolution tree more closely. 
+
+
+    Fix a treelike resolution refutation for $F(G,c)$; actually view it as a DPLL tree where every node is associated with a branching variable $e$ and every edge with a decision $e \mapsto 0$ or $e \mapsto 1$. Every node $\alpha$ in the tree is associated with a subgraph $G_\alpha$ and a charge function $c_\alpha$ as follows: the root itself is associated with $G$ and $c$; let $\alpha$ be an inner node branching at some variable $e = \{u,v\}$, with $e \mapsto 0$ leading to child $\beta$ and $e \mapsto 1$ leading to child $\gamma$. We set $G_\beta = G_\gamma = G_\alpha - e$; we set $c_\beta := c_\alpha$; finally, we let $c_{\gamma}$ be identical to $c_{\alpha}$ but flip the charges of $u$ and $v$. Note that with this definition, the Tseitin formula $F(G_\alpha, c_\alpha)$ is really the formula which the DPLL algorithm will encounter on node $\alpha$. 
+
+    |> figure
+        |> img 
+            height=20em
+            src=img/impagliazzo-pudlak/resolution-step-tseitin.svg
+            original=img/impagliazzo-pudlak/impagliazzo-pudlak.ipe
+
+    Since we want $F(G,c)$ to be contradictory, we have $\oplus_{u \in V} c(u) = 1$. In general for $(G_\alpha, c_\alpha)$ we are interested in the _size of a smallest oddly charged connected component_, abbreviated by $\textnormal{ssoccc}(\alpha)$ or simply $\ssocc(\alpha)$ for conciseness. Note that $\ssocc({\rm root}) = |V|$ since $G$ is connected. If $\ssocc(\alpha) = 1$ then $\alpha$ is a leaf - $G_\alpha$ contains an isolated vertex $u$ that has an odd charge under $c_\alpha$, so one of the clauses encoding its parity constraint has become empty. In the above example, $\ssocc(\alpha)=7$, $\ssocc(\beta) = 4$, and $\ssocc(\gamma) = 3$. 
+
+    |> figure
+        |> img 
+            height=40em
+            src=img/impagliazzo-pudlak/partial-tree.svg
+            original=img/impagliazzo-pudlak/impagliazzo-pudlak.ipe
+        |> figcaption
+            Part of a resolution tree. The light blue polygons symbolize the subtrees rooted at those nodes. The red box is a leaf: the vertex in the upper right corner is isolated and carries a charge of 1, violating one of the $2^{k-1}$ clauses encoding its parity constraint. 
+
+
+
+    Note that $G_\beta = G_\gamma$ in any case; only the charge differs between the two sibligs. We call $\alpha$ a _splitting node_ if the connected components of $G_\alpha$ and $G_\beta$ differ; equivalently, if the resolved edge $e$ at node $\alpha$ is a _bridge_ of $G_\alpha$. We now prune the tree as follows: if $\alpha$ is a splitting node and $\beta, \gamma$ are its children, we cull the child with the smaller $\ssocc$-value and discard its whole subtree; in case both children have the same $\ssocc$-value, we delete the right child and its subtree. In the above example, this would be $\beta$, so only child $\gamma$ of $\alpha$ would survive. 
+
+    |> figure
+        |> img 
+            height=40em
+            src=img/impagliazzo-pudlak/partial-tree-pruned.svg
+            original=img/impagliazzo-pudlak/impagliazzo-pudlak.ipe
+        |> figcaption
+            The pruned tree. The two splitting nodes, where a bridge edge of $G$ is assigned, have only one child each in the pruned tree.
+
+    |> Observation
+        Along each path from the root to a leaf in the pruned tree, the number of splitting nodes (those having exactly one child) is at least $\log n$ and at most $n-1$. 
+
+    |> Proof 
+        At the root, $G$ has one connected component. Between a splitting node $\alpha$ and its (only surviving) child $\beta$ the number of connected components grows by exactly one. Obviously, it cannot grow beyond $n$. This explains the upper bound $n-1$. 
+
+        For the lower bound, note that $\ssocc(l) = 1$ for every leaf. Also $\ssocc({\rm root}) = n$ because $G=G_{\rm root}$ is connected. From a splitting node $\alpha$ to its surviving child $\beta$, we have $\ssocc(\beta) \geq \ssocc(\alpha) / 2$. So to get from $n$ down to $1$, we need to halve this number at least $\log n$ times.
+
+
+    Now "traditional width-based" proofs would argue as follows: on a path from root to leaf in the pruned tree, there must be a node $\alpha$ with $n/4 \leq \ssocc(\alpha) \leq n/2$; let $C \subseteq V$ be a minimum size connected component of $G_\alpha$ having odd charge. A bit of thought and arguing shows that every edge in the bounary of $C$, i.e., in $\delta_G(C)$, must actually show up in the clause of $\alpha$ (remember that we have a resolution tree so $\alpha$ is associated with a clause in the resolution proof), so if $G$ is an expander than this clause must be large. True, but this won't carry us beyond the $m/2 + o(m)$ barrier, as we have seen. 
+
+    Instead, Impagliazzo and Pudlák don't argue about width but about path length: the edges in $\delta_G(C)$ must have disappeared along the path from the root to $\alpha$, since $C$ is a connected component in $G_\alpha$; in other words, they must appear as branching variables on this path. So take a path $\alpha_0, \alpha_1, \dots, \alpha_t$ from the root to a leaf ($\alpha_0$ being the root); let $C_i$ be oddly charged connected component of $G_{\alpha_i}$ of size $\ssocc(\alpha_i)$ (note that $C_i$ stays the same as long as we don't pass through any splitting node and becomes smaller when we do). Then each variable (edge) in 
+    \begin{align*}
+    \delta(C_0) \cup \delta(C_1) \cup \dots \cup \delta(C_t)
+    \end{align*}
+    must appear as branching variables on this path. In other words, 
+    \begin{align*}
+    t \geq \bigcup_{i} \delta(C_i) \ . 
+    \end{align*}
+
+    If we could prove a lower bound on this, i.e., show that $| \bigcup_{i} \delta(C_i)| \geq h$ for every such sequence $C_0, C_1, \dots$, then each root-to-leaf path has length $h$ or more; at most $n-1$ of those nodes are splitting nodes, so this path contains at least $h-n+1$ splitting nodes, meaning the whole tree contains at least $2^{h-n+1}$ leaves. Note that $n$ is the number of vertices (and thus _constraints_; the number of _variables_ is |E| = m = nk/2$.) How far could this argument carry us, in theory?
+
+    Suppose $G$ is a $k$-regular graph. By an randomly coloring vertices red and blue and paritioning $V = V_{\rm red} \cup V_{\rm blue}$ we find that, on expectation, $m/4$ edges are within $V_{\rm red}$, $m/4$ edges are within $V_{\rm blue}$, and $m/2$ are between. By a Chernoff bound, with high probability the true numbers are with $o(m)$ of their expectation. Without loss of generality let $V_{\rm red}$ be the bigger among the two. If we let $C_0 = V$ and $C_1 = V_{\rm red}$ and let $C_{i+1}$ be some arbitrary subset of $C_i$ of size $\ceil{|C_{i}|/2}$, then all edges in 
+    \begin{align*}
+    \bigcup_{i} \delta(C_i)
+    \end{align*}
+    have at least one red endpoint. That is, the edges with $V_{\rm blue}$, of which there are at least $m/4-o(m)$, do not show up in this union. So for every graph, there is a sequence $C_0, C_1, \dots$ for which the union has at most $\frac{3}{4} m + o(m)$ edges. This shows that at least for graphs, this technique cannot show Strong ETH for treelike resolution size. 
+
+
+
+    |> TopicAnnouncement
+        Hypergraphs
+
+    Impagliazzo and Pudlák switch from graphs to hypergraphs. Personally, I find the hypergraph terminology more confusing than illuminating, so I'll stick to _systems of linear equations_. We have numbers $d$ and $k$ and build a linear system with $n$ constraints and $m$ variables:
+    \begin{align*}
+    A \mathbf{x} = \mathbf{b}
+    \end{align*}
+    with $\mathbf{b} \in \cube^n$ and $A \in \cube^{n \times m}$. Note that this goes a bit against the convention under which  a matrix has height $m$ and width $n$; the reason is that we want $n$ to continue to denote the number of constraints / vertices and $m$ the number of variables / edges, as in the Tseitin case. We fix some value $d$, to be determined later. We first tolerate _some_ rows of weight greater than $k$:
+    
+    |> Definition 
+        Let $k$ and $d$ be given. 
+        A system $A \cdot \mathbf{x} = \mathbf{b}$ with $A \in \cube^{n \times m}$ is _appropriate_ if every column $A_{*j}$ has some _even_ Hamming of at most $d$, $\mathbf{b}$ has odd Hamming weight, $A$ has rank $n-1$, and the total Hamming weight of rows of Hamming weight greater than $k$ is at most $\exp(-k)n$.
+    
+    Note that $\mathbf{1}^T \cdot A = \mathbf{0}$ and $\mathbf{1}^T \cdot \mathbf{b} = 1$ so the system is unsatisfiable. Also, since $A$ has rank $n-1$, there are no other elements in the left kernel besides $\mathbf{0}^T$ and $\mathbf{1}^T$, and thus every proper subset of constraints is satisfiable. 
+
+    Again we fix a resolution tree / DPLL tree. Each node $\alpha$ is associated with a system of linear equations $A \cdot \mathbf{x} = \mathbf{b}$. To show how the system evolves along the tree edges, we need a bit of notation: by $A_{*j}$ we denote the $j$-th column of $A$; by $A_{*\hat{j}}$ the matrix resulting from deleting column $j$. The vector $\mathbf{x}_{\hat{j}}$ is the variable vector $\mathbf{x}$ with $x_j$ removed.
+
+
+    |> figure
+        |> img 
+            height=10em
+            src=img/impagliazzo-pudlak/matrix-system-splits.svg
+            original=img/impagliazzo-pudlak/impagliazzo-pudlak.ipe
+        |> figcaption
+            The linear system associated with a node and its children in the DPLL tree.
+
+    At a node $\alpha$ labeled with the linear sytem $A \cdot \mathbf{x} = \mathbf{b}$ we are interested in the following objects / quantities:
+
+    |> ol 
+        |> li 
+            The left kernel of $A$, i.e., $\{\mathbf{z}^T \ | \ \mathbf{z}^T \cdot A = \mathbf{0} \}$. We simply call this $\ker(\alpha)$. In particular we are interested in the {\em dimension} of this kernel. In the Tseitin formula case, this dimension is the number of connected components. Note that in the beginning, at the root, the kernel is $\ker({\rm root}) = \{\mathbf{0}, \mathbf{1}\}$ and has dimension $1$.. 
+
+        |> li 
+            $\mathbf{z}^T \in \ker(\alpha)$ with $\mathbf{z}^T \cdot \mathbf{b} = 1$ is called a _contradiction witness_ for $\alpha$. We are interested in the minimum Hamming weight of a contradiction witness. This corresponds to the smallest oddly charged connected component in the Tseitin case, and consequently we call it $\ssocc(\alpha)$. At the root, we have $\ssocc({\rm root}) = 0$.
+    
+    |> Observation 
+        handle=obs-subadditive
+        Let $\alpha$ be a node in the tree and $\beta$ and $\gamma$ be its children. Let $x_j$ be the variable on which the tree branches at $\alpha$. Then the dimension decreases if and only if $\mathbf{e}_j^T \in {\rm rowspan(A)}$, i.e. if $\mathbf{z}^T \cdot A = \mathbf{e}^T_j$ for some $\mathbf{z}^T$, and in this case it decreases by $1$. Also, it holds that 
+        \begin{align*}
+        \ssocc(\alpha) \leq \ssocc(\beta) + \ssocc(\gamma) \ . 
+        \end{align*}
+
+    |> Proof
+        Surely $\ker(A_{* \hat{j}}) \subseteq \ker(A)$. It is a proper subset if and only if there is some $\mathbf{z}$ with $\mathbf{z} \cdot A_{* \hat{j}} = \mathbf{0}^T$ and $\mathbf{z} \cdot A \ne \mathbf{0}^T$. But what could the latter expression be? We obtain $\mathbf{z} \cdot A_{* \hat{j}}$ from $\mathbf{z} \cdot A$ by removing the $j$-th entry: 
+        \begin{align*}
+        \mathbf{z} \cdot A_{* \hat{j}} = \left(\mathbf{z} \cdot A\right)_{\hat{j}}
+        \end{align*}  
+        and thus $\mathbf{z} \cdot A$ is a non-zero vector that becomes $\mathbf{0}^T$ upon removal of its $j$-th entry. It is $\mathbf{e}^T_j$. Conversely, if some $\mathbf{z}^T$ exists with $\mathbf{z}^T \cdot A = \mathbf{0}^T$ then surely $\mathbf{z}^T$ isn't in the left kernel of $A$, but once we delete the $j$-th column of $A$, it will be. 
+
+        For the second part, let $\mathbf{y}^T \in \ker(\beta)$ and $\mathbf{z}^T \in \ker(\gamma)$ be minimum weightcontradiction witnesses of $\beta$ and $\gamma$, respectively. If at least one of $\mathbf{y}^T, \mathbf{z}^T$ is in $\ker(A)$ as well, then we can use this as our contradiction witness for $\alpha$, and we are done. Otherwise, $\mathbf{y}^T \cdot A = \mathbf{z}^T \cdot A = \mathbf{e}^T_j$ and thus $\mathbf{y}^T + \mathbf{z}^T \in \ker(A)$. Furthermore, 
+        \begin{align*}
+        \mathbf{y}^T \cdot \mathbf{b} & = 1  \\
+        \mathbf{z}^T \cdot \left( \mathbf{b} + A_{*j} \right) & = 1
+        \end{align*}
+        Adding the equations we get 
+        \begin{align*}
+        \left(\mathbf{y}^T + \mathbf{z}^T\right) \cdot \mathbf{b} = \mathbf{z}^T \cdot A_{*j} \ . 
+        \end{align*}
+        What is the right hand side? We know that $\mathbf{z} \cdot A = \mathbf{e}^T_j$. Looking at the $j$-th component of this  equation shows that $\mathbf{z} \cdot A_{*j} = 1$. Thus, $\mathbf{y} + \mathbf{z}$ is a contradiction witness, and its Hamming weight is 
+        $\norm{\mathbf{y} + \mathbf{z}}_1 \leq \norm{\mathbf{y}}_1 + \norm{\mathbf{z}}_1 = \ssocc(\beta) + \ssocc(\gamma)$. 
+
+        
+    Now suppose there is a resolution refutation of size less than $2^{\rm bla}$ and consider the pruned tree defined above. Since it has fewer than $2^{\rm bla}$ leaves, there is a path $p$ from the root to a leaf containing fewer than ${\rm bla}$ branching nodes. Every path in the pruned tree contains at most $n-1$ branching nodes (nodes with a unique child): for a branching node $\alpha$ to its child $\beta$ we have $\ker(\alpha) \subsetneq \ker(\beta)$ and thus the dimension of the kernel decreases (in fact it decreases by exactly 1). Since $\dim \ker({\rm root}) = n-1$, this can happen at most $n-1$ times. We conclude that the path $p$ has fewer than ${\rm bla} + n$ inner nodes. Let $t$ be the number of nodes on the path. For a node $\alpha$ on the path consider its minimum weight contradiction witness $\mathbf{z}^T$. It is in $\ker(A_\alpha)$, so all $1$s in $\mathbf{z}^T \cdot A_{\rm root}$ have disappeared once we reach $\alpha$: they must appear as branching variables along the path. Now let ${\rm leaf} = \alpha_0, \alpha_1, \dots, \alpha_t = {\rm root}$ be the path from the leaf to the root and let and let  $\mathbf{z}_0, \dots, \mathbf{z}_t$ be the minimum weight contradiction witnesses. For each $j \in [m]$ where the row vector 
+    \begin{align*}
+    \bigvee_{i=0}^t \left(\mathbf{z}^T \cdot A \right)
+    \end{align*}
+    is $1$, the variable $x_j$ must appear as a branching variable on path $p$. We conclude that 
+    \begin{align*}
+    \norm{\bigvee_{i=0}^t \left(\mathbf{z}^T \cdot A\right)}_1 \leq t \leq {\rm bla} + n \ . 
+    \end{align*}
+    In other words, there exists a set $J \subseteq [m]$ of column indices with $|J| \geq m - n - {\rm bla}$ such that 
+    \begin{align*}
+    \left(\mathbf{z}^T_i \cdot A\right)_j = 0 \ \forall j \in J \ . 
+    \end{align*}
+    Additionally, by Observation >>obs-subadditive we know that $\norm{\mathbf{z}^T_{i+1}} \leq 2\, \norm{\mathbf{z}^T_i}$.
+    To show that the resolution tree must be large, we have to show that a matrix $A$ chosen from an appropriate random distribution with high probability admits no such $J$ and sequence $\mathbf{z}^T_0,\dots, \mathbf{z}^T_t$. 
+
+    |> Definition 
+        handle=def-deficient
+        An appropriate matrix $A \in \cube^{n \times m}$ is called _$s$-deficient_ if there is a set $J \subseteq [m]$ of size $s$ and a sequence $\mathbf{z}^T_0, \dots \mathbf{z}^T_t$ of row vectors with 
+        |> ol 
+            |> li 
+                $\mathbf{z}^T_t = \mathbf{1}^T$, $\norm{\mathbf{z}^T_0} = 1$, and 
+                $\norm{\mathbf{z}^T_{i+1}} \leq 2 \norm{\mathbf{z}^T_{i}}$, 
+            |> li 
+                $\left(\mathbf{z}^T_i \cdot A\right)_J = \vec{0}_J$ for all $0 \leq i \leq t$. 
+        We put no further restrictions on the number $t$. Note that $\mathbf{z}^T_0$ is redundant because $\mathbf{1}^T \cdot A = \mathbf{0}$ by construction of $A$. 
+
+    We put the $\mathbf{z}^T_i$ together as a $t\times n$-matrix $Z$: 
+    |> figure
+        |> img 
+            height=25em
+            src=img/impagliazzo-pudlak/Z-times-J.svg
+            original=img/impagliazzo-pudlak/impagliazzo-pudlak.ipe
+    The violet part  in $Z$ symbolizes the $1$-entries. We summarize what we have observed so far:
+
+    |> Lemma 
+        Let $A \in \cube^{n \times m}$ be such that every row has Hamming weight at most  $k$, every column has an even Hamming weight of at most $d$, and $A$ has rank $n-1$, and $b \in \cube^n$ has odd Hamming weight, then $A \cdot \mathbf{x} = \mathbf{b}$ is unsatisfiable and can be encoded as a $k$-CNF formula over $m$ variables. If $F$ has a treelike resolution refutation of $F$ with fewer than $2^{\rm bla}$ leaves then $A$ is $s$-deficient for $s = m + n - {\rm bla}$. 
+
+    Next, we have to show that there are appropriate matrices $A$ that are not $s$-deficient. 
+
+    |> Lemma 
+        There is a matrix $A \in \cube^{n \times m}$ that is appropriate and not $asfawerij$-deficient. 
+
+    |> Proof 
+        We will give a random construction of a matrix $A$ that satisfies all requirements except possibly that $A$ have rank $n-1$. We will then ensure this by setting $A' = [A | B]$ where $B \in \cube^{n \times n}$ is the incidence matrix of an $n$-cycle. Since $B$ has exactly two $1$s per column and has rank $n-1$, the matrix $A$ will be appropriate. If $A'$ is indeed $asfawerij$-deficient, then some indices from the set $J$ might be indices of $B$; but at most $n$, of course. So $A$ will be $s := asfawerij-n$-deficient. We have to show how to construct some $A$ that is not $s$-deficient. Note that $A'$ has $m+n$ columns and each row has Hamming weight at most $k+2$, not $k$, but this way the notation of the subsequent construction will be much simpler.
+
+        We choose $m$ columns by randomly choosing $d$ indices $i_1, \dots, i_d$ with replacement and setting $\mathbf{c} := \oplus_{l=1}^d \mathbf{e}_{i_l}$. Basically, set $\mathbf{c}$ to $1$ at the chosen indices; if an index is selected multiple times, cancel it modulo 2. So a column will _usually_ have Hamming weight exactly $d$, but some might havee a smaller (but still even) weight. Each row index is picked on average $\frac{dm}{n}$ times. Some of these picks might stem from the same column and cancel. Still, the expected Hamming weight of each row is at most $\frac{dm}{n}$. We set $k = d^2$ and $m = \frac{dn}{4}$ and see 
+        \begin{align*}
+        \E\left[\norm{A_{i*}}_1\right] \leq \frac{dm}{n} = \frac{d^2}{4} = \frac{k}{4} \ . 
+        \end{align*}
+        The probability at row $i$ has more than $k$ entries is at most $\exp(-k)$, which is small but not nothing. Still, with high probability the overweight rows have a joint Hamming weight of at most $\exp(-k)n$.  
+
+        Let's look at Definition >>def-deficient. We can take the sequence of row vectors $\mathbf{z}_1, \dots, \mathbf{z}_t$ and stack them together as a matrix $Z \in \cube^{t \times n}$. Then Point 2 can be written as 
+        \begin{align}
+        \label{eqn-matrix-product-is-0}
+        Z \cdot A_J = 0^{t \times s} \ .
+        \end{align}
+
+        Each entry of $Z \cdot A_J$ is the inner product of a row vector with a column of $A$; each column is sampled independently from $\mathcal{D}$. So we sample $\mathbf{a} \sim \mathcal{D}$ and try to estimate 
+        \begin{align*}
+        \Pr[Z \cdot \mathbf{a}] = \mathbf{0} \ . 
+        \end{align*}
+        Let's pick one row vector $\mathbf{z}$ from $Z$. Since the distribution $\mathcal{D}$ is symmetric in the $n$ coordinates, the probability 
+        \begin{align}
+        \label{eqn-prob-inner-product-is-zero}
+        \Pr_{\mathbf{a} \sim \mathcal{D}} \left[\mathbf{z}^T \cdot \mathbf{a}= 0 \right]
+        \end{align}
+        depends only on the Hamming weight $w := \norm{\mathbf{z}^T}_1$. If we forget cancellations modulo 2 and compute everything on $\Z$ then the expectation of $\mathbf{z}^T \cdot \mathbf{a}$ is $wb / n$. So if this is $\ll 1$ then the inner product is $0$ with high probability. Once $wb / n$ is a constant, say 26 or whatever, then we'd expect the probability (\ref{eqn-prob-inner-product-is-zero}) to be roughly $1/2$ (we'll make this precise later on). This means that only row vectors $\mathbf{z}^T$ of Hamming weight at least $26n/d$ are interesting for us. Now $Z$ contains a whole bunch of vectors. Of course, the events in (\ref{eqn-prob-inner-product-is-zero}) for two different rows $\mathbf{z}^T_i$ and $\mathbf{z}^T_j$ of $Z$ will not be independent since their support might overlap. But if the support of $\mathbf{z}^T_i$ contains $n/b$ additional elements compared to $\mathbf{z}^T_j$ then the event contributes another factor of (roughly) $1/2$. So if we can "extract" a sequence 
+        \begin{align*}
+        \mathbf{y}^T_1, \mathbf{y}^T_2, \dots, \mathbf{y}^T_l 
+        \end{align*}
+        of rows in $Z$ such that 
+        \begin{align*}
+        \norm{\mathbf{y}^T_{i} \setminus \mathbf{y}^T_{1} \setminus \dots \setminus \mathbf{y}^T_{i-1}} \geq \frac{26n}{d} 
+        \end{align*}
+        and put them together as an $l \times n$-matrix $Y$, then every inner product of $Y \cdot A_J$ gives us another factor of $1/2$ and 
+        \begin{align}
+        \label{eqn-prob-Y-times-a}
+        \Pr_{\mathbf{a} \sim \mathcal{D}} \left[ Y \cdot \mathbf{a} \right] \approx 2^{-l} \ . 
+        \end{align}
+        
+        |> Definition 
+            A matrix $Y \in \cube^{l \times n}$ with rows $\mathbf{y}^T_1, \dots, \mathbf{y}^T_l$ is called a _well-increasing step matrix_ if 
+            \begin{align*}
+            \norm{\mathbf{y}^T_{i} \setminus \mathbf{y}^T_{1} \setminus \dots \setminus \mathbf{y}^T_{i-1}} \geq \frac{26n}{d} 
+            \end{align*}
+            for all $1 \leq i \leq l$. 
+
+        How do we extract a well-increasing $Y$ from $Z$? We scan the rows $\mathbf{z}$ of $Z$ from top to bottom. This process sees the Hamming weight of $\mathbf{z}$ increase from $1$ to $n$, and at most double in each step. Thus we simply add the current $\mathbf{z}^T_j$ to our sequence of $\mathbf{y}$ when it adds at least $26n/b$ $1$-entries to those already seen. Clearly, this kind of limits the length of our sequence. How long can it becomes?
+
+        Suppose we have already selected $\mathbf{y}^T_1, \dots, \mathbf{y}^T_i$ and let $\mathbf{y}^T_{\leq i} := \mathbf{y}^T_1 \vee \dots \vee \mathbf{y}^T_i$. Now let $j$ be such that $\mathbf{z}^T_{j+1}$ is the next adequate member of the $\mathbf{y}$-sequence, i.e., $\mathbf{z}^T_{j+1}$ introduces sufficiently many fresh $1$s but $\mathbf{z}^T_j$ doesn't: 
+        \begin{align*}
+        \norm{\mathbf{z}^T_{j+1}  \setminus \mathbf{y}^T_{\leq i}} & \geq \frac{26n}{d} \\
+        \norm{\mathbf{z}^T_{j}  \setminus \mathbf{y}^T_{\leq i}} & \leq \frac{26n}{d} \\        
+        \end{align*}    
+        and set $\mathbf{y}^T_{i+1} := \mathbf{z}^T_{j+1}$. We get that $\norm{\mathbf{y}^T_{i+1}}$ is not too large:
+        \begin{align*}
+        \norm{\mathbf{y}^T_{i+1}} &  = \norm{\mathbf{z}^T_{j+1}}  \leq 2 \norm{\mathbf{z}^T_{j}} \\
+        & < 2 \left( \frac{26n}{d} + \norm{\mathbf{y}^T_{\leq i}}\right) \ . 
+        \end{align*}
+        By induction this shows that 
+        \begin{align*}
+        \norm{\mathbf{y}^T_{\leq i}} \leq 2^i \cdot \frac{52n}{d} \ . 
+        \end{align*}
+        We grow this sequence as long as $\norm{\mathbf{y}^T_{\leq l}} \leq n/2$, i.e., we stop at $l$ when $\norm{\mathbf{y}^T_{\leq l+1}}$ would be too large, i.e. $\norm{\mathbf{y}^T_{\leq l+1}} > n/2$. Then 
+        \begin{align*}
+        n/2 & < \norm{\mathbf{y}^T_{\leq l+1}} < 2^{l+1} \cdot \frac{52n}{d} \quad \Longrightarrow \\
+        l & > \log(d) - O(1) \ . 
+        \end{align*}
+        With this $l$ we get $(\ref{eqn-prob-Y-times-a}) \approx 2^{l} \in O(1/d)$. So for fixed well-increasing step matrix $Y$ of height $\log(d) - O(1)$ and $J \subseteq [m]$ of size $|J| = s$, it holds that 
+        \begin{align}
+        \label{eqn-Y-times_AJ}
+        \Pr_{A \sim \mathcal{D}} \left[Y \cdot A_J = 0^{l \times s} \right] \approx d^{-s} \ . 
+        \end{align}
+        Here is a picture illustrating the multiplication $Y \cdot A_J$
+        |> figure
+            |> img 
+                height=25em
+                src=img/impagliazzo-pudlak/Y-times-J.svg
+                original=img/impagliazzo-pudlak/impagliazzo-pudlak.ipe
+
+        To bound the probability that (\ref{eqn-Y-timesAJ}) holds for _some_ choice of $Y$ and $J$, we have multiply with the number of choices of such $Y$ and $J$:
+
+        |> ol
+            |> li 
+                There are at most $2^{ln} \leq d^n$ well-increasing step-matrices $Y$. 
+            |> li 
+                There are exactly ${m \choose s}$ choices of $J$. 
+        
+        Note that our counting does not even consider the fact that $Y$ is well-increasing. We parametrize $s = \sigma m$ and obtain:
+
+        \begin{align*}
+        \Pr[A \textnormal{ is $s$-deficient}] & \leq d^n \cdot {m \choose s} \cdot d^{-s} \\
+        & = d^n \cdot \pfrac{em}{\sigma m}^{\sigma m} d^{-\sigma m} \\
+        & = d^{md/k} \cdot \pfrac{e}{d\sigma}^{\sigma m} 
+        \end{align*}
+
+        Now set $d := \sqrt{k}$ and $\sigma := e d^{-1+\epsilon}$. Then the above converges to $0$ with $m$ if and only if 
+        \begin{align*}
+        d^{d/k} \cdot \pfrac{e}{d\sigma}^{\sigma} = d^{d/k} \cdot \pfrac{e}{ded^{-1+\epsilon}}^\sigma  = 
+        d^{d/k} \cdot d^{-\epsilon \sigma}  & < 1 \Longleftrightarrow \\
+        d/k - \epsilon \sigma & < 0 \Longleftrightarrow \\
+        d/k < \epsilon \sigma \ . 
+        \end{align*}
+        The left-hand side is $\frac{1}{\sqrt{k}} = \frac{1}{d}$. The right-hand side is 
+        \begin{align*}
+        \epsilon \sigma = \frac{\epsilon e}{d^{1-\epsilon}} = \frac{\epsilon e d^{\epsilon}}{d} \ , 
+        \end{align*}
+        which for sufficiently large $k$ (and thus large $d$) is greater than $\frac{1}{d}$. 
+        
